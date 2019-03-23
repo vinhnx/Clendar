@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		68890989EC17BFBF22CEFE27 /* Pods_ClendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */; };
 		A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80C922467A82009CC46A /* AppDelegate.swift */; };
-		A33F80CC22467A82009CC46A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80CB22467A82009CC46A /* ViewController.swift */; };
 		A33F80CF22467A82009CC46A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80CD22467A82009CC46A /* Main.storyboard */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80D422467A85009CC46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D222467A85009CC46A /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 		970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80C922467A82009CC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A33F80CB22467A82009CC46A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A33F80CE22467A82009CC46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A33F80D322467A85009CC46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -137,12 +135,9 @@
 		A33F80C822467A82009CC46A /* Clendar */ = {
 			isa = PBXGroup;
 			children = (
-				A33F80C922467A82009CC46A /* AppDelegate.swift */,
-				A33F80CB22467A82009CC46A /* ViewController.swift */,
-				A33F80CD22467A82009CC46A /* Main.storyboard */,
-				A33F80D022467A85009CC46A /* Assets.xcassets */,
-				A33F80D222467A85009CC46A /* LaunchScreen.storyboard */,
-				A33F80D522467A85009CC46A /* Info.plist */,
+				A33F80F822467DD6009CC46A /* App */,
+				A33F80F922467DDB009CC46A /* Modules */,
+				A33F80F722467DC1009CC46A /* Resources */,
 			);
 			path = Clendar;
 			sourceTree = "<group>";
@@ -163,6 +158,32 @@
 				A33F80EB22467A85009CC46A /* Info.plist */,
 			);
 			path = ClendarUITests;
+			sourceTree = "<group>";
+		};
+		A33F80F722467DC1009CC46A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A33F80CD22467A82009CC46A /* Main.storyboard */,
+				A33F80D022467A85009CC46A /* Assets.xcassets */,
+				A33F80D222467A85009CC46A /* LaunchScreen.storyboard */,
+				A33F80D522467A85009CC46A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A33F80F822467DD6009CC46A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A33F80C922467A82009CC46A /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A33F80F922467DDB009CC46A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A33F80CC22467A82009CC46A /* ViewController.swift in Sources */,
 				A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
