@@ -14,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        configureWindow()
         return true
+    }
+
+    // MARK: - Window
+
+    private func configureWindow() {
+        self.window?.rootViewController = UIStoryboard(name: "CalendarViewController", bundle: nil).instantiateInitialViewController()
+        self.window?.makeKeyAndVisible()
     }
 }

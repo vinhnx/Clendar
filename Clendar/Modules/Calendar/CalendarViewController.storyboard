@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msd-YK-Kl9">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar View Controller-->
+        <scene sceneID="jsz-TJ-89q">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b9-Jc-wcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="msd-YK-Kl9" customClass="CalendarViewController" customModule="Clendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ygu-FP-EUT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEb-fA-VGC" userLabel="Menu View" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.59150803259999996" blue="0.00085280230909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8oU-ek-LRg"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xC-cT-gib" userLabel="Calendar View" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="102" width="375" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cG2-Kg-erW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7xC-cT-gib" firstAttribute="leading" secondItem="YcX-BE-oEu" secondAttribute="leading" id="Jl0-ZV-Inx"/>
+                            <constraint firstItem="oEb-fA-VGC" firstAttribute="leading" secondItem="YcX-BE-oEu" secondAttribute="leading" id="Otm-j3-qGZ"/>
+                            <constraint firstItem="oEb-fA-VGC" firstAttribute="trailing" secondItem="YcX-BE-oEu" secondAttribute="trailing" id="QPE-0q-N7K"/>
+                            <constraint firstItem="7xC-cT-gib" firstAttribute="top" secondItem="oEb-fA-VGC" secondAttribute="bottom" constant="8" id="XrR-1T-BTA"/>
+                            <constraint firstItem="7xC-cT-gib" firstAttribute="trailing" secondItem="YcX-BE-oEu" secondAttribute="trailing" id="beT-vo-uma"/>
+                            <constraint firstItem="oEb-fA-VGC" firstAttribute="top" secondItem="YcX-BE-oEu" secondAttribute="top" id="cWB-E4-kJH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YcX-BE-oEu"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="7xC-cT-gib" id="2y0-JM-mnA"/>
+                        <outlet property="menuView" destination="oEb-fA-VGC" id="hGG-CI-BHz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-794" y="134"/>
+        </scene>
+    </scenes>
+</document>
