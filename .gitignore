@@ -75,5 +75,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+*.generated.swift
+
 # End of https://www.gitignore.io/api/swift
 
