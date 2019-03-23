@@ -1,0 +1,6 @@
+framework module Pods_ClendarUITests {
+  umbrella header "Pods-ClendarUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

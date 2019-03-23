@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyChrono (1.1.0)
+
+DEPENDENCIES:
+  - SwiftyChrono
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftyChrono
+
+SPEC CHECKSUMS:
+  SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
+
+PODFILE CHECKSUM: 41d1ba9be67ab65f02d0d15b902c65110c955ba0
+
+COCOAPODS: 1.5.3
