@@ -6,6 +6,7 @@ target 'Clendar' do
   # Core
   pod 'SwiftLint'
   pod 'SwiftyChrono'
+  pod 'CVCalendar'
 
   target 'ClendarTests' do
     inherit! :search_paths

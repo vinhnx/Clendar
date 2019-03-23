@@ -1,20 +1,24 @@
 PODS:
+  - CVCalendar (1.6.2)
   - SwiftLint (0.31.0)
   - SwiftyChrono (1.1.0)
 
 DEPENDENCIES:
+  - CVCalendar
   - SwiftLint
   - SwiftyChrono
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CVCalendar
     - SwiftLint
     - SwiftyChrono
 
 SPEC CHECKSUMS:
+  CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
 
-PODFILE CHECKSUM: b9ded4b118630ef3475ef9e3922bc57ecba57e05
+PODFILE CHECKSUM: 1d9521275b6ca9ed1656e0dea255e626ddb57d13
 
 COCOAPODS: 1.5.3
