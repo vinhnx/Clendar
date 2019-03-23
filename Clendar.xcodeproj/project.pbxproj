@@ -17,6 +17,7 @@
 		A33F80FF22468A5D009CC46A /* CalendarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */; };
 		A33F810222468B69009CC46A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810122468B69009CC46A /* BaseViewController.swift */; };
 		A33F810722468FC1009CC46A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810622468FC1009CC46A /* ReusableView.swift */; };
+		A33F810A224690E9009CC46A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8109224690E9009CC46A /* R.generated.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarViewController.storyboard; sourceTree = "<group>"; };
 		A33F810122468B69009CC46A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A33F810622468FC1009CC46A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		A33F8109224690E9009CC46A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7E6079522A39C0AA433E3F /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		A33F810522468FB4009CC46A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A33F8109224690E9009CC46A /* R.generated.swift */,
 				A33F810622468FC1009CC46A /* ReusableView.swift */,
 			);
 			path = Helper;
@@ -227,6 +230,7 @@
 			buildConfigurationList = A33F80EE22467A85009CC46A /* Build configuration list for PBXNativeTarget "Clendar" */;
 			buildPhases = (
 				7A650D37A9947B21CBD08B5C /* [CP] Check Pods Manifest.lock */,
+				A33F8108224690A6009CC46A /* R.swift */,
 				A33F80C222467A82009CC46A /* Sources */,
 				A33F80C322467A82009CC46A /* Frameworks */,
 				A33F80C422467A82009CC46A /* Resources */,
@@ -383,6 +387,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -390,6 +395,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyChrono.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +465,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		A33F8108224690A6009CC46A /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -468,6 +494,7 @@
 			files = (
 				A33F810722468FC1009CC46A /* ReusableView.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
+				A33F810A224690E9009CC46A /* R.generated.swift in Sources */,
 				A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */,
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
 			);

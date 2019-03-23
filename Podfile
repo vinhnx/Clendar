@@ -4,9 +4,12 @@ target 'Clendar' do
   use_frameworks!
 
   # Core
-  pod 'SwiftLint'
   pod 'SwiftyChrono'
   pod 'CVCalendar'
+
+  # Helper
+  pod 'SwiftLint'
+  pod 'R.swift'
 
   target 'ClendarTests' do
     inherit! :search_paths

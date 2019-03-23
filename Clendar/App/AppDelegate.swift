@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Window
 
     private func configureWindow() {
-        self.window?.rootViewController = UIStoryboard(name: "CalendarViewController", bundle: nil).instantiateInitialViewController()
+        self.window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
     }
 }
