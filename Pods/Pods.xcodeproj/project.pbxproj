@@ -7,90 +7,90 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060DCF2852FB902A1F4EC7D3717B76D5 /* ESUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4506D5E29528BFA877C5707FF84C43 /* ESUtil.swift */; };
-		06298C55E3885C34EBE98CA68531D7A1 /* Refiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943EC82F60C2CB27FFC1D1620E1F1650 /* Refiner.swift */; };
+		060DCF2852FB902A1F4EC7D3717B76D5 /* ESUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CF8CC1F139B14E44D298C4ADFB4E60 /* ESUtil.swift */; };
+		06298C55E3885C34EBE98CA68531D7A1 /* Refiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BBDB8262BB120D121269C7DF146568 /* Refiner.swift */; };
 		074DCB3056551BBBC96C1D778BF17FDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		07CCAB1FC9AEA7441235D8D4D3A87BC4 /* ENSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3EB506E8304A47F4FDC790EEF2201 /* ENSlashDateFormatParser.swift */; };
-		0CFA097CB06527704F63C8DC1BF271BA /* SwiftyChrono-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8F60133C6A4B2EAF3D029EB93C9FAC /* SwiftyChrono-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		167C6F286CBE38EE3591ABDD36072625 /* FRTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C121C1A09C4E517D852FE6779C818B6E /* FRTimeAgoFormatParser.swift */; };
-		184C18696E89C06F40A87A689989B19F /* FRDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E31F783784892063F7A066BBB55C36 /* FRDeadlineFormatParser.swift */; };
-		18B23330DDD7CDCA36544845E9BF6EF9 /* OverlapRemovalRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827B96B89E388A0D9DFC9D7DA019FCAC /* OverlapRemovalRefiner.swift */; };
+		07CCAB1FC9AEA7441235D8D4D3A87BC4 /* ENSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC7B588501F24E07A8E2B57A953928 /* ENSlashDateFormatParser.swift */; };
+		0CFA097CB06527704F63C8DC1BF271BA /* SwiftyChrono-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2325DD7FED309C47CE38A94CD36BEE66 /* SwiftyChrono-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		167C6F286CBE38EE3591ABDD36072625 /* FRTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495633B74046C6D6573833BBC21F7D16 /* FRTimeAgoFormatParser.swift */; };
+		184C18696E89C06F40A87A689989B19F /* FRDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B75D3B4E7CA78C5070F2191AF98CA3 /* FRDeadlineFormatParser.swift */; };
+		18B23330DDD7CDCA36544845E9BF6EF9 /* OverlapRemovalRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5165E8DE91C972668DA591852FCD88 /* OverlapRemovalRefiner.swift */; };
 		19852537694C6CF933FC4A93A029EDA4 /* Pods-ClendarTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A36457A774EA542F4F0CD8AEEEFFE70E /* Pods-ClendarTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0D77988C5CBEDA5FB969E73687FC0A /* DEMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F569E95E5504607F4B0D524E3BDA5 /* DEMergeDateRangeRefiner.swift */; };
-		1EA8DD98E8C86D7794A4F69A0F96BF11 /* ENTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E47A84A1631DFD32EA81FC80B0BF0 /* ENTimeExpressionParser.swift */; };
-		1FA59299C22C9819ED358BE81CA1E795 /* ESCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A016BE5D9125B72E84FC95B03FA61C3 /* ESCasualDateParser.swift */; };
-		25ADAEB1A19C373D0A9DA3E512BF4100 /* ENMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC226DA391726E6848E63B3D6A9BFFF /* ENMergeDateTimeRefiner.swift */; };
-		3059BAB523C78F4A58B03BE0B86063F4 /* ZHTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045798C0DB61F339873B88581F2303A5 /* ZHTimeExpressionParser.swift */; };
-		33E47A29ABE70CF8A0AF0C0DE5CE284E /* ENMonthNameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA47BB4F2A3721C4C9F575E0568E17 /* ENMonthNameParser.swift */; };
-		35EC62A135EAC0CD0403109906E921CD /* ESTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D95B523279E8C239A672486ED4EFF84 /* ESTimeAgoFormatParser.swift */; };
-		365AC7AD398D7267CCE6BAC89BFC8875 /* DEMorgenTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FF75A270C85C40CC194D3CA428E7EA /* DEMorgenTimeParser.swift */; };
-		440FEF38988C95460A5A642AA1C0757F /* ENWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553FE9C19ED9A846F1A8763583B0578 /* ENWeekdayParser.swift */; };
-		47311A594C3A50030939D3E3F14B9654 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED17B746BC2093779BE10F5F019E77B /* Date.swift */; };
-		47713B700442E386B4BF3D031737BEE7 /* DEWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187631C39FD33C43082ADBB2D344D6E /* DEWeekdayParser.swift */; };
+		1D0D77988C5CBEDA5FB969E73687FC0A /* DEMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B07D6783D95677911A1498F2FFA835 /* DEMergeDateRangeRefiner.swift */; };
+		1EA8DD98E8C86D7794A4F69A0F96BF11 /* ENTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55106A14F3F5A114B9C08C3BA7FD32C /* ENTimeExpressionParser.swift */; };
+		1FA59299C22C9819ED358BE81CA1E795 /* ESCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C10582203CCC77B30F83D70145E11 /* ESCasualDateParser.swift */; };
+		25ADAEB1A19C373D0A9DA3E512BF4100 /* ENMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50E1566EA91E96F4ABA1DBB836E5A96 /* ENMergeDateTimeRefiner.swift */; };
+		3059BAB523C78F4A58B03BE0B86063F4 /* ZHTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577B2EFA32A7E50AF4231FA1E370CEB /* ZHTimeExpressionParser.swift */; };
+		33E47A29ABE70CF8A0AF0C0DE5CE284E /* ENMonthNameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F7783377F7F74C19A7F6D6540AD432 /* ENMonthNameParser.swift */; };
+		35EC62A135EAC0CD0403109906E921CD /* ESTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460630A2EA802B2D283DDD7277C3A76 /* ESTimeAgoFormatParser.swift */; };
+		365AC7AD398D7267CCE6BAC89BFC8875 /* DEMorgenTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF640CEE64C3AB245D9BCE22116035FD /* DEMorgenTimeParser.swift */; };
+		440FEF38988C95460A5A642AA1C0757F /* ENWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACB6438503DBA118DE7710D330DD5F /* ENWeekdayParser.swift */; };
+		47311A594C3A50030939D3E3F14B9654 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C19C5EED89798077A101BC72497F9 /* Date.swift */; };
+		47713B700442E386B4BF3D031737BEE7 /* DEWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37DE1266F7D5CD5C465FB9DA50D7861 /* DEWeekdayParser.swift */; };
 		4C1859026F9986C1DAEC377CBB4711A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		5384EB9A7771360D909766D7E2DBD470 /* Pods-Clendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B57871887F08C5917AEBAA89043A929 /* Pods-Clendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54211F475CB921CF5212369419D14173 /* Pods-Clendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BEF8D38EBA934FF037199245DF09F /* Pods-Clendar-dummy.m */; };
-		57ADA840BAEB00A5BBAF32ABEF824B76 /* ENTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BB307BECD7645E7928D9F54C9C408A /* ENTimeAgoFormatParser.swift */; };
-		58DCB4F5E206ED55615B4D6F715363A9 /* JPMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F995D4987C24BDF22CFB4CC60EA72B /* JPMergeDateRangeRefiner.swift */; };
-		5D0DCC65166D4361B7762B73576899FF /* ENISOFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FFC28E93C06F36E408159F0D0D2EDF /* ENISOFormatParser.swift */; };
+		57ADA840BAEB00A5BBAF32ABEF824B76 /* ENTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B80DE52C8CC57D7F8D24D27825677 /* ENTimeAgoFormatParser.swift */; };
+		58DCB4F5E206ED55615B4D6F715363A9 /* JPMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CC415E244FA00A4CBA11827712958D /* JPMergeDateRangeRefiner.swift */; };
+		5D0DCC65166D4361B7762B73576899FF /* ENISOFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F3DBC539FC4BA2BA6A0BE87F58107 /* ENISOFormatParser.swift */; };
 		5EE38E65FFA6AB89D72BEBA7DD37205C /* Pods-ClendarUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16A8550B943A5DA5CDC91DD6EA56C6A9 /* Pods-ClendarUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		645F9D8CFA9A433B978B869862E507CB /* FRMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788BCA8E93A75F53D7827F29F43566E8 /* FRMergeDateTimeRefiner.swift */; };
-		65123487FBEFAC39509C087DCCFA232C /* ESSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C912A387FA116651AECBB9F847912D /* ESSlashDateFormatParser.swift */; };
-		6AE48B257E257F31CE00DE9EE2BF70AB /* ENRelativeDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FD259C03901AA6E7C4FAEDDB6D8731 /* ENRelativeDateFormatParser.swift */; };
-		6C69208B73BBE8851EDD941A262E4D01 /* ESTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102086FC04544D81B36D459EF60BF5D7 /* ESTimeExpressionParser.swift */; };
-		77A4E33C04CD23DEDD915221112F0E1A /* FRTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1248CB197B5A55B001041270C4000 /* FRTimeExpressionParser.swift */; };
-		786D01D2AC4995C09B6588C9841E2B50 /* JPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53516B1E03A8F15F72D10DFD5C6C3DD1 /* JPUtil.swift */; };
+		645F9D8CFA9A433B978B869862E507CB /* FRMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B59E226F0B24A8BBC94D2D3D75C2BEC /* FRMergeDateTimeRefiner.swift */; };
+		65123487FBEFAC39509C087DCCFA232C /* ESSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50501F1E11832B65DCE0FE0F712EA6D /* ESSlashDateFormatParser.swift */; };
+		6AE48B257E257F31CE00DE9EE2BF70AB /* ENRelativeDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1E47A0B63189CE716DB8178C2A3951 /* ENRelativeDateFormatParser.swift */; };
+		6C69208B73BBE8851EDD941A262E4D01 /* ESTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA72A49A65F8D35C0A8AE24A59FB480 /* ESTimeExpressionParser.swift */; };
+		77A4E33C04CD23DEDD915221112F0E1A /* FRTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCEF405439ABDAF4627C42BE4431D8B /* FRTimeExpressionParser.swift */; };
+		786D01D2AC4995C09B6588C9841E2B50 /* JPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB56A5880FA1D24DC8D27B55C17BB2E /* JPUtil.swift */; };
 		80171EE4D9169D8ACBE718F6D4FC5956 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		81CDAFCCFEE4666AFDCE84C81D32C079 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		82154C45F482260A1AF7951F6504A121 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E619BE4C4E9D0A2434FCF4C169234C /* Options.swift */; };
-		882136E1FB861A8539846102F7CA3731 /* ExtractTimezoneAbbrRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C97D1075F61621B0AB2DFCD57621F00 /* ExtractTimezoneAbbrRefiner.swift */; };
-		8866CE67956A65677442311CF38929C0 /* ENMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A425AD282AB03196DF5431611855C23 /* ENMonthNameLittleEndianParser.swift */; };
+		82154C45F482260A1AF7951F6504A121 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417310884DD7D94419FD3E90F6D03A9C /* Options.swift */; };
+		882136E1FB861A8539846102F7CA3731 /* ExtractTimezoneAbbrRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF8F7C79B709EFF923C6C4DB2BC6AC3 /* ExtractTimezoneAbbrRefiner.swift */; };
+		8866CE67956A65677442311CF38929C0 /* ENMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6932D1A8BDA00FECC4C246A88CD08 /* ENMonthNameLittleEndianParser.swift */; };
 		8C70519DFE979AE59BC5450379CE1A60 /* Pods-ClendarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F62A955F0C2F8E5C6D89C143B5AF47 /* Pods-ClendarTests-dummy.m */; };
-		8EB25225C9C9266A92CFEB51F56FF0C6 /* FRWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667369BF89F822EA3DF783CCB2F5A1F3 /* FRWeekdayParser.swift */; };
-		909ED6D9B8837EBBFF910EC0124E7705 /* ENSlashMonthFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB5B1E9B9281F388ECAAF0F30BA8AEC /* ENSlashMonthFormatParser.swift */; };
-		92F1C0DEF927653DB72C150D00A534CC /* SwiftyChrono-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F533854468BEE8AFC0BC3AE9F256E5E /* SwiftyChrono-dummy.m */; };
-		98200B9A3C83B17DAF3698E77BBF792F /* ENPrioritizeSpecificDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7758E7A60069D9C3D655D208A444349D /* ENPrioritizeSpecificDateRefiner.swift */; };
-		98E153C0D659F0B9A8FB014311789216 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E9B2BBC36DA5771735694CA01B38E6 /* Result.swift */; };
-		9DF0393EE5F2A8D85E9BF961CDBE94C0 /* ZHDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390F10E981F1E589AA1AE611A19E53C1 /* ZHDeadlineFormatParser.swift */; };
-		9F932314A44926B0BB838921E8ED1D51 /* ESDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8D43182F24680AFE022D1A3AEC3BAC /* ESDeadlineFormatParser.swift */; };
-		A1870E256200B8CCA1DD954D762BE18A /* DETimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02955F161FF5EDEA8DB92BB9922EBEDB /* DETimeAgoFormatParser.swift */; };
-		A22BB1CD653F55BA51A543A07288C56E /* UnlikelyFormatFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C2BC964CC1F542C3BFAB6F912A8044 /* UnlikelyFormatFilter.swift */; };
-		A61540CB617B3E37267B08612CC1884D /* ForwardDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0306283A8E683AE1A8AFBA1D94FFC1A /* ForwardDateRefiner.swift */; };
-		AB1F867FE9EAB1F9A692E54DDD573565 /* ENDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AF72AED4D638C9BB5FD12A5E64906E /* ENDeadlineFormatParser.swift */; };
-		B017E79F379F4F3B976580D20182F476 /* ZHCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD6C5C5222C9514537E5F69757A0BC /* ZHCasualDateParser.swift */; };
-		B0283DE0BBF799EA79029CE383E3DA54 /* MergeDataRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C3B39FB4A1EBFB942C1917CFE51FB6 /* MergeDataRangeRefiner.swift */; };
-		B0C5E974CB92FC2DECD9C81D89BE7375 /* DECasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAD76BA454D69A438CC61402C6817A8 /* DECasualDateParser.swift */; };
-		B1156CCE6C5D46CC30E13A95E4A7648F /* ZHWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E23F42A3D7365906DDAA3B73A04FB /* ZHWeekdayParser.swift */; };
-		B436BD72DAFB087E458FB0B735C07932 /* JPStandardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8255EAEA2BE5CC551DBA7A9A810679F2 /* JPStandardParser.swift */; };
-		B79800A429E997CA8007233E747ABA31 /* ENCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC3C44A5DFDACF7350277FC477D24F /* ENCasualDateParser.swift */; };
-		BC02C595B71E431D0E1EBAAC7BA1A0E6 /* ESWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C079A049539E26A112C2A13A4DCB6EAC /* ESWeekdayParser.swift */; };
-		C0EDB215847F45F9CA2A122139FFB1A5 /* FRCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5536B1E5AF9D2EF49DF48B9445631DC2 /* FRCasualDateParser.swift */; };
-		C0F7A3A9D84A4DFFF7420050520648D1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706477922F7B3037194704AEE415454 /* Parser.swift */; };
-		C16517D5A079D255C07BD04F92DBE4B9 /* ESMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF749526653FA34A3523D194E2AD65 /* ESMonthNameLittleEndianParser.swift */; };
-		C8719179B98EDD846854B7FA2E06353A /* DEMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EA5C558CF830F2B2B6C8BD3900DA0 /* DEMonthNameLittleEndianParser.swift */; };
-		CE8AC13214FCEE64C5C8358AF8CDC393 /* MergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC1002CB3EBAEFF44DA9124889B379 /* MergeDateTimeRefiner.swift */; };
-		CFA0C7D98C9C1B7107FF1B85B6C9DCC6 /* ENUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6184B71D6FE574FE8CEFFB98DACA223 /* ENUtil.swift */; };
-		D592C0EE82F1723EF87C897B3CDEEEDD /* FRMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0495944C290D23E1BB5571F8CFA635 /* FRMonthNameLittleEndianParser.swift */; };
+		8EB25225C9C9266A92CFEB51F56FF0C6 /* FRWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41420722217A66E52CEC55C5888938B /* FRWeekdayParser.swift */; };
+		909ED6D9B8837EBBFF910EC0124E7705 /* ENSlashMonthFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42B3B9C5D34AC8308CA36E9127FF998 /* ENSlashMonthFormatParser.swift */; };
+		92F1C0DEF927653DB72C150D00A534CC /* SwiftyChrono-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF22D5B5DAA3EDD10E25F3B671FD62 /* SwiftyChrono-dummy.m */; };
+		98200B9A3C83B17DAF3698E77BBF792F /* ENPrioritizeSpecificDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6EA039ECC375EA3A1DACA0640EAD6A /* ENPrioritizeSpecificDateRefiner.swift */; };
+		98E153C0D659F0B9A8FB014311789216 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5E230072FEC95E79AD2A950329370 /* Result.swift */; };
+		9DF0393EE5F2A8D85E9BF961CDBE94C0 /* ZHDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E680F0A96AE82B17F6EE9834441D1 /* ZHDeadlineFormatParser.swift */; };
+		9F932314A44926B0BB838921E8ED1D51 /* ESDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6318B76F0ADAC70CEDC005846243F /* ESDeadlineFormatParser.swift */; };
+		A1870E256200B8CCA1DD954D762BE18A /* DETimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3CC9AB9C0392956240C0330EE09551 /* DETimeAgoFormatParser.swift */; };
+		A22BB1CD653F55BA51A543A07288C56E /* UnlikelyFormatFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DD89C3C651D44B63E0C03C6B82D54 /* UnlikelyFormatFilter.swift */; };
+		A61540CB617B3E37267B08612CC1884D /* ForwardDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE825FE8FECA00BDB433B083FE54BE /* ForwardDateRefiner.swift */; };
+		AB1F867FE9EAB1F9A692E54DDD573565 /* ENDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A92C3FF08460EAD097ACDCB2719BBB /* ENDeadlineFormatParser.swift */; };
+		B017E79F379F4F3B976580D20182F476 /* ZHCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F4D97BDC5D4E9A55766F2C621391C4 /* ZHCasualDateParser.swift */; };
+		B0283DE0BBF799EA79029CE383E3DA54 /* MergeDataRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437C7024538F78E46790BE036D72DED7 /* MergeDataRangeRefiner.swift */; };
+		B0C5E974CB92FC2DECD9C81D89BE7375 /* DECasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A564B290581FBB899B38C0F17BC0E3B /* DECasualDateParser.swift */; };
+		B1156CCE6C5D46CC30E13A95E4A7648F /* ZHWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CC36472A0BC17F081844AD022F43F0 /* ZHWeekdayParser.swift */; };
+		B436BD72DAFB087E458FB0B735C07932 /* JPStandardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269F91F70B0958D9324078C11236E281 /* JPStandardParser.swift */; };
+		B79800A429E997CA8007233E747ABA31 /* ENCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBCF3642F0C094AC533E1A98FFC00BF /* ENCasualDateParser.swift */; };
+		BC02C595B71E431D0E1EBAAC7BA1A0E6 /* ESWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135909C6CE771AD9249CCA848CBE81AA /* ESWeekdayParser.swift */; };
+		C0EDB215847F45F9CA2A122139FFB1A5 /* FRCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C641E536BB04FD947CFAF463CD15AD /* FRCasualDateParser.swift */; };
+		C0F7A3A9D84A4DFFF7420050520648D1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C737A9E46E072E881BDA38421254C7E /* Parser.swift */; };
+		C16517D5A079D255C07BD04F92DBE4B9 /* ESMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8D31D2F92E85BD8EE375BC62F7D3C /* ESMonthNameLittleEndianParser.swift */; };
+		C8719179B98EDD846854B7FA2E06353A /* DEMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A119538544E6E474C5DE0E492D580E /* DEMonthNameLittleEndianParser.swift */; };
+		CE8AC13214FCEE64C5C8358AF8CDC393 /* MergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E8C0FB1AE983663759A32488179A19 /* MergeDateTimeRefiner.swift */; };
+		CFA0C7D98C9C1B7107FF1B85B6C9DCC6 /* ENUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A439603E6D16643C578EE63C40D208F0 /* ENUtil.swift */; };
+		D592C0EE82F1723EF87C897B3CDEEEDD /* FRMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C899561E3BA174684F279F5C6FB80791 /* FRMonthNameLittleEndianParser.swift */; };
 		D6237D0B36112255ABD88F40AA29587B /* Pods-ClendarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5037D5E897EB16F672BB13EAEDC05453 /* Pods-ClendarUITests-dummy.m */; };
-		D687897400436392BC7BC44281E1EE1D /* ENCasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3065C5C4AA00C3A79E205316BBC9BD /* ENCasualTimeParser.swift */; };
-		DA2BBB08D6D6829DDFCFD1FB2442A7A4 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE085C472A8818D906C1FD8A097B6E24 /* Chrono.swift */; };
-		DA57FA864EBC2515C987567AF2D76888 /* DECasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAA8C7DCE07A6A792CE6A6323F05A4 /* DECasualTimeParser.swift */; };
-		DAE2CB0CC0223C914AC30B20419F2ED0 /* FRMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF008214E269B2826CF5BC28D0676E /* FRMergeDateRangeRefiner.swift */; };
-		DAE83C0990B11EFF3429E73D5EFB688A /* DESlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683C6BDE2CFFF384BD8AB8DB4A14FEFB /* DESlashDateFormatParser.swift */; };
-		DE375D251D2FC0EEF3CAC267D4685E55 /* ExtractTimezoneOffsetRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8950545CE55092D16DE26A2C1B5175 /* ExtractTimezoneOffsetRefiner.swift */; };
-		DF574044D177BD6DC5E22AB40A8B5E51 /* ENSlashDateFormatStartWithYearParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA69C5A721BF702A5E6719A1A4087A2 /* ENSlashDateFormatStartWithYearParser.swift */; };
-		DFD4E93B415624F04D1870973A8CCBD5 /* ENMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C3B4D3F55848E0C8EC40D4B8C61F1F /* ENMergeDateRangeRefiner.swift */; };
-		E1476D279FF5B13A3E2B35531072361B /* DEMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9815B8359655066E75744D89274F23DD /* DEMergeDateTimeRefiner.swift */; };
-		E1E3E319BBBDA456749CFC3A522B6C6A /* ZHUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37996C5D178FA40B42CC201BD5B49D7 /* ZHUtil.swift */; };
-		EE90FFBC0D364650B16151A350D54DF7 /* DETimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9871E873441F2A1C1700E7B609FC47BF /* DETimeExpressionParser.swift */; };
-		EF2297DCDAD06152E56FEC8A7525E47E /* JPCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AC28A105C9B548137953DFE4DB2C0A /* JPCasualDateParser.swift */; };
-		EF776273464CFD4A36A60CD7CE9CD6F4 /* DEUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4F8820FBFE7D57D19852DD149E2F16 /* DEUtil.swift */; };
-		EF88B7C0AFD6FCA60F460A309C63C316 /* ZHDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5DF101DDD1475BD6F1D66F138E3882 /* ZHDateParser.swift */; };
-		F0D8E2E7B8C3BC938DE10139A276F022 /* DEDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E9DF7CA2D6C3FA0AA87F27B7904A3 /* DEDeadlineFormatParser.swift */; };
-		F2BACCCA097E5BBA938CCDECD5410AEB /* ENMonthNameMiddleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5603853C801FB375E3CD5B1DEF60A9 /* ENMonthNameMiddleEndianParser.swift */; };
-		F44AC0F3FEEBCEB43481C2239015E91F /* FRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202DFDE3CA8E52FD739A4750337CC6D8 /* FRUtil.swift */; };
-		F8D0C365A03333734000CAFCD4F90933 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1225A3283579EF9BF9BA675405A5FFBB /* Util.swift */; };
-		FA0E5C4CC9D7FB4F03951AEF8BA04E74 /* FRSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64D4885612679A4F030BC91B4ABA45B /* FRSlashDateFormatParser.swift */; };
+		D687897400436392BC7BC44281E1EE1D /* ENCasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39471B70689A12CD6F4414798B2F84AC /* ENCasualTimeParser.swift */; };
+		DA2BBB08D6D6829DDFCFD1FB2442A7A4 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58236156F894D8F74952E2333BC16E2B /* Chrono.swift */; };
+		DA57FA864EBC2515C987567AF2D76888 /* DECasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD90D48FD39F0FDE420A18FEFDE37C2 /* DECasualTimeParser.swift */; };
+		DAE2CB0CC0223C914AC30B20419F2ED0 /* FRMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298F232C263956A3C4190C0B4323C30E /* FRMergeDateRangeRefiner.swift */; };
+		DAE83C0990B11EFF3429E73D5EFB688A /* DESlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA475D17BEE94D369017A1F16369E5A2 /* DESlashDateFormatParser.swift */; };
+		DE375D251D2FC0EEF3CAC267D4685E55 /* ExtractTimezoneOffsetRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3FC78600CC0E7AB51BD9B81FAB2B0 /* ExtractTimezoneOffsetRefiner.swift */; };
+		DF574044D177BD6DC5E22AB40A8B5E51 /* ENSlashDateFormatStartWithYearParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722D39C0CE05027392BA4656926A6CA8 /* ENSlashDateFormatStartWithYearParser.swift */; };
+		DFD4E93B415624F04D1870973A8CCBD5 /* ENMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199DA712F734B6048B51F046D424F50B /* ENMergeDateRangeRefiner.swift */; };
+		E1476D279FF5B13A3E2B35531072361B /* DEMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9778304942EEAA7EC9A5939E8F7A4924 /* DEMergeDateTimeRefiner.swift */; };
+		E1E3E319BBBDA456749CFC3A522B6C6A /* ZHUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D883B23EBB71F0BCCA46A9DB978736 /* ZHUtil.swift */; };
+		EE90FFBC0D364650B16151A350D54DF7 /* DETimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB5C44DB91E2F8F07C81E6820D423E8 /* DETimeExpressionParser.swift */; };
+		EF2297DCDAD06152E56FEC8A7525E47E /* JPCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF45B44B4F62FC5EA0FE2774789417 /* JPCasualDateParser.swift */; };
+		EF776273464CFD4A36A60CD7CE9CD6F4 /* DEUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014EB3E81409BC252BEDC3E4F6BEA1D /* DEUtil.swift */; };
+		EF88B7C0AFD6FCA60F460A309C63C316 /* ZHDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823DB4C0E3A58F103F15ED8125E441C1 /* ZHDateParser.swift */; };
+		F0D8E2E7B8C3BC938DE10139A276F022 /* DEDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5484B0D098A83E9E7D232781CDEBC213 /* DEDeadlineFormatParser.swift */; };
+		F2BACCCA097E5BBA938CCDECD5410AEB /* ENMonthNameMiddleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DCB2688131A7567AAE77DBCFBCFB85 /* ENMonthNameMiddleEndianParser.swift */; };
+		F44AC0F3FEEBCEB43481C2239015E91F /* FRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D4F1548DD21DCC54B059452A7B9464 /* FRUtil.swift */; };
+		F8D0C365A03333734000CAFCD4F90933 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32FB3987CA4A863E30F2A04764C4CF /* Util.swift */; };
+		FA0E5C4CC9D7FB4F03951AEF8BA04E74 /* FRSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D62A0FF29515E3B1B8449CE4E31F52 /* FRSlashDateFormatParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,119 +119,119 @@
 
 /* Begin PBXFileReference section */
 		01C024395319E1974D141592AC3BC190 /* Pods-ClendarTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ClendarTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0215E712F1055F246D2D7B2FFE3EA0E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02955F161FF5EDEA8DB92BB9922EBEDB /* DETimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DETimeAgoFormatParser.swift; path = Sources/Parsers/DE/DETimeAgoFormatParser.swift; sourceTree = "<group>"; };
-		045798C0DB61F339873B88581F2303A5 /* ZHTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHTimeExpressionParser.swift; path = Sources/Parsers/ZH/ZHTimeExpressionParser.swift; sourceTree = "<group>"; };
 		049EAF35BBAB2BC1171F8793FA69E08B /* Pods-ClendarUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ClendarUITests.modulemap"; sourceTree = "<group>"; };
 		05F62A955F0C2F8E5C6D89C143B5AF47 /* Pods-ClendarTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClendarTests-dummy.m"; sourceTree = "<group>"; };
-		076EA5C558CF830F2B2B6C8BD3900DA0 /* DEMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMonthNameLittleEndianParser.swift; path = Sources/Parsers/DE/DEMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
-		093E0E56795F752347EDDA8981A58148 /* SwiftyChrono.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyChrono.modulemap; sourceTree = "<group>"; };
-		09C3B39FB4A1EBFB942C1917CFE51FB6 /* MergeDataRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MergeDataRangeRefiner.swift; path = Sources/Refiners/MergeDataRangeRefiner.swift; sourceTree = "<group>"; };
 		0E1FD58033512981980DC84A257A6E87 /* SwiftyChrono.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyChrono.framework; path = SwiftyChrono.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		102086FC04544D81B36D459EF60BF5D7 /* ESTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESTimeExpressionParser.swift; path = Sources/Parsers/ES/ESTimeExpressionParser.swift; sourceTree = "<group>"; };
-		11FD259C03901AA6E7C4FAEDDB6D8731 /* ENRelativeDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENRelativeDateFormatParser.swift; path = Sources/Parsers/EN/ENRelativeDateFormatParser.swift; sourceTree = "<group>"; };
-		1225A3283579EF9BF9BA675405A5FFBB /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Sources/Utils/Util.swift; sourceTree = "<group>"; };
-		12CC3C44A5DFDACF7350277FC477D24F /* ENCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENCasualDateParser.swift; path = Sources/Parsers/EN/ENCasualDateParser.swift; sourceTree = "<group>"; };
-		12FFC28E93C06F36E408159F0D0D2EDF /* ENISOFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENISOFormatParser.swift; path = Sources/Parsers/EN/ENISOFormatParser.swift; sourceTree = "<group>"; };
-		149E47A84A1631DFD32EA81FC80B0BF0 /* ENTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENTimeExpressionParser.swift; path = Sources/Parsers/EN/ENTimeExpressionParser.swift; sourceTree = "<group>"; };
+		11A92C3FF08460EAD097ACDCB2719BBB /* ENDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENDeadlineFormatParser.swift; path = Sources/Parsers/EN/ENDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		135909C6CE771AD9249CCA848CBE81AA /* ESWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESWeekdayParser.swift; path = Sources/Parsers/ES/ESWeekdayParser.swift; sourceTree = "<group>"; };
 		16A8550B943A5DA5CDC91DD6EA56C6A9 /* Pods-ClendarUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClendarUITests-umbrella.h"; sourceTree = "<group>"; };
-		1706477922F7B3037194704AEE415454 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parsers/Parser.swift; sourceTree = "<group>"; };
 		1833465E4D6C9DE2B0FCB1AD92804124 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		197E23F42A3D7365906DDAA3B73A04FB /* ZHWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHWeekdayParser.swift; path = Sources/Parsers/ZH/ZHWeekdayParser.swift; sourceTree = "<group>"; };
-		1A425AD282AB03196DF5431611855C23 /* ENMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameLittleEndianParser.swift; path = Sources/Parsers/EN/ENMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
-		1C8950545CE55092D16DE26A2C1B5175 /* ExtractTimezoneOffsetRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtractTimezoneOffsetRefiner.swift; path = Sources/Refiners/ExtractTimezoneOffsetRefiner.swift; sourceTree = "<group>"; };
-		1C97D1075F61621B0AB2DFCD57621F00 /* ExtractTimezoneAbbrRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtractTimezoneAbbrRefiner.swift; path = Sources/Refiners/ExtractTimezoneAbbrRefiner.swift; sourceTree = "<group>"; };
-		1ECF008214E269B2826CF5BC28D0676E /* FRMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMergeDateRangeRefiner.swift; path = Sources/Refiners/FR/FRMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
-		202DFDE3CA8E52FD739A4750337CC6D8 /* FRUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRUtil.swift; path = Sources/Utils/FRUtil.swift; sourceTree = "<group>"; };
-		2187631C39FD33C43082ADBB2D344D6E /* DEWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEWeekdayParser.swift; path = Sources/Parsers/DE/DEWeekdayParser.swift; sourceTree = "<group>"; };
+		199DA712F734B6048B51F046D424F50B /* ENMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMergeDateRangeRefiner.swift; path = Sources/Refiners/EN/ENMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
+		2325DD7FED309C47CE38A94CD36BEE66 /* SwiftyChrono-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyChrono-umbrella.h"; sourceTree = "<group>"; };
 		24390EFD555DD124430DFF9724065945 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2468ED139E82CE561C841D02BEFFE4C1 /* SwiftyChrono.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyChrono.xcconfig; sourceTree = "<group>"; };
+		269F91F70B0958D9324078C11236E281 /* JPStandardParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPStandardParser.swift; path = Sources/Parsers/JP/JPStandardParser.swift; sourceTree = "<group>"; };
+		298F232C263956A3C4190C0B4323C30E /* FRMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMergeDateRangeRefiner.swift; path = Sources/Refiners/FR/FRMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
 		2B57871887F08C5917AEBAA89043A929 /* Pods-Clendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Clendar-umbrella.h"; sourceTree = "<group>"; };
+		2B59E226F0B24A8BBC94D2D3D75C2BEC /* FRMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMergeDateTimeRefiner.swift; path = Sources/Refiners/FR/FRMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
 		2BB48EB4ED9607B04FDE131541673ED0 /* Pods-ClendarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ClendarTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		2CFA47BB4F2A3721C4C9F575E0568E17 /* ENMonthNameParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameParser.swift; path = Sources/Parsers/EN/ENMonthNameParser.swift; sourceTree = "<group>"; };
-		2F533854468BEE8AFC0BC3AE9F256E5E /* SwiftyChrono-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyChrono-dummy.m"; sourceTree = "<group>"; };
+		2C5DD89C3C651D44B63E0C03C6B82D54 /* UnlikelyFormatFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnlikelyFormatFilter.swift; path = Sources/Refiners/UnlikelyFormatFilter.swift; sourceTree = "<group>"; };
+		2CF8F7C79B709EFF923C6C4DB2BC6AC3 /* ExtractTimezoneAbbrRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtractTimezoneAbbrRefiner.swift; path = Sources/Refiners/ExtractTimezoneAbbrRefiner.swift; sourceTree = "<group>"; };
+		2F6EA039ECC375EA3A1DACA0640EAD6A /* ENPrioritizeSpecificDateRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENPrioritizeSpecificDateRefiner.swift; path = Sources/Refiners/EN/ENPrioritizeSpecificDateRefiner.swift; sourceTree = "<group>"; };
 		30C30CE59864584C2BA08545A82FAF79 /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
-		390F10E981F1E589AA1AE611A19E53C1 /* ZHDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHDeadlineFormatParser.swift; path = Sources/Parsers/ZH/ZHDeadlineFormatParser.swift; sourceTree = "<group>"; };
-		3CCF749526653FA34A3523D194E2AD65 /* ESMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESMonthNameLittleEndianParser.swift; path = Sources/Parsers/ES/ESMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
-		40C2BC964CC1F542C3BFAB6F912A8044 /* UnlikelyFormatFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnlikelyFormatFilter.swift; path = Sources/Refiners/UnlikelyFormatFilter.swift; sourceTree = "<group>"; };
+		39471B70689A12CD6F4414798B2F84AC /* ENCasualTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENCasualTimeParser.swift; path = Sources/Parsers/EN/ENCasualTimeParser.swift; sourceTree = "<group>"; };
+		3A564B290581FBB899B38C0F17BC0E3B /* DECasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DECasualDateParser.swift; path = Sources/Parsers/DE/DECasualDateParser.swift; sourceTree = "<group>"; };
+		3DAE825FE8FECA00BDB433B083FE54BE /* ForwardDateRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForwardDateRefiner.swift; path = Sources/Refiners/ForwardDateRefiner.swift; sourceTree = "<group>"; };
+		417310884DD7D94419FD3E90F6D03A9C /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = Sources/Options.swift; sourceTree = "<group>"; };
 		4368E93CF7493BF5D80E7B907324D805 /* Pods-ClendarUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ClendarUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		442F569E95E5504607F4B0D524E3BDA5 /* DEMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMergeDateRangeRefiner.swift; path = Sources/Refiners/DE/DEMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
+		437C7024538F78E46790BE036D72DED7 /* MergeDataRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MergeDataRangeRefiner.swift; path = Sources/Refiners/MergeDataRangeRefiner.swift; sourceTree = "<group>"; };
+		44D4F1548DD21DCC54B059452A7B9464 /* FRUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRUtil.swift; path = Sources/Utils/FRUtil.swift; sourceTree = "<group>"; };
+		45A8D31D2F92E85BD8EE375BC62F7D3C /* ESMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESMonthNameLittleEndianParser.swift; path = Sources/Parsers/ES/ESMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
 		47C7BAB2A9B3DA01AEF5C91703F6B688 /* Pods-Clendar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Clendar-acknowledgements.plist"; sourceTree = "<group>"; };
-		4F8F60133C6A4B2EAF3D029EB93C9FAC /* SwiftyChrono-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyChrono-umbrella.h"; sourceTree = "<group>"; };
+		495633B74046C6D6573833BBC21F7D16 /* FRTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRTimeAgoFormatParser.swift; path = Sources/Parsers/FR/FRTimeAgoFormatParser.swift; sourceTree = "<group>"; };
+		4FD90D48FD39F0FDE420A18FEFDE37C2 /* DECasualTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DECasualTimeParser.swift; path = Sources/Parsers/DE/DECasualTimeParser.swift; sourceTree = "<group>"; };
 		5037D5E897EB16F672BB13EAEDC05453 /* Pods-ClendarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClendarUITests-dummy.m"; sourceTree = "<group>"; };
-		53516B1E03A8F15F72D10DFD5C6C3DD1 /* JPUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPUtil.swift; path = Sources/Utils/JPUtil.swift; sourceTree = "<group>"; };
-		5536B1E5AF9D2EF49DF48B9445631DC2 /* FRCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRCasualDateParser.swift; path = Sources/Parsers/FR/FRCasualDateParser.swift; sourceTree = "<group>"; };
-		5A016BE5D9125B72E84FC95B03FA61C3 /* ESCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESCasualDateParser.swift; path = Sources/Parsers/ES/ESCasualDateParser.swift; sourceTree = "<group>"; };
-		5A4F8820FBFE7D57D19852DD149E2F16 /* DEUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEUtil.swift; path = Sources/Utils/DEUtil.swift; sourceTree = "<group>"; };
+		51C641E536BB04FD947CFAF463CD15AD /* FRCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRCasualDateParser.swift; path = Sources/Parsers/FR/FRCasualDateParser.swift; sourceTree = "<group>"; };
+		53A119538544E6E474C5DE0E492D580E /* DEMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMonthNameLittleEndianParser.swift; path = Sources/Parsers/DE/DEMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
+		5484B0D098A83E9E7D232781CDEBC213 /* DEDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEDeadlineFormatParser.swift; path = Sources/Parsers/DE/DEDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		57B07D6783D95677911A1498F2FFA835 /* DEMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMergeDateRangeRefiner.swift; path = Sources/Refiners/DE/DEMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
+		58236156F894D8F74952E2333BC16E2B /* Chrono.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chrono.swift; path = Sources/Chrono.swift; sourceTree = "<group>"; };
+		59E8C0FB1AE983663759A32488179A19 /* MergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MergeDateTimeRefiner.swift; path = Sources/Refiners/MergeDateTimeRefiner.swift; sourceTree = "<group>"; };
 		5B6EB4071E6855A645CE62C0A47DF7CB /* Pods-ClendarUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClendarUITests-frameworks.sh"; sourceTree = "<group>"; };
-		5D3065C5C4AA00C3A79E205316BBC9BD /* ENCasualTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENCasualTimeParser.swift; path = Sources/Parsers/EN/ENCasualTimeParser.swift; sourceTree = "<group>"; };
-		5E5603853C801FB375E3CD5B1DEF60A9 /* ENMonthNameMiddleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameMiddleEndianParser.swift; path = Sources/Parsers/EN/ENMonthNameMiddleEndianParser.swift; sourceTree = "<group>"; };
-		5EAD76BA454D69A438CC61402C6817A8 /* DECasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DECasualDateParser.swift; path = Sources/Parsers/DE/DECasualDateParser.swift; sourceTree = "<group>"; };
+		5BCEF405439ABDAF4627C42BE4431D8B /* FRTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRTimeExpressionParser.swift; path = Sources/Parsers/FR/FRTimeExpressionParser.swift; sourceTree = "<group>"; };
+		5EA72A49A65F8D35C0A8AE24A59FB480 /* ESTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESTimeExpressionParser.swift; path = Sources/Parsers/ES/ESTimeExpressionParser.swift; sourceTree = "<group>"; };
+		60CC415E244FA00A4CBA11827712958D /* JPMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPMergeDateRangeRefiner.swift; path = Sources/Refiners/JP/JPMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
+		63BBDB8262BB120D121269C7DF146568 /* Refiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Refiner.swift; path = Sources/Refiners/Refiner.swift; sourceTree = "<group>"; };
+		64D62A0FF29515E3B1B8449CE4E31F52 /* FRSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRSlashDateFormatParser.swift; path = Sources/Parsers/FR/FRSlashDateFormatParser.swift; sourceTree = "<group>"; };
 		657CC525C237C437D42DC7F8C477B8BF /* Pods-ClendarTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClendarTests-resources.sh"; sourceTree = "<group>"; };
 		66034217760921EB2A5C0A3725D43530 /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
-		667369BF89F822EA3DF783CCB2F5A1F3 /* FRWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRWeekdayParser.swift; path = Sources/Parsers/FR/FRWeekdayParser.swift; sourceTree = "<group>"; };
-		683C6BDE2CFFF384BD8AB8DB4A14FEFB /* DESlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DESlashDateFormatParser.swift; path = Sources/Parsers/DE/DESlashDateFormatParser.swift; sourceTree = "<group>"; };
-		68E619BE4C4E9D0A2434FCF4C169234C /* Options.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Options.swift; path = Sources/Options.swift; sourceTree = "<group>"; };
-		6A0495944C290D23E1BB5571F8CFA635 /* FRMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMonthNameLittleEndianParser.swift; path = Sources/Parsers/FR/FRMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
 		6BAC3F596E93CEE7928181112115D199 /* Pods-Clendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Clendar.modulemap"; sourceTree = "<group>"; };
-		6DB5B1E9B9281F388ECAAF0F30BA8AEC /* ENSlashMonthFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashMonthFormatParser.swift; path = Sources/Parsers/EN/ENSlashMonthFormatParser.swift; sourceTree = "<group>"; };
-		7758E7A60069D9C3D655D208A444349D /* ENPrioritizeSpecificDateRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENPrioritizeSpecificDateRefiner.swift; path = Sources/Refiners/EN/ENPrioritizeSpecificDateRefiner.swift; sourceTree = "<group>"; };
-		77F995D4987C24BDF22CFB4CC60EA72B /* JPMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPMergeDateRangeRefiner.swift; path = Sources/Refiners/JP/JPMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
-		788BCA8E93A75F53D7827F29F43566E8 /* FRMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMergeDateTimeRefiner.swift; path = Sources/Refiners/FR/FRMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
-		7A4506D5E29528BFA877C5707FF84C43 /* ESUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESUtil.swift; path = Sources/Utils/ESUtil.swift; sourceTree = "<group>"; };
+		6D7B80DE52C8CC57D7F8D24D27825677 /* ENTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENTimeAgoFormatParser.swift; path = Sources/Parsers/EN/ENTimeAgoFormatParser.swift; sourceTree = "<group>"; };
+		722D39C0CE05027392BA4656926A6CA8 /* ENSlashDateFormatStartWithYearParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatStartWithYearParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatStartWithYearParser.swift; sourceTree = "<group>"; };
+		7577B2EFA32A7E50AF4231FA1E370CEB /* ZHTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHTimeExpressionParser.swift; path = Sources/Parsers/ZH/ZHTimeExpressionParser.swift; sourceTree = "<group>"; };
+		7AB5C44DB91E2F8F07C81E6820D423E8 /* DETimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DETimeExpressionParser.swift; path = Sources/Parsers/DE/DETimeExpressionParser.swift; sourceTree = "<group>"; };
 		7B65BBF3A0C20469A7E96FE3957D0DCA /* Pods-Clendar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Clendar-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7BE3EB506E8304A47F4FDC790EEF2201 /* ENSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatParser.swift; sourceTree = "<group>"; };
-		7FAAA8C7DCE07A6A792CE6A6323F05A4 /* DECasualTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DECasualTimeParser.swift; path = Sources/Parsers/DE/DECasualTimeParser.swift; sourceTree = "<group>"; };
-		8255EAEA2BE5CC551DBA7A9A810679F2 /* JPStandardParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPStandardParser.swift; path = Sources/Parsers/JP/JPStandardParser.swift; sourceTree = "<group>"; };
-		827B96B89E388A0D9DFC9D7DA019FCAC /* OverlapRemovalRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlapRemovalRefiner.swift; path = Sources/Refiners/OverlapRemovalRefiner.swift; sourceTree = "<group>"; };
+		7BBCF3642F0C094AC533E1A98FFC00BF /* ENCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENCasualDateParser.swift; path = Sources/Parsers/EN/ENCasualDateParser.swift; sourceTree = "<group>"; };
+		7E2C19C5EED89798077A101BC72497F9 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Utils/Date.swift; sourceTree = "<group>"; };
+		823DB4C0E3A58F103F15ED8125E441C1 /* ZHDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHDateParser.swift; path = Sources/Parsers/ZH/ZHDateParser.swift; sourceTree = "<group>"; };
+		82B75D3B4E7CA78C5070F2191AF98CA3 /* FRDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRDeadlineFormatParser.swift; path = Sources/Parsers/FR/FRDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		83F4D97BDC5D4E9A55766F2C621391C4 /* ZHCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHCasualDateParser.swift; path = Sources/Parsers/ZH/ZHCasualDateParser.swift; sourceTree = "<group>"; };
+		85DCB2688131A7567AAE77DBCFBCFB85 /* ENMonthNameMiddleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameMiddleEndianParser.swift; path = Sources/Parsers/EN/ENMonthNameMiddleEndianParser.swift; sourceTree = "<group>"; };
+		85E5E230072FEC95E79AD2A950329370 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
 		8921A7307FE92BBFD596F6C69A8C4167 /* Pods-ClendarTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ClendarTests.modulemap"; sourceTree = "<group>"; };
+		8C737A9E46E072E881BDA38421254C7E /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parsers/Parser.swift; sourceTree = "<group>"; };
 		8CAE62D9CFFDD1D5AC6D4F4F8302519C /* Pods-ClendarUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ClendarUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8D5349ED76569FAB08F6C2920FF964E8 /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
-		8D95B523279E8C239A672486ED4EFF84 /* ESTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESTimeAgoFormatParser.swift; path = Sources/Parsers/ES/ESTimeAgoFormatParser.swift; sourceTree = "<group>"; };
-		8EF627A06D19EBF5FA8F7A3681996EF1 /* SwiftyChrono.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyChrono.xcconfig; sourceTree = "<group>"; };
-		93AC28A105C9B548137953DFE4DB2C0A /* JPCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPCasualDateParser.swift; path = Sources/Parsers/JP/JPCasualDateParser.swift; sourceTree = "<group>"; };
-		93EC1002CB3EBAEFF44DA9124889B379 /* MergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MergeDateTimeRefiner.swift; path = Sources/Refiners/MergeDateTimeRefiner.swift; sourceTree = "<group>"; };
-		943EC82F60C2CB27FFC1D1620E1F1650 /* Refiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Refiner.swift; path = Sources/Refiners/Refiner.swift; sourceTree = "<group>"; };
-		9553FE9C19ED9A846F1A8763583B0578 /* ENWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENWeekdayParser.swift; path = Sources/Parsers/EN/ENWeekdayParser.swift; sourceTree = "<group>"; };
+		8F5165E8DE91C972668DA591852FCD88 /* OverlapRemovalRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlapRemovalRefiner.swift; path = Sources/Refiners/OverlapRemovalRefiner.swift; sourceTree = "<group>"; };
+		90742F60E6217309EF89B45AE2595A74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91CC7B588501F24E07A8E2B57A953928 /* ENSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatParser.swift; sourceTree = "<group>"; };
+		96CF8CC1F139B14E44D298C4ADFB4E60 /* ESUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESUtil.swift; path = Sources/Utils/ESUtil.swift; sourceTree = "<group>"; };
 		9776B7A109145F1D6F79FA77E03ADBE1 /* Pods-ClendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		9778304942EEAA7EC9A5939E8F7A4924 /* DEMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMergeDateTimeRefiner.swift; path = Sources/Refiners/DE/DEMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
 		97AD4D8407A107DB0E2F325A71DA7933 /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ClendarUITests.framework; path = "Pods-ClendarUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		97E31F783784892063F7A066BBB55C36 /* FRDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRDeadlineFormatParser.swift; path = Sources/Parsers/FR/FRDeadlineFormatParser.swift; sourceTree = "<group>"; };
-		9815B8359655066E75744D89274F23DD /* DEMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMergeDateTimeRefiner.swift; path = Sources/Refiners/DE/DEMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
-		9871E873441F2A1C1700E7B609FC47BF /* DETimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DETimeExpressionParser.swift; path = Sources/Parsers/DE/DETimeExpressionParser.swift; sourceTree = "<group>"; };
+		98369EB521CD81665BC9A55D692156EC /* SwiftyChrono.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyChrono.modulemap; sourceTree = "<group>"; };
 		998EF76C6436A233E5F49517DA122D99 /* Pods-ClendarTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClendarTests-frameworks.sh"; sourceTree = "<group>"; };
-		9B1D2C99113D245EEBCC333EDBA4E60C /* SwiftyChrono-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyChrono-prefix.pch"; sourceTree = "<group>"; };
-		9BC226DA391726E6848E63B3D6A9BFFF /* ENMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMergeDateTimeRefiner.swift; path = Sources/Refiners/EN/ENMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
+		9FF6932D1A8BDA00FECC4C246A88CD08 /* ENMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameLittleEndianParser.swift; path = Sources/Parsers/EN/ENMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
+		A00C10582203CCC77B30F83D70145E11 /* ESCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESCasualDateParser.swift; path = Sources/Parsers/ES/ESCasualDateParser.swift; sourceTree = "<group>"; };
+		A2FF45B44B4F62FC5EA0FE2774789417 /* JPCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPCasualDateParser.swift; path = Sources/Parsers/JP/JPCasualDateParser.swift; sourceTree = "<group>"; };
 		A36457A774EA542F4F0CD8AEEEFFE70E /* Pods-ClendarTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ClendarTests-umbrella.h"; sourceTree = "<group>"; };
-		A64D4885612679A4F030BC91B4ABA45B /* FRSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRSlashDateFormatParser.swift; path = Sources/Parsers/FR/FRSlashDateFormatParser.swift; sourceTree = "<group>"; };
+		A41420722217A66E52CEC55C5888938B /* FRWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRWeekdayParser.swift; path = Sources/Parsers/FR/FRWeekdayParser.swift; sourceTree = "<group>"; };
+		A439603E6D16643C578EE63C40D208F0 /* ENUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENUtil.swift; path = Sources/Utils/ENUtil.swift; sourceTree = "<group>"; };
+		A6F6318B76F0ADAC70CEDC005846243F /* ESDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESDeadlineFormatParser.swift; path = Sources/Parsers/ES/ESDeadlineFormatParser.swift; sourceTree = "<group>"; };
 		AD39B4BEE2F31FAD44648C91B48F3669 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD91C45472ACF3ED352A0EAB61A0BF5D /* Pods-ClendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ClendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B09A3078623162933B49C33E79844479 /* Pods-ClendarUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ClendarUITests-resources.sh"; sourceTree = "<group>"; };
-		B37996C5D178FA40B42CC201BD5B49D7 /* ZHUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHUtil.swift; path = Sources/Utils/ZHUtil.swift; sourceTree = "<group>"; };
+		B37DE1266F7D5CD5C465FB9DA50D7861 /* DEWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEWeekdayParser.swift; path = Sources/Parsers/DE/DEWeekdayParser.swift; sourceTree = "<group>"; };
+		B4CC36472A0BC17F081844AD022F43F0 /* ZHWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHWeekdayParser.swift; path = Sources/Parsers/ZH/ZHWeekdayParser.swift; sourceTree = "<group>"; };
 		B57A488C28538ED28AFE66BF2D5B048C /* Pods_ClendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ClendarTests.framework; path = "Pods-ClendarTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC8D43182F24680AFE022D1A3AEC3BAC /* ESDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESDeadlineFormatParser.swift; path = Sources/Parsers/ES/ESDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		B57E680F0A96AE82B17F6EE9834441D1 /* ZHDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHDeadlineFormatParser.swift; path = Sources/Parsers/ZH/ZHDeadlineFormatParser.swift; sourceTree = "<group>"; };
 		C028949E091C91A9AC766DC2F94D28AC /* Pods-Clendar-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Clendar-resources.sh"; sourceTree = "<group>"; };
-		C079A049539E26A112C2A13A4DCB6EAC /* ESWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESWeekdayParser.swift; path = Sources/Parsers/ES/ESWeekdayParser.swift; sourceTree = "<group>"; };
-		C121C1A09C4E517D852FE6779C818B6E /* FRTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRTimeAgoFormatParser.swift; path = Sources/Parsers/FR/FRTimeAgoFormatParser.swift; sourceTree = "<group>"; };
-		C2E9B2BBC36DA5771735694CA01B38E6 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
-		C2FF75A270C85C40CC194D3CA428E7EA /* DEMorgenTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMorgenTimeParser.swift; path = Sources/Parsers/DE/DEMorgenTimeParser.swift; sourceTree = "<group>"; };
-		C6184B71D6FE574FE8CEFFB98DACA223 /* ENUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENUtil.swift; path = Sources/Utils/ENUtil.swift; sourceTree = "<group>"; };
+		C42B3B9C5D34AC8308CA36E9127FF998 /* ENSlashMonthFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashMonthFormatParser.swift; path = Sources/Parsers/EN/ENSlashMonthFormatParser.swift; sourceTree = "<group>"; };
+		C899561E3BA174684F279F5C6FB80791 /* FRMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMonthNameLittleEndianParser.swift; path = Sources/Parsers/FR/FRMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
+		C8F7783377F7F74C19A7F6D6540AD432 /* ENMonthNameParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMonthNameParser.swift; path = Sources/Parsers/EN/ENMonthNameParser.swift; sourceTree = "<group>"; };
+		CB3CC9AB9C0392956240C0330EE09551 /* DETimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DETimeAgoFormatParser.swift; path = Sources/Parsers/DE/DETimeAgoFormatParser.swift; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CC6BEF8D38EBA934FF037199245DF09F /* Pods-Clendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Clendar-dummy.m"; sourceTree = "<group>"; };
+		CF640CEE64C3AB245D9BCE22116035FD /* DEMorgenTimeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMorgenTimeParser.swift; path = Sources/Parsers/DE/DEMorgenTimeParser.swift; sourceTree = "<group>"; };
+		CFB56A5880FA1D24DC8D27B55C17BB2E /* JPUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPUtil.swift; path = Sources/Utils/JPUtil.swift; sourceTree = "<group>"; };
 		D2DD51EFFB8738A8E572E07E9D2B6951 /* Pods-Clendar-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Clendar-frameworks.sh"; sourceTree = "<group>"; };
+		D460630A2EA802B2D283DDD7277C3A76 /* ESTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESTimeAgoFormatParser.swift; path = Sources/Parsers/ES/ESTimeAgoFormatParser.swift; sourceTree = "<group>"; };
+		D50501F1E11832B65DCE0FE0F712EA6D /* ESSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESSlashDateFormatParser.swift; path = Sources/Parsers/ES/ESSlashDateFormatParser.swift; sourceTree = "<group>"; };
 		D589C9F1AAF4CA4E01F639EC3DFC37EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9C3B4D3F55848E0C8EC40D4B8C61F1F /* ENMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMergeDateRangeRefiner.swift; path = Sources/Refiners/EN/ENMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
-		DACD6C5C5222C9514537E5F69757A0BC /* ZHCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHCasualDateParser.swift; path = Sources/Parsers/ZH/ZHCasualDateParser.swift; sourceTree = "<group>"; };
-		E0306283A8E683AE1A8AFBA1D94FFC1A /* ForwardDateRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ForwardDateRefiner.swift; path = Sources/Refiners/ForwardDateRefiner.swift; sourceTree = "<group>"; };
-		E1AF72AED4D638C9BB5FD12A5E64906E /* ENDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENDeadlineFormatParser.swift; path = Sources/Parsers/EN/ENDeadlineFormatParser.swift; sourceTree = "<group>"; };
+		D6BF22D5B5DAA3EDD10E25F3B671FD62 /* SwiftyChrono-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyChrono-dummy.m"; sourceTree = "<group>"; };
+		DE32FB3987CA4A863E30F2A04764C4CF /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Sources/Utils/Util.swift; sourceTree = "<group>"; };
+		DE8F3DBC539FC4BA2BA6A0BE87F58107 /* ENISOFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENISOFormatParser.swift; path = Sources/Parsers/EN/ENISOFormatParser.swift; sourceTree = "<group>"; };
+		E4ACB6438503DBA118DE7710D330DD5F /* ENWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENWeekdayParser.swift; path = Sources/Parsers/EN/ENWeekdayParser.swift; sourceTree = "<group>"; };
+		E50E1566EA91E96F4ABA1DBB836E5A96 /* ENMergeDateTimeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENMergeDateTimeRefiner.swift; path = Sources/Refiners/EN/ENMergeDateTimeRefiner.swift; sourceTree = "<group>"; };
+		E55106A14F3F5A114B9C08C3BA7FD32C /* ENTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENTimeExpressionParser.swift; path = Sources/Parsers/EN/ENTimeExpressionParser.swift; sourceTree = "<group>"; };
 		EA136C9EEFC129B4B83448D1387FF294 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA269F86E0C1AC118D13BD98B98F8109 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Clendar.framework; path = "Pods-Clendar.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDA69C5A721BF702A5E6719A1A4087A2 /* ENSlashDateFormatStartWithYearParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatStartWithYearParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatStartWithYearParser.swift; sourceTree = "<group>"; };
-		F12E9DF7CA2D6C3FA0AA87F27B7904A3 /* DEDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEDeadlineFormatParser.swift; path = Sources/Parsers/DE/DEDeadlineFormatParser.swift; sourceTree = "<group>"; };
-		F2C912A387FA116651AECBB9F847912D /* ESSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESSlashDateFormatParser.swift; path = Sources/Parsers/ES/ESSlashDateFormatParser.swift; sourceTree = "<group>"; };
-		F7BB307BECD7645E7928D9F54C9C408A /* ENTimeAgoFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENTimeAgoFormatParser.swift; path = Sources/Parsers/EN/ENTimeAgoFormatParser.swift; sourceTree = "<group>"; };
-		F8D1248CB197B5A55B001041270C4000 /* FRTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRTimeExpressionParser.swift; path = Sources/Parsers/FR/FRTimeExpressionParser.swift; sourceTree = "<group>"; };
-		FB5DF101DDD1475BD6F1D66F138E3882 /* ZHDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHDateParser.swift; path = Sources/Parsers/ZH/ZHDateParser.swift; sourceTree = "<group>"; };
-		FE085C472A8818D906C1FD8A097B6E24 /* Chrono.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chrono.swift; path = Sources/Chrono.swift; sourceTree = "<group>"; };
-		FED17B746BC2093779BE10F5F019E77B /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Utils/Date.swift; sourceTree = "<group>"; };
+		EA475D17BEE94D369017A1F16369E5A2 /* DESlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DESlashDateFormatParser.swift; path = Sources/Parsers/DE/DESlashDateFormatParser.swift; sourceTree = "<group>"; };
+		EB0CC6CDA4168B860AD5A9923D99F536 /* SwiftyChrono-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyChrono-prefix.pch"; sourceTree = "<group>"; };
+		F014EB3E81409BC252BEDC3E4F6BEA1D /* DEUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEUtil.swift; path = Sources/Utils/DEUtil.swift; sourceTree = "<group>"; };
+		F8D883B23EBB71F0BCCA46A9DB978736 /* ZHUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHUtil.swift; path = Sources/Utils/ZHUtil.swift; sourceTree = "<group>"; };
+		FB1E47A0B63189CE716DB8178C2A3951 /* ENRelativeDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENRelativeDateFormatParser.swift; path = Sources/Parsers/EN/ENRelativeDateFormatParser.swift; sourceTree = "<group>"; };
+		FCB3FC78600CC0E7AB51BD9B81FAB2B0 /* ExtractTimezoneOffsetRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtractTimezoneOffsetRefiner.swift; path = Sources/Refiners/ExtractTimezoneOffsetRefiner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,85 +270,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42E0342AEA09997C24B307C473C6AA97 /* SwiftyChrono */ = {
+		15A71A6BD2300026B228C0FAC2DAE6F9 /* SwiftyChrono */ = {
 			isa = PBXGroup;
 			children = (
-				FE085C472A8818D906C1FD8A097B6E24 /* Chrono.swift */,
-				FED17B746BC2093779BE10F5F019E77B /* Date.swift */,
-				5EAD76BA454D69A438CC61402C6817A8 /* DECasualDateParser.swift */,
-				7FAAA8C7DCE07A6A792CE6A6323F05A4 /* DECasualTimeParser.swift */,
-				F12E9DF7CA2D6C3FA0AA87F27B7904A3 /* DEDeadlineFormatParser.swift */,
-				442F569E95E5504607F4B0D524E3BDA5 /* DEMergeDateRangeRefiner.swift */,
-				9815B8359655066E75744D89274F23DD /* DEMergeDateTimeRefiner.swift */,
-				076EA5C558CF830F2B2B6C8BD3900DA0 /* DEMonthNameLittleEndianParser.swift */,
-				C2FF75A270C85C40CC194D3CA428E7EA /* DEMorgenTimeParser.swift */,
-				683C6BDE2CFFF384BD8AB8DB4A14FEFB /* DESlashDateFormatParser.swift */,
-				02955F161FF5EDEA8DB92BB9922EBEDB /* DETimeAgoFormatParser.swift */,
-				9871E873441F2A1C1700E7B609FC47BF /* DETimeExpressionParser.swift */,
-				5A4F8820FBFE7D57D19852DD149E2F16 /* DEUtil.swift */,
-				2187631C39FD33C43082ADBB2D344D6E /* DEWeekdayParser.swift */,
-				12CC3C44A5DFDACF7350277FC477D24F /* ENCasualDateParser.swift */,
-				5D3065C5C4AA00C3A79E205316BBC9BD /* ENCasualTimeParser.swift */,
-				E1AF72AED4D638C9BB5FD12A5E64906E /* ENDeadlineFormatParser.swift */,
-				12FFC28E93C06F36E408159F0D0D2EDF /* ENISOFormatParser.swift */,
-				D9C3B4D3F55848E0C8EC40D4B8C61F1F /* ENMergeDateRangeRefiner.swift */,
-				9BC226DA391726E6848E63B3D6A9BFFF /* ENMergeDateTimeRefiner.swift */,
-				1A425AD282AB03196DF5431611855C23 /* ENMonthNameLittleEndianParser.swift */,
-				5E5603853C801FB375E3CD5B1DEF60A9 /* ENMonthNameMiddleEndianParser.swift */,
-				2CFA47BB4F2A3721C4C9F575E0568E17 /* ENMonthNameParser.swift */,
-				7758E7A60069D9C3D655D208A444349D /* ENPrioritizeSpecificDateRefiner.swift */,
-				11FD259C03901AA6E7C4FAEDDB6D8731 /* ENRelativeDateFormatParser.swift */,
-				7BE3EB506E8304A47F4FDC790EEF2201 /* ENSlashDateFormatParser.swift */,
-				EDA69C5A721BF702A5E6719A1A4087A2 /* ENSlashDateFormatStartWithYearParser.swift */,
-				6DB5B1E9B9281F388ECAAF0F30BA8AEC /* ENSlashMonthFormatParser.swift */,
-				F7BB307BECD7645E7928D9F54C9C408A /* ENTimeAgoFormatParser.swift */,
-				149E47A84A1631DFD32EA81FC80B0BF0 /* ENTimeExpressionParser.swift */,
-				C6184B71D6FE574FE8CEFFB98DACA223 /* ENUtil.swift */,
-				9553FE9C19ED9A846F1A8763583B0578 /* ENWeekdayParser.swift */,
-				5A016BE5D9125B72E84FC95B03FA61C3 /* ESCasualDateParser.swift */,
-				BC8D43182F24680AFE022D1A3AEC3BAC /* ESDeadlineFormatParser.swift */,
-				3CCF749526653FA34A3523D194E2AD65 /* ESMonthNameLittleEndianParser.swift */,
-				F2C912A387FA116651AECBB9F847912D /* ESSlashDateFormatParser.swift */,
-				8D95B523279E8C239A672486ED4EFF84 /* ESTimeAgoFormatParser.swift */,
-				102086FC04544D81B36D459EF60BF5D7 /* ESTimeExpressionParser.swift */,
-				7A4506D5E29528BFA877C5707FF84C43 /* ESUtil.swift */,
-				C079A049539E26A112C2A13A4DCB6EAC /* ESWeekdayParser.swift */,
-				1C97D1075F61621B0AB2DFCD57621F00 /* ExtractTimezoneAbbrRefiner.swift */,
-				1C8950545CE55092D16DE26A2C1B5175 /* ExtractTimezoneOffsetRefiner.swift */,
-				E0306283A8E683AE1A8AFBA1D94FFC1A /* ForwardDateRefiner.swift */,
-				5536B1E5AF9D2EF49DF48B9445631DC2 /* FRCasualDateParser.swift */,
-				97E31F783784892063F7A066BBB55C36 /* FRDeadlineFormatParser.swift */,
-				1ECF008214E269B2826CF5BC28D0676E /* FRMergeDateRangeRefiner.swift */,
-				788BCA8E93A75F53D7827F29F43566E8 /* FRMergeDateTimeRefiner.swift */,
-				6A0495944C290D23E1BB5571F8CFA635 /* FRMonthNameLittleEndianParser.swift */,
-				A64D4885612679A4F030BC91B4ABA45B /* FRSlashDateFormatParser.swift */,
-				C121C1A09C4E517D852FE6779C818B6E /* FRTimeAgoFormatParser.swift */,
-				F8D1248CB197B5A55B001041270C4000 /* FRTimeExpressionParser.swift */,
-				202DFDE3CA8E52FD739A4750337CC6D8 /* FRUtil.swift */,
-				667369BF89F822EA3DF783CCB2F5A1F3 /* FRWeekdayParser.swift */,
-				93AC28A105C9B548137953DFE4DB2C0A /* JPCasualDateParser.swift */,
-				77F995D4987C24BDF22CFB4CC60EA72B /* JPMergeDateRangeRefiner.swift */,
-				8255EAEA2BE5CC551DBA7A9A810679F2 /* JPStandardParser.swift */,
-				53516B1E03A8F15F72D10DFD5C6C3DD1 /* JPUtil.swift */,
-				09C3B39FB4A1EBFB942C1917CFE51FB6 /* MergeDataRangeRefiner.swift */,
-				93EC1002CB3EBAEFF44DA9124889B379 /* MergeDateTimeRefiner.swift */,
-				68E619BE4C4E9D0A2434FCF4C169234C /* Options.swift */,
-				827B96B89E388A0D9DFC9D7DA019FCAC /* OverlapRemovalRefiner.swift */,
-				1706477922F7B3037194704AEE415454 /* Parser.swift */,
-				943EC82F60C2CB27FFC1D1620E1F1650 /* Refiner.swift */,
-				C2E9B2BBC36DA5771735694CA01B38E6 /* Result.swift */,
-				40C2BC964CC1F542C3BFAB6F912A8044 /* UnlikelyFormatFilter.swift */,
-				1225A3283579EF9BF9BA675405A5FFBB /* Util.swift */,
-				DACD6C5C5222C9514537E5F69757A0BC /* ZHCasualDateParser.swift */,
-				FB5DF101DDD1475BD6F1D66F138E3882 /* ZHDateParser.swift */,
-				390F10E981F1E589AA1AE611A19E53C1 /* ZHDeadlineFormatParser.swift */,
-				045798C0DB61F339873B88581F2303A5 /* ZHTimeExpressionParser.swift */,
-				B37996C5D178FA40B42CC201BD5B49D7 /* ZHUtil.swift */,
-				197E23F42A3D7365906DDAA3B73A04FB /* ZHWeekdayParser.swift */,
-				F0EBFEB11B09B6F0D56EE99DC9C0CD4C /* Support Files */,
+				58236156F894D8F74952E2333BC16E2B /* Chrono.swift */,
+				7E2C19C5EED89798077A101BC72497F9 /* Date.swift */,
+				3A564B290581FBB899B38C0F17BC0E3B /* DECasualDateParser.swift */,
+				4FD90D48FD39F0FDE420A18FEFDE37C2 /* DECasualTimeParser.swift */,
+				5484B0D098A83E9E7D232781CDEBC213 /* DEDeadlineFormatParser.swift */,
+				57B07D6783D95677911A1498F2FFA835 /* DEMergeDateRangeRefiner.swift */,
+				9778304942EEAA7EC9A5939E8F7A4924 /* DEMergeDateTimeRefiner.swift */,
+				53A119538544E6E474C5DE0E492D580E /* DEMonthNameLittleEndianParser.swift */,
+				CF640CEE64C3AB245D9BCE22116035FD /* DEMorgenTimeParser.swift */,
+				EA475D17BEE94D369017A1F16369E5A2 /* DESlashDateFormatParser.swift */,
+				CB3CC9AB9C0392956240C0330EE09551 /* DETimeAgoFormatParser.swift */,
+				7AB5C44DB91E2F8F07C81E6820D423E8 /* DETimeExpressionParser.swift */,
+				F014EB3E81409BC252BEDC3E4F6BEA1D /* DEUtil.swift */,
+				B37DE1266F7D5CD5C465FB9DA50D7861 /* DEWeekdayParser.swift */,
+				7BBCF3642F0C094AC533E1A98FFC00BF /* ENCasualDateParser.swift */,
+				39471B70689A12CD6F4414798B2F84AC /* ENCasualTimeParser.swift */,
+				11A92C3FF08460EAD097ACDCB2719BBB /* ENDeadlineFormatParser.swift */,
+				DE8F3DBC539FC4BA2BA6A0BE87F58107 /* ENISOFormatParser.swift */,
+				199DA712F734B6048B51F046D424F50B /* ENMergeDateRangeRefiner.swift */,
+				E50E1566EA91E96F4ABA1DBB836E5A96 /* ENMergeDateTimeRefiner.swift */,
+				9FF6932D1A8BDA00FECC4C246A88CD08 /* ENMonthNameLittleEndianParser.swift */,
+				85DCB2688131A7567AAE77DBCFBCFB85 /* ENMonthNameMiddleEndianParser.swift */,
+				C8F7783377F7F74C19A7F6D6540AD432 /* ENMonthNameParser.swift */,
+				2F6EA039ECC375EA3A1DACA0640EAD6A /* ENPrioritizeSpecificDateRefiner.swift */,
+				FB1E47A0B63189CE716DB8178C2A3951 /* ENRelativeDateFormatParser.swift */,
+				91CC7B588501F24E07A8E2B57A953928 /* ENSlashDateFormatParser.swift */,
+				722D39C0CE05027392BA4656926A6CA8 /* ENSlashDateFormatStartWithYearParser.swift */,
+				C42B3B9C5D34AC8308CA36E9127FF998 /* ENSlashMonthFormatParser.swift */,
+				6D7B80DE52C8CC57D7F8D24D27825677 /* ENTimeAgoFormatParser.swift */,
+				E55106A14F3F5A114B9C08C3BA7FD32C /* ENTimeExpressionParser.swift */,
+				A439603E6D16643C578EE63C40D208F0 /* ENUtil.swift */,
+				E4ACB6438503DBA118DE7710D330DD5F /* ENWeekdayParser.swift */,
+				A00C10582203CCC77B30F83D70145E11 /* ESCasualDateParser.swift */,
+				A6F6318B76F0ADAC70CEDC005846243F /* ESDeadlineFormatParser.swift */,
+				45A8D31D2F92E85BD8EE375BC62F7D3C /* ESMonthNameLittleEndianParser.swift */,
+				D50501F1E11832B65DCE0FE0F712EA6D /* ESSlashDateFormatParser.swift */,
+				D460630A2EA802B2D283DDD7277C3A76 /* ESTimeAgoFormatParser.swift */,
+				5EA72A49A65F8D35C0A8AE24A59FB480 /* ESTimeExpressionParser.swift */,
+				96CF8CC1F139B14E44D298C4ADFB4E60 /* ESUtil.swift */,
+				135909C6CE771AD9249CCA848CBE81AA /* ESWeekdayParser.swift */,
+				2CF8F7C79B709EFF923C6C4DB2BC6AC3 /* ExtractTimezoneAbbrRefiner.swift */,
+				FCB3FC78600CC0E7AB51BD9B81FAB2B0 /* ExtractTimezoneOffsetRefiner.swift */,
+				3DAE825FE8FECA00BDB433B083FE54BE /* ForwardDateRefiner.swift */,
+				51C641E536BB04FD947CFAF463CD15AD /* FRCasualDateParser.swift */,
+				82B75D3B4E7CA78C5070F2191AF98CA3 /* FRDeadlineFormatParser.swift */,
+				298F232C263956A3C4190C0B4323C30E /* FRMergeDateRangeRefiner.swift */,
+				2B59E226F0B24A8BBC94D2D3D75C2BEC /* FRMergeDateTimeRefiner.swift */,
+				C899561E3BA174684F279F5C6FB80791 /* FRMonthNameLittleEndianParser.swift */,
+				64D62A0FF29515E3B1B8449CE4E31F52 /* FRSlashDateFormatParser.swift */,
+				495633B74046C6D6573833BBC21F7D16 /* FRTimeAgoFormatParser.swift */,
+				5BCEF405439ABDAF4627C42BE4431D8B /* FRTimeExpressionParser.swift */,
+				44D4F1548DD21DCC54B059452A7B9464 /* FRUtil.swift */,
+				A41420722217A66E52CEC55C5888938B /* FRWeekdayParser.swift */,
+				A2FF45B44B4F62FC5EA0FE2774789417 /* JPCasualDateParser.swift */,
+				60CC415E244FA00A4CBA11827712958D /* JPMergeDateRangeRefiner.swift */,
+				269F91F70B0958D9324078C11236E281 /* JPStandardParser.swift */,
+				CFB56A5880FA1D24DC8D27B55C17BB2E /* JPUtil.swift */,
+				437C7024538F78E46790BE036D72DED7 /* MergeDataRangeRefiner.swift */,
+				59E8C0FB1AE983663759A32488179A19 /* MergeDateTimeRefiner.swift */,
+				417310884DD7D94419FD3E90F6D03A9C /* Options.swift */,
+				8F5165E8DE91C972668DA591852FCD88 /* OverlapRemovalRefiner.swift */,
+				8C737A9E46E072E881BDA38421254C7E /* Parser.swift */,
+				63BBDB8262BB120D121269C7DF146568 /* Refiner.swift */,
+				85E5E230072FEC95E79AD2A950329370 /* Result.swift */,
+				2C5DD89C3C651D44B63E0C03C6B82D54 /* UnlikelyFormatFilter.swift */,
+				DE32FB3987CA4A863E30F2A04764C4CF /* Util.swift */,
+				83F4D97BDC5D4E9A55766F2C621391C4 /* ZHCasualDateParser.swift */,
+				823DB4C0E3A58F103F15ED8125E441C1 /* ZHDateParser.swift */,
+				B57E680F0A96AE82B17F6EE9834441D1 /* ZHDeadlineFormatParser.swift */,
+				7577B2EFA32A7E50AF4231FA1E370CEB /* ZHTimeExpressionParser.swift */,
+				F8D883B23EBB71F0BCCA46A9DB978736 /* ZHUtil.swift */,
+				B4CC36472A0BC17F081844AD022F43F0 /* ZHWeekdayParser.swift */,
+				579D369560C41AEC8457A8D934476B9E /* Support Files */,
 			);
 			name = SwiftyChrono;
 			path = SwiftyChrono;
+			sourceTree = "<group>";
+		};
+		2A06643ECC1C2E4269FF1B2186C28799 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SwiftLint;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
 		454F671A93ABA7696F13C5B6C8D53B6B /* Pods-Clendar */ = {
@@ -369,10 +377,25 @@
 			path = "Target Support Files/Pods-Clendar";
 			sourceTree = "<group>";
 		};
-		6D5ADA4C05C14425A1C243326F50D4E5 /* Pods */ = {
+		579D369560C41AEC8457A8D934476B9E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				42E0342AEA09997C24B307C473C6AA97 /* SwiftyChrono */,
+				90742F60E6217309EF89B45AE2595A74 /* Info.plist */,
+				98369EB521CD81665BC9A55D692156EC /* SwiftyChrono.modulemap */,
+				2468ED139E82CE561C841D02BEFFE4C1 /* SwiftyChrono.xcconfig */,
+				D6BF22D5B5DAA3EDD10E25F3B671FD62 /* SwiftyChrono-dummy.m */,
+				EB0CC6CDA4168B860AD5A9923D99F536 /* SwiftyChrono-prefix.pch */,
+				2325DD7FED309C47CE38A94CD36BEE66 /* SwiftyChrono-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyChrono";
+			sourceTree = "<group>";
+		};
+		6C321DBF82E1631896820E4DF9DDC819 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A06643ECC1C2E4269FF1B2186C28799 /* SwiftLint */,
+				15A71A6BD2300026B228C0FAC2DAE6F9 /* SwiftyChrono */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -419,7 +442,7 @@
 			children = (
 				24390EFD555DD124430DFF9724065945 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				6D5ADA4C05C14425A1C243326F50D4E5 /* Pods */,
+				6C321DBF82E1631896820E4DF9DDC819 /* Pods */,
 				C85CC04A94FBD64D67496C7882A6B7B4 /* Products */,
 				CF7E3197359EDB6EB402F3CC84A9A0A9 /* Targets Support Files */,
 			);
@@ -459,20 +482,6 @@
 			);
 			name = "Pods-ClendarTests";
 			path = "Target Support Files/Pods-ClendarTests";
-			sourceTree = "<group>";
-		};
-		F0EBFEB11B09B6F0D56EE99DC9C0CD4C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0215E712F1055F246D2D7B2FFE3EA0E1 /* Info.plist */,
-				093E0E56795F752347EDDA8981A58148 /* SwiftyChrono.modulemap */,
-				8EF627A06D19EBF5FA8F7A3681996EF1 /* SwiftyChrono.xcconfig */,
-				2F533854468BEE8AFC0BC3AE9F256E5E /* SwiftyChrono-dummy.m */,
-				9B1D2C99113D245EEBCC333EDBA4E60C /* SwiftyChrono-prefix.pch */,
-				4F8F60133C6A4B2EAF3D029EB93C9FAC /* SwiftyChrono-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyChrono";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -818,7 +827,7 @@
 		};
 		49516FDCF4A055B212F519E94CCD390F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EF627A06D19EBF5FA8F7A3681996EF1 /* SwiftyChrono.xcconfig */;
+			baseConfigurationReference = 2468ED139E82CE561C841D02BEFFE4C1 /* SwiftyChrono.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -931,7 +940,7 @@
 		};
 		5FC3B8B141D68FFCF352DDD10A0BF7D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EF627A06D19EBF5FA8F7A3681996EF1 /* SwiftyChrono.xcconfig */;
+			baseConfigurationReference = 2468ED139E82CE561C841D02BEFFE4C1 /* SwiftyChrono.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

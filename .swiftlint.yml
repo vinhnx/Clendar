@@ -1,0 +1,72 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - todo
+  - trailing_whitespace
+  - variable_name
+  - void_return
+  - colon
+  - notification_center_detachment
+  - discarded_notification_center_observer
+  - type_name
+
+opt_in_rules:
+  - sorted_first_last
+  - contains_over_first_not_nil
+  # - explicit_top_level_acl
+  - empty_count
+  - closure_spacing
+  # - explicit_type_interface
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - no_extension_access_modifier
+  - operator_usage_whitespace
+  - overridden_super_call
+  # - private_outlet
+  - redundant_nil_coalescing
+  # - switch_case_on_newline
+  - vertical_parameter_alignment_on_call
+
+excluded: # paths to ignore during linting. overridden by `included`.
+  - Carthage
+  - Pods
+  - fastlane
+  - R.generated.swift
+  
+# parameterized rules can be customized from this configuration file
+# first line is warning, second is error
+file_length:
+  - 700
+  - 1000
+line_length:
+  - 230
+  - 250
+
+# parameterized rules are first parameterized as a warning level, then error level.
+function_body_length:
+  - 150
+  - 200
+type_body_length:
+  - 300
+  - 400
+  
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: # only min_length
+    error: 4 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+    
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
+
