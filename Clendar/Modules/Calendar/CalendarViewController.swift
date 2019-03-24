@@ -68,6 +68,11 @@ final class CalendarViewController: BaseViewController {
             guard let result = self?.inputParser.parse(input) else { return }
             print(result.action)
             print(result.startDate)
+
+            #warning("TODO")
+
+            AlertManager.showAlertWithMessage("action: \(result.action)\n date: \(result.startDate)")
+
             self?.calendarView.toggleViewWithDate(result.startDate)
         }
     }
