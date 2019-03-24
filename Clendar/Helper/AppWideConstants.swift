@@ -11,4 +11,5 @@ import UIKit
 import CVCalendar
 
 // typealiasing
+typealias VoidHandler = () -> Void
 typealias DateUpdateHandler = (CVDate) -> Void
