@@ -37,7 +37,11 @@ final class CalendarViewController: BaseViewController {
     }
 
     @IBOutlet private var modeButton: UIButton?
-    @IBOutlet var monthLabel: UILabel!
+    @IBOutlet var monthLabel: UILabel! {
+        didSet {
+            self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
+        }
+    }
 
     private var calendarMode: CalendarMode = .monthView
     private var selectedDay: DayView?
@@ -49,27 +53,20 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Life cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.calendarView.commitCalendarViewUpdate()
         self.dayView.commitMenuViewUpdate()
     }
 
-    // MARK: - MVVM
-
-    func bind(viewModel: CalendarViewModel) {}
-
     // MARK: - Parse
 
     private func throttleParseInput(_ input: String) {
         self.workItem.perform(after: 1.0) { [weak self] in
-            let results = self?.inputParser.parse(input)
-            print(results)
+            guard let result = self?.inputParser.parse(input) else { return }
+            print(result.action)
+            print(result.startDate)
+            self?.calendarView.toggleViewWithDate(result.startDate)
         }
     }
 }
@@ -179,6 +176,11 @@ extension CalendarViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
         self.throttleParseInput(substring)
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 }
