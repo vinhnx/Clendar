@@ -19,6 +19,7 @@
 		A33F810722468FC1009CC46A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810622468FC1009CC46A /* ReusableView.swift */; };
 		A33F810A224690E9009CC46A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8109224690E9009CC46A /* R.generated.swift */; };
 		A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810B2247393B009CC46A /* CalendarViewModel.swift */; };
+		A33F811022474137009CC46A /* AppWideConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810F22474137009CC46A /* AppWideConstants.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		A33F810622468FC1009CC46A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A33F8109224690E9009CC46A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A33F810B2247393B009CC46A /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		A33F810F22474137009CC46A /* AppWideConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWideConstants.swift; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7E6079522A39C0AA433E3F /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				A33F8109224690E9009CC46A /* R.generated.swift */,
 				A33F810622468FC1009CC46A /* ReusableView.swift */,
+				A33F810F22474137009CC46A /* AppWideConstants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 			files = (
 				A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */,
 				A33F810722468FC1009CC46A /* ReusableView.swift in Sources */,
+				A33F811022474137009CC46A /* AppWideConstants.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
 				A33F810A224690E9009CC46A /* R.generated.swift in Sources */,
 				A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */,
