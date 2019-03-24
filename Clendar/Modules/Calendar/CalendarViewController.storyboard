@@ -33,21 +33,93 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-lR-RHt" customClass="CVCalendarView" customModule="CVCalendar">
                                 <rect key="frame" x="0.0" y="133" width="375" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Jmd-cg-JsP"/>
+                                    <constraint firstAttribute="height" constant="250" id="U1N-AV-yKN"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-tL-ewT">
+                                <rect key="frame" x="10" y="393" width="355" height="44"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.031372549020000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ibt-Ak-LL2"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="month mode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="week mode"/>
+                                <connections>
+                                    <action selector="didTapModeButtonWithSender:" destination="Eak-77-h5z" eventType="touchUpInside" id="0h2-jy-h1Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF6-Wx-igQ">
+                                <rect key="frame" x="10" y="445" width="355" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Cz4-2X-Wua"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="today">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="todayMonthView" destination="Eak-77-h5z" eventType="touchUpInside" id="SBW-EK-aap"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nw3-ln-KxT">
+                                <rect key="frame" x="10" y="497" width="355" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKS-i2-nX0" userLabel="prev">
+                                        <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="44"/>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.80784313730000001" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Hve-Cn-G1q"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="prev">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadPreviousWithSender:" destination="Eak-77-h5z" eventType="touchUpInside" id="G7T-UB-8ct"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qo-DW-eLu" userLabel="next">
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="167.33333333333337" height="44"/>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.80784313730000001" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Dvg-f8-3z5"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadNextWithSender:" destination="Eak-77-h5z" eventType="touchUpInside" id="t99-5w-0GY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="FF6-Wx-igQ" firstAttribute="centerX" secondItem="iLD-tL-ewT" secondAttribute="centerX" id="ANA-g8-nYC"/>
                             <constraint firstItem="EJT-3z-nZs" firstAttribute="trailing" secondItem="KXx-8q-HmS" secondAttribute="trailing" id="EUH-ma-7tX"/>
                             <constraint firstItem="Nby-lR-RHt" firstAttribute="top" secondItem="EJT-3z-nZs" secondAttribute="bottom" id="GCg-II-fHB"/>
                             <constraint firstItem="AZ4-dN-EPH" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="HtQ-i9-hrQ"/>
                             <constraint firstItem="AZ4-dN-EPH" firstAttribute="top" secondItem="KXx-8q-HmS" secondAttribute="top" id="J9z-Yh-j68"/>
                             <constraint firstItem="Nby-lR-RHt" firstAttribute="trailing" secondItem="KXx-8q-HmS" secondAttribute="trailing" id="MJd-hH-bgS"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="iLD-tL-ewT" secondAttribute="trailing" constant="10" id="Nri-ri-ALw"/>
+                            <constraint firstItem="iLD-tL-ewT" firstAttribute="top" secondItem="Nby-lR-RHt" secondAttribute="bottom" constant="10" id="Pwn-3E-Mx1"/>
                             <constraint firstItem="Nby-lR-RHt" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="TgD-ym-zUb"/>
+                            <constraint firstItem="FF6-Wx-igQ" firstAttribute="height" secondItem="iLD-tL-ewT" secondAttribute="height" id="WZt-Df-Jab"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="Nw3-ln-KxT" secondAttribute="trailing" constant="10" id="Znf-Ls-DXk"/>
                             <constraint firstItem="EJT-3z-nZs" firstAttribute="top" secondItem="AZ4-dN-EPH" secondAttribute="bottom" id="e7K-oj-pAk"/>
+                            <constraint firstItem="Nw3-ln-KxT" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" constant="10" id="icR-0L-DxO"/>
+                            <constraint firstItem="FF6-Wx-igQ" firstAttribute="width" secondItem="iLD-tL-ewT" secondAttribute="width" id="idt-W0-kH7"/>
+                            <constraint firstItem="Nw3-ln-KxT" firstAttribute="top" secondItem="FF6-Wx-igQ" secondAttribute="bottom" constant="8" id="mY0-Ro-o8a"/>
+                            <constraint firstItem="FF6-Wx-igQ" firstAttribute="top" secondItem="iLD-tL-ewT" secondAttribute="bottom" constant="8" id="q2a-Oh-aRr"/>
+                            <constraint firstItem="iLD-tL-ewT" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" constant="10" id="q5U-rH-H2u"/>
                             <constraint firstItem="EJT-3z-nZs" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="qMd-K8-yTp"/>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="AZ4-dN-EPH" secondAttribute="trailing" id="wXv-lW-EZ3"/>
                         </constraints>
@@ -56,6 +128,7 @@
                     <connections>
                         <outlet property="calendarView" destination="Nby-lR-RHt" id="qqW-3b-okE"/>
                         <outlet property="dayView" destination="EJT-3z-nZs" id="54T-d2-Z0w"/>
+                        <outlet property="modeButton" destination="iLD-tL-ewT" id="SeV-Oa-IxI"/>
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
                     </connections>
                 </viewController>

@@ -22,6 +22,8 @@ struct ColorsConfig {
 final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
+    @IBOutlet private var modeButton: UIButton?
+    private var calendarMode: CalendarMode = .monthView
     @IBOutlet var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
@@ -60,7 +62,7 @@ final class CalendarViewController: BaseViewController {
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 
-    func presentationMode() -> CalendarMode { return .monthView }
+    func presentationMode() -> CalendarMode { return calendarMode }
 
     func firstWeekday() -> Weekday { return .sunday }
 
@@ -88,7 +90,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func dayOfWeekBackGroundColor() -> UIColor { return .black }
 
-    func shouldAnimateResizing() -> Bool { return false }
+    func shouldAnimateResizing() -> Bool { return true }
 
     func shouldShowCustomSingleSelection() -> Bool { return true }
 
@@ -160,5 +162,28 @@ extension CalendarViewController {
 
     func didShowPreviousWeekView(from startDayView: DayView, to endDayView: DayView) {
         print("Showing Week: from \(startDayView.date.day) to \(endDayView.date.day)")
+    }
+}
+
+extension CalendarViewController {
+
+    // MARK: - Actions
+
+    @IBAction private func didTapModeButton(sender: UIButton) {
+        sender.isSelected.toggle()
+        calendarMode = sender.isSelected ? .weekView : .monthView
+        calendarView.changeMode(calendarMode)
+    }
+
+    @IBAction func todayMonthView() {
+        calendarView.toggleCurrentDayView()
+    }
+
+    @IBAction func loadPrevious() {
+        calendarView.loadPreviousView()
+    }
+    
+    @IBAction func loadNext() {
+        calendarView.loadNextView()
     }
 }
