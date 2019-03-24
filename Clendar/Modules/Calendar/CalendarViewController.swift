@@ -8,31 +8,16 @@
 
 import CVCalendar
 import Foundation
-import MVVMKit
 
-struct ColorsConfig {
-    static let selectedText = UIColor.white
-    static let text = UIColor.black
-    static let textDisabled = UIColor.gray
-    static let selectionBackground = UIColor(red: 0.2, green: 0.2, blue: 1.0, alpha: 1.0)
-    static let sundayText = UIColor(red: 1.0, green: 0.2, blue: 0.2, alpha: 1.0)
-    static let sundayTextDisabled = UIColor(red: 1.0, green: 0.6, blue: 0.6, alpha: 1.0)
-    static let sundaySelectionBackground = sundayText
-}
-
-final class CalendarViewController: BaseViewController, ViewModelOwner {
+final class CalendarViewController: BaseViewController {
 
     // MARK: - View Model
 
-    typealias CustomViewModel = CalendarViewModel
-    var viewModel: CalendarViewModel? {
-        didSet { self.viewModel?.binder = self }
-    }
+    private lazy var inputParser = InputParser()
+    private lazy var workItem = WorkItem()
 
     // MARK: - Properties
-    
-    @IBOutlet private var modeButton: UIButton?
-    private var calendarMode: CalendarMode = .monthView
+
     @IBOutlet var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
@@ -40,13 +25,22 @@ final class CalendarViewController: BaseViewController, ViewModelOwner {
             self.calendarView.calendarDelegate = self
         }
     }
+
     @IBOutlet var dayView: CVCalendarMenuView! {
         didSet {
             self.dayView.delegate = self
         }
     }
+
+    @IBOutlet private var inputTextField: UITextField? {
+        didSet { self.inputTextField?.delegate = self }
+    }
+
+    @IBOutlet private var modeButton: UIButton?
     @IBOutlet var monthLabel: UILabel!
-    private var selectedDay: DayView!
+
+    private var calendarMode: CalendarMode = .monthView
+    private var selectedDay: DayView?
     private lazy var currentCalendar: Calendar = {
         var proxy = Calendar(identifier: .gregorian)
         proxy.locale = Locale(identifier: "en_US_POSIX")
@@ -57,8 +51,7 @@ final class CalendarViewController: BaseViewController, ViewModelOwner {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
-        bind()
+        self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
     }
 
     override func viewDidLayoutSubviews() {
@@ -70,13 +63,22 @@ final class CalendarViewController: BaseViewController, ViewModelOwner {
     // MARK: - MVVM
 
     func bind(viewModel: CalendarViewModel) {}
-}
 
-// MARK: - CVCalendarViewDelegate & CVCalendarMenuViewDelegate
+    // MARK: - Parse
+
+    private func throttleParseInput(_ input: String) {
+        self.workItem.perform(after: 1.0) { [weak self] in
+            let results = self?.inputParser.parse(input)
+            print(results)
+        }
+    }
+}
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 
-    func presentationMode() -> CalendarMode { return calendarMode }
+    // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
+
+    func presentationMode() -> CalendarMode { return self.calendarMode }
 
     func firstWeekday() -> Weekday { return .sunday }
 
@@ -119,9 +121,9 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 }
 
-// MARK: - CVCalendarViewAppearanceDelegate
-
 extension CalendarViewController: CVCalendarViewAppearanceDelegate {
+
+    // MARK: - CVCalendarViewAppearanceDelegate
 
     func dayLabelWeekdayDisabledColor() -> UIColor { return .lightGray }
 
@@ -133,49 +135,20 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return ColorsConfig.selectedText
-        case (.sunday, .in, _): return ColorsConfig.sundayText
-        case (.sunday, _, _): return ColorsConfig.sundayTextDisabled
-        case (_, .in, _): return ColorsConfig.text
-        default: return ColorsConfig.textDisabled
+        case (_, .selected, _), (_, .highlighted, _): return CalendarColorsConfig.selectedText
+        case (.sunday, .in, _): return CalendarColorsConfig.sundayText
+        case (.sunday, _, _): return CalendarColorsConfig.sundayTextDisabled
+        case (_, .in, _): return CalendarColorsConfig.text
+        default: return CalendarColorsConfig.textDisabled
         }
     }
 
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-        case (.sunday, .selected, _), (.sunday, .highlighted, _): return ColorsConfig.sundaySelectionBackground
-        case (_, .selected, _), (_, .highlighted, _): return ColorsConfig.selectionBackground
+        case (.sunday, .selected, _), (.sunday, .highlighted, _): return CalendarColorsConfig.sundaySelectionBackground
+        case (_, .selected, _), (_, .highlighted, _): return CalendarColorsConfig.selectionBackground
         default: return nil
         }
-    }
-}
-
-// MARK: - Convenience API
-
-extension CalendarViewController {
-    func toggleMonthViewWithMonthOffset(offset: Int) {
-        var components = Manager.componentsForDate(Date(), calendar: currentCalendar) // from today
-        components.month! += offset
-        let resultDate = currentCalendar.date(from: components)!
-        calendarView.toggleViewWithDate(resultDate)
-    }
-
-    func didShowNextMonthView(_ date: Date) {
-        let components = Manager.componentsForDate(date, calendar: currentCalendar) // from today
-        print("Showing Month: \(components.month!)")
-    }
-
-    func didShowPreviousMonthView(_ date: Date) {
-        let components = Manager.componentsForDate(date, calendar: currentCalendar) // from today
-        print("Showing Month: \(components.month!)")
-    }
-
-    func didShowNextWeekView(from startDayView: DayView, to endDayView: DayView) {
-        print("Showing Week: from \(startDayView.date.day) to \(endDayView.date.day)")
-    }
-
-    func didShowPreviousWeekView(from startDayView: DayView, to endDayView: DayView) {
-        print("Showing Week: from \(startDayView.date.day) to \(endDayView.date.day)")
     }
 }
 
@@ -185,19 +158,27 @@ extension CalendarViewController {
 
     @IBAction private func didTapModeButton(sender: UIButton) {
         sender.isSelected.toggle()
-        calendarMode = sender.isSelected ? .weekView : .monthView
-        calendarView.changeMode(calendarMode)
+        self.calendarMode = sender.isSelected ? .weekView : .monthView
+        self.calendarView.changeMode(self.calendarMode)
     }
 
     @IBAction func todayMonthView() {
-        calendarView.toggleCurrentDayView()
+        self.calendarView.toggleCurrentDayView()
     }
 
     @IBAction func loadPrevious() {
-        calendarView.loadPreviousView()
+        self.calendarView.loadPreviousView()
     }
-    
+
     @IBAction func loadNext() {
-        calendarView.loadNextView()
+        self.calendarView.loadNextView()
+    }
+}
+
+extension CalendarViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+        self.throttleParseInput(substring)
+        return true
     }
 }
