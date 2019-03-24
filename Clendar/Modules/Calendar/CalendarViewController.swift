@@ -32,8 +32,10 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    @IBOutlet private var inputTextField: UITextField? {
-        didSet { self.inputTextField?.delegate = self }
+    @IBOutlet private var inputTextField: TextField? {
+        didSet {
+            self.inputTextField?.delegate = self
+        }
     }
 
     @IBOutlet private var modeButton: UIButton?
