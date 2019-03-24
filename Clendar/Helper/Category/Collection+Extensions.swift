@@ -20,9 +20,15 @@ extension Collection {
 extension Array where Element == String {
     var commonText: String {
         var result = [String]()
+
         for loop in self.enumerated() {
             let lhs = loop.element
-            guard let rhs = self[safe: loop.offset + 1] else { continue }
+
+            guard let rhs = self[safe: loop.offset + 1] else {
+                result.append(lhs)
+                break
+            }
+
             let sharedText = lhs.commonPrefix(with: rhs, options: .caseInsensitive)
             result.append(sharedText)
         }
@@ -50,13 +56,7 @@ extension Array where Element == ParsedResult {
             commonAction.append(text)
         }
 
-        var action = commonAction.first ?? input
-
-        // find common text between candidates
-        if commonAction.count > 1 {
-            action = commonAction.commonText
-        }
-
+        let action = commonAction.isEmpty == false ? commonAction.commonText : input
         return (action, startDate, endDate)
     }
     // swiftlint:enable large_tuple
