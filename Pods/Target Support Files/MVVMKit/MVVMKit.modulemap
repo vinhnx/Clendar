@@ -1,0 +1,6 @@
+framework module MVVMKit {
+  umbrella header "MVVMKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

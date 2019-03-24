@@ -11,40 +11,47 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-Clendar.xcscheme</key>
+		<key>MVVMKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-ClendarTests.xcscheme</key>
+		<key>Pods-Clendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-ClendarUITests.xcscheme</key>
+		<key>Pods-ClendarTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>R.swift.Library.xcscheme</key>
+		<key>Pods-ClendarUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>SwiftyChrono.xcscheme</key>
+		<key>R.swift.Library.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+		<key>SwiftyChrono.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

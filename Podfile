@@ -6,6 +6,7 @@ target 'Clendar' do
   # Core
   pod 'SwiftyChrono'
   pod 'CVCalendar'
+  pod 'MVVMKit'
 
   # Helper
   pod 'SwiftLint'

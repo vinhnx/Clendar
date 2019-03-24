@@ -387,6 +387,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/MVVMKit/MVVMKit.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework",
 			);
@@ -395,6 +396,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVMKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyChrono.framework",
 			);
