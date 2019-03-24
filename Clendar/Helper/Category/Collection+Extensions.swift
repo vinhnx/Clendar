@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyChrono
 
 extension Collection {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
@@ -15,49 +14,4 @@ extension Collection {
     subscript(safe index: Index) -> Iterator.Element? {
         return index >= startIndex && index < endIndex ? self[index] : nil
     }
-}
-
-extension Array where Element == String {
-    var commonText: String {
-        var result = [String]()
-
-        for loop in self.enumerated() {
-            let lhs = loop.element
-
-            guard let rhs = self[safe: loop.offset + 1] else {
-                result.append(lhs)
-                break
-            }
-
-            let sharedText = lhs.commonPrefix(with: rhs, options: .caseInsensitive)
-            result.append(sharedText)
-        }
-
-        return result.first ?? ""
-    }
-}
-
-extension Array where Element == ParsedResult {
-    // swiftlint:disable large_tuple
-    func process(with input: String) -> (action: String, startDate: Date, endDate: Date) {
-        var dateTexts = [String]()
-        var startDate = Date()
-        var endDate = Date()
-
-        for result in self {
-            dateTexts.append(result.text)
-            startDate = result.start.date
-            endDate = result.start.date
-        }
-
-        var commonAction = [String]()
-        for dateText in dateTexts {
-            let text = input.trim(text: dateText)
-            commonAction.append(text)
-        }
-
-        let action = commonAction.isEmpty == false ? commonAction.commonText : input
-        return (action, startDate, endDate)
-    }
-    // swiftlint:enable large_tuple
 }
