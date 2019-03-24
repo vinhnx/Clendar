@@ -8,6 +8,7 @@
 
 import CVCalendar
 import Foundation
+import MVVMKit
 
 struct ColorsConfig {
     static let selectedText = UIColor.white
@@ -19,9 +20,17 @@ struct ColorsConfig {
     static let sundaySelectionBackground = sundayText
 }
 
-final class CalendarViewController: BaseViewController {
+final class CalendarViewController: BaseViewController, ViewModelOwner {
+
+    // MARK: - View Model
+
+    typealias CustomViewModel = CalendarViewModel
+    var viewModel: CalendarViewModel? {
+        didSet { self.viewModel?.binder = self }
+    }
 
     // MARK: - Properties
+    
     @IBOutlet private var modeButton: UIButton?
     private var calendarMode: CalendarMode = .monthView
     @IBOutlet var calendarView: CVCalendarView! {
@@ -49,6 +58,7 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
+        bind()
     }
 
     override func viewDidLayoutSubviews() {
@@ -56,6 +66,10 @@ final class CalendarViewController: BaseViewController {
         self.calendarView.commitCalendarViewUpdate()
         self.dayView.commitMenuViewUpdate()
     }
+
+    // MARK: - MVVM
+
+    func bind(viewModel: CalendarViewModel) {}
 }
 
 // MARK: - CVCalendarViewDelegate & CVCalendarMenuViewDelegate

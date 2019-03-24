@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MVVMKit
 
 class BaseViewController: UIViewController {
 
