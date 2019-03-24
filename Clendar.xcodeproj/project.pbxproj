@@ -26,10 +26,10 @@
 		A33F811C22476186009CC46A /* CalendarColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811B22476186009CC46A /* CalendarColor.swift */; };
 		A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811D22476767009CC46A /* Array+Extensions.swift */; };
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
-		A3F2597322476FFE009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597222476FFE009A50B6 /* R.generated.swift */; };
 		A3F2597622477012009A50B6 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597522477012009A50B6 /* TextField.swift */; };
 		A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F25977224771F2009A50B6 /* AlertManager.swift */; };
 		A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */; };
+		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -81,11 +81,11 @@
 		A33F811B22476186009CC46A /* CalendarColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarColor.swift; sourceTree = "<group>"; };
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
-		A3F2597222476FFE009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		A3F2597522477012009A50B6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A3F25977224771F2009A50B6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A3F2597B22477555009A50B6 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		A3F2597C2247762F009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7E6079522A39C0AA433E3F /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 		A3F2597122476FEA009A50B6 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				A3F2597222476FFE009A50B6 /* R.generated.swift */,
+				A3F2597C2247762F009A50B6 /* R.generated.swift */,
 				A33F810F22474137009CC46A /* AppWideConstants.swift */,
 				A33F8114224742F7009CC46A /* WorkItem.swift */,
 				A3F25977224771F2009A50B6 /* AlertManager.swift */,
@@ -574,13 +574,13 @@
 			files = (
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
-				A3F2597322476FFE009A50B6 /* R.generated.swift in Sources */,
 				A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */,
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A33F810722468FC1009CC46A /* ReusableView.swift in Sources */,
 				A33F811C22476186009CC46A /* CalendarColor.swift in Sources */,
+				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A33F811022474137009CC46A /* AppWideConstants.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
