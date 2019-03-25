@@ -15,3 +15,6 @@ import EventKit
 typealias VoidHandler = () -> Void
 typealias DateUpdateHandler = (CVDate) -> Void
 typealias EventCalendarHandler = (EKCalendar) -> Void
+
+// constants
+let calendarName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
