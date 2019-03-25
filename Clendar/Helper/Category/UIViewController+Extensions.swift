@@ -32,4 +32,12 @@ extension UIViewController {
     static var topViewController: UIViewController? {
         return UIViewController.topViewController(UIApplication.shared.keyWindow?.rootViewController)
     }
+
+    /// Safe present view controller
+    ///
+    /// - Parameter completion: completion handler
+    func safeDismiss(_ completion: @escaping VoidHandler) {
+        guard self.isBeingDismissed else { return }
+        self.dismiss(animated: true, completion: completion)
+    }
 }
