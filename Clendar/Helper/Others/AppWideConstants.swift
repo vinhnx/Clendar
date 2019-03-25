@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 import CVCalendar
+import EventKit
 
 // typealiasing
 typealias VoidHandler = () -> Void
 typealias DateUpdateHandler = (CVDate) -> Void
+typealias EventCalendarHandler = (EKCalendar) -> Void
