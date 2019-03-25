@@ -16,5 +16,6 @@ class Button: UIButton {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 1, height: 1)
         layer.shadowRadius = 3
+        titleLabel?.font = FontConfig.mediumFontWithSize(20)
     }
 }
