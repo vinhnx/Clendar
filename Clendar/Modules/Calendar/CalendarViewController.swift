@@ -36,19 +36,15 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    @IBOutlet private var inputTextField: TextField? {
+    @IBOutlet private var inputTextField: TextField! {
         didSet {
-            self.inputTextField?.delegate = self
+            self.inputTextField.delegate = self
         }
     }
 
     @IBOutlet private var todayButton: Button!
-    @IBOutlet private var modeButton: Button! {
-        didSet {
-            self.modeButton?.setTitle("MONTH", for: .normal)
-            self.modeButton?.setTitle("WEEK", for: .selected)
-        }
-    }
+    @IBOutlet private var modeButton: Button!
+    @IBOutlet private var addEventButton: UIButton!
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             self.monthLabel.font = FontConfig.mediumFontWithSize(30)
@@ -108,13 +104,13 @@ final class CalendarViewController: BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
         self.view.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardNotification(notification:)),
+                                               selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
     }
 
     @objc private func resignTextField() {
-        self.inputTextField?.resignFirstResponder()
+        self.inputTextField.resignFirstResponder()
     }
 
     // swiftlint:disable force_cast
@@ -242,13 +238,33 @@ extension CalendarViewController {
         self.resignTextField()
     }
 
-    @IBAction func todayMonthView() {
+    @IBAction func didTapTodayMonthView() {
         self.calendarView.toggleCurrentDayView()
         self.resignTextField()
+    }
+
+    @IBAction func didTapAddEventButton() {
+        self.addEventButton.isHidden = true
+        self.inputTextField.isHidden = false
+        self.inputTextField.becomeFirstResponder()
     }
 }
 
 extension CalendarViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.addEventButton.isHidden = true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+            self.addEventButton.isHidden = false
+        }, completion: { finished in
+            if finished {
+                self.inputTextField.isHidden = true
+            }
+        })
+    }
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
         self.throttleParseInput(substring)
