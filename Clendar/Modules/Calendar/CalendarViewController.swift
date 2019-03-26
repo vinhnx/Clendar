@@ -19,7 +19,7 @@ final class CalendarViewController: BaseViewController {
     internal var currentInput: InputParser.InputParserResult?
 
     // MARK: - Properties
-    
+
     @IBOutlet var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
@@ -70,7 +70,12 @@ final class CalendarViewController: BaseViewController {
         self.dayView.commitMenuViewUpdate()
     }
 
-    // MARK: - Parse
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupView()
+    }
+
+    // MARK: - Private
 
     private func throttleParseInput(_ input: String) {
         self.workItem.perform(after: 1.0) { [weak self] in
@@ -90,6 +95,15 @@ final class CalendarViewController: BaseViewController {
                 textField.isUserInteractionEnabled = true
             }
         }
+    }
+
+    private func setupView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
+        self.view.addGestureRecognizer(tap)
+    }
+
+    @objc private func resignTextField() {
+        self.inputTextField?.resignFirstResponder()
     }
 }
 
@@ -113,6 +127,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         self.selectedDay = dayView
+        self.resignTextField()
     }
 
     func presentedDateUpdated(_ date: CVDate) {
@@ -137,6 +152,14 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
         return dayView.isCurrentDay
+    }
+
+    func didShowNextMonthView(_ date: Foundation.Date) {
+        self.resignTextField()
+    }
+
+    func didShowPreviousMonthView(_ date: Foundation.Date) {
+        self.resignTextField()
     }
 }
 
@@ -181,18 +204,12 @@ extension CalendarViewController {
         sender.isSelected.toggle()
         self.calendarMode = sender.isSelected ? .weekView : .monthView
         self.calendarView.changeMode(self.calendarMode)
+        self.resignTextField()
     }
 
     @IBAction func todayMonthView() {
         self.calendarView.toggleCurrentDayView()
-    }
-
-    @IBAction func loadPrevious() {
-        self.calendarView.loadPreviousView()
-    }
-
-    @IBAction func loadNext() {
-        self.calendarView.loadNextView()
+        self.resignTextField()
     }
 }
 
