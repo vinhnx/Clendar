@@ -27,12 +27,14 @@ final class CalendarViewController: BaseViewController {
             self.calendarView.calendarAppearanceDelegate = self
             self.calendarView.animatorDelegate = self
             self.calendarView.calendarDelegate = self
+            self.calendarView.applyRoundWithOffsetShadow()
         }
     }
 
     @IBOutlet var dayView: CVCalendarMenuView! {
         didSet {
             self.dayView.delegate = self
+            self.dayView.applyRoundWithOffsetShadow()
         }
     }
 
@@ -100,13 +102,20 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func setupView() {
+        // pan
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanOnView(pan:)))
+        self.view.addGestureRecognizer(pan)
         // keyboard handling
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(resignTextField))
         self.view.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
+    }
+
+    @objc private func didPanOnView(pan: UIPanGestureRecognizer) {
+        print(#function)
     }
 
     @objc private func resignTextField() {

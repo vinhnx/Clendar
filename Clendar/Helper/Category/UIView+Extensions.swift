@@ -10,6 +10,29 @@ import Foundation
 
 extension UIView {
 
+    public func usingAutoLayout() -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
+
+    public func constraintsToFit(view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) -> [NSLayoutConstraint] {
+        if #available(iOS 11.0, *) {
+            return [
+                topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+                leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left),
+                bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -insets.bottom),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right)
+            ]
+        } else {
+            return [
+                topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
+                leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left),
+                bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right)
+            ]
+        }
+    }
+
     /// Istantite view instance from nib
     ///
     /// - Returns: a view instance
@@ -46,17 +69,23 @@ extension UIView {
         self.applyRound(radius, borderColor: UIColor.lightGray, borderWidth: 1, addShadow: false)
     }
 
-    /// Apply round view shadow with offset shadow
-    func applyRoundWithOffsetShadow() {
+    func applyRoundWithOffsetShadow(backgroundColor: UIColor = .white) {
+        self.backgroundColor = backgroundColor
         self.layer.shadowColor = UIColor.lightGray.cgColor
-        self.layer.shadowOffset = .zero
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowRadius = 8.0
+        self.layer.shadowOffset = CGSize(width: 0, height: 5.0)
+        self.layer.shadowRadius = 5.0
+        self.layer.shadowOpacity = 0.1
+        self.layer.masksToBounds = false
 
         self.layer.borderColor = UIColor.clear.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 6.0
         self.layer.masksToBounds = false
+    }
+
+    /// Apply round view shadow with offset shadow
+    func applyRoundWithOffsetShadow() {
+        self.applyRoundWithOffsetShadow(backgroundColor: .white)
     }
 
     /// Apply round view

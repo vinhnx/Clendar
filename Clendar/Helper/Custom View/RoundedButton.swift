@@ -9,8 +9,20 @@
 import Foundation
 
 class Button: UIButton {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configure()
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        titleLabel?.font = FontConfig.mediumFontWithSize(20)
+        self.configure()
+    }
+
+    // MARK: - Private
+
+    func configure() {
+        self.titleLabel?.font = FontConfig.mediumFontWithSize(20)
+        self.applyRoundWithOffsetShadow()
     }
 }
