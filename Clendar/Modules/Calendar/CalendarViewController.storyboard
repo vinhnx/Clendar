@@ -123,6 +123,7 @@
                         <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Ohm-UA-WWs" id="UgF-Ne-Hdb"/>
                         <outlet property="calendarView" destination="Nby-lR-RHt" id="qqW-3b-okE"/>
                         <outlet property="dayView" destination="EJT-3z-nZs" id="54T-d2-Z0w"/>
                         <outlet property="inputTextField" destination="RDn-a5-6H6" id="rl0-vQ-M8g"/>

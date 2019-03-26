@@ -20,6 +20,8 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
 
+    @IBOutlet private var bottomConstraint: NSLayoutConstraint!
+
     @IBOutlet var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
@@ -105,21 +107,39 @@ final class CalendarViewController: BaseViewController {
         // keyboard handling
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
         self.view.addGestureRecognizer(tap)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
 
     @objc private func resignTextField() {
         self.inputTextField?.resignFirstResponder()
     }
 
-    @objc private func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y = -100
-    }
+    // swiftlint:disable force_cast
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            // Get keyboard frame
+            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
-    @objc private func keyboardWillHide(sender: NSNotification) {
-        self.view.frame.origin.y = 0
+            // Set new bottom constraint constant
+            let bottomConstraintConstant = keyboardFrame.origin.y >= UIScreen.main.bounds.size.height ? 0.0 : keyboardFrame.size.height + 20
+
+            // Set animation properties
+            let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve = UIView.AnimationOptions(rawValue: animationCurveRaw)
+
+            // Animate the view you care about
+            UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: {
+                self.bottomConstraint.constant = bottomConstraintConstant
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
+    // swiftlint:enable force_cast
 }
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
