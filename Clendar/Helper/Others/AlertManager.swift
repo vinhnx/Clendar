@@ -44,7 +44,7 @@ final class AlertManager {
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
     ///   - onCancel: the completion handler to execute when user tap on "Cancel"
-    static func showActionSheet(title: String, message: String, actionTitle: String, okAction: VoidHandler? = nil, onCancel: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = calendarName, message: String, actionTitle: String, okAction: VoidHandler? = nil, onCancel: VoidHandler? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
@@ -69,7 +69,7 @@ final class AlertManager {
     ///   - message: the message string
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showActionSheet(title: String, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = calendarName, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
         self.showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
     }
 
@@ -79,7 +79,7 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showNoCancelAlertWithMessage(title: String, message: String, okAction: VoidHandler? = nil) {
+    static func showNoCancelAlertWithMessage(title: String? = calendarName, message: String, okAction: VoidHandler? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -98,7 +98,7 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - onCancel: completion handler to be executed when user tap on cancel
-    static func showSettingsAlert(title: String, message: String, onCancel: VoidHandler? = nil) {
+    static func showSettingsAlert(title: String? = calendarName, message: String, onCancel: VoidHandler? = nil) {
         self.showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
             _ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
         }, onCancel: onCancel)
