@@ -11,11 +11,6 @@ import Foundation
 class Button: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.cornerRadius = 5
-        layer.shadowOpacity = 0.3
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 1, height: 1)
-        layer.shadowRadius = 3
         titleLabel?.font = FontConfig.mediumFontWithSize(20)
     }
 }
