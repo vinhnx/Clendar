@@ -75,6 +75,10 @@ final class CalendarViewController: BaseViewController {
         self.setupView()
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - Private
 
     private func throttleParseInput(_ input: String) {
@@ -98,12 +102,23 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func setupView() {
+        // keyboard handling
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
         self.view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     @objc private func resignTextField() {
         self.inputTextField?.resignFirstResponder()
+    }
+
+    @objc private func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -100
+    }
+
+    @objc private func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
     }
 }
 
