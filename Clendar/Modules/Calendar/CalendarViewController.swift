@@ -27,14 +27,12 @@ final class CalendarViewController: BaseViewController {
             self.calendarView.calendarAppearanceDelegate = self
             self.calendarView.animatorDelegate = self
             self.calendarView.calendarDelegate = self
-            self.calendarView.applyRoundWithOffsetShadow()
         }
     }
 
     @IBOutlet var dayView: CVCalendarMenuView! {
         didSet {
             self.dayView.delegate = self
-            self.dayView.applyRoundWithOffsetShadow()
         }
     }
 
@@ -49,8 +47,8 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet private var addEventButton: UIButton!
     @IBOutlet var monthLabel: UILabel! {
         didSet {
-            self.monthLabel.font = FontConfig.mediumFontWithSize(30)
-            self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription.uppercased()
+            self.monthLabel.font = FontConfig.boldFontWithSize(40)
+            self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
         }
     }
 
@@ -102,9 +100,6 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func setupView() {
-        // pan
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanOnView(pan:)))
-        self.view.addGestureRecognizer(pan)
         // keyboard handling
         let tap = UITapGestureRecognizer(target: self, action: #selector(resignTextField))
         self.view.addGestureRecognizer(tap)
@@ -112,7 +107,7 @@ final class CalendarViewController: BaseViewController {
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
-    }
+    } 
 
     @objc private func didPanOnView(pan: UIPanGestureRecognizer) {
         print(#function)
@@ -256,6 +251,10 @@ extension CalendarViewController {
         self.addEventButton.isHidden = true
         self.inputTextField.isHidden = false
         self.inputTextField.becomeFirstResponder()
+    }
+
+    @IBAction private func didTapSettingsButton() {
+        print(#function)
     }
 }
 

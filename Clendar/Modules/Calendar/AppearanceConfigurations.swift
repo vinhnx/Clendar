@@ -9,21 +9,15 @@
 import Foundation
 import UIKit
 
-// swiftlint:disable force_unwrapping
 struct FontConfig {
     static func regularFontWithSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "Futura", size: size)!
+        return .systemFont(ofSize: size)
     }
 
     static func boldFontWithSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "Futura-Bold", size: size)!
-    }
-
-    static func mediumFontWithSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "Futura-Medium", size: size)!
+        return .boldSystemFont(ofSize: size)
     }
 }
-// swiftlint:enable force_unwrapping
 
 struct CalendarColorsConfig {
     static let selectedText = UIColor.white

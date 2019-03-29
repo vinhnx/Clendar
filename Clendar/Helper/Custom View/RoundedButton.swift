@@ -22,7 +22,7 @@ class Button: UIButton {
     // MARK: - Private
 
     func configure() {
-        self.titleLabel?.font = FontConfig.mediumFontWithSize(20)
+        self.titleLabel?.font = FontConfig.boldFontWithSize(20)
         self.applyRoundWithOffsetShadow()
     }
 }
