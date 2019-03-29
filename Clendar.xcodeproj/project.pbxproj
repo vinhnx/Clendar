@@ -411,13 +411,16 @@
 				TargetAttributes = {
 					A33F80C522467A82009CC46A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					A33F80D922467A85009CC46A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A33F80C522467A82009CC46A;
 					};
 					A33F80E422467A85009CC46A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = A33F80C522467A82009CC46A;
 					};
 				};
@@ -811,7 +814,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Clendar/Resources/Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -832,7 +835,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Clendar/Resources/Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -853,7 +856,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.ClendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clendar.app/Clendar";
 			};
@@ -875,7 +878,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.ClendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Clendar.app/Clendar";
 			};
@@ -896,7 +899,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.ClendarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Clendar;
 			};
@@ -917,7 +920,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.ClendarUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Clendar;
 			};
