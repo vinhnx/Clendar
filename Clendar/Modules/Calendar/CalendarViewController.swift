@@ -68,13 +68,24 @@ final class CalendarViewController: BaseViewController {
         self.dayView.commitMenuViewUpdate()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupView()
-    }
-
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Override
+
+    override func setupViews() {
+        // mode handling
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.didPanOnView(gesture:)))
+        self.view.addGestureRecognizer(pan)
+
+        // keyboard handling
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
+        self.view.addGestureRecognizer(tap)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardNotification(notification:)),
+                                               name: UIResponder.keyboardWillChangeFrameNotification,
+                                               object: nil)
     }
 
     // MARK: - Private
@@ -99,18 +110,9 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    private func setupView() {
-        // keyboard handling
-        let tap = UITapGestureRecognizer(target: self, action: #selector(resignTextField))
-        self.view.addGestureRecognizer(tap)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    } 
-
-    @objc private func didPanOnView(pan: UIPanGestureRecognizer) {
-        print(#function)
+    @objc private func didPanOnView(gesture: UIPanGestureRecognizer) {
+        guard gesture.state == .ended else { return }
+        self.didTapModeButton(sender: self.modeButton)
     }
 
     @objc private func resignTextField() {
@@ -119,25 +121,24 @@ final class CalendarViewController: BaseViewController {
 
     // swiftlint:disable force_cast
     @objc func keyboardNotification(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            // Get keyboard frame
-            let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        guard let userInfo = notification.userInfo else { return }
+        // Get keyboard frame
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
-            // Set new bottom constraint constant
-            let bottomConstraintConstant = keyboardFrame.origin.y >= UIScreen.main.bounds.size.height ? 0.0 : keyboardFrame.size.height + 20
+        // Set new bottom constraint constant
+        let bottomConstraintConstant = keyboardFrame.origin.y >= UIScreen.main.bounds.size.height ? 0.0 : keyboardFrame.size.height + 20
 
-            // Set animation properties
-            let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
-            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
-            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-            let animationCurve = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        // Set animation properties
+        let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve = UIView.AnimationOptions(rawValue: animationCurveRaw)
 
-            // Animate the view you care about
-            UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: {
-                self.bottomConstraint.constant = bottomConstraintConstant
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
+        // Animate the view you care about
+        UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: {
+            self.bottomConstraint.constant = bottomConstraintConstant
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     // swiftlint:enable force_cast
 }
@@ -254,7 +255,9 @@ extension CalendarViewController {
     }
 
     @IBAction private func didTapSettingsButton() {
-        print(#function)
+        let settings = SettingsViewController()
+        let settingsNavigation = BaseNavigationController(rootViewController: settings)
+        self.present(settingsNavigation, animated: true, completion: nil)
     }
 }
 
