@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68890989EC17BFBF22CEFE27 /* Pods_ClendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */; };
+		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
+		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
 		A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80C922467A82009CC46A /* AppDelegate.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80D422467A85009CC46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D222467A85009CC46A /* LaunchScreen.storyboard */; };
@@ -62,6 +64,8 @@
 		6239D11B3B53DFE055C329D8 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		72FE9C6272675E223125D548 /* Pods-ClendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.release.xcconfig"; sourceTree = "<group>"; };
 		970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
+		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80C922467A82009CC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +157,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A31C7A57224E4BB400CB93A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
@@ -227,8 +239,7 @@
 		A33F80F922467DDB009CC46A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A3F259802247B8EC009A50B6 /* Event */,
-				A33F81112247422A009CC46A /* Input Parser */,
+				A31C7A57224E4BB400CB93A5 /* Settings */,
 				A33F80FB22468A44009CC46A /* Calendar */,
 			);
 			path = Modules;
@@ -248,6 +259,7 @@
 		A33F810022468B59009CC46A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */,
 				A33F810122468B69009CC46A /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -256,6 +268,8 @@
 		A33F810522468FB4009CC46A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A3F259802247B8EC009A50B6 /* Event */,
+				A33F81112247422A009CC46A /* Input Parser */,
 				A3F2597422477005009A50B6 /* Custom View */,
 				A3F2597022476FD9009A50B6 /* Protocol */,
 				A33F811622474543009CC46A /* Category */,
@@ -595,6 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
 				A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */,
@@ -617,6 +632,7 @@
 				A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */,
 				A33F81132247423A009CC46A /* InputParser.swift in Sources */,
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
+				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
