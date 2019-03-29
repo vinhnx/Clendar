@@ -27,7 +27,6 @@ final class SettingsViewController: BaseViewController {
         self.title = "Settings"
     }
 
-
     // MARK: - Action
 
     @objc private func didTapDismiss() {
