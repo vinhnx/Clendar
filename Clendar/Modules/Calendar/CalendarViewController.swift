@@ -9,6 +9,8 @@
 import CVCalendar
 import Foundation
 
+#warning("try to break down as UIViewController child Container")
+
 final class CalendarViewController: BaseViewController {
 
     // MARK: - View Model
@@ -20,9 +22,10 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
 
-    @IBOutlet private var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var bottomButtonStackView: UIStackView!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
 
-    @IBOutlet var calendarView: CVCalendarView! {
+    @IBOutlet private weak var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
             self.calendarView.animatorDelegate = self
@@ -30,22 +33,21 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    @IBOutlet var dayView: CVCalendarMenuView! {
+    @IBOutlet private weak var dayView: CVCalendarMenuView! {
         didSet {
             self.dayView.delegate = self
         }
     }
 
-    @IBOutlet private var inputTextField: TextField! {
+    @IBOutlet private weak var inputTextField: TextField! {
         didSet {
             self.inputTextField.delegate = self
+            self.inputTextField.applyRoundWithOffsetShadow()
         }
     }
 
-    @IBOutlet private var todayButton: Button!
-    @IBOutlet private var modeButton: Button!
-    @IBOutlet private var addEventButton: UIButton!
-    @IBOutlet var monthLabel: UILabel! {
+    @IBOutlet private weak var addEventButton: UIButton!
+    @IBOutlet weak var monthLabel: UILabel! {
         didSet {
             self.monthLabel.font = FontConfig.boldFontWithSize(40)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
@@ -112,7 +114,13 @@ final class CalendarViewController: BaseViewController {
 
     @objc private func didPanOnView(gesture: UIPanGestureRecognizer) {
         guard gesture.state == .ended else { return }
-        self.didTapModeButton(sender: self.modeButton)
+        self.toggleCalendarMode()
+        self.resignTextField()
+    }
+
+    private func toggleCalendarMode() {
+        self.calendarMode = self.calendarMode == .weekView ? .monthView : .weekView
+        self.calendarView.changeMode(self.calendarMode)
     }
 
     @objc private func resignTextField() {
@@ -236,20 +244,8 @@ extension CalendarViewController {
 
     // MARK: - Actions
 
-    @IBAction private func didTapModeButton(sender: UIButton) {
-        sender.isSelected.toggle()
-        self.calendarMode = sender.isSelected ? .weekView : .monthView
-        self.calendarView.changeMode(self.calendarMode)
-        self.resignTextField()
-    }
-
-    @IBAction func didTapTodayMonthView() {
-        self.calendarView.toggleCurrentDayView()
-        self.resignTextField()
-    }
-
     @IBAction func didTapAddEventButton() {
-        self.addEventButton.isHidden = true
+        self.bottomButtonStackView.isHidden = true
         self.inputTextField.isHidden = false
         self.inputTextField.becomeFirstResponder()
     }
@@ -263,12 +259,12 @@ extension CalendarViewController {
 
 extension CalendarViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.addEventButton.isHidden = true
+        self.bottomButtonStackView.isHidden = true
     }
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
-            self.addEventButton.isHidden = false
+            self.bottomButtonStackView.isHidden = false
         }, completion: { finished in
             if finished {
                 self.inputTextField.isHidden = true
