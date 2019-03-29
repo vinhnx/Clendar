@@ -7,9 +7,17 @@
 //
 
 import Foundation
-import UIKit
-import MVVMKit
 
 class BaseViewController: UIViewController {
 
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupViews()
+    }
+
+    // MARK: - Subclass
+
+    func setupViews() {}
 }
