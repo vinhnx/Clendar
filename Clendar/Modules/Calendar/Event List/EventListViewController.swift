@@ -65,7 +65,9 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let event = self.events[safe: indexPath.row]
-        let date = event?.startDate != event?.endDate ? "\(event?.startDate.toString ?? "") to \(event?.endDate.toString ?? "")" : "\(event?.startDate.toString ?? "")"
+
+        #warning("TODO: ")
+        let date = event?.startDate != event?.endDate ? "\(event?.startDate.toHourAndMinuteString ?? "") to \(event?.endDate.toHourAndMinuteString ?? "")" : "\(event?.startDate.toHourAndMinuteString ?? "")"
         cell.textLabel?.text = "\(event?.title ?? "") - \(date)"
         return cell
     }
