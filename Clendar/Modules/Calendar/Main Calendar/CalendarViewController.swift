@@ -260,7 +260,8 @@ extension CalendarViewController {
     }
 
     @IBAction private func didTapSettingsButton() {
-        self.presentPanModal(SettingsNavigationController())
+        let settings = SettingsNavigationController()
+        self.presentPanModal(settings)
     }
 }
 
