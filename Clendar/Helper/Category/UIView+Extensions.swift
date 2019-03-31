@@ -12,27 +12,34 @@ extension UIView {
 
     // MARK: - Autolayout
 
+    func addSubViewAndFit(_ subView: UIView) {
+        subView.prepareForAutolayout()
+        self.prepareForAutolayout()
+        self.addSubview(subView)
+        subView.fitLayoutOnSuperView(self)
+    }
+
     func prepareForAutolayout() {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    func fitLayoutOn(_ relativeView: UIView, insets: UIEdgeInsets = .zero) {
+    func fitLayoutOnSuperView(_ superView: UIView, insets: UIEdgeInsets = .zero) {
         self.prepareForAutolayout()
 
         let constraints: [NSLayoutConstraint]
         if #available(iOS 11.0, *) {
             constraints = [
-                self.leftAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.leftAnchor, constant: insets.left),
-                self.topAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.topAnchor, constant: insets.top),
-                self.rightAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
-                self.bottomAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
+                self.leftAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leftAnchor, constant: insets.left),
+                self.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+                self.rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
+                self.bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
             ]
         } else {
             constraints = [
-                self.leftAnchor.constraint(equalTo: relativeView.leftAnchor, constant: insets.left),
-                self.topAnchor.constraint(equalTo: relativeView.topAnchor, constant: insets.top),
-                self.rightAnchor.constraint(equalTo: relativeView.rightAnchor, constant: insets.right),
-                self.bottomAnchor.constraint(equalTo: relativeView.bottomAnchor, constant: insets.bottom)
+                self.leftAnchor.constraint(equalTo: superView.leftAnchor, constant: insets.left),
+                self.topAnchor.constraint(equalTo: superView.topAnchor, constant: insets.top),
+                self.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: insets.right),
+                self.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: insets.bottom)
             ]
         }
 
