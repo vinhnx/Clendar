@@ -86,4 +86,12 @@ extension UIViewController {
         guard self.isBeingDismissed else { return }
         self.dismiss(animated: true, completion: completion)
     }
+
+    // MARK: - Banner
+
+    func showBannerModal(iconText: String = "", title: String = AppName, message: String = "") {
+        let alert = TransientAlertViewController()
+        alert.configure(dateText: iconText, title: title, message: message)
+        self.presentPanModal(alert)
+    }
 }
