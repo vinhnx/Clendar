@@ -19,6 +19,16 @@ final class SettingsNavigationController: BaseNavigationController, PanModalPres
         return (topViewController as? PanModalPresentable)?.panScrollable
     }
 
+    var longFormHeight: PanModalHeight {
+        return .maxHeight
+    }
+
+    var shortFormHeight: PanModalHeight {
+        return longFormHeight
+    }
+
+    // MARK: - Override
+
     override func viewDidLoad() {
         super.viewDidLoad()
         pushViewController(settings, animated: false)
@@ -47,17 +57,4 @@ final class SettingsViewController: BaseViewController, PanModalPresentable {
     // MARK: - Properties
 
     lazy var tableView = TableView(frame: .zero)
-
-    // MARK: - View Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupViews()
-    }
-
-    // MARK: - Override
-
-    override func setupViews() {
-        super.setupViews()
-    }
 }
