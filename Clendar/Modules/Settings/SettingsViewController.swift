@@ -22,6 +22,7 @@ final class SettingsViewController: BaseViewController {
     // MARK: - Override
 
     override func setupViews() {
+        super.setupViews()
         self.view.backgroundColor = .white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.didTapDismiss))
         self.title = "Settings"
