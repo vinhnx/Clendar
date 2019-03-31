@@ -34,7 +34,7 @@ final class EventListViewController: BaseViewController {
             case .success(let value):
                 self?.updateDataSource(value)
             case .failure(let error):
-                print(error)
+                logError(error.localizedDescription)
             }
         }
     }
@@ -76,6 +76,6 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
         #warning("TODO")
         guard let event = self.events[safe: indexPath.row] else { return }
-        print(event)
+        log(event)
     }
 }

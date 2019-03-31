@@ -104,7 +104,7 @@ final class EventHandler {
     private func requestCreatingEventAccess(onAuthorized: VoidHandler?) {
         self.eventStore.requestAccess(to: .event) { granted, error in
             guard granted == true else {
-                error.flatMap { print($0) }
+                error.flatMap { logError($0.localizedDescription) }
                 return
             }
 

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log.git",
+        "state": {
+          "branch": "master",
+          "revision": "55c927dd31fb5d37b9cad6b707cbe9bb2568c71f",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

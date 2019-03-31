@@ -28,6 +28,8 @@
 		A33F811C22476186009CC46A /* AppearanceConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811B22476186009CC46A /* AppearanceConfigurations.swift */; };
 		A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811D22476767009CC46A /* Array+Extensions.swift */; };
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
+		A36A504D2250ED6E00B12034 /* Dependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A50452250ED2900B12034 /* Dependencies.framework */; };
+		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A37B3B6D22506C2100D0488B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6C22506C2100D0488B /* TableView.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A37B3B712250782900D0488B /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B702250782900D0488B /* EventError.swift */; };
@@ -60,6 +62,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = A33F80C522467A82009CC46A;
 			remoteInfo = Clendar;
+		};
+		A36A50442250ED2900B12034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Dependencies::Dependencies::Product";
+			remoteInfo = Dependencies;
+		};
+		A36A50462250ED2900B12034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Dependencies::DependenciesTests::Product";
+			remoteInfo = DependenciesTests;
+		};
+		A36A50482250ED2900B12034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "swift-log::Logging::Product";
+			remoteInfo = Logging;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -95,6 +118,8 @@
 		A33F811B22476186009CC46A /* AppearanceConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurations.swift; sourceTree = "<group>"; };
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
+		A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dependencies.xcodeproj; path = Dependencies/Dependencies.xcodeproj; sourceTree = "<group>"; };
+		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A37B3B6C22506C2100D0488B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A37B3B702250782900D0488B /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
@@ -121,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36A504D2250ED6E00B12034 /* Dependencies.framework in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +204,7 @@
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
+				A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
@@ -276,6 +303,7 @@
 		A33F810522468FB4009CC46A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A36A504E2250EE5800B12034 /* Logger */,
 				A37B3B72225089DD00D0488B /* Alert Modal */,
 				A3F259802247B8EC009A50B6 /* Event */,
 				A33F81112247422A009CC46A /* Input Parser */,
@@ -309,6 +337,24 @@
 				A37B3B6E22506FB000D0488B /* Date+Extensions.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		A36A503B2250ED2900B12034 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A36A50452250ED2900B12034 /* Dependencies.framework */,
+				A36A50472250ED2900B12034 /* DependenciesTests.xctest */,
+				A36A50492250ED2900B12034 /* Logging.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A36A504E2250EE5800B12034 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		A37B3B72225089DD00D0488B /* Alert Modal */ = {
@@ -475,6 +521,12 @@
 			mainGroup = A33F80BD22467A82009CC46A;
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A36A503B2250ED2900B12034 /* Products */;
+					ProjectRef = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A33F80C522467A82009CC46A /* Clendar */,
@@ -483,6 +535,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A36A50452250ED2900B12034 /* Dependencies.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Dependencies.framework;
+			remoteRef = A36A50442250ED2900B12034 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A36A50472250ED2900B12034 /* DependenciesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = DependenciesTests.xctest;
+			remoteRef = A36A50462250ED2900B12034 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A36A50492250ED2900B12034 /* Logging.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Logging.framework;
+			remoteRef = A36A50482250ED2900B12034 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A33F80C422467A82009CC46A /* Resources */ = {
@@ -653,6 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,

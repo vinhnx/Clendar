@@ -34,7 +34,7 @@ excluded: # paths to ignore during linting. overridden by `included`.
   - Pods
   - fastlane
   - R.generated.swift
-
+  - Dependencies
 # parameterized rules can be customized from this configuration file
 # first line is warning, second is error
 file_length:

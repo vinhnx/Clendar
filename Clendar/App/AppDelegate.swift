@@ -10,14 +10,19 @@ import UIKit
 
 /*
  TODO:
+ 
  + trello: https://trello.com/b/pNJSMOCZ/project-clendar-solar-lunar-convert-ios-calendar-integration-natural-date-input-parsing-personal-use-first
  + color: https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/D8AB4910-9F0E-431F-9FCE-13B100D18746/theme/BA2604E8-FD0B-46C3-99C0-03793DED642E/
  + show list of events of day
- + lunar converter
- + lunar event
- + settings
+ + settings:
+    + theme
+    + date type (12 or 24h)
+ + lunar converter (+)
+ + lunar event (+)
+ + theme (+)
  + write tests
  + automation
+ + try promisekit, async/await
  */
 
 @UIApplicationMain

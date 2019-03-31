@@ -21,7 +21,7 @@ extension EKEventStore {
             try self.save(event, span: span, commit: true)
             completion.flatMap { $0() }
         } catch {
-            print(error)
+            logError(error.localizedDescription)
         }
     }
 
@@ -36,7 +36,7 @@ extension EKEventStore {
                 try self.saveCalendar(newClendar, commit: true)
                 completion.flatMap { $0(newClendar) }
             } catch {
-                print(error)
+                logError(error.localizedDescription)
             }
 
             return

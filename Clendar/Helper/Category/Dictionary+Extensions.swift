@@ -97,10 +97,9 @@ extension Dictionary where Key == String {
     func prettyPrint() {
         do {
             let _serialized = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-            print(String(data: _serialized, encoding: .utf8) ?? self.description)
+            log(String(data: _serialized, encoding: .utf8) ?? self.description)
         } catch {
-            // error handling
-            print(error)
+            logError(error.localizedDescription)
         }
     }
 
@@ -126,7 +125,7 @@ extension Dictionary where Key == String {
         do {
             return try JSONSerialization.data(withJSONObject: self, options: [])
         } catch {
-            print(error)
+            logError(error.localizedDescription)
             return nil
         }
     }
