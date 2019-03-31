@@ -7,10 +7,46 @@
 //
 
 import Foundation
+import PanModal
 
-final class SettingsNavigationController: BaseNavigationController {}
+final class SettingsNavigationController: BaseNavigationController, PanModalPresentable {
 
-final class SettingsViewController: BaseViewController {
+    let settings = SettingsViewController()
+
+    // MARK: - Pan Modal Presentable
+
+    var panScrollable: UIScrollView? {
+        return (topViewController as? PanModalPresentable)?.panScrollable
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pushViewController(settings, animated: false)
+    }
+
+    override func popViewController(animated: Bool) -> UIViewController? {
+        let vc = super.popViewController(animated: animated)
+        panModalSetNeedsLayoutUpdate()
+        return vc
+    }
+
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        super.pushViewController(viewController, animated: animated)
+        panModalSetNeedsLayoutUpdate()
+    }
+}
+
+final class SettingsViewController: BaseViewController, PanModalPresentable {
+
+    // MARK: - Pan Modal Presentable
+
+    var panScrollable: UIScrollView? {
+        return tableView
+    }
+
+    // MARK: - Properties
+
+    lazy var tableView = TableView(frame: .zero)
 
     // MARK: - View Lifecycle
 
@@ -23,14 +59,5 @@ final class SettingsViewController: BaseViewController {
 
     override func setupViews() {
         super.setupViews()
-        self.view.backgroundColor = .white
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.didTapDismiss))
-        self.title = "Settings"
-    }
-
-    // MARK: - Action
-
-    @objc private func didTapDismiss() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
