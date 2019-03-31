@@ -9,6 +9,8 @@
 import EventKit
 import Foundation
 
+#warning("TODO: refactor")
+
 final class EventListViewController: BaseViewController {
 
     // MARK: - Properties
@@ -27,15 +29,19 @@ final class EventListViewController: BaseViewController {
     }
 
     func fetchEvents() {
-        EventHandler.shared.fetchEvents { result in
+        EventHandler.shared.fetchEventsForToday { [weak self] result in
             switch result {
             case .success(let value):
-                self.events = value
-                self.tableView.reloadData()
+                self?.updateDataSource(value)
             case .failure(let error):
                 print(error)
             }
         }
+    }
+
+    func updateDataSource(_ dataSource: [EKEvent]) {
+        self.events = dataSource
+        self.tableView.reloadData()
     }
 
     private func configureTableView() {
@@ -59,12 +65,15 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         let event = self.events[safe: indexPath.row]
-        cell.textLabel?.text = event?.title
+        let date = event?.startDate != event?.endDate ? "\(event?.startDate.toString ?? "") to \(event?.endDate.toString ?? "")" : "\(event?.startDate.toString ?? "")"
+        cell.textLabel?.text = "\(event?.title ?? "") - \(date)"
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer { tableView.deselectRow(at: indexPath, animated: true) }
         #warning("TODO")
-        print(#function)
+        guard let event = self.events[safe: indexPath.row] else { return }
+        print(event)
     }
 }
