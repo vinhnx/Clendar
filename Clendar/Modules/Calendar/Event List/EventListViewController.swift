@@ -45,8 +45,6 @@ final class EventListViewController: BaseViewController {
     }
 
     private func configureTableView() {
-        self.tableView.allowsSelection = true
-        self.tableView.isUserInteractionEnabled = true
         self.tableView.tableFooterView = UIView()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
         self.tableView.delegate = self
