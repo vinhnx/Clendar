@@ -27,10 +27,17 @@ extension Date {
         )
     }
 
-    var toString: String {
+    var toHourAndMinuteString: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "HH:mm"
+        return formatter.string(from: self)
+    }
+
+    var toDateString: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "dd"
         return formatter.string(from: self)
     }
 }
