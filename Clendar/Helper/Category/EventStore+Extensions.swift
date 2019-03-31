@@ -27,9 +27,9 @@ extension EKEventStore {
 
     func calendarForApp(completion: EventCalendarHandler? = nil) {
         let calendars = self.calendars(for: .event)
-        guard let clendar = calendars.first(where: { $0.title == calendarName }) else {
+        guard let clendar = calendars.first(where: { $0.title == AppName }) else {
             let newClendar = EKCalendar(for: .event, eventStore: self)
-            newClendar.title = calendarName
+            newClendar.title = AppName
             newClendar.source = self.defaultCalendarForNewEvents?.source
 
             do {
