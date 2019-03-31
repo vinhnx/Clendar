@@ -15,6 +15,10 @@ import EventKit
 typealias VoidHandler = () -> Void
 typealias DateUpdateHandler = (CVDate) -> Void
 typealias EventCalendarHandler = (EKCalendar) -> Void
+typealias SizeUpdateHandler = ((CGSize) -> Void)
+typealias EventResult = Result<[EKEvent], EventError>
+typealias EventResultHandler = (EventResult) -> Void
 
 // constants
 let calendarName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
+let dayTime: TimeInterval = 24 * 3600
