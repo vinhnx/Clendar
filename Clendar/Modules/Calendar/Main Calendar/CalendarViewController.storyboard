@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eak-77-h5z">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="Eak-77-h5z" customClass="CalendarViewController" customModule="Clendar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QOd-5g-Jnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-kw-cgO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="684"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-6r-Qjr">
-                                        <rect key="frame" x="20" y="30" width="335" height="370"/>
+                                        <rect key="frame" x="20" y="30" width="335" height="740"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ4-dN-EPH">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -40,10 +40,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-lR-RHt" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="120" width="335" height="250"/>
+                                                <rect key="frame" x="0.0" y="120" width="335" height="300"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="U1N-AV-yKN"/>
+                                                    <constraint firstAttribute="height" constant="300" id="U1N-AV-yKN"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
+                                                <rect key="frame" x="0.0" y="440" width="335" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="DsK-B7-xgh"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -58,7 +65,7 @@
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-bm-2d9" userLabel="Bottom Stack View">
-                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="50"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDn-a5-6H6" customClass="TextField" customModule="Clendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -73,7 +80,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-1b-3J7" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Settings">
                                                     <color key="titleColor" red="0.46662347840000001" green="0.55454188589999998" blue="0.37650811429999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -83,7 +90,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="197.66666666666663" y="0.0" width="177.33333333333337" height="50"/>
+                                                <rect key="frame" x="197.5" y="0.0" width="177.5" height="50"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="0.95686274510000002" green="0.031372549020000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,11 +111,11 @@
                         <constraints>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="Oz9-kw-cgO" secondAttribute="trailing" id="7dw-cl-snq"/>
                             <constraint firstItem="J5Q-bm-2d9" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="KmM-c7-Lhi"/>
-                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="bottom" id="L8t-Qk-Hik"/>
+                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="bottom" constant="10" id="L8t-Qk-Hik"/>
                             <constraint firstItem="Oz9-kw-cgO" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="Ns8-j5-x7r"/>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="top" id="mkx-jv-JZO"/>
                             <constraint firstAttribute="trailing" secondItem="J5Q-bm-2d9" secondAttribute="trailing" id="vbm-7e-lgd"/>
-                            <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="J5Q-bm-2d9" secondAttribute="bottom" id="z2v-Pp-O60"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="J5Q-bm-2d9" secondAttribute="bottom" constant="10" id="z2v-Pp-O60"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>
                     </view>
@@ -118,6 +125,8 @@
                         <outlet property="bottomConstraint" destination="z2v-Pp-O60" id="SS9-gX-fUQ"/>
                         <outlet property="calendarView" destination="Nby-lR-RHt" id="qqW-3b-okE"/>
                         <outlet property="dayView" destination="EJT-3z-nZs" id="54T-d2-Z0w"/>
+                        <outlet property="eventListContainerView" destination="Amk-Q0-bXu" id="rvI-7k-fpo"/>
+                        <outlet property="eventListHeightConstraint" destination="DsK-B7-xgh" id="eNb-fg-8er"/>
                         <outlet property="inputTextField" destination="RDn-a5-6H6" id="rl0-vQ-M8g"/>
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
                     </connections>

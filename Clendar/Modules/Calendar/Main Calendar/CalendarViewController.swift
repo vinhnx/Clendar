@@ -9,23 +9,16 @@
 import CVCalendar
 import Foundation
 
-#warning("try to break down as UIViewController child Container")
-
 final class CalendarViewController: BaseViewController {
-
-    // MARK: - View Model
-
-    private lazy var inputParser = InputParser()
-    private lazy var workItem = WorkItem()
-    private lazy var eventHandler = EventHandler()
-    internal var currentInput: InputParser.InputParserResult?
 
     // MARK: - Properties
 
-    @IBOutlet private weak var bottomButtonStackView: UIStackView!
-    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet private var eventListHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var eventListContainerView: UIView!
+    @IBOutlet private var bottomButtonStackView: UIStackView!
+    @IBOutlet private var bottomConstraint: NSLayoutConstraint!
 
-    @IBOutlet private weak var calendarView: CVCalendarView! {
+    @IBOutlet private var calendarView: CVCalendarView! {
         didSet {
             self.calendarView.calendarAppearanceDelegate = self
             self.calendarView.animatorDelegate = self
@@ -33,34 +26,52 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    @IBOutlet private weak var dayView: CVCalendarMenuView! {
+    @IBOutlet private var dayView: CVCalendarMenuView! {
         didSet {
             self.dayView.delegate = self
         }
     }
 
-    @IBOutlet private weak var inputTextField: TextField! {
+    @IBOutlet private var inputTextField: TextField! {
         didSet {
             self.inputTextField.delegate = self
             self.inputTextField.applyRoundWithOffsetShadow()
         }
     }
 
-    @IBOutlet private weak var addEventButton: UIButton!
-    @IBOutlet weak var monthLabel: UILabel! {
+    @IBOutlet private var addEventButton: UIButton!
+    @IBOutlet var monthLabel: UILabel! {
         didSet {
-            self.monthLabel.font = FontConfig.boldFontWithSize(40)
+            self.monthLabel.font = FontConfig.boldFontWithSize(30)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
         }
     }
 
-    private var calendarMode: CalendarMode = .monthView
-    private var selectedDay: DayView?
+    private lazy var eventList: EventListViewController = {
+        let proxy = EventListViewController()
+        proxy.contentSizeDidChange = { [weak self] size in
+            self?.eventListHeightConstraint.constant = size.height
+            self?.view.layoutIfNeeded()
+        }
+
+        return proxy
+    }()
+
     private lazy var currentCalendar: Calendar = {
         var proxy = Calendar(identifier: .gregorian)
         proxy.locale = Locale(identifier: "en_US_POSIX")
         return proxy
     }()
+
+    private lazy var inputParser = InputParser()
+    private lazy var workItem = WorkItem()
+    internal var currentInput: InputParser.InputParserResult?
+    private var calendarMode: CalendarMode = .monthView
+    private var selectedDay: DayView? {
+        didSet {
+            self.handleDayViewSelection(selectedDay)
+        }
+    }
 
     // MARK: - Life cycle
 
@@ -77,13 +88,10 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Override
 
     override func setupViews() {
-        // mode handling
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.didPanOnView(gesture:)))
-        self.view.addGestureRecognizer(pan)
-
+        super.setupViews()
+        // container
+        self.addEventListContainer()
         // keyboard handling
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.resignTextField))
-        self.view.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
@@ -91,6 +99,23 @@ final class CalendarViewController: BaseViewController {
     }
 
     // MARK: - Private
+
+    private func handleDayViewSelection(_ dayView: DayView?) {
+        guard let dayView = dayView else { return }
+        guard let date = dayView.date.convertedDate()?.within24h else { return }
+        EventHandler.shared.fetchEvents(startDate: date.startTime, endDate: date.endTime) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.eventList.updateDataSource(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    private func addEventListContainer() {
+        self.addChildViewController(self.eventList, containerView: self.eventListContainerView)
+    }
 
     private func throttleParseInput(_ input: String) {
         self.workItem.perform(after: 1.0) { [weak self] in
@@ -100,27 +125,11 @@ final class CalendarViewController: BaseViewController {
 
     private func handleInput(textField: UITextField) {
         guard let result = self.currentInput else { return }
-        self.eventHandler.createEvent(result.action, startDate: result.startDate, endDate: result.endDate) { [weak self] in
+        EventHandler.shared.createEvent(result.action, startDate: result.startDate, endDate: result.endDate) { [weak self] in
+            textField.text = ""
+            self?.eventList.fetchEvents()
             self?.calendarView.toggleViewWithDate(result.startDate)
-
-            textField.isUserInteractionEnabled = false
-            textField.text = "Event created in Calendar!"
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                textField.text = ""
-                textField.isUserInteractionEnabled = true
-            }
         }
-    }
-
-    @objc private func didPanOnView(gesture: UIPanGestureRecognizer) {
-        guard gesture.state == .ended else { return }
-        self.toggleCalendarMode()
-        self.resignTextField()
-    }
-
-    private func toggleCalendarMode() {
-        self.calendarMode = self.calendarMode == .weekView ? .monthView : .weekView
-        self.calendarView.changeMode(self.calendarMode)
     }
 
     @objc private func resignTextField() {
@@ -279,10 +288,7 @@ extension CalendarViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        defer {
-            textField.resignFirstResponder()
-        }
-
+        defer { textField.resignFirstResponder() }
         self.handleInput(textField: textField)
         return true
     }
