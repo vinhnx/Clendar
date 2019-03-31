@@ -8,6 +8,9 @@
 
 import CVCalendar
 import Foundation
+import PanModal
+
+#warning("TODO: needs refator")
 
 final class CalendarViewController: BaseViewController {
 
@@ -64,7 +67,6 @@ final class CalendarViewController: BaseViewController {
     }()
 
     private lazy var inputParser = InputParser()
-    private lazy var workItem = WorkItem()
     internal var currentInput: InputParser.InputParserResult?
     private var calendarMode: CalendarMode = .monthView
     private var selectedDay: DayView? {
@@ -118,9 +120,7 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func throttleParseInput(_ input: String) {
-        self.workItem.perform(after: 1.0) { [weak self] in
-            self?.currentInput = self?.inputParser.parse(input)
-        }
+        self.currentInput = self.inputParser.parse(input)
     }
 
     private func handleInput(textField: UITextField) {
@@ -260,9 +260,7 @@ extension CalendarViewController {
     }
 
     @IBAction private func didTapSettingsButton() {
-        let settings = SettingsViewController()
-        let settingsNavigation = BaseNavigationController(rootViewController: settings)
-        self.present(settingsNavigation, animated: true, completion: nil)
+        self.presentPanModal(SettingsNavigationController())
     }
 }
 
