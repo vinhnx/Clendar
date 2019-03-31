@@ -10,27 +10,33 @@ import Foundation
 
 extension UIView {
 
-    public func usingAutoLayout() -> Self {
-        translatesAutoresizingMaskIntoConstraints = false
-        return self
+    // MARK: - Autolayout
+
+    func prepareForAutolayout() {
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    public func constraintsToFit(view: UIView, insets: UIEdgeInsets = UIEdgeInsets.zero) -> [NSLayoutConstraint] {
+    func fitLayoutOn(_ relativeView: UIView, insets: UIEdgeInsets = .zero) {
+        self.prepareForAutolayout()
+
+        let constraints: [NSLayoutConstraint]
         if #available(iOS 11.0, *) {
-            return [
-                topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: insets.top),
-                leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left),
-                bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -insets.bottom),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right)
+            constraints = [
+                self.leftAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.leftAnchor, constant: insets.left),
+                self.topAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+                self.rightAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
+                self.bottomAnchor.constraint(equalTo: relativeView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
             ]
         } else {
-            return [
-                topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
-                leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left),
-                bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right)
+            constraints = [
+                self.leftAnchor.constraint(equalTo: relativeView.leftAnchor, constant: insets.left),
+                self.topAnchor.constraint(equalTo: relativeView.topAnchor, constant: insets.top),
+                self.rightAnchor.constraint(equalTo: relativeView.rightAnchor, constant: insets.right),
+                self.bottomAnchor.constraint(equalTo: relativeView.bottomAnchor, constant: insets.bottom)
             ]
         }
+
+        NSLayoutConstraint.activate(constraints)
     }
 
     /// Istantite view instance from nib
