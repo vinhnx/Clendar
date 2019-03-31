@@ -11,6 +11,9 @@ target 'Clendar' do
   # Helper
   pod 'SwiftLint'
   pod 'R.swift'
+  
+  # View
+  pod 'PanModal'
 
   target 'ClendarTests' do
     inherit! :search_paths

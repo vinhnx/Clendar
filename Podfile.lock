@@ -1,6 +1,7 @@
 PODS:
   - CVCalendar (1.6.2)
   - MVVMKit (0.1.6)
+  - PanModal (1.0.2)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - CVCalendar
   - MVVMKit
+  - PanModal
   - R.swift
   - SwiftLint
   - SwiftyChrono
@@ -18,6 +20,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CVCalendar
     - MVVMKit
+    - PanModal
     - R.swift
     - R.swift.Library
     - SwiftLint
@@ -26,11 +29,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
   MVVMKit: 5a66b91038e11922e76e432eaa65a9cf6ebba012
+  PanModal: 01b52e31a2d28e00bad6fa98e14620d706183d13
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
 
-PODFILE CHECKSUM: 69d7396828ed5c3834a6af91ce4c66e28d6c8234
+PODFILE CHECKSUM: fa8f0f62501b76c586c3e8b30e04983ba00dc5c3
 
 COCOAPODS: 1.5.3
