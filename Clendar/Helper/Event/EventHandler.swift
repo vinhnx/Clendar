@@ -33,7 +33,7 @@ final class EventHandler {
             break
 
         case .denied, .restricted:
-            AlertManager.showSettingsAlert(message: "Please authorize \(calendarName) to create Calendar events")
+            AlertManager.showSettingsAlert(message: "Please authorize \(AppName) to create Calendar events")
 
         case .notDetermined:
             self.requestCreatingEventAccess(onAuthorized: onAuthorized)

@@ -20,5 +20,5 @@ typealias EventResult = Result<[EKEvent], EventError>
 typealias EventResultHandler = (EventResult) -> Void
 
 // constants
-let calendarName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
+let AppName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
 let dayTime: TimeInterval = 24 * 3600
