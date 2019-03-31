@@ -9,6 +9,52 @@
 import UIKit
 
 extension UIViewController {
+
+    // MARK: - Container
+
+    /// Add child view controller from container view
+    ///
+    /// - Parameters:
+    ///   - childViewController: child view controller
+    ///   - containerView: container view
+    func addChildViewController(_ childViewController: UIViewController, containerView: UIView) {
+        self.addChild(childViewController)
+        containerView.addSubview(childViewController.view)
+
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        childViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            childViewController.view.topAnchor.constraint(equalTo: containerView.topAnchor),
+            childViewController.view.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+            childViewController.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            childViewController.view.rightAnchor.constraint(equalTo: containerView.rightAnchor)
+            ])
+
+        childViewController.didMove(toParent: self)
+    }
+
+    /// Remove self from parent view controller
+    func removeFromParentViewController() {
+        self.willMove(toParent: nil)
+        self.view.removeFromSuperview()
+        self.removeFromParent()
+    }
+
+    /// Exchange/swap two controllers
+    ///
+    /// - Parameters:
+    ///   - viewControllerA: the view controller to be exchanged
+    ///   - viewControllerB: the view controller to exchange to
+    ///   - containerView: container view to place viewControllerB
+    ///   - rootViewController: the root view controller
+    func exchangeViewControllerA(_ viewControllerA: UIViewController?, with viewControllerB: UIViewController?, containerView: UIView?, on rootViewController: UIViewController) {
+        guard let viewControllerA = viewControllerA else { return }
+        guard let viewControllerB = viewControllerB else { return }
+        guard let containerView = containerView else { return }
+        viewControllerA.removeFromParentViewController()
+        rootViewController.addChildViewController(viewControllerB, containerView: containerView)
+    }
+
     static func topViewController(_ baseViewController: UIViewController?) -> UIViewController? {
         if baseViewController is UINavigationController {
             return self.topViewController((baseViewController as? UINavigationController)?.visibleViewController)
