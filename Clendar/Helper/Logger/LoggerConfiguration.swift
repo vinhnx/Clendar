@@ -12,9 +12,13 @@ import Logging
 let logger = Logger(label: "\(AppName).logger")
 
 func log<T: CustomDebugStringConvertible>(_ thing: T) {
-    logger.info("\(thing.debugDescription)")
+    logger.debug("\(thing.debugDescription)")
 }
 
-func logError(_ message: String) {
-    logger.error("\(message)")
+func logError<E: Error & LocalizedError>(_ error: E) {
+    logger.error("\(error.localizedDescription)")
+}
+
+func logInfo<T: CustomDebugStringConvertible>(_ thing: T) {
+    logger.info("\(thing.debugDescription)")
 }
