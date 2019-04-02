@@ -34,7 +34,7 @@ final class EventListViewController: BaseViewController {
             case .success(let value):
                 self?.updateDataSource(value)
             case .failure(let error):
-                logError(error.localizedDescription)
+                logError(error)
             }
         }
     }

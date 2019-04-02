@@ -110,7 +110,7 @@ final class CalendarViewController: BaseViewController {
             case .success(let response):
                 self?.eventList.updateDataSource(response)
             case .failure(let error):
-                logError(error.localizedDescription)
+                logError(error)
             }
         }
     }

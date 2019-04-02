@@ -15,7 +15,7 @@ func log<T: CustomDebugStringConvertible>(_ thing: T) {
     logger.debug("\(thing.debugDescription)")
 }
 
-func logError<E: Error & LocalizedError>(_ error: E) {
+func logError<E: Error>(_ error: E) {
     logger.error("\(error.localizedDescription)")
 }
 

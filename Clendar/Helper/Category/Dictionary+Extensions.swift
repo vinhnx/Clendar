@@ -99,7 +99,7 @@ extension Dictionary where Key == String {
             let _serialized = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
             log(String(data: _serialized, encoding: .utf8) ?? self.description)
         } catch {
-            logError(error.localizedDescription)
+            logError(error)
         }
     }
 
@@ -125,7 +125,7 @@ extension Dictionary where Key == String {
         do {
             return try JSONSerialization.data(withJSONObject: self, options: [])
         } catch {
-            logError(error.localizedDescription)
+            logError(error)
             return nil
         }
     }
