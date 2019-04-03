@@ -52,6 +52,8 @@ final class EventListViewController: BaseViewController {
         self.view.addSubViewAndFit(self.tableView)
         self.tableView.isScrollEnabled = false
         self.tableView.contentSizeDidChange = self.contentSizeDidChange
+        self.tableView.separatorStyle = .none
+        self.tableView.applyRoundWithOffsetShadow()
     }
 }
 
@@ -66,7 +68,8 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 
         #warning("TODO: ")
         let date = event?.startDate != event?.endDate ? "\(event?.startDate.toHourAndMinuteString ?? "") to \(event?.endDate.toHourAndMinuteString ?? "")" : "\(event?.startDate.toHourAndMinuteString ?? "")"
-        cell.textLabel?.text = "\(event?.title ?? "") - \(date)"
+        cell.textLabel?.text = "[\(date)] \(event?.title ?? "")"
+        cell.textLabel?.font = FontConfig.regularFontWithSize(15)
         return cell
     }
 

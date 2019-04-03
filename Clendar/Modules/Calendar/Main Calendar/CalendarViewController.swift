@@ -91,16 +91,24 @@ final class CalendarViewController: BaseViewController {
 
     override func setupViews() {
         super.setupViews()
-        // container
+        self.addGestures()
         self.addEventListContainer()
-        // keyboard handling
+        self.addKeyboardObserver()
+    }
+
+    // MARK: - Private
+
+    private func addGestures() {
+        self.monthLabel.isUserInteractionEnabled = true
+        self.monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
+    }
+
+    private func addKeyboardObserver() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardNotification(notification:)),
                                                name: UIResponder.keyboardWillChangeFrameNotification,
                                                object: nil)
     }
-
-    // MARK: - Private
 
     private func handleDayViewSelection(_ dayView: DayView?) {
         guard let dayView = dayView else { return }
@@ -247,11 +255,14 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
         default: return nil
         }
     }
-}
-
-extension CalendarViewController {
 
     // MARK: - Actions
+
+    @objc private func didTapMonthLabel() {
+        DispatchQueue.main.async {
+            self.calendarView.toggleCurrentDayView()
+        }
+    }
 
     @IBAction func didTapAddEventButton() {
         self.bottomButtonStackView.isHidden = true

@@ -58,17 +58,17 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="mZL-6r-Qjr" firstAttribute="leading" secondItem="Oz9-kw-cgO" secondAttribute="leading" constant="20" id="2Rd-HE-iWX"/>
-                                    <constraint firstAttribute="bottom" secondItem="mZL-6r-Qjr" secondAttribute="bottom" id="DPF-na-VOU"/>
+                                    <constraint firstAttribute="bottom" secondItem="mZL-6r-Qjr" secondAttribute="bottom" constant="20" id="DPF-na-VOU"/>
                                     <constraint firstItem="mZL-6r-Qjr" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="top" constant="30" id="P8i-Mv-LVl"/>
                                     <constraint firstAttribute="trailing" secondItem="mZL-6r-Qjr" secondAttribute="trailing" constant="20" id="Pue-6W-8FB"/>
                                     <constraint firstItem="mZL-6r-Qjr" firstAttribute="centerX" secondItem="Oz9-kw-cgO" secondAttribute="centerX" id="xob-I6-jgp"/>
                                 </constraints>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-bm-2d9" userLabel="Bottom Stack View">
-                                <rect key="frame" x="0.0" y="607" width="375" height="50"/>
+                                <rect key="frame" x="20" y="607" width="335" height="50"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDn-a5-6H6" customClass="TextField" customModule="Clendar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eu5-m6-E0k"/>
                                         </constraints>
@@ -77,10 +77,10 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="go"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xXK-OR-k0F" userLabel="Buttons Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-1b-3J7" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Settings">
                                                     <color key="titleColor" red="0.46662347840000001" green="0.55454188589999998" blue="0.37650811429999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,7 +90,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="197.5" y="0.0" width="177.5" height="50"/>
+                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="0.95686274510000002" green="0.031372549020000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,11 +110,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="Oz9-kw-cgO" secondAttribute="trailing" id="7dw-cl-snq"/>
-                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="KmM-c7-Lhi"/>
                             <constraint firstItem="J5Q-bm-2d9" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="bottom" constant="10" id="L8t-Qk-Hik"/>
                             <constraint firstItem="Oz9-kw-cgO" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="Ns8-j5-x7r"/>
+                            <constraint firstAttribute="trailing" secondItem="J5Q-bm-2d9" secondAttribute="trailing" constant="20" id="QvQ-iX-X5B"/>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="top" id="mkx-jv-JZO"/>
-                            <constraint firstAttribute="trailing" secondItem="J5Q-bm-2d9" secondAttribute="trailing" id="vbm-7e-lgd"/>
+                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="leading" secondItem="QOd-5g-Jnm" secondAttribute="leading" constant="20" id="x3b-Lf-kg5"/>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="J5Q-bm-2d9" secondAttribute="bottom" constant="10" id="z2v-Pp-O60"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>

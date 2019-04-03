@@ -16,6 +16,26 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
+  /// This `R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    /// Image `next`.
+    static let next = Rswift.ImageResource(bundle: R.hostingBundle, name: "next")
+    /// Image `previous`.
+    static let previous = Rswift.ImageResource(bundle: R.hostingBundle, name: "previous")
+    
+    /// `UIImage(named: "next", bundle: ..., traitCollection: ...)`
+    static func next(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.next, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "previous", bundle: ..., traitCollection: ...)`
+    static func previous(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.previous, compatibleWith: traitCollection)
+    }
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `CalendarViewController`.
