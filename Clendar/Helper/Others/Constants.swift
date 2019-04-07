@@ -22,3 +22,6 @@ typealias EventResultHandler = (EventResult) -> Void
 // constants
 let AppName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
 let dayTime: TimeInterval = 24 * 3600
+
+// notifications
+let kDidAuthorizeCalendarAccess = Notification.Name(rawValue: "kDidAuthorizeCalendarAccess")
