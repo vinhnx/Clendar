@@ -40,4 +40,27 @@ extension Date {
         formatter.dateFormat = "dd"
         return formatter.string(from: self)
     }
+
+    var toFullDateString: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "EEEE, MMM d, yyyy"
+        return formatter.string(from: self)
+    }
+
+    var components: DateComponents {
+        return Calendar.current.dateComponents([.day, .calendar, .era, .hour, .minute, .month, .nanosecond, .quarter, .second, .weekday, .timeZone, .weekdayOrdinal, .weekOfMonth, .weekOfYear, .year, .yearForWeekOfYear], from: self)
+    }
+
+    var day: Int? {
+        return self.components.day
+    }
+
+    var month: Int? {
+        return self.components.month
+    }
+
+    var year: Int? {
+        return self.components.year
+    }
 }
