@@ -76,14 +76,6 @@ class AlertView: UIView {
         alertStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14).isActive = true
         alertStackView.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
     }
-
-    // MARK: - Public
-
-    func configure(dateText: String, title: String, message: String) {
-        self.dateLabel.text = dateText
-        self.titleLabel.text = title
-        self.message.text = message
-    }
 }
 
 class AlertViewController: UIViewController, PanModalPresentable {
@@ -108,6 +100,13 @@ class AlertViewController: UIViewController, PanModalPresentable {
         alertView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         alertView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         alertView.heightAnchor.constraint(equalToConstant: alertViewHeight).isActive = true
+    }
+
+    func configure(dateText: String, title: String, message: String, backgroundColor: UIColor? = .white) {
+        self.alertView.dateLabel.text = dateText
+        self.alertView.titleLabel.text = title
+        self.alertView.message.text = message
+        self.alertView.backgroundColor = backgroundColor
     }
 
     // MARK: - PanModalPresentable
@@ -173,12 +172,6 @@ class TransientAlertViewController: AlertViewController {
             invalidateTimer()
             dismiss(animated: true, completion: nil)
         }
-    }
-
-    func configure(dateText: String, title: String, message: String) {
-        self.alertView.dateLabel.text = dateText
-        self.alertView.titleLabel.text = title
-        self.alertView.message.text = message
     }
 
     func invalidateTimer() {

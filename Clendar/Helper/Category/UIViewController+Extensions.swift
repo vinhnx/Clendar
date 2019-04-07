@@ -89,8 +89,12 @@ extension UIViewController {
 
     // MARK: - Banner
 
-    func showBannerModal(iconText: String = "", title: String = AppName, message: String = "") {
-        let alert = TransientAlertViewController()
+    func presentAlertModal(iconText: String = "", title: String = AppName, message: String = "") {
+        if UINavigationController.topViewController is TransientAlertViewController {
+            (UINavigationController.topViewController as? AlertViewController)?.dismiss(animated: true, completion: nil)
+        }
+        
+        let alert = AlertViewController()
         alert.configure(dateText: iconText, title: title, message: message)
         self.presentPanModal(alert)
     }

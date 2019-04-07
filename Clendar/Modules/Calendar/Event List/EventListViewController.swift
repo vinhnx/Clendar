@@ -88,9 +88,15 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         guard let event = self.events[safe: indexPath.row] else { return UITableViewCell() }
 
         #warning("TODO: ")
-        let date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
+        var date = ""
+        if event.isAllDay {
+            date = "All day"
+        } else {
+            date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
+        }
+
         cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
-        cell.textLabel?.font = FontConfig.regularFontWithSize(15)
+        cell.textLabel?.font = FontConfig.regularFontWithSize(12)
 
         let view = UIView()
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
@@ -106,5 +112,13 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         #warning("TODO")
         guard let event = self.events[safe: indexPath.row] else { return }
         log(event)
+
+        var date = ""
+        if event.isAllDay {
+            date = "All day"
+        } else {
+            date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
+        }
+        self.presentAlertModal(iconText: "\(event.startDate.toDateString)", title: date, message: event.title)
     }
 }
