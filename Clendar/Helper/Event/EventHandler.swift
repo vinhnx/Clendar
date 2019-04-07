@@ -69,7 +69,12 @@ final class EventHandler {
         self.fetchEvents(startDate: today.startTime, endDate: today.endTime, completion: completion)
     }
 
-    func fetchEvents(startDate: Date, endDate: Date, completion: EventResultHandler? = nil) {
+    func fetchEvents(for date: Date, completion: EventResultHandler?) {
+        let dateCombo = date.within24h
+        self.fetchEvents(startDate: dateCombo.startTime, endDate: dateCombo.endTime, completion: completion)
+    }
+    
+    func fetchEvents(startDate: Date, endDate: Date, completion: EventResultHandler?) {
         let status = EKEventStore.authorizationStatus(for: .event)
         guard status == .authorized else {
             self.request { [weak self] in
@@ -108,6 +113,7 @@ final class EventHandler {
                 return
             }
 
+            NotificationCenter.default.post(name: kDidAuthorizeCalendarAccess, object: nil)
             onAuthorized.flatMap { $0() }
         }
     }
