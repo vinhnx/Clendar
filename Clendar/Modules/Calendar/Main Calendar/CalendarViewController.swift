@@ -7,6 +7,7 @@
 //
 
 import CVCalendar
+import EventKit
 import Foundation
 import PanModal
 
@@ -16,6 +17,7 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
 
+    @IBOutlet private var todayButton: UIButton!
     @IBOutlet private var eventListHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var eventListContainerView: UIView!
     @IBOutlet private var bottomButtonStackView: UIStackView!
@@ -72,6 +74,7 @@ final class CalendarViewController: BaseViewController {
     private var selectedDay: DayView? {
         didSet {
             self.handleDayViewSelection(selectedDay)
+            self.handleTodayButton(switchingDate: selectedDay?.date.convertedDate() ?? Date())
         }
     }
 
@@ -93,32 +96,64 @@ final class CalendarViewController: BaseViewController {
         super.setupViews()
         self.addGestures()
         self.addEventListContainer()
-        self.addKeyboardObserver()
+        self.addObservers()
+        self.selectToday()
     }
 
     // MARK: - Private
+
+    private func handleDisplaySubDayView(_ dayView: DayView) -> Bool {
+        var display = false
+
+        self.fetchEventsFor(dayView) { result in
+            switch result {
+            case .success(let response):
+                display = response.isEmpty == false
+            case .failure:
+                break
+            }
+        }
+
+        return display
+    }
+
+    private func handleTodayButton(switchingDate: Date) {
+        defer {
+            self.resignTextField()
+        }
+
+        self.todayButton.isHidden = switchingDate.day == Date().day
+    }
+
+    private func selectToday() {
+        DispatchQueue.main.async {
+            self.calendarView.toggleCurrentDayView()
+        }
+    }
+
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleDidAuthorizeCalendarAccess), name: kDidAuthorizeCalendarAccess, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    @objc private func handleDidAuthorizeCalendarAccess() {
+        self.selectToday()
+    }
 
     private func addGestures() {
         self.monthLabel.isUserInteractionEnabled = true
         self.monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
     }
 
-    private func addKeyboardObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.keyboardNotification(notification:)),
-                                               name: UIResponder.keyboardWillChangeFrameNotification,
-                                               object: nil)
-    }
-
     private func handleDayViewSelection(_ dayView: DayView?) {
         guard let dayView = dayView else { return }
-        guard let date = dayView.date.convertedDate()?.within24h else { return }
-        EventHandler.shared.fetchEvents(startDate: date.startTime, endDate: date.endTime) { [weak self] result in
+        self.fetchEventsFor(dayView) { result in
             switch result {
             case .success(let response):
-                self?.eventList.updateDataSource(response)
-            case .failure(let error):
-                logError(error)
+                self.eventList.updateDataSource(response)
+                self.eventList.updateHeader(dayView.date.convertedDate() ?? Date())
+            case .failure:
+                break
             }
         }
     }
@@ -216,11 +251,29 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func didShowNextMonthView(_ date: Foundation.Date) {
-        self.resignTextField()
+        self.handleTodayButton(switchingDate: date)
     }
 
     func didShowPreviousMonthView(_ date: Foundation.Date) {
-        self.resignTextField()
+        self.handleTodayButton(switchingDate: date)
+    }
+
+    private func fetchEventsFor(_ dayView: DayView, completion: EventResultHandler?) {
+        guard let date = dayView.date.convertedDate() else { return }
+        EventHandler.shared.fetchEvents(for: date, completion: completion)
+    }
+
+    private func fetchEventsFor(_ date: Date, completion: @escaping EventResultHandler) {
+        EventHandler.shared.fetchEvents(for: date, completion: completion)
+    }
+
+    func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
+        guard let view = DateHighlightView.viewForDayView(dayView) else { return UIView() }
+        return view
+    }
+
+    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
+        return self.handleDisplaySubDayView(dayView)
     }
 }
 
@@ -235,7 +288,7 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     func spaceBetweenDayViews() -> CGFloat { return 0 }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        return FontConfig.regularFontWithSize(15)
+        return FontConfig.regularFontWithSize(20)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
@@ -258,10 +311,12 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
 
     // MARK: - Actions
 
+    @IBAction private func didTapTodayButton() {
+        self.selectToday()
+    }
+
     @objc private func didTapMonthLabel() {
-        DispatchQueue.main.async {
-            self.calendarView.toggleCurrentDayView()
-        }
+        self.selectToday()
     }
 
     @IBAction func didTapAddEventButton() {
