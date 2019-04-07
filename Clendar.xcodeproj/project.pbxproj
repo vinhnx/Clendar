@@ -10,6 +10,9 @@
 		68890989EC17BFBF22CEFE27 /* Pods_ClendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
+		A320CC72225516F200C84B27 /* Dependencies.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A36A50452250ED2900B12034 /* Dependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A320CC732255172F00C84B27 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A50492250ED2900B12034 /* Logging.framework */; };
+		A320CC742255173400C84B27 /* Logging.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A36A50492250ED2900B12034 /* Logging.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80C922467A82009CC46A /* AppDelegate.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80D422467A85009CC46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D222467A85009CC46A /* LaunchScreen.storyboard */; };
@@ -86,6 +89,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A320CC6B225516E400C84B27 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A320CC742255173400C84B27 /* Logging.framework in CopyFiles */,
+				A320CC72225516F200C84B27 /* Dependencies.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A320CC732255172F00C84B27 /* Logging.framework in Frameworks */,
 				A36A504D2250ED6E00B12034 /* Dependencies.framework in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
@@ -434,6 +452,7 @@
 				A33F80C222467A82009CC46A /* Sources */,
 				A33F80C322467A82009CC46A /* Frameworks */,
 				A33F80C422467A82009CC46A /* Resources */,
+				A320CC6B225516E400C84B27 /* CopyFiles */,
 				5B872D6F5371C5616117097F /* [CP] Embed Pods Frameworks */,
 				A33F80FA22467EEF009CC46A /* SwiftLint */,
 			);
