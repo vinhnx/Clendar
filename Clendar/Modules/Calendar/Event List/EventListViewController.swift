@@ -17,8 +17,15 @@ final class EventListViewController: BaseViewController {
 
     let cellID = "Cell"
     var contentSizeDidChange: SizeUpdateHandler?
-    private var tableView = TableView(frame: .zero)
+    private var tableView = TableView(frame: .zero, style: .grouped)
     private var events = [EKEvent]()
+    private lazy var headerView: UILabel = {
+        let label = UILabel()
+        label.font = FontConfig.boldFontWithSize(15)
+        label.text = Date().toFullDateString
+        label.backgroundColor = .white
+        return label
+    }()
 
     // MARK: - Override
 
@@ -27,6 +34,8 @@ final class EventListViewController: BaseViewController {
         self.configureTableView()
         self.fetchEvents()
     }
+
+    // MARK: - Public
 
     func fetchEvents() {
         EventHandler.shared.fetchEventsForToday { [weak self] result in
@@ -41,8 +50,16 @@ final class EventListViewController: BaseViewController {
 
     func updateDataSource(_ dataSource: [EKEvent]) {
         self.events = dataSource
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
+
+    func updateHeader(_ date: Date) {
+        self.headerView.text = date.toFullDateString
+    }
+
+    // MARK: - Private
 
     private func configureTableView() {
         self.tableView.tableFooterView = UIView()
@@ -53,23 +70,34 @@ final class EventListViewController: BaseViewController {
         self.tableView.isScrollEnabled = false
         self.tableView.contentSizeDidChange = self.contentSizeDidChange
         self.tableView.separatorStyle = .none
-        self.tableView.applyRoundWithOffsetShadow()
+        self.tableView.backgroundColor = .white
     }
 }
 
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.headerView
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        let event = self.events[safe: indexPath.row]
+        guard let event = self.events[safe: indexPath.row] else { return UITableViewCell() }
 
         #warning("TODO: ")
-        let date = event?.startDate != event?.endDate ? "\(event?.startDate.toHourAndMinuteString ?? "") to \(event?.endDate.toHourAndMinuteString ?? "")" : "\(event?.startDate.toHourAndMinuteString ?? "")"
-        cell.textLabel?.text = "[\(date)] \(event?.title ?? "")"
+        let date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
+        cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
         cell.textLabel?.font = FontConfig.regularFontWithSize(15)
+
+        let view = UIView()
+        view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
+        view.frame = CGRect(x: 0, y: 0, width: 5, height: cell.frame.size.height)
+        view.applyCornerRadius()
+        cell.contentView.addSubview(view)
+
         return cell
     }
 
