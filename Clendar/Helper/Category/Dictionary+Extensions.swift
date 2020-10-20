@@ -118,7 +118,7 @@ extension Dictionary where Key == String {
 
     var toData: Data? {
         guard JSONSerialization.isValidJSONObject(self) else {
-            print("invalid json: \(self)")
+            log("invalid json: \(self)")
             return nil
         }
 
