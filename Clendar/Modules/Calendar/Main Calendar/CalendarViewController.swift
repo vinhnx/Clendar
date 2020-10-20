@@ -134,6 +134,7 @@ final class CalendarViewController: BaseViewController {
 
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleDidAuthorizeCalendarAccess), name: kDidAuthorizeCalendarAccess, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
     @objc private func handleDidAuthorizeCalendarAccess() {
