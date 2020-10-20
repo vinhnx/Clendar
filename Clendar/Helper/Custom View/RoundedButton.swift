@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Button: UIButton {
     override init(frame: CGRect) {
