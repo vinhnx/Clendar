@@ -6,8 +6,8 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
+import UIKit
 import EventKit
-import Foundation
 
 #warning("TODO: refactor")
 

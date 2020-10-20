@@ -6,6 +6,7 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
+import UIKit
 import CVCalendar
 import EventKit
 import Foundation
@@ -268,12 +269,12 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        guard let view = DateHighlightView.viewForDayView(dayView) else { return UIView() }
+        guard let view = DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) else { return UIView() }
         return view
     }
 
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        return self.handleDisplaySubDayView(dayView)
+        return true
     }
 }
 

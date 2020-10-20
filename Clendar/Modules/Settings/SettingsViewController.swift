@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import PanModal
 
 final class SettingsNavigationController: BaseNavigationController, PanModalPresentable {
