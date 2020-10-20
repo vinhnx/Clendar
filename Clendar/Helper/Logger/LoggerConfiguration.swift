@@ -7,21 +7,18 @@
 //
 
 import Foundation
+import Logging
+
+let logger = Logger(label: "\(AppName).logger")
 
 func log<T: CustomDebugStringConvertible>(_ thing: T) {
-    #if DEBUG
-    print("[DEBUG] \(thing.debugDescription)")
-    #endif
+    logger.debug("\(thing.debugDescription)")
 }
 
 func logError<E: Error>(_ error: E) {
-    #if DEBUG
-    print("[ERROR] \(error.localizedDescription)")
-    #endif
+    logger.error("\(error.localizedDescription)")
 }
 
 func logInfo<T: CustomDebugStringConvertible>(_ thing: T) {
-    #if DEBUG
-    print("[INFO] \(thing.debugDescription)")
-    #endif
+    logger.info("\(thing.debugDescription)")
 }
