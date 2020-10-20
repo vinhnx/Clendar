@@ -9,7 +9,9 @@
 import Foundation
 import Logging
 
-let logger = Logger(label: "\(AppName).logger")
+// Reference: https://nshipster.com/swift-log/
+
+var logger = Logger(label: "com.\(AppName).logger")
 
 func log<T: CustomDebugStringConvertible>(_ thing: T) {
     logger.debug("\(thing.debugDescription)")

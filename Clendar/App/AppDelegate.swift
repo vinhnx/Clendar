@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
+import Logging
 
 /*
  TODO:
@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
+        configureLogger()
         return true
     }
 
@@ -65,9 +66,7 @@ extension AppDelegate {
         self.window?.makeKeyAndVisible()
     }
 
-    private func convertKeyboardManager() {
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    fileprivate func configureLogger() {
+        logger.logLevel = .debug
     }
-
 }

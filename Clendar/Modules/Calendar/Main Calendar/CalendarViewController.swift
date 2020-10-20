@@ -220,6 +220,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     func shouldAutoSelectDayOnMonthChange() -> Bool { return false }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+        log(#function)
         self.selectedDay = dayView
         self.resignTextField()
     }

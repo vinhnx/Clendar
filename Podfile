@@ -8,7 +8,7 @@ target 'Clendar' do
 
   # Core
   pod 'SwiftyChrono'
-  pod 'IQKeyboardManagerSwift'
+  pod 'SwiftDate', '~> 5.0'
   
   # Helper
   pod 'SwiftLint'
