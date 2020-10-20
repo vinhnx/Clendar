@@ -21,6 +21,7 @@ final class EventListViewController: BaseViewController {
     private var events = [EKEvent]()
     private lazy var headerView: UILabel = {
         let label = UILabel()
+        label.textColor = .systemGray
         label.font = FontConfig.boldFontWithSize(15)
         label.text = Date().toFullDateString
         label.backgroundColor = .white

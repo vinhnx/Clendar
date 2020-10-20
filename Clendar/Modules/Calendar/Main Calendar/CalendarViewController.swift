@@ -48,6 +48,7 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet private var addEventButton: UIButton!
     @IBOutlet var monthLabel: UILabel! {
         didSet {
+            self.monthLabel.textColor = .systemGray
             self.monthLabel.font = FontConfig.boldFontWithSize(30)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
         }
