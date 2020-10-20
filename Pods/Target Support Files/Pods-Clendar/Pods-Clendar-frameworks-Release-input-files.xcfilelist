@@ -1,6 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework
-${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework
 ${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
+${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework
