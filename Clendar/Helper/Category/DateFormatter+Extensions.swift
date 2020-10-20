@@ -26,5 +26,15 @@ extension DateFormatter {
         dateFormater.calendar = Calendar(identifier: .chinese)
         return dateFormater.string(from: date)
     }
-    
+
+}
+
+public class CalendarManager {
+    public private(set) var calendar: Calendar
+
+    static let shared = CalendarManager()
+    private init() {
+        self.calendar = Calendar.makeGregorianCalendar()
+    } // This prevents others from using the default '()' initializer for this class.
+
 }

@@ -54,6 +54,8 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
+    private lazy var currentCalendar: Calendar = CalendarManager.shared.calendar
+
     private lazy var eventList: EventListViewController = {
         let proxy = EventListViewController()
         proxy.contentSizeDidChange = { [weak self] size in
@@ -61,12 +63,6 @@ final class CalendarViewController: BaseViewController {
             self?.view.layoutIfNeeded()
         }
 
-        return proxy
-    }()
-
-    private lazy var currentCalendar: Calendar = {
-        var proxy = Calendar(identifier: .gregorian)
-        proxy.locale = Locale(identifier: "en_US_POSIX")
         return proxy
     }()
 
