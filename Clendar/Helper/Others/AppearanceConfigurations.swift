@@ -21,10 +21,10 @@ struct FontConfig {
 
 struct CalendarColorsConfig {
     static let selectedText = UIColor.white
-    static let text = UIColor.darkGray
+    static let text = UIColor.systemGray
     static let textDisabled = text.withAlphaComponent(0.5)
-    static let selectionBackground = UIColor.red
-    static let sundayText = UIColor.red
+    static let selectionBackground = UIColor.systemRed
+    static let sundayText = UIColor.systemRed
     static let sundayTextDisabled = sundayText.withAlphaComponent(0.5)
     static let sundaySelectionBackground = sundayText
 }
