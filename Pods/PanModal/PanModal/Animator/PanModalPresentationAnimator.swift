@@ -5,6 +5,7 @@
 //  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -63,11 +64,16 @@ public class PanModalPresentationAnimator: NSObject {
      */
     private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
 
-        guard let toVC = transitionContext.viewController(forKey: .to)
+        guard
+            let toVC = transitionContext.viewController(forKey: .to),
+            let fromVC = transitionContext.viewController(forKey: .from)
             else { return }
 
-        let presentable = toVC as? PanModalPresentable.LayoutType
+        let presentable = panModalLayoutType(from: transitionContext)
 
+        // Calls viewWillAppear and viewWillDisappear
+        fromVC.beginAppearanceTransition(false, animated: true)
+        
         // Presents the view in shortForm position, initially
         let yPos: CGFloat = presentable?.shortFormYPos ?? 0.0
 
@@ -86,6 +92,8 @@ public class PanModalPresentationAnimator: NSObject {
         PanModalAnimator.animate({
             panView.frame.origin.y = yPos
         }, config: presentable) { [weak self] didComplete in
+            // Calls viewDidAppear and viewDidDisappear
+            fromVC.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
             self?.feedbackGenerator = nil
         }
@@ -96,17 +104,36 @@ public class PanModalPresentationAnimator: NSObject {
      */
     private func animateDismissal(transitionContext: UIViewControllerContextTransitioning) {
 
-        guard let fromVC = transitionContext.viewController(forKey: .from)
+        guard
+            let toVC = transitionContext.viewController(forKey: .to),
+            let fromVC = transitionContext.viewController(forKey: .from)
             else { return }
 
-        let presentable = fromVC as? PanModalPresentable.LayoutType
+        // Calls viewWillAppear and viewWillDisappear
+        toVC.beginAppearanceTransition(true, animated: true)
+        
+        let presentable = panModalLayoutType(from: transitionContext)
         let panView: UIView = transitionContext.containerView.panContainerView ?? fromVC.view
 
         PanModalAnimator.animate({
             panView.frame.origin.y = transitionContext.containerView.frame.height
         }, config: presentable) { didComplete in
             fromVC.view.removeFromSuperview()
+            // Calls viewDidAppear and viewDidDisappear
+            toVC.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
+        }
+    }
+
+    /**
+     Extracts the PanModal from the transition context, if it exists
+     */
+    private func panModalLayoutType(from context: UIViewControllerContextTransitioning) -> PanModalPresentable.LayoutType? {
+        switch transitionStyle {
+        case .presentation:
+            return context.viewController(forKey: .to) as? PanModalPresentable.LayoutType
+        case .dismissal:
+            return context.viewController(forKey: .from) as? PanModalPresentable.LayoutType
         }
     }
 
@@ -120,11 +147,17 @@ extension PanModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
      Returns the transition duration
      */
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return PanModalAnimator.Constants.transitionDuration
+
+        guard
+            let context = transitionContext,
+            let presentable = panModalLayoutType(from: context)
+            else { return PanModalAnimator.Constants.defaultTransitionDuration }
+
+        return presentable.transitionDuration
     }
 
     /**
-     Perfroms the appropriate animation based on the transition style
+     Performs the appropriate animation based on the transition style
      */
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         switch transitionStyle {
@@ -136,3 +169,4 @@ extension PanModalPresentationAnimator: UIViewControllerAnimatedTransitioning {
     }
 
 }
+#endif

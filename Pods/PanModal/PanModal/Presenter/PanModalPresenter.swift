@@ -1,10 +1,11 @@
 //
 //  PanModalPresenter.swift
-//  SlackUI
+//  PanModal
 //
 //  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -17,7 +18,7 @@ import UIKit
                                              sourceRect: .zero)
  ```
  */
-public protocol PanModalPresenter {
+protocol PanModalPresenter: AnyObject {
 
     /**
      A flag that returns true if the current presented view controller
@@ -31,3 +32,4 @@ public protocol PanModalPresenter {
     func presentPanModal(_ viewControllerToPresent: PanModalPresentable.LayoutType, sourceView: UIView?, sourceRect: CGRect)
 
 }
+#endif

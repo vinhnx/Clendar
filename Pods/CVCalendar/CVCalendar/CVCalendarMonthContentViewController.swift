@@ -173,7 +173,7 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
                             guard let strongSelf = self else {
                                 return
                             }
-                            strongSelf.prepareTopMarkersOnMonthView(presented, hidden: true)
+                            strongSelf.prepareTopMarkersOnMonthView(presented, hidden: self?.calendarView.delegate?.shouldHideTopMarkerOnPresentedView?() ?? true)
 
                             extra.frame.origin.x += strongSelf.scrollView.frame.width
                             presented.frame.origin.x += strongSelf.scrollView.frame.width
@@ -217,7 +217,7 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
                 guard let strongSelf = self else {
                     return
                 }
-                strongSelf.prepareTopMarkersOnMonthView(presented, hidden: true)
+                strongSelf.prepareTopMarkersOnMonthView(presented, hidden: self?.calendarView.delegate?.shouldHideTopMarkerOnPresentedView?() ?? true)
 
                 extra.frame.origin.x -= strongSelf.scrollView.frame.width
                 presented.frame.origin.x -= strongSelf.scrollView.frame.width
@@ -471,7 +471,13 @@ extension CVCalendarMonthContentViewController {
             return
         }
 
-        let page = Int(floor((scrollView.contentOffset.x - scrollView.frame.width / 2) / scrollView.frame.width) + 1)
+        var page = 0
+        if (scrollView.contentOffset.x - scrollView.frame.width) == 0 {
+                page = 1
+        } else {
+            page = Int(floor((scrollView.contentOffset.x - scrollView.frame.width / 2) / scrollView.frame.width) + 1)
+        }
+        
         if currentPage != page {
             currentPage = page
         }
@@ -481,7 +487,7 @@ extension CVCalendarMonthContentViewController {
 
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if let presented = monthViews[presented] {
-            prepareTopMarkersOnMonthView(presented, hidden: true)
+            prepareTopMarkersOnMonthView(presented, hidden: self.calendarView.delegate?.shouldHideTopMarkerOnPresentedView?() ?? true)
         }
     }
 

@@ -1,10 +1,11 @@
 //
 //  PanModalHeight.swift
-//  SlackUI
+//  PanModal
 //
 //  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -35,4 +36,9 @@ public enum PanModalHeight: Equatable {
      */
     case contentHeightIgnoringSafeArea(CGFloat)
 
+    /**
+     Sets the height to be the intrinsic content height
+     */
+    case intrinsicHeight
 }
+#endif

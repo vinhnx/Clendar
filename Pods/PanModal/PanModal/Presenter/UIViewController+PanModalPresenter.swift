@@ -1,10 +1,11 @@
 //
 //  UIViewController+PanModalPresenterProtocol.swift
-//  SlackUI
+//  PanModal
 //
 //  Copyright © 2019 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -50,6 +51,7 @@ extension UIViewController: PanModalPresenter {
             viewControllerToPresent.popoverPresentationController?.delegate = PanModalPresentationDelegate.default
         } else {
             viewControllerToPresent.modalPresentationStyle = .custom
+            viewControllerToPresent.modalPresentationCapturesStatusBarAppearance = true
             viewControllerToPresent.transitioningDelegate = PanModalPresentationDelegate.default
         }
 
@@ -57,3 +59,4 @@ extension UIViewController: PanModalPresenter {
     }
 
 }
+#endif

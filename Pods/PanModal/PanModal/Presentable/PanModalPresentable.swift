@@ -5,6 +5,7 @@
 //  Copyright © 2017 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -13,12 +14,12 @@ import UIKit
 
  Usage:
  ```
- extension UIViewController: PanModalPresentable {
+ extension YourViewController: PanModalPresentable {
     func shouldRoundTopCorners: Bool { return false }
  }
  ```
  */
-public protocol PanModalPresentable {
+public protocol PanModalPresentable: AnyObject {
 
     /**
      The scroll view embedded in the view controller.
@@ -55,6 +56,13 @@ public protocol PanModalPresentable {
     var longFormHeight: PanModalHeight { get }
 
     /**
+     The corner radius used when `shouldRoundTopCorners` is enabled.
+
+     Default Value is 8.0.
+     */
+    var cornerRadius: CGFloat { get }
+
+    /**
      The springDamping value used to determine the amount of 'bounce'
      seen when transitioning to short/long form.
 
@@ -63,13 +71,36 @@ public protocol PanModalPresentable {
     var springDamping: CGFloat { get }
 
     /**
-     The background view alpha.
+     The transitionDuration value is used to set the speed of animation during a transition,
+     including initial presentation.
+
+     Default value is 0.5.
+    */
+    var transitionDuration: Double { get }
+
+    /**
+     The animation options used when performing animations on the PanModal, utilized mostly
+     during a transition.
+
+     Default value is [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState].
+    */
+    var transitionAnimationOptions: UIView.AnimationOptions { get }
+
+    /**
+     The background view color.
 
      - Note: This is only utilized at the very start of the transition.
 
-     Default Value is 0.7.
-     */
-    var backgroundAlpha: CGFloat { get }
+     Default Value is black with alpha component 0.7.
+    */
+    var panModalBackgroundColor: UIColor { get }
+
+    /**
+     The drag indicator view color.
+
+     Default value is light gray.
+    */
+    var dragIndicatorBackgroundColor: UIColor { get }
 
     /**
      We configure the panScrollable's scrollIndicatorInsets interally so override this value
@@ -91,13 +122,13 @@ public protocol PanModalPresentable {
      A flag to determine if scrolling should seamlessly transition from the pan modal container view to
      the embedded scroll view once the scroll limit has been reached.
 
-     Default value is false.
-     Unless a scrollView is provided and the content exceeds the longForm height
+     Default value is false. Unless a scrollView is provided and the content height exceeds the longForm height.
      */
     var allowsExtendedPanScrolling: Bool { get }
 
     /**
      A flag to determine if dismissal should be initiated when swiping down on the presented view.
+
      Return false to fallback to the short form state instead of dismissing.
 
      Default value is true.
@@ -105,14 +136,11 @@ public protocol PanModalPresentable {
     var allowsDragToDismiss: Bool { get }
 
     /**
-     A flag to determine if scrolling should be enabled on the entire view.
-
-     - Note: Returning false will disable scrolling on the embedded scrollview as well as on the
-     pan modal container view.
+     A flag to determine if dismissal should be initiated when tapping on the dimmed background view.
 
      Default value is true.
      */
-    var isPanScrollEnabled: Bool { get }
+    var allowsTapToDismiss: Bool { get }
 
     /**
      A flag to toggle user interactions on the container view.
@@ -146,6 +174,15 @@ public protocol PanModalPresentable {
     var showDragIndicator: Bool { get }
 
     /**
+     Asks the delegate if the pan modal should respond to the pan modal gesture recognizer.
+     
+     Return false to disable movement on the pan modal but maintain gestures on the presented view.
+
+     Default value is true.
+     */
+    func shouldRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool
+
+    /**
      Notifies the delegate when the pan modal gesture recognizer state is either
      `began` or `changed`. This method gives the delegate a chance to prepare
      for the gesture recognizer state change.
@@ -154,7 +191,7 @@ public protocol PanModalPresentable {
 
      Default value is an empty implementation.
      */
-    func willRespond(to panGestureRecognizer: UIPanGestureRecognizer)
+    func willRespond(to panModalGestureRecognizer: UIPanGestureRecognizer)
 
     /**
      Asks the delegate if the pan modal gesture recognizer should be prioritized.
@@ -162,8 +199,8 @@ public protocol PanModalPresentable {
      For example, you can use this to define a region
      where you would like to restrict where the pan gesture can start.
 
-     If false, then we rely on the internal conditions of when a pan gesture
-     should succeed or fail, such as, if we're actively scrolling on the scrollView
+     If false, then we rely solely on the internal conditions of when a pan gesture
+     should succeed or fail, such as, if we're actively scrolling on the scrollView.
 
      Default return value is false.
      */
@@ -190,4 +227,11 @@ public protocol PanModalPresentable {
      */
     func panModalWillDismiss()
 
+    /**
+     Notifies the delegate after the pan modal is dismissed.
+
+     Default value is an empty implementation.
+     */
+    func panModalDidDismiss()
 }
+#endif

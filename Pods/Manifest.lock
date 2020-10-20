@@ -1,7 +1,7 @@
 PODS:
-  - CVCalendar (1.6.2)
-  - MVVMKit (0.1.6)
-  - PanModal (1.0.2)
+  - CVCalendar (1.7.0)
+  - IQKeyboardManagerSwift (6.5.5)
+  - PanModal (1.2.7)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
@@ -9,8 +9,8 @@ PODS:
   - SwiftyChrono (1.1.0)
 
 DEPENDENCIES:
-  - CVCalendar
-  - MVVMKit
+  - CVCalendar (~> 1.7.0)
+  - IQKeyboardManagerSwift
   - PanModal
   - R.swift
   - SwiftLint
@@ -19,7 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CVCalendar
-    - MVVMKit
+    - IQKeyboardManagerSwift
     - PanModal
     - R.swift
     - R.swift.Library
@@ -27,14 +27,14 @@ SPEC REPOS:
     - SwiftyChrono
 
 SPEC CHECKSUMS:
-  CVCalendar: 515092247b9c5059855643c2a2220f259bd5417f
-  MVVMKit: 5a66b91038e11922e76e432eaa65a9cf6ebba012
-  PanModal: 01b52e31a2d28e00bad6fa98e14620d706183d13
+  CVCalendar: 1174c1b43c1a258970e14c1e8b19ef4106c5900b
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
 
-PODFILE CHECKSUM: fa8f0f62501b76c586c3e8b30e04983ba00dc5c3
+PODFILE CHECKSUM: afff04bc103e71422abd57512e7732ee463c5457
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

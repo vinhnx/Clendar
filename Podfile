@@ -1,18 +1,21 @@
-platform :ios, '10.0'
+platform :ios, '11.0'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
 
 target 'Clendar' do
   use_frameworks!
 
   # Core
   pod 'SwiftyChrono'
-  pod 'CVCalendar'
-  pod 'MVVMKit'
-
+  pod 'IQKeyboardManagerSwift'
+  
   # Helper
   pod 'SwiftLint'
   pod 'R.swift'
-  
+
   # View
+  pod 'CVCalendar', '~> 1.7.0'
   pod 'PanModal'
 
   target 'ClendarTests' do

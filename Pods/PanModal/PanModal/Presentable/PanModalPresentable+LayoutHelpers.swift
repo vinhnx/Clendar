@@ -5,6 +5,7 @@
 //  Copyright © 2018 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -26,7 +27,11 @@ extension PanModalPresentable where Self: UIViewController {
      Gives us the safe area inset from the top.
      */
     var topLayoutOffset: CGFloat {
-        return UIApplication.shared.keyWindow?.rootViewController?.topLayoutGuide.length ?? 0
+
+        guard let rootVC = rootViewController
+            else { return 0}
+
+        if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.top } else { return rootVC.topLayoutGuide.length }
     }
 
     /**
@@ -34,11 +39,15 @@ extension PanModalPresentable where Self: UIViewController {
      Gives us the safe area inset from the bottom.
      */
     var bottomLayoutOffset: CGFloat {
-        return UIApplication.shared.keyWindow?.rootViewController?.bottomLayoutGuide.length ?? 0
+
+       guard let rootVC = rootViewController
+            else { return 0}
+
+        if #available(iOS 11.0, *) { return rootVC.view.safeAreaInsets.bottom } else { return rootVC.bottomLayoutGuide.length }
     }
 
     /**
-     Returns the short form Y postion
+     Returns the short form Y position
 
      - Note: If voiceover is on, the `longFormYPos` is returned.
      We do not support short form when voiceover is on as it would make it difficult for user to navigate.
@@ -55,7 +64,7 @@ extension PanModalPresentable where Self: UIViewController {
     }
 
     /**
-     Returns the long form Y postion
+     Returns the long form Y position
 
      - Note: We cap this value to the max possible height
      to ensure content is not rendered outside of the view bounds
@@ -90,7 +99,22 @@ extension PanModalPresentable where Self: UIViewController {
             return bottomYPos - (height + bottomLayoutOffset)
         case .contentHeightIgnoringSafeArea(let height):
             return bottomYPos - height
+        case .intrinsicHeight:
+            view.layoutIfNeeded()
+            let targetSize = CGSize(width: (presentedVC?.containerView?.bounds ?? UIScreen.main.bounds).width,
+                                    height: UIView.layoutFittingCompressedSize.height)
+            let intrinsicHeight = view.systemLayoutSizeFitting(targetSize).height
+            return bottomYPos - (intrinsicHeight + bottomLayoutOffset)
         }
     }
 
+    private var rootViewController: UIViewController? {
+
+        guard let application = UIApplication.value(forKeyPath: #keyPath(UIApplication.shared)) as? UIApplication
+            else { return nil }
+
+        return application.keyWindow?.rootViewController
+    }
+
 }
+#endif

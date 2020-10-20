@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "PanModal.h"
 
 FOUNDATION_EXPORT double PanModalVersionNumber;
 FOUNDATION_EXPORT const unsigned char PanModalVersionString[];

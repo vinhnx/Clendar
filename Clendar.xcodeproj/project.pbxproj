@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,6 @@
 		A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DateHighlightView.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
-		A320CC72225516F200C84B27 /* Dependencies.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A36A50452250ED2900B12034 /* Dependencies.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A320CC732255172F00C84B27 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A50492250ED2900B12034 /* Logging.framework */; };
-		A320CC742255173400C84B27 /* Logging.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A36A50492250ED2900B12034 /* Logging.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80C922467A82009CC46A /* AppDelegate.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80D422467A85009CC46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D222467A85009CC46A /* LaunchScreen.storyboard */; };
@@ -23,7 +20,6 @@
 		A33F80FF22468A5D009CC46A /* CalendarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */; };
 		A33F810222468B69009CC46A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810122468B69009CC46A /* BaseViewController.swift */; };
 		A33F810722468FC1009CC46A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810622468FC1009CC46A /* ReusableView.swift */; };
-		A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810B2247393B009CC46A /* CalendarViewModel.swift */; };
 		A33F811022474137009CC46A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810F22474137009CC46A /* Constants.swift */; };
 		A33F81132247423A009CC46A /* InputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F81122247423A009CC46A /* InputParser.swift */; };
 		A33F8115224742F7009CC46A /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8114224742F7009CC46A /* WorkItem.swift */; };
@@ -32,12 +28,12 @@
 		A33F811C22476186009CC46A /* AppearanceConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811B22476186009CC46A /* AppearanceConfigurations.swift */; };
 		A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811D22476767009CC46A /* Array+Extensions.swift */; };
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
-		A36A504D2250ED6E00B12034 /* Dependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36A50452250ED2900B12034 /* Dependencies.framework */; };
 		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A37B3B6D22506C2100D0488B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6C22506C2100D0488B /* TableView.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A37B3B712250782900D0488B /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B702250782900D0488B /* EventError.swift */; };
 		A37B3B74225089E500D0488B /* AlertModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B73225089E500D0488B /* AlertModal.swift */; };
+		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
@@ -67,27 +63,6 @@
 			remoteGlobalIDString = A33F80C522467A82009CC46A;
 			remoteInfo = Clendar;
 		};
-		A36A50442250ED2900B12034 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Dependencies::Dependencies::Product";
-			remoteInfo = Dependencies;
-		};
-		A36A50462250ED2900B12034 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "Dependencies::DependenciesTests::Product";
-			remoteInfo = DependenciesTests;
-		};
-		A36A50482250ED2900B12034 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = "swift-log::Logging::Product";
-			remoteInfo = Logging;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,8 +72,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A320CC742255173400C84B27 /* Logging.framework in CopyFiles */,
-				A320CC72225516F200C84B27 /* Dependencies.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +86,7 @@
 		A30A83E12259934400BF1294 /* DateHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHighlightView.swift; sourceTree = "<group>"; };
 		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80C922467A82009CC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,7 +102,6 @@
 		A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarViewController.storyboard; sourceTree = "<group>"; };
 		A33F810122468B69009CC46A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A33F810622468FC1009CC46A /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		A33F810B2247393B009CC46A /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		A33F810F22474137009CC46A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A33F81122247423A009CC46A /* InputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputParser.swift; sourceTree = "<group>"; };
 		A33F8114224742F7009CC46A /* WorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItem.swift; sourceTree = "<group>"; };
@@ -137,12 +110,12 @@
 		A33F811B22476186009CC46A /* AppearanceConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurations.swift; sourceTree = "<group>"; };
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
-		A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dependencies.xcodeproj; path = Dependencies/Dependencies.xcodeproj; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A37B3B6C22506C2100D0488B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A37B3B702250782900D0488B /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		A37B3B73225089E500D0488B /* AlertModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModal.swift; sourceTree = "<group>"; };
+		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
@@ -150,7 +123,6 @@
 		A3F2597522477012009A50B6 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A3F25977224771F2009A50B6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		A3F2597B22477555009A50B6 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A3F2597C2247762F009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A3F259812247B903009A50B6 /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A3F259832247C770009A50B6 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -165,8 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A320CC732255172F00C84B27 /* Logging.framework in Frameworks */,
-				A36A504D2250ED6E00B12034 /* Dependencies.framework in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +194,6 @@
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
-				A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
@@ -247,6 +216,7 @@
 		A33F80C822467A82009CC46A /* Clendar */ = {
 			isa = PBXGroup;
 			children = (
+				A3310B4A24A640A50075F3DC /* Clendar.entitlements */,
 				A33F810522468FB4009CC46A /* Helper */,
 				A33F80F822467DD6009CC46A /* App */,
 				A33F810022468B59009CC46A /* Base */,
@@ -280,7 +250,6 @@
 				A33F80D022467A85009CC46A /* Assets.xcassets */,
 				A33F80D222467A85009CC46A /* LaunchScreen.storyboard */,
 				A33F80D522467A85009CC46A /* Info.plist */,
-				A3F2597B22477555009A50B6 /* Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -355,18 +324,9 @@
 				A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */,
 				A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */,
 				A37B3B6E22506FB000D0488B /* Date+Extensions.swift */,
+				A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		A36A503B2250ED2900B12034 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A36A50452250ED2900B12034 /* Dependencies.framework */,
-				A36A50472250ED2900B12034 /* DependenciesTests.xctest */,
-				A36A50492250ED2900B12034 /* Logging.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A36A504E2250EE5800B12034 /* Logger */ = {
@@ -388,7 +348,6 @@
 		A3C94659224E5FDB00123DEC /* Main Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				A33F810B2247393B009CC46A /* CalendarViewModel.swift */,
 				A33F80FC22468A56009CC46A /* CalendarViewController.swift */,
 				A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */,
 			);
@@ -543,12 +502,6 @@
 			mainGroup = A33F80BD22467A82009CC46A;
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A36A503B2250ED2900B12034 /* Products */;
-					ProjectRef = A36A503A2250ED2900B12034 /* Dependencies.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A33F80C522467A82009CC46A /* Clendar */,
@@ -557,30 +510,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A36A50452250ED2900B12034 /* Dependencies.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Dependencies.framework;
-			remoteRef = A36A50442250ED2900B12034 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A36A50472250ED2900B12034 /* DependenciesTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = file;
-			path = DependenciesTests.xctest;
-			remoteRef = A36A50462250ED2900B12034 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A36A50492250ED2900B12034 /* Logging.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Logging.framework;
-			remoteRef = A36A50482250ED2900B12034 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A33F80C422467A82009CC46A /* Resources */ = {
@@ -638,28 +567,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/MVVMKit/MVVMKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PanModal/PanModal.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MVVMKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanModal.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyChrono.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7A650D37A9947B21CBD08B5C /* [CP] Check Pods Manifest.lock */ = {
@@ -755,8 +671,8 @@
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
-				A33F810C2247393B009CC46A /* CalendarViewModel.swift in Sources */,
 				A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */,
+				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
@@ -949,19 +865,21 @@
 			baseConfigurationReference = A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clendar/Clendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				INFOPLIST_FILE = Clendar/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Clendar/Resources/Bridging-Header.h";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -970,19 +888,21 @@
 			baseConfigurationReference = 970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clendar/Clendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				INFOPLIST_FILE = Clendar/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Clendar/Resources/Bridging-Header.h";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

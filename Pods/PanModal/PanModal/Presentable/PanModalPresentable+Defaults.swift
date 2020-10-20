@@ -2,10 +2,10 @@
 //  PanModalPresentable+Defaults.swift
 //  PanModal
 //
-//  Created by Stephen Sowole on 11/5/18.
 //  Copyright © 2018 Tiny Speck, Inc. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
 
 /**
@@ -31,16 +31,32 @@ public extension PanModalPresentable where Self: UIViewController {
         return .contentHeight(scrollView.contentSize.height)
     }
 
+    var cornerRadius: CGFloat {
+        return 8.0
+    }
+
     var springDamping: CGFloat {
         return 0.8
     }
 
-    var backgroundAlpha: CGFloat {
-        return 0.7
+    var transitionDuration: Double {
+        return PanModalAnimator.Constants.defaultTransitionDuration
+    }
+
+    var transitionAnimationOptions: UIView.AnimationOptions {
+        return [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState]
+    }
+
+    var panModalBackgroundColor: UIColor {
+        return UIColor.black.withAlphaComponent(0.7)
+    }
+
+    var dragIndicatorBackgroundColor: UIColor {
+        return UIColor.lightGray
     }
 
     var scrollIndicatorInsets: UIEdgeInsets {
-        let top = shouldRoundTopCorners ? PanModalPresentationController.Constants.cornerRadius : 0
+        let top = shouldRoundTopCorners ? cornerRadius : 0
         return UIEdgeInsets(top: CGFloat(top), left: 0, bottom: bottomLayoutOffset, right: 0)
     }
 
@@ -61,7 +77,7 @@ public extension PanModalPresentable where Self: UIViewController {
         return true
     }
 
-    var isPanScrollEnabled: Bool {
+    var allowsTapToDismiss: Bool {
         return true
     }
 
@@ -81,7 +97,11 @@ public extension PanModalPresentable where Self: UIViewController {
         return shouldRoundTopCorners
     }
 
-    func willRespond(to panGestureRecognizer: UIPanGestureRecognizer) {
+    func shouldRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) -> Bool {
+        return true
+    }
+
+    func willRespond(to panModalGestureRecognizer: UIPanGestureRecognizer) {
 
     }
 
@@ -101,4 +121,8 @@ public extension PanModalPresentable where Self: UIViewController {
 
     }
 
+    func panModalDidDismiss() {
+
+    }
 }
+#endif

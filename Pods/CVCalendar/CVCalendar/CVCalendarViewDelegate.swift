@@ -27,6 +27,7 @@ public protocol CVCalendarViewDelegate {
     @objc optional func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool)
     @objc optional func presentedDateUpdated(_ date: CVDate)
     @objc optional func topMarker(shouldDisplayOnDayView dayView: DayView) -> Bool
+    @objc optional func shouldHideTopMarkerOnPresentedView() -> Bool
     @objc optional func dotMarker(shouldMoveOnHighlightingOnDayView dayView: DayView) -> Bool
     @objc optional func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool
     @objc optional func dotMarker(colorOnDayView dayView: DayView) -> [UIColor]
@@ -45,6 +46,9 @@ public protocol CVCalendarViewDelegate {
 
     @objc optional func didShowNextMonthView(_ date: Foundation.Date)
     @objc optional func didShowPreviousMonthView(_ date: Foundation.Date)
+  
+    @objc optional func didShowNextWeekView(from startDayView: DayView, to endDayView: DayView)
+    @objc optional func didShowPreviousWeekView(from startDayView: DayView, to endDayView: DayView)
     
     // Localization
     @objc optional func calendar() -> Calendar?
