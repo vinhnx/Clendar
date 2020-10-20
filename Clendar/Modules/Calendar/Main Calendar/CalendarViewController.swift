@@ -178,6 +178,29 @@ final class CalendarViewController: BaseViewController {
     @objc private func resignTextField() {
         self.inputTextField.resignFirstResponder()
     }
+
+    // swiftlint:disable force_cast
+    @objc func keyboardNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        // Get keyboard frame
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+        // Set new bottom constraint constant
+        let bottomConstraintConstant = keyboardFrame.origin.y >= UIScreen.main.bounds.size.height ? 0.0 : keyboardFrame.size.height + 20
+
+        // Set animation properties
+        let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve = UIView.AnimationOptions(rawValue: animationCurveRaw)
+
+        // Animate the view you care about
+        UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: {
+            self.bottomConstraint.constant = bottomConstraintConstant
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    // swiftlint:enable force_cast
 }
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
