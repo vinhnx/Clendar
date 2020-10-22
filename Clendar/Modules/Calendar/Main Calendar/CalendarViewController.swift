@@ -59,7 +59,7 @@ final class CalendarViewController: BaseViewController {
 
     @IBOutlet var monthLabel: UILabel! {
         didSet {
-            monthLabel.textColor = .appDark
+            monthLabel.textColor = .primaryColor
             monthLabel.font = UIFont.fontWithSize(30, weight: .medium)
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
             monthLabel.textAlignment = .right
@@ -320,7 +320,7 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
         case (_, .selected, _), (_, .highlighted, _): return .white
         case (.sunday, .out, _): return UIColor.appLightRed
         case (.sunday, _, _): return UIColor.appRed
-        case (_, .in, _): return UIColor.appDark
+        case (_, .in, _): return UIColor.appGray
         default: return UIColor.appLightGray
         }
     }

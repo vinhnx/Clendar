@@ -34,7 +34,7 @@ extension UIColor {
     static let appGray = UIColor.systemGray
     static let appLightGray = UIColor.systemGray3
     static let nativeLightGray = UIColor.lightGray
-    static let appRed = UIColor.systemRed
+    static let appRed = UIColor.systemRed.withAlphaComponent(0.8)
     static let appLightRed = UIColor.systemRed.withAlphaComponent(0.3)
     static let appDark = UIColor.label
     static let appPlaceholder = UIColor.placeholderText
