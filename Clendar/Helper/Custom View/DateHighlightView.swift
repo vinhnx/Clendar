@@ -10,14 +10,16 @@ import Foundation
 import CVCalendar
 
 class DateHighlightView: UIStackView {
-    static func viewForDayView(_ dayView: DayView, isOut: Bool) -> UIView? {
-        guard let date = dayView.date.convertedDate() else { return nil }
+    static func viewForDayView(_ dayView: DayView, isOut: Bool) -> UIView {
+        guard let date = dayView.date.convertedDate() else { return UIView() }
+        
         let lunarDate = DateFormatter.lunarDateString(forDate: date)
-        let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.7,
+        let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.8,
                                           width: dayView.frame.size.width, height: 10))
         label.textColor = isOut ? .lightGray : .systemGray
         label.font = UIFont.regularFontWithSize(11)
         label.text = lunarDate
+        label.textAlignment = .center
         return label
     }
 }

@@ -98,12 +98,11 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
         cell.textLabel?.font = .fontWithSize(15, weight: .medium)
-        cell.textLabel?.textColor = .appGray
+        cell.textLabel?.textColor = .appDark
 
         let view = UIView()
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
-        view.frame = CGRect(x: 0, y: 0, width: 5, height: cell.frame.size.height)
-        view.applyCornerRadius()
+        view.frame = CGRect(x: 0, y: 1, width: 3, height: cell.frame.size.height - 3)
         cell.contentView.addSubview(view)
 
         return cell

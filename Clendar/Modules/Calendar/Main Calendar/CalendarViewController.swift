@@ -46,9 +46,10 @@ final class CalendarViewController: BaseViewController {
     }
 
     @IBOutlet private var addEventButton: UIButton!
+
     @IBOutlet var monthLabel: UILabel! {
         didSet {
-            self.monthLabel.textColor = .systemGray
+            self.monthLabel.textColor = .appDark
             self.monthLabel.font = UIFont.fontWithSize(30, weight: .bold)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
         }
@@ -226,19 +227,19 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
 
-    func presentationMode() -> CalendarMode { return self.calendarMode }
+    func presentationMode() -> CalendarMode { self.calendarMode }
 
-    func firstWeekday() -> Weekday { return .monday }
+    func firstWeekday() -> Weekday { .monday }
 
-    func calendar() -> Calendar? { return self.currentCalendar }
+    func calendar() -> Calendar? { self.currentCalendar }
 
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
         return weekday == .sunday ? .appRed : .appGray
     }
 
-    func shouldShowWeekdaysOut() -> Bool { return true }
+    func shouldShowWeekdaysOut() -> Bool { true }
 
-    func shouldAutoSelectDayOnMonthChange() -> Bool { return false }
+    func shouldAutoSelectDayOnMonthChange() -> Bool { false }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         self.selectedDay = dayView
@@ -249,15 +250,23 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         self.monthLabel.text = date.globalDescription
     }
 
-    func weekdaySymbolType() -> WeekdaySymbolType { return .short }
+    func dayOfWeekFont() -> UIFont {
+        return .fontWithSize(15, weight: .medium)
+    }
 
-    func dayOfWeekTextColor() -> UIColor { return .appGray }
+    func dayOfWeekTextUppercase() -> Bool { false }
 
-    func dayOfWeekBackGroundColor() -> UIColor { return .white }
+    func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
-    func shouldAnimateResizing() -> Bool { return true }
+    func dayOfWeekTextColor() -> UIColor { .appDark }
 
-    func shouldShowCustomSingleSelection() -> Bool { return true }
+    func dayOfWeekBackGroundColor() -> UIColor { .clear }
+
+    func spaceBetweenWeekViews() -> CGFloat { 0 }
+
+    func shouldAnimateResizing() -> Bool { true }
+
+    func shouldShowCustomSingleSelection() -> Bool { true }
 
     func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
         let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
@@ -266,7 +275,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        return dayView.isCurrentDay
+        dayView.isCurrentDay
     }
 
     func didShowNextMonthView(_ date: Foundation.Date) {
@@ -287,12 +296,11 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        guard let view = DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) else { return UIView() }
-        return view
+        DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut)
     }
 
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        return true
+        true
     }
 }
 
@@ -300,20 +308,14 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
 
     // MARK: - CVCalendarViewAppearanceDelegate
 
-    func spaceBetweenDayViews() -> CGFloat {
-        return 3
-    }
+    func spaceBetweenDayViews() -> CGFloat { 0 }
 
-    func dayLabelWeekdayDisabledColor() -> UIColor {
-        return .appLightGray
-    }
+    func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
 
-    func dayLabelPresentWeekdayInitallyBold() -> Bool {
-        return true
-    }
+    func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        return UIFont.fontWithSize(20, weight: .medium)
+        .fontWithSize(20, weight: .medium)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
@@ -321,13 +323,13 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
         case (_, .selected, _), (_, .highlighted, _): return .white
         case (.sunday, .in, _): return UIColor.appRed
         case (.sunday, _, _): return UIColor.appRed
-        case (_, .in, _): return UIColor.appGray
+        case (_, .in, _): return UIColor.appDark
         default: return UIColor.appLightGray
         }
     }
 
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        return UIColor.appRed
+        .appRed
     }
 }
 
