@@ -104,6 +104,10 @@ final class CalendarViewController: BaseViewController {
 
     override func setupViews() {
         super.setupViews()
+
+        view.backgroundColor = .backgroundColor
+        dayView.backgroundColor = .backgroundColor
+        eventListContainerView.backgroundColor = .backgroundColor
         self.addGestures()
         self.addEventListContainer()
         self.addObservers()

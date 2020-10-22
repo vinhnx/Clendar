@@ -24,7 +24,7 @@ final class EventListViewController: BaseViewController {
         label.textColor = .appDark
         label.font = UIFont.boldFontWithSize(15)
         label.text = Date().toFullDateString.uppercased()
-        label.backgroundColor = .white
+        label.backgroundColor = .backgroundColor
         return label
     }()
 
@@ -32,8 +32,11 @@ final class EventListViewController: BaseViewController {
 
     override func setupViews() {
         super.setupViews()
-        self.configureTableView()
-        self.fetchEvents()
+
+        view.backgroundColor = .backgroundColor
+        tableView.backgroundColor = .backgroundColor
+        configureTableView()
+        fetchEvents()
     }
 
     // MARK: - Public
@@ -71,7 +74,6 @@ final class EventListViewController: BaseViewController {
         self.tableView.isScrollEnabled = false
         self.tableView.contentSizeDidChange = self.contentSizeDidChange
         self.tableView.separatorStyle = .none
-        self.tableView.backgroundColor = .white
     }
 }
 
@@ -104,6 +106,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
         view.frame = CGRect(x: 0, y: 1, width: 3, height: cell.frame.size.height - 3)
         cell.contentView.addSubview(view)
+        cell.contentView.backgroundColor = .backgroundColor
 
         return cell
     }
