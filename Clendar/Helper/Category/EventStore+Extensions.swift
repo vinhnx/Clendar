@@ -18,7 +18,7 @@ extension EKEventStore {
         event.calendar = calendar
 
         do {
-            try self.save(event, span: span, commit: true)
+            try save(event, span: span, commit: true)
             completion.flatMap { $0() }
         } catch {
             logError(error)
@@ -30,10 +30,10 @@ extension EKEventStore {
         guard let clendar = calendars.first(where: { $0.title == AppName }) else {
             let newClendar = EKCalendar(for: .event, eventStore: self)
             newClendar.title = AppName
-            newClendar.source = self.defaultCalendarForNewEvents?.source
+            newClendar.source = defaultCalendarForNewEvents?.source
 
             do {
-                try self.saveCalendar(newClendar, commit: true)
+                try saveCalendar(newClendar, commit: true)
                 completion.flatMap { $0(newClendar) }
             } catch {
                 logError(error)

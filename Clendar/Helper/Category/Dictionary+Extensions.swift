@@ -26,7 +26,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func valueForKeyInsensitive<T>(key: Key) -> T? {
-        let foundKey = self.keys.first { $0.compare(key, options: .caseInsensitive) == .orderedSame } ?? key // IMPORTANT: fallback to original key if search failed
+        let foundKey = keys.first { $0.compare(key, options: .caseInsensitive) == .orderedSame } ?? key // IMPORTANT: fallback to original key if search failed
         return self[foundKey] as? T
     }
 
@@ -42,7 +42,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func arrayFor<T>(key: Key) -> [T] {
-        return self.valueForKeyInsensitive(key: key) ?? [T]()
+        return valueForKeyInsensitive(key: key) ?? [T]()
     }
 
     /// Dictionary for key
@@ -50,7 +50,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: dictionary
     func dictionaryFor(key: Key) -> [String: Any] {
-        return self.valueForKeyInsensitive(key: key) ?? [String: Any]()
+        return valueForKeyInsensitive(key: key) ?? [String: Any]()
     }
 
     /// Subscript
@@ -58,7 +58,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript
     func valueFor<T>(key: Key) -> T? {
-        return self.valueForKeyInsensitive(key: key)
+        return valueForKeyInsensitive(key: key)
     }
 
     /// String subscript
@@ -66,7 +66,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript, cast as String
     func stringFor(key: Key) -> String {
-        return self.valueForKeyInsensitive(key: key).orEmpty
+        return valueForKeyInsensitive(key: key).orEmpty
     }
 
     /// String subscript
@@ -74,7 +74,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript, cast as Int
     func intFor(key: Key) -> Int {
-        return self.valueForKeyInsensitive(key: key) ?? 0
+        return valueForKeyInsensitive(key: key) ?? 0
     }
 
     /// Double for key
@@ -82,7 +82,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func doubleFor(key: Key) -> Double {
-        return self.valueForKeyInsensitive(key: key) ?? 0.0
+        return valueForKeyInsensitive(key: key) ?? 0.0
     }
 
     /// Float for key
@@ -90,14 +90,14 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func floatFor(key: Key) -> Float {
-        return self.valueForKeyInsensitive(key: key) ?? 0.0
+        return valueForKeyInsensitive(key: key) ?? 0.0
     }
 
     /// Pretty dictionary
     func prettyPrint() {
         do {
             let _serialized = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-            log(String(data: _serialized, encoding: .utf8) ?? self.description)
+            log(String(data: _serialized, encoding: .utf8) ?? description)
         } catch {
             logError(error)
         }
@@ -107,7 +107,7 @@ extension Dictionary where Key == String {
     ///
     /// - Returns: A filtered dictionary
     func filterEmptyStringValue() -> [Key: Value] {
-        return self.filter { (_, value) -> Bool in
+        return filter { (_, value) -> Bool in
             if value is String {
                 return ((value as? String) ?? "").isEmpty == false
             }
@@ -131,6 +131,6 @@ extension Dictionary where Key == String {
     }
 
     var toString: String {
-        return self.description
+        return description
     }
 }

@@ -36,7 +36,7 @@ final class EventHandler {
             AlertManager.showSettingsAlert(message: "Please authorize \(AppName) to create Calendar events")
 
         case .notDetermined:
-            self.requestCreatingEventAccess(onAuthorized: onAuthorized)
+            requestCreatingEventAccess(onAuthorized: onAuthorized)
 
         @unknown default:
             break
@@ -46,14 +46,14 @@ final class EventHandler {
     func createEvent(_ title: String, startDate: Date, endDate: Date?, onDone: VoidHandler?) {
         let status = EKEventStore.authorizationStatus(for: .event)
         guard status == .authorized else {
-            self.request { [weak self] in
+            request { [weak self] in
                 self?.createEvent(title, startDate: startDate, endDate: endDate, onDone: onDone)
             }
 
             return
         }
 
-        self.accessCalendar { [weak self] calendar in
+        accessCalendar { [weak self] calendar in
             self?.eventStore.createEvent(title: title,
                                          startDate: startDate,
                                          endDate: endDate,
@@ -66,18 +66,18 @@ final class EventHandler {
 
     func fetchEventsForToday(completion: EventResultHandler? = nil) {
         let today = Date().within24h
-        self.fetchEvents(startDate: today.startTime, endDate: today.endTime, completion: completion)
+        fetchEvents(startDate: today.startTime, endDate: today.endTime, completion: completion)
     }
 
     func fetchEvents(for date: Date, completion: EventResultHandler?) {
         let dateCombo = date.within24h
-        self.fetchEvents(startDate: dateCombo.startTime, endDate: dateCombo.endTime, completion: completion)
+        fetchEvents(startDate: dateCombo.startTime, endDate: dateCombo.endTime, completion: completion)
     }
     
     func fetchEvents(startDate: Date, endDate: Date, completion: EventResultHandler?) {
         let status = EKEventStore.authorizationStatus(for: .event)
         guard status == .authorized else {
-            self.request { [weak self] in
+            request { [weak self] in
                 self?.fetchEvents(startDate: startDate, endDate: endDate, completion: completion)
             }
 
@@ -85,9 +85,9 @@ final class EventHandler {
             return
         }
 
-        let calendars = self.eventStore.calendars(for: .event)
-        let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendars)
-        let events = self.eventStore.events(matching: predicate)
+        let calendars = eventStore.calendars(for: .event)
+        let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendars)
+        let events = eventStore.events(matching: predicate)
         completion.flatMap { $0(.success(events)) }
     }
 
@@ -96,18 +96,18 @@ final class EventHandler {
     private func accessCalendar(completion: EventCalendarHandler?) {
         let status = EKEventStore.authorizationStatus(for: .event)
         guard status == .authorized else {
-            self.request { [weak self] in
+            request { [weak self] in
                 self?.accessCalendar(completion: completion)
             }
 
             return
         }
 
-        self.eventStore.calendarForApp(completion: completion)
+        eventStore.calendarForApp(completion: completion)
     }
 
     private func requestCreatingEventAccess(onAuthorized: VoidHandler?) {
-        self.eventStore.requestAccess(to: .event) { granted, error in
+        eventStore.requestAccess(to: .event) { granted, error in
             guard granted == true else {
                 error.flatMap { logError($0) }
                 return

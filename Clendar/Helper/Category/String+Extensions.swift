@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     func trim(text: String) -> String {
-        return self.replacingOccurrences(of: text, with: "", options: .literal)
+        return replacingOccurrences(of: text, with: "", options: .literal)
     }
 }
 

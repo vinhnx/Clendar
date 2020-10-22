@@ -103,10 +103,10 @@ class AlertViewController: UIViewController, PanModalPresentable {
     }
 
     func configure(dateText: String, title: String, message: String, backgroundColor: UIColor? = .white) {
-        self.alertView.dateLabel.text = dateText
-        self.alertView.titleLabel.text = title
-        self.alertView.message.text = message
-        self.alertView.backgroundColor = backgroundColor
+        alertView.dateLabel.text = dateText
+        alertView.titleLabel.text = title
+        alertView.message.text = message
+        alertView.backgroundColor = backgroundColor
     }
 
     // MARK: - PanModalPresentable

@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViews()
+        setupViews()
     }
 
     // MARK: - Subclass

@@ -16,7 +16,7 @@ final class WorkItem {
 
     /// Helper to keep track if any work is pending, useful to cancel any previous task, for example
     var hasPendingWork: Bool {
-        return self.pendingRequestWorkItem != nil
+        return pendingRequestWorkItem != nil
     }
 
     /// Perform a closure after delay
@@ -26,7 +26,7 @@ final class WorkItem {
     ///   - block: closure
     func perform(after: TimeInterval, _ block: @escaping VoidHandler) {
         // Cancel the currently pending item
-        self.pendingRequestWorkItem?.cancel()
+        pendingRequestWorkItem?.cancel()
 
         // Wrap our request in a work item
         let requestWorkItem = DispatchWorkItem(block: block)

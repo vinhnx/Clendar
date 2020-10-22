@@ -23,7 +23,7 @@ final class InputParser {
 
     var preferredLanguage: Language = .english {
         didSet {
-            Chrono.preferredLanguage = self.preferredLanguage
+            Chrono.preferredLanguage = preferredLanguage
         }
     }
 

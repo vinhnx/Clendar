@@ -13,7 +13,7 @@ extension Array where Element == String {
     var commonText: String {
         var result = [String]()
 
-        for loop in self.enumerated() {
+        for loop in enumerated() {
             let lhs = loop.element
 
             guard let rhs = self[safe: loop.offset + 1] else {

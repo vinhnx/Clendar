@@ -13,7 +13,7 @@ class TableView: UITableView {
 
     override var contentSize: CGSize {
         didSet {
-            self.contentSizeDidChange.flatMap { $0(self.contentSize) }
+            contentSizeDidChange.flatMap { $0(contentSize) }
         }
     }
 }

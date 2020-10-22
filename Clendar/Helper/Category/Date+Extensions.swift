@@ -16,14 +16,14 @@ extension Date {
     // swiftlint:disable force_unwrapping
     var endDate: Date {
         let dateComponents = DateComponents(day: 1, second: -1)
-        return Calendar.current.date(byAdding: dateComponents, to: self.startDate)!
+        return Calendar.current.date(byAdding: dateComponents, to: startDate)!
     }
     // swiftlint:enable force_unwrapping
 
     var within24h: (startTime: Date, endTime: Date) {
         return (
-            startTime: self.startDate,
-            endTime: self.endDate
+            startTime: startDate,
+            endTime: endDate
         )
     }
 
@@ -53,14 +53,14 @@ extension Date {
     }
 
     var day: Int? {
-        return self.components.day
+        return components.day
     }
 
     var month: Int? {
-        return self.components.month
+        return components.month
     }
 
     var year: Int? {
-        return self.components.year
+        return components.year
     }
 }

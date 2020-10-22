@@ -16,8 +16,6 @@ enum EventError: ErrorLocalized {
         switch self {
         case .failedToAuthorizeEventPersmissson:
             return "Failed to authorize event persmissson"
-        @unknown default:
-            return ""
         }
     }
 }

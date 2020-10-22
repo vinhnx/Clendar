@@ -13,29 +13,27 @@ import Logging
  TODO:
 
  + dribble: https://dribbble.com/search/calendar
+    > https://dribbble.com/shots/11089588-Mobile-Calendar <<< this!
+    > https://dribbble.com/shots/7132969-Calendar-DailyUI-038
+    > https://dribbble.com/shots/11925578-Scheduler-App-For-Employees
 
- + trello: https://trello.com/b/pNJSMOCZ/project-clendar-solar-lunar-convert-ios-calendar-integration-natural-date-input-parsing-personal-use-first
-
- + color: https://color.adobe.com/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/D8AB4910-9F0E-431F-9FCE-13B100D18746/theme/BA2604E8-FD0B-46C3-99C0-03793DED642E/
-
- + NOTE: can use "Chinese Calendar" instead of using custom lunar calendar converter
-     > Calendar.Identifier.chinese
-    > better performance
-
- + >> https://github.com/daniel211/LunarCalendarFunctionsInOBJC
- + show list of events of day
+ + iOS 14 widget
+ + translation
+ + [done] show list of events of day
  + settings:
     + show lunar date or event stack highlight
     + theme
     + date type (12 or 24h)
     + start of week
+    + Everything under CVCalendar configs
  + lunar converter (+)
  + lunar event (+)
  + write tests
  + automation
- + try promisekit, async/await
  + [optional] build macOS app, non currently for am lich
- + dark/light mode (+)
+ + [done] dark/light mode
+
+ + https://www.raywenderlich.com/10718147-supporting-dark-mode-adapting-your-app-to-support-dark-mode
  */
 
 @main
@@ -56,8 +54,8 @@ extension AppDelegate {
     // MARK: - Window
 
     private func configureWindow() {
-        self.window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
-        self.window?.makeKeyAndVisible()
+        window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
     }
 
     fileprivate func configureLogger() {

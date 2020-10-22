@@ -11,18 +11,18 @@ import UIKit
 class Button: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configure()
+        configure()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.configure()
+        configure()
     }
 
     // MARK: - Private
 
     func configure() {
-        self.titleLabel?.font = UIFont.boldFontWithSize(20)
-        self.applyCircle()
+        titleLabel?.font = UIFont.boldFontWithSize(20)
+        applyCircle()
     }
 }

@@ -21,7 +21,7 @@ protocol ReusableView: class {
 
 extension ReusableView {
     /// Reuse ID
-    static var reuseIdentifier: String { return String(describing: Self.self) }
+    static var reuseIdentifier: String { return String(describing: self) }
     /// Nib instance
     static var nib: UINib? { return nil }
 }

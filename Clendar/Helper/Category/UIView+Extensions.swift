@@ -15,32 +15,32 @@ extension UIView {
 
     func addSubViewAndFit(_ subView: UIView) {
         subView.prepareForAutolayout()
-        self.prepareForAutolayout()
-        self.addSubview(subView)
+        prepareForAutolayout()
+        addSubview(subView)
         subView.fitLayoutOnSuperView(self)
     }
 
     func prepareForAutolayout() {
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     func fitLayoutOnSuperView(_ superView: UIView, insets: UIEdgeInsets = .zero) {
-        self.prepareForAutolayout()
+        prepareForAutolayout()
 
         let constraints: [NSLayoutConstraint]
         if #available(iOS 11.0, *) {
             constraints = [
-                self.leftAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leftAnchor, constant: insets.left),
-                self.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor, constant: insets.top),
-                self.rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
-                self.bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
+                leftAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leftAnchor, constant: insets.left),
+                topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor, constant: insets.top),
+                rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
+                bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
             ]
         } else {
             constraints = [
-                self.leftAnchor.constraint(equalTo: superView.leftAnchor, constant: insets.left),
-                self.topAnchor.constraint(equalTo: superView.topAnchor, constant: insets.top),
-                self.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: insets.right),
-                self.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: insets.bottom)
+                leftAnchor.constraint(equalTo: superView.leftAnchor, constant: insets.left),
+                topAnchor.constraint(equalTo: superView.topAnchor, constant: insets.top),
+                rightAnchor.constraint(equalTo: superView.rightAnchor, constant: insets.right),
+                bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: insets.bottom)
             ]
         }
 
@@ -61,45 +61,45 @@ extension UIView {
 
     /// Style modal with corner radiu
     func applyCornerRadius() {
-        self.applyRound(4.0)
+        applyRound(4.0)
     }
 
     /// Make circle from view
     func applyCircle() {
-        self.applyRound(min(self.frame.size.width, self.frame.size.height) / 2)
+        applyRound(min(frame.size.width, frame.size.height) / 2)
     }
 
     /// Apply round view with radius
     ///
     /// - Parameter radius: radius value
     func applyRound(_ radius: CGFloat) {
-        self.applyRound(radius, borderColor: .clear, borderWidth: 1, addShadow: false)
+        applyRound(radius, borderColor: .clear, borderWidth: 1, addShadow: false)
     }
 
     /// Apply round view with radius gray color
     ///
     /// - Parameter radius: radius value
     func applyRoundGray(_ radius: CGFloat) {
-        self.applyRound(radius, borderColor: .appLightGray, borderWidth: 1, addShadow: false)
+        applyRound(radius, borderColor: .appLightGray, borderWidth: 1, addShadow: false)
     }
 
     func applyRoundWithOffsetShadow(backgroundColor: UIColor = .white) {
         self.backgroundColor = backgroundColor
-        self.layer.shadowColor = UIColor.appLightGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 5.0)
-        self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.1
-        self.layer.masksToBounds = false
+        layer.shadowColor = UIColor.appLightGray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 5.0)
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 0.1
+        layer.masksToBounds = false
 
-        self.layer.borderColor = UIColor.clear.cgColor
-        self.layer.borderWidth = 1.0
-        self.layer.cornerRadius = 6.0
-        self.layer.masksToBounds = false
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 6.0
+        layer.masksToBounds = false
     }
 
     /// Apply round view shadow with offset shadow
     func applyRoundWithOffsetShadow() {
-        self.applyRoundWithOffsetShadow(backgroundColor: .white)
+        applyRoundWithOffsetShadow(backgroundColor: .white)
     }
 
     /// Apply round view
@@ -111,16 +111,16 @@ extension UIView {
     ///   - addShadow: should add shadow
     func applyRound(_ radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat, addShadow: Bool, shadowOffset: CGSize) {
         if addShadow {
-            self.layer.shadowColor = UIColor.appLightGray.cgColor
-            self.layer.shadowOffset = shadowOffset
-            self.layer.shadowOpacity = 0.8
-            self.layer.shadowRadius = 3.0
+            layer.shadowColor = UIColor.appLightGray.cgColor
+            layer.shadowOffset = shadowOffset
+            layer.shadowOpacity = 0.8
+            layer.shadowRadius = 3.0
         }
 
-        self.layer.borderColor = borderColor.cgColor
-        self.layer.borderWidth = borderWidth
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = !addShadow
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = radius
+        layer.masksToBounds = !addShadow
     }
 
     /// Apply round view
@@ -131,7 +131,7 @@ extension UIView {
     ///   - borderWidth: border width
     ///   - addShadow: should add shadow
     func applyRound(_ radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat, addShadow: Bool) {
-        self.applyRound(radius, borderColor: borderColor, borderWidth: borderWidth, addShadow: addShadow, shadowOffset: .zero)
+        applyRound(radius, borderColor: borderColor, borderWidth: borderWidth, addShadow: addShadow, shadowOffset: .zero)
     }
 
     // MARK: - Cutout
@@ -140,7 +140,7 @@ extension UIView {
     ///
     /// - Parameter cutOutView: a view to apply
     func applyCutoutMaskWith(cutOutView: UIView) {
-        let outerPath = UIBezierPath(rect: self.frame)
+        let outerPath = UIBezierPath(rect: frame)
 
         let circlePath = UIBezierPath(ovalIn: cutOutView.frame)
         outerPath.usesEvenOddFillRule = true
@@ -151,36 +151,36 @@ extension UIView {
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         maskLayer.fillColor = UIColor.white.cgColor
 
-        self.layer.mask = maskLayer
+        layer.mask = maskLayer
     }
 
     /// Apply border
     ///
     /// - Parameter color: border color
     func applyBorder(color: UIColor) {
-        self.layer.borderColor = color.cgColor
-        self.layer.borderWidth = 1.0
-        self.layer.masksToBounds = true
+        layer.borderColor = color.cgColor
+        layer.borderWidth = 1.0
+        layer.masksToBounds = true
     }
 
     /// Remove any border
     func removeBorder() {
-        self.layer.borderColor = UIColor.clear.cgColor
-        self.layer.borderWidth = 0
-        self.layer.masksToBounds = true
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 0
+        layer.masksToBounds = true
     }
 
     /// Style with drop shadow
     func applyDropshadow() {
-        self.applyRound(3, borderColor: UIColor.white, borderWidth: 1, addShadow: true)
+        applyRound(3, borderColor: UIColor.white, borderWidth: 1, addShadow: true)
     }
 
     /// Remove drop shadow
     func removeDropshadow() {
-        self.layer.borderColor = UIColor.clear.cgColor
-        self.layer.borderWidth = 0
-        self.layer.shadowColor = UIColor.clear.cgColor
-        self.layer.shadowOpacity = 0
-        self.layer.shadowRadius = 0
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 0
+        layer.shadowColor = UIColor.clear.cgColor
+        layer.shadowOpacity = 0
+        layer.shadowRadius = 0
     }
 }

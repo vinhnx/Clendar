@@ -70,7 +70,7 @@ final class AlertManager {
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
     static func showActionSheet(title: String? = AppName, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
-        self.showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
+        showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
     }
 
     /// Show OK only alert
@@ -99,7 +99,7 @@ final class AlertManager {
     ///   - message: the message string
     ///   - onCancel: completion handler to be executed when user tap on cancel
     static func showSettingsAlert(title: String? = AppName, message: String, onCancel: VoidHandler? = nil) {
-        self.showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
+        showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
             _ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
         }, onCancel: onCancel)
     }

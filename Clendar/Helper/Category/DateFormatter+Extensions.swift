@@ -34,7 +34,7 @@ public class CalendarManager {
 
     static let shared = CalendarManager()
     private init() {
-        self.calendar = Calendar.makeGregorianCalendar()
+        calendar = Calendar.makeGregorianCalendar()
     } // This prevents others from using the default '()' initializer for this class.
 
 }

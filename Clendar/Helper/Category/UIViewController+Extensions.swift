@@ -18,7 +18,7 @@ extension UIViewController {
     ///   - childViewController: child view controller
     ///   - containerView: container view
     func addChildViewController(_ childViewController: UIViewController, containerView: UIView) {
-        self.addChild(childViewController)
+        addChild(childViewController)
         containerView.addSubview(childViewController.view)
 
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,9 +35,9 @@ extension UIViewController {
 
     /// Remove self from parent view controller
     func removeFromParentViewController() {
-        self.willMove(toParent: nil)
-        self.view.removeFromSuperview()
-        self.removeFromParent()
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
     }
 
     /// Exchange/swap two controllers
@@ -57,19 +57,19 @@ extension UIViewController {
 
     static func topViewController(_ baseViewController: UIViewController?) -> UIViewController? {
         if baseViewController is UINavigationController {
-            return self.topViewController((baseViewController as? UINavigationController)?.visibleViewController)
+            return topViewController((baseViewController as? UINavigationController)?.visibleViewController)
         }
 
         if baseViewController is UITabBarController {
-            return self.topViewController((baseViewController as? UITabBarController)?.selectedViewController)
+            return topViewController((baseViewController as? UITabBarController)?.selectedViewController)
         }
 
         if baseViewController is UISplitViewController {
-            return self.topViewController((baseViewController as? UISplitViewController)?.viewControllers.first)
+            return topViewController((baseViewController as? UISplitViewController)?.viewControllers.first)
         }
 
         if baseViewController?.presentedViewController != nil {
-            return self.topViewController(baseViewController?.presentedViewController)
+            return topViewController(baseViewController?.presentedViewController)
         }
 
         return baseViewController
@@ -83,8 +83,8 @@ extension UIViewController {
     ///
     /// - Parameter completion: completion handler
     func safeDismiss(_ completion: @escaping VoidHandler) {
-        guard self.isBeingDismissed else { return }
-        self.dismiss(animated: true, completion: completion)
+        guard isBeingDismissed else { return }
+        dismiss(animated: true, completion: completion)
     }
 
     // MARK: - Banner
@@ -96,6 +96,6 @@ extension UIViewController {
         
         let alert = AlertViewController()
         alert.configure(dateText: iconText, title: title, message: message)
-        self.presentPanModal(alert)
+        presentPanModal(alert)
     }
 }

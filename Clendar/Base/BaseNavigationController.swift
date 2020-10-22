@@ -14,14 +14,14 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupView()
+        setupView()
     }
 
     // MARK: - Private
 
     private func setupView() {
-        self.navigationBar.isTranslucent = false
-        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = false
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
 }

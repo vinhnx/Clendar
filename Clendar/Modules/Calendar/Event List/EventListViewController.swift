@@ -53,42 +53,42 @@ final class EventListViewController: BaseViewController {
     }
 
     func updateDataSource(_ dataSource: [EKEvent]) {
-        self.events = dataSource
+        events = dataSource
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
 
     func updateHeader(_ date: Date) {
-        self.headerView.text = date.toFullDateString
+        headerView.text = date.toFullDateString
     }
 
     // MARK: - Private
 
     private func configureTableView() {
-        self.tableView.tableFooterView = UIView()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellID)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.view.addSubViewAndFit(self.tableView)
-        self.tableView.isScrollEnabled = false
-        self.tableView.contentSizeDidChange = self.contentSizeDidChange
-        self.tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.delegate = self
+        tableView.dataSource = self
+        view.addSubViewAndFit(tableView)
+        tableView.isScrollEnabled = false
+        tableView.contentSizeDidChange = contentSizeDidChange
+        tableView.separatorStyle = .none
     }
 }
 
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.headerView
+        return headerView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.events.count
+        return events.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        guard let event = self.events[safe: indexPath.row] else { return UITableViewCell() }
+        guard let event = events[safe: indexPath.row] else { return UITableViewCell() }
 
         #warning("TODO: ")
         var date = ""
@@ -113,7 +113,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
-        guard let event = self.events[safe: indexPath.row] else { return }
+        guard let event = events[safe: indexPath.row] else { return }
 
         var date = ""
         if event.isAllDay {
@@ -121,6 +121,6 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
         }
-        self.presentAlertModal(iconText: "\(event.startDate.toDateString)", title: date, message: event.title)
+        presentAlertModal(iconText: "\(event.startDate.toDateString)", title: date, message: event.title)
     }
 }
