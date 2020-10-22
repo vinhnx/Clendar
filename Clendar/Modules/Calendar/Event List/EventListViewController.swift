@@ -22,7 +22,7 @@ final class EventListViewController: BaseViewController {
     private lazy var headerView: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray
-        label.font = FontConfig.boldFontWithSize(15)
+        label.font = UIFont.boldFontWithSize(15)
         label.text = Date().toFullDateString
         label.backgroundColor = .white
         return label
@@ -97,7 +97,8 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
-        cell.textLabel?.font = FontConfig.regularFontWithSize(12)
+        cell.textLabel?.font = .fontWithSize(15, weight: .medium)
+        cell.textLabel?.textColor = .appGray
 
         let view = UIView()
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
@@ -110,9 +111,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
-        #warning("TODO")
         guard let event = self.events[safe: indexPath.row] else { return }
-        log(event)
 
         var date = ""
         if event.isAllDay {

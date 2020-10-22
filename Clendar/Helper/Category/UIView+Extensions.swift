@@ -73,19 +73,19 @@ extension UIView {
     ///
     /// - Parameter radius: radius value
     func applyRound(_ radius: CGFloat) {
-        self.applyRound(radius, borderColor: UIColor.clear, borderWidth: 1, addShadow: false)
+        self.applyRound(radius, borderColor: .clear, borderWidth: 1, addShadow: false)
     }
 
     /// Apply round view with radius gray color
     ///
     /// - Parameter radius: radius value
     func applyRoundGray(_ radius: CGFloat) {
-        self.applyRound(radius, borderColor: UIColor.systemGray3, borderWidth: 1, addShadow: false)
+        self.applyRound(radius, borderColor: .appLightGray, borderWidth: 1, addShadow: false)
     }
 
     func applyRoundWithOffsetShadow(backgroundColor: UIColor = .white) {
         self.backgroundColor = backgroundColor
-        self.layer.shadowColor = UIColor.systemGray3.cgColor
+        self.layer.shadowColor = UIColor.appLightGray.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 5.0)
         self.layer.shadowRadius = 5.0
         self.layer.shadowOpacity = 0.1
@@ -111,7 +111,7 @@ extension UIView {
     ///   - addShadow: should add shadow
     func applyRound(_ radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat, addShadow: Bool, shadowOffset: CGSize) {
         if addShadow {
-            self.layer.shadowColor = UIColor.systemGray3.cgColor
+            self.layer.shadowColor = UIColor.appLightGray.cgColor
             self.layer.shadowOffset = shadowOffset
             self.layer.shadowOpacity = 0.8
             self.layer.shadowRadius = 3.0

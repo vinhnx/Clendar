@@ -49,7 +49,7 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             self.monthLabel.textColor = .systemGray
-            self.monthLabel.font = FontConfig.boldFontWithSize(30)
+            self.monthLabel.font = UIFont.fontWithSize(30, weight: .bold)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
         }
     }
@@ -199,6 +199,27 @@ final class CalendarViewController: BaseViewController {
         }, completion: nil)
     }
     // swiftlint:enable force_cast
+
+    // MARK: - Actions
+
+    @IBAction private func didTapTodayButton() {
+        self.selectToday()
+    }
+
+    @objc private func didTapMonthLabel() {
+        self.selectToday()
+    }
+
+    @IBAction func didTapAddEventButton() {
+        self.bottomButtonStackView.isHidden = true
+        self.inputTextField.isHidden = false
+        self.inputTextField.becomeFirstResponder()
+    }
+
+    @IBAction private func didTapSettingsButton() {
+        let settings = SettingsNavigationController()
+        self.presentPanModal(settings)
+    }
 }
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
@@ -207,12 +228,12 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func presentationMode() -> CalendarMode { return self.calendarMode }
 
-    func firstWeekday() -> Weekday { return .sunday }
+    func firstWeekday() -> Weekday { return .monday }
 
     func calendar() -> Calendar? { return self.currentCalendar }
 
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
-        return weekday == .sunday ? .red : .black
+        return weekday == .sunday ? .appRed : .appGray
     }
 
     func shouldShowWeekdaysOut() -> Bool { return true }
@@ -220,7 +241,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     func shouldAutoSelectDayOnMonthChange() -> Bool { return false }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        log(#function)
         self.selectedDay = dayView
         self.resignTextField()
     }
@@ -231,7 +251,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func weekdaySymbolType() -> WeekdaySymbolType { return .short }
 
-    func dayOfWeekTextColor() -> UIColor { return .black }
+    func dayOfWeekTextColor() -> UIColor { return .appGray }
 
     func dayOfWeekBackGroundColor() -> UIColor { return .white }
 
@@ -241,7 +261,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
         let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
-        circleView.fillColor = .colorFromCode(0xCCCCCC)
+        circleView.fillColor = .appLightGray
         return circleView
     }
 
@@ -280,53 +300,34 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
 
     // MARK: - CVCalendarViewAppearanceDelegate
 
-    func dayLabelWeekdayDisabledColor() -> UIColor { return .lightGray }
+    func spaceBetweenDayViews() -> CGFloat {
+        return 3
+    }
 
-    func dayLabelPresentWeekdayInitallyBold() -> Bool { return false }
+    func dayLabelWeekdayDisabledColor() -> UIColor {
+        return .appLightGray
+    }
 
-    func spaceBetweenDayViews() -> CGFloat { return 0 }
+    func dayLabelPresentWeekdayInitallyBold() -> Bool {
+        return true
+    }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        return FontConfig.regularFontWithSize(20)
+        return UIFont.fontWithSize(20, weight: .medium)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return CalendarColorsConfig.selectedText
-        case (.sunday, .in, _): return CalendarColorsConfig.sundayText
-        case (.sunday, _, _): return CalendarColorsConfig.sundayTextDisabled
-        case (_, .in, _): return CalendarColorsConfig.text
-        default: return CalendarColorsConfig.textDisabled
+        case (_, .selected, _), (_, .highlighted, _): return .white
+        case (.sunday, .in, _): return UIColor.appRed
+        case (.sunday, _, _): return UIColor.appRed
+        case (_, .in, _): return UIColor.appGray
+        default: return UIColor.appLightGray
         }
     }
 
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        switch (weekDay, status, present) {
-        case (.sunday, .selected, _), (.sunday, .highlighted, _): return CalendarColorsConfig.sundaySelectionBackground
-        case (_, .selected, _), (_, .highlighted, _): return CalendarColorsConfig.selectionBackground
-        default: return nil
-        }
-    }
-
-    // MARK: - Actions
-
-    @IBAction private func didTapTodayButton() {
-        self.selectToday()
-    }
-
-    @objc private func didTapMonthLabel() {
-        self.selectToday()
-    }
-
-    @IBAction func didTapAddEventButton() {
-        self.bottomButtonStackView.isHidden = true
-        self.inputTextField.isHidden = false
-        self.inputTextField.becomeFirstResponder()
-    }
-
-    @IBAction private func didTapSettingsButton() {
-        let settings = SettingsNavigationController()
-        self.presentPanModal(settings)
+        return UIColor.appRed
     }
 }
 

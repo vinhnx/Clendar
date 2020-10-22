@@ -38,12 +38,6 @@ import Logging
  + dark/light mode (+)
  */
 
-// TODO: convert to use SceneDelegate
-
-// TODO: try SwiftUI
-
-// TODO: Mac app
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

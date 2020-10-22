@@ -11,6 +11,8 @@
 		A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DateHighlightView.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
+		A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* UIFont+Themes.swift */; };
+		A33DE4992541C50F0064D0AD /* UIColor+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* UIColor+Themes.swift */; };
 		A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80C922467A82009CC46A /* AppDelegate.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80D422467A85009CC46A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D222467A85009CC46A /* LaunchScreen.storyboard */; };
@@ -25,7 +27,6 @@
 		A33F8115224742F7009CC46A /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8114224742F7009CC46A /* WorkItem.swift */; };
 		A33F81182247454E009CC46A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F81172247454E009CC46A /* String+Extensions.swift */; };
 		A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811922474BE8009CC46A /* Collection+Extensions.swift */; };
-		A33F811C22476186009CC46A /* AppearanceConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811B22476186009CC46A /* AppearanceConfigurations.swift */; };
 		A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811D22476767009CC46A /* Array+Extensions.swift */; };
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
 		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
@@ -89,6 +90,8 @@
 		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
+		A33DE4942541C4F20064D0AD /* UIFont+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Themes.swift"; sourceTree = "<group>"; };
+		A33DE4982541C50F0064D0AD /* UIColor+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Themes.swift"; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80C922467A82009CC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +112,6 @@
 		A33F8114224742F7009CC46A /* WorkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItem.swift; sourceTree = "<group>"; };
 		A33F81172247454E009CC46A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811922474BE8009CC46A /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
-		A33F811B22476186009CC46A /* AppearanceConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurations.swift; sourceTree = "<group>"; };
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
@@ -193,6 +195,15 @@
 				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		A33DE4932541C4E50064D0AD /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				A33DE4942541C4F20064D0AD /* UIFont+Themes.swift */,
+				A33DE4982541C50F0064D0AD /* UIColor+Themes.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		A33F80BD22467A82009CC46A = {
@@ -296,6 +307,7 @@
 		A33F810522468FB4009CC46A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				A33DE4932541C4E50064D0AD /* Themes */,
 				A36A504E2250EE5800B12034 /* Logger */,
 				A37B3B72225089DD00D0488B /* Alert Modal */,
 				A3F259802247B8EC009A50B6 /* Event */,
@@ -378,7 +390,6 @@
 		A3F2597122476FEA009A50B6 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				A33F811B22476186009CC46A /* AppearanceConfigurations.swift */,
 				A3F2597C2247762F009A50B6 /* R.generated.swift */,
 				A33F810F22474137009CC46A /* Constants.swift */,
 				A33F8114224742F7009CC46A /* WorkItem.swift */,
@@ -684,6 +695,7 @@
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
 				A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
+				A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
@@ -695,11 +707,11 @@
 				A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */,
 				A33F810722468FC1009CC46A /* ReusableView.swift in Sources */,
 				A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */,
-				A33F811C22476186009CC46A /* AppearanceConfigurations.swift in Sources */,
 				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
+				A33DE4992541C50F0064D0AD /* UIColor+Themes.swift in Sources */,
 				A33F8115224742F7009CC46A /* WorkItem.swift in Sources */,
 				A3F259822247B903009A50B6 /* EventHandler.swift in Sources */,
 				A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */,

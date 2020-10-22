@@ -15,21 +15,21 @@ class AlertView: UIView {
 
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.font = FontConfig.boldFontWithSize(20)
+        label.font = UIFont.boldFontWithSize(20)
         label.textColor = .black
         return label
     }()
 
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = FontConfig.regularFontWithSize(15)
+        label.font = UIFont.regularFontWithSize(15)
         label.textColor = .black
         return label
     }()
 
     let message: UILabel = {
         let label = UILabel()
-        label.font = FontConfig.regularFontWithSize(13)
+        label.font = UIFont.regularFontWithSize(13)
         label.textColor = .darkGray
         return label
     }()
