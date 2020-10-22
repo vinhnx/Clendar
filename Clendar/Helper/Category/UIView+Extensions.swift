@@ -66,7 +66,7 @@ extension UIView {
 
     /// Make circle from view
     func applyCircle() {
-        self.applyRound(self.frame.size.width / 2)
+        self.applyRound(min(self.frame.size.width, self.frame.size.height) / 2)
     }
 
     /// Apply round view with radius
