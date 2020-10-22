@@ -16,4 +16,6 @@ extension UIColor {
     static let appRed = UIColor.systemRed
     static let appDark = UIColor.label
     static let appPlaceholder = UIColor.placeholderText
+    static let appIndigo = UIColor.systemIndigo
+    static let appTeal = UIColor.systemTeal
 }

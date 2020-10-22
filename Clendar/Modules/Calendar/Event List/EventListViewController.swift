@@ -21,9 +21,9 @@ final class EventListViewController: BaseViewController {
     private var events = [EKEvent]()
     private lazy var headerView: UILabel = {
         let label = UILabel()
-        label.textColor = .systemGray
+        label.textColor = .appDark
         label.font = UIFont.boldFontWithSize(15)
-        label.text = Date().toFullDateString
+        label.text = Date().toFullDateString.uppercased()
         label.backgroundColor = .white
         return label
     }()
@@ -98,7 +98,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
         cell.textLabel?.font = .fontWithSize(15, weight: .medium)
-        cell.textLabel?.textColor = .appDark
+        cell.textLabel?.textColor = .appGray
 
         let view = UIView()
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)

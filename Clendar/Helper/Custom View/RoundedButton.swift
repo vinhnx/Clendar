@@ -23,6 +23,6 @@ class Button: UIButton {
 
     func configure() {
         self.titleLabel?.font = UIFont.boldFontWithSize(20)
-        self.applyRoundWithOffsetShadow()
+        self.applyCircle()
     }
 }

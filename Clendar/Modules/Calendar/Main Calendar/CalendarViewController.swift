@@ -18,7 +18,6 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
 
-    @IBOutlet private var todayButton: UIButton!
     @IBOutlet private var eventListHeightConstraint: NSLayoutConstraint!
     @IBOutlet private var eventListContainerView: UIView!
     @IBOutlet private var bottomButtonStackView: UIStackView!
@@ -45,13 +44,26 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    @IBOutlet private var addEventButton: UIButton!
+    @IBOutlet private var addEventButton: Button! {
+        didSet {
+            addEventButton.tintColor = .white
+            addEventButton.backgroundColor = .appIndigo
+        }
+    }
+
+    @IBOutlet private var settingsButton: Button! {
+        didSet {
+            settingsButton.tintColor = .appIndigo
+        }
+    }
 
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             self.monthLabel.textColor = .appDark
             self.monthLabel.font = UIFont.fontWithSize(30, weight: .bold)
             self.monthLabel.text = CVDate(date: Date(), calendar: self.currentCalendar).globalDescription
+            self.monthLabel.textAlignment = .right
+
         }
     }
 
@@ -73,7 +85,6 @@ final class CalendarViewController: BaseViewController {
     private var selectedDay: DayView? {
         didSet {
             self.handleDayViewSelection(selectedDay)
-            self.handleTodayButton(switchingDate: selectedDay?.date.convertedDate() ?? Date())
         }
     }
 
@@ -114,14 +125,6 @@ final class CalendarViewController: BaseViewController {
         }
 
         return display
-    }
-
-    private func handleTodayButton(switchingDate: Date) {
-        defer {
-            self.resignTextField()
-        }
-
-        self.todayButton.isHidden = switchingDate.day == Date().day
     }
 
     private func selectToday() {
@@ -203,10 +206,6 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Actions
 
-    @IBAction private func didTapTodayButton() {
-        self.selectToday()
-    }
-
     @objc private func didTapMonthLabel() {
         self.selectToday()
     }
@@ -276,14 +275,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
         dayView.isCurrentDay
-    }
-
-    func didShowNextMonthView(_ date: Foundation.Date) {
-        self.handleTodayButton(switchingDate: date)
-    }
-
-    func didShowPreviousMonthView(_ date: Foundation.Date) {
-        self.handleTodayButton(switchingDate: date)
     }
 
     private func fetchEventsFor(_ dayView: DayView, completion: EventResultHandler?) {

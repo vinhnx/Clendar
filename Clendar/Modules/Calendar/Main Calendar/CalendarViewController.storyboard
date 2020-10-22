@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eak-77-h5z">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eak-77-h5z">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-kw-cgO">
-                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-6r-Qjr">
                                         <rect key="frame" x="20" y="30" width="335" height="740"/>
@@ -27,22 +27,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-A6-Wso">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                 <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-LG-coJ" customClass="Button" customModule="Clendar" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="30"/>
+                                                        <state key="normal" image="slider.horizontal.3" catalog="system"/>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ4-dN-EPH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                        <rect key="frame" x="328" y="0.0" width="7" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="eFY-DE-vwy"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is8-uC-pgr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <state key="normal" title="TODAY"/>
-                                                        <connections>
-                                                            <action selector="didTapTodayButton" destination="Eak-77-h5z" eventType="touchUpInside" id="Auw-pY-iQL"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJT-3z-nZs" customClass="CVCalendarMenuView" customModule="CVCalendar">
@@ -92,21 +88,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xXK-OR-k0F" userLabel="Buttons Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-1b-3J7" customClass="Button" customModule="Clendar" customModuleProvider="target">
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-1b-3J7" customClass="Button" customModule="Clendar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Settings">
-                                                    <color key="titleColor" red="0.46662347840000001" green="0.55454188589999998" blue="0.37650811429999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="gearshape" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="didTapSettingsButton" destination="Eak-77-h5z" eventType="touchUpInside" id="RVz-5U-wmD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="Add">
-                                                    <color key="titleColor" red="0.95686274510000002" green="0.031372549020000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="didTapAddEventButton" destination="Eak-77-h5z" eventType="touchUpInside" id="46g-Me-LcH"/>
@@ -120,6 +117,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="Oz9-kw-cgO" secondAttribute="trailing" id="7dw-cl-snq"/>
@@ -130,7 +128,6 @@
                             <constraint firstItem="J5Q-bm-2d9" firstAttribute="leading" secondItem="QOd-5g-Jnm" secondAttribute="leading" constant="20" id="x3b-Lf-kg5"/>
                             <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="J5Q-bm-2d9" secondAttribute="bottom" constant="10" id="z2v-Pp-O60"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>
                     </view>
                     <connections>
                         <outlet property="addEventButton" destination="BYh-5N-kbd" id="9Df-DK-kkt"/>
@@ -142,7 +139,7 @@
                         <outlet property="eventListHeightConstraint" destination="DsK-B7-xgh" id="eNb-fg-8er"/>
                         <outlet property="inputTextField" destination="RDn-a5-6H6" id="rl0-vQ-M8g"/>
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
-                        <outlet property="todayButton" destination="Is8-uC-pgr" id="oMb-Oy-Fyd"/>
+                        <outlet property="settingsButton" destination="xNt-LG-coJ" id="6Oo-Vd-MGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWd-f6-WyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,4 +147,12 @@
             <point key="canvasLocation" x="-2753" y="492"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -87,6 +87,9 @@ struct _R: Rswift.Validatable {
       let name = "CalendarViewController"
       
       static func validate() throws {
+        if UIKit.UIImage(named: "gearshape", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "slider.horizontal.3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'slider.horizontal.3' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
       }
