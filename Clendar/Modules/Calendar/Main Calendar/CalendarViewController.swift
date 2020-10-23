@@ -62,7 +62,7 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             monthLabel.textColor = .appDark
-            monthLabel.font = UIFont.fontWithSize(30, weight: .medium)
+            monthLabel.font = .serifFontWithSize(30)
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
             monthLabel.textAlignment = .right
 
@@ -266,7 +266,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func dayOfWeekFont() -> UIFont {
-        .fontWithSize(15, weight: .medium)
+        .serifFontWithSize(15)
     }
 
     func dayOfWeekTextUppercase() -> Bool { false }
@@ -320,7 +320,7 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        .fontWithSize(20, weight: .medium)
+        .serifFontWithSize(20)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

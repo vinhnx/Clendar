@@ -9,10 +9,6 @@
 import EventKit
 import Foundation
 
-#warning("TODO: refactor")
-#warning("TODO: convert all callbacks to Result callbacks")
-#warning("TODO: use Promise, Async/Await for nested callbacks")
-
 final class EventHandler {
 
     // MARK: - Properties

@@ -11,7 +11,7 @@ import UIKit
 class TextField: UITextField {
     override func awakeFromNib() {
         super.awakeFromNib()
-        font = UIFont.regularFontWithSize(20)
+        font = .sansFontWithSize(20)
         backgroundColor = .backgroundColor
         attributedPlaceholder = NSAttributedString(string: (placeholder ?? ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor.appPlaceholder])
     }

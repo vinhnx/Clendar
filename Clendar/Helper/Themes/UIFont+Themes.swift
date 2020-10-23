@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
-        return UIFont(name: "Georgia", size: size) ?? .systemFont(ofSize: size, weight: weight)
+
+    static func serifFontWithSize(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Georgia", size: size) ?? .sansFontWithSize(size)
     }
 
-    static func regularFontWithSize(_ size: CGFloat) -> UIFont {
-        return fontWithSize(size, weight: .regular)
+    static func sansFontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
+        .systemFont(ofSize: size, weight: weight)
     }
 
-    static func boldFontWithSize(_ size: CGFloat) -> UIFont {
-        return fontWithSize(size, weight: .bold)
-    }
 }

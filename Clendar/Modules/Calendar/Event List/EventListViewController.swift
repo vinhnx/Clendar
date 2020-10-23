@@ -22,7 +22,7 @@ final class EventListViewController: BaseViewController {
     private lazy var headerView: UILabel = {
         let label = UILabel()
         label.textColor = .appDark
-        label.font = UIFont.boldFontWithSize(15)
+        label.font = .serifFontWithSize(15)
         label.text = Date().toFullDateString
         label.backgroundColor = .clear
         return label

@@ -27,7 +27,11 @@ import Logging
  + automation
  + [optional] build macOS app, non currently for am lich
  + [done] dark/light mode
-
+ + edit calendar event
+ + option when creating an event
+ + selectable calendar to shown
+ + IAP  => make more money
+ + haptic
  + https://www.raywenderlich.com/10718147-supporting-dark-mode-adapting-your-app-to-support-dark-mode
  */
 
