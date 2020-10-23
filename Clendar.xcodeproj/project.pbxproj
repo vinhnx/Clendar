@@ -39,6 +39,8 @@
 		A37B3B712250782900D0488B /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B702250782900D0488B /* EventError.swift */; };
 		A37B3B74225089E500D0488B /* AlertModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B73225089E500D0488B /* AlertModal.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
+		A3B9D9B925431B8D001932B0 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListTableViewCell.swift */; };
+		A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
@@ -128,6 +130,8 @@
 		A37B3B702250782900D0488B /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		A37B3B73225089E500D0488B /* AlertModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModal.swift; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		A3B9D9B825431B8D001932B0 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
+		A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Extensions.swift"; sourceTree = "<group>"; };
 		A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -322,7 +326,7 @@
 				A33F81112247422A009CC46A /* Input Parser */,
 				A3F2597422477005009A50B6 /* Custom View */,
 				A3F2597022476FD9009A50B6 /* Protocol */,
-				A33F811622474543009CC46A /* Category */,
+				A33F811622474543009CC46A /* Extensions */,
 				A3F2597122476FEA009A50B6 /* Others */,
 			);
 			path = Helper;
@@ -336,7 +340,7 @@
 			path = "Input Parser";
 			sourceTree = "<group>";
 		};
-		A33F811622474543009CC46A /* Category */ = {
+		A33F811622474543009CC46A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A33F81172247454E009CC46A /* String+Extensions.swift */,
@@ -350,8 +354,9 @@
 				A37B3B6E22506FB000D0488B /* Date+Extensions.swift */,
 				A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */,
 				A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */,
+				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
 			);
-			path = Category;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A36A504E2250EE5800B12034 /* Logger */ = {
@@ -383,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C9465B224E5FF800123DEC /* EventListViewController.swift */,
+				A3B9D9B825431B8D001932B0 /* EventListTableViewCell.swift */,
 			);
 			path = "Event List";
 			sourceTree = "<group>";
@@ -705,6 +711,7 @@
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
+				A3B9D9B925431B8D001932B0 /* EventListTableViewCell.swift in Sources */,
 				A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */,
@@ -714,6 +721,7 @@
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
 				A37B3B74225089E500D0488B /* AlertModal.swift in Sources */,
+				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A3DE248A2248E8A400EB3B64 /* EventStore+Extensions.swift in Sources */,
 				A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */,

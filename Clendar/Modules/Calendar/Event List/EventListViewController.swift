@@ -24,7 +24,7 @@ final class EventListViewController: BaseViewController {
         label.textColor = .appDark
         label.font = UIFont.boldFontWithSize(15)
         label.text = Date().toFullDateString
-        label.backgroundColor = .backgroundColor
+        label.backgroundColor = .clear
         return label
     }()
 
@@ -67,7 +67,7 @@ final class EventListViewController: BaseViewController {
 
     private func configureTableView() {
         tableView.tableFooterView = UIView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(EventListTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubViewAndFit(tableView)
@@ -87,40 +87,15 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        guard let event = events[safe: indexPath.row] else { return UITableViewCell() }
-
-        #warning("TODO: ")
-        var date = ""
-        if event.isAllDay {
-            date = "All day"
-        } else {
-            date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
-        }
-
-        cell.textLabel?.text = "[\(date)] \(event.title ?? "")"
-        cell.textLabel?.font = .fontWithSize(15, weight: .medium)
-        cell.textLabel?.textColor = .appGray
-
-        let view = UIView()
-        view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)
-        view.frame = CGRect(x: 0, y: 1, width: 3, height: cell.frame.size.height - 3)
-        cell.contentView.addSubview(view)
-        cell.contentView.backgroundColor = .backgroundColor
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? EventListTableViewCell else { return UITableViewCell() }
+        guard let event = events[safe: indexPath.row] else { return cell }
+        cell.configure(event: event)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
         guard let event = events[safe: indexPath.row] else { return }
-
-        var date = ""
-        if event.isAllDay {
-            date = "All day"
-        } else {
-            date = event.startDate != event.endDate ? "\(event.startDate.toHourAndMinuteString) to \(event.endDate.toHourAndMinuteString)" : "\(event.startDate.toHourAndMinuteString)"
-        }
-        presentAlertModal(iconText: "\(event.startDate.toDateString)", title: date, message: event.title)
+        presentAlertModal(iconText: "\(event.startDate.toDateString)", title: event.displayText, message: event.title)
     }
 }

@@ -11,7 +11,7 @@ import UIKit
 
 extension UIFont {
     static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
-        return .systemFont(ofSize: size, weight: weight)
+        return UIFont(name: "Georgia", size: size) ?? .systemFont(ofSize: size, weight: weight)
     }
 
     static func regularFontWithSize(_ size: CGFloat) -> UIFont {

@@ -252,10 +252,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func calendar() -> Calendar? { currentCalendar }
 
-    func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
-        return weekday == .sunday ? .appRed : .appGray
-    }
-
     func shouldShowWeekdaysOut() -> Bool { true }
 
     func shouldAutoSelectDayOnMonthChange() -> Bool { false }
@@ -270,7 +266,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func dayOfWeekFont() -> UIFont {
-        return .fontWithSize(15, weight: .medium)
+        .fontWithSize(15, weight: .medium)
     }
 
     func dayOfWeekTextUppercase() -> Bool { false }
@@ -310,9 +306,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut)
     }
 
-    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        true
-    }
+    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
 }
 
 extension CalendarViewController: CVCalendarViewAppearanceDelegate {

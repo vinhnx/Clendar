@@ -7,18 +7,16 @@
 //
 
 import Foundation
+import SwiftDate
 
 extension Date {
     var startDate: Date {
-        return Calendar.current.startOfDay(for: self)
+        dateAtStartOf(.day)
     }
 
-    // swiftlint:disable force_unwrapping
     var endDate: Date {
-        let dateComponents = DateComponents(day: 1, second: -1)
-        return Calendar.current.date(byAdding: dateComponents, to: startDate)!
+        dateAtEndOf(.day)
     }
-    // swiftlint:enable force_unwrapping
 
     var within24h: (startTime: Date, endTime: Date) {
         return (
@@ -30,21 +28,21 @@ extension Date {
     var toHourAndMinuteString: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "HH:mm"
+        formatter.setLocalizedDateFormatFromTemplate("HH:mm")
         return formatter.string(from: self)
     }
 
     var toDateString: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "dd"
+        formatter.setLocalizedDateFormatFromTemplate("dd")
         return formatter.string(from: self)
     }
 
     var toFullDateString: String {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "EEEE, MMM d, yyyy"
+        formatter.setLocalizedDateFormatFromTemplate("EEEE, MMM d, yyyy")
         return formatter.string(from: self)
     }
 
