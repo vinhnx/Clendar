@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let didChangeUserInterfacePreferences = Notification.Name(rawValue: "didChangeUserInterfacePreferences")
+    static let didChangeShowLunarCalendarPreferences = Notification.Name(rawValue: "didChangeShowLunarCalendarPreferences")
 }

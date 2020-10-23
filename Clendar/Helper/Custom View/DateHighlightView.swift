@@ -10,8 +10,9 @@ import Foundation
 import CVCalendar
 
 class DateHighlightView: UIStackView {
-    static func viewForDayView(_ dayView: DayView, isOut: Bool) -> UIView {
-        guard let date = dayView.date.convertedDate() else { return UIView() }
+    static func viewForDayView(_ dayView: DayView, isOut: Bool) -> UIView? {
+        guard SettingsManager.showLunarCalendar else { return nil }
+        guard let date = dayView.date.convertedDate() else { return nil }
         
         let lunarDate = DateFormatter.lunarDateString(forDate: date)
         let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.8,

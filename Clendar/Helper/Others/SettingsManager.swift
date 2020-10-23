@@ -1,5 +1,5 @@
 //
-//  ThemeManager.swift
+//  SettingsManager.swift
 //  Clendar
 //
 //  Created by Vinh Nguyen on 10/23/20.
@@ -8,9 +8,12 @@
 
 import Foundation
 
-struct ThemeManager {
+struct SettingsManager {
 
     @UserDefault("darkModeActivated", defaultValue: isDarkMode)
     static var darkModeActivated: Bool
+
+    @UserDefault("showLunarCalendar", defaultValue: true)
+    static var showLunarCalendar: Bool
 
 }

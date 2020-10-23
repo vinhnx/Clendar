@@ -11,6 +11,7 @@ import SPLarkController
 
 enum Settings: Int, CaseIterable {
     case darkMode = 0
+    case showLunarCalendar
 }
 
 final class SettingsViewController: SPLarkSettingsController {
@@ -23,46 +24,44 @@ final class SettingsViewController: SPLarkSettingsController {
 
     override func settingTitle(index: Int, highlighted: Bool) -> String {
         switch index {
-        case Settings.darkMode.rawValue:
-            return "Dark mode"
-        default:
-            return ""
+        case Settings.darkMode.rawValue: return "Dark mode"
+        case Settings.showLunarCalendar.rawValue: return "Lunar date"
+        default: return ""
         }
     }
 
     override func settingSubtitle(index: Int, highlighted: Bool) -> String? {
         switch index {
-        case Settings.darkMode.rawValue:
-            return ThemeManager.darkModeActivated ? "On" : "Off"
-        default:
-            return nil
+        case Settings.darkMode.rawValue: return SettingsManager.darkModeActivated.asString
+        case Settings.showLunarCalendar.rawValue: return SettingsManager.showLunarCalendar.asString
+        default: return nil
         }
     }
 
     override func settingHighlighted(index: Int) -> Bool {
         switch index {
-        case Settings.darkMode.rawValue:
-            return ThemeManager.darkModeActivated
-        default:
-            return false
+        case Settings.darkMode.rawValue: return SettingsManager.darkModeActivated
+        case Settings.showLunarCalendar.rawValue: return SettingsManager.showLunarCalendar
+        default: return false
         }
     }
 
     override func settingColorHighlighted(index: Int) -> UIColor {
-        switch index {
-        case Settings.darkMode.rawValue:
-            return .appTeal
-        default:
-            return .clear
-        }
+        .appTeal
     }
 
     override func settingDidSelect(index: Int, completion: @escaping () -> ()) {
         switch index {
         case Settings.darkMode.rawValue:
-            ThemeManager.darkModeActivated.toggle()
+            SettingsManager.darkModeActivated.toggle()
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
             dismiss(animated: true, completion: nil)
+
+        case Settings.showLunarCalendar.rawValue:
+            SettingsManager.showLunarCalendar.toggle()
+            NotificationCenter.default.post(name: .didChangeShowLunarCalendarPreferences, object: nil)
+            dismiss(animated: true, completion: nil)
+
         default:
             break
         }

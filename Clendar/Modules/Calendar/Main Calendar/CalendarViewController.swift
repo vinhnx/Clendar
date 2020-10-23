@@ -129,16 +129,12 @@ final class CalendarViewController: BaseViewController {
         addEventListContainer()
         addObservers()
         selectToday()
-
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
     }
 
     // MARK: - Private
 
     private func checkUIMode() {
-        overrideUserInterfaceStyle = ThemeManager.darkModeActivated ? .dark : .light
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
     }
 
     private func handleDisplaySubDayView(_ dayView: DayView) -> Bool {
@@ -162,7 +158,16 @@ final class CalendarViewController: BaseViewController {
 
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleDidAuthorizeCalendarAccess), name: kDidAuthorizeCalendarAccess, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
+            self.checkUIMode()
+        }
+
+        NotificationCenter.default.addObserver(forName: .didChangeShowLunarCalendarPreferences, object: nil, queue: .main) { (_) in
+            self.calendarView.reloadData()
+        }
     }
 
     @objc private func handleDidAuthorizeCalendarAccess() {
@@ -303,7 +308,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut)
+        DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) ?? UIView()
     }
 
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
