@@ -12,12 +12,6 @@ import Logging
 /*
  TODO:
 
- + dribble: https://dribbble.com/search/calendar
-    > https://dribbble.com/shots/11089588-Mobile-Calendar <<< this!
-    > https://dribbble.com/shots/7132969-Calendar-DailyUI-038
-    > https://dribbble.com/shots/11925578-Scheduler-App-For-Employees
-
- + https://github.com/IvanVorobei/SPLarkController <<< cool
  + iOS 14 widget
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
  + [done] show list of events of day
