@@ -94,9 +94,6 @@
                                                 <state key="normal" image="gearshape" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="didTapSettingsButton" destination="Eak-77-h5z" eventType="touchUpInside" id="RVz-5U-wmD"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
                                                 <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
@@ -105,9 +102,6 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="didTapAddEventButton" destination="Eak-77-h5z" eventType="touchUpInside" id="46g-Me-LcH"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

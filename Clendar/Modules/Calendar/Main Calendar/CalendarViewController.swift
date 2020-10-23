@@ -11,6 +11,8 @@ import CVCalendar
 import EventKit
 import Foundation
 import PanModal
+import EasyClosure
+import SPLarkController
 
 #warning("TODO: needs refator")
 
@@ -59,7 +61,7 @@ final class CalendarViewController: BaseViewController {
 
     @IBOutlet var monthLabel: UILabel! {
         didSet {
-            monthLabel.textColor = .primaryColor
+            monthLabel.textColor = .appDark
             monthLabel.font = UIFont.fontWithSize(30, weight: .medium)
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
             monthLabel.textAlignment = .right
@@ -105,6 +107,21 @@ final class CalendarViewController: BaseViewController {
     override func setupViews() {
         super.setupViews()
 
+        checkUIMode()
+
+        settingsButton.on.tap { [weak self] in
+            guard let self = self else { return }
+            let settings = SettingsViewController()
+            self.presentLark(settings: settings)
+        }
+
+        addEventButton.on.tap { [weak self] in
+            guard let self = self else { return }
+            self.bottomButtonStackView.isHidden = true
+            self.inputTextField.isHidden = false
+            self.inputTextField.becomeFirstResponder()
+        }
+
         view.backgroundColor = .backgroundColor
         dayView.backgroundColor = .backgroundColor
         eventListContainerView.backgroundColor = .backgroundColor
@@ -112,9 +129,17 @@ final class CalendarViewController: BaseViewController {
         addEventListContainer()
         addObservers()
         selectToday()
+
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
+            self.checkUIMode()
+        }
     }
 
     // MARK: - Private
+
+    private func checkUIMode() {
+        overrideUserInterfaceStyle = ThemeManager.darkModeActivated ? .dark : .light
+    }
 
     private func handleDisplaySubDayView(_ dayView: DayView) -> Bool {
         var display = false
@@ -215,17 +240,6 @@ final class CalendarViewController: BaseViewController {
     @objc private func didTapMonthLabel() {
         selectToday()
     }
-
-    @IBAction func didTapAddEventButton() {
-        bottomButtonStackView.isHidden = true
-        inputTextField.isHidden = false
-        inputTextField.becomeFirstResponder()
-    }
-
-    @IBAction private func didTapSettingsButton() {
-        let settings = SettingsNavigationController()
-        presentPanModal(settings)
-    }
 }
 
 extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
@@ -320,7 +334,7 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
         case (_, .selected, _), (_, .highlighted, _): return .white
         case (.sunday, .out, _): return UIColor.appLightRed
         case (.sunday, _, _): return UIColor.appRed
-        case (_, .in, _): return UIColor.appGray
+        case (_, .in, _): return UIColor.appDark
         default: return UIColor.appLightGray
         }
     }

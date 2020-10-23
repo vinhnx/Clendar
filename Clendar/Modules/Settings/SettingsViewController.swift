@@ -7,54 +7,65 @@
 //
 
 import UIKit
-import PanModal
+import SPLarkController
 
-final class SettingsNavigationController: BaseNavigationController, PanModalPresentable {
+enum Settings: Int, CaseIterable {
+    case darkMode = 0
+}
 
-    let settings = SettingsViewController()
-
-    // MARK: - Pan Modal Presentable
-
-    var panScrollable: UIScrollView? {
-        return (topViewController as? PanModalPresentable)?.panScrollable
-    }
-
-    var longFormHeight: PanModalHeight {
-        return .maxHeight
-    }
-
-    var shortFormHeight: PanModalHeight {
-        return longFormHeight
-    }
+final class SettingsViewController: SPLarkSettingsController {
 
     // MARK: - Override
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        pushViewController(settings, animated: false)
+    override func settingsCount() -> Int {
+        return Settings.allCases.count
     }
 
-    override func popViewController(animated: Bool) -> UIViewController? {
-        let vc = super.popViewController(animated: animated)
-        panModalSetNeedsLayoutUpdate()
-        return vc
+    override func settingTitle(index: Int, highlighted: Bool) -> String {
+        switch index {
+        case Settings.darkMode.rawValue:
+            return "Dark mode"
+        default:
+            return ""
+        }
     }
 
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: animated)
-        panModalSetNeedsLayoutUpdate()
-    }
-}
-
-final class SettingsViewController: BaseViewController, PanModalPresentable {
-
-    // MARK: - Pan Modal Presentable
-
-    var panScrollable: UIScrollView? {
-        return tableView
+    override func settingSubtitle(index: Int, highlighted: Bool) -> String? {
+        switch index {
+        case Settings.darkMode.rawValue:
+            return ThemeManager.darkModeActivated ? "On" : "Off"
+        default:
+            return nil
+        }
     }
 
-    // MARK: - Properties
+    override func settingHighlighted(index: Int) -> Bool {
+        switch index {
+        case Settings.darkMode.rawValue:
+            return ThemeManager.darkModeActivated
+        default:
+            return false
+        }
+    }
 
-    lazy var tableView = TableView(frame: .zero)
+    override func settingColorHighlighted(index: Int) -> UIColor {
+        switch index {
+        case Settings.darkMode.rawValue:
+            return .appTeal
+        default:
+            return .clear
+        }
+    }
+
+    override func settingDidSelect(index: Int, completion: @escaping () -> ()) {
+        switch index {
+        case Settings.darkMode.rawValue:
+            ThemeManager.darkModeActivated.toggle()
+            NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
+            dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+
 }

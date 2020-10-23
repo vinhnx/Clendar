@@ -9,6 +9,7 @@ target 'Clendar' do
   # Core
   pod 'SwiftyChrono'
   pod 'SwiftDate', '~> 5.0'
+  pod 'EasyClosure'
   
   # Helper
   pod 'SwiftLint'
@@ -17,6 +18,7 @@ target 'Clendar' do
   # View
   pod 'CVCalendar', '~> 1.7.0'
   pod 'PanModal'
+  pod 'SPLarkController'
 
   target 'ClendarTests' do
     inherit! :search_paths

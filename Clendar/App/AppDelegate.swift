@@ -17,8 +17,9 @@ import Logging
     > https://dribbble.com/shots/7132969-Calendar-DailyUI-038
     > https://dribbble.com/shots/11925578-Scheduler-App-For-Employees
 
+ + https://github.com/IvanVorobei/SPLarkController <<< cool
  + iOS 14 widget
- + translation
+ + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
  + [done] show list of events of day
  + settings:
     + show lunar date or event stack highlight

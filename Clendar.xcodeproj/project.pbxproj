@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		68890989EC17BFBF22CEFE27 /* Pods_ClendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */; };
 		A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DateHighlightView.swift */; };
+		A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
+		A30E41342541FA5E009AAC32 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* ThemeManager.swift */; };
+		A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
+		A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
 		A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* UIFont+Themes.swift */; };
@@ -87,6 +91,10 @@
 		72FE9C6272675E223125D548 /* Pods-ClendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.release.xcconfig"; sourceTree = "<group>"; };
 		970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
 		A30A83E12259934400BF1294 /* DateHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHighlightView.swift; sourceTree = "<group>"; };
+		A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		A30E41332541FA5E009AAC32 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		A30E41372541FB2A009AAC32 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
+		A30E48222541F4EF00B4B027 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
@@ -394,6 +402,10 @@
 				A33F810F22474137009CC46A /* Constants.swift */,
 				A33F8114224742F7009CC46A /* WorkItem.swift */,
 				A3F25977224771F2009A50B6 /* AlertManager.swift */,
+				A30E48222541F4EF00B4B027 /* Utilities.swift */,
+				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
+				A30E41332541FA5E009AAC32 /* ThemeManager.swift */,
+				A30E41372541FB2A009AAC32 /* AppEvents.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -699,6 +711,7 @@
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
+				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
 				A37B3B74225089E500D0488B /* AlertModal.swift in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
@@ -709,7 +722,9 @@
 				A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */,
 				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
+				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
+				A30E41342541FA5E009AAC32 /* ThemeManager.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
 				A33DE4992541C50F0064D0AD /* UIColor+Themes.swift in Sources */,
 				A33F8115224742F7009CC46A /* WorkItem.swift in Sources */,
@@ -718,6 +733,7 @@
 				A37B3B6D22506C2100D0488B /* TableView.swift in Sources */,
 				A37B3B712250782900D0488B /* EventError.swift in Sources */,
 				A33F80CA22467A82009CC46A /* AppDelegate.swift in Sources */,
+				A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */,
 				A33F81132247423A009CC46A /* InputParser.swift in Sources */,
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
 				A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */,
