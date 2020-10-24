@@ -46,9 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
         configureLogger()
-
-        SwiftDate.defaultRegion = Region.local
-
+        configureSwiftDate()
         return true
     }
 
@@ -65,5 +63,9 @@ extension AppDelegate {
 
     fileprivate func configureLogger() {
         logger.logLevel = .debug
+    }
+
+    private func configureSwiftDate() {
+        SwiftDate.defaultRegion = Region.local
     }
 }

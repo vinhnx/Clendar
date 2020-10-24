@@ -38,6 +38,7 @@
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A37B3B712250782900D0488B /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B702250782900D0488B /* EventError.swift */; };
 		A37B3B74225089E500D0488B /* AlertModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B73225089E500D0488B /* AlertModal.swift */; };
+		A3880A982544293300EA69AE /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListTableViewCell.swift */; };
 		A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
@@ -131,6 +132,7 @@
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A37B3B702250782900D0488B /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		A37B3B73225089E500D0488B /* AlertModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModal.swift; sourceTree = "<group>"; };
+		A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A3B9D9B825431B8D001932B0 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
 		A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Extensions.swift"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */,
 				A37B3B6E22506FB000D0488B /* Date+Extensions.swift */,
 				A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */,
+				A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */,
 				A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */,
 				A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */,
 				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
@@ -735,6 +738,7 @@
 				A33F810722468FC1009CC46A /* ReusableView.swift in Sources */,
 				A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */,
 				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
+				A3880A982544293300EA69AE /* CVCalendarDayView+Extensions.swift in Sources */,
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,

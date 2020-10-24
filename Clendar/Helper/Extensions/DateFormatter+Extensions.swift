@@ -7,13 +7,9 @@
 //
 
 import Foundation
+import SwiftDate
 
 // Reference: https://gist.github.com/jacobbubu/1836273
-
-enum LocaleIdentifer: String {
-    case Vietnam = "en_VN"
-    case enUS = "en_US_POSIX"
-}
 
 extension DateFormatter {
 
@@ -22,7 +18,7 @@ extension DateFormatter {
         dateFormatTemplate: String = "MMdd"
     ) -> String {
         let dateFormater = DateFormatter()
-        dateFormater.locale = Locale(identifier: LocaleIdentifer.Vietnam.rawValue)
+        dateFormater.locale = Locales.vietnamese.toLocale()
         dateFormater.setLocalizedDateFormatFromTemplate(dateFormatTemplate)
         dateFormater.calendar = Calendar(identifier: .chinese)
         return dateFormater.string(from: date)

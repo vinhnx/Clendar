@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyChrono
+import SwiftDate
 
 final class InputParser {
 
@@ -35,8 +36,15 @@ final class InputParser {
         guard input.isEmpty == false else { return nil }
         let results = chrono.parse(text: input)
         let process = results.process(with: input)
+        let startDate = process.startDate
+        let endDate = process.endDate
+        
+//        // to chinese date
+//        log("normal date: \(startDate)")
+//        log("chinese date: \(startDate.toChineseDate)")
+
         return InputParserResult(action: process.action,
-                                 startDate: process.startDate,
-                                 endDate: process.endDate)
+                                 startDate: startDate,
+                                 endDate: endDate)
     }
 }
