@@ -8,6 +8,7 @@
 
 import UIKit
 import Logging
+import SwiftDate
 
 /*
  TODO:
@@ -32,6 +33,8 @@ import Logging
  + selectable calendar to shown
  + IAP  => make more money
  + haptic
+ + duong lich <-> am lich
+
  + https://www.raywenderlich.com/10718147-supporting-dark-mode-adapting-your-app-to-support-dark-mode
  */
 
@@ -43,6 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
         configureLogger()
+
+        SwiftDate.defaultRegion = Region.local
+
         return true
     }
 

@@ -61,13 +61,12 @@ final class EventHandler {
     // MARK: - Fetch Events
 
     func fetchEventsForToday(completion: EventResultHandler? = nil) {
-        let today = Date().within24h
-        fetchEvents(startDate: today.startTime, endDate: today.endTime, completion: completion)
+        let today = Date()
+        fetchEvents(startDate: today.startDate, endDate: today.endDate, completion: completion)
     }
 
     func fetchEvents(for date: Date, completion: EventResultHandler?) {
-        let dateCombo = date.within24h
-        fetchEvents(startDate: dateCombo.startTime, endDate: dateCombo.endTime, completion: completion)
+        fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
     }
     
     func fetchEvents(startDate: Date, endDate: Date, completion: EventResultHandler?) {

@@ -15,7 +15,7 @@ class EventListTableViewCell: UITableViewCell {
         let displayText = event.displayText
         textLabel?.text = "[\(displayText)] \(event.title ?? "")"
         textLabel?.font = .sansFontWithSize(13)
-        textLabel?.textColor = .appGray
+        textLabel?.textColor = .appDark
 
         let view = UIView()
         view.backgroundColor = UIColor.init(cgColor: event.calendar.cgColor)

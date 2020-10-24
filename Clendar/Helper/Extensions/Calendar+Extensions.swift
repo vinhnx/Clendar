@@ -7,14 +7,13 @@
 //
 
 import Foundation
+import SwiftDate
 
 extension Calendar {
 
-    static func makeGregorianCalendar(
-        localeIdentifier: LocaleIdentifer = .Vietnam
-    ) -> Calendar {
-        var proxy = Calendar(identifier: .gregorian)
-        proxy.locale = Locale(identifier: localeIdentifier.rawValue)
+    static func shared() -> Calendar {
+        var proxy = Calendar.autoupdatingCurrent
+        proxy.locale = Region.local.locale
         return proxy
     }
 

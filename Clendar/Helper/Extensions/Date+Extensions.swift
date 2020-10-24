@@ -18,47 +18,15 @@ extension Date {
         dateAtEndOf(.day)
     }
 
-    var within24h: (startTime: Date, endTime: Date) {
-        return (
-            startTime: startDate,
-            endTime: endDate
-        )
-    }
-
     var toHourAndMinuteString: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.setLocalizedDateFormatFromTemplate("HH:mm")
-        return formatter.string(from: self)
+        return self.toString(.custom("HH:mm"))
     }
 
     var toDateString: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.setLocalizedDateFormatFromTemplate("dd")
-        return formatter.string(from: self)
+        return self.toString(.custom("dd"))
     }
 
     var toFullDateString: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.setLocalizedDateFormatFromTemplate("EEEE, MMM d, yyyy")
-        return formatter.string(from: self)
-    }
-
-    var components: DateComponents {
-        return Calendar.current.dateComponents([.day, .calendar, .era, .hour, .minute, .month, .nanosecond, .quarter, .second, .weekday, .timeZone, .weekdayOrdinal, .weekOfMonth, .weekOfYear, .year, .yearForWeekOfYear], from: self)
-    }
-
-    var day: Int? {
-        return components.day
-    }
-
-    var month: Int? {
-        return components.month
-    }
-
-    var year: Int? {
-        return components.year
+        return self.toString(.custom("EEEE, MMM d, yyyy"))
     }
 }

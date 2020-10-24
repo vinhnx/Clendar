@@ -13,8 +13,7 @@ import Foundation
 import PanModal
 import EasyClosure
 import SPLarkController
-
-#warning("TODO: needs refator")
+import SwiftDate
 
 final class CalendarViewController: BaseViewController {
 
@@ -75,6 +74,7 @@ final class CalendarViewController: BaseViewController {
         let proxy = EventListViewController()
         proxy.contentSizeDidChange = { [weak self] size in
             self?.eventListHeightConstraint.constant = size.height
+            self?.view.setNeedsLayout()
             self?.view.layoutIfNeeded()
         }
 
@@ -86,7 +86,8 @@ final class CalendarViewController: BaseViewController {
     private var calendarMode: CalendarMode = .monthView
     private var selectedDay: DayView? {
         didSet {
-            handleDayViewSelection(selectedDay)
+            let date = selectedDay?.date.convertedDate()
+            selectDate(date)
         }
     }
 
@@ -125,35 +126,17 @@ final class CalendarViewController: BaseViewController {
         view.backgroundColor = .backgroundColor
         dayView.backgroundColor = .backgroundColor
         eventListContainerView.backgroundColor = .backgroundColor
+
         addGestures()
         addEventListContainer()
         addObservers()
-        selectToday()
+        selectDate()
     }
 
     // MARK: - Private
 
     private func checkUIMode() {
         overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
-
-    private func handleDisplaySubDayView(_ dayView: DayView) -> Bool {
-        var display = false
-
-        fetchEventsFor(dayView) { result in
-            switch result {
-            case .success(let response):
-                display = response.isEmpty == false
-            case .failure:
-                break
-            }
-        }
-
-        return display
-    }
-
-    private func selectToday() {
-        calendarView.toggleCurrentDayView()
     }
 
     private func addObservers() {
@@ -171,7 +154,7 @@ final class CalendarViewController: BaseViewController {
     }
 
     @objc private func handleDidAuthorizeCalendarAccess() {
-        selectToday()
+        selectDate()
     }
 
     private func addGestures() {
@@ -179,37 +162,20 @@ final class CalendarViewController: BaseViewController {
         monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
     }
 
-    private func handleDayViewSelection(_ dayView: DayView?) {
-        guard let dayView = dayView else { return }
-
-        fetchEventsFor(dayView) { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let response):
-                self.eventList.updateDataSource(response)
-                self.eventList.updateHeader(dayView.date.convertedDate() ?? Date())
-
-            case .failure:
-                break
-            }
-        }
-    }
-
     private func addEventListContainer() {
         addChildViewController(eventList, containerView: eventListContainerView)
     }
 
-    private func throttleParseInput(_ input: String) {
-        currentInput = inputParser.parse(input)
-    }
-
     private func handleInput(textField: UITextField) {
-        guard let result = currentInput else { return }
+        let input = textField.text ?? ""
+        guard input.isEmpty == false else { return }
+        guard let result = inputParser.parse(input) else { return }
+
         EventHandler.shared.createEvent(result.action, startDate: result.startDate, endDate: result.endDate) { [weak self] in
+            guard let self = self else { return }
             textField.text = ""
-            self?.eventList.fetchEvents()
-            self?.calendarView.toggleViewWithDate(result.startDate)
+            let date = result.startDate
+            self.selectDate(date)
         }
     }
 
@@ -243,7 +209,13 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Actions
 
     @objc private func didTapMonthLabel() {
-        selectToday()
+        selectDate()
+    }
+
+    private func selectDate(_ date: Date? = Date()) {
+        guard let date = date else { return }
+        calendarView.toggleViewWithDate(date)
+        eventList.fetchEvents(for: date)
     }
 }
 
@@ -253,7 +225,8 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func presentationMode() -> CalendarMode { calendarMode }
 
-    func firstWeekday() -> Weekday { .monday }
+    func firstWeekday() -> Weekday { Region.current.locale.identifier == LocaleIdentifer.Vietnam.rawValue ? .monday : .sunday }
+//    func firstWeekday() -> Weekday { .sunday }
 
     func calendar() -> Calendar? { currentCalendar }
 
@@ -296,15 +269,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
         dayView.isCurrentDay
-    }
-
-    private func fetchEventsFor(_ dayView: DayView, completion: EventResultHandler?) {
-        guard let date = dayView.date.convertedDate() else { return }
-        EventHandler.shared.fetchEvents(for: date, completion: completion)
-    }
-
-    private func fetchEventsFor(_ date: Date, completion: @escaping EventResultHandler) {
-        EventHandler.shared.fetchEvents(for: date, completion: completion)
     }
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
@@ -356,12 +320,6 @@ extension CalendarViewController: UITextFieldDelegate {
                 self.inputTextField.isHidden = true
             }
         })
-    }
-
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
-        throttleParseInput(substring)
-        return true
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

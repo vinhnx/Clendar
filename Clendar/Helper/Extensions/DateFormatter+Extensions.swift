@@ -8,20 +8,21 @@
 
 import Foundation
 
+// Reference: https://gist.github.com/jacobbubu/1836273
+
 enum LocaleIdentifer: String {
-    case Vietnam = "vi"
-    case enUS = "en-US"
+    case Vietnam = "en_VN"
+    case enUS = "en_US_POSIX"
 }
 
 extension DateFormatter {
 
     static func lunarDateString(
         forDate date: Date = Date(),
-        localeIdentifier: LocaleIdentifer = .Vietnam,
         dateFormatTemplate: String = "MMdd"
     ) -> String {
         let dateFormater = DateFormatter()
-        dateFormater.locale = Locale(identifier: localeIdentifier.rawValue)
+        dateFormater.locale = CalendarManager.shared.calendar.locale
         dateFormater.setLocalizedDateFormatFromTemplate(dateFormatTemplate)
         dateFormater.calendar = Calendar(identifier: .chinese)
         return dateFormater.string(from: date)
@@ -34,7 +35,7 @@ public class CalendarManager {
 
     static let shared = CalendarManager()
     private init() {
-        calendar = Calendar.makeGregorianCalendar()
+        calendar = Calendar.shared()
     } // This prevents others from using the default '()' initializer for this class.
 
 }

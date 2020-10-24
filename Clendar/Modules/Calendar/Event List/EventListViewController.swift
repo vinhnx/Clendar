@@ -8,8 +8,7 @@
 
 import UIKit
 import EventKit
-
-#warning("TODO: refactor")
+import SwiftDate
 
 final class EventListViewController: BaseViewController {
 
@@ -18,7 +17,15 @@ final class EventListViewController: BaseViewController {
     let cellID = "Cell"
     var contentSizeDidChange: SizeUpdateHandler?
     private var tableView = TableView(frame: .zero, style: .grouped)
-    private var events = [EKEvent]()
+
+    private var events = [EKEvent]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
     private lazy var headerView: UILabel = {
         let label = UILabel()
         label.textColor = .appDark
@@ -36,27 +43,24 @@ final class EventListViewController: BaseViewController {
         view.backgroundColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
         configureTableView()
-        fetchEvents()
     }
 
     // MARK: - Public
 
-    func fetchEvents() {
-        EventHandler.shared.fetchEventsForToday { [weak self] result in
+    func fetchEvents(for date: Date = Date()) {
+        EventHandler.shared.fetchEvents(for: date) { [weak self] result in
             switch result {
-            case .success(let value):
-                self?.updateDataSource(value)
+            case .success(let response):
+                self?.updateDataSource(response, date: date)
             case .failure(let error):
                 logError(error)
             }
         }
     }
 
-    func updateDataSource(_ dataSource: [EKEvent]) {
+    func updateDataSource(_ dataSource: [EKEvent], date: Date) {
         events = dataSource
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        updateHeader(date)
     }
 
     func updateHeader(_ date: Date) {
@@ -96,6 +100,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: true) }
         guard let event = events[safe: indexPath.row] else { return }
+        log(event)
         presentAlertModal(iconText: "\(event.startDate.toDateString)", title: event.displayText, message: event.title)
     }
 }
