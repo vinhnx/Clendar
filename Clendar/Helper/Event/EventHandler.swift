@@ -76,14 +76,18 @@ final class EventHandler {
                 self?.fetchEvents(startDate: startDate, endDate: endDate, completion: completion)
             }
 
-            completion.flatMap { $0(.failure(.failedToAuthorizeEventPersmissson)) }
+            DispatchQueue.main.async {
+                completion.flatMap { $0(.failure(.failedToAuthorizeEventPersmissson)) }
+            }
             return
         }
 
         let calendars = eventStore.calendars(for: .event)
         let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendars)
         let events = eventStore.events(matching: predicate)
-        completion.flatMap { $0(.success(events)) }
+        DispatchQueue.main.async {
+            completion.flatMap { $0(.success(events)) }
+        }
     }
 
     // MARK: - Private
@@ -104,12 +108,16 @@ final class EventHandler {
     private func requestCreatingEventAccess(onAuthorized: VoidHandler?) {
         eventStore.requestAccess(to: .event) { granted, error in
             guard granted == true else {
-                error.flatMap { logError($0) }
+                DispatchQueue.main.async {
+                    error.flatMap { logError($0) }
+                }
                 return
             }
 
-            NotificationCenter.default.post(name: kDidAuthorizeCalendarAccess, object: nil)
-            onAuthorized.flatMap { $0() }
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: kDidAuthorizeCalendarAccess, object: nil)
+                onAuthorized.flatMap { $0() }
+            }
         }
     }
 }
