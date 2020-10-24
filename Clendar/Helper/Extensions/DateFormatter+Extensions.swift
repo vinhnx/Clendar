@@ -22,7 +22,7 @@ extension DateFormatter {
         dateFormatTemplate: String = "MMdd"
     ) -> String {
         let dateFormater = DateFormatter()
-        dateFormater.locale = CalendarManager.shared.calendar.locale
+        dateFormater.locale = Locale(identifier: LocaleIdentifer.Vietnam.rawValue)
         dateFormater.setLocalizedDateFormatFromTemplate(dateFormatTemplate)
         dateFormater.calendar = Calendar(identifier: .chinese)
         return dateFormater.string(from: date)
