@@ -13,7 +13,6 @@ import Foundation
 import PanModal
 import EasyClosure
 import SPLarkController
-import SwiftDate
 
 final class CalendarViewController: BaseViewController {
 
@@ -73,23 +72,18 @@ final class CalendarViewController: BaseViewController {
     private lazy var eventList: EventListViewController = {
         let proxy = EventListViewController()
         proxy.contentSizeDidChange = { [weak self] size in
-            self?.eventListHeightConstraint.constant = size.height
-            self?.view.setNeedsLayout()
-            self?.view.layoutIfNeeded()
+            guard let self = self else { return }
+            self.eventListHeightConstraint.constant = size.height
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
         }
 
         return proxy
     }()
 
     private lazy var inputParser = InputParser()
-    internal var currentInput: InputParser.InputParserResult?
+
     private var calendarMode: CalendarMode = .monthView
-    private var selectedDay: DayView? {
-        didSet {
-            let date = selectedDay?.date.convertedDate()
-            selectDate(date)
-        }
-    }
 
     // MARK: - Life cycle
 
@@ -126,11 +120,10 @@ final class CalendarViewController: BaseViewController {
         view.backgroundColor = .backgroundColor
         dayView.backgroundColor = .backgroundColor
         eventListContainerView.backgroundColor = .backgroundColor
-
         addGestures()
         addEventListContainer()
         addObservers()
-        selectDate()
+        selectToday()
     }
 
     // MARK: - Private
@@ -139,9 +132,14 @@ final class CalendarViewController: BaseViewController {
         overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
     }
 
+    private func selectToday() {
+        calendarView.toggleCurrentDayView()
+        eventList.fetchEvents()
+    }
+
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleDidAuthorizeCalendarAccess), name: kDidAuthorizeCalendarAccess, object: nil)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
         NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
@@ -154,12 +152,17 @@ final class CalendarViewController: BaseViewController {
     }
 
     @objc private func handleDidAuthorizeCalendarAccess() {
-        selectDate()
+        selectToday()
     }
 
     private func addGestures() {
         monthLabel.isUserInteractionEnabled = true
         monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
+    }
+
+    private func fetchEvents(_ date: Date?) {
+        guard let date = date else { return }
+        eventList.fetchEvents(for: date)
     }
 
     private func addEventListContainer() {
@@ -175,7 +178,8 @@ final class CalendarViewController: BaseViewController {
             guard let self = self else { return }
             textField.text = ""
             let date = result.startDate
-            self.selectDate(date)
+            self.fetchEvents(date)
+            self.calendarView.toggleViewWithDate(date)
         }
     }
 
@@ -209,13 +213,7 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Actions
 
     @objc private func didTapMonthLabel() {
-        selectDate()
-    }
-
-    private func selectDate(_ date: Date? = Date()) {
-        guard let date = date else { return }
-        calendarView.toggleViewWithDate(date)
-        eventList.fetchEvents(for: date)
+        selectToday()
     }
 }
 
@@ -225,8 +223,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 
     func presentationMode() -> CalendarMode { calendarMode }
 
-    func firstWeekday() -> Weekday { Region.current.locale.identifier == LocaleIdentifer.Vietnam.rawValue ? .monday : .sunday }
-//    func firstWeekday() -> Weekday { .sunday }
+    func firstWeekday() -> Weekday { .monday }
 
     func calendar() -> Calendar? { currentCalendar }
 
@@ -235,7 +232,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     func shouldAutoSelectDayOnMonthChange() -> Bool { false }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        selectedDay = dayView
+        fetchEvents(dayView.convertedDate)
         resignTextField()
     }
 
