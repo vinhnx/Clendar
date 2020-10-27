@@ -18,8 +18,12 @@ extension Array where Element == ParsedResult {
 
         for result in self {
             dateTexts.append(result.text)
+
             startDate = result.start.date
-            endDate = result.start.date
+
+            if let end = result.end?.date {
+                endDate = end
+            }
         }
 
         var commonAction = [String]()
