@@ -151,11 +151,17 @@ struct _R: Rswift.Validatable {
     
     struct createEventViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let createEventViewController = StoryboardViewControllerResource<CreateEventViewController>(identifier: "CreateEventViewController")
       let name = "CreateEventViewController"
+      
+      func createEventViewController(_: Void = ()) -> CreateEventViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: createEventViewController)
+      }
       
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+        if _R.storyboard.createEventViewController().createEventViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createEventViewController' could not be loaded from storyboard 'CreateEventViewController' as 'CreateEventViewController'.") }
       }
       
       fileprivate init() {}

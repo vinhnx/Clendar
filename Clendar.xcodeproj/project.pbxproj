@@ -45,6 +45,7 @@
 		A3819A052548524B00C71D41 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A042548524B00C71D41 /* CreateEventViewController.swift */; };
 		A3819A092548535200C71D41 /* CreateEventViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3819A082548535200C71D41 /* CreateEventViewController.storyboard */; };
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
+		A3819A15254859CC00C71D41 /* CalendarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A14254859CB00C71D41 /* CalendarConfiguration.swift */; };
 		A3880A982544293300EA69AE /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */; };
@@ -146,6 +147,7 @@
 		A3819A042548524B00C71D41 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		A3819A082548535200C71D41 /* CreateEventViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEventViewController.storyboard; sourceTree = "<group>"; };
 		A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSectionHeaderView.swift; sourceTree = "<group>"; };
+		A3819A14254859CB00C71D41 /* CalendarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarConfiguration.swift; sourceTree = "<group>"; };
 		A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemCell.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				A33F80FC22468A56009CC46A /* CalendarViewController.swift */,
 				A33F80FE22468A5D009CC46A /* CalendarViewController.storyboard */,
+				A3819A14254859CB00C71D41 /* CalendarConfiguration.swift */,
 			);
 			path = "Main Calendar";
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */,
 				A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
+				A3819A15254859CC00C71D41 /* CalendarConfiguration.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,

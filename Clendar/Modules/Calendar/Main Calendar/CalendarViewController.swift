@@ -19,21 +19,24 @@ final class CalendarViewController: BaseViewController {
     // MARK: - Properties
 
     @IBOutlet private var eventListHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet private var eventListContainerView: UIView!
+
     @IBOutlet private var bottomButtonStackView: UIStackView!
+
     @IBOutlet private var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet private var calendarView: CVCalendarView! {
         didSet {
-            calendarView.calendarAppearanceDelegate = self
-            calendarView.animatorDelegate = self
-            calendarView.calendarDelegate = self
+            calendarView.calendarAppearanceDelegate = calendarConfiguration
+            calendarView.animatorDelegate = calendarConfiguration
+            calendarView.calendarDelegate = calendarConfiguration
         }
     }
 
     @IBOutlet private var dayView: CVCalendarMenuView! {
         didSet {
-            dayView.delegate = self
+            dayView.delegate = calendarConfiguration
         }
     }
 
@@ -61,19 +64,20 @@ final class CalendarViewController: BaseViewController {
         didSet {
             monthLabel.textColor = .appDark
             monthLabel.font = .semiboldFontWithSize(30)
-            monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
+            monthLabel.text = Date().monthName(.default)
             monthLabel.textAlignment = .right
 
         }
     }
 
-    private lazy var currentCalendar: Calendar = CalendarManager.shared.calendar
-
     private lazy var eventList = EventListViewController()
 
     private lazy var inputParser = InputParser()
 
-    private var calendarMode: CalendarMode = .monthView
+    private lazy var calendarConfiguration: CalendarViewConfiguration = {
+        let proxy = CalendarViewConfiguration(calendar: CalendarManager.shared.calendar, mode: .monthView)
+        return proxy
+    }()
 
     // MARK: - Life cycle
 
@@ -89,10 +93,19 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Override
 
-    override func setupViews() {
-        super.setupViews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        checkUIMode()
+        calendarConfiguration.didSelectDayView = { [weak self] dayView, animationDidFinish in
+            guard let self = self else { return }
+            self.fetchEvents(dayView.convertedDate)
+            self.resignTextField()
+        }
+
+        calendarConfiguration.presentedDateUpdated = { [weak self] date in
+            guard let self = self else { return }
+            self.monthLabel.text = date.convertedDate()?.monthName(.default)
+        }
 
         settingsButton.on.tap { [weak self] in
             guard let self = self else { return }
@@ -107,13 +120,18 @@ final class CalendarViewController: BaseViewController {
             self.inputTextField.becomeFirstResponder()
         }
 
-        view.backgroundColor = .backgroundColor
-        dayView.backgroundColor = .backgroundColor
-        eventListContainerView.backgroundColor = .backgroundColor
         addGestures()
         addEventListContainer()
         addObservers()
         selectToday()
+    }
+
+    override func setupViews() {
+        super.setupViews()
+        checkUIMode()
+        view.backgroundColor = .backgroundColor
+        dayView.backgroundColor = .backgroundColor
+        eventListContainerView.backgroundColor = .backgroundColor
     }
 
     // MARK: - Private
@@ -204,93 +222,6 @@ final class CalendarViewController: BaseViewController {
 
     @objc private func didTapMonthLabel() {
         selectToday()
-    }
-}
-
-extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
-
-    // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
-
-    func presentationMode() -> CalendarMode { calendarMode }
-
-    func firstWeekday() -> Weekday { .monday }
-
-    func calendar() -> Calendar? { currentCalendar }
-
-    func shouldShowWeekdaysOut() -> Bool { true }
-
-    func shouldAutoSelectDayOnMonthChange() -> Bool { false }
-
-    func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        fetchEvents(dayView.convertedDate)
-        resignTextField()
-    }
-
-    func presentedDateUpdated(_ date: CVDate) {
-        monthLabel.text = date.globalDescription
-    }
-
-    func dayOfWeekFont() -> UIFont {
-        .mediumFontWithSize(15)
-    }
-
-    func dayOfWeekTextUppercase() -> Bool { false }
-
-    func weekdaySymbolType() -> WeekdaySymbolType { .short }
-
-    func dayOfWeekTextColor() -> UIColor { .appDark }
-
-    func dayOfWeekBackGroundColor() -> UIColor { .clear }
-
-    func spaceBetweenWeekViews() -> CGFloat { 0 }
-
-    func shouldAnimateResizing() -> Bool { true }
-
-    func shouldShowCustomSingleSelection() -> Bool { true }
-
-    func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
-        let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
-        circleView.fillColor = .appLightGray
-        return circleView
-    }
-
-    func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        dayView.isCurrentDay
-    }
-
-    func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) ?? UIView()
-    }
-
-    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
-}
-
-extension CalendarViewController: CVCalendarViewAppearanceDelegate {
-
-    // MARK: - CVCalendarViewAppearanceDelegate
-
-    func spaceBetweenDayViews() -> CGFloat { 0 }
-
-    func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
-
-    func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
-
-    func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        .regularFontWithSize(20)
-    }
-
-    func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return .white
-        case (.sunday, .out, _): return UIColor.appLightRed
-        case (.sunday, _, _): return UIColor.appRed
-        case (_, .in, _): return UIColor.appDark
-        default: return UIColor.appLightGray
-        }
-    }
-
-    func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        .appRed
     }
 }
 
