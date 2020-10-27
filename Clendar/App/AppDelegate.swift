@@ -13,6 +13,8 @@ import SwiftDate
 /*
  TODO:
 
+ + force touch shortcut from homescreen
+ + gan admob google ads earn money ~1-2$ day
  + iOS 14 widget
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
  + [done] show list of events of day

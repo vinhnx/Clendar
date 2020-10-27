@@ -76,7 +76,8 @@ extension UIViewController {
     }
 
     static var topViewController: UIViewController? {
-        return UIViewController.topViewController(UIApplication.shared.keyWindow?.rootViewController)
+        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+        return UIViewController.topViewController(window?.rootViewController)
     }
 
     /// Safe present view controller

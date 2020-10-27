@@ -60,7 +60,7 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             monthLabel.textColor = .appDark
-            monthLabel.font = .serifFontWithSize(30)
+            monthLabel.font = .semiboldFontWithSize(30)
             monthLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
             monthLabel.textAlignment = .right
 
@@ -69,17 +69,7 @@ final class CalendarViewController: BaseViewController {
 
     private lazy var currentCalendar: Calendar = CalendarManager.shared.calendar
 
-    private lazy var eventList: EventListViewController = {
-        let proxy = EventListViewController()
-        proxy.contentSizeDidChange = { [weak self] size in
-            guard let self = self else { return }
-            self.eventListHeightConstraint.constant = size.height
-            self.view.setNeedsLayout()
-            self.view.layoutIfNeeded()
-        }
-
-        return proxy
-    }()
+    private lazy var eventList = EventListViewController()
 
     private lazy var inputParser = InputParser()
 
@@ -241,7 +231,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
 
     func dayOfWeekFont() -> UIFont {
-        .serifFontWithSize(15)
+        .mediumFontWithSize(15)
     }
 
     func dayOfWeekTextUppercase() -> Bool { false }
@@ -286,7 +276,7 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        .serifFontWithSize(20)
+        .regularFontWithSize(20)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

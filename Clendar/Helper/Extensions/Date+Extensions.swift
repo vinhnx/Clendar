@@ -31,7 +31,12 @@ extension Date {
     }
 
     var toChineseDate: Date {
-        let chineseDate = convertTo(region: Region(calendar: Calendars.chinese))
-        return Date(year: chineseDate.year, month: chineseDate.month, day: chineseDate.day, hour: 0, minute: 0)
+        let date = convertTo(region: Region(calendar: Calendars.chinese))
+        return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
+    }
+
+    var toGregorianDate: Date {
+        let date = convertTo(region: Region(calendar: Calendars.gregorian))
+        return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
     }
 }

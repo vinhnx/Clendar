@@ -22,7 +22,7 @@ class Button: UIButton {
     // MARK: - Private
 
     func configure() {
-        titleLabel?.font = .sansFontWithSize(20, weight: .bold)
+        titleLabel?.font = .regularFontWithSize(20)
         applyCircle()
     }
 }

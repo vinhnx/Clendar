@@ -36,6 +36,32 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `EventListTableViewCell`.
+    static let eventListTableViewCell = _R.nib._EventListTableViewCell()
+    
+    /// `UINib(name: "EventListTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventListTableViewCell) instead")
+    static func eventListTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.eventListTableViewCell)
+    }
+    
+    static func eventListTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListTableViewCell? {
+      return R.nib.eventListTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListTableViewCell
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `EventListTableViewCell`.
+    static let eventListTableViewCell: Rswift.ReuseIdentifier<EventListTableViewCell> = Rswift.ReuseIdentifier(identifier: "EventListTableViewCell")
+    
+    fileprivate init() {}
+  }
+  
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `CalendarViewController`.
@@ -72,6 +98,24 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     try storyboard.validate()
+  }
+  
+  struct nib {
+    struct _EventListTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = EventListTableViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "EventListTableViewCell"
+      let name = "EventListTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {

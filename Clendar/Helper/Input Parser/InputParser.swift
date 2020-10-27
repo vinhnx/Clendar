@@ -10,6 +10,11 @@ import Foundation
 import SwiftyChrono
 import SwiftDate
 
+enum CalendarTypeSegment {
+    case lunar
+    case solar
+}
+
 final class InputParser {
 
     // MARK: - Model
@@ -20,31 +25,34 @@ final class InputParser {
         var endDate: Date
     }
 
-    // MARK: - Properties
-
-    var preferredLanguage: Language = .english {
-        didSet {
-            Chrono.preferredLanguage = preferredLanguage
-        }
-    }
-
     private lazy var chrono = Chrono()
+
+    init() {
+        Chrono.preferredLanguage = .english
+        Chrono.defaultImpliedHour = 9
+    }
 
     // MARK: - Public
 
-    func parse(_ input: String) -> InputParserResult? {
+    func parse(_ input: String, type: CalendarTypeSegment = .solar) -> InputParserResult? {
         guard input.isEmpty == false else { return nil }
         let results = chrono.parse(text: input)
         let process = results.process(with: input)
         let startDate = process.startDate
         let endDate = process.endDate
-        
-//        // to chinese date
-//        log("normal date: \(startDate)")
-//        log("chinese date: \(startDate.toChineseDate)")
 
-        return InputParserResult(action: process.action,
-                                 startDate: startDate,
-                                 endDate: endDate)
+        switch type {
+        case .lunar:
+            let gregorianStartDate = startDate.toGregorianDate
+            let gregorianEndDate = endDate.toGregorianDate
+            return InputParserResult(action: process.action,
+                                     startDate: gregorianStartDate,
+                                     endDate: gregorianEndDate)
+
+        case .solar:
+            return InputParserResult(action: process.action,
+                                     startDate: startDate,
+                                     endDate: endDate)
+        }
     }
 }

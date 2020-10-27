@@ -18,7 +18,7 @@ class DateHighlightView: UIStackView {
         let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.8,
                                           width: dayView.frame.size.width, height: 10))
         label.textColor = isOut ? .lightGray : .systemGray
-        label.font = .sansFontWithSize(11)
+        label.font = .regularFontWithSize(11)
         label.text = lunarDate
         label.textAlignment = .center
         return label
