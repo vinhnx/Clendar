@@ -149,7 +149,9 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct createEventViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct createEventViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = CreateEventViewController
+      
       let bundle = R.hostingBundle
       let createEventViewController = StoryboardViewControllerResource<CreateEventViewController>(identifier: "CreateEventViewController")
       let name = "CreateEventViewController"
@@ -159,6 +161,8 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "checkmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkmark' is used in storyboard 'CreateEventViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "xmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xmark' is used in storyboard 'CreateEventViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }
         if _R.storyboard.createEventViewController().createEventViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'createEventViewController' could not be loaded from storyboard 'CreateEventViewController' as 'CreateEventViewController'.") }

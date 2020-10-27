@@ -14,10 +14,21 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+
+        checkUIMode()
+        
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
+            self.checkUIMode()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: - Subclass
 
-    func setupViews() {}
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
 }

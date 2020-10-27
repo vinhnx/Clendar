@@ -14,6 +14,7 @@ target 'Clendar' do
   # Helper
   pod 'SwiftLint'
   pod 'R.swift'
+  pod 'IQKeyboardManagerSwift'
 
   # View
   pod 'CVCalendar', '~> 1.7.0'

@@ -23,12 +23,11 @@ final class EventListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLayout()
-        fetchEvents()
-    }
 
-    override func setupViews() {
-        super.setupViews()
+        setupLayout()
+
+        fetchEvents()
+
         view.backgroundColor = .backgroundColor
     }
 

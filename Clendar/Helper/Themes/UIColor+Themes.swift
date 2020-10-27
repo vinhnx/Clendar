@@ -42,23 +42,23 @@ extension UIColor {
     static let appTeal = UIColor.systemTeal
 
     static var backgroundColor: UIColor {
-        UIColor { trait in trait.userInterfaceStyle == .dark ? .lavixA : .hueC }
+        UIColor { _ in isDarkMode ? .lavixA : .hueC }
     }
 
     static var inversedBackgroundColor: UIColor {
-        UIColor { trait in trait.userInterfaceStyle == .dark ? .hueC : .lavixA }
+        UIColor { _ in isDarkMode ? .hueC : .lavixA }
     }
 
     static var primaryColor: UIColor {
-        UIColor { trait in trait.userInterfaceStyle == .dark ? .hueA : .hueD }
+        UIColor { _ in isDarkMode ? .hueA : .hueD }
     }
 
     static var secondaryColor: UIColor {
-        UIColor { trait in trait.userInterfaceStyle == .dark ? .hueD : .hueA }
+        UIColor { _ in isDarkMode ? .hueD : .hueA }
     }
 
     static var buttonTintColor: UIColor {
-        UIColor { trait in trait.userInterfaceStyle == .dark ? .hueB : .hueC }
+        UIColor { _ in isDarkMode ? .hueB : .hueC }
     }
 }
 

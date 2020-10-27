@@ -9,10 +9,12 @@
 import UIKit
 import Logging
 import SwiftDate
+import IQKeyboardManagerSwift
 
 /*
  TODO:
 
+ + localized https://github.com/yonaskolb/Stringly
  + force touch shortcut from homescreen
  + gan admob google ads earn money ~1-2$ day
  + iOS 14 widget
@@ -46,9 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        configureWindow()
-        configureLogger()
-        configureSwiftDate()
+        configure()
+
+        window?.tintColor = .primaryColor
+        window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
+
         return true
     }
 
@@ -58,16 +63,14 @@ extension AppDelegate {
 
     // MARK: - Window
 
-    private func configureWindow() {
-        window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
-        window?.makeKeyAndVisible()
-    }
+    private func configure() {
 
-    fileprivate func configureLogger() {
         logger.logLevel = .debug
-    }
 
-    private func configureSwiftDate() {
         SwiftDate.defaultRegion = Region.local
+
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
     }
 }

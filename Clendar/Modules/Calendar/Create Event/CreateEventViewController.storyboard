@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vYN-SK-JJt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create Event View Controller-->
+        <scene sceneID="uku-UD-iVU">
+            <objects>
+                <viewController storyboardIdentifier="CreateEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vYN-SK-JJt" customClass="CreateEventViewController" customModule="Clendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KWI-ga-F1n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOI-hZ-2M5">
+                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80T-0u-PIh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6lF-Rg-dlj">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-Va-IoL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="22"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                                        </state>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh2-f2-nHk">
+                                                        <rect key="frame" x="138" y="0.0" width="138" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfR-FI-YHm">
+                                                        <rect key="frame" x="276" y="0.0" width="138" height="22"/>
+                                                        <state key="normal">
+                                                            <imageReference key="image" image="checkmark" catalog="system" symbolScale="large"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="711-WI-0Z4" customClass="TextField" customModule="Clendar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="42" width="414" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="EKo-CQ-IPJ"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="go"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="80T-0u-PIh" firstAttribute="leading" secondItem="92W-Jv-jw3" secondAttribute="leading" id="F5q-Ob-4ny"/>
+                                    <constraint firstItem="80T-0u-PIh" firstAttribute="bottom" secondItem="92W-Jv-jw3" secondAttribute="bottom" id="P2j-s2-ZZJ"/>
+                                    <constraint firstItem="80T-0u-PIh" firstAttribute="trailing" secondItem="92W-Jv-jw3" secondAttribute="trailing" id="d67-8N-rYZ"/>
+                                    <constraint firstItem="80T-0u-PIh" firstAttribute="width" secondItem="j7R-AE-q4o" secondAttribute="width" id="qP8-TE-5qY"/>
+                                    <constraint firstItem="92W-Jv-jw3" firstAttribute="top" secondItem="80T-0u-PIh" secondAttribute="top" id="qz9-E3-oRO"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="92W-Jv-jw3"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="j7R-AE-q4o"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OD1-A0-vJZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vOI-hZ-2M5" firstAttribute="top" secondItem="OD1-A0-vJZ" secondAttribute="top" constant="20" id="Err-4p-LY6"/>
+                            <constraint firstItem="OD1-A0-vJZ" firstAttribute="trailing" secondItem="vOI-hZ-2M5" secondAttribute="trailing" id="UIr-f6-3KK"/>
+                            <constraint firstItem="vOI-hZ-2M5" firstAttribute="leading" secondItem="OD1-A0-vJZ" secondAttribute="leading" id="VdH-1N-SY7"/>
+                            <constraint firstItem="OD1-A0-vJZ" firstAttribute="bottom" secondItem="vOI-hZ-2M5" secondAttribute="bottom" id="tKG-98-VUi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Nal-Va-IoL" id="gwU-7u-Xcv"/>
+                        <outlet property="inputTextField" destination="711-WI-0Z4" id="SnE-wH-TId"/>
+                        <outlet property="saveButton" destination="AfR-FI-YHm" id="96A-3M-LYA"/>
+                        <outlet property="scrollView" destination="vOI-hZ-2M5" id="5wC-Cb-ttG"/>
+                        <outlet property="titleLabel" destination="Kh2-f2-nHk" id="H2G-yd-1Mb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9d-iA-Vla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

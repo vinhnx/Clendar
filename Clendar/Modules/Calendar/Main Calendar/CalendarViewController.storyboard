@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -131,7 +131,6 @@
                         <outlet property="dayView" destination="EJT-3z-nZs" id="54T-d2-Z0w"/>
                         <outlet property="eventListContainerView" destination="Amk-Q0-bXu" id="rvI-7k-fpo"/>
                         <outlet property="eventListHeightConstraint" destination="DsK-B7-xgh" id="eNb-fg-8er"/>
-                        <outlet property="inputTextField" destination="RDn-a5-6H6" id="rl0-vQ-M8g"/>
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
                         <outlet property="settingsButton" destination="xNt-LG-coJ" id="6Oo-Vd-MGT"/>
                     </connections>
