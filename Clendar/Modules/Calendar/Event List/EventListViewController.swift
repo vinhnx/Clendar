@@ -53,8 +53,8 @@ final class EventListViewController: BaseViewController {
         let datasource = DataSource(
             collectionView: collectionView,
             cellProvider: { (collectionView, indexPath, event) in
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListTableViewCell.reuseID, for: indexPath) as? EventListTableViewCell
-                let viewModel = EventListTableViewCell.ViewModel(event: event)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListItemCell.reuseID, for: indexPath) as? EventListItemCell
+                let viewModel = EventListItemCell.ViewModel(event: event)
                 cell?.viewModel = viewModel
                 return cell
             }
@@ -65,8 +65,8 @@ final class EventListViewController: BaseViewController {
             let section = self.datasource.snapshot().sectionIdentifiers[indexPath.section]
             let view = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
-                withReuseIdentifier: SectionHeaderReusableView.reuseID,
-                for: indexPath) as? SectionHeaderReusableView
+                withReuseIdentifier: EventSectionHeaderView.reuseID,
+                for: indexPath) as? EventSectionHeaderView
             view?.titleLabel.text = section.date?.toFullDateString
             return view
         }
@@ -88,15 +88,15 @@ final class EventListViewController: BaseViewController {
 
         // section header
         collectionView.register(
-            SectionHeaderReusableView.self,
+            EventSectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: SectionHeaderReusableView.reuseID
+            withReuseIdentifier: EventSectionHeaderView.reuseID
         )
 
         // cell
         collectionView.register(
-            UINib(nibName: EventListTableViewCell.reuseID, bundle: nil),
-            forCellWithReuseIdentifier: EventListTableViewCell.reuseID
+            UINib(nibName: EventListItemCell.reuseID, bundle: nil),
+            forCellWithReuseIdentifier: EventListItemCell.reuseID
         )
 
         collectionView.dataSource = datasource
@@ -109,7 +109,7 @@ final class EventListViewController: BaseViewController {
 extension EventListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let event = datasource.itemIdentifier(for: indexPath) else { return }
-        let viewModel = EventListTableViewCell.ViewModel(event: event)
+        let viewModel = EventListItemCell.ViewModel(event: event)
         presentAlertModal(iconText: viewModel.dateDisplay,
                           title: viewModel.title,
                           message: viewModel.message)

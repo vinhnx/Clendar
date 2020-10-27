@@ -38,17 +38,17 @@ struct R: Rswift.Validatable {
   
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
-    /// Nib `EventListTableViewCell`.
-    static let eventListTableViewCell = _R.nib._EventListTableViewCell()
+    /// Nib `EventListItemCell`.
+    static let eventListItemCell = _R.nib._EventListItemCell()
     
-    /// `UINib(name: "EventListTableViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventListTableViewCell) instead")
-    static func eventListTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.eventListTableViewCell)
+    /// `UINib(name: "EventListItemCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventListItemCell) instead")
+    static func eventListItemCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.eventListItemCell)
     }
     
-    static func eventListTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListTableViewCell? {
-      return R.nib.eventListTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListTableViewCell
+    static func eventListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
+      return R.nib.eventListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
     }
     
     fileprivate init() {}
@@ -56,22 +56,29 @@ struct R: Rswift.Validatable {
   
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `EventListTableViewCell`.
-    static let eventListTableViewCell: Rswift.ReuseIdentifier<EventListTableViewCell> = Rswift.ReuseIdentifier(identifier: "EventListTableViewCell")
+    /// Reuse identifier `EventListItemCell`.
+    static let eventListItemCell: Rswift.ReuseIdentifier<EventListItemCell> = Rswift.ReuseIdentifier(identifier: "EventListItemCell")
     
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `CalendarViewController`.
     static let calendarViewController = _R.storyboard.calendarViewController()
+    /// Storyboard `CreateEventViewController`.
+    static let createEventViewController = _R.storyboard.createEventViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     
     /// `UIStoryboard(name: "CalendarViewController", bundle: ...)`
     static func calendarViewController(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.calendarViewController)
+    }
+    
+    /// `UIStoryboard(name: "CreateEventViewController", bundle: ...)`
+    static func createEventViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.createEventViewController)
     }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -101,15 +108,15 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    struct _EventListTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = EventListTableViewCell
+    struct _EventListItemCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = EventListItemCell
       
       let bundle = R.hostingBundle
-      let identifier = "EventListTableViewCell"
-      let name = "EventListTableViewCell"
+      let identifier = "EventListItemCell"
+      let name = "EventListItemCell"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListTableViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
       }
       
       fileprivate init() {}
@@ -121,6 +128,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try calendarViewController.validate()
+      try createEventViewController.validate()
       try launchScreen.validate()
     }
     
@@ -134,6 +142,18 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "gearshape", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gearshape' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "slider.horizontal.3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'slider.horizontal.3' is used in storyboard 'CalendarViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, *) {
+        }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct createEventViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CreateEventViewController"
+      
+      static func validate() throws {
         if #available(iOS 11.0, *) {
         }
       }
