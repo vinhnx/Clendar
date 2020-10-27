@@ -9,6 +9,14 @@
 import UIKit
 import EasyClosure
 
+// TODO: add save edit once or repating event menu popup (EKEvent.isDetached)
+
+// TODO: alert
+
+// TODO: repeat
+
+// TODO: delete
+
 enum CreateEventType {
     case create
     case edit
@@ -93,7 +101,7 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = "New Event"
+            titleLabel.text = createEventType == .create ? "New Event" : "Edit Event"
             titleLabel.numberOfLines = 0
             titleLabel.textColor = .appDark
             titleLabel.font = .boldFontWithSize(30)
@@ -160,8 +168,6 @@ class CreateEventViewController: BaseViewController {
         inputTextField.text = viewModel.text
 
         startDatePicker.date = viewModel.startDate
-
-        endDatePicker.isHidden = viewModel.endDate == nil
 
         if let endDate = viewModel.endDate {
             endDatePicker.date = endDate
