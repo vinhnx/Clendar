@@ -9,18 +9,56 @@
 import UIKit
 import EasyClosure
 
+enum CreateEventType {
+    case create
+    case edit
+}
+
+struct CreateEventViewModel {
+    var text: String = ""
+    var startDate: Date = Date()
+    var endDate: Date?
+
+    init(event: Event? = nil) {
+        guard let event = event?.event else { return }
+        text = event.title
+        startDate = event.startDate
+        endDate = event.endDate
+    }
+}
+
+internal struct EventOverride {
+    let text: String
+    let startDate: Date
+    let endDate: Date
+}
+
 class CreateEventViewController: BaseViewController {
+
+    // MARK: - Callback
+
+    var didUpdateEvent: ((InputParser.InputParserResult) -> Void)?
 
     // MARK: - Properties
 
     private lazy var workItem = WorkItem()
 
-    var didCreateEvent: ((InputParser.InputParserResult) -> Void)?
+    var createEventType: CreateEventType = .create
 
-    @IBOutlet private var datePicker: UIDatePicker! {
+    var viewModel = CreateEventViewModel()
+
+    @IBOutlet private var startDatePicker: UIDatePicker! {
         didSet {
             if #available(iOS 13.4, *) {
-                datePicker.preferredDatePickerStyle = .automatic
+                startDatePicker.preferredDatePickerStyle = .automatic
+            }
+        }
+    }
+
+    @IBOutlet private var endDatePicker: UIDatePicker! {
+        didSet {
+            if #available(iOS 13.4, *) {
+                endDatePicker.preferredDatePickerStyle = .automatic
             }
         }
     }
@@ -69,6 +107,7 @@ class CreateEventViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .backgroundColor
+        bind(viewModel)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -78,15 +117,21 @@ class CreateEventViewController: BaseViewController {
 
     // MARK: - Private
 
-    private func createNewEvent() {
+    private func createNewEvent(_ override: EventOverride? = nil) {
         guard let input = inputTextField.text else { return dismiss() }
         guard input.isEmpty == false else { return dismiss() }
         guard let result = InputParser().parse(input) else { return }
 
-        EventHandler.shared.createEvent(result.action, startDate: result.startDate, endDate: result.endDate) { [weak self] in
+        let override = EventOverride(
+            text: result.action,
+            startDate: startDatePicker.date,
+            endDate: endDatePicker.date
+        )
+
+        EventHandler.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] in
             guard let self = self else { return }
             self.inputTextField.text = ""
-            self.didCreateEvent?(result)
+            self.didUpdateEvent?(result)
             self.dismiss()
         }
     }
@@ -102,8 +147,18 @@ class CreateEventViewController: BaseViewController {
         workItem.perform { [weak self] in
             guard let self = self else { return }
             guard let result = InputParser().parse(substring) else { return }
-            let startDate = result.startDate
-            self.datePicker.date = startDate
+            self.startDatePicker.date = result.startDate
+            self.endDatePicker.date = result.endDate
+        }
+    }
+
+    private func bind(_ viewModel: CreateEventViewModel) {
+        inputTextField.text = viewModel.text
+
+        startDatePicker.date = viewModel.startDate
+
+        if let endDate = viewModel.endDate {
+            endDatePicker.date = endDate
         }
     }
 }

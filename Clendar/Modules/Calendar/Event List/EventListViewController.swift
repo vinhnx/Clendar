@@ -15,6 +15,12 @@ final class EventListViewController: BaseViewController {
 
     // MARK: - Properties
 
+    private lazy var createEventViewController: CreateEventViewController? = {
+        guard let proxy = R.storyboard.createEventViewController.instantiateInitialViewController() else { return nil }
+        proxy.createEventType = .edit
+        return proxy
+    }()
+
     private lazy var collectionView = Layout.makeCollectionView()
 
     private lazy var datasource = makeDatasource()
@@ -23,11 +29,8 @@ final class EventListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupLayout()
-
         fetchEvents()
-
         view.backgroundColor = .backgroundColor
     }
 
@@ -107,10 +110,9 @@ final class EventListViewController: BaseViewController {
 
 extension EventListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let createEventViewController = createEventViewController else { return }
         guard let event = datasource.itemIdentifier(for: indexPath) else { return }
-        let viewModel = EventListItemCell.ViewModel(event: event)
-        presentAlertModal(iconText: viewModel.dateDisplay,
-                          title: viewModel.title,
-                          message: viewModel.message)
+        createEventViewController.viewModel = CreateEventViewModel(event: event)
+        present(createEventViewController, animated: true)
     }
 }
