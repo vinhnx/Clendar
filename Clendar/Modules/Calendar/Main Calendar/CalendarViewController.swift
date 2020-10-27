@@ -70,9 +70,7 @@ final class CalendarViewController: BaseViewController {
         mode: .monthView
     )
 
-    private lazy var createEventViewController: CreateEventViewController? = {
-        R.storyboard.createEventViewController.instantiateInitialViewController()
-    }()
+    private var createEventViewController: CreateEventViewController?
 
     // MARK: - Life cycle
 
@@ -87,6 +85,7 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController()
         createEventViewController?.didUpdateEvent = { [weak self] result in
             guard let self = self else { return }
             let date = result.startDate

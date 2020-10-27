@@ -22,9 +22,9 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80T-0u-PIh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="625"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6lF-Rg-dlj">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6lF-Rg-dlj" userLabel="Header Views">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-Va-IoL">
@@ -54,8 +54,17 @@
                                                     <segment title="Second"/>
                                                 </segments>
                                             </segmentedControl>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="711-WI-0Z4" customClass="TextField" customModule="Clendar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="42" width="414" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="EKo-CQ-IPJ"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="go"/>
+                                            </textField>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fjx-qX-SCe">
-                                                <rect key="frame" x="0.0" y="32" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="102" width="414" height="0.0"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-gv-EIM">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
@@ -69,7 +78,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="biI-sl-01K">
-                                                <rect key="frame" x="0.0" y="42" width="414" height="246.5"/>
+                                                <rect key="frame" x="0.0" y="112" width="414" height="246.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ta-s8-g2h" userLabel="Starts">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
@@ -83,36 +92,19 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RGa-5y-e21">
-                                                <rect key="frame" x="0.0" y="308.5" width="414" height="257"/>
+                                                <rect key="frame" x="0.0" y="378.5" width="414" height="246.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="glw-w9-IdS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63f-vx-2bk" userLabel="Ends">
-                                                                <rect key="frame" x="0.0" y="0.0" width="355" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PD2-Sy-ELe">
-                                                                <rect key="frame" x="365" y="0.0" width="51" height="31"/>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63f-vx-2bk" userLabel="Ends">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cZC-aK-SuW">
-                                                        <rect key="frame" x="0.0" y="41" width="414" height="216"/>
+                                                        <rect key="frame" x="0.0" y="30.5" width="414" height="216"/>
                                                     </datePicker>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="711-WI-0Z4" customClass="TextField" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="585.5" width="414" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="EKo-CQ-IPJ"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="go"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -139,10 +131,12 @@
                     <connections>
                         <outlet property="closeButton" destination="Nal-Va-IoL" id="gwU-7u-Xcv"/>
                         <outlet property="endDatePicker" destination="cZC-aK-SuW" id="SPl-oZ-o8s"/>
+                        <outlet property="endDateStackContainerView" destination="RGa-5y-e21" id="Joq-nK-oAF"/>
                         <outlet property="inputTextField" destination="711-WI-0Z4" id="SnE-wH-TId"/>
                         <outlet property="saveButton" destination="AfR-FI-YHm" id="96A-3M-LYA"/>
                         <outlet property="scrollView" destination="vOI-hZ-2M5" id="5wC-Cb-ttG"/>
                         <outlet property="startDatePicker" destination="2uu-FS-H1U" id="Wr4-wH-yVI"/>
+                        <outlet property="startDateStackContainerView" destination="biI-sl-01K" id="Ihi-Oz-9sj"/>
                         <outlet property="titleLabel" destination="Kh2-f2-nHk" id="H2G-yd-1Mb"/>
                     </connections>
                 </viewController>

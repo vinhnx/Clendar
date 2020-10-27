@@ -47,6 +47,10 @@ class CreateEventViewController: BaseViewController {
 
     var viewModel = CreateEventViewModel()
 
+    @IBOutlet private var startDateStackContainerView: UIView!
+
+    @IBOutlet private var endDateStackContainerView: UIView!
+
     @IBOutlet private var startDatePicker: UIDatePicker! {
         didSet {
             if #available(iOS 13.4, *) {
@@ -156,6 +160,8 @@ class CreateEventViewController: BaseViewController {
         inputTextField.text = viewModel.text
 
         startDatePicker.date = viewModel.startDate
+
+        endDatePicker.isHidden = viewModel.endDate == nil
 
         if let endDate = viewModel.endDate {
             endDatePicker.date = endDate
