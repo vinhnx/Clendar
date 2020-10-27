@@ -140,6 +140,10 @@ final class CalendarViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: .didChangeShowLunarCalendarPreferences, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
+
+        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (notification) in
+            self.calendarView.reloadData()
+        }
     }
 
     private func addGestures() {

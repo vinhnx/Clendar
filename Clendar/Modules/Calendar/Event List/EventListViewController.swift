@@ -26,6 +26,10 @@ final class EventListViewController: BaseViewController {
         setupLayout()
         fetchEvents()
         view.backgroundColor = .backgroundColor
+
+        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (notification) in
+            self.fetchEvents()
+        }
     }
 
     // MARK: - Public
