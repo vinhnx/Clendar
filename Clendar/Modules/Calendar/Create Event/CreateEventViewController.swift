@@ -13,7 +13,17 @@ class CreateEventViewController: BaseViewController {
 
     // MARK: - Properties
 
+    private lazy var workItem = WorkItem()
+
     var didCreateEvent: ((InputParser.InputParserResult) -> Void)?
+
+    @IBOutlet private var datePicker: UIDatePicker! {
+        didSet {
+            if #available(iOS 13.4, *) {
+                datePicker.preferredDatePickerStyle = .automatic
+            }
+        }
+    }
 
     @IBOutlet private var closeButton: UIButton! {
         didSet {
@@ -86,11 +96,27 @@ class CreateEventViewController: BaseViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    private func parseDate(_ substring: String) {
+        guard substring.isEmpty == false else { return }
+
+        workItem.perform { [weak self] in
+            guard let self = self else { return }
+            guard let result = InputParser().parse(substring) else { return }
+            let startDate = result.startDate
+            self.datePicker.date = startDate
+        }
+    }
 }
 
 extension CreateEventViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+        parseDate(substring)
         return true
     }
 }

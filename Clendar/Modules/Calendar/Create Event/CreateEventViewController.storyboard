@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="80T-0u-PIh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="328"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6lF-Rg-dlj">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
@@ -47,8 +47,32 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-OC-93U">
+                                                <rect key="frame" x="0.0" y="32" width="414" height="1"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fjx-qX-SCe">
+                                                <rect key="frame" x="0.0" y="32" width="414" height="0.0"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGF-gv-EIM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="0.0"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yru-Pt-pmy" userLabel="All day">
+                                                        <rect key="frame" x="69" y="0.0" width="345" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2uu-FS-H1U">
+                                                <rect key="frame" x="0.0" y="42" width="414" height="216"/>
+                                            </datePicker>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="711-WI-0Z4" customClass="TextField" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="42" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="278" width="414" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="EKo-CQ-IPJ"/>
                                                 </constraints>
@@ -81,6 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="Nal-Va-IoL" id="gwU-7u-Xcv"/>
+                        <outlet property="datePicker" destination="2uu-FS-H1U" id="Wr4-wH-yVI"/>
                         <outlet property="inputTextField" destination="711-WI-0Z4" id="SnE-wH-TId"/>
                         <outlet property="saveButton" destination="AfR-FI-YHm" id="96A-3M-LYA"/>
                         <outlet property="scrollView" destination="vOI-hZ-2M5" id="5wC-Cb-ttG"/>

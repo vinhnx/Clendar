@@ -19,9 +19,12 @@ extension EKEventStore {
 
         do {
             try save(event, span: span, commit: true)
-            completion.flatMap { $0() }
         } catch {
             logError(error)
+        }
+
+        DispatchQueue.main.async {
+            completion.flatMap { $0() }
         }
     }
 
