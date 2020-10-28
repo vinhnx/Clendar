@@ -33,9 +33,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func presentationMode() -> CalendarMode { mode }
 
-    func firstWeekday() -> Weekday {
-        SwiftDate.defaultRegion.locale.identifier == Locales.englishUnitedStates.rawValue ? .sunday : .monday
-    }
+    func firstWeekday() -> Weekday { cv_defaultFirstWeekday }
 
     func calendar() -> Calendar? { currentCalendar }
 
