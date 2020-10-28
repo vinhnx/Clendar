@@ -139,6 +139,11 @@ final class CalendarViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: .didDeleteEvent, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
+
+        NotificationCenter.default.addObserver(forName: .didChangeMonthViewCalendarModePreferences, object: nil, queue: .main) { (_) in
+            let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
+            self.calendarView.changeMode(calendarMode)
+        }
     }
 
     private func addGestures() {

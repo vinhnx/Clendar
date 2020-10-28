@@ -16,4 +16,6 @@ struct SettingsManager {
     @UserDefault("showLunarCalendar", defaultValue: true)
     static var showLunarCalendar: Bool
 
+    @UserDefault("monthViewCalendarMode", defaultValue: true)
+    static var monthViewCalendarMode: Bool
 }

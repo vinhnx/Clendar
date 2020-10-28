@@ -9,6 +9,28 @@
 import UIKit
 import SwiftyFORM
 import SwiftDate
+import CVCalendar
+
+enum CalendarViewMode: Int, CaseIterable {
+    case week
+    case month
+
+    var mode: CVCalendarViewPresentationMode {
+        switch self {
+        case .week: return .weekView
+        case .month: return .monthView
+        }
+    }
+
+    var text: String {
+        switch self {
+        case .week: return "Week view"
+        case .month: return "Month view"
+        }
+    }
+
+    static var titles: [String] = CalendarViewMode.allCases.map { $0.text }
+}
 
 final class SettingsNavigationController: UINavigationController {
 
@@ -76,6 +98,21 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var calendarMode: SegmentedControlFormItem = {
+        let proxy = SegmentedControlFormItem()
+        proxy.title = "Calendar mode"
+        proxy.items = CalendarViewMode.titles
+        proxy.selected = SettingsManager.monthViewCalendarMode
+            ? CalendarViewMode.month.rawValue
+            : CalendarViewMode.week.rawValue
+        proxy.valueDidChangeBlock = { index in
+            let mode = CalendarViewMode(rawValue: index)
+            SettingsManager.monthViewCalendarMode = mode == .month
+            NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
+        }
+        return proxy
+    }()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -109,6 +146,7 @@ final class SettingsViewController: FormViewController {
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title("Calendar")
+        builder += calendarMode
         builder += showLunarCalendar
         builder += SectionFooterTitleFormItem().title("Show small lunar dates under solar calendar dates")
 
