@@ -18,4 +18,8 @@ struct SettingsManager {
 
     @UserDefault("monthViewCalendarMode", defaultValue: true)
     static var monthViewCalendarMode: Bool
+
+    @UserDefault("showDaysOut", defaultValue: true)
+    static var showDaysOut: Bool
+    
 }

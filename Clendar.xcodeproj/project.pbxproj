@@ -15,6 +15,7 @@
 		A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A30F561C2549AA4500E96C0E /* CVCalendar */; };
 		A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */; };
+		A30F563C2549B35600E96C0E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F563B2549B35600E96C0E /* CalendarViewModel.swift */; };
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
@@ -117,6 +118,7 @@
 		A30E41332541FA5E009AAC32 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		A30E41372541FB2A009AAC32 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
 		A30E48222541F4EF00B4B027 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		A30F563B2549B35600E96C0E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Extensions.swift"; sourceTree = "<group>"; };
 		A3187E67254998EE009524DF /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
+				A30F563B2549B35600E96C0E /* CalendarViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
+				A30F563C2549B35600E96C0E /* CalendarViewModel.swift in Sources */,
 				A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
 				A33DE4992541C50F0064D0AD /* UIColor+Themes.swift in Sources */,

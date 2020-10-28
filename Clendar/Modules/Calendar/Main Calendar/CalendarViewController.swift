@@ -144,6 +144,11 @@ final class CalendarViewController: BaseViewController {
             let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
             self.calendarView.changeMode(calendarMode)
         }
+
+        NotificationCenter.default.addObserver(forName: .didChangeShowDaysOutPreferences, object: nil, queue: .main) { (_) in
+            self.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
+            self.calendarView.reloadData()
+        }
     }
 
     private func addGestures() {

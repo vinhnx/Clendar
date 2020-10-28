@@ -36,7 +36,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func calendar() -> Calendar? { currentCalendar }
 
-    func shouldShowWeekdaysOut() -> Bool { true }
+    func shouldShowWeekdaysOut() -> Bool { SettingsManager.showDaysOut }
 
     func shouldAutoSelectDayOnMonthChange() -> Bool { false }
 
@@ -77,7 +77,8 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
     }
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) ?? UIView()
+        if SettingsManager.showDaysOut == false, dayView.isOut { return UIView() }
+        return DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) ?? UIView()
     }
 
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
