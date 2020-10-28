@@ -12,6 +12,6 @@ extension Collection {
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
     /// Reference: http://stackoverflow.com/a/30593673/1477298
     subscript(safe index: Index) -> Iterator.Element? {
-        return index >= startIndex && index < endIndex ? self[index] : nil
+        index >= startIndex && index < endIndex ? self[index] : nil
     }
 }

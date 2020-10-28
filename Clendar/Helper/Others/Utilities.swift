@@ -9,5 +9,5 @@
 import UIKit
 
 var isDarkMode: Bool {
-    return UITraitCollection.current.userInterfaceStyle == .dark
+    UITraitCollection.current.userInterfaceStyle == .dark
 }

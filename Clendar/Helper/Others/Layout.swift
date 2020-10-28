@@ -80,7 +80,7 @@ class Layout {
     static func makeCollectionViewCompositionalLayout(
         type: CompositionalLayoutType = .list
     ) -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (_, _) in
+        UICollectionViewCompositionalLayout { (_, _) in
             switch type {
             case .grid:
                 return makeGridLayoutSection()

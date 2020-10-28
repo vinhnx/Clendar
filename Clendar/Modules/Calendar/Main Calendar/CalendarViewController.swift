@@ -172,6 +172,6 @@ extension CalendarViewController: EKEventEditViewDelegate {
     }
 
     func eventEditViewControllerDefaultCalendar(forNewEvents controller: EKEventEditViewController) -> EKCalendar {
-        return EventKitWrapper.shared.defaultCalendar
+        EventKitWrapper.shared.defaultCalendar
     }
 }

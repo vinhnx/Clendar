@@ -15,7 +15,6 @@ import Foundation
 //button.role = .normal
 //button.menu = menu
 //
-//// If you don't set this, the button either fires via Target/Action or the UIAction it got
 //button.showsMenuAsPrimaryAction = true
 //
 //view.addSubview(button)

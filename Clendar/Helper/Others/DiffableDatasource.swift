@@ -73,7 +73,7 @@ class Layout {
     }
 
     static func makeCollectionViewCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (_, _) in
+        UICollectionViewCompositionalLayout { (_, _) in
             makeListLayoutSection()
         }
     }

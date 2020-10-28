@@ -32,7 +32,7 @@ final class AlertManager {
 
     /// Attempt not to show overlapped alert instances
     static var shouldShowAlert: Bool {
-        return UINavigationController.topViewController is UIAlertController == false
+        UINavigationController.topViewController is UIAlertController == false
     }
 
     // MARK: - System alert/action sheet

@@ -11,6 +11,6 @@ import CVCalendar
 
 extension CVCalendarDayView {
     var convertedDate: Date? {
-        return date.convertedDate()
+        date.convertedDate()
     }
 }

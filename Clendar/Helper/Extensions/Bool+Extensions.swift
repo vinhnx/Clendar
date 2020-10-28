@@ -10,6 +10,6 @@ import Foundation
 
 extension Bool {
     var asString: String {
-        return self ? "On" : "Off"
+        self ? "On" : "Off"
     }
 }

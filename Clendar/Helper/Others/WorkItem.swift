@@ -16,7 +16,7 @@ final class WorkItem {
 
     /// Helper to keep track if any work is pending, useful to cancel any previous task, for example
     var hasPendingWork: Bool {
-        return pendingRequestWorkItem != nil
+        pendingRequestWorkItem != nil
     }
 
     /// Perform a closure after delay

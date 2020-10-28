@@ -12,7 +12,7 @@ typealias TypedUserInfoKey<T> = (key: String, type: T.Type)
 
 extension Dictionary where Key == String, Value == Any {
     subscript<T>(_ typedKey: TypedUserInfoKey<T>) -> T? {
-        return self[typedKey.key] as? T
+        self[typedKey.key] as? T
     }
 }
 
@@ -42,7 +42,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func arrayFor<T>(key: Key) -> [T] {
-        return valueForKeyInsensitive(key: key) ?? [T]()
+        valueForKeyInsensitive(key: key) ?? [T]()
     }
 
     /// Dictionary for key
@@ -50,7 +50,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: dictionary
     func dictionaryFor(key: Key) -> [String: Any] {
-        return valueForKeyInsensitive(key: key) ?? [String: Any]()
+        valueForKeyInsensitive(key: key) ?? [String: Any]()
     }
 
     /// Subscript
@@ -58,7 +58,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript
     func valueFor<T>(key: Key) -> T? {
-        return valueForKeyInsensitive(key: key)
+        valueForKeyInsensitive(key: key)
     }
 
     /// String subscript
@@ -66,7 +66,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript, cast as String
     func stringFor(key: Key) -> String {
-        return valueForKeyInsensitive(key: key).orEmpty
+        valueForKeyInsensitive(key: key).orEmpty
     }
 
     /// String subscript
@@ -74,7 +74,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: the key
     /// - Returns: value subscript, cast as Int
     func intFor(key: Key) -> Int {
-        return valueForKeyInsensitive(key: key) ?? 0
+        valueForKeyInsensitive(key: key) ?? 0
     }
 
     /// Double for key
@@ -82,7 +82,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func doubleFor(key: Key) -> Double {
-        return valueForKeyInsensitive(key: key) ?? 0.0
+        valueForKeyInsensitive(key: key) ?? 0.0
     }
 
     /// Float for key
@@ -90,7 +90,7 @@ extension Dictionary where Key == String {
     /// - Parameter key: key
     /// - Returns: value
     func floatFor(key: Key) -> Float {
-        return valueForKeyInsensitive(key: key) ?? 0.0
+        valueForKeyInsensitive(key: key) ?? 0.0
     }
 
     /// Pretty dictionary
@@ -107,7 +107,7 @@ extension Dictionary where Key == String {
     ///
     /// - Returns: A filtered dictionary
     func filterEmptyStringValue() -> [Key: Value] {
-        return filter { (_, value) -> Bool in
+        filter { (_, value) -> Bool in
             if value is String {
                 return ((value as? String) ?? "").isEmpty == false
             }
@@ -131,6 +131,6 @@ extension Dictionary where Key == String {
     }
 
     var toString: String {
-        return description
+        description
     }
 }
