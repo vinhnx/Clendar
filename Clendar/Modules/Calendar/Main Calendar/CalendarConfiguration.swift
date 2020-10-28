@@ -8,6 +8,7 @@
 
 import UIKit
 import CVCalendar
+import SwiftDate
 
 class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
 
@@ -32,7 +33,9 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func presentationMode() -> CalendarMode { mode }
 
-    func firstWeekday() -> Weekday { .monday }
+    func firstWeekday() -> Weekday {
+        SwiftDate.defaultRegion.locale.identifier == Locales.englishUnitedStates.rawValue ? .sunday : .monday
+    }
 
     func calendar() -> Calendar? { currentCalendar }
 

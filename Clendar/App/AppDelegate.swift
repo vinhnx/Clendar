@@ -27,10 +27,12 @@ import IQKeyboardManagerSwift
     + [done] show lunar date
     + [done] event stack highlight (check old code)
     + [done] theme
-    + start of week
+    + [not sure how to reload CVconfiguration?] start of week
     + Everything under CVCalendar configs
     + [done] month/week view
     + [done] show days out
+    + [?] hightlight weekends (sat and sunday)
+
  + lunar converter (+)
  + lunar event (+)
  + write tests (?)
