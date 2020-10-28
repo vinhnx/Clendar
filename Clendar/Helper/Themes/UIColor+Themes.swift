@@ -20,7 +20,7 @@ enum Theme: Int, CaseIterable {
         }
     }
 
-    static var titles: [String] = Theme.allCases.map { $0.text }
+    static var titles: [String] = Self.allCases.map { $0.text }
 }
 
 extension UIColor {

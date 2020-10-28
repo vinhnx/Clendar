@@ -128,10 +128,6 @@ final class CalendarViewController: BaseViewController {
             self.selectToday()
         }
 
-        NotificationCenter.default.addObserver(forName: .didChangeShowLunarCalendarPreferences, object: nil, queue: .main) { (_) in
-            self.calendarView.reloadData()
-        }
-
         NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
@@ -147,6 +143,10 @@ final class CalendarViewController: BaseViewController {
 
         NotificationCenter.default.addObserver(forName: .didChangeShowDaysOutPreferences, object: nil, queue: .main) { (_) in
             self.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
+            self.calendarView.reloadData()
+        }
+
+        NotificationCenter.default.addObserver(forName: .didChangeDaySupplementaryTypePreferences, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
     }

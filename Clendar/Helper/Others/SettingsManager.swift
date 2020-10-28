@@ -13,13 +13,12 @@ struct SettingsManager {
     @UserDefault("darkModeActivated", defaultValue: isDarkMode)
     static var darkModeActivated: Bool
 
-    @UserDefault("showLunarCalendar", defaultValue: true)
-    static var showLunarCalendar: Bool
-
     @UserDefault("monthViewCalendarMode", defaultValue: true)
     static var monthViewCalendarMode: Bool
 
-    @UserDefault("showDaysOut", defaultValue: true)
+    @UserDefault("showDaysOut", defaultValue: false)
     static var showDaysOut: Bool
-    
+
+    @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
+    static var daySupplementaryType: String
 }

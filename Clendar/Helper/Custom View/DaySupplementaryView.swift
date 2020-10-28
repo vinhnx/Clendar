@@ -9,19 +9,21 @@
 import UIKit
 import CVCalendar
 
-enum DayHightlightType: Int, CaseIterable {
-    case lunarDate
-    case oneDot
-    case none
+enum DaySupplementaryType: String, CaseIterable {
+    case lunarDate = "Lunar date"
+    case oneDot = "One dot"
+    case none = "None"
+
+    static var titles: [String] = Self.allCases.map { $0.rawValue }
+    static var defaultValue: Self { .none }
 }
 
 class DaySupplementaryView: UIStackView {
-    static func viewForDayView(_ dayView: DayView, isOut: Bool, type: DayHightlightType = .none) -> UIView? {
+    static func viewForDayView(_ dayView: DayView, isOut: Bool, type: DaySupplementaryType = DaySupplementaryType.defaultValue) -> UIView? {
         guard let date = dayView.date.convertedDate() else { return nil }
 
         switch type {
         case .lunarDate:
-            guard SettingsManager.showLunarCalendar else { return nil }
             let lunarDate = DateFormatter.lunarDateString(forDate: date)
             let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.8,
                                               width: dayView.frame.size.width, height: 10))

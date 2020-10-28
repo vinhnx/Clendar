@@ -65,17 +65,6 @@ final class SettingsViewController: FormViewController {
         return proxy
     }()
 
-    lazy var showLunarCalendar: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = "Show lunar calendar"
-        instance.value = SettingsManager.showLunarCalendar
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.showLunarCalendar = activate
-            NotificationCenter.default.post(name: .didChangeShowLunarCalendarPreferences, object: nil)
-        }
-        return instance
-    }()
-
     lazy var calendarMode: SegmentedControlFormItem = {
         let proxy = SegmentedControlFormItem()
         proxy.title = "Calendar mode"
@@ -98,6 +87,18 @@ final class SettingsViewController: FormViewController {
         instance.switchDidChangeBlock = { activate in
             SettingsManager.showDaysOut = activate
             NotificationCenter.default.post(name: .didChangeShowDaysOutPreferences, object: nil)
+        }
+        return instance
+    }()
+
+    lazy var supplementaryViewMode: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("Supplementary day view")
+        instance.append(DaySupplementaryType.titles)
+        instance.selectOptionWithTitle(SettingsManager.daySupplementaryType)
+        instance.valueDidChange = { selected in
+            SettingsManager.daySupplementaryType = selected?.title ?? DaySupplementaryType.defaultValue.rawValue
+            NotificationCenter.default.post(name: .didChangeDaySupplementaryTypePreferences, object: nil)
         }
         return instance
     }()
@@ -135,10 +136,9 @@ final class SettingsViewController: FormViewController {
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title("Calendar")
-        builder += calendarMode
         builder += showDaysOut
-        builder += showLunarCalendar
-        builder += SectionFooterTitleFormItem().title("Show small lunar dates under solar calendar dates")
+        builder += supplementaryViewMode
+        builder += calendarMode
 
         // Info
         builder += SectionHeaderTitleFormItem().title("App info")

@@ -20,8 +20,8 @@ extension Notification.Name {
 
     static let didChangeMonthViewCalendarModePreferences = Notification.Name(rawValue: "didChangeMonthViewCalendarModePreferences")
     static let didChangeUserInterfacePreferences = Notification.Name(rawValue: "didChangeUserInterfacePreferences")
-    static let didChangeShowLunarCalendarPreferences = Notification.Name(rawValue: "didChangeShowLunarCalendarPreferences")
     static let didChangeShowDaysOutPreferences = Notification.Name(rawValue: "didChangeShowDaysOutPreferences")
+    static let didChangeDaySupplementaryTypePreferences = Notification.Name(rawValue: "didChangeDaySupplementaryTypePreferences")
 
     // MARK: - Others
 

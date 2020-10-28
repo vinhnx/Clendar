@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		68890989EC17BFBF22CEFE27 /* Pods_ClendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */; };
-		A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DateHighlightView.swift */; };
+		A30A83E22259934400BF1294 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DaySupplementaryView.swift */; };
 		A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
 		A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
 		A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
@@ -113,7 +113,7 @@
 		6239D11B3B53DFE055C329D8 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		72FE9C6272675E223125D548 /* Pods-ClendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.release.xcconfig"; sourceTree = "<group>"; };
 		970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
-		A30A83E12259934400BF1294 /* DateHighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHighlightView.swift; sourceTree = "<group>"; };
+		A30A83E12259934400BF1294 /* DaySupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySupplementaryView.swift; sourceTree = "<group>"; };
 		A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		A30E41332541FA5E009AAC32 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		A30E41372541FB2A009AAC32 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
@@ -503,7 +503,7 @@
 			children = (
 				A3F2597522477012009A50B6 /* TextField.swift */,
 				A3F259832247C770009A50B6 /* RoundedButton.swift */,
-				A30A83E12259934400BF1294 /* DateHighlightView.swift */,
+				A30A83E12259934400BF1294 /* DaySupplementaryView.swift */,
 				A37B3B6C22506C2100D0488B /* TableView.swift */,
 			);
 			path = "Custom View";
@@ -852,7 +852,7 @@
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
 				A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */,
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
-				A30A83E22259934400BF1294 /* DateHighlightView.swift in Sources */,
+				A30A83E22259934400BF1294 /* DaySupplementaryView.swift in Sources */,
 				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

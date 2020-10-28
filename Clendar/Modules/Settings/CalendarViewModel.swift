@@ -10,8 +10,8 @@ import Foundation
 import CVCalendar
 
 enum CalendarViewMode: Int, CaseIterable {
-    case week
     case month
+    case week
 
     var mode: CVCalendarViewPresentationMode {
         switch self {
@@ -27,5 +27,5 @@ enum CalendarViewMode: Int, CaseIterable {
         }
     }
 
-    static var titles: [String] = CalendarViewMode.allCases.map { $0.text }
+    static var titles: [String] = Self.allCases.map { $0.text }
 }

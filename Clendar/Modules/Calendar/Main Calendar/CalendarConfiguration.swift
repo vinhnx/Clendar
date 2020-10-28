@@ -78,7 +78,8 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
         if SettingsManager.showDaysOut == false, dayView.isOut { return UIView() }
-        return DateHighlightView.viewForDayView(dayView, isOut: dayView.isOut) ?? UIView()
+        let type = DaySupplementaryType(rawValue: SettingsManager.daySupplementaryType) ?? DaySupplementaryType.defaultValue
+        return DaySupplementaryView.viewForDayView(dayView, isOut: dayView.isOut, type: type) ?? UIView()
     }
 
     func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
