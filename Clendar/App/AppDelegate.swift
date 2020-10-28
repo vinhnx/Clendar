@@ -58,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configure()
 
+        window?.overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
         window?.tintColor = .primaryColor
         window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
         window?.makeKeyAndVisible()

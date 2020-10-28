@@ -59,6 +59,7 @@ final class SettingsViewController: FormViewController {
         proxy.valueDidChangeBlock = { index in
             let theme = Theme(rawValue: index)
             SettingsManager.darkModeActivated = theme == .dark
+            UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
         }
         return proxy
