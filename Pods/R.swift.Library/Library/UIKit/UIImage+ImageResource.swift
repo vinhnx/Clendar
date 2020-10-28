@@ -10,6 +10,8 @@
 import UIKit
 
 public extension UIImage {
+
+  #if os(iOS) || os(tvOS)
   /**
    Returns the image from this resource (R.image.*) that is compatible with the trait collection.
 
@@ -18,7 +20,21 @@ public extension UIImage {
 
    - returns: An image that exactly or best matches the desired traits with the given resource (R.image.*), or nil if no suitable image was found.
   */
-  public convenience init?(resource: ImageResourceType, compatibleWith traitCollection: UITraitCollection? = nil) {
+  convenience init?(resource: ImageResourceType, compatibleWith traitCollection: UITraitCollection? = nil) {
     self.init(named: resource.name, in: resource.bundle, compatibleWith: traitCollection)
   }
+  #endif
+
+  #if os(watchOS)
+  /**
+   Returns the image from this resource (R.image.*) that is compatible with the trait collection.
+
+   - parameter resource: The resource you want the image of (R.image.*)
+
+   - returns: An image that exactly or best matches the desired traits with the given resource (R.image.*), or nil if no suitable image was found.
+   */
+  convenience init?(resource: ImageResourceType) {
+    self.init(named: resource.name)
+  }
+  #endif
 }

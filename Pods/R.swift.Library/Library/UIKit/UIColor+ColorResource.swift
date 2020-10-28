@@ -12,6 +12,8 @@ import UIKit
 @available(iOS 11.0, *)
 @available(tvOS 11.0, *)
 public extension UIColor {
+
+  #if os(iOS) || os(tvOS)
   /**
    Returns the color from this resource (R.color.*) that is compatible with the trait collection.
 
@@ -20,7 +22,22 @@ public extension UIColor {
 
    - returns: A color that exactly or best matches the desired traits with the given resource (R.color.*), or nil if no suitable color was found.
    */
-  public convenience init?(resource: ColorResourceType, compatibleWith traitCollection: UITraitCollection? = nil) {
+  convenience init?(resource: ColorResourceType, compatibleWith traitCollection: UITraitCollection? = nil) {
     self.init(named: resource.name, in: resource.bundle, compatibleWith: traitCollection)
   }
+  #endif
+
+  #if os(watchOS)
+  /**
+   Returns the color from this resource (R.color.*) that is compatible with the trait collection.
+
+   - parameter resource: The resource you want the image of (R.color.*)
+
+   - returns: A color that exactly or best matches the desired traits with the given resource (R.color.*), or nil if no suitable color was found.
+   */
+  @available(watchOSApplicationExtension 4.0, *)
+  convenience init?(resource: ColorResourceType) {
+    self.init(named: resource.name)
+  }
+  #endif
 }

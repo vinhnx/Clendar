@@ -19,7 +19,7 @@ public extension UIFont {
 
    - returns: A font object of the specified font resource and size.
    */
-  public convenience init?(resource: FontResourceType, size: CGFloat) {
+  convenience init?(resource: FontResourceType, size: CGFloat) {
     self.init(name: resource.fontName, size: size)
   }
 }

@@ -14,6 +14,7 @@ import IQKeyboardManagerSwift
 /*
  TODO:
 
+ + app icon
  + move dependencies from Cocoapod to SPM as much as possible
  + localized https://github.com/yonaskolb/Stringly
  + form/settings builder: https://github.com/neoneye/SwiftyFORM
@@ -23,11 +24,13 @@ import IQKeyboardManagerSwift
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
  + [done] show list of events of day
  + settings:
-    + show lunar date or event stack highlight
+    + [done] show lunar date
+    + event stack highlight (check old code)
     + [done] theme
     + date type (12 or 24h)
     + start of week
     + Everything under CVCalendar configs
+    + month/week view
  + lunar converter (+)
  + lunar event (+)
  + write tests (?)

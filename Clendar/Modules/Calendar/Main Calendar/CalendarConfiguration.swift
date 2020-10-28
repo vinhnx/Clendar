@@ -6,7 +6,7 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CVCalendar
 
 class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {

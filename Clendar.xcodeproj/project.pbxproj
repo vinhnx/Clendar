@@ -13,6 +13,8 @@
 		A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
 		A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
 		A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
+		A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A30F561C2549AA4500E96C0E /* CVCalendar */; };
+		A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */; };
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
@@ -60,6 +62,8 @@
 		A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
+		A3D999D52549A65D003E08E2 /* EasyClosure in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999D42549A65D003E08E2 /* EasyClosure */; };
+		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
 		A3DE248A2248E8A400EB3B64 /* EventStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24892248E8A400EB3B64 /* EventStore+Extensions.swift */; };
@@ -185,8 +189,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
+				A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
+				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
+				A3D999D52549A65D003E08E2 /* EasyClosure in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +539,10 @@
 			packageProductDependencies = (
 				A3BA42F5253F3AE00007DDFB /* Logging */,
 				A3187E8025499C29009524DF /* SwiftyFORM */,
+				A3D999D42549A65D003E08E2 /* EasyClosure */,
+				A3D999E52549A69F003E08E2 /* SwiftDate */,
+				A30F561C2549AA4500E96C0E /* CVCalendar */,
+				A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -612,6 +624,10 @@
 			packageReferences = (
 				A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */,
 				A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */,
+				A3D999D32549A65D003E08E2 /* XCRemoteSwiftPackageReference "EasyClosure" */,
+				A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				A30F561B2549AA4500E96C0E /* XCRemoteSwiftPackageReference "CVCalendar" */,
+				A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1170,6 +1186,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A30F561B2549AA4500E96C0E /* XCRemoteSwiftPackageReference "CVCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CVCalendar/CVCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+		A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 		A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neoneye/SwiftyFORM";
@@ -1186,9 +1218,35 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		A3D999D32549A65D003E08E2 /* XCRemoteSwiftPackageReference "EasyClosure" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onmyway133/EasyClosure";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.3;
+			};
+		};
+		A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A30F561C2549AA4500E96C0E /* CVCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A30F561B2549AA4500E96C0E /* XCRemoteSwiftPackageReference "CVCalendar" */;
+			productName = CVCalendar;
+		};
+		A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		A3187E8025499C29009524DF /* SwiftyFORM */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
@@ -1198,6 +1256,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		A3D999D42549A65D003E08E2 /* EasyClosure */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D999D32549A65D003E08E2 /* XCRemoteSwiftPackageReference "EasyClosure" */;
+			productName = EasyClosure;
+		};
+		A3D999E52549A69F003E08E2 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

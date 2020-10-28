@@ -20,6 +20,15 @@ _**Be aware:** If you just want to use R.swift follow the [installation instruct
 1. Add `github "mac-cain13/R.swift.Library"` to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
 2. Run `carthage`
 
+### Swift Package Manager (Requires Xcode 11)
+
+1. Open your Xcode project.
+2. Select `File > Swift Packages > Add Package Dependency...`
+3. Paste `https://github.com/mac-cain13/R.swift.Library` to the text field and click on the `Next` button.
+4. Choose appropriate version and click on the `Next` button. (If you need latest one, just click on the `Next` button.)
+5. Confirm that `Rswift` in the Package Product column is checked and your app's name is selected in the Add to Target column.
+6. Click on the `Next` button.
+
 ### Manually
 
 _As an embedded framework using git submodules._

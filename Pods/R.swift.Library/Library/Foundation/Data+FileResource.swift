@@ -20,7 +20,7 @@ public extension Data {
 
    - returns: A NSData object with the contents of the specified file.
    */
-  public init(resource: FileResourceType) throws {
+  init(resource: FileResourceType) throws {
     guard let url = resource.url() else { throw NoUrlForResourceError() }
     try self.init(contentsOf: url)
   }

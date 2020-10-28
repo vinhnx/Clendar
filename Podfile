@@ -8,16 +8,8 @@ target 'Clendar' do
 
   # Core
   pod 'SwiftyChrono'
-  pod 'EasyClosure'
-  pod 'SwiftDate'
-
-  # Helper
   pod 'SwiftLint'
   pod 'R.swift'
-  pod 'IQKeyboardManagerSwift'
-
-  # View
-  pod 'CVCalendar', '~> 1.7.0'
 
   target 'ClendarTests' do
     inherit! :search_paths

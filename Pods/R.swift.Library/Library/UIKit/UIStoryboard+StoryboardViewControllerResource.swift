@@ -18,7 +18,7 @@ public extension UIStoryboard {
 
    - returns: The view controller corresponding to the specified resource (R.storyboard.*.*). If no view controller is associated, this method throws an exception.
    */
-  public func instantiateViewController<ViewControllerResource: StoryboardViewControllerResourceType>(withResource resource: ViewControllerResource) -> ViewControllerResource.ViewControllerType?  {
+  func instantiateViewController<ViewControllerResource: StoryboardViewControllerResourceType>(withResource resource: ViewControllerResource) -> ViewControllerResource.ViewControllerType?  {
     return self.instantiateViewController(withIdentifier: resource.identifier) as? ViewControllerResource.ViewControllerType
   }
 }

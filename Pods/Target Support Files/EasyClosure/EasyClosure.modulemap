@@ -1,6 +1,0 @@
-framework module EasyClosure {
-  umbrella header "EasyClosure-umbrella.h"
-
-  export *
-  module * { export * }
-}

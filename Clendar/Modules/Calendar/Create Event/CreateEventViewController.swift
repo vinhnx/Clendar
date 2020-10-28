@@ -10,13 +10,7 @@ import UIKit
 import EasyClosure
 import EventKit
 
-// TODO: add save edit once or repating event menu popup (EKEvent.isDetached)
-
-// TODO: alert
-
-// TODO: repeat
-
-// TODO: delete
+// NOTE: using EventKitUI's native controller to simplify for now
 
 enum CreateEventType {
     case create
