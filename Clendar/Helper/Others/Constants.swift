@@ -18,10 +18,8 @@ typealias EventCalendarHandler = (EKCalendar) -> Void
 typealias SizeUpdateHandler = ((CGSize) -> Void)
 typealias EventResult = Result<[EKEvent], EventError>
 typealias EventResultHandler = (EventResult) -> Void
+typealias EventCompletion = ((EKEvent) -> Void)
+typealias EventsCompletion = (([EKEvent]) -> Void)
 
 // constants
-let AppName = Bundle.main.infoDictionary?.stringFor(key: "ProductName") ?? ""
 let dayTime: TimeInterval = 24 * 3600
-
-// notifications
-let kDidAuthorizeCalendarAccess = Notification.Name(rawValue: "kDidAuthorizeCalendarAccess")

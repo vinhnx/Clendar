@@ -24,7 +24,7 @@ final class WorkItem {
     /// - Parameters:
     ///   - after: delay duration
     ///   - block: closure
-    func perform(after: TimeInterval = 0.25, _ block: @escaping VoidHandler) {
+    func perform(after: TimeInterval = 1.0, _ block: @escaping VoidHandler) {
         // Cancel the currently pending item
         pendingRequestWorkItem?.cancel()
 

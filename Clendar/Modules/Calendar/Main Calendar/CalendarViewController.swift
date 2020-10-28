@@ -9,10 +9,8 @@
 import UIKit
 import CVCalendar
 import EventKit
-import Foundation
-import PanModal
+import EventKitUI
 import EasyClosure
-import SPLarkController
 
 final class CalendarViewController: BaseViewController {
 
@@ -70,8 +68,6 @@ final class CalendarViewController: BaseViewController {
         mode: .monthView
     )
 
-    private var createEventViewController: CreateEventViewController?
-
     // MARK: - Life cycle
 
     override func viewDidLayoutSubviews() {
@@ -85,14 +81,6 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController()
-        createEventViewController?.didUpdateEvent = { [weak self] result in
-            guard let self = self else { return }
-            let date = result.startDate
-            self.fetchEvents(date)
-            self.calendarView.toggleViewWithDate(date)
-        }
-
         calendarConfiguration.didSelectDayView = { [weak self] dayView, animationDidFinish in
             guard let self = self else { return }
             self.fetchEvents(dayView.convertedDate)
@@ -105,14 +93,17 @@ final class CalendarViewController: BaseViewController {
 
         settingsButton.on.tap { [weak self] in
             guard let self = self else { return }
-            let settings = SettingsViewController()
-            self.presentLark(settings: settings)
+            let settings = SettingsNavigationController()
+            self.present(settings, animated: true)
         }
 
         addEventButton.on.tap { [weak self] in
             guard let self = self else { return }
-            guard let createEvent = self.createEventViewController else { return }
-            self.present(createEvent, animated: true)
+            let addEventViewController = EventEditViewController(
+                eventStore: EventKitWrapper.shared.eventStore,
+                delegate: self
+            )
+            self.present(addEventViewController, animated: true)
         }
 
         addGestures()
@@ -133,7 +124,7 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func addObservers() {
-        NotificationCenter.default.addObserver(forName: kDidAuthorizeCalendarAccess, object: nil, queue: .main) { (_) in
+        NotificationCenter.default.addObserver(forName: .didAuthorizeCalendarAccess, object: nil, queue: .main) { (_) in
             self.selectToday()
         }
 
@@ -141,7 +132,11 @@ final class CalendarViewController: BaseViewController {
             self.calendarView.reloadData()
         }
 
-        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (notification) in
+        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (_) in
+            self.calendarView.reloadData()
+        }
+
+        NotificationCenter.default.addObserver(forName: .didDeleteEvent, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
     }
@@ -164,5 +159,19 @@ final class CalendarViewController: BaseViewController {
 
     @objc private func didTapMonthLabel() {
         selectToday()
+    }
+}
+
+extension CalendarViewController: EKEventEditViewDelegate {
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        controller.dismiss(animated: true)
+        guard let event = controller.event else { return }
+        guard let date = event.startDate else { return }
+        fetchEvents(date)
+        calendarView.toggleViewWithDate(date)
+    }
+
+    func eventEditViewControllerDefaultCalendar(forNewEvents controller: EKEventEditViewController) -> EKCalendar {
+        return EventKitWrapper.shared.defaultCalendar
     }
 }

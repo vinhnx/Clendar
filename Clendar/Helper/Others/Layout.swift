@@ -14,9 +14,14 @@ import UIKit
  + https://www.swiftbysundell.com/articles/building-modern-collection-views-in-swift/
  */
 
+enum CompositionalLayoutType {
+    case grid
+    case list
+}
+
 class Layout {
-    static func makeCollectionView() -> UICollectionView {
-        let layout = makeCollectionViewCompositionalLayout()
+    static func makeCollectionView(type: CompositionalLayoutType = .list) -> UICollectionView {
+        let layout = makeCollectionViewCompositionalLayout(type: type)
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }
 
@@ -72,9 +77,16 @@ class Layout {
         return section
     }
 
-    static func makeCollectionViewCompositionalLayout() -> UICollectionViewCompositionalLayout {
+    static func makeCollectionViewCompositionalLayout(
+        type: CompositionalLayoutType = .list
+    ) -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (_, _) in
-            makeListLayoutSection()
+            switch type {
+            case .grid:
+                return makeGridLayoutSection()
+            case .list:
+                return makeListLayoutSection()
+            }
         }
     }
 }

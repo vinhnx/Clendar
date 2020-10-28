@@ -11,19 +11,15 @@ import SwiftyChrono
 
 extension Array where Element == ParsedResult {
     // swiftlint:disable large_tuple
-    func process(with input: String) -> (action: String, startDate: Date, endDate: Date) {
+    func process(with input: String) -> (action: String, startDate: Date, endDate: Date?) {
         var dateTexts = [String]()
         var startDate = Date()
-        var endDate = Date()
+        var endDate: Date?
 
         for result in self {
             dateTexts.append(result.text)
-
             startDate = result.start.date
-
-            if let end = result.end?.date {
-                endDate = end
-            }
+            endDate = result.end?.date ?? startDate
         }
 
         var commonAction = [String]()

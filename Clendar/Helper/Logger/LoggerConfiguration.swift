@@ -11,7 +11,7 @@ import Logging
 
 // Reference: https://nshipster.com/swift-log/
 
-var logger = Logger(label: "com.\(AppName).logger")
+var logger = Logger(label: "com.\(AppInfo.appName).logger")
 
 func log<T: CustomDebugStringConvertible>(_ thing: T) {
     logger.debug("\(thing.debugDescription)")

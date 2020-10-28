@@ -35,7 +35,8 @@ extension UIView {
                 rightAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.rightAnchor, constant: insets.right),
                 bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: insets.bottom)
             ]
-        } else {
+        }
+        else {
             constraints = [
                 leftAnchor.constraint(equalTo: superView.leftAnchor, constant: insets.left),
                 topAnchor.constraint(equalTo: superView.topAnchor, constant: insets.top),

@@ -8,6 +8,7 @@ disabled_rules: # rule identifiers to exclude from running
     - notification_center_detachment
     - discarded_notification_center_observer
     - type_name
+    - statement_position
 
 opt_in_rules:
     - sorted_first_last

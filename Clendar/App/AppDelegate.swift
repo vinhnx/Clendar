@@ -14,7 +14,9 @@ import IQKeyboardManagerSwift
 /*
  TODO:
 
+ + move dependencies from Cocoapod to SPM as much as possible
  + localized https://github.com/yonaskolb/Stringly
+ + form/settings builder: https://github.com/neoneye/SwiftyFORM
  + force touch shortcut from homescreen
  + gan admob google ads earn money ~1-2$ day
  + iOS 14 widget
@@ -22,22 +24,25 @@ import IQKeyboardManagerSwift
  + [done] show list of events of day
  + settings:
     + show lunar date or event stack highlight
-    + theme
+    + [done] theme
     + date type (12 or 24h)
     + start of week
     + Everything under CVCalendar configs
  + lunar converter (+)
  + lunar event (+)
- + write tests
- + automation
+ + write tests (?)
+ + automation (?)
  + [optional] build macOS app, non currently for am lich
  + [done] dark/light mode
- + edit calendar event
- + option when creating an event
+ + [done] edit calendar event
+ + [done] option when creating an event
  + selectable calendar to shown
  + IAP  => make more money
  + haptic
  + duong lich <-> am lich
+ + iPad app
+ + watch app (?)
+ + mac app (?)
 
  + https://www.raywenderlich.com/10718147-supporting-dark-mode-adapting-your-app-to-support-dark-mode
  */

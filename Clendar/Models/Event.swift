@@ -10,13 +10,15 @@ import Foundation
 import EventKit
 
 class Event: Hashable {
-    var id: String?
+    var id:  String?
+
     var event: EKEvent? {
         didSet { id = event?.eventIdentifier }
     }
 
     init(event: EKEvent?) {
         self.event = event
+        self.id = event?.eventIdentifier
     }
 
     // MARK: - Hashable

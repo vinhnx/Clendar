@@ -1,6 +1,0 @@
-framework module SPLarkController {
-  umbrella header "SPLarkController-umbrella.h"
-
-  export *
-  module * { export * }
-}

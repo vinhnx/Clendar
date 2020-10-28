@@ -2,12 +2,10 @@ PODS:
   - CVCalendar (1.7.0)
   - EasyClosure (1.0.0)
   - IQKeyboardManagerSwift (6.5.5)
-  - PanModal (1.2.7)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
-  - SPLarkController (1.1.5)
-  - SwiftDate (5.1.0)
+  - SwiftDate (6.1.0)
   - SwiftLint (0.31.0)
   - SwiftyChrono (1.1.0)
 
@@ -15,10 +13,8 @@ DEPENDENCIES:
   - CVCalendar (~> 1.7.0)
   - EasyClosure
   - IQKeyboardManagerSwift
-  - PanModal
   - R.swift
-  - SPLarkController
-  - SwiftDate (~> 5.0)
+  - SwiftDate
   - SwiftLint
   - SwiftyChrono
 
@@ -27,10 +23,8 @@ SPEC REPOS:
     - CVCalendar
     - EasyClosure
     - IQKeyboardManagerSwift
-    - PanModal
     - R.swift
     - R.swift.Library
-    - SPLarkController
     - SwiftDate
     - SwiftLint
     - SwiftyChrono
@@ -39,14 +33,12 @@ SPEC CHECKSUMS:
   CVCalendar: 1174c1b43c1a258970e14c1e8b19ef4106c5900b
   EasyClosure: 3ee564143a85cf6eae0d56178388d6967bf6f793
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
-  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
-  SPLarkController: 36a5db07b4609f808c8d520fc30c56ecdaa25c73
-  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
   SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
 
-PODFILE CHECKSUM: 24baf93d02b2589d1c68ff8ebb8b0a692d2ab01b
+PODFILE CHECKSUM: 6118106934ff8a4166142474cd764640398fac19
 
 COCOAPODS: 1.7.2

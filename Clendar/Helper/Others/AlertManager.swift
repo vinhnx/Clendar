@@ -21,7 +21,8 @@ extension UIAlertController {
             alert.safeDismiss {
                 _present(alert)
             }
-        } else {
+        }
+        else {
             _present(self)
         }
     }
@@ -44,19 +45,29 @@ final class AlertManager {
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
     ///   - onCancel: the completion handler to execute when user tap on "Cancel"
-    static func showActionSheet(title: String? = AppName, message: String, actionTitle: String, okAction: VoidHandler? = nil, onCancel: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidHandler? = nil, deleteAction: VoidHandler? = nil, onCancel: VoidHandler? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-                onCancel.flatMap { $0() }
+                onCancel?()
             }
 
             alertController.addAction(cancelAction)
-            let openAction = UIAlertAction(title: actionTitle, style: .default) { _ in
-                okAction.flatMap { $0() }
+
+            if actionTitle.isEmpty == false {
+                let openAction = UIAlertAction(title: actionTitle, style: .default) { _ in
+                    okAction?()
+                }
+                alertController.addAction(openAction)
             }
-            alertController.addAction(openAction)
+
+            if showDelete {
+                let delete = UIAlertAction(title: deleteTitle, style: .destructive) { _ in
+                    deleteAction?()
+                }
+                alertController.addAction(delete)
+            }
 
             UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
         }
@@ -69,7 +80,7 @@ final class AlertManager {
     ///   - message: the message string
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showActionSheet(title: String? = AppName, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = nil, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
         showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
     }
 
@@ -79,12 +90,12 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showNoCancelAlertWithMessage(title: String? = AppName, message: String, okAction: VoidHandler? = nil) {
+    static func showNoCancelAlertWithMessage(title: String? = nil, message: String, okAction: VoidHandler? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                okAction.flatMap { $0() }
+                okAction?()
             }
 
             alertController.addAction(okAction)
@@ -98,7 +109,7 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - onCancel: completion handler to be executed when user tap on cancel
-    static func showSettingsAlert(title: String? = AppName, message: String, onCancel: VoidHandler? = nil) {
+    static func showSettingsAlert(title: String? = nil, message: String, onCancel: VoidHandler? = nil) {
         showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
             _ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
         }, onCancel: onCancel)

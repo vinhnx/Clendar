@@ -19,11 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PanModal.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Clendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -45,11 +40,6 @@
 			<false/>
 		</dict>
 		<key>R.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SPLarkController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

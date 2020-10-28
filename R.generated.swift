@@ -162,6 +162,7 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "checkmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkmark' is used in storyboard 'CreateEventViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "trash", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'trash' is used in storyboard 'CreateEventViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "xmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xmark' is used in storyboard 'CreateEventViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, *) {
         }

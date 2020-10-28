@@ -14,7 +14,8 @@ extension EKEvent {
     var displayText: String {
         if isAllDay {
             return "All day"
-        } else {
+        }
+        else {
             let startDateString = startDate.toHourAndMinuteString
             let endDateString = endDate.toHourAndMinuteString
             return startDate != endDate

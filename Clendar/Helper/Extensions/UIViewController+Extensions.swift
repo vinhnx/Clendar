@@ -88,15 +88,10 @@ extension UIViewController {
         dismiss(animated: true, completion: completion)
     }
 
-    // MARK: - Banner
+    // MARK: - Others
 
-    func presentAlertModal(iconText: String = "", title: String = AppName, message: String = "") {
-        if UINavigationController.topViewController is TransientAlertViewController {
-            (UINavigationController.topViewController as? AlertViewController)?.dismiss(animated: true, completion: nil)
-        }
-        
-        let alert = AlertViewController()
-        alert.configure(dateText: iconText, title: title, message: message)
-        presentPanModal(alert)
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
+
 }

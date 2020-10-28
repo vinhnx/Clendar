@@ -8,6 +8,15 @@
 
 import UIKit
 import EventKit
+import EventKitUI
+
+// TODO: HOLY SMOKE OMG!!!! https://developer.apple.com/library/archive/samplecode/SimpleEKDemo/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010160-Intro-DontLinkElementID_2
+
+// TODO: check EKEventViewController for view, EKEventEditViewController for edit/delete https://developer.apple.com/documentation/eventkitui/ekeventviewcontroller!!!! <<<<
+
+// TODO: check document https://developer.apple.com/documentation/eventkitui
+
+// TODO: this one for accessing Calendar list !! EKCalendarChooser https://dev.to/nemecek_f/how-to-use-ekcalendarchooser-in-swift-to-let-user-select-calendar-in-ios-4al5
 
 internal typealias DataSource = UICollectionViewDiffableDataSource<Section, Event>
 
@@ -24,10 +33,12 @@ final class EventListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+
         fetchEvents()
+
         view.backgroundColor = .backgroundColor
 
-        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (notification) in
+        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (_) in
             self.fetchEvents()
         }
     }
@@ -35,15 +46,10 @@ final class EventListViewController: BaseViewController {
     // MARK: - Public
 
     func fetchEvents(for date: Date = Date()) {
-        EventHandler.shared.fetchEvents(for: date) { [weak self] result in
+        EventKitWrapper.shared.fetchEvents(for: date) { [weak self] events in
             guard let self = self else { return }
-            switch result {
-            case .success(let value):
-                let items = value.map(Event.init)
-                self.applySnapshot(items, date: date)
-            case .failure(let error):
-                logError(error)
-            }
+            let items = events.map(Event.init)
+            self.applySnapshot(items, date: date)
         }
     }
 
@@ -108,10 +114,17 @@ final class EventListViewController: BaseViewController {
 
 extension EventListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
-        guard let event = datasource.itemIdentifier(for: indexPath) else { return }
-        createEventViewController.createEventType = .edit
-        createEventViewController.viewModel = CreateEventViewModel(event: event)
-        present(createEventViewController, animated: true)
+        guard let event = datasource.itemIdentifier(for: indexPath)?.event else { return }
+        let eventViewer = EventViewerNavigationController(event: event, delegate: self)
+        present(eventViewer, animated: true)
+    }
+}
+
+extension EventListViewController: EKEventViewDelegate {
+    func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
+        controller.dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
+            self.fetchEvents()
+        }
     }
 }

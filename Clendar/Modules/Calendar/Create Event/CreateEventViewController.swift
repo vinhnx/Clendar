@@ -8,6 +8,7 @@
 
 import UIKit
 import EasyClosure
+import EventKit
 
 // TODO: add save edit once or repating event menu popup (EKEvent.isDetached)
 
@@ -23,11 +24,13 @@ enum CreateEventType {
 }
 
 struct CreateEventViewModel {
+    public private(set) var event: Event?
     var text: String = ""
     var startDate: Date = Date()
     var endDate: Date?
 
     init(event: Event? = nil) {
+        self.event = event
         guard let event = event?.event else { return }
         text = event.title
         startDate = event.startDate
@@ -38,14 +41,14 @@ struct CreateEventViewModel {
 internal struct EventOverride {
     let text: String
     let startDate: Date
-    let endDate: Date
+    let endDate: Date?
 }
 
 class CreateEventViewController: BaseViewController {
 
     // MARK: - Callback
 
-    var didUpdateEvent: ((InputParser.InputParserResult) -> Void)?
+    var didUpdateEvent: ((EKEvent) -> Void)?
 
     // MARK: - Properties
 
@@ -55,28 +58,32 @@ class CreateEventViewController: BaseViewController {
 
     var viewModel = CreateEventViewModel()
 
+    @IBOutlet private var deleteButton: Button! {
+        didSet {
+            deleteButton.tintColor = .buttonTintColor
+            deleteButton.backgroundColor = .detructiveColor
+        }
+    }
+
     @IBOutlet private var startDateStackContainerView: UIView!
 
     @IBOutlet private var endDateStackContainerView: UIView!
 
     @IBOutlet private var startDatePicker: UIDatePicker! {
         didSet {
-            if #available(iOS 13.4, *) {
-                startDatePicker.preferredDatePickerStyle = .automatic
-            }
+            startDatePicker.configurePreferredDatePickerStyle()
         }
     }
 
     @IBOutlet private var endDatePicker: UIDatePicker! {
         didSet {
-            if #available(iOS 13.4, *) {
-                endDatePicker.preferredDatePickerStyle = .automatic
-            }
+            endDatePicker.configurePreferredDatePickerStyle()
         }
     }
 
     @IBOutlet private var closeButton: UIButton! {
         didSet {
+            closeButton.tintColor = .primaryColor
             closeButton.on.tap { [weak self] in
                 guard let self = self else { return }
                 self.dismiss(animated: true)
@@ -86,6 +93,7 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var saveButton: UIButton! {
         didSet {
+            saveButton.tintColor = .primaryColor
             saveButton.on.tap { [weak self] in
                 guard let self = self else { return }
                 self.createNewEvent()
@@ -111,6 +119,7 @@ class CreateEventViewController: BaseViewController {
     @IBOutlet private var inputTextField: TextField! {
         didSet {
             inputTextField.delegate = self
+            inputTextField.placeholder = "Write something on Friday at 5PM"
         }
     }
 
@@ -118,7 +127,11 @@ class CreateEventViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = .backgroundColor
+
+        deleteButton.isHidden = createEventType == .create
+
         bind(viewModel)
     }
 
@@ -132,7 +145,7 @@ class CreateEventViewController: BaseViewController {
     private func createNewEvent(_ override: EventOverride? = nil) {
         guard let input = inputTextField.text else { return dismiss() }
         guard input.isEmpty == false else { return dismiss() }
-        guard let result = InputParser().parse(input) else { return }
+        guard let result = NaturalInputParser().parse(input) else { return }
 
         let override = EventOverride(
             text: result.action,
@@ -140,10 +153,10 @@ class CreateEventViewController: BaseViewController {
             endDate: endDatePicker.date
         )
 
-        EventHandler.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] in
+        EventKitWrapper.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] event in
             guard let self = self else { return }
             self.inputTextField.text = ""
-            self.didUpdateEvent?(result)
+            self.didUpdateEvent?(event)
             self.dismiss()
         }
     }
@@ -158,9 +171,12 @@ class CreateEventViewController: BaseViewController {
 
         workItem.perform { [weak self] in
             guard let self = self else { return }
-            guard let result = InputParser().parse(substring) else { return }
+            guard let result = NaturalInputParser().parse(substring) else { return }
             self.startDatePicker.date = result.startDate
-            self.endDatePicker.date = result.endDate
+
+            if let endDate = result.endDate {
+                self.endDatePicker.date = endDate
+            }
         }
     }
 
@@ -173,6 +189,23 @@ class CreateEventViewController: BaseViewController {
             endDatePicker.date = endDate
         }
     }
+
+    // MARK: - Action
+
+    @IBAction private func deleteEvent() {
+        dismissKeyboard()
+
+        guard let event = viewModel.event else { return }
+        guard let eventID = event.id else { return }
+
+        AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
+            EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] in
+                guard let self = self else { return }
+                self.dismiss()
+            }
+        })
+    }
+
 }
 
 extension CreateEventViewController: UITextFieldDelegate {

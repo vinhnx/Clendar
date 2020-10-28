@@ -9,6 +9,20 @@
 import Foundation
 import UIKit
 
+enum Theme: Int, CaseIterable {
+    case dark
+    case light
+
+    var text: String {
+        switch self {
+        case .dark: return "Dark"
+        case .light: return "Light"
+        }
+    }
+
+    static var titles: [String] = Theme.allCases.map { $0.text }
+}
+
 extension UIColor {
     convenience init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -60,6 +74,10 @@ extension UIColor {
     static var buttonTintColor: UIColor {
         UIColor { _ in isDarkMode ? .hueB : .hueC }
     }
+
+    static var detructiveColor: UIColor { .moianesD }
+
+    static var confirmationColor: UIColor { .moianesA }
 }
 
 // MARK: - LIGHT THEME

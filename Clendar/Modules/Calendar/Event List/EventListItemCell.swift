@@ -25,7 +25,7 @@ class EventListItemCell: UICollectionViewCell {
             title = event.displayText
             titleAndMessage = "[\(title)] \(message)"
             calendarColor = UIColor(cgColor: event.calendar.cgColor)
-            dateDisplay = event.creationDate?.toDateString ?? ""
+            dateDisplay = event.startDate?.toDateString ?? ""
         }
     }
 

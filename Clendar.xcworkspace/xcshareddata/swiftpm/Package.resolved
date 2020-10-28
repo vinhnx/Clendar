@@ -9,6 +9,15 @@
           "revision": "173f567a2dfec11d74588eea82cecea555bdc0bc",
           "version": "1.4.0"
         }
+      },
+      {
+        "package": "SwiftyFORM",
+        "repositoryURL": "https://github.com/neoneye/SwiftyFORM",
+        "state": {
+          "branch": null,
+          "revision": "6a434616545e1f8c17675b3afabb86ad0e5f97aa",
+          "version": "1.8.4"
+        }
       }
     ]
   },

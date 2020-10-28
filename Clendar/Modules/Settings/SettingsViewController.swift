@@ -7,64 +7,114 @@
 //
 
 import UIKit
-import SPLarkController
+import SwiftyFORM
+import SwiftDate
 
-enum Settings: Int, CaseIterable {
-    case darkMode = 0
-    case showLunarCalendar
+final class SettingsNavigationController: UINavigationController {
+
+    // MARK: - Life Cycle
+
+    init() {
+        let settings = SettingsViewController()
+        super.init(rootViewController: settings)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        checkUIMode()
+
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
+            self.checkUIMode()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Private
+
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
+
 }
 
-final class SettingsViewController: SPLarkSettingsController {
+final class SettingsViewController: FormViewController {
 
-    // MARK: - Override
+    // MARK: - Components
 
-    override func settingsCount() -> Int {
-        return Settings.allCases.count
-    }
-
-    override func settingTitle(index: Int, highlighted: Bool) -> String {
-        switch index {
-        case Settings.darkMode.rawValue: return "Dark mode"
-        case Settings.showLunarCalendar.rawValue: return "Lunar date"
-        default: return ""
-        }
-    }
-
-    override func settingSubtitle(index: Int, highlighted: Bool) -> String? {
-        switch index {
-        case Settings.darkMode.rawValue: return SettingsManager.darkModeActivated.asString
-        case Settings.showLunarCalendar.rawValue: return SettingsManager.showLunarCalendar.asString
-        default: return nil
-        }
-    }
-
-    override func settingHighlighted(index: Int) -> Bool {
-        switch index {
-        case Settings.darkMode.rawValue: return SettingsManager.darkModeActivated
-        case Settings.showLunarCalendar.rawValue: return SettingsManager.showLunarCalendar
-        default: return false
-        }
-    }
-
-    override func settingColorHighlighted(index: Int) -> UIColor {
-        .appTeal
-    }
-
-    override func settingDidSelect(index: Int, completion: @escaping () -> ()) {
-        switch index {
-        case Settings.darkMode.rawValue:
-            SettingsManager.darkModeActivated.toggle()
+    lazy var themes: SegmentedControlFormItem = {
+        let proxy = SegmentedControlFormItem()
+        proxy.title = "Themes"
+        proxy.items = Theme.titles
+        proxy.selected = SettingsManager.darkModeActivated
+            ? Theme.dark.rawValue
+            : Theme.light.rawValue
+        proxy.valueDidChangeBlock = { index in
+            let theme = Theme(rawValue: index)
+            SettingsManager.darkModeActivated = theme == .dark
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
-            dismiss(animated: true, completion: nil)
-
-        case Settings.showLunarCalendar.rawValue:
-            SettingsManager.showLunarCalendar.toggle()
-            NotificationCenter.default.post(name: .didChangeShowLunarCalendarPreferences, object: nil)
-            dismiss(animated: true, completion: nil)
-
-        default:
-            break
         }
+        return proxy
+    }()
+
+    lazy var showLunarCalendar: SwitchFormItem = {
+        let instance = SwitchFormItem()
+        instance.title = "Show lunar calendar"
+        instance.value = SettingsManager.showLunarCalendar
+        instance.switchDidChangeBlock = { activate in
+            SettingsManager.showLunarCalendar = activate
+            NotificationCenter.default.post(name: .didChangeShowLunarCalendarPreferences, object: nil)
+        }
+        return instance
+    }()
+
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        checkUIMode()
+
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
+            self.checkUIMode()
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: - Private
+
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
+
+    // MARK: - Form
+
+    override func populate(_ builder: FormBuilder) {
+        builder.navigationTitle = "Settings"
+
+        // UI
+        builder += SectionHeaderTitleFormItem().title("User Interface")
+        builder += themes
+
+        // Calendar
+        builder += SectionHeaderTitleFormItem().title("Calendar")
+        builder += showLunarCalendar
+        builder += SectionFooterTitleFormItem().title("Show small lunar dates under solar calendar dates")
+
+        // Info
+        builder += SectionHeaderTitleFormItem().title("App info")
+        builder += StaticTextFormItem().title("Name").value(AppInfo.appName)
+        builder += StaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
     }
 
 }
