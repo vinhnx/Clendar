@@ -15,9 +15,9 @@ import IQKeyboardManagerSwift
  TODO:
 
  + app icon
- + move dependencies from Cocoapod to SPM as much as possible
+ + [done] move dependencies from Cocoapod to SPM as much as possible
  + localized https://github.com/yonaskolb/Stringly
- + form/settings builder: https://github.com/neoneye/SwiftyFORM
+ + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + force touch shortcut from homescreen
  + gan admob google ads earn money ~1-2$ day
  + iOS 14 widget
@@ -25,12 +25,12 @@ import IQKeyboardManagerSwift
  + [done] show list of events of day
  + settings:
     + [done] show lunar date
-    + event stack highlight (check old code)
+    + [done] event stack highlight (check old code)
     + [done] theme
-    + date type (12 or 24h)
     + start of week
     + Everything under CVCalendar configs
-    + month/week view
+    + [done] month/week view
+    + [done] show days out
  + lunar converter (+)
  + lunar event (+)
  + write tests (?)
@@ -39,7 +39,7 @@ import IQKeyboardManagerSwift
  + [done] dark/light mode
  + [done] edit calendar event
  + [done] option when creating an event
- + selectable calendar to shown
+ + selectable calendar to shown EKCalendarChooser
  + IAP  => make more money
  + haptic
  + duong lich <-> am lich
@@ -77,6 +77,8 @@ extension AppDelegate {
         logger.logLevel = .debug
 
         SwiftDate.defaultRegion = Region.local
+
+        
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
