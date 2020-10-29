@@ -9,17 +9,37 @@
 import EventKit
 import Foundation
 
-/// <#Description#>
+/// [WIP] Wrapper for EventKit
 final class EventKitWrapper {
 
     // MARK: - Properties
 
-    /// <#Description#>
+    /// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
     public private(set) var eventStore = EKEventStore()
 
-    /// <#Description#>
+    /// Returns calendar object from event kit
     public var defaultCalendar: EKCalendar {
         eventStore.calendarForApp()
+    }
+
+    /// Return all accessible calendars from user's authorization
+    public private(set) var allDefaultCalendars = [EKCalendar]()
+
+    /// Saved calendars from settings
+    public var savedCalendars: [EKCalendar] {
+        let result = allDefaultCalendars.filter { calendar in savedCalendarIDs.contains(calendar.calendarIdentifier) }
+        if result.isEmpty { return allDefaultCalendars }
+        return result
+    }
+
+    // Storage
+    private var _savedCalendarIDs = [String]()
+    public var savedCalendarIDs: [String] {
+        get { UserDefaults.savedCalendarIDs }
+        set {
+            UserDefaults.savedCalendarIDs = newValue
+            NotificationCenter.default.post(name: .didChangeSavedCalendarsPreferences, object: nil)
+        }
     }
 
     // MARK: - Life cycle
@@ -29,8 +49,8 @@ final class EventKitWrapper {
 
     // MARK: - Flow
 
-    /// <#Description#>
-    /// - Parameter completion: <#completion description#>
+    /// Request event store authorization
+    /// - Parameter completion: completion handler with an EKAuthorizationStatus enum
     func requestEventStoreAuthorization(completion: ((EKAuthorizationStatus) -> Void)?) {
         let status = EKEventStore.authorizationStatus(for: .event)
 
@@ -53,12 +73,12 @@ final class EventKitWrapper {
 
     // MARK: - CRUD
 
-    /// <#Description#>
+    /// Create an event
     /// - Parameters:
-    ///   - title: <#title description#>
-    ///   - startDate: <#startDate description#>
-    ///   - endDate: <#endDate description#>
-    ///   - completion: <#completion description#>
+    ///   - title: event title
+    ///   - startDate: event start date
+    ///   - endDate: event end date
+    ///   - completion: completion handler
     func createEvent(_ title: String, startDate: Date, endDate: Date?, completion: EventCompletion?) {
         requestEventStoreAuthorization { [weak self] status in
             guard status == .authorized else { return }
@@ -70,11 +90,11 @@ final class EventKitWrapper {
         }
     }
 
-    /// <#Description#>
+    /// Delete an event
     /// - Parameters:
-    ///   - identifier: <#identifier description#>
-    ///   - span: <#span description#>
-    ///   - completion: <#completion description#>
+    ///   - identifier: event identifier
+    ///   - span: An object that indicates whether modifications should apply to a single event or all future events of a recurring event.
+    ///   - completion: completion handler
     func deleteEvent(identifier: String, span: EKSpan = .thisEvent, completion: VoidHandler?) {
         requestEventStoreAuthorization { [weak self] status in
             guard status == .authorized else { return }
@@ -88,33 +108,35 @@ final class EventKitWrapper {
 
     // MARK: - Fetch Events
 
-    /// <#Description#>
-    /// - Parameter completion: <#completion description#>
+    /// Fetch events for today
+    /// - Parameter completion: completion handler
     func fetchEventsForToday(completion: EventsCompletion? = nil) {
         let today = Date()
         fetchEvents(startDate: today.startDate, endDate: today.endDate, completion: completion)
     }
 
-    /// <#Description#>
+    /// Fetch events for a specific day
     /// - Parameters:
-    ///   - date: <#date description#>
-    ///   - completion: <#completion description#>
+    ///   - date: day to fetch events from
+    ///   - completion: completion handler
     func fetchEvents(for date: Date, completion: EventsCompletion?) {
         fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
     }
 
-    /// <#Description#>
+    /// Fetch events from date range
     /// - Parameters:
-    ///   - startDate: <#startDate description#>
-    ///   - endDate: <#endDate description#>
-    ///   - completion: <#completion description#>
+    ///   - startDate: start date range
+    ///   - endDate: end date range
+    ///   - completion: completion handler
     func fetchEvents(startDate: Date, endDate: Date, completion: EventsCompletion?) {
         requestEventStoreAuthorization { [weak self] status in
             guard status == .authorized else { return }
             guard let self = self else { return }
 
-            let calendars = self.eventStore.calendars(for: .event)
-            let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: calendars)
+            let _calendars = self.eventStore.calendars(for: .event)
+            self.allDefaultCalendars = _calendars
+
+            let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: self.savedCalendars)
             let events = self.eventStore.events(matching: predicate)
 
             DispatchQueue.main.async {
@@ -125,8 +147,8 @@ final class EventKitWrapper {
 
     // MARK: - Private
 
-    /// <#Description#>
-    /// - Parameter completion: <#completion description#>
+    /// Request access to calendar
+    /// - Parameter completion: calendar object
     private func accessCalendar(completion: EventCalendarHandler?) {
         requestEventStoreAuthorization { [weak self] status in
             guard status == .authorized else { return }

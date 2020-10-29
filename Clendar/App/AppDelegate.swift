@@ -14,6 +14,8 @@ import IQKeyboardManagerSwift
 /*
  TODO:
 
+ + onboarding
+ + rating prompt
  + app icon
  + [done] move dependencies from Cocoapod to SPM as much as possible
  + localized https://github.com/yonaskolb/Stringly
@@ -32,7 +34,6 @@ import IQKeyboardManagerSwift
     + [done] month/week view
     + [done] show days out
     + [?] hightlight weekends (sat and sunday)
-
  + lunar converter (+)
  + lunar event (+)
  + write tests (?)
@@ -41,7 +42,7 @@ import IQKeyboardManagerSwift
  + [done] dark/light mode
  + [done] edit calendar event
  + [done] option when creating an event
- + selectable calendar to shown EKCalendarChooser
+ + [done] selectable calendar to shown EKCalendarChooser
  + IAP  => make more money
  + haptic
  + duong lich <-> am lich

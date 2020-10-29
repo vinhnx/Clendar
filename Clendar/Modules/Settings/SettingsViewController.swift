@@ -15,7 +15,7 @@ final class SettingsNavigationController: UINavigationController {
     // MARK: - Life Cycle
 
     init() {
-        let settings = SettingsViewController()
+        let settings = SettingsViewController(style: .insetGrouped)
         super.init(rootViewController: settings)
     }
 
@@ -130,12 +130,16 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = "Settings"
 
+        builder += ViewControllerFormItem()
+            .title("Calendars")
+            .viewController(CalendarsChooserViewController.self)
+
         // UI
         builder += SectionHeaderTitleFormItem().title("User Interface")
         builder += themes
 
         // Calendar
-        builder += SectionHeaderTitleFormItem().title("Calendar")
+        builder += SectionHeaderTitleFormItem().title("Calendar View")
         builder += showDaysOut
         builder += supplementaryViewMode
         builder += calendarMode

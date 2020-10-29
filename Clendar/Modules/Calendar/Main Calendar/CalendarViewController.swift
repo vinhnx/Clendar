@@ -149,6 +149,11 @@ final class CalendarViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: .didChangeDaySupplementaryTypePreferences, object: nil, queue: .main) { (_) in
             self.calendarView.reloadData()
         }
+
+        NotificationCenter.default.addObserver(forName: .didChangeSavedCalendarsPreferences, object: nil, queue: .main) { [weak self] (_) in
+            guard let self = self else { return }
+            self.fetchEvents(self.calendarView.selectedDate)
+        }
     }
 
     private func addGestures() {

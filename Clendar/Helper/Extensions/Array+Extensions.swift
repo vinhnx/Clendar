@@ -28,3 +28,7 @@ extension Array where Element == String {
         return result.first ?? ""
     }
 }
+
+extension Array where Element: Hashable {
+    var asSet: Set<Element> { Set(self) }
+}

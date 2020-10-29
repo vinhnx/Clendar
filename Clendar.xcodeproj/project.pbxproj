@@ -16,6 +16,8 @@
 		A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A30F561C2549AA4500E96C0E /* CVCalendar */; };
 		A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */; };
 		A30F563C2549B35600E96C0E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F563B2549B35600E96C0E /* CalendarViewModel.swift */; };
+		A30F564C254AEA7700E96C0E /* CalendarsChooserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F564B254AEA7700E96C0E /* CalendarsChooserNavigationController.swift */; };
+		A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
@@ -119,6 +121,8 @@
 		A30E41372541FB2A009AAC32 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
 		A30E48222541F4EF00B4B027 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A30F563B2549B35600E96C0E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		A30F564B254AEA7700E96C0E /* CalendarsChooserNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsChooserNavigationController.swift; sourceTree = "<group>"; };
+		A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Extensions.swift"; sourceTree = "<group>"; };
 		A3187E67254998EE009524DF /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A30F564A254AEA6000E96C0E /* Calendars Choosers */ = {
+			isa = PBXGroup;
+			children = (
+				A30F564B254AEA7700E96C0E /* CalendarsChooserNavigationController.swift */,
+			);
+			path = "Calendars Choosers";
+			sourceTree = "<group>";
+		};
 		A3187E65254998C1009524DF /* Event Viewer */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +373,7 @@
 		A33F80FB22468A44009CC46A /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				A30F564A254AEA6000E96C0E /* Calendars Choosers */,
 				A3187E66254998CB009524DF /* Event Editor */,
 				A3187E65254998C1009524DF /* Event Viewer */,
 				A3819A032548523800C71D41 /* Create Event */,
@@ -421,6 +434,7 @@
 				A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */,
 				A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */,
 				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
+				A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -809,6 +823,7 @@
 				A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */,
 				A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
+				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
 				A3819A15254859CC00C71D41 /* CalendarConfiguration.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* UIFont+Themes.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
@@ -854,6 +869,7 @@
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
 				A30A83E22259934400BF1294 /* DaySupplementaryView.swift in Sources */,
 				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
+				A30F564C254AEA7700E96C0E /* CalendarsChooserNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

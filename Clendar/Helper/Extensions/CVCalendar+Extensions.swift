@@ -10,6 +10,10 @@ import Foundation
 import CVCalendar
 
 extension CVCalendarView {
+    var selectedDate: Date? {
+        presentedDate.convertedDate()
+    }
+
     func reloadData() {
         contentController.refreshPresentedMonth()
     }
