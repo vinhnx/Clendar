@@ -15,7 +15,7 @@ enum DaySupplementaryType: String, CaseIterable {
     case none = "None"
 
     static var titles: [String] = Self.allCases.map { $0.rawValue }
-    static var defaultValue: Self { .none }
+    static var defaultValue: Self { .oneDot }
 }
 
 class DaySupplementaryView: UIStackView {
