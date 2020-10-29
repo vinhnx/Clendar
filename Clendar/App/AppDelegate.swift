@@ -22,7 +22,7 @@ import IQKeyboardManagerSwift
  + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + force touch shortcut from homescreen
  + gan admob google ads earn money ~1-2$ day
- + iOS 14 widget
+ + iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
  + [done] show list of events of day
  + settings:
