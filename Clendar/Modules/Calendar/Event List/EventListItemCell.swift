@@ -40,7 +40,9 @@ class EventListItemCell: UICollectionViewCell {
 
     static var reuseID = String(describing: EventListItemCell.self)
 
-    @IBOutlet private var barView: UIView!
+    @IBOutlet private var barView: UIView! {
+        didSet { barView.applyCornerRadius() }
+    }
 
     @IBOutlet private var titleLabel: UILabel! {
         didSet {

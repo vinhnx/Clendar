@@ -14,7 +14,7 @@ class EventSectionHeaderView: UICollectionReusableView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .mediumFontWithSize(15)
+        label.font = .boldFontWithSize(15)
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .appDark
         label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)

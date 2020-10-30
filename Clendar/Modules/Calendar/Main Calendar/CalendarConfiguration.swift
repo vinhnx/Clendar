@@ -39,7 +39,9 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func shouldShowWeekdaysOut() -> Bool { SettingsManager.showDaysOut }
 
-    func shouldAutoSelectDayOnMonthChange() -> Bool { false }
+    func shouldAutoSelectDayOnMonthChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
+
+    func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         didSelectDayView?(dayView, animationDidFinish)
@@ -49,15 +51,13 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
         presentedDateUpdated?(date)
     }
 
-    func dayOfWeekFont() -> UIFont {
-        .mediumFontWithSize(15)
-    }
+    func dayOfWeekFont() -> UIFont { .semiboldFontWithSize(15) }
 
     func dayOfWeekTextUppercase() -> Bool { false }
 
-    func weekdaySymbolType() -> WeekdaySymbolType { .short }
+    func weekdaySymbolType() -> WeekdaySymbolType { .veryShort }
 
-    func dayOfWeekTextColor() -> UIColor { .appDark }
+    func dayOfWeekTextColor() -> UIColor { .nativeLightGray }
 
     func dayOfWeekBackGroundColor() -> UIColor { .clear }
 

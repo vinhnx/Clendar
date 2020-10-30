@@ -24,6 +24,7 @@ extension Notification.Name {
     static let didChangeDaySupplementaryTypePreferences = Notification.Name(rawValue: "didChangeDaySupplementaryTypePreferences")
     static let didChangeSavedCalendarsPreferences = Notification.Name(rawValue: "didChangeSavedCalendarsPreferences")
     static let didChangeUseExperimentalCreateEventMode = Notification.Name(rawValue: "didChangeUseExperimentalCreateEventMode")
+    static let justReloadCalendar = Notification.Name(rawValue: "justReloadCalendar")
 
     // MARK: - Others
 

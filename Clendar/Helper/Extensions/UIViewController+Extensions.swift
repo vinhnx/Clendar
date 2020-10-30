@@ -94,4 +94,8 @@ extension UIViewController {
         view.endEditing(true)
     }
 
+    @objc func dimissModal() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }

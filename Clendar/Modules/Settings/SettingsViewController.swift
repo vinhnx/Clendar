@@ -67,7 +67,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var calendarMode: SegmentedControlFormItem = {
         let proxy = SegmentedControlFormItem()
-        proxy.title = "Calendar mode"
+        proxy.title = "View mode"
         proxy.items = CalendarViewMode.titles
         proxy.selected = SettingsManager.monthViewCalendarMode
             ? CalendarViewMode.month.rawValue
@@ -114,12 +114,25 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
+        let instance = SwitchFormItem()
+        instance.title = "Auto-select day on changes"
+        instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
+        instance.switchDidChangeBlock = { activate in
+            SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
+            NotificationCenter.default.post(name: .justReloadCalendar, object: nil)
+        }
+        return instance
+    }()
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         hidesBottomBarWhenPushed = true
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dimissModal))
 
         checkUIMode()
 
@@ -159,6 +172,9 @@ final class SettingsViewController: FormViewController {
         builder += showDaysOut
         builder += supplementaryViewMode
         builder += calendarMode
+        
+        builder += shouldAutoSelectDayOnCalendarChange
+        builder += SectionFooterTitleFormItem().title("Auto-select first day of month/week when calendar changes")
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title("Quick Event")

@@ -57,7 +57,6 @@ final class CalendarViewController: BaseViewController {
             monthLabel.font = .boldFontWithSize(30)
             monthLabel.text = Date().monthName(.default)
             monthLabel.textAlignment = .right
-
         }
     }
 
@@ -144,6 +143,10 @@ final class CalendarViewController: BaseViewController {
         NotificationCenter.default.addObserver(forName: .didChangeSavedCalendarsPreferences, object: nil, queue: .main) { [weak self] (_) in
             guard let self = self else { return }
             self.fetchEvents(self.calendarView.selectedDate)
+        }
+
+        NotificationCenter.default.addObserver(forName: .justReloadCalendar, object: nil, queue: .main) { (_) in
+            self.calendarView.reloadData()
         }
     }
 

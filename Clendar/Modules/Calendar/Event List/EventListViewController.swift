@@ -10,14 +10,6 @@ import UIKit
 import EventKit
 import EventKitUI
 
-// TODO: HOLY SMOKE OMG!!!! https://developer.apple.com/library/archive/samplecode/SimpleEKDemo/Introduction/Intro.html#//apple_ref/doc/uid/DTS40010160-Intro-DontLinkElementID_2
-
-// TODO: check EKEventViewController for view, EKEventEditViewController for edit/delete https://developer.apple.com/documentation/eventkitui/ekeventviewcontroller!!!! <<<<
-
-// TODO: check document https://developer.apple.com/documentation/eventkitui
-
-// TODO: this one for accessing Calendar list !! EKCalendarChooser https://dev.to/nemecek_f/how-to-use-ekcalendarchooser-in-swift-to-let-user-select-calendar-in-ios-4al5
-
 internal typealias DataSource = UICollectionViewDiffableDataSource<Section, Event>
 
 final class EventListViewController: BaseViewController {
@@ -73,7 +65,7 @@ final class EventListViewController: BaseViewController {
                 ofKind: kind,
                 withReuseIdentifier: EventSectionHeaderView.reuseID,
                 for: indexPath) as? EventSectionHeaderView
-            view?.titleLabel.text = section.date?.toFullDateString
+            view?.titleLabel.text = section.date?.toFullDateString.uppercased()
             return view
         }
 
