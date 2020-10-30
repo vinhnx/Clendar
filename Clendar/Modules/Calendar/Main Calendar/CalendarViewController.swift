@@ -80,6 +80,16 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        requestNotifcation()
+        addGestures()
+        addObservers()
+        selectToday()
+
+        view.backgroundColor = .backgroundColor
+        dayView.backgroundColor = .backgroundColor
+        eventListContainerView.backgroundColor = .backgroundColor
+        addChildViewController(eventList, containerView: eventListContainerView)
+
         calendarConfiguration.didSelectDayView = { [weak self] dayView, animationDidFinish in
             guard let self = self else { return }
             self.fetchEvents(dayView.convertedDate)
@@ -100,15 +110,6 @@ final class CalendarViewController: BaseViewController {
             guard let self = self else { return }
             self.handleCreateEvent()
         }
-
-        addGestures()
-        addObservers()
-        selectToday()
-
-        view.backgroundColor = .backgroundColor
-        dayView.backgroundColor = .backgroundColor
-        eventListContainerView.backgroundColor = .backgroundColor
-        addChildViewController(eventList, containerView: eventListContainerView)
     }
 
     // MARK: - Private
@@ -175,6 +176,12 @@ final class CalendarViewController: BaseViewController {
                 delegate: self
             )
             self.present(createEventViewController, animated: true)
+        }
+    }
+
+    private func requestNotifcation() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
+            if let error = error { logError(error) }
         }
     }
 

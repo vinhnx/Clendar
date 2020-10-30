@@ -10,9 +10,9 @@ import UIKit
 import CVCalendar
 
 enum DaySupplementaryType: String, CaseIterable {
+    case none = "None"
     case lunarDate = "Lunar date"
     case oneDot = "One dot"
-    case none = "None"
 
     static var titles: [String] = Self.allCases.map { $0.rawValue }
     static var defaultValue: Self { .oneDot }

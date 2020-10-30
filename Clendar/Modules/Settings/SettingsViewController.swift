@@ -124,7 +124,37 @@ final class SettingsViewController: FormViewController {
         }
         return instance
     }()
-    
+
+    lazy var appIconBadge: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("App icon badge")
+        instance.append(BadgeSettings.titles)
+        instance.selectOptionWithTitle(SettingsManager.badgeSettings)
+        instance.valueDidChange = { selected in
+            SettingsManager.badgeSettings = selected?.title ?? BadgeSettings.defaultValue.rawValue
+
+            switch SettingsManager.badgeSettings {
+            case BadgeSettings.none.rawValue:
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber = 0
+                }
+
+            case BadgeSettings.date.rawValue:
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber = Date().day
+                }
+
+            case BadgeSettings.month.rawValue:
+                DispatchQueue.main.async {
+                    UIApplication.shared.applicationIconBadgeNumber = Date().month
+                }
+
+            default: break
+            }
+        }
+        return instance
+    }()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -166,6 +196,7 @@ final class SettingsViewController: FormViewController {
         // UI
         builder += SectionHeaderTitleFormItem().title("User Interface")
         builder += themes
+        builder += appIconBadge
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title("Calendar View")

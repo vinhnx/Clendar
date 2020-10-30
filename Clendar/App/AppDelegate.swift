@@ -10,11 +10,11 @@ import UIKit
 import Logging
 import SwiftDate
 import IQKeyboardManagerSwift
+import UserNotifications
 
 /*
  TODO:
  + IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
- + badge app style
  + local notification << IMPORTANT
  + future: reminders
  + onboarding
@@ -41,6 +41,7 @@ import IQKeyboardManagerSwift
  + automation (try github action, fastlane, ci-cd)
  ==
  DONE:
+ + [done] badge app style
  + [done] move dependencies from Cocoapod to SPM as much as possible
  + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + [done] show list of events of day
@@ -79,12 +80,9 @@ extension AppDelegate {
     // MARK: - Window
 
     private func configure() {
-
         logger.logLevel = .debug
 
         SwiftDate.defaultRegion = Region.local
-
-        
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false

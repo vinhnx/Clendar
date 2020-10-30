@@ -8,6 +8,15 @@
 
 import Foundation
 
+enum BadgeSettings: String, CaseIterable {
+    case none = "None"
+    case date = "Date"
+    case month = "Month"
+    
+    static var titles: [String] { Self.allCases.map { $0.rawValue } }
+    static var defaultValue: Self { .none }
+}
+
 struct SettingsManager {
 
     @UserDefault("darkModeActivated", defaultValue: isDarkMode)
@@ -27,5 +36,8 @@ struct SettingsManager {
 
     @UserDefault("shouldAutoSelectDayOnCalendarChange", defaultValue: false)
     static var shouldAutoSelectDayOnCalendarChange: Bool
+
+    @UserDefault("badgeSettings", defaultValue: BadgeSettings.none.rawValue)
+    static var badgeSettings: String
 
 }
