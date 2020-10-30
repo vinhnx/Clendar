@@ -99,29 +99,20 @@ final class CalendarViewController: BaseViewController {
 
         addEventButton.on.tap { [weak self] in
             guard let self = self else { return }
-            let addEventViewController = EventEditViewController(
-                eventStore: EventKitWrapper.shared.eventStore,
-                delegate: self
-            )
-            self.present(addEventViewController, animated: true)
+            self.handleCreateEvent()
         }
 
         addGestures()
-        addEventListContainer()
         addObservers()
         selectToday()
 
         view.backgroundColor = .backgroundColor
         dayView.backgroundColor = .backgroundColor
         eventListContainerView.backgroundColor = .backgroundColor
+        addChildViewController(eventList, containerView: eventListContainerView)
     }
 
     // MARK: - Private
-
-    private func selectToday() {
-        calendarView.toggleCurrentDayView()
-        eventList.fetchEvents()
-    }
 
     private func addObservers() {
         NotificationCenter.default.addObserver(forName: .didAuthorizeCalendarAccess, object: nil, queue: .main) { (_) in
@@ -156,6 +147,11 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
+    private func selectToday() {
+        calendarView.toggleCurrentDayView()
+        eventList.fetchEvents()
+    }
+
     private func addGestures() {
         monthLabel.isUserInteractionEnabled = true
         monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
@@ -166,8 +162,17 @@ final class CalendarViewController: BaseViewController {
         eventList.fetchEvents(for: date)
     }
 
-    private func addEventListContainer() {
-        addChildViewController(eventList, containerView: eventListContainerView)
+    private func handleCreateEvent() {
+        if SettingsManager.useExperimentalCreateEventMode {
+            guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
+            self.present(createEventViewController, animated: true, completion: nil)
+        } else {
+            let createEventViewController = EventEditViewController(
+                eventStore: EventKitWrapper.shared.eventStore,
+                delegate: self
+            )
+            self.present(createEventViewController, animated: true)
+        }
     }
 
     // MARK: - Actions

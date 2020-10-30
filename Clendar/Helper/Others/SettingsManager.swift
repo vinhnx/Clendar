@@ -21,4 +21,7 @@ struct SettingsManager {
 
     @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
     static var daySupplementaryType: String
+
+    @UserDefault("useExperimentalCreateEventMode", defaultValue: false)
+    static var useExperimentalCreateEventMode: Bool
 }

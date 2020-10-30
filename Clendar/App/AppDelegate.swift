@@ -14,6 +14,10 @@ import IQKeyboardManagerSwift
 /*
  TODO:
 
+ + [Experimental] use natural date parsing for creating new event
+ + badge app style
+ + local notification
+ + future: reminders
  + onboarding
  + rating prompt
  + app icon

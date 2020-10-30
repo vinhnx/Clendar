@@ -103,10 +103,23 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var quickEventMode: SwitchFormItem = {
+        let instance = SwitchFormItem()
+        instance.title = "Quick event"
+        instance.value = SettingsManager.useExperimentalCreateEventMode
+        instance.switchDidChangeBlock = { activate in
+            SettingsManager.useExperimentalCreateEventMode = activate
+            NotificationCenter.default.post(name: .didChangeUseExperimentalCreateEventMode, object: nil)
+        }
+        return instance
+    }()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        hidesBottomBarWhenPushed = true
 
         checkUIMode()
 
@@ -130,9 +143,12 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = "Settings"
 
+        // Calendars
+        builder += SectionHeaderTitleFormItem().title("Calendars")
         builder += ViewControllerFormItem()
-            .title("Calendars")
+            .title("Available calendars")
             .viewController(CalendarsChooserViewController.self)
+        builder += SectionFooterTitleFormItem().title("You can choose available calendars to shown in event list")
 
         // UI
         builder += SectionHeaderTitleFormItem().title("User Interface")
@@ -143,6 +159,11 @@ final class SettingsViewController: FormViewController {
         builder += showDaysOut
         builder += supplementaryViewMode
         builder += calendarMode
+
+        // Quick Event
+        builder += SectionHeaderTitleFormItem().title("Quick Event")
+        builder += quickEventMode
+        builder += SectionFooterTitleFormItem().title("You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
 
         // Info
         builder += SectionHeaderTitleFormItem().title("App info")

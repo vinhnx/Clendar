@@ -23,6 +23,7 @@ extension Notification.Name {
     static let didChangeShowDaysOutPreferences = Notification.Name(rawValue: "didChangeShowDaysOutPreferences")
     static let didChangeDaySupplementaryTypePreferences = Notification.Name(rawValue: "didChangeDaySupplementaryTypePreferences")
     static let didChangeSavedCalendarsPreferences = Notification.Name(rawValue: "didChangeSavedCalendarsPreferences")
+    static let didChangeUseExperimentalCreateEventMode = Notification.Name(rawValue: "didChangeUseExperimentalCreateEventMode")
 
     // MARK: - Others
 
