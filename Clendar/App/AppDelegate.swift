@@ -13,48 +13,47 @@ import IQKeyboardManagerSwift
 
 /*
  TODO:
-
- + [Experimental] use natural date parsing for creating new event
+ + IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
  + badge app style
- + local notification
+ + local notification << IMPORTANT
  + future: reminders
  + onboarding
  + rating prompt
  + app icon
- + [done] move dependencies from Cocoapod to SPM as much as possible
- + localized https://github.com/yonaskolb/Stringly
- + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
+ + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
  + force touch shortcut from homescreen
- + gan admob google ads earn money ~1-2$ day
- + iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
- + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself
- + [done] show list of events of day
+ + gan admob google ads earn money ~1-2$ day or IAP?
  + settings:
-    + [done] show lunar date
-    + [done] event stack highlight (check old code)
-    + [done] theme
-    + [not sure how to reload CVconfiguration?] start of week
-    + Everything under CVCalendar configs
-    + [done] month/week view
-    + [done] show days out
-    + [?] hightlight weekends (sat and sunday)
+    > [?] hightlight weekends (sat and sunday)
+    > ???? not sure how to reload CVconfiguration?] start of week
+    > ??? Everything under CVCalendar configs
  + lunar converter (+)
  + lunar event (+)
- + write tests (?)
- + automation (?)
  + [optional] build macOS app, non currently for am lich
- + [done] dark/light mode
- + [done] edit calendar event
- + [done] option when creating an event
- + [done] selectable calendar to shown EKCalendarChooser
+
  + IAP  => make more money
  + haptic
  + duong lich <-> am lich
  + iPad app
  + watch app (?)
  + mac app (?)
-
- + https://www.raywenderlich.com/10718147-supporting-dark-mode-adapting-your-app-to-support-dark-mode
+ + write tests (?)
+ + automation (try github action, fastlane, ci-cd)
+ ==
+ DONE:
+ + [done] move dependencies from Cocoapod to SPM as much as possible
+ + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
+ + [done] show list of events of day
+ + [done] [Experimental] use natural date parsing for creating new event
+ + [done] show lunar date
+ + [done] event stack highlight (check old code)
+ + [done] theme
+ + [done] month/week view
+ + [done] show days out
+ + [done] dark/light mode
+ + [done] edit calendar event
+ + [done] option when creating an event
+ + [done] selectable calendar to shown EKCalendarChooser
  */
 
 @main
