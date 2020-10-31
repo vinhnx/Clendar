@@ -83,7 +83,7 @@ extension UIViewController {
     /// Safe present view controller
     ///
     /// - Parameter completion: completion handler
-    func safeDismiss(_ completion: @escaping VoidHandler) {
+    func safeDismiss(_ completion: @escaping VoidBlock) {
         guard isBeingDismissed else { return }
         dismiss(animated: true, completion: completion)
     }

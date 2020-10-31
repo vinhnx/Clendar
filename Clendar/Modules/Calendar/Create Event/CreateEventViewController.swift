@@ -12,6 +12,8 @@ import EventKit
 
 // NOTE: using EventKitUI's native controller to simplify for now
 
+// TODO: check bug when create "hello" event (start date should not == end date) => create duration settings
+
 enum CreateEventType {
     case create
     case edit
@@ -147,11 +149,18 @@ class CreateEventViewController: BaseViewController {
             endDate: endDatePicker.date
         )
 
-        EventKitWrapper.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] event in
+        EventKitWrapper.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] result in
             guard let self = self else { return }
-            self.inputTextField.text = ""
-            self.didUpdateEvent?(event)
-            self.dismiss()
+
+            switch result {
+            case .success(let event):
+                self.inputTextField.text = ""
+                self.didUpdateEvent?(event)
+                self.dismiss()
+
+            case .failure(let error): AlertManager.showWithError(error)
+
+            }
         }
     }
 
@@ -193,9 +202,12 @@ class CreateEventViewController: BaseViewController {
         guard let eventID = event.id else { return }
 
         AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
-            EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] in
+            EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] result in
                 guard let self = self else { return }
-                self.dismiss()
+                switch result {
+                case .success: self.dismiss()
+                case .failure(let error): AlertManager.showWithError(error)
+                }
             }
         })
     }

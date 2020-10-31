@@ -45,7 +45,7 @@ final class AlertManager {
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
     ///   - onCancel: the completion handler to execute when user tap on "Cancel"
-    static func showActionSheet(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidHandler? = nil, deleteAction: VoidHandler? = nil, onCancel: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidBlock? = nil, deleteAction: VoidBlock? = nil, onCancel: VoidBlock? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
@@ -80,7 +80,7 @@ final class AlertManager {
     ///   - message: the message string
     ///   - actionTitle: the action title string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showActionSheet(title: String? = nil, message: String, actionTitle: String, okAction: VoidHandler? = nil) {
+    static func showActionSheet(title: String? = nil, message: String, actionTitle: String, okAction: VoidBlock? = nil) {
         showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
     }
 
@@ -90,10 +90,27 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - okAction: the completion handler to execute when user tap on "OK"
-    static func showNoCancelAlertWithMessage(title: String? = nil, message: String, okAction: VoidHandler? = nil) {
+    static func showNoCancelAlertWithMessage(title: String? = nil, message: String, okAction: VoidBlock? = nil) {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                okAction?()
+            }
+
+            alertController.addAction(okAction)
+            alertController.dismissAndShow()
+        }
+    }
+
+    /// Show error alert
+    /// - Parameters:
+    ///   - error: ClendarError instance that conforms to LocalizedError protocol
+    ///   - okAction: optional action
+    static func showWithError(_ error: ClendarError, okAction: VoidBlock? = nil) {
+        DispatchQueue.main.async {
+            guard shouldShowAlert else { return }
+            let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                 okAction?()
             }
@@ -109,7 +126,7 @@ final class AlertManager {
     ///   - title: the title string
     ///   - message: the message string
     ///   - onCancel: completion handler to be executed when user tap on cancel
-    static func showSettingsAlert(title: String? = nil, message: String, onCancel: VoidHandler? = nil) {
+    static func showSettingsAlert(title: String? = nil, message: String, onCancel: VoidBlock? = nil) {
         showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
             _ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
         }, onCancel: onCancel)

@@ -9,11 +9,9 @@
 import UIKit
 
 class TableView: UITableView {
-    var contentSizeDidChange: SizeUpdateHandler?
+    var contentSizeDidChange: ((CGSize) -> Void)?
 
     override var contentSize: CGSize {
-        didSet {
-            contentSizeDidChange?(contentSize)
-        }
+        didSet { contentSizeDidChange?(contentSize) }
     }
 }

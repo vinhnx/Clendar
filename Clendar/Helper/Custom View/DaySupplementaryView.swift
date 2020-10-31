@@ -15,7 +15,7 @@ enum DaySupplementaryType: String, CaseIterable {
     case oneDot = "One dot"
 
     static var titles: [String] = Self.allCases.map { $0.rawValue }
-    static var defaultValue: Self { .oneDot }
+    static var defaultValue: Self { .none }
 }
 
 class DaySupplementaryView: UIStackView {
@@ -38,12 +38,17 @@ class DaySupplementaryView: UIStackView {
             let view = DaySupplementaryView(frame: CGRect(x: dayView.center.x, y: dayView.frame.origin.y, width: size, height: size))
             view.axis = .horizontal
             view.distribution = .fill
-            EventKitWrapper.shared.fetchEvents(for: date) { (events) in
-                if events.isEmpty == false {
-                    let colorView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
-                    colorView.backgroundColor = UIColor.primaryColor
-                    colorView.applyCircle()
-                    view.addArrangedSubview(colorView)
+            EventKitWrapper.shared.fetchEvents(for: date) { (result) in
+                switch result {
+                case .success(let events):
+                    if events.isEmpty == false {
+                        let colorView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+                        colorView.backgroundColor = UIColor.primaryColor
+                        colorView.applyCircle()
+                        view.addArrangedSubview(colorView)
+                    }
+
+                case .failure(let error): logError(error)
                 }
             }
 

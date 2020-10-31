@@ -66,3 +66,9 @@ extension Date {
         return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
     }
 }
+
+extension Date {
+    var widgetDayString: String {
+        toString(.custom("EEEE"))
+    }
+}

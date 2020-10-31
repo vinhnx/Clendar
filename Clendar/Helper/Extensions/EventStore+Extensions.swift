@@ -21,7 +21,14 @@ extension EKEventStore {
     ///   - calendar: event calendar
     ///   - span: event span
     ///   - completion: event completion handler that returns an event
-    func createEvent(title: String, startDate: Date, endDate: Date?, calendar: EKCalendar, span: EKSpan = .thisEvent, completion: EventCompletion? = nil) {
+    func createEvent(
+        title: String,
+        startDate: Date,
+        endDate: Date?,
+        calendar: EKCalendar,
+        span: EKSpan = .thisEvent,
+        completion: ((Result<EKEvent, ClendarError>) -> Void)?
+    ) {
         let event = EKEvent(eventStore: self)
         event.title = title
         event.startDate = startDate
@@ -30,14 +37,14 @@ extension EKEventStore {
 
         do {
             try save(event, span: span, commit: true)
-
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .didCreateEvent, object: nil)
-                completion?(event)
+                completion?(.success(event))
             }
         } catch {
-            logError(error)
-            AlertManager.showNoCancelAlertWithMessage(message: error.localizedDescription)
+            DispatchQueue.main.async {
+                completion?(.failure(ClendarError.mapFromError(error)))
+            }
         }
     }
 
@@ -46,7 +53,11 @@ extension EKEventStore {
     ///   - identifier: event identifier
     ///   - span: event span
     ///   - completion: event completion handler that returns an event
-    func deleteEvent(identifier: String, span: EKSpan = .thisEvent, completion: VoidHandler? = nil) {
+    func deleteEvent(
+        identifier: String,
+        span: EKSpan = .thisEvent,
+        completion: ((Result<Void, ClendarError>) -> Void)? = nil
+    ) {
         guard let event = fetchEvent(identifier: identifier) else { return }
 
         do {
@@ -54,11 +65,12 @@ extension EKEventStore {
 
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .didDeleteEvent, object: nil)
-                completion?()
+                completion?(.success(()))
             }
         } catch {
-            logError(error)
-            AlertManager.showNoCancelAlertWithMessage(message: error.localizedDescription)
+            DispatchQueue.main.async {
+                completion?(.failure(ClendarError.mapFromError(error)))
+            }
         }
     }
 

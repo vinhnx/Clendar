@@ -25,14 +25,20 @@ struct WidgetTimelineProvider: TimelineProvider {
         var entries = [WidgetEntry]()
 
         let date = Date()
-        EventKitWrapper.shared.fetchEvents(for: date) { (events) in
-            let clendarEvents = events.compactMap(Event.init)
+        EventKitWrapper.shared.fetchEvents(for: date) { result in
+            switch result {
+            case .success(let events):
+                let clendarEvents = events.compactMap(Event.init)
+                let entry = WidgetEntry(date: date, events: clendarEvents)
+                entries.append(entry)
 
-            let entry = WidgetEntry(date: date, events: clendarEvents)
-            entries.append(entry)
+                let timeline = Timeline(entries: entries, policy: .atEnd)
+                completion(timeline)
 
-            let timeline = Timeline(entries: entries, policy: .atEnd)
-            completion(timeline)
+            case .failure(let error):
+                logError(error)
+
+            }
         }
     }
 

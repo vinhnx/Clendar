@@ -38,10 +38,15 @@ final class EventListViewController: BaseViewController {
     // MARK: - Public
 
     func fetchEvents(for date: Date = Date()) {
-        EventKitWrapper.shared.fetchEvents(for: date) { [weak self] events in
+        EventKitWrapper.shared.fetchEvents(for: date) { [weak self] result in
             guard let self = self else { return }
-            let items = events.map(Event.init)
-            self.applySnapshot(items, date: date)
+            switch result {
+            case .success(let events):
+                let items = events.compactMap(Event.init)
+                self.applySnapshot(items, date: date)
+
+            case .failure(let error): AlertManager.showWithError(error)
+            }
         }
     }
 
