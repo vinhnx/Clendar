@@ -13,14 +13,14 @@ extension EKEventStore {
 
     // MARK: - CRUD
 
-    /// <#Description#>
+    /// Create an event
     /// - Parameters:
-    ///   - title: <#title description#>
-    ///   - startDate: <#startDate description#>
-    ///   - endDate: <#endDate description#>
-    ///   - calendar: <#calendar description#>
-    ///   - span: <#span description#>
-    ///   - completion: <#completion description#>
+    ///   - title: event title
+    ///   - startDate: event startDate
+    ///   - endDate: event endDate
+    ///   - calendar: event calendar
+    ///   - span: event span
+    ///   - completion: event completion handler that returns an event
     func createEvent(title: String, startDate: Date, endDate: Date?, calendar: EKCalendar, span: EKSpan = .thisEvent, completion: EventCompletion? = nil) {
         let event = EKEvent(eventStore: self)
         event.title = title
@@ -41,11 +41,11 @@ extension EKEventStore {
         }
     }
 
-    /// <#Description#>
+    /// Delete event
     /// - Parameters:
-    ///   - identifier: <#identifier description#>
-    ///   - span: <#span description#>
-    ///   - completion: <#completion description#>
+    ///   - identifier: event identifier
+    ///   - span: event span
+    ///   - completion: event completion handler that returns an event
     func deleteEvent(identifier: String, span: EKSpan = .thisEvent, completion: VoidHandler? = nil) {
         guard let event = fetchEvent(identifier: identifier) else { return }
 
@@ -64,9 +64,9 @@ extension EKEventStore {
 
     // MARK: - Fetch
 
-    /// <#Description#>
-    /// - Returns: <#description#>
-    /// - Parameter name: <#name description#>
+    /// Calendar for current AppName
+    /// - Returns: App calendar
+    /// - Parameter name: app name
     func calendarForApp(with name: String = AppInfo.appName) -> EKCalendar {
         let calendars = self.calendars(for: .event)
 
@@ -82,9 +82,9 @@ extension EKEventStore {
         }
     }
 
-    /// <#Description#>
-    /// - Parameter identifier: <#identifier description#>
-    /// - Returns: <#description#>
+    /// Fetch an EKEvent instance with given identifier
+    /// - Parameter identifier: event identifier
+    /// - Returns: an EKEvent instance with given identifier
     func fetchEvent(identifier: String) -> EKEvent? {
         event(withIdentifier: identifier)
     }
