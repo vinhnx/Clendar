@@ -210,7 +210,7 @@ final class SettingsViewController: FormViewController {
         // Quick Event
         builder += SectionHeaderTitleFormItem().title("Quick Event")
         builder += quickEventMode
-        builder += SectionFooterTitleFormItem().title("You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
+        builder += SectionFooterTitleFormItem().title("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
 
         // Info
         builder += SectionHeaderTitleFormItem().title("App info")
