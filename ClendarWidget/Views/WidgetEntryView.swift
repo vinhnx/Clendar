@@ -59,7 +59,10 @@ struct MediumCalendarWidgetView: View {
         HStack {
             SmallCalendarWidgetView(entry: entry).padding(20)
             DividerView()
-            EventsListWidgetView(entry: entry).padding(10)
+            EventsListWidgetView(
+                entry: entry,
+                minimizeContents: true
+            ).padding(10)
         }
     }
 }
@@ -108,6 +111,7 @@ struct TodayOverviewWidgetView: View {
 
 struct EventsListWidgetView: View {
     let entry: WidgetEntry
+    var minimizeContents: Bool = false
 
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 10) {
@@ -117,7 +121,8 @@ struct EventsListWidgetView: View {
                     .font(.system(size: 13, weight: .bold, design: .rounded))
                     .foregroundColor(Color(.moianesB))
             ) {
-                ForEach(entry.events, id: \.self) { (event) in
+                let events = entry.events.prefix(minimizeContents ? 3 : 6)
+                ForEach(events, id: \.self) { (event) in
                     WidgetEventRow(event: event)
                 }
             }
