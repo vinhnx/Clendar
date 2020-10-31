@@ -80,7 +80,7 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        requestNotifcation()
+//        requestNotifcation()
         addGestures()
         addObservers()
         selectToday()
@@ -179,11 +179,11 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-    private func requestNotifcation() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
-            if let error = error { logError(error) }
-        }
-    }
+//    private func requestNotifcation() {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
+//            if let error = error { logError(error) }
+//        }
+//    }
 
     // MARK: - Actions
 

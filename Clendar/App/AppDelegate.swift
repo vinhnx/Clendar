@@ -14,7 +14,9 @@ import UserNotifications
 
 /*
  TODO:
- + IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
+ + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
+ + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
+ + refactor with https://github.com/devxoul/Then
  + local notification << IMPORTANT
  + future: reminders
  + onboarding
@@ -41,7 +43,6 @@ import UserNotifications
  + automation (try github action, fastlane, ci-cd)
  ==
  DONE:
- + [done] badge app style
  + [done] move dependencies from Cocoapod to SPM as much as possible
  + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + [done] show list of events of day
