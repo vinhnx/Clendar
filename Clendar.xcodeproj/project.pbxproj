@@ -16,7 +16,7 @@
 		A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */; };
 		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* ClendarWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* ClendarWidgetEntry.swift */; };
-		A3064D4C254CF1BA00C7F228 /* ClendarWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimeline.swift */; };
+		A3064D4C254CF1BA00C7F228 /* ClendarWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimelineProvider.swift */; };
 		A30A83E22259934400BF1294 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DaySupplementaryView.swift */; };
 		A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
 		A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
@@ -70,6 +70,7 @@
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
 		A3819A15254859CC00C71D41 /* CalendarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A14254859CB00C71D41 /* CalendarConfiguration.swift */; };
 		A3880A982544293300EA69AE /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3880A972544293200EA69AE /* CVCalendarDayView+Extensions.swift */; };
+		A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4D85254D6F7300B35F98 /* SwiftDate */; };
 		A3A48A322548901400185CAB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A48A312548901200185CAB /* Menu.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */; };
@@ -155,7 +156,7 @@
 		A3064D24254CEF5800C7F228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClendarWidgetExtension.entitlements; sourceTree = "<group>"; };
 		A3064D46254CF15500C7F228 /* ClendarWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetEntry.swift; sourceTree = "<group>"; };
-		A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetTimeline.swift; sourceTree = "<group>"; };
+		A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetTimelineProvider.swift; sourceTree = "<group>"; };
 		A30A83E12259934400BF1294 /* DaySupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySupplementaryView.swift; sourceTree = "<group>"; };
 		A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		A30E41332541FA5E009AAC32 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
@@ -237,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
 				A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */,
 				A3064D1B254CEF5200C7F228 /* WidgetKit.framework in Frameworks */,
 			);
@@ -341,7 +343,7 @@
 			children = (
 				A3064D1F254CEF5200C7F228 /* ClendarWidget.swift */,
 				A3064D46254CF15500C7F228 /* ClendarWidgetEntry.swift */,
-				A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimeline.swift */,
+				A3064D4B254CF1BA00C7F228 /* ClendarWidgetTimelineProvider.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -650,6 +652,9 @@
 			dependencies = (
 			);
 			name = ClendarWidgetExtension;
+			packageProductDependencies = (
+				A38A4D85254D6F7300B35F98 /* SwiftDate */,
+			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -953,7 +958,7 @@
 				A34211B4254CFF2B008D9B8E /* Utilities.swift in Sources */,
 				A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
 				A34211B8254D025C008D9B8E /* UIFont+Themes.swift in Sources */,
-				A3064D4C254CF1BA00C7F228 /* ClendarWidgetTimeline.swift in Sources */,
+				A3064D4C254CF1BA00C7F228 /* ClendarWidgetTimelineProvider.swift in Sources */,
 				A3064D20254CEF5200C7F228 /* ClendarWidget.swift in Sources */,
 				A34211B0254CFE72008D9B8E /* UIColor+Themes.swift in Sources */,
 			);
@@ -1491,6 +1496,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A342115C254CF600008D9B8E /* XCRemoteSwiftPackageReference "EasyClosure" */;
 			productName = EasyClosure;
+		};
+		A38A4D85254D6F7300B35F98 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 		A3BA42F5253F3AE00007DDFB /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
