@@ -14,32 +14,25 @@ import UserNotifications
 
 /*
  TODO:
+ + force touch shortcut from homescreen
+ + haptic feedback
+ + [!] IAP  => make more money
+ + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
  + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
- + refactor with https://github.com/devxoul/Then
  + local notification << IMPORTANT
- + future: reminders
+ + [future] future: reminders/tasks
  + onboarding
  + rating prompt
  + app icon
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
- + force touch shortcut from homescreen
- + gan admob google ads earn money ~1-2$ day or IAP?
  + settings:
     > [?] hightlight weekends (sat and sunday)
     > ???? not sure how to reload CVconfiguration?] start of week
     > ??? Everything under CVCalendar configs
  + lunar converter (+)
  + lunar event (+)
- + [optional] build macOS app, non currently for am lich
-
- + IAP  => make more money
- + haptic
  + duong lich <-> am lich
- + iPad app
  + watch app (?)
- + mac app (?)
- + write tests (?)
- + automation (try github action, fastlane, ci-cd)
  ==
  DONE:
  + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
@@ -47,6 +40,7 @@ import UserNotifications
             > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec
             > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec#gistcomment-3354849
             > https://gist.github.com/vinhnx/6dec7399d4b980d73166cb2e42b2a6c2
+ + [done] iPad app
  + [done] move dependencies from Cocoapod to SPM as much as possible
  + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + [done] show list of events of day
@@ -62,7 +56,7 @@ import UserNotifications
  + [done] selectable calendar to shown EKCalendarChooser
  */
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
