@@ -22,7 +22,7 @@ class EventListItemCell: UICollectionViewCell {
         init(event: Event? = nil) {
             guard let event = event?.event else { return }
             message = event.title
-            title = event.displayText
+            title = event.displayText()
             titleAndMessage = "[\(title)] \(message)"
             calendarColor = UIColor(cgColor: event.calendar.cgColor)
             dateDisplay = event.startDate?.toDateString ?? ""

@@ -11,9 +11,13 @@ import EventKit
 
 extension EKEvent {
 
-    var displayText: String {
+    func displayText(startDateOnly: Bool = false) -> String {
         if isAllDay {
             return "All day"
+        }
+        else if startDateOnly {
+            let startDateString = startDate.toHourAndMinuteString
+            return startDateString
         }
         else {
             let startDateString = startDate.toHourAndMinuteString

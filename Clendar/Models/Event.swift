@@ -9,7 +9,9 @@
 import Foundation
 import EventKit
 
-class Event: Hashable {
+extension EKEvent: Identifiable {}
+
+class Event: Hashable, Identifiable {
     var id:  String?
 
     var event: EKEvent? {
