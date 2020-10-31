@@ -7,44 +7,68 @@
 //
 
 import SwiftUI
+import SwiftDate
+
+struct PlaceholderView: View {
+    var body: some View {
+        ClendarWidgetEntryView(entry: ClendarWidgetEntry(date: Date()))
+    }
+}
 
 struct ClendarWidgetEntryView: View {
+    @Environment(\.widgetFamily) var family
+
     let entry: ClendarWidgetEntry
 
+    @ViewBuilder
     var body: some View {
-        ZStack {
-            VStack {
-                Text(entry.date.toMonthString.uppercased())
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundColor(.gray)
-                Text(entry.date.toDayString)
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(.moianesD))
-                Text(entry.date.toDateString)
-                    .font(.system(size: 45, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
+        switch family {
+        case .systemSmall:
+            ZStack {
+                VStack {
+                    Text(entry.date.toMonthString.uppercased())
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(.gray)
+                    Text(entry.date.toDayString)
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
+                        .foregroundColor(Color(.moianesD))
+                    Text(entry.date.toDateString)
+                        .font(.system(size: 45, weight: .bold, design: .rounded))
+                        .foregroundColor(.white)
+                }
             }
+            .edgesIgnoringSafeArea(.all)
+        default:
+            ZStack {
+                HStack {
+                    VStack {
+                        Text(entry.date.toMonthString.uppercased())
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(.gray)
+                        Text(entry.date.toDayString)
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .foregroundColor(Color(.moianesD))
+                        Text(entry.date.toDateString)
+                            .font(.system(size: 45, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                    }.padding(20)
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
 extension Date {
     var toDateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
-        return dateFormatter.string(from: self)
+        toString(.custom("dd"))
     }
 
     var toDayString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: self)
+        toString(.custom("EEEE"))
     }
 
     var toMonthString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM"
-        return dateFormatter.string(from: self)
+        toString(.custom("MMMM"))
     }
 }

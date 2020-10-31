@@ -9,7 +9,7 @@
 import SwiftUI
 import WidgetKit
 
-struct ClendarWidgetTimeline: TimelineProvider {
+struct ClendarWidgetTimelineProvider: TimelineProvider {
     typealias Entry = ClendarWidgetEntry
 
     func getSnapshot(in context: Context, completion: @escaping (ClendarWidgetEntry) -> Void) {

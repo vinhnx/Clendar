@@ -16,7 +16,7 @@ struct ClendarWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: kind,
-            provider: ClendarWidgetTimeline()
+            provider: ClendarWidgetTimelineProvider()
         ) { (entry) in
             ClendarWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
