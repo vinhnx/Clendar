@@ -56,23 +56,23 @@ extension UIColor {
     static let appTeal = UIColor.systemTeal
 
     static var backgroundColor: UIColor {
-        UIColor { _ in isDarkMode ? .lavixA : .hueC }
+        UIColor { color in color.userInterfaceStyle == .dark ? .lavixA : .hueC }
     }
 
     static var inversedBackgroundColor: UIColor {
-        UIColor { _ in isDarkMode ? .hueC : .lavixA }
+        UIColor { color in color.userInterfaceStyle == .dark ? .hueC : .lavixA }
     }
 
     static var primaryColor: UIColor {
-        UIColor { _ in isDarkMode ? .hueA : .hueD }
+        UIColor { color in color.userInterfaceStyle == .dark ? .hueA : .hueD }
     }
 
     static var secondaryColor: UIColor {
-        UIColor { _ in isDarkMode ? .hueD : .hueA }
+        UIColor { color in color.userInterfaceStyle == .dark ? .hueD : .hueA }
     }
 
     static var buttonTintColor: UIColor {
-        UIColor { _ in isDarkMode ? .hueB : .hueC }
+        UIColor { color in color.userInterfaceStyle == .dark ? .hueB : .hueC }
     }
 
     static var detructiveColor: UIColor { .moianesD }
