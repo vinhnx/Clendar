@@ -20,7 +20,7 @@ struct ClendarWidget: Widget {
         ) { (entry) in
             WidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(.lavixA))
+                .background(Color(.backgroundColor))
         }
         .configurationDisplayName("Clendar Widget")
         .description("Check calendar at a glance")

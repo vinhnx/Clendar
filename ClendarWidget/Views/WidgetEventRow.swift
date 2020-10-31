@@ -29,7 +29,7 @@ struct WidgetEventRowLabel: View {
         let titleAndMessage = "[\(title)] \(message)"
         Text(titleAndMessage)
             .font(.system(size: 12, weight: .semibold, design: .rounded))
-            .foregroundColor(.white)
+            .foregroundColor(Color(.gray))
             .lineLimit(2)
     }
 }

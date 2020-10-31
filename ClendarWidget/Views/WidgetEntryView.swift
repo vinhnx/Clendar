@@ -6,6 +6,7 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
+import WidgetKit
 import SwiftUI
 import SwiftDate
 
@@ -47,8 +48,8 @@ struct SmallCalendarWidgetView: View {
                 .foregroundColor(Color(.moianesD))
             Text(entry.date.toDateString)
                 .font(.system(size: 45, weight: .bold, design: .rounded))
-                .foregroundColor(.white)
-        }
+                .foregroundColor(Color(.appDark))
+        }.padding(.all)
     }
 }
 
@@ -57,12 +58,9 @@ struct MediumCalendarWidgetView: View {
 
     var body: some View {
         HStack {
-            SmallCalendarWidgetView(entry: entry).padding(.all)
+            SmallCalendarWidgetView(entry: entry)
             DividerView()
-            EventsListWidgetView(
-                entry: entry,
-                minimizeContents: true
-            ).padding(.all)
+            EventsListWidgetView(entry: entry, minimizeContents: true)
         }
     }
 }
@@ -72,17 +70,12 @@ struct LargeCalendarWidgetView: View {
 
     var body: some View {
         HStack {
-            SmallCalendarWidgetView(entry: entry).padding(.all)
-
+            SmallCalendarWidgetView(entry: entry)
             DividerView()
-
             VStack {
-                TodayOverviewWidgetView(entry: entry).padding(.all)
-
+                TodayOverviewWidgetView(entry: entry)
                 if entry.events.isEmpty == false {
-                    DividerView()
-                    EventsListWidgetView(entry: entry).padding(.all)
-                    Spacer()
+                    EventsListWidgetView(entry: entry)
                 }
             }
         }
@@ -99,14 +92,14 @@ struct TodayOverviewWidgetView: View {
             let events = entry.events
             let text = events.isEmpty
                 ? "🎉 No more events today,\nenjoy your day!\n"
-                : "Today has \(events.count) events"
+                : "\(events.count) events"
 
             Text(text)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .foregroundColor(.gray)
-                .multilineTextAlignment(.leading)
+                .multilineTextAlignment(.center)
                 .minimumScaleFactor(0.8)
-        }
+        }.padding(.all)
     }
 }
 
@@ -127,10 +120,28 @@ struct EventsListWidgetView: View {
                     WidgetEventRow(event: event)
                 }
             }
-        }
+        }.padding(.all)
     }
 }
 
 struct DividerView: View {
     var body: some View { Divider().background(Color.black) }
+}
+
+// MARK: - Preview
+
+struct WidgetEntryView_Previews: PreviewProvider {
+    static var previews: some View {
+
+        WidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .environment(\.colorScheme, .dark)
+
+        WidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .redacted(reason: .placeholder)
+
+    }
 }
