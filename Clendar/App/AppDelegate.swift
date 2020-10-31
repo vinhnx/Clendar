@@ -14,12 +14,6 @@ import UserNotifications
 
 /*
  TODO:
-
- + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
-        > use SwiftUI Calendar to diplay calendar view
-            > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec
-            > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec#gistcomment-3354849
-            > https://gist.github.com/vinhnx/6dec7399d4b980d73166cb2e42b2a6c2
  + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + refactor with https://github.com/devxoul/Then
  + local notification << IMPORTANT
@@ -48,6 +42,11 @@ import UserNotifications
  + automation (try github action, fastlane, ci-cd)
  ==
  DONE:
+ + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
+        > use SwiftUI Calendar to diplay calendar view
+            > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec
+            > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec#gistcomment-3354849
+            > https://gist.github.com/vinhnx/6dec7399d4b980d73166cb2e42b2a6c2
  + [done] move dependencies from Cocoapod to SPM as much as possible
  + [done] form/settings builder: https://github.com/neoneye/SwiftyFORM
  + [done] show list of events of day

@@ -40,4 +40,7 @@ struct SettingsManager {
     @UserDefault("badgeSettings", defaultValue: BadgeSettings.none.rawValue)
     static var badgeSettings: String
 
+    @UserDefault("defaultEventDuration", defaultValue: 60)
+    static var defaultEventDuration: Int
+
 }

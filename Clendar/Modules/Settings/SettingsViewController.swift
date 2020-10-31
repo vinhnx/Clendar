@@ -125,6 +125,20 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var defaultEventDuration: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("Default event duration")
+        instance.append(DefaultEventDurations.map { minute in "\(minute) minutes" })
+        instance.selectOptionWithTitle("\(SettingsManager.defaultEventDuration) minutes")
+        instance.valueDidChange = { selected in
+            guard let title = selected?.title else { return }
+            guard let duration = title.parseInt() else { return }
+            SettingsManager.defaultEventDuration = duration
+            NotificationCenter.default.post(name: .didChangeDefaultEventDurationPreferences, object: nil)
+        }
+        return instance
+    }()
+
 //    lazy var appIconBadge: OptionPickerFormItem = {
 //        let instance = OptionPickerFormItem()
 //        instance.title("App icon badge")
@@ -196,19 +210,18 @@ final class SettingsViewController: FormViewController {
         // UI
         builder += SectionHeaderTitleFormItem().title("User Interface")
         builder += themes
-//        builder += appIconBadge
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title("Calendar View")
-        builder += showDaysOut
-        builder += supplementaryViewMode
         builder += calendarMode
-        
+        builder += showDaysOut
         builder += shouldAutoSelectDayOnCalendarChange
+        builder += supplementaryViewMode
         builder += SectionFooterTitleFormItem().title("Auto-select first day of month/week when calendar changes")
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title("Quick Event")
+        builder += defaultEventDuration
         builder += quickEventMode
         builder += SectionFooterTitleFormItem().title("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
 

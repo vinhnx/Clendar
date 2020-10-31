@@ -9,20 +9,6 @@
 import Foundation
 import UIKit
 
-enum Theme: Int, CaseIterable {
-    case dark
-    case light
-
-    var text: String {
-        switch self {
-        case .dark: return "Dark"
-        case .light: return "Light"
-        }
-    }
-
-    static var titles: [String] = Self.allCases.map { $0.text }
-}
-
 extension UIColor {
     convenience init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)

@@ -24,7 +24,6 @@
 		A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A30F561C2549AA4500E96C0E /* CVCalendar */; };
 		A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */; };
-		A30F563C2549B35600E96C0E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F563B2549B35600E96C0E /* CalendarViewModel.swift */; };
 		A30F564C254AEA7700E96C0E /* CalendarsChooserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F564B254AEA7700E96C0E /* CalendarsChooserNavigationController.swift */; };
 		A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A31202C2254D9E2F009ADB27 /* WidgetPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C1254D9E2F009ADB27 /* WidgetPlaceholderView.swift */; };
@@ -58,6 +57,7 @@
 		A34211B0254CFE72008D9B8E /* UIColor+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* UIColor+Themes.swift */; };
 		A34211B4254CFF2B008D9B8E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A34211B8254D025C008D9B8E /* UIFont+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* UIFont+Themes.swift */; };
+		A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
 		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A37B3B6D22506C2100D0488B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6C22506C2100D0488B /* TableView.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
@@ -179,7 +179,6 @@
 		A30E41332541FA5E009AAC32 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		A30E41372541FB2A009AAC32 /* AppEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEvents.swift; sourceTree = "<group>"; };
 		A30E48222541F4EF00B4B027 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		A30F563B2549B35600E96C0E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		A30F564B254AEA7700E96C0E /* CalendarsChooserNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsChooserNavigationController.swift; sourceTree = "<group>"; };
 		A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		A31202C1254D9E2F009ADB27 /* WidgetPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPlaceholderView.swift; sourceTree = "<group>"; };
@@ -216,6 +215,7 @@
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
 		A342117A254CF7E7008D9B8E /* WidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryView.swift; sourceTree = "<group>"; };
+		A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConstans.swift; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A37B3B6C22506C2100D0488B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
-				A30F563B2549B35600E96C0E /* CalendarViewModel.swift */,
+				A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1024,6 +1024,7 @@
 				A3F2597622477012009A50B6 /* TextField.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
+				A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
 				A3A48A322548901400185CAB /* Menu.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
@@ -1041,7 +1042,6 @@
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
-				A30F563C2549B35600E96C0E /* CalendarViewModel.swift in Sources */,
 				A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */,
 				A33F80FD22468A56009CC46A /* CalendarViewController.swift in Sources */,
 				A33DE4992541C50F0064D0AD /* UIColor+Themes.swift in Sources */,

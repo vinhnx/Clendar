@@ -25,3 +25,10 @@ extension Optional where Wrapped == String {
         }
     }
 }
+
+extension String {
+    // refernce: https://stackoverflow.com/questions/30342744/swift-how-to-get-integer-from-string-and-convert-it-into-integer
+    func parseInt() -> Int? {
+        Int(components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
+    }
+}

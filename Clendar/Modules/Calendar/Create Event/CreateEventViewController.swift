@@ -11,8 +11,6 @@ import EventKit
 
 // NOTE: using EventKitUI's native controller to simplify for now
 
-// TODO: check bug when create "hello" event (start date should not == end date) => create duration settings
-
 enum CreateEventType {
     case create
     case edit
@@ -172,6 +170,8 @@ class CreateEventViewController: BaseViewController {
 
             if let endDate = result.endDate {
                 self.endDatePicker.date = endDate
+            } else {
+                self.endDatePicker.date = result.startDate.offsetWithDefaultDuration
             }
         }
     }
@@ -183,6 +183,8 @@ class CreateEventViewController: BaseViewController {
 
         if let endDate = viewModel.endDate {
             endDatePicker.date = endDate
+        } else {
+            endDatePicker.date = viewModel.startDate.offsetWithDefaultDuration
         }
     }
 
