@@ -57,12 +57,12 @@ struct MediumCalendarWidgetView: View {
 
     var body: some View {
         HStack {
-            SmallCalendarWidgetView(entry: entry).padding(20)
+            SmallCalendarWidgetView(entry: entry).padding(.all)
             DividerView()
             EventsListWidgetView(
                 entry: entry,
                 minimizeContents: true
-            ).padding(10)
+            ).padding(.all)
         }
     }
 }
@@ -72,16 +72,16 @@ struct LargeCalendarWidgetView: View {
 
     var body: some View {
         HStack {
-            SmallCalendarWidgetView(entry: entry).padding(20)
+            SmallCalendarWidgetView(entry: entry).padding(.all)
 
             DividerView()
 
             VStack {
-                TodayOverviewWidgetView(entry: entry).padding(20)
+                TodayOverviewWidgetView(entry: entry).padding(.all)
 
                 if entry.events.isEmpty == false {
                     DividerView()
-                    EventsListWidgetView(entry: entry).padding(10)
+                    EventsListWidgetView(entry: entry).padding(.all)
                     Spacer()
                 }
             }
@@ -105,6 +105,7 @@ struct TodayOverviewWidgetView: View {
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.leading)
+                .minimumScaleFactor(0.8)
         }
     }
 }
