@@ -10,7 +10,6 @@ import UIKit
 import CVCalendar
 import EventKit
 import EventKitUI
-import EasyClosure
 
 final class CalendarViewController: BaseViewController {
 
@@ -80,7 +79,6 @@ final class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        requestNotifcation()
         addGestures()
         addObservers()
         selectToday()
@@ -100,16 +98,9 @@ final class CalendarViewController: BaseViewController {
             self.monthLabel.text = date.convertedDate()?.monthName(.default)
         }
 
-        settingsButton.on.tap { [weak self] in
-            guard let self = self else { return }
-            let settings = SettingsNavigationController()
-            self.present(settings, animated: true)
-        }
+        settingsButton.addTarget(self, action: #selector(onTapSettingsButton), for: .touchUpInside)
 
-        addEventButton.on.tap { [weak self] in
-            guard let self = self else { return }
-            self.handleCreateEvent()
-        }
+        addEventButton.addTarget(self, action: #selector(onTapAddEventButton), for: .touchUpInside)
     }
 
     // MARK: - Private
@@ -166,7 +157,7 @@ final class CalendarViewController: BaseViewController {
         eventList.fetchEvents(for: date)
     }
 
-    private func handleCreateEvent() {
+    private func createEvent() {
         if SettingsManager.useExperimentalCreateEventMode {
             guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
             self.present(createEventViewController, animated: true, completion: nil)
@@ -179,17 +170,21 @@ final class CalendarViewController: BaseViewController {
         }
     }
 
-//    private func requestNotifcation() {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (_, error) in
-//            if let error = error { logError(error) }
-//        }
-//    }
-
     // MARK: - Actions
 
     @objc private func didTapMonthLabel() {
         selectToday()
     }
+
+    @objc private func onTapSettingsButton() {
+        let settings = SettingsNavigationController()
+        present(settings, animated: true)
+    }
+
+    @objc private func onTapAddEventButton() {
+        createEvent()
+    }
+
 }
 
 extension CalendarViewController: EKEventEditViewDelegate {

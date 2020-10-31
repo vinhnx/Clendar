@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EasyClosure
 import EventKit
 
 // NOTE: using EventKitUI's native controller to simplify for now
@@ -80,20 +79,14 @@ class CreateEventViewController: BaseViewController {
     @IBOutlet private var closeButton: UIButton! {
         didSet {
             closeButton.tintColor = .primaryColor
-            closeButton.on.tap { [weak self] in
-                guard let self = self else { return }
-                self.dismiss(animated: true)
-            }
+            closeButton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
         }
     }
 
     @IBOutlet private var saveButton: UIButton! {
         didSet {
             saveButton.tintColor = .primaryColor
-            saveButton.on.tap { [weak self] in
-                guard let self = self else { return }
-                self.createNewEvent()
-            }
+            saveButton.addTarget(self, action: #selector(onCreateButtonTap), for: .touchUpInside)
         }
     }
 
@@ -139,8 +132,8 @@ class CreateEventViewController: BaseViewController {
     // MARK: - Private
 
     private func createNewEvent(_ override: EventOverride? = nil) {
-        guard let input = inputTextField.text else { return dismiss() }
-        guard input.isEmpty == false else { return dismiss() }
+        guard let input = inputTextField.text else { return dismissController() }
+        guard input.isEmpty == false else { return dismissController() }
         guard let result = NaturalInputParser().parse(input) else { return }
 
         let override = EventOverride(
@@ -156,7 +149,7 @@ class CreateEventViewController: BaseViewController {
             case .success(let event):
                 self.inputTextField.text = ""
                 self.didUpdateEvent?(event)
-                self.dismiss()
+                self.dismissController()
 
             case .failure(let error): AlertManager.showWithError(error)
 
@@ -164,7 +157,7 @@ class CreateEventViewController: BaseViewController {
         }
     }
 
-    private func dismiss() {
+    @objc private func dismissController() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
@@ -205,11 +198,15 @@ class CreateEventViewController: BaseViewController {
             EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
-                case .success: self.dismiss()
+                case .success: self.dismissController()
                 case .failure(let error): AlertManager.showWithError(error)
                 }
             }
         })
+    }
+
+    @objc private func onCreateButtonTap() {
+        createNewEvent()
     }
 
 }
