@@ -55,7 +55,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func dayOfWeekTextUppercase() -> Bool { false }
 
-    func weekdaySymbolType() -> WeekdaySymbolType { .veryShort }
+    func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
     func dayOfWeekTextColor() -> UIColor { .nativeLightGray }
 

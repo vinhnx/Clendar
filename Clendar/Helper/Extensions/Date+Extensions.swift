@@ -37,15 +37,23 @@ extension Date {
     }
 
     var toHourAndMinuteString: String {
-        self.toString(.custom("HH:mm"))
+        toString(.custom("HH:mm"))
     }
 
     var toDateString: String {
-        self.toString(.custom("dd"))
+        toString(.custom("dd"))
+    }
+
+    var toDayString: String {
+        toString(.custom("E"))
+    }
+
+    var toMonthString: String {
+        toString(.custom("MMMM"))
     }
 
     var toFullDateString: String {
-        self.toString(.custom("EEEE, MMM d, yyyy"))
+        toString(.custom("EEEE, MMM d, yyyy"))
     }
 
     var toChineseDate: Date {
