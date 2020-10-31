@@ -14,7 +14,7 @@
 		A3064D23254CEF5800C7F228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3064D22254CEF5800C7F228 /* Assets.xcassets */; };
 		A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */; };
 		A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */; };
-		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A3064D4C254CF1BA00C7F228 /* WidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* WidgetTimelineProvider.swift */; };
 		A30A83E22259934400BF1294 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A83E12259934400BF1294 /* DaySupplementaryView.swift */; };
@@ -1088,6 +1088,7 @@
 /* Begin PBXTargetDependency section */
 		A3064D28254CEF5800C7F228 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A3064D18254CEF5200C7F228 /* ClendarWidgetExtension */;
 			targetProxy = A3064D27254CEF5800C7F228 /* PBXContainerItemProxy */;
 		};
@@ -1133,7 +1134,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1157,7 +1158,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1292,16 +1293,15 @@
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				INFOPLIST_FILE = Clendar/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1316,16 +1316,15 @@
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				INFOPLIST_FILE = Clendar/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
