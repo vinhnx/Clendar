@@ -94,7 +94,7 @@ struct TodayOverviewWidgetView: View {
             let events = entry.events
             let text = events.isEmpty
                 ? "🎉 No more events today,\nenjoy your day!\n"
-                : "\(events.count) events"
+                : "Up next:"
 
             Text(text)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
