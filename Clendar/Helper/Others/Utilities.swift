@@ -7,7 +7,29 @@
 //
 
 import UIKit
+import Haptica
+
+// MARK: - UI
 
 var isDarkMode: Bool {
     UITraitCollection.current.userInterfaceStyle == .dark
 }
+
+// MARK: - Haptic
+
+func genLightHaptic() {
+    guard SettingsManager.enableHapticFeedback else { return }
+    Haptic.impact(.light).generate()
+}
+
+func genErrorHaptic() {
+    guard SettingsManager.enableHapticFeedback else { return }
+    Haptic.notification(.error).generate()
+}
+
+func genSuccessHaptic() {
+    guard SettingsManager.enableHapticFeedback else { return }
+    Haptic.notification(.success).generate()
+}
+
+// MARK: - Others

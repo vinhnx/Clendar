@@ -46,6 +46,7 @@ final class AlertManager {
     ///   - okAction: the completion handler to execute when user tap on "OK"
     ///   - onCancel: the completion handler to execute when user tap on "Cancel"
     static func showActionSheet(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidBlock? = nil, deleteAction: VoidBlock? = nil, onCancel: VoidBlock? = nil) {
+        genLightHaptic()
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)

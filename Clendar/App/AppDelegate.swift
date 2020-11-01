@@ -16,7 +16,6 @@ import UserNotifications
  TODO:
  + for widget https://github.com/pawello2222/WidgetExamples
  + force touch shortcut from homescreen
- + haptic feedback
  + [!] IAP  => make more money
  + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
  + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
@@ -36,6 +35,7 @@ import UserNotifications
  + watch app (?)
  ==
  DONE:
+ + [done] haptic feedback
  + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
         > use SwiftUI Calendar to diplay calendar view
             > https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec

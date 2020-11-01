@@ -8,15 +8,6 @@
 
 import Foundation
 
-enum BadgeSettings: String, CaseIterable {
-    case none = "None"
-    case date = "Date"
-    case month = "Month"
-    
-    static var titles: [String] { Self.allCases.map { $0.rawValue } }
-    static var defaultValue: Self { .none }
-}
-
 struct SettingsManager {
 
     @UserDefault("darkModeActivated", defaultValue: isDarkMode)
@@ -42,5 +33,8 @@ struct SettingsManager {
 
     @UserDefault("defaultEventDuration", defaultValue: 60)
     static var defaultEventDuration: Int
+
+    @UserDefault("enableHapticFeedback", defaultValue: true)
+    static var enableHapticFeedback: Bool
 
 }

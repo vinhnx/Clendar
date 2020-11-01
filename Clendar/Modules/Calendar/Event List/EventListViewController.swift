@@ -111,6 +111,7 @@ final class EventListViewController: BaseViewController {
 
 extension EventListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        genLightHaptic()
         guard let event = datasource.itemIdentifier(for: indexPath)?.event else { return }
         let eventViewer = EventViewerNavigationController(event: event, delegate: self)
         present(eventViewer, animated: true)

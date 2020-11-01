@@ -77,7 +77,7 @@ class CreateEventViewController: BaseViewController {
     @IBOutlet private var closeButton: UIButton! {
         didSet {
             closeButton.tintColor = .primaryColor
-            closeButton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
+            closeButton.addTarget(self, action: #selector(dimissModal), for: .touchUpInside)
         }
     }
 
@@ -130,8 +130,8 @@ class CreateEventViewController: BaseViewController {
     // MARK: - Private
 
     private func createNewEvent(_ override: EventOverride? = nil) {
-        guard let input = inputTextField.text else { return dismissController() }
-        guard input.isEmpty == false else { return dismissController() }
+        guard let input = inputTextField.text else { return dimissModal() }
+        guard input.isEmpty == false else { return dimissModal() }
         guard let result = NaturalInputParser().parse(input) else { return }
 
         let override = EventOverride(
@@ -145,19 +145,17 @@ class CreateEventViewController: BaseViewController {
 
             switch result {
             case .success(let event):
+                genSuccessHaptic()
                 self.inputTextField.text = ""
                 self.didUpdateEvent?(event)
-                self.dismissController()
+                self.dimissModal()
 
-            case .failure(let error): AlertManager.showWithError(error)
+            case .failure(let error):
+                genErrorHaptic()
+                AlertManager.showWithError(error)
 
             }
         }
-    }
-
-    @objc private func dismissController() {
-        view.endEditing(true)
-        dismiss(animated: true, completion: nil)
     }
 
     private func parseDate(_ substring: String) {
@@ -200,8 +198,11 @@ class CreateEventViewController: BaseViewController {
             EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
-                case .success: self.dismissController()
-                case .failure(let error): AlertManager.showWithError(error)
+                case .success:
+                    genSuccessHaptic()
+                    self.dimissModal()
+                case .failure(let error):
+                    AlertManager.showWithError(error)
                 }
             }
         })

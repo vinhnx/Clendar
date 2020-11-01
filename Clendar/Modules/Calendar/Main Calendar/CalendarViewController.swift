@@ -143,6 +143,7 @@ final class CalendarViewController: BaseViewController {
     }
 
     private func selectToday() {
+        genLightHaptic()
         calendarView.toggleCurrentDayView()
         eventList.fetchEvents()
     }
@@ -177,6 +178,7 @@ final class CalendarViewController: BaseViewController {
     }
 
     @objc private func onTapSettingsButton() {
+        genLightHaptic()
         let settings = SettingsNavigationController()
         present(settings, animated: true)
     }
@@ -189,7 +191,7 @@ final class CalendarViewController: BaseViewController {
 
 extension CalendarViewController: EKEventEditViewDelegate {
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-        controller.dismiss(animated: true)
+        dimissModal()
         guard let event = controller.event else { return }
         guard let date = event.startDate else { return }
         fetchEvents(date)

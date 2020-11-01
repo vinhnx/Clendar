@@ -88,6 +88,12 @@
 		A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8114224742F7009CC46A /* WorkItem.swift */; };
 		A38A4DD6254D755F00B35F98 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4DD5254D755F00B35F98 /* Logging */; };
 		A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
+		A38EE825254E611600045C12 /* CalendarHeatmap in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE824254E611600045C12 /* CalendarHeatmap */; };
+		A38EE82A254E640D00045C12 /* CalendarHeatmap in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE829254E640D00045C12 /* CalendarHeatmap */; };
+		A38EE833254EC6CA00045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE832254EC6CA00045C12 /* Haptica */; };
+		A38EE838254EC9C200045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE837254EC9C200045C12 /* Haptica */; };
+		A38EE83C254ECBAA00045C12 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
+		A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
 		A3A48A322548901400185CAB /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A48A312548901200185CAB /* Menu.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */; };
@@ -100,6 +106,8 @@
 		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
 		A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
+		A3DC1D6D254E544C00824E6A /* HeatMapCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */; };
+		A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */; };
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
 		A3DE248A2248E8A400EB3B64 /* EventStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24892248E8A400EB3B64 /* EventStore+Extensions.swift */; };
@@ -240,6 +248,8 @@
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapCalendarView.swift; sourceTree = "<group>"; };
+		A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetBundle.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24892248E8A400EB3B64 /* EventStore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventStore+Extensions.swift"; sourceTree = "<group>"; };
@@ -261,9 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A38A4DD6254D755F00B35F98 /* Logging in Frameworks */,
+				A38EE838254EC9C200045C12 /* Haptica in Frameworks */,
 				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
 				A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */,
 				A38A4D9D254D73FC00B35F98 /* CVCalendar in Frameworks */,
+				A38EE82A254E640D00045C12 /* CalendarHeatmap in Frameworks */,
 				A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */,
 				A3064D1B254CEF5200C7F228 /* WidgetKit.framework in Frameworks */,
 			);
@@ -274,9 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */,
+				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A30F561D2549AA4500E96C0E /* CVCalendar in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
+				A38EE825254E611600045C12 /* CalendarHeatmap in Frameworks */,
 				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
@@ -360,6 +374,7 @@
 		A3064D35254CF0CC00C7F228 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3DC1D51254E52E700824E6A /* Premium */,
 				A342117A254CF7E7008D9B8E /* WidgetEntryView.swift */,
 				A31202C1254D9E2F009ADB27 /* WidgetPlaceholderView.swift */,
 				A31202C6254D9E4F009ADB27 /* WidgetEventRow.swift */,
@@ -370,7 +385,8 @@
 		A3064D36254CF0D300C7F228 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				A3064D1F254CEF5200C7F228 /* ClendarWidget.swift */,
+				A3DC1D76254E54AB00824E6A /* Childs */,
+				A3DC1D75254E54A400824E6A /* Bundle */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -617,6 +633,30 @@
 			path = "Event List";
 			sourceTree = "<group>";
 		};
+		A3DC1D51254E52E700824E6A /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		A3DC1D75254E54A400824E6A /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		A3DC1D76254E54AB00824E6A /* Childs */ = {
+			isa = PBXGroup;
+			children = (
+				A3064D1F254CEF5200C7F228 /* ClendarWidget.swift */,
+			);
+			path = Childs;
+			sourceTree = "<group>";
+		};
 		A3F2597022476FD9009A50B6 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +723,8 @@
 				A38A4D85254D6F7300B35F98 /* SwiftDate */,
 				A38A4D9C254D73FC00B35F98 /* CVCalendar */,
 				A38A4DD5254D755F00B35F98 /* Logging */,
+				A38EE829254E640D00045C12 /* CalendarHeatmap */,
+				A38EE837254EC9C200045C12 /* Haptica */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -714,6 +756,8 @@
 				A3D999E52549A69F003E08E2 /* SwiftDate */,
 				A30F561C2549AA4500E96C0E /* CVCalendar */,
 				A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */,
+				A38EE824254E611600045C12 /* CalendarHeatmap */,
+				A38EE832254EC6CA00045C12 /* Haptica */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -801,6 +845,8 @@
 				A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				A30F561B2549AA4500E96C0E /* XCRemoteSwiftPackageReference "CVCalendar" */,
 				A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				A38EE823254E611600045C12 /* XCRemoteSwiftPackageReference "CalendarHeatmap" */,
+				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -982,6 +1028,7 @@
 			files = (
 				A38A4DBA254D747700B35F98 /* EventStore+Extensions.swift in Sources */,
 				A38A4DB3254D744500B35F98 /* AppEvents.swift in Sources */,
+				A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */,
 				A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* WidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
@@ -989,11 +1036,13 @@
 				A38A4DAF254D743100B35F98 /* UserDefaultsWrapper.swift in Sources */,
 				A38A4D98254D73F400B35F98 /* Constants.swift in Sources */,
 				A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */,
+				A3DC1D6D254E544C00824E6A /* HeatMapCalendarView.swift in Sources */,
 				A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */,
 				A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */,
 				A34211B4254CFF2B008D9B8E /* Utilities.swift in Sources */,
 				A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */,
 				A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
+				A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */,
 				A34211B8254D025C008D9B8E /* UIFont+Themes.swift in Sources */,
 				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
 				A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */,
@@ -1002,6 +1051,7 @@
 				A38A4D90254D73CA00B35F98 /* EventKitWrapper.swift in Sources */,
 				A3064D20254CEF5200C7F228 /* ClendarWidget.swift in Sources */,
 				A31202C7254D9E4F009ADB27 /* WidgetEventRow.swift in Sources */,
+				A38EE83C254ECBAA00045C12 /* SettingsManager.swift in Sources */,
 				A34211B0254CFE72008D9B8E /* UIColor+Themes.swift in Sources */,
 				A31202C2254D9E2F009ADB27 /* WidgetPlaceholderView.swift in Sources */,
 				A38A4DA3254D740F00B35F98 /* ClendarError.swift in Sources */,
@@ -1493,6 +1543,22 @@
 				minimumVersion = 1.8.4;
 			};
 		};
+		A38EE823254E611600045C12 /* XCRemoteSwiftPackageReference "CalendarHeatmap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Zacharysp/CalendarHeatmap";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/efremidze/Haptica";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
 		A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log";
@@ -1541,6 +1607,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		A38EE824254E611600045C12 /* CalendarHeatmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A38EE823254E611600045C12 /* XCRemoteSwiftPackageReference "CalendarHeatmap" */;
+			productName = CalendarHeatmap;
+		};
+		A38EE829254E640D00045C12 /* CalendarHeatmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A38EE823254E611600045C12 /* XCRemoteSwiftPackageReference "CalendarHeatmap" */;
+			productName = CalendarHeatmap;
+		};
+		A38EE832254EC6CA00045C12 /* Haptica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */;
+			productName = Haptica;
+		};
+		A38EE837254EC9C200045C12 /* Haptica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */;
+			productName = Haptica;
 		};
 		A3BA42F5253F3AE00007DDFB /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;

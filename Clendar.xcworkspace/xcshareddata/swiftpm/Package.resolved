@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "CalendarHeatmap",
+        "repositoryURL": "https://github.com/Zacharysp/CalendarHeatmap",
+        "state": {
+          "branch": "master",
+          "revision": "dac4e0094d32ef8f4c59fecf6ed978b7b6b8d3e3",
+          "version": null
+        }
+      },
+      {
         "package": "CVCalendar",
         "repositoryURL": "https://github.com/CVCalendar/CVCalendar",
         "state": {
           "branch": null,
           "revision": "c78d3cc52e9a1716ea243b22a0f8f5531734a6df",
           "version": "1.7.0"
+        }
+      },
+      {
+        "package": "Haptica",
+        "repositoryURL": "https://github.com/efremidze/Haptica",
+        "state": {
+          "branch": null,
+          "revision": "4084702c85102c2d17d58e42ec5a750094944864",
+          "version": "3.0.2"
         }
       },
       {

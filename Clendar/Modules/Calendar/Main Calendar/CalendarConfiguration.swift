@@ -44,6 +44,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
     func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+        genLightHaptic()
         didSelectDayView?(dayView, animationDidFinish)
     }
 

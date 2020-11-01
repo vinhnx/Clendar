@@ -64,3 +64,12 @@ var DefaultEventDurations: [Int] = [
     120,
     180
 ]
+
+enum BadgeSettings: String, CaseIterable {
+    case none = "None"
+    case date = "Date"
+    case month = "Month"
+
+    static var titles: [String] { Self.allCases.map { $0.rawValue } }
+    static var defaultValue: Self { .none }
+}

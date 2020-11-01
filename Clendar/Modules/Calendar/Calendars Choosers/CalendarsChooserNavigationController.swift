@@ -102,11 +102,11 @@ extension CalendarsChooserViewController: EKCalendarChooserDelegate {
     }
 
     func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
-        dismiss(animated: true)
+        dimissModal()
     }
 
     func calendarChooserDidCancel(_ calendarChooser: EKCalendarChooser) {
-        dismiss(animated: true)
+        dimissModal()
     }
 
 }

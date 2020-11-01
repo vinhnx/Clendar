@@ -9,7 +9,11 @@
 import SwiftUI
 import WidgetKit
 
-@main
+/*
+ Reference
+ + https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension
+ + https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
+ */
 struct ClendarWidget: Widget {
     private let kind = "ClendarWidget"
 
