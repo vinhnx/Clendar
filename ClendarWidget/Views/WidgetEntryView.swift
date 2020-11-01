@@ -122,7 +122,7 @@ struct EventsListWidgetView: View {
                     WidgetEventRow(event: event)
                 }
             }
-        }.padding(.all)
+        }.padding(10)
     }
 }
 

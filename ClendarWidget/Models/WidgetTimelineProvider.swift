@@ -29,7 +29,7 @@ struct WidgetTimelineProvider: TimelineProvider {
         // swiftlint:disable:next force_unwrapping
         let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
 
-        EventKitWrapper.shared.fetchEvents(for: currentDate) { result in
+        EventKitWrapper.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
             switch result {
             case .success(let events):
                 let clendarEvents = events.compactMap(Event.init)

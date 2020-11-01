@@ -171,6 +171,14 @@ final class EventKitWrapper {
         fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
     }
 
+    /// Fetch events for a specific day
+    /// - Parameters:
+    ///   - date: day to fetch events from
+    ///   - completion: completion handler
+    func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+        fetchEvents(startDate: startDate, endDate: startDate.endDate, completion: completion)
+    }
+
     /// Fetch events from date range
     /// - Parameters:
     ///   - startDate: start date range
