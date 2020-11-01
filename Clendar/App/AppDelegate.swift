@@ -14,6 +14,7 @@ import UserNotifications
 
 /*
  TODO:
+ + for widget https://github.com/pawello2222/WidgetExamples
  + force touch shortcut from homescreen
  + haptic feedback
  + [!] IAP  => make more money

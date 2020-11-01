@@ -98,6 +98,8 @@
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
 		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
+		A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
+		A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
 		A3DE248A2248E8A400EB3B64 /* EventStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24892248E8A400EB3B64 /* EventStore+Extensions.swift */; };
@@ -980,6 +982,7 @@
 			files = (
 				A38A4DBA254D747700B35F98 /* EventStore+Extensions.swift in Sources */,
 				A38A4DB3254D744500B35F98 /* AppEvents.swift in Sources */,
+				A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* WidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
 				A38A4DCA254D752200B35F98 /* Event.swift in Sources */,
@@ -992,6 +995,7 @@
 				A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */,
 				A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
 				A34211B8254D025C008D9B8E /* UIFont+Themes.swift in Sources */,
+				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
 				A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */,
 				A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* WidgetTimelineProvider.swift in Sources */,

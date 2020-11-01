@@ -7,6 +7,7 @@
 //
 
 #if !targetEnvironment(macCatalyst)
+
 import WidgetKit
 import SwiftUI
 import SwiftDate
@@ -126,7 +127,7 @@ struct EventsListWidgetView: View {
 }
 
 struct DividerView: View {
-    var body: some View { Divider().background(Color.black) }
+    var body: some View { Divider().background(Color(.nativeLightGray)) }
 }
 
 // MARK: - Preview
@@ -146,4 +147,5 @@ struct WidgetEntryView_Previews: PreviewProvider {
 
     }
 }
+
 #endif

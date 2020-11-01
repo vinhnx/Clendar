@@ -37,23 +37,23 @@ extension Date {
     }
 
     var toHourAndMinuteString: String {
-        toString(.custom("HH:mm"))
+        DateFormatter.format(self, template: "HH:mm")
     }
 
     var toDateString: String {
-        toString(.custom("dd"))
+        DateFormatter.format(self, template: "dd")
     }
 
     var toDayString: String {
-        toString(.custom("E"))
+        DateFormatter.format(self, template: "E")
     }
 
     var toMonthString: String {
-        toString(.custom("MMMM"))
+        DateFormatter.format(self, template: "MMMM")
     }
 
     var toFullDateString: String {
-        toString(.custom("EEEE, MMM d, yyyy"))
+        DateFormatter.format(self, template: "EEEE, MMM d, yyyy")
     }
 
     var toChineseDate: Date {
@@ -64,6 +64,14 @@ extension Date {
     var toGregorianDate: Date {
         let date = convertTo(region: Region(calendar: Calendars.gregorian))
         return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
+    }
+
+    var midnight: Date {
+        Calendar.current.startOfDay(for: self)
+    }
+
+    func asStringWithTemplate(_ template: String) -> String {
+        DateFormatter.format(self, template: template)
     }
 }
 
