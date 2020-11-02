@@ -11,7 +11,10 @@ import UIKit
 extension UIDatePicker {
 
     func configurePreferredDatePickerStyle() {
-        if #available(iOS 13.4, *) {
+        if #available(iOS 14.0, *) {
+            preferredDatePickerStyle = .inline
+        }
+        else if #available(iOS 13.4, *) {
             preferredDatePickerStyle = .automatic
         }
     }
