@@ -97,17 +97,31 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var titleLabel: UILabel! {
         didSet {
-            titleLabel.text = createEventType == .create ? "New Event" : "Edit Event"
+            titleLabel.text = (createEventType == .create ? "New Event" : "Edit Event").uppercased()
             titleLabel.numberOfLines = 0
             titleLabel.textColor = .appDark
-            titleLabel.font = .boldFontWithSize(20)
+            titleLabel.font = .boldFontWithSize(13)
         }
     }
 
     @IBOutlet private var inputTextField: TextField! {
         didSet {
             inputTextField.delegate = self
-            inputTextField.placeholder = "Write something on Friday at 5PM"
+            inputTextField.placeholder = "write something on Friday at 5PM..."
+        }
+    }
+
+    @IBOutlet private var startsLabel: UILabel! {
+        didSet {
+            startsLabel.font = .boldFontWithSize(13)
+            startsLabel.text = startsLabel.text?.uppercased()
+        }
+    }
+
+    @IBOutlet private var endsLabel: UILabel! {
+        didSet {
+            endsLabel.font = .boldFontWithSize(13)
+            endsLabel.text = endsLabel.text?.uppercased()
         }
     }
 
