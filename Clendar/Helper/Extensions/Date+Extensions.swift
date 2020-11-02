@@ -73,6 +73,10 @@ extension Date {
     func asStringWithTemplate(_ template: String) -> String {
         DateFormatter.format(self, template: template)
     }
+
+    var nextHour: Date {
+        dateByAdding(1, .hour).dateAtStartOf(.hour).date
+    }
 }
 
 extension Date {

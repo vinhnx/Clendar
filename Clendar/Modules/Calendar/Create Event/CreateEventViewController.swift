@@ -19,8 +19,8 @@ enum CreateEventType {
 struct CreateEventViewModel {
     public private(set) var event: Event?
     var text: String = ""
-    var startDate: Date = Date()
-    var endDate: Date?
+    var startDate: Date = Date().nextHour
+    var endDate: Date? = Date().nextHour.offsetWithDefaultDuration
 
     init(event: Event? = nil) {
         self.event = event
@@ -64,6 +64,7 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var startDatePicker: UIDatePicker! {
         didSet {
+            startDatePicker.date = Date().nextHour
             startDatePicker.configurePreferredDatePickerStyle()
         }
     }
