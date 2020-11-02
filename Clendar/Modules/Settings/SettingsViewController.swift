@@ -141,7 +141,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var enableHapticFeedback: SwitchFormItem = {
         let instance = SwitchFormItem()
-        instance.title = "Enable haptic feedback"
+        instance.title = "Haptic feedback"
         instance.value = SettingsManager.enableHapticFeedback
         instance.switchDidChangeBlock = { activate in
             SettingsManager.enableHapticFeedback = activate
@@ -235,8 +235,9 @@ final class SettingsViewController: FormViewController {
         builder += quickEventMode
         builder += SectionFooterTitleFormItem().title("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
 
+        builder += SectionHeaderTitleFormItem().title("Little things")
         builder += enableHapticFeedback
-        
+
         // Info
         builder += SectionHeaderTitleFormItem().title("App info")
         builder += StaticTextFormItem().title("Name").value(AppInfo.appName)

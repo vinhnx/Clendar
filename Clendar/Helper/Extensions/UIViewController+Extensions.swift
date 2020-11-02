@@ -95,7 +95,6 @@ extension UIViewController {
     }
 
     @objc func dimissModal() {
-        genLightHaptic()
         view.endEditing(true)
         dismiss(animated: true)
     }
