@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class EventListItemCell: UICollectionViewCell {
 
@@ -18,6 +19,7 @@ class EventListItemCell: UICollectionViewCell {
         var titleAndMessage: String = ""
         var dateDisplay: String = ""
         var calendarColor: UIColor = .clear
+        var textColor: UIColor = .appGray
 
         init(event: Event? = nil) {
             guard let event = event?.event else { return }
@@ -26,11 +28,13 @@ class EventListItemCell: UICollectionViewCell {
             titleAndMessage = "[\(title)] \(message)"
             calendarColor = UIColor(cgColor: event.calendar.cgColor)
             dateDisplay = event.startDate?.toDateString ?? ""
+            textColor = event.startDate.isInPast ? .appLightGray : .appGray
         }
     }
 
     var viewModel = ViewModel() {
         didSet {
+            titleLabel.textColor = viewModel.textColor
             titleLabel.text = viewModel.titleAndMessage
             barView.backgroundColor = viewModel.calendarColor
         }
@@ -47,7 +51,7 @@ class EventListItemCell: UICollectionViewCell {
     @IBOutlet private var titleLabel: UILabel! {
         didSet {
             titleLabel.numberOfLines = 2
-            titleLabel.font = .fontWithSize(15, weight: .medium)
+            titleLabel.font = .mediumFontWithSize(13)
             titleLabel.textColor = .appGray
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             titleLabel.adjustsFontForContentSizeCategory = true

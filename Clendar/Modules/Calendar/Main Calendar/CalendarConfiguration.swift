@@ -52,9 +52,9 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
         presentedDateUpdated?(date)
     }
 
-    func dayOfWeekFont() -> UIFont { .semiboldFontWithSize(15) }
+    func dayOfWeekFont() -> UIFont { .boldFontWithSize(13) }
 
-    func dayOfWeekTextUppercase() -> Bool { false }
+    func dayOfWeekTextUppercase() -> Bool { true }
 
     func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
@@ -95,7 +95,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        .regularFontWithSize(20)
+        .boldFontWithSize(13)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

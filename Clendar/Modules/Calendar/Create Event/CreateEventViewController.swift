@@ -100,7 +100,7 @@ class CreateEventViewController: BaseViewController {
             titleLabel.text = createEventType == .create ? "New Event" : "Edit Event"
             titleLabel.numberOfLines = 0
             titleLabel.textColor = .appDark
-            titleLabel.font = .boldFontWithSize(30)
+            titleLabel.font = .boldFontWithSize(20)
         }
     }
 

@@ -161,13 +161,13 @@ final class CalendarViewController: BaseViewController {
     private func createEvent() {
         if SettingsManager.useExperimentalCreateEventMode {
             guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
-            self.present(createEventViewController, animated: true, completion: nil)
+            present(createEventViewController, animated: true, completion: nil)
         } else {
             let createEventViewController = EventEditViewController(
                 eventStore: EventKitWrapper.shared.eventStore,
                 delegate: self
             )
-            self.present(createEventViewController, animated: true)
+            present(createEventViewController, animated: true)
         }
     }
 
