@@ -59,9 +59,13 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
                                         <rect key="frame" x="0.0" y="243" width="335" height="334"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Amk-Q0-bXu" firstAttribute="leading" secondItem="mZL-6r-Qjr" secondAttribute="leading" id="a5F-Wb-xad"/>
+                                    <constraint firstAttribute="trailing" secondItem="Amk-Q0-bXu" secondAttribute="trailing" id="kTx-p5-lVI"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
                                 <rect key="frame" x="305" y="597" width="50" height="50"/>
