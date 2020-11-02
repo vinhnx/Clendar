@@ -14,8 +14,9 @@ import UserNotifications
 
 /*
  TODO:
+ + check github-contribution-iOS app to impl heatmap https://github.com/AnderGoig/github-contributions-ios
  + for widget https://github.com/pawello2222/WidgetExamples
- + force touch shortcut from homescreen
+ + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + [!] IAP  => make more money
  + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
  + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!

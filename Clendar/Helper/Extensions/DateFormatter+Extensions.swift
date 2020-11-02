@@ -9,12 +9,6 @@
 import Foundation
 import SwiftDate
 
-/*
- Reference:
- + https://gist.github.com/jacobbubu/1836273
- + https://github.com/pawello2222/WidgetExamples
- */
-
 extension DateFormatter {
 
     static func lunarDateString(

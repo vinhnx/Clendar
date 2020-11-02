@@ -14,6 +14,7 @@ import WidgetKit
  + https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/widgets
  + https://developer.apple.com/documentation/widgetkit/creating-a-widget-extension
  + https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
+ + https://github.com/pawello2222/WidgetExamples
  */
 struct ClendarWidget: Widget {
     private let kind = "ClendarWidget"
