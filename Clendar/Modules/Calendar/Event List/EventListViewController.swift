@@ -122,7 +122,8 @@ extension EventListViewController: EKEventViewDelegate {
     func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
         controller.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            self.fetchEvents()
+            guard action != .done else { return }
+            self.fetchEvents(for: controller.event.startDate)
         }
     }
 }
