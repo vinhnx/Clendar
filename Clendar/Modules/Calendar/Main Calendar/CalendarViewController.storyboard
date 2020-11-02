@@ -18,119 +18,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz9-kw-cgO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-A6-Wso" userLabel="Header Stack View">
+                                <rect key="frame" x="20" y="20" width="335" height="30"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-6r-Qjr">
-                                        <rect key="frame" x="20" y="30" width="335" height="740"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-LG-coJ" customClass="Button" customModule="Clendar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="21" height="30"/>
+                                        <state key="normal" image="slider.horizontal.3" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ4-dN-EPH">
+                                        <rect key="frame" x="328" y="0.0" width="7" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="eFY-DE-vwy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="mZL-6r-Qjr" userLabel="Container Stack View">
+                                <rect key="frame" x="20" y="70" width="335" height="577"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxz-Nn-cbF" userLabel="Calendar Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="228"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wDB-A6-Wso">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-LG-coJ" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="30"/>
-                                                        <state key="normal" image="slider.horizontal.3" catalog="system"/>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ4-dN-EPH">
-                                                        <rect key="frame" x="328" y="0.0" width="7" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="eFY-DE-vwy"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJT-3z-nZs" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="50" width="335" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Pla-Ct-pMK"/>
+                                                    <constraint firstAttribute="height" constant="20" id="Pla-Ct-pMK"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-lR-RHt" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="120" width="335" height="300"/>
+                                                <rect key="frame" x="0.0" y="28" width="335" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="U1N-AV-yKN"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
-                                                <rect key="frame" x="0.0" y="440" width="335" height="300"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="DsK-B7-xgh"/>
+                                                    <constraint firstAttribute="height" constant="200" id="U1N-AV-yKN"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="mZL-6r-Qjr" firstAttribute="leading" secondItem="Oz9-kw-cgO" secondAttribute="leading" constant="20" id="2Rd-HE-iWX"/>
-                                    <constraint firstAttribute="bottom" secondItem="mZL-6r-Qjr" secondAttribute="bottom" constant="20" id="DPF-na-VOU"/>
-                                    <constraint firstItem="mZL-6r-Qjr" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="top" constant="30" id="P8i-Mv-LVl"/>
-                                    <constraint firstAttribute="trailing" secondItem="mZL-6r-Qjr" secondAttribute="trailing" constant="20" id="Pue-6W-8FB"/>
-                                    <constraint firstItem="mZL-6r-Qjr" firstAttribute="centerX" secondItem="Oz9-kw-cgO" secondAttribute="centerX" id="xob-I6-jgp"/>
-                                </constraints>
-                            </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-bm-2d9" userLabel="Bottom Stack View">
-                                <rect key="frame" x="20" y="607" width="335" height="50"/>
-                                <subviews>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write something at friday 8pm..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RDn-a5-6H6" customClass="TextField" customModule="Clendar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="eu5-m6-E0k"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="go"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xXK-OR-k0F" userLabel="Buttons Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-1b-3J7" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="157.5" height="50"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="gearshape" catalog="system">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                                <rect key="frame" x="177.5" y="0.0" width="157.5" height="50"/>
-                                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="IYQ-Dx-oud"/>
-                                        </constraints>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
+                                        <rect key="frame" x="0.0" y="243" width="335" height="334"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Lr-3c-OB5"/>
+                                    <constraint firstAttribute="width" secondItem="BYh-5N-kbd" secondAttribute="height" multiplier="1:1" id="BCm-Gt-fOC"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KXx-8q-HmS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="Oz9-kw-cgO" secondAttribute="trailing" id="7dw-cl-snq"/>
-                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="bottom" constant="10" id="L8t-Qk-Hik"/>
-                            <constraint firstItem="Oz9-kw-cgO" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" id="Ns8-j5-x7r"/>
-                            <constraint firstAttribute="trailing" secondItem="J5Q-bm-2d9" secondAttribute="trailing" constant="20" id="QvQ-iX-X5B"/>
-                            <constraint firstItem="KXx-8q-HmS" firstAttribute="top" secondItem="Oz9-kw-cgO" secondAttribute="top" id="mkx-jv-JZO"/>
-                            <constraint firstItem="J5Q-bm-2d9" firstAttribute="leading" secondItem="QOd-5g-Jnm" secondAttribute="leading" constant="20" id="x3b-Lf-kg5"/>
-                            <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="J5Q-bm-2d9" secondAttribute="bottom" constant="10" id="z2v-Pp-O60"/>
+                            <constraint firstItem="wDB-A6-Wso" firstAttribute="top" secondItem="KXx-8q-HmS" secondAttribute="top" constant="20" id="5Os-GB-X45"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="wDB-A6-Wso" secondAttribute="trailing" constant="20" id="CE6-pN-wma"/>
+                            <constraint firstItem="mZL-6r-Qjr" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" constant="20" id="Gp3-Ob-QRa"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="mZL-6r-Qjr" secondAttribute="bottom" constant="20" id="I3j-5d-KHS"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="BYh-5N-kbd" secondAttribute="trailing" constant="20" id="M74-8i-tez"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="bottom" secondItem="BYh-5N-kbd" secondAttribute="bottom" constant="20" id="is3-aZ-DLc"/>
+                            <constraint firstItem="mZL-6r-Qjr" firstAttribute="top" secondItem="wDB-A6-Wso" secondAttribute="bottom" constant="20" id="mLQ-2o-cVX"/>
+                            <constraint firstItem="KXx-8q-HmS" firstAttribute="trailing" secondItem="mZL-6r-Qjr" secondAttribute="trailing" constant="20" id="sSO-Hm-QEO"/>
+                            <constraint firstItem="wDB-A6-Wso" firstAttribute="leading" secondItem="KXx-8q-HmS" secondAttribute="leading" constant="20" id="wuK-9i-Rp5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addEventButton" destination="BYh-5N-kbd" id="9Df-DK-kkt"/>
-                        <outlet property="bottomButtonStackView" destination="xXK-OR-k0F" id="kYI-7W-vCb"/>
-                        <outlet property="bottomConstraint" destination="z2v-Pp-O60" id="SS9-gX-fUQ"/>
                         <outlet property="calendarView" destination="Nby-lR-RHt" id="qqW-3b-okE"/>
                         <outlet property="dayView" destination="EJT-3z-nZs" id="54T-d2-Z0w"/>
                         <outlet property="eventListContainerView" destination="Amk-Q0-bXu" id="rvI-7k-fpo"/>
-                        <outlet property="eventListHeightConstraint" destination="DsK-B7-xgh" id="eNb-fg-8er"/>
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
                         <outlet property="settingsButton" destination="xNt-LG-coJ" id="6Oo-Vd-MGT"/>
                     </connections>
@@ -141,7 +105,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
         <systemColor name="labelColor">
