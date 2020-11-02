@@ -15,13 +15,19 @@ final class CalendarViewController: BaseViewController {
 
     // MARK: - Properties
 
-    @IBOutlet private var eventListHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var previousMonthButton: UIButton! {
+        didSet {
+            previousMonthButton.addTarget(self, action: #selector(selectPreviousDay), for: .touchUpInside)
+        }
+    }
+
+    @IBOutlet private var nextMonthButton: UIButton! {
+        didSet {
+            nextMonthButton.addTarget(self, action: #selector(selectNextDay), for: .touchUpInside)
+        }
+    }
 
     @IBOutlet private var eventListContainerView: UIView!
-
-    @IBOutlet private var bottomButtonStackView: UIStackView!
-
-    @IBOutlet private var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet private var calendarView: CVCalendarView! {
         didSet {
@@ -53,8 +59,8 @@ final class CalendarViewController: BaseViewController {
     @IBOutlet var monthLabel: UILabel! {
         didSet {
             monthLabel.textColor = .appDark
-            monthLabel.font = .boldFontWithSize(30)
-            monthLabel.text = Date().monthName(.default)
+            monthLabel.font = .boldFontWithSize(15)
+            monthLabel.text = Date().toMonthAndYearString.uppercased()
             monthLabel.textAlignment = .right
         }
     }
@@ -95,7 +101,7 @@ final class CalendarViewController: BaseViewController {
 
         calendarConfiguration.presentedDateUpdated = { [weak self] date in
             guard let self = self else { return }
-            self.monthLabel.text = date.convertedDate()?.monthName(.default)
+            self.monthLabel.text = date.convertedDate()?.toMonthAndYearString.uppercased()
         }
 
         settingsButton.addTarget(self, action: #selector(onTapSettingsButton), for: .touchUpInside)
@@ -146,6 +152,16 @@ final class CalendarViewController: BaseViewController {
         genLightHaptic()
         calendarView.toggleCurrentDayView()
         eventList.fetchEvents()
+    }
+
+    @objc private func selectPreviousDay() {
+        genLightHaptic()
+        calendarView.loadPreviousView()
+    }
+
+    @objc private func selectNextDay() {
+        genLightHaptic()
+        calendarView.loadNextView()
     }
 
     private func addGestures() {

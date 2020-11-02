@@ -52,6 +52,10 @@ extension Date {
         DateFormatter.format(self, template: "MMMM")
     }
 
+    var toMonthAndYearString: String {
+        DateFormatter.format(self, template: "MMMM yyyy")
+    }
+
     var toFullDateString: String {
         DateFormatter.format(self, template: "EEEE, MMM d, yyyy")
     }
@@ -76,6 +80,10 @@ extension Date {
 
     var nextHour: Date {
         dateByAdding(1, .hour).dateAtStartOf(.hour).date
+    }
+
+    var offsetWithDefaultDuration: Date {
+        dateByAdding(SettingsManager.defaultEventDuration, .minute).date
     }
 }
 

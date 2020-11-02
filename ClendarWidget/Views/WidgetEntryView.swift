@@ -94,7 +94,7 @@ struct TodayOverviewWidgetView: View {
             let events = entry.events
             let text = events.isEmpty
                 ? "🎉 No more events today,\nenjoy your day!\n"
-                : "Up next:"
+                : "Upcoming events"
 
             Text(text)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
@@ -127,7 +127,7 @@ struct EventsListWidgetView: View {
 }
 
 struct DividerView: View {
-    var body: some View { Divider().background(Color(.nativeLightGray)) }
+    var body: some View { Divider().background(Color(.black)) }
 }
 
 // MARK: - Preview

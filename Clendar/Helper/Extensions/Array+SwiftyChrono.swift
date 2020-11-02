@@ -9,17 +9,11 @@
 import Foundation
 import SwiftyChrono
 
-extension Date {
-    var offsetWithDefaultDuration: Date {
-        dateByAdding(SettingsManager.defaultEventDuration, .minute).date
-    }
-}
-
 extension Array where Element == ParsedResult {
     // swiftlint:disable large_tuple
     func process(with input: String) -> (action: String, startDate: Date, endDate: Date?) {
         var dateTexts = [String]()
-        var startDate = Date()
+        var startDate = Date().nextHour
         var endDate: Date?
 
         for result in self {

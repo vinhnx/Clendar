@@ -64,7 +64,6 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var startDatePicker: UIDatePicker! {
         didSet {
-            startDatePicker.date = Date().nextHour
             startDatePicker.configurePreferredDatePickerStyle()
         }
     }

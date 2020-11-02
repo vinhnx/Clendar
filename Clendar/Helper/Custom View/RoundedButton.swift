@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Haptica
 
 class Button: UIButton {
     override init(frame: CGRect) {
@@ -23,13 +22,6 @@ class Button: UIButton {
     // MARK: - Private
 
     func configure() {
-        if SettingsManager.enableHapticFeedback {
-            isHaptic = true
-            hapticType = .impact(.light)
-        } else {
-            isHaptic = false
-        }
-        
         titleLabel?.font = .boldFontWithSize(20)
         applyCircle()
     }
