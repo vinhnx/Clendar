@@ -174,7 +174,9 @@ final class CalendarViewController: BaseViewController {
         eventList.fetchEvents(for: date)
     }
 
-    private func createEvent() {
+    // MARK: - Actions
+
+    func createEvent() {
         if SettingsManager.useExperimentalCreateEventMode {
             guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
             present(createEventViewController, animated: true, completion: nil)
@@ -186,8 +188,6 @@ final class CalendarViewController: BaseViewController {
             present(createEventViewController, animated: true)
         }
     }
-
-    // MARK: - Actions
 
     @objc private func didTapMonthLabel() {
         selectToday()

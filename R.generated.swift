@@ -185,6 +185,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.info` struct is generated, and contains static references to 1 properties.
+  struct info {
+    struct uiApplicationShortcutItems {
+      struct addEventAction {
+        static let _key = "AddEventAction"
+        static let uiApplicationShortcutItemIconType = infoPlistString(path: ["UIApplicationShortcutItems", "AddEventAction"], key: "UIApplicationShortcutItemIconType") ?? "UIApplicationShortcutIconTypeCompose"
+        static let uiApplicationShortcutItemTitle = infoPlistString(path: ["UIApplicationShortcutItems", "AddEventAction"], key: "UIApplicationShortcutItemTitle") ?? "Add Event"
+        static let uiApplicationShortcutItemType = infoPlistString(path: ["UIApplicationShortcutItems", "AddEventAction"], key: "UIApplicationShortcutItemType") ?? "AddEventAction"
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     /// Nib `EventListItemCell`.
