@@ -18,12 +18,9 @@ import UserNotifications
  + for widget https://github.com/pawello2222/WidgetExamples
  + [!] IAP  => make more money
  + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
- + [WIP] badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
- + local notification << IMPORTANT
- + [future] future: reminders/tasks
  + onboarding
  + rating prompt
- + app icon
+ + change app icon
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
  + settings:
     > [?] hightlight weekends (sat and sunday)
@@ -33,6 +30,14 @@ import UserNotifications
  + lunar event (+)
  + duong lich <-> am lich
  + watch app (?)
+
+ ==
+ OPTIONAL
+ + accessibilty (use lib)
+ + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
+ + local notification
+ + [future] future: reminders/tasks
+ 
  ==
  DONE:
  + [done] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
