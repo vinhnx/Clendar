@@ -106,15 +106,18 @@ final class EventListViewController: BaseViewController {
         collectionView.delegate = self
 
         view.addSubViewAndFit(collectionView)
+
+        // add menu context
+        let interaction = UIContextMenuInteraction(delegate: self)
+        view.addInteraction(interaction)
     }
 }
 
 extension EventListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         genLightHaptic()
-        guard let event = datasource.itemIdentifier(for: indexPath)?.event else { return }
-        let eventViewer = EventViewerNavigationController(event: event, delegate: self)
-        present(eventViewer, animated: true)
+        guard let event = datasource.itemIdentifier(for: indexPath) else { return }
+        EventHandler.viewEvent(event, delegate: self)
     }
 }
 
@@ -124,6 +127,46 @@ extension EventListViewController: EKEventViewDelegate {
             guard let self = self else { return }
             guard action != .done else { return }
             self.fetchEvents(for: controller.event.startDate)
+        }
+    }
+}
+
+extension EventListViewController: UIContextMenuInteractionDelegate {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        nil
+    }
+
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        guard let event = datasource.itemIdentifier(for: indexPath) else { return nil }
+        guard let ekEvent = event.event else { return nil }
+
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: {
+            EventViewerViewController(event: ekEvent)
+        }, actionProvider: { _ in
+            let view = UIAction(title: "View Event", image: UIImage(systemName: "viewfinder")) { (_) in
+                EventHandler.viewEvent(event, delegate: self)
+            }
+
+            let edit = UIAction(title: "Edit Event", image: UIImage(systemName: "pencil")) { (_) in
+                EventHandler.editEvent(event, delegate: self)
+            }
+
+            let delete = UIAction(title: "Delete Event", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
+                EventHandler.deleteEvent(event)
+            }
+
+            return UIMenu(children: [view, edit, delete])
+        })
+    }
+}
+
+extension EventListViewController: EKEventEditViewDelegate {
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        dismiss(animated: true) { [weak self] in
+            guard let self = self else { return }
+            guard action != .canceled else { return }
+            guard let event = controller.event else { return }
+            self.fetchEvents(for: event.startDate)
         }
     }
 }

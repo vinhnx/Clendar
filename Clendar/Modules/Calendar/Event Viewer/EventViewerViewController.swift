@@ -13,7 +13,7 @@ class EventViewerNavigationController: UINavigationController {
     
     // MARK: - Life Cycle
     
-    init(event: EKEvent, delegate: EKEventViewDelegate) {
+    init(event: EKEvent, delegate: EKEventViewDelegate?) {
         let eventViewer = EventViewerViewController()
         eventViewer.allowsEditing = true
         eventViewer.event = event
@@ -50,7 +50,20 @@ class EventViewerNavigationController: UINavigationController {
 class EventViewerViewController: EKEventViewController {
     
     // MARK: - Life Cycle
-    
+
+    convenience init(event: EKEvent) {
+        self.init()
+        self.event = event
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,12 +72,13 @@ class EventViewerViewController: EKEventViewController {
         NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
             self.checkUIMode()
         }
+
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     // MARK: - Private
     
     func checkUIMode() {

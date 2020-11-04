@@ -203,23 +203,7 @@ class CreateEventViewController: BaseViewController {
     // MARK: - Action
 
     @IBAction private func deleteEvent() {
-        dismissKeyboard()
-
-        guard let event = viewModel.event else { return }
-        guard let eventID = event.id else { return }
-
-        AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
-            EventKitWrapper.shared.deleteEvent(identifier: eventID) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success:
-                    genSuccessHaptic()
-                    self.dimissModal()
-                case .failure(let error):
-                    AlertManager.showWithError(error)
-                }
-            }
-        })
+        EventHandler.deleteEvent(viewModel.event)
     }
 
     @objc private func onCreateButtonTap() {

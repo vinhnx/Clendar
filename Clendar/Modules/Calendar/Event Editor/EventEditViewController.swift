@@ -13,7 +13,7 @@ class EventEditViewController: EKEventEditViewController {
     
     // MARK: - Life Cycle
     
-    init(eventStore: EKEventStore, delegate: EKEventEditViewDelegate) {
+    init(eventStore: EKEventStore = EventKitWrapper.shared.eventStore, delegate: EKEventEditViewDelegate?) {
         super.init(nibName: nil, bundle: nil)
         self.eventStore = eventStore
         self.editViewDelegate = delegate
