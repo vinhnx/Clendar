@@ -58,7 +58,7 @@
                                 <rect key="frame" x="20" y="70" width="335" height="577"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxz-Nn-cbF" userLabel="Calendar Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="228"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="248"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJT-3z-nZs" customClass="CVCalendarMenuView" customModule="CVCalendar">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
@@ -68,16 +68,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-lR-RHt" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="28" width="335" height="200"/>
+                                                <rect key="frame" x="0.0" y="28" width="335" height="220"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="U1N-AV-yKN"/>
+                                                    <constraint firstAttribute="height" constant="220" id="U1N-AV-yKN"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
-                                        <rect key="frame" x="0.0" y="243" width="335" height="334"/>
+                                        <rect key="frame" x="0.0" y="263" width="335" height="314"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>

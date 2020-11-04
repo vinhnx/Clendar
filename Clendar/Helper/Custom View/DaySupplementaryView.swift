@@ -16,10 +16,10 @@ class DaySupplementaryView: UIStackView {
         switch type {
         case .lunarDate:
             let lunarDate = DateFormatter.lunarDateString(forDate: date)
-            let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.8,
+            let label = UILabel(frame: CGRect(x: dayView.frame.origin.x, y: dayView.frame.size.height * 0.7,
                                               width: dayView.frame.size.width, height: 10))
             label.textColor = isOut ? .lightGray : .systemGray
-            label.font = .regularFontWithSize(11)
+            label.font = .mediumFontWithSize(11)
             label.text = lunarDate
             label.textAlignment = .center
             return label
