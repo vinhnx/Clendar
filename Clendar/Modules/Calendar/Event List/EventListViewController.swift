@@ -53,7 +53,7 @@ final class EventListViewController: BaseViewController {
     // MARK: - Datasource
 
     func makeDatasource() -> DataSource {
-        let datasource = DataSource(
+        DataSource(
             collectionView: collectionView,
             cellProvider: { (collectionView, indexPath, event) in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListItemCell.reuseID, for: indexPath) as? EventListItemCell
@@ -62,19 +62,6 @@ final class EventListViewController: BaseViewController {
                 return cell
             }
         )
-
-        datasource.supplementaryViewProvider = { collectionView, kind, indexPath in
-            guard kind == UICollectionView.elementKindSectionHeader else { return nil }
-            let section = self.datasource.snapshot().sectionIdentifiers[indexPath.section]
-            let view = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: EventSectionHeaderView.reuseID,
-                for: indexPath) as? EventSectionHeaderView
-            view?.titleLabel.text = section.date?.toFullDateString.uppercased()
-            return view
-        }
-
-        return datasource
     }
 
     func applySnapshot(_ items: [Event], date: Date?) {
@@ -88,13 +75,6 @@ final class EventListViewController: BaseViewController {
 
     private func setupLayout() {
         collectionView.backgroundColor = .backgroundColor
-
-        // section header
-        collectionView.register(
-            EventSectionHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: EventSectionHeaderView.reuseID
-        )
 
         // cell
         collectionView.register(

@@ -62,7 +62,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     func dayOfWeekBackGroundColor() -> UIColor { .clear }
 
-    func spaceBetweenWeekViews() -> CGFloat { 0 }
+    func spaceBetweenWeekViews() -> CGFloat { 5 }
 
     func shouldAnimateResizing() -> Bool { true }
 
@@ -88,7 +88,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     // MARK: - CVCalendarViewAppearanceDelegate
 
-    func spaceBetweenDayViews() -> CGFloat { 0 }
+    func spaceBetweenDayViews() -> CGFloat { 5 }
 
     func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
 
@@ -101,10 +101,10 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
         case (_, .selected, _), (_, .highlighted, _): return .white
-        case (.sunday, .out, _): return UIColor.appLightRed
-        case (.sunday, _, _): return UIColor.appRed
-        case (_, .in, _): return UIColor.appDark
-        default: return UIColor.appLightGray
+        case (.sunday, .out, _): return .appLightRed
+        case (.sunday, _, _): return .appRed
+        case (_, .in, _): return .appDark
+        default: return .appLightGray
         }
     }
 

@@ -58,7 +58,7 @@
                                 <rect key="frame" x="20" y="70" width="335" height="577"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xxz-Nn-cbF" userLabel="Calendar Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="248"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="278"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJT-3z-nZs" customClass="CVCalendarMenuView" customModule="CVCalendar">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
@@ -68,16 +68,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nby-lR-RHt" customClass="CVCalendarView" customModule="CVCalendar">
-                                                <rect key="frame" x="0.0" y="28" width="335" height="220"/>
+                                                <rect key="frame" x="0.0" y="28" width="335" height="250"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="220" id="U1N-AV-yKN"/>
+                                                    <constraint firstAttribute="height" constant="250" id="U1N-AV-yKN"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-7V-moR" userLabel="Month Label">
+                                        <rect key="frame" x="0.0" y="293" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amk-Q0-bXu" userLabel="Event List Container View">
-                                        <rect key="frame" x="0.0" y="263" width="335" height="314"/>
+                                        <rect key="frame" x="0.0" y="328.5" width="335" height="248.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -87,11 +93,11 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYh-5N-kbd" customClass="Button" customModule="Clendar" customModuleProvider="target">
-                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <rect key="frame" x="235" y="597" width="120" height="50"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8Lr-3c-OB5"/>
-                                    <constraint firstAttribute="width" secondItem="BYh-5N-kbd" secondAttribute="height" multiplier="1:1" id="BCm-Gt-fOC"/>
+                                    <constraint firstAttribute="width" constant="120" id="za1-kL-ePB"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -121,6 +127,7 @@
                         <outlet property="monthLabel" destination="AZ4-dN-EPH" id="BZV-DZ-lWN"/>
                         <outlet property="nextMonthButton" destination="iZ1-g8-KJa" id="qZl-Vj-qKV"/>
                         <outlet property="previousMonthButton" destination="DSN-gp-7Cp" id="AHD-n1-fQ7"/>
+                        <outlet property="selectedDateLabel" destination="D6u-7V-moR" id="9qp-VI-ENG"/>
                         <outlet property="settingsButton" destination="xNt-LG-coJ" id="6Oo-Vd-MGT"/>
                     </connections>
                 </viewController>

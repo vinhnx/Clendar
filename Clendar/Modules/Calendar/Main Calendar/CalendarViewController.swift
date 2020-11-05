@@ -58,10 +58,19 @@ final class CalendarViewController: BaseViewController {
 
     @IBOutlet var monthLabel: UILabel! {
         didSet {
-            monthLabel.textColor = .appDark
+            monthLabel.textColor = .primaryColor
             monthLabel.font = .boldFontWithSize(15)
             monthLabel.text = Date().toMonthAndYearString.uppercased()
             monthLabel.textAlignment = .right
+        }
+    }
+
+    @IBOutlet private var selectedDateLabel: UILabel! {
+        didSet {
+            selectedDateLabel.font = .boldFontWithSize(13)
+            selectedDateLabel.adjustsFontForContentSizeCategory = true
+            selectedDateLabel.textColor = .appDark
+            selectedDateLabel.text = Date().toFullDateString.uppercased()
         }
     }
 
@@ -96,7 +105,9 @@ final class CalendarViewController: BaseViewController {
 
         calendarConfiguration.didSelectDayView = { [weak self] dayView, animationDidFinish in
             guard let self = self else { return }
-            self.fetchEvents(dayView.convertedDate)
+            let selectedDate = dayView.convertedDate
+            self.selectedDateLabel.text = Date().toFullDateString.uppercased()
+            self.fetchEvents(selectedDate)
         }
 
         calendarConfiguration.presentedDateUpdated = { [weak self] date in

@@ -60,20 +60,6 @@ class Layout {
         section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: 0, trailing: 0)
         section.interGroupSpacing = 10
 
-        // Supplementary header view setup
-        let headerFooterSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(20)
-        )
-
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerFooterSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
-
-        section.boundarySupplementaryItems = [sectionHeader]
-
         return section
     }
 
