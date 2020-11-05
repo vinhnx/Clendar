@@ -161,12 +161,86 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.file` struct is generated, and contains static references to 4 files.
+  struct file {
+    /// Resource file `dark_icon_120@2x.png`.
+    static let dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_120@2x", pathExtension: "png")
+    /// Resource file `dark_icon_180@3x.png`.
+    static let dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_180@3x", pathExtension: "png")
+    /// Resource file `dim_dark_icon_120@2x.png`.
+    static let dim_dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_120@2x", pathExtension: "png")
+    /// Resource file `dim_dark_icon_180@3x.png`.
+    static let dim_dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_180@3x", pathExtension: "png")
+
+    /// `bundle.url(forResource: "dark_icon_120@2x", withExtension: "png")`
+    static func dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dark_icon_1202xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dark_icon_180@3x", withExtension: "png")`
+    static func dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dark_icon_1803xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dim_dark_icon_120@2x", withExtension: "png")`
+    static func dim_dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dim_dark_icon_1202xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dim_dark_icon_180@3x", withExtension: "png")`
+    static func dim_dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dim_dark_icon_1803xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
+    /// Image `dark_icon_120`.
+    static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
+    /// Image `dark_icon_180`.
+    static let dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_180")
+    /// Image `dim_dark_icon_120`.
+    static let dim_dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_120")
+    /// Image `dim_dark_icon_180`.
+    static let dim_dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_180")
     /// Image `next`.
     static let next = Rswift.ImageResource(bundle: R.hostingBundle, name: "next")
     /// Image `previous`.
     static let previous = Rswift.ImageResource(bundle: R.hostingBundle, name: "previous")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
+    static func dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_icon_120, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_icon_180", bundle: ..., traitCollection: ...)`
+    static func dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_icon_180, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dim_dark_icon_120", bundle: ..., traitCollection: ...)`
+    static func dim_dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dim_dark_icon_120, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dim_dark_icon_180", bundle: ..., traitCollection: ...)`
+    static func dim_dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dim_dark_icon_180, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "next", bundle: ..., traitCollection: ...)`
@@ -203,10 +277,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `AppIconItemCell`.
+    static let appIconItemCell = _R.nib._AppIconItemCell()
     /// Nib `EventListItemCell`.
     static let eventListItemCell = _R.nib._EventListItemCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AppIconItemCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.appIconItemCell) instead")
+    static func appIconItemCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.appIconItemCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "EventListItemCell", in: bundle)`
@@ -215,6 +299,10 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.eventListItemCell)
     }
     #endif
+
+    static func appIconItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
+      return R.nib.appIconItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
+    }
 
     static func eventListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
       return R.nib.eventListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
@@ -253,6 +341,17 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _AppIconItemCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AppIconItemCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _EventListItemCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = EventListItemCell
 

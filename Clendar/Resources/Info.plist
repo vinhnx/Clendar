@@ -62,5 +62,31 @@
 			<string>Add Event</string>
 		</dict>
 	</array>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>dark_icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>dark_icon_120</string>
+					<string>dark_icon_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>dim_dark_icon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>dim_dark_icon_120</string>
+					<string>dim_dark_icon_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func trim(text: String) -> String {
@@ -31,4 +32,6 @@ extension String {
     func parseInt() -> Int? {
         Int(components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
     }
+
+    var asImage: UIImage? { UIImage(named: self) }
 }

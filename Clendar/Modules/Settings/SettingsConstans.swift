@@ -8,6 +8,48 @@
 
 import Foundation
 import CVCalendar
+import UIKit
+
+enum AppIcon: CaseIterable {
+    case light
+    case dark
+    case dimmedDark
+
+    static func mapFromString(_ string: String?) -> Self {
+        switch string {
+        case AppIcon.dark.text: return .dark
+        case AppIcon.dimmedDark.text: return .dimmedDark
+        default: return .light
+        }
+    }
+
+    var iconName: String? {
+        switch self {
+        case .light: return nil
+        case .dark: return "dark_icon"
+        case .dimmedDark: return "dim_dark_icon"
+        }
+    }
+
+    var text: String {
+        switch self {
+        case .light: return "Light"
+        case .dark: return "Dark"
+        case .dimmedDark: return "Dim"
+        }
+    }
+
+    var displayImage: UIImage? {
+        switch self {
+        case .light: return Bundle.main.icon
+        case .dark: return "dark_icon_120".asImage
+        case .dimmedDark: return "dim_dark_icon_120".asImage
+        }
+    }
+
+    static var titles: [String] = Self.allCases.map { $0.text }
+    static var defaultValue: String { AppIcon.light.text }
+}
 
 enum Theme: Int, CaseIterable {
     case dark

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QZ5-Q0-h5g" customClass="AppIconItemCell" customModule="Clendar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZ5-Q0-h5g" id="LX8-yh-U5j">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-hc-Ppd">
+                        <rect key="frame" x="20" y="10.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="tLz-hc-Ppd" secondAttribute="height" multiplier="1:1" id="QFh-mD-suw"/>
+                            <constraint firstAttribute="width" constant="40" id="krb-C8-aAD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkn-35-TZw">
+                        <rect key="frame" x="70" y="20" width="324" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSI-8p-r5v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                        <connections>
+                            <action selector="didSelectView" destination="QZ5-Q0-h5g" eventType="touchUpInside" id="09b-0H-DKy"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Wkn-35-TZw" firstAttribute="centerY" secondItem="tLz-hc-Ppd" secondAttribute="centerY" id="3sJ-7L-4RX"/>
+                    <constraint firstItem="nSI-8p-r5v" firstAttribute="leading" secondItem="LX8-yh-U5j" secondAttribute="leading" id="7LV-xQ-O0Q"/>
+                    <constraint firstItem="Wkn-35-TZw" firstAttribute="leading" secondItem="tLz-hc-Ppd" secondAttribute="trailing" constant="10" id="MHq-8c-t83"/>
+                    <constraint firstItem="nSI-8p-r5v" firstAttribute="top" secondItem="LX8-yh-U5j" secondAttribute="top" id="Mjk-gV-533"/>
+                    <constraint firstItem="tLz-hc-Ppd" firstAttribute="leading" secondItem="LX8-yh-U5j" secondAttribute="leading" constant="20" id="eUI-dl-uEF"/>
+                    <constraint firstItem="tLz-hc-Ppd" firstAttribute="centerY" secondItem="LX8-yh-U5j" secondAttribute="centerY" id="ila-kJ-TOB"/>
+                    <constraint firstAttribute="bottom" secondItem="nSI-8p-r5v" secondAttribute="bottom" id="isZ-LD-a81"/>
+                    <constraint firstAttribute="trailing" secondItem="Wkn-35-TZw" secondAttribute="trailing" constant="20" id="p2N-sd-hGO"/>
+                    <constraint firstAttribute="trailing" secondItem="nSI-8p-r5v" secondAttribute="trailing" id="sfE-wT-sql"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="tLz-hc-Ppd" id="rRu-LJ-aMg"/>
+                <outlet property="titleLabel" destination="Wkn-35-TZw" id="l5l-ZT-58E"/>
+            </connections>
+            <point key="canvasLocation" x="124.6376811594203" y="167.07589285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

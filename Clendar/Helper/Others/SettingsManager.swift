@@ -37,4 +37,6 @@ struct SettingsManager {
     @UserDefault("enableHapticFeedback", defaultValue: true)
     static var enableHapticFeedback: Bool
 
+    @UserDefault("currentAppIconName", defaultValue: AppIcon.defaultValue)
+    static var currentAppIconName: String?
 }

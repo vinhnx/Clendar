@@ -149,36 +149,6 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-//    lazy var appIconBadge: OptionPickerFormItem = {
-//        let instance = OptionPickerFormItem()
-//        instance.title("App icon badge")
-//        instance.append(BadgeSettings.titles)
-//        instance.selectOptionWithTitle(SettingsManager.badgeSettings)
-//        instance.valueDidChange = { selected in
-//            SettingsManager.badgeSettings = selected?.title ?? BadgeSettings.defaultValue.rawValue
-//
-//            switch SettingsManager.badgeSettings {
-//            case BadgeSettings.none.rawValue:
-//                DispatchQueue.main.async {
-//                    UIApplication.shared.applicationIconBadgeNumber = 0
-//                }
-//
-//            case BadgeSettings.date.rawValue:
-//                DispatchQueue.main.async {
-//                    UIApplication.shared.applicationIconBadgeNumber = Date().day
-//                }
-//
-//            case BadgeSettings.month.rawValue:
-//                DispatchQueue.main.async {
-//                    UIApplication.shared.applicationIconBadgeNumber = Date().month
-//                }
-//
-//            default: break
-//            }
-//        }
-//        return instance
-//    }()
-
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -210,16 +180,18 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = "Settings"
 
+        // General
+        builder += SectionHeaderTitleFormItem().title("General")
+        builder += themes
+        builder += enableHapticFeedback
+        builder += ViewControllerFormItem().title("Custom App Icon").viewController(AppIconChooserViewController.self)
+
         // Calendars
         builder += SectionHeaderTitleFormItem().title("Calendars")
         builder += ViewControllerFormItem()
             .title("Available calendars")
             .viewController(CalendarsChooserViewController.self)
         builder += SectionFooterTitleFormItem().title("You can choose available calendars to shown in event list")
-
-        // UI
-        builder += SectionHeaderTitleFormItem().title("User Interface")
-        builder += themes
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title("Calendar View")
@@ -234,9 +206,6 @@ final class SettingsViewController: FormViewController {
         builder += defaultEventDuration
         builder += quickEventMode
         builder += SectionFooterTitleFormItem().title("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
-
-        builder += SectionHeaderTitleFormItem().title("Little things")
-        builder += enableHapticFeedback
 
         // Info
         builder += SectionHeaderTitleFormItem().title("App info")
