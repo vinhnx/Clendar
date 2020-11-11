@@ -161,8 +161,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 4 files.
+  /// This `R.file` struct is generated, and contains static references to 5 files.
   struct file {
+    /// Resource file `Settings.bundle`.
+    static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
     /// Resource file `dark_icon_120@2x.png`.
     static let dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_120@2x", pathExtension: "png")
     /// Resource file `dark_icon_180@3x.png`.
@@ -171,6 +173,12 @@ struct R: Rswift.Validatable {
     static let dim_dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_120@2x", pathExtension: "png")
     /// Resource file `dim_dark_icon_180@3x.png`.
     static let dim_dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_180@3x", pathExtension: "png")
+
+    /// `bundle.url(forResource: "Settings", withExtension: "bundle")`
+    static func settingsBundle(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.settingsBundle
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "dark_icon_120@2x", withExtension: "png")`
     static func dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {

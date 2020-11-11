@@ -1,0 +1,41 @@
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.0.5
+
+name: R.swift, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.2.2
+
+name: R.swift.Library, nameSpecified: 
+body: The MIT License (MIT…
+version: 5.2.0
+
+name: SwiftLint, nameSpecified: 
+body: The MIT License (MIT…
+version: 0.39.2
+
+name: SwiftyChrono, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 1.1.0
+
+name: CalendarHeatmap, nameSpecified: CalendarHeatmap, owner: Zacharysp, version: 
+
+name: CVCalendar, nameSpecified: CVCalendar, owner: CVCalendar, version: 1.7.0
+
+name: Haptica, nameSpecified: Haptica, owner: efremidze, version: 3.0.2
+
+name: IQKeyboardManager, nameSpecified: IQKeyboardManagerSwift, owner: hackiftekhar, version: 6.5.6
+
+name: swift-log, nameSpecified: swift-log, owner: apple, version: 1.4.0
+
+name: SwiftDate, nameSpecified: SwiftDate, owner: malcommac, version: 6.2.0
+
+name: SwiftyFORM, nameSpecified: SwiftyFORM, owner: neoneye, version: 1.8.4
+
+add-version-numbers: false
+
+LicensePlist Version: 2.16.0

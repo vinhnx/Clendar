@@ -128,6 +128,7 @@
 		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
 		A3F259822247B903009A50B6 /* EventKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259812247B903009A50B6 /* EventKitWrapper.swift */; };
 		A3F259842247C770009A50B6 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259832247C770009A50B6 /* RoundedButton.swift */; };
+		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -279,6 +280,7 @@
 		A3F2597C2247762F009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		A3F259812247B903009A50B6 /* EventKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventKitWrapper.swift; sourceTree = "<group>"; };
 		A3F259832247C770009A50B6 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		A3FB5B36255C20D30038AFCE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7E6079522A39C0AA433E3F /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 		A33F80F722467DC1009CC46A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A3FB5B36255C20D30038AFCE /* Settings.bundle */,
 				A31258942551B85700891CE2 /* AppIcons */,
 				A33F80D022467A85009CC46A /* Assets.xcassets */,
 				A33F80D222467A85009CC46A /* LaunchScreen.storyboard */,
@@ -935,6 +938,7 @@
 				A33F80D122467A85009CC46A /* Assets.xcassets in Resources */,
 				A31258B52551C23300891CE2 /* AppIconItemCell.xib in Resources */,
 				A3819A092548535200C71D41 /* CreateEventViewController.storyboard in Resources */,
+				A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */,
 				A33F80FF22468A5D009CC46A /* CalendarViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1404,7 +1408,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Clendar/Clendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1427,7 +1430,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Clendar/Clendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
