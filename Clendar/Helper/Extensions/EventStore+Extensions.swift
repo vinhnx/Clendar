@@ -27,13 +27,15 @@ extension EKEventStore {
         endDate: Date?,
         calendar: EKCalendar,
         span: EKSpan = .thisEvent,
+        isAllDay: Bool = false,
         completion: ((Result<EKEvent, ClendarError>) -> Void)?
     ) {
         let event = EKEvent(eventStore: self)
+        event.calendar = calendar
         event.title = title
+        event.isAllDay = isAllDay
         event.startDate = startDate
         event.endDate = endDate
-        event.calendar = calendar
 
         do {
             try save(event, span: span, commit: true)

@@ -94,6 +94,7 @@ final class EventKitWrapper {
         startDate: Date,
         endDate: Date?,
         span: EKSpan = .thisEvent,
+        isAllDay: Bool = false,
         completion: ((Result<EKEvent, ClendarError>) -> Void)?
     ) {
         requestEventStoreAuthorization { [weak self] result in
@@ -107,7 +108,7 @@ final class EventKitWrapper {
 
                     switch calendarResult {
                     case .success(let calendar):
-                        self.eventStore.createEvent(title: title, startDate: startDate, endDate: endDate, calendar: calendar, span: span, completion: completion)
+                        self.eventStore.createEvent(title: title, startDate: startDate, endDate: endDate, calendar: calendar, span: span, isAllDay: isAllDay, completion: completion)
 
                     case .failure(let error):
                         DispatchQueue.main.async { completion?(.failure(error)) }

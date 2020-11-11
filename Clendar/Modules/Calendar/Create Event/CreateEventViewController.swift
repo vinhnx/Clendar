@@ -35,6 +35,7 @@ internal struct EventOverride {
     let text: String
     let startDate: Date
     let endDate: Date?
+    let isAllDay: Bool
 }
 
 class CreateEventViewController: BaseViewController {
@@ -50,6 +51,15 @@ class CreateEventViewController: BaseViewController {
     var createEventType: CreateEventType = .create
 
     var viewModel = CreateEventViewModel()
+
+    @IBOutlet private var isAllDaySwitch: UISwitch! {
+        didSet {
+            isAllDaySwitch.isOn = false
+            isAllDaySwitch.addTarget(self, action: #selector(onAllDaySwitchChanged), for: .valueChanged)
+        }
+    }
+
+    @IBOutlet private var isAllDayContainerView: UIView!
 
     @IBOutlet private var deleteButton: Button! {
         didSet {
@@ -151,10 +161,11 @@ class CreateEventViewController: BaseViewController {
         let override = EventOverride(
             text: result.action,
             startDate: startDatePicker.date,
-            endDate: endDatePicker.date
+            endDate: endDatePicker.date,
+            isAllDay: isAllDaySwitch.isOn
         )
 
-        EventKitWrapper.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate) { [weak self] result in
+        EventKitWrapper.shared.createEvent(override.text, startDate: override.startDate, endDate: override.endDate, isAllDay: override.isAllDay) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
@@ -210,6 +221,9 @@ class CreateEventViewController: BaseViewController {
         createNewEvent()
     }
 
+    @objc private func onAllDaySwitchChanged() {
+        [startDateStackContainerView, endDateStackContainerView].forEach { $0?.isHidden = isAllDaySwitch.isOn }
+    }
 }
 
 extension CreateEventViewController: UITextFieldDelegate {
