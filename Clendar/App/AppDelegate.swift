@@ -13,14 +13,17 @@ import IQKeyboardManagerSwift
 import UserNotifications
 
 /*
+ Issues tracking
+ https://github.com/vinhnx/Clendar/issues
+
+==
  TODO:
- + check github-contribution-iOS app to impl heatmap https://github.com/AnderGoig/github-contributions-ios
- + for widget https://github.com/pawello2222/WidgetExamples
+ + https://github.com/kif-framework/KIF
+ + landing page https://github.com/emilbaehr/automatic-app-landing-page
+ + check github-contribution-iOS app to impl wdiget heatmap https://github.com/AnderGoig/github-contributions-ios
  + [!] IAP  => make more money
  + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
- + onboarding
- + rating prompt
- + change app icon
+ + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
  + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
  + settings:
     > [?] hightlight weekends (sat and sunday)
@@ -40,6 +43,13 @@ import UserNotifications
  
  ==
  DONE:
+ + [done] Plist gen https://github.com/mono0926/LicensePlist
+ + [done] add switch option for quick event as all l day event
+ + [done] change app icon
+ + [done] menu context:
+        [https://developer.apple.com/documentation/uikit/uicontextmenuinteraction
+        https://useyourloaf.com/blog/adding-context-menus-in-ios-13/
+        https://kylebashour.com/posts/ios-13-context-menus]
  + [done] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + [done] haptic feedback
  + [DONE, BUT could have settings configuration style -- IAP/pro...] IMPORTANT iOS 14 widget https://developer.apple.com/news/?id=yv6so7ie
