@@ -117,7 +117,6 @@
 		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
 		A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
-		A3DC1D6D254E544C00824E6A /* HeatMapCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */; };
 		A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */; };
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
@@ -269,7 +268,6 @@
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
-		A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatMapCalendarView.swift; sourceTree = "<group>"; };
 		A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetBundle.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 		A3064D35254CF0CC00C7F228 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A3DC1D51254E52E700824E6A /* Premium */,
 				A342117A254CF7E7008D9B8E /* WidgetEntryView.swift */,
 				A31202C1254D9E2F009ADB27 /* WidgetPlaceholderView.swift */,
 				A31202C6254D9E4F009ADB27 /* WidgetEventRow.swift */,
@@ -686,14 +683,6 @@
 				A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */,
 			);
 			path = "Event List";
-			sourceTree = "<group>";
-		};
-		A3DC1D51254E52E700824E6A /* Premium */ = {
-			isa = PBXGroup;
-			children = (
-				A3DC1D68254E544100824E6A /* HeatMapCalendarView.swift */,
-			);
-			path = Premium;
 			sourceTree = "<group>";
 		};
 		A3DC1D75254E54A400824E6A /* Bundle */ = {
@@ -1116,7 +1105,6 @@
 				A38A4DAF254D743100B35F98 /* UserDefaultsWrapper.swift in Sources */,
 				A38A4D98254D73F400B35F98 /* Constants.swift in Sources */,
 				A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */,
-				A3DC1D6D254E544C00824E6A /* HeatMapCalendarView.swift in Sources */,
 				A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */,
 				A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */,
 				A34211B4254CFF2B008D9B8E /* Utilities.swift in Sources */,
