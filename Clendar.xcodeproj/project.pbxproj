@@ -799,6 +799,7 @@
 				5B872D6F5371C5616117097F /* [CP] Embed Pods Frameworks */,
 				A33F80FA22467EEF009CC46A /* SwiftLint */,
 				A3064D2B254CEF5800C7F228 /* Embed App Extensions */,
+				A3FB5B46255C23BA0038AFCE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1080,6 +1081,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		A3FB5B46255C23BA0038AFCE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
