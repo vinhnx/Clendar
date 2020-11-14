@@ -22,7 +22,7 @@ body: MIT License
 Copyrig…
 version: 1.1.0
 
-name: CalendarHeatmap, nameSpecified: CalendarHeatmap, owner: Zacharysp, version: 
+name: AEXML, nameSpecified: AEXML, owner: tadija, version: 4.5.0
 
 name: CVCalendar, nameSpecified: CVCalendar, owner: CVCalendar, version: 1.7.0
 
@@ -30,11 +30,27 @@ name: Haptica, nameSpecified: Haptica, owner: efremidze, version: 3.0.2
 
 name: IQKeyboardManager, nameSpecified: IQKeyboardManagerSwift, owner: hackiftekhar, version: 6.5.6
 
+name: PathKit, nameSpecified: PathKit, owner: kylef, version: 1.0.0
+
+name: periphery, nameSpecified: Periphery, owner: peripheryapp, version: 2.1.0
+
+name: Spectre, nameSpecified: Spectre, owner: kylef, version: 0.9.1
+
+name: swift-argument-parser, nameSpecified: swift-argument-parser, owner: apple, version: 0.3.1
+
+name: swift-indexstore, nameSpecified: SwiftIndexStore, owner: kateinoigakukun, version: 0.1.2
+
 name: swift-log, nameSpecified: swift-log, owner: apple, version: 1.4.0
+
+name: swift-syntax, nameSpecified: SwiftSyntax, owner: apple, version: 0.50300.0
 
 name: SwiftDate, nameSpecified: SwiftDate, owner: malcommac, version: 6.2.0
 
 name: SwiftyFORM, nameSpecified: SwiftyFORM, owner: neoneye, version: 1.8.4
+
+name: xcodeproj, nameSpecified: XcodeProj, owner: tuist, version: 7.18.0
+
+name: Yams, nameSpecified: Yams, owner: jpsim, version: 4.0.1
 
 add-version-numbers: false
 

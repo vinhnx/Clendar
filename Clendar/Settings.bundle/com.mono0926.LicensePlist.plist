@@ -12,9 +12,9 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/CalendarHeatmap</string>
+			<string>com.mono0926.LicensePlist/AEXML</string>
 			<key>Title</key>
-			<string>CalendarHeatmap</string>
+			<string>AEXML</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -52,6 +52,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/PathKit</string>
+			<key>Title</key>
+			<string>PathKit</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/periphery</string>
+			<key>Title</key>
+			<string>Periphery</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/R.swift</string>
 			<key>Title</key>
 			<string>R.swift</string>
@@ -68,9 +84,33 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/Spectre</string>
+			<key>Title</key>
+			<string>Spectre</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-argument-parser</string>
+			<key>Title</key>
+			<string>swift-argument-parser</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/swift-log</string>
 			<key>Title</key>
 			<string>swift-log</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-syntax</string>
+			<key>Title</key>
+			<string>SwiftSyntax</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -103,6 +143,22 @@
 			<string>com.mono0926.LicensePlist/SwiftyFORM</string>
 			<key>Title</key>
 			<string>SwiftyFORM</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/xcodeproj</string>
+			<key>Title</key>
+			<string>XcodeProj</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/Yams</string>
+			<key>Title</key>
+			<string>Yams</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
