@@ -18,6 +18,7 @@ import UserNotifications
 
 ==
  TODO:
+ + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
  + landing page https://github.com/emilbaehr/automatic-app-landing-page
  + [!] IAP, tip jars  => make more money
  + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
