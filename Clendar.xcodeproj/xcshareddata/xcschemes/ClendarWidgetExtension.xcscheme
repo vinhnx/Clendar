@@ -81,7 +81,7 @@
          <EnvironmentVariable
             key = "_XCWidgetKind"
             value = "DateInfoWidget"
-            isEnabled = "NO">
+            isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "_XCWidgetDefaultView"

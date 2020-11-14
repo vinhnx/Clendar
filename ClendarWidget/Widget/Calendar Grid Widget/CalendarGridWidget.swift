@@ -13,14 +13,14 @@ struct CalendarGridWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: "CalendarGridWidget",
-            provider: CalendarGridWidgetTimelineProvider()
+            provider: DateInfoWidgetTimelineProvider()
         ) { (entry) in
             CalendarGridView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(.backgroundColor))
         }
-        .configurationDisplayName("Clendar Grid View Widget")
-        .description("Get month view calendar")
-        .supportedFamilies([.systemSmall])
+        .configurationDisplayName("Calendar grid view")
+        .description("Month view calendar")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }

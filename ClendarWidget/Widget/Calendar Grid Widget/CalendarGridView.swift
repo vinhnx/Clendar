@@ -78,6 +78,7 @@ struct CalendarView<DateView>: View where DateView: View {
         Spacer()
         weekDaysView()
         daysGridView()
+        Spacer()
     }
 
     // MARK: - Views Builder
@@ -157,17 +158,66 @@ struct CalendarView<DateView>: View where DateView: View {
 }
 
 struct CalendarGridView: View {
+    @Environment(\.widgetFamily) var family
+
     let entry: WidgetEntry
 
     @ViewBuilder
     var body: some View {
-        // swiftlint:disable:next force_unwrapping
-        CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
-            Text(date.toShortDateString)
-                .font(.system(size: 10, weight: .bold, design: .rounded))
-                .foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
-                .frame(width: 15, height: 15)
-                .multilineTextAlignment(.trailing)
-        }.padding()
+        switch family {
+        case .systemSmall:
+            SmallCalendarGridView(entry: entry)
+        case .systemMedium:
+            MediumCalendarGridView(entry: entry)
+        case .systemLarge:
+            LargeCalendarGridView(entry: entry)
+        @unknown default:
+            SmallCalendarGridView(entry: entry)
+        }
+    }
+}
+
+struct SmallCalendarGridView: View {
+    let entry: WidgetEntry
+
+    var body: some View {
+        VStack(alignment: .center) {
+            // swiftlint:disable:next force_unwrapping
+            CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
+                Text(date.toShortDateString)
+                    .font(.system(size: 10, weight: .bold, design: .rounded))
+                    .foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
+                    .frame(width: 15, height: 15)
+                    .multilineTextAlignment(.trailing)
+            }
+        }.padding(.all)
+    }
+}
+
+struct MediumCalendarGridView: View {
+    let entry: WidgetEntry
+
+    var body: some View {
+        HStack {
+            SmallCalendarGridView(entry: entry)
+            DividerView()
+            EventsListWidgetView(entry: entry, minimizeContents: true)
+        }
+    }
+}
+
+struct LargeCalendarGridView: View {
+    let entry: WidgetEntry
+
+    var body: some View {
+        HStack {
+            VStack {
+                SmallCalendarWidgetView(entry: entry)
+                DividerView()
+                SmallCalendarGridView(entry: entry)
+            }
+            DividerView()
+            EventsListWidgetView(entry: entry, minimizeContents: true)
+        }
     }
 }

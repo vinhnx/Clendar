@@ -127,7 +127,9 @@ struct EventsListWidgetView: View {
 }
 
 struct DividerView: View {
-    var body: some View { Divider().background(Color(.black)) }
+    var body: some View {
+        Divider().background(Color(.placeholderText))
+    }
 }
 
 // MARK: - Preview

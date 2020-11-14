@@ -17,14 +17,14 @@ struct ClendarWidgetBundle: WidgetBundle {
     }
 }
 
-struct CalendarGridWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        CalendarGridWidget()
-    }
-}
-
 struct DateInfoWidgetBundle: WidgetBundle {
     var body: some Widget {
         DateInfoWidget()
+    }
+}
+
+struct CalendarGridWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        CalendarGridWidget()
     }
 }
