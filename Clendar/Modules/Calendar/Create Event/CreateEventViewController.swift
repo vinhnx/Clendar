@@ -116,7 +116,7 @@ class CreateEventViewController: BaseViewController {
     @IBOutlet private var inputTextField: TextField! {
         didSet {
             inputTextField.delegate = self
-            inputTextField.placeholder = "write something on Friday at 5PM..."
+            inputTextField.placeholder = NSLocalizedString("write something at Friday 8PM...", comment: "")
         }
     }
 

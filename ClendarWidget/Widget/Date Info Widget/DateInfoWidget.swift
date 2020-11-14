@@ -26,8 +26,8 @@ struct DateInfoWidget: Widget {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(.backgroundColor))
         }
-        .configurationDisplayName("Date Info Widget")
-        .description("Check calendar at a glance")
+        .configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
+        .description(NSLocalizedString("Check calendar at a glance", comment: ""))
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 

@@ -50,7 +50,7 @@ final class AlertManager {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
                 onCancel?()
             }
 
@@ -95,7 +95,7 @@ final class AlertManager {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
                 okAction?()
             }
 
@@ -112,7 +112,7 @@ final class AlertManager {
         DispatchQueue.main.async {
             guard shouldShowAlert else { return }
             let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
                 okAction?()
             }
 
@@ -128,7 +128,7 @@ final class AlertManager {
     ///   - message: the message string
     ///   - onCancel: completion handler to be executed when user tap on cancel
     static func showSettingsAlert(title: String? = nil, message: String, onCancel: VoidBlock? = nil) {
-        showActionSheet(title: title, message: message, actionTitle: "Settings", okAction: {
+        showActionSheet(title: title, message: message, actionTitle: NSLocalizedString("Settings", comment: ""), okAction: {
             _ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
         }, onCancel: onCancel)
     }

@@ -10,6 +10,6 @@ import Foundation
 
 extension Bool {
     var asString: String {
-        self ? "On" : "Off"
+        self ? NSLocalizedString("On", comment: "") : NSLocalizedString("Off", comment: "")
     }
 }

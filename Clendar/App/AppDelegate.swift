@@ -18,31 +18,27 @@ import UserNotifications
 
 ==
  TODO:
- + https://github.com/kif-framework/KIF
  + landing page https://github.com/emilbaehr/automatic-app-landing-page
- + check github-contribution-iOS app to impl wdiget heatmap https://github.com/AnderGoig/github-contributions-ios
- + [!] IAP  => make more money
- + [!] gan admob google ads earn money ~1-2$ day or IAP? -- but consider if better than IAP
+ + [!] IAP, tip jars  => make more money
  + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
- + IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
- + settings:
-    > [?] hightlight weekends (sat and sunday)
-    > ???? not sure how to reload CVconfiguration?] start of week
-    > ??? Everything under CVCalendar configs
  + lunar converter (+)
  + lunar event (+)
  + duong lich <-> am lich
  + watch app (?)
-
  ==
  OPTIONAL
  + accessibilty (use lib)
  + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + local notification
  + [future] future: reminders/tasks
- 
+ + settings:
+    > [?] hightlight weekends (sat and sunday)
+    > ???? not sure how to reload CVconfiguration?] start of week
+    > ??? Everything under CVCalendar configs
  ==
  DONE:
+ + [done] IMPORTANT: Vietnamese translation, because aim for Vietnamese market or myself https://github.com/yonaskolb/Stringly
+    > https://www.raywenderlich.com/250-internationalizing-your-ios-app-getting-started
  + [done] Plist gen https://github.com/mono0926/LicensePlist
  + [done] add switch option for quick event as all l day event
  + [done] change app icon

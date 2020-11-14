@@ -123,15 +123,15 @@ extension EventListViewController: UIContextMenuInteractionDelegate {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: {
             EventViewerViewController(event: ekEvent)
         }, actionProvider: { _ in
-            let view = UIAction(title: "View Event", image: UIImage(systemName: "viewfinder")) { (_) in
+            let view = UIAction(title: NSLocalizedString("View Event", comment: ""), image: UIImage(systemName: "viewfinder")) { (_) in
                 EventHandler.viewEvent(event, delegate: self)
             }
 
-            let edit = UIAction(title: "Edit Event", image: UIImage(systemName: "pencil")) { (_) in
+            let edit = UIAction(title: NSLocalizedString("Edit Event", comment: ""), image: UIImage(systemName: "pencil")) { (_) in
                 EventHandler.editEvent(event, delegate: self)
             }
 
-            let delete = UIAction(title: "Delete Event", image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
+            let delete = UIAction(title: NSLocalizedString("Delete Event", comment: ""), image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
                 EventHandler.deleteEvent(event)
             }
 

@@ -25,9 +25,7 @@ struct AppInfo {
     }
 
     static var packageDate: String {
-        guard let date = buildDate else {
-            return "Unknown"
-        }
+        guard let date = buildDate else { return "" }
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
         formatter.timeZone = TimeZone(abbreviation: "UTC")
@@ -42,28 +40,29 @@ struct AppInfo {
             sysctlbyname(key, &machine, &size, nil, 0)
             return String(cString: machine)
         }
-        return "Unknown"
+
+        return ""
     }
 
     static var appName: String {
         let mainBundle = Bundle.main
         let string0 = mainBundle.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
         let string1 = mainBundle.object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String
-        let string = string0 ?? string1 ?? "Unknown"
+        let string = string0 ?? string1 ?? ""
         return string
     }
 
     static var appVersion: String {
         let mainBundle = Bundle.main
         let string0 = mainBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
-        let string = string0 ?? "Unknown"
+        let string = string0 ?? ""
         return string
     }
 
     static var appBuild: String {
         let mainBundle = Bundle.main
         let string0 = mainBundle.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
-        let string = string0 ?? "Unknown"
+        let string = string0 ?? ""
         return string
     }
 

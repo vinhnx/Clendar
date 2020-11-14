@@ -93,8 +93,8 @@ struct TodayOverviewWidgetView: View {
         VStack(alignment: .center) {
             let events = entry.events
             let text = events.isEmpty
-                ? "🎉 No more events today,\nenjoy your day!\n"
-                : "Upcoming events"
+                ? NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", comment: "")
+                : NSLocalizedString("Upcoming events", comment: "")
 
             Text(text)
                 .font(.system(size: 20, weight: .bold, design: .rounded))

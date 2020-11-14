@@ -11,8 +11,8 @@ import SwiftyFORM
 
 class AppIconChooserViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
-        builder.navigationTitle = "Custom App Icon"
-        builder.demo_showInfo("Choose your desired app icon")
+        builder.navigationTitle = NSLocalizedString("Custom App Icon", comment: "")
+        builder.demo_showInfo(NSLocalizedString("Choose your desired app icon", comment: ""))
 
         AppIcon.allCases.forEach { (appIcon) in
             let loader = CustomFormItem()

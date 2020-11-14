@@ -33,9 +33,9 @@ enum AppIcon: CaseIterable {
 
     var text: String {
         switch self {
-        case .light: return "Light"
-        case .dark: return "Dark"
-        case .dimmedDark: return "Dim"
+        case .light: return NSLocalizedString("Light", comment: "")
+        case .dark: return NSLocalizedString("Dark", comment: "")
+        case .dimmedDark: return NSLocalizedString("Dim", comment: "")
         }
     }
 
@@ -57,8 +57,8 @@ enum Theme: Int, CaseIterable {
 
     var text: String {
         switch self {
-        case .dark: return "Dark"
-        case .light: return "Light"
+        case .dark: return NSLocalizedString("Dark", comment: "")
+        case .light: return NSLocalizedString("Light", comment: "")
         }
     }
 
@@ -70,7 +70,15 @@ enum DaySupplementaryType: String, CaseIterable {
     case lunarDate = "Lunar date"
     case oneDot = "One dot"
 
-    static var titles: [String] = Self.allCases.map { $0.rawValue }
+    var localizedText: String {
+        switch self {
+        case .none: return NSLocalizedString("None", comment: "")
+        case .lunarDate: return NSLocalizedString("Lunar date", comment: "")
+        case .oneDot: return NSLocalizedString("One dot", comment: "")
+        }
+    }
+    
+    static var titles: [String] = Self.allCases.map { $0.localizedText }
     static var defaultValue: Self { .none }
 }
 
@@ -87,8 +95,8 @@ enum CalendarViewMode: Int, CaseIterable {
 
     var text: String {
         switch self {
-        case .week: return "Week view"
-        case .month: return "Month view"
+        case .week: return NSLocalizedString("Week view", comment: "")
+        case .month: return NSLocalizedString("Month view", comment: "")
         }
     }
 
@@ -111,6 +119,14 @@ enum BadgeSettings: String, CaseIterable {
     case none = "None"
     case date = "Date"
     case month = "Month"
+
+    var text: String {
+        switch self {
+        case .none: return NSLocalizedString("None", comment: "")
+        case .date: return NSLocalizedString("Date", comment: "")
+        case .month: return NSLocalizedString("Month", comment: "")
+        }
+    }
 
     static var titles: [String] { Self.allCases.map { $0.rawValue } }
     static var defaultValue: Self { .none }

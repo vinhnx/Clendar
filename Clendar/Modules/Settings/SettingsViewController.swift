@@ -51,7 +51,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var themes: SegmentedControlFormItem = {
         let proxy = SegmentedControlFormItem()
-        proxy.title = "Themes"
+        proxy.title = NSLocalizedString("Themes", comment: "")
         proxy.items = Theme.titles
         proxy.selected = SettingsManager.darkModeActivated
             ? Theme.dark.rawValue
@@ -67,7 +67,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var calendarMode: SegmentedControlFormItem = {
         let proxy = SegmentedControlFormItem()
-        proxy.title = "View mode"
+        proxy.title = NSLocalizedString("View mode", comment: "")
         proxy.items = CalendarViewMode.titles
         proxy.selected = SettingsManager.monthViewCalendarMode
             ? CalendarViewMode.month.rawValue
@@ -82,7 +82,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var showDaysOut: SwitchFormItem = {
         let instance = SwitchFormItem()
-        instance.title = "Show days out"
+        instance.title = NSLocalizedString("Show days out", comment: "")
         instance.value = SettingsManager.showDaysOut
         instance.switchDidChangeBlock = { activate in
             SettingsManager.showDaysOut = activate
@@ -93,7 +93,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var supplementaryViewMode: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
-        instance.title("Supplementary day view")
+        instance.title(NSLocalizedString("Supplementary day view", comment: ""))
         instance.append(DaySupplementaryType.titles)
         instance.selectOptionWithTitle(SettingsManager.daySupplementaryType)
         instance.valueDidChange = { selected in
@@ -105,7 +105,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var quickEventMode: SwitchFormItem = {
         let instance = SwitchFormItem()
-        instance.title = "Quick event"
+        instance.title = NSLocalizedString("Quick event", comment: "")
         instance.value = SettingsManager.useExperimentalCreateEventMode
         instance.switchDidChangeBlock = { activate in
             SettingsManager.useExperimentalCreateEventMode = activate
@@ -116,7 +116,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
         let instance = SwitchFormItem()
-        instance.title = "Auto-select day on changes"
+        instance.title = NSLocalizedString("Auto-select day when month changes", comment: "")
         instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
         instance.switchDidChangeBlock = { activate in
             SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
@@ -127,9 +127,10 @@ final class SettingsViewController: FormViewController {
 
     lazy var defaultEventDuration: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
-        instance.title("Default event duration")
-        instance.append(DefaultEventDurations.map { minute in "\(minute) minutes" })
-        instance.selectOptionWithTitle("\(SettingsManager.defaultEventDuration) minutes")
+        instance.title(NSLocalizedString("Default event duration", comment: ""))
+        let minutesText = NSLocalizedString("minutes", comment: "")
+        instance.append(DefaultEventDurations.map { minute in "\(minute)" + " " + minutesText })
+        instance.selectOptionWithTitle("\(SettingsManager.defaultEventDuration)" + " " + minutesText)
         instance.valueDidChange = { selected in
             guard let title = selected?.title else { return }
             guard let duration = title.parseInt() else { return }
@@ -141,7 +142,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var enableHapticFeedback: SwitchFormItem = {
         let instance = SwitchFormItem()
-        instance.title = "Haptic feedback"
+        instance.title = NSLocalizedString("Haptic feedback", comment: "")
         instance.value = SettingsManager.enableHapticFeedback
         instance.switchDidChangeBlock = { activate in
             SettingsManager.enableHapticFeedback = activate
@@ -156,13 +157,14 @@ final class SettingsViewController: FormViewController {
 
         hidesBottomBarWhenPushed = true
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dimissModal))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .done, target: self, action: #selector(dimissModal))
 
         checkUIMode()
 
         NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
             self.checkUIMode()
         }
+
     }
 
     deinit {
@@ -178,39 +180,39 @@ final class SettingsViewController: FormViewController {
     // MARK: - Form
 
     override func populate(_ builder: FormBuilder) {
-        builder.navigationTitle = "Settings"
+        builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
         // General
-        builder += SectionHeaderTitleFormItem().title("General")
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
         builder += enableHapticFeedback
-        builder += ViewControllerFormItem().title("Custom App Icon").viewController(AppIconChooserViewController.self)
+        builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
         // Calendars
-        builder += SectionHeaderTitleFormItem().title("Calendars")
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendars", comment: ""))
         builder += ViewControllerFormItem()
-            .title("Available calendars")
+            .title(NSLocalizedString("Available calendars", comment: ""))
             .viewController(CalendarsChooserViewController.self)
-        builder += SectionFooterTitleFormItem().title("You can choose available calendars to shown in event list")
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("You can choose available calendars to shown in event list", comment: ""))
 
         // Calendar
-        builder += SectionHeaderTitleFormItem().title("Calendar View")
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
         builder += calendarMode
         builder += showDaysOut
         builder += shouldAutoSelectDayOnCalendarChange
         builder += supplementaryViewMode
-        builder += SectionFooterTitleFormItem().title("Auto-select first day of month/week when calendar changes")
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
 
         // Quick Event
-        builder += SectionHeaderTitleFormItem().title("Quick Event")
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += defaultEventDuration
         builder += quickEventMode
-        builder += SectionFooterTitleFormItem().title("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.")
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
 
         // Info
-        builder += SectionHeaderTitleFormItem().title("App info")
-        builder += StaticTextFormItem().title("Name").value(AppInfo.appName)
-        builder += StaticTextFormItem().title("Version").value(AppInfo.appVersionAndBuild)
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))
+        builder += StaticTextFormItem().title(NSLocalizedString("Name", comment: "")).value(AppInfo.appName)
+        builder += StaticTextFormItem().title(NSLocalizedString("Version", comment: "")).value(AppInfo.appVersionAndBuild)
     }
 
 }

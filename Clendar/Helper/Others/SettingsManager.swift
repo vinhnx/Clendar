@@ -39,4 +39,5 @@ struct SettingsManager {
 
     @UserDefault("currentAppIconName", defaultValue: AppIcon.defaultValue)
     static var currentAppIconName: String?
+
 }

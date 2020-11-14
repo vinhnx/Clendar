@@ -1,0 +1,146 @@
+/* No comment provided by engineer. */
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Bạn có thể chọn sử dụng chế độ phân tích cú pháp ngôn ngữ tự nhiên thử nghiệm khi tạo sự kiện mới. Tính năng này sẽ được cải thiện.";
+
+/* No comment provided by engineer. */
+"App info" = "Thông tin ứng dụng";
+
+/* No comment provided by engineer. */
+"Auto-select first day of month/week when calendar changes" = "Tự động chọn ngày đầu tiên của tháng / tuần khi lịch thay đổi";
+
+/* No comment provided by engineer. */
+"Available calendars" = "Lịch có sẵn";
+
+/* No comment provided by engineer. */
+"Calendar grid view" = "Chế độ xem lịch dạng lưới";
+
+/* No comment provided by engineer. */
+"Calendar View" = "Chế độ xem lịch";
+
+/* No comment provided by engineer. */
+"Calendars" = "Danh sách lịch";
+
+/* No comment provided by engineer. */
+"Cancel" = "Hủy bỏ";
+
+/* No comment provided by engineer. */
+"Check calendar at a glance" = "Kiểm tra lịch trong nháy mắt";
+
+/* No comment provided by engineer. */
+"Custom App Icon" = "Biểu tượng ứng dụng tùy chỉnh";
+
+/* No comment provided by engineer. */
+"Dark" = "Tối";
+
+/* No comment provided by engineer. */
+"Date Info Widget" = "Tiện ích thông tin ngày";
+
+/* No comment provided by engineer. */
+"Delete Event" = "Xóa sự kiện";
+
+/* No comment provided by engineer. */
+"Dim" = "Tối mờ";
+
+/* No comment provided by engineer. */
+"Done" = "Xong";
+
+/* No comment provided by engineer. */
+"Edit Event" = "Sửa sự kiện";
+
+/* No comment provided by engineer. */
+"General" = "Tổng quan";
+
+/* No comment provided by engineer. */
+"Light" = "Sáng";
+
+/* No comment provided by engineer. */
+"Lunar date" = "Ngày âm lịch";
+
+/* No comment provided by engineer. */
+"Month" = "Tháng";
+
+/* No comment provided by engineer. */
+"Month view" = "Tháng";
+
+/* No comment provided by engineer. */
+"Month view calendar" = "Hiển thị tháng";
+
+/* No comment provided by engineer. */
+"Name" = "Tên";
+
+/* No comment provided by engineer. */
+"None" = "Không";
+
+/* No comment provided by engineer. */
+"Off" = "Tắt";
+
+/* No comment provided by engineer. */
+"OK" = "Đồng ý";
+
+/* No comment provided by engineer. */
+"On" = "Mở";
+
+/* No comment provided by engineer. */
+"One dot" = "Một dấu chấm";
+
+/* No comment provided by engineer. */
+"Settings" = "Tùy chỉnh";
+
+/* No comment provided by engineer. */
+"Themes" = "Chủ đề";
+
+/* No comment provided by engineer. */
+"Upcoming events" = "Các sự kiện sắp tới";
+
+/* No comment provided by engineer. */
+"Version" = "Phiên bản";
+
+/* No comment provided by engineer. */
+"View Event" = "Xem sự kiện";
+
+/* No comment provided by engineer. */
+"View mode" = "Chế độ hiển thị";
+
+/* No comment provided by engineer. */
+"Week view" = "Tuần";
+
+/* No comment provided by engineer. */
+"You can choose available calendars to shown in event list" = "Bạn có thể chọn các lịch có sẵn để hiển thị trong danh sách sự kiện";
+
+/* No comment provided by engineer. */
+"🎉 No more events today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào nữa,\nhãy tận hưởng một ngày của bạn!\n";
+
+/* No comment provided by engineer. */
+"Auto-select day when month changes" = "Tự động chọn ngày";
+
+/* No comment provided by engineer. */
+"Choose your desired app icon" = "Chọn biểu tượng ứng dụng mong muốn của bạn";
+
+/* No comment provided by engineer. */
+"Date" = "Ngày";
+
+/* No comment provided by engineer. */
+"Default event duration" = "Thời lượng sự kiện mặc định";
+
+/* No comment provided by engineer. */
+"Haptic feedback" = "Phản hồi xúc giác";
+
+/* No comment provided by engineer. */
+"minutes" = "phút";
+
+/* No comment provided by engineer. */
+"Quick Event" = "Tạo sự kiện nhanh";
+
+/* No comment provided by engineer. */
+"Show days out" = "Hiện ngày khác tháng";
+
+/* No comment provided by engineer. */
+"Supplementary day view" = "Xem ngày bổ sung";
+
+/* No comment provided by engineer. */
+"write something at Friday 8PM..." = "viết gì đó vào lúc 8 giờ tối thứ sáu ...";
+
+"English" = "Tiếng Anh";
+
+"Vietnamese" = "Tiếng Việt";
+
+"Change app Language" = "Thay đổi ngôn ngữ";
