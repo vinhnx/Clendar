@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "CalendarHeatmap",
-        "repositoryURL": "https://github.com/Zacharysp/CalendarHeatmap",
-        "state": {
-          "branch": "master",
-          "revision": "dac4e0094d32ef8f4c59fecf6ed978b7b6b8d3e3",
-          "version": null
-        }
-      },
-      {
         "package": "CVCalendar",
         "repositoryURL": "https://github.com/CVCalendar/CVCalendar",
         "state": {
