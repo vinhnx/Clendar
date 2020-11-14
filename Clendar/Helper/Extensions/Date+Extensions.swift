@@ -40,6 +40,10 @@ extension Date {
         DateFormatter.format(self, template: "HH:mm")
     }
 
+    var toShortDateString: String {
+        DateFormatter.format(self, template: "d")
+    }
+
     var toDateString: String {
         DateFormatter.format(self, template: "dd")
     }

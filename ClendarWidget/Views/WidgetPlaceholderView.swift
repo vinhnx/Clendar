@@ -1,5 +1,5 @@
 //
-//  WidgetPlaceholderView.swift
+//  DateInfoWidgetPlaceholder.swift
 //  ClendarWidgetExtension
 //
 //  Created by Vinh Nguyen on 10/31/20.
@@ -9,8 +9,8 @@
 import Foundation
 import SwiftUI
 
-struct WidgetPlaceholderView: View {
+struct DateInfoWidgetPlaceholder: View {
     var body: some View {
-        WidgetEntryView(entry: WidgetEntry(date: Date()))
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
     }
 }

@@ -1,6 +1,6 @@
 //
-//  ClendarWidget.swift
-//  ClendarWidget
+//  DateInfoWidget.swift
+//  DateInfoWidget
 //
 //  Created by Vinh Nguyen on 10/31/20.
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
@@ -16,19 +16,17 @@ import WidgetKit
  + https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
  + https://github.com/pawello2222/WidgetExamples
  */
-struct ClendarWidget: Widget {
-    private let kind = "ClendarWidget"
-
+struct DateInfoWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
-            kind: kind,
-            provider: WidgetTimelineProvider()
+            kind: "DateInfoWidget",
+            provider: DateInfoWidgetTimelineProvider()
         ) { (entry) in
-            WidgetEntryView(entry: entry)
+            DateInfoWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(.backgroundColor))
         }
-        .configurationDisplayName("Clendar Widget")
+        .configurationDisplayName("Date Info Widget")
         .description("Check calendar at a glance")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }

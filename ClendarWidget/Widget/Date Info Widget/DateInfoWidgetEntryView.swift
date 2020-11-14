@@ -1,5 +1,5 @@
 //
-//  WidgetEntryView.swift
+//  DateInfoWidgetEntryView.swift
 //  ClendarWidgetExtension
 //
 //  Created by Vinh Nguyen on 10/31/20.
@@ -12,7 +12,7 @@ import WidgetKit
 import SwiftUI
 import SwiftDate
 
-struct WidgetEntryView: View {
+struct DateInfoWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
 
     let entry: WidgetEntry
@@ -114,7 +114,7 @@ struct EventsListWidgetView: View {
             Section(
                 header:
                     Text(entry.date.toFullDateString.uppercased())
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundColor(Color(.moianesB))
             ) {
                 let events = entry.events.prefix(minimizeContents ? 3 : 6)
@@ -135,12 +135,12 @@ struct DividerView: View {
 struct WidgetEntryView_Previews: PreviewProvider {
     static var previews: some View {
 
-        WidgetEntryView(entry: WidgetEntry(date: Date()))
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
             .preferredColorScheme(.dark)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
             .environment(\.colorScheme, .dark)
 
-        WidgetEntryView(entry: WidgetEntry(date: Date()))
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
             .preferredColorScheme(.dark)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
             .redacted(reason: .placeholder)

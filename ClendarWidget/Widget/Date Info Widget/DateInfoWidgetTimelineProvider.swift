@@ -11,7 +11,7 @@ import WidgetKit
 
 // Reference: https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
 
-struct WidgetTimelineProvider: TimelineProvider {
+struct DateInfoWidgetTimelineProvider: TimelineProvider {
     typealias Entry = WidgetEntry
 
     // MARK: - TimelineProvider
