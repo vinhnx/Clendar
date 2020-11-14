@@ -74,29 +74,15 @@ struct CalendarView<DateView>: View where DateView: View {
 
     @ViewBuilder
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
-            ForEach(months, id: \.self) { month in
-                Section(header: header(for: month)) {
-                    ForEach(days(for: month), id: \.self) { date in
-                        if calendar.isDate(date, equalTo: month, toGranularity: .month) {
-                            content(date).id(date)
-                        } else {
-                            content(date).hidden()
-                        }
-                    }
-                }
-            }
-        }
+        headerView()
+        Spacer()
+        weekDaysView()
+        daysGridView()
     }
 
-    private var months: [Date] {
-        calendar.generateDates(
-            inside: interval,
-            matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
-        )
-    }
+    // MARK: - Views Builder
 
-    private func header(for month: Date) -> some View {
+    private func headerView(for month: Date = Date()) -> some View {
         let component = calendar.component(.month, from: month)
         let formatter = component == 1 ? DateFormatter.monthAndYear : .month
 
@@ -104,9 +90,41 @@ struct CalendarView<DateView>: View where DateView: View {
             if showHeaders {
                 Text(formatter.string(from: month).uppercased())
                     .font(.system(size: 11, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(.appDark))
+                    .foregroundColor(Color(.moianesD))
             }
         }
+    }
+
+    private func weekDaysView() -> some View {
+        HStack(spacing: 12) {
+            ForEach(0..<7, id: \.self) {index in
+                Text(getWeekDaysSorted()[index].uppercased())
+                    .font(.system(size: 10, weight: .bold, design: .rounded))
+            }
+        }
+    }
+
+    private func daysGridView() -> some View {
+        LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
+            ForEach(months, id: \.self) { month in
+                ForEach(days(for: month), id: \.self) { date in
+                    if calendar.isDate(date, equalTo: month, toGranularity: .month) {
+                        content(date).id(date)
+                    } else {
+                        content(date).hidden()
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: - Data Helpers
+
+    private var months: [Date] {
+        calendar.generateDates(
+            inside: interval,
+            matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
+        )
     }
 
     private func days(for month: Date) -> [Date] {
@@ -116,21 +134,25 @@ struct CalendarView<DateView>: View where DateView: View {
             let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
         else { return [] }
 
-        let dates = calendar.generateDates(
+        return calendar.generateDates(
             inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
             matching: DateComponents(hour: 0, minute: 0, second: 0)
         )
-        return dates
     }
 
     private var weeks: [Date] {
-        guard
-            let monthInterval = calendar.dateInterval(of: .month, for: Date())
-            else { return [] }
+        guard let monthInterval = calendar.dateInterval(of: .month, for: Date()) else { return [] }
+
         return calendar.generateDates(
             inside: monthInterval,
             matching: DateComponents(hour: 0, minute: 0, second: 0, weekday: calendar.firstWeekday)
         )
+    }
+
+    private func getWeekDaysSorted() -> [String] {
+        let weekDays = Calendar.current.veryShortWeekdaySymbols
+        let sortedWeekDays = Array(weekDays[Calendar.current.firstWeekday - 1 ..< Calendar.current.shortWeekdaySymbols.count] + weekDays[0 ..< Calendar.current.firstWeekday - 1])
+        return sortedWeekDays
     }
 }
 
@@ -145,6 +167,7 @@ struct CalendarGridView: View {
                 .font(.system(size: 10, weight: .bold, design: .rounded))
                 .foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
                 .frame(width: 15, height: 15)
+                .multilineTextAlignment(.trailing)
         }.padding()
     }
 }
