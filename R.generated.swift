@@ -329,47 +329,8 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
-    /// This `R.string.calendarViewController` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.calendarViewController` struct is generated, and contains static references to 0 localization keys.
     struct calendarViewController {
-      /// vi translation: 
-      ///
-      /// Locales: vi
-      static let d6u7VMoRText = Rswift.StringResource(key: "D6u-7V-moR.text", tableName: "CalendarViewController", bundle: R.hostingBundle, locales: ["vi"], comment: nil)
-      /// vi translation:  
-      ///
-      /// Locales: vi
-      static let az4DNEPHText = Rswift.StringResource(key: "AZ4-dN-EPH.text", tableName: "CalendarViewController", bundle: R.hostingBundle, locales: ["vi"], comment: nil)
-
-      /// vi translation: 
-      ///
-      /// Locales: vi
-      static func d6u7VMoRText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("D6u-7V-moR.text", tableName: "CalendarViewController", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CalendarViewController", preferredLanguages: preferredLanguages) else {
-          return "D6u-7V-moR.text"
-        }
-
-        return NSLocalizedString("D6u-7V-moR.text", tableName: "CalendarViewController", bundle: bundle, comment: "")
-      }
-
-      /// vi translation:  
-      ///
-      /// Locales: vi
-      static func az4DNEPHText(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("AZ4-dN-EPH.text", tableName: "CalendarViewController", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "CalendarViewController", preferredLanguages: preferredLanguages) else {
-          return "AZ4-dN-EPH.text"
-        }
-
-        return NSLocalizedString("AZ4-dN-EPH.text", tableName: "CalendarViewController", bundle: bundle, comment: "")
-      }
-
       fileprivate init() {}
     }
 
