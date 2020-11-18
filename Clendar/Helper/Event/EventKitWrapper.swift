@@ -66,8 +66,12 @@ final class EventKitWrapper {
             requestCalendarAccess { (result) in
                 switch result {
                 case .success(let granted):
-                    if granted { DispatchQueue.main.async { completion?(.success(status)) } }
-                    else { DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) } }
+                    if granted {
+                        DispatchQueue.main.async { completion?(.success(.authorized)) }
+                    }
+                    else {
+                        DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) }
+                    }
 
                 case .failure(let error):
                     DispatchQueue.main.async { completion?(.failure(ClendarError.mapFromError(error))) }
