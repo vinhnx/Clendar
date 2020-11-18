@@ -11,248 +11,235 @@ import Foundation
 
 /// [WIP] Wrapper for EventKit
 final class EventKitWrapper {
+	// MARK: Lifecycle
 
-    // MARK: - Properties
+	private init() {} // This prevents others from using the default '()' initializer for this class.
 
-    /// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
-    public private(set) var eventStore = EKEventStore()
+	// MARK: Public
 
-    /// Returns calendar object from event kit
-    public var defaultCalendar: EKCalendar {
-        eventStore.calendarForApp()
-    }
+	/// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
+	public private(set) var eventStore = EKEventStore()
 
-    /// Return all accessible calendars from user's authorization
-    public private(set) var allDefaultCalendars = [EKCalendar]()
+	/// Return all accessible calendars from user's authorization
+	public private(set) var allDefaultCalendars = [EKCalendar]()
 
-    /// Saved calendars from settings
-    public var savedCalendars: [EKCalendar] {
-        let result = allDefaultCalendars.filter { calendar in savedCalendarIDs.contains(calendar.calendarIdentifier) }
-        if result.isEmpty { return allDefaultCalendars }
-        return result
-    }
+	/// Returns calendar object from event kit
+	public var defaultCalendar: EKCalendar {
+		eventStore.calendarForApp()
+	}
 
-    // Storage
-    private var _savedCalendarIDs = [String]()
-    public var savedCalendarIDs: [String] {
-        get { UserDefaults.savedCalendarIDs }
-        set {
-            UserDefaults.savedCalendarIDs = newValue
-            NotificationCenter.default.post(name: .didChangeSavedCalendarsPreferences, object: nil)
-        }
-    }
+	/// Saved calendars from settings
+	public var savedCalendars: [EKCalendar] {
+		let result = allDefaultCalendars.filter { calendar in savedCalendarIDs.contains(calendar.calendarIdentifier) }
+		if result.isEmpty { return allDefaultCalendars }
+		return result
+	}
 
-    // MARK: - Life cycle
+	public var savedCalendarIDs: [String] {
+		get { UserDefaults.savedCalendarIDs }
+		set {
+			UserDefaults.savedCalendarIDs = newValue
+			NotificationCenter.default.post(name: .didChangeSavedCalendarsPreferences, object: nil)
+		}
+	}
 
-    static let shared = EventKitWrapper()
-    private init() {} // This prevents others from using the default '()' initializer for this class.
+	// MARK: Internal
 
-    // MARK: - Flow
+	static let shared = EventKitWrapper()
 
-    /// Request event store authorization
-    /// - Parameter completion: completion handler with an EKAuthorizationStatus enum
-    func requestEventStoreAuthorization(completion: ((Result<EKAuthorizationStatus, ClendarError>) -> Void)?) {
-        let status = EKEventStore.authorizationStatus(for: .event)
+	/// Request event store authorization
+	/// - Parameter completion: completion handler with an EKAuthorizationStatus enum
+	func requestEventStoreAuthorization(completion: ((Result<EKAuthorizationStatus, ClendarError>) -> Void)?) {
+		let status = EKEventStore.authorizationStatus(for: .event)
 
-        switch status {
-        case .authorized:
-            DispatchQueue.main.async { completion?(.success(status)) }
+		switch status {
+		case .authorized:
+			DispatchQueue.main.async { completion?(.success(status)) }
 
-        case .denied,
-             .restricted:
-            DispatchQueue.main.async { completion?(.failure(ClendarError.failedToAuthorizeEventPersmissson(status))) }
+		case .denied,
+		     .restricted:
+			DispatchQueue.main.async { completion?(.failure(ClendarError.failedToAuthorizeEventPersmissson(status))) }
 
-        case .notDetermined:
-            requestCalendarAccess { (result) in
-                switch result {
-                case .success(let granted):
-                    if granted {
-                        DispatchQueue.main.async { completion?(.success(.authorized)) }
-                    }
-                    else {
-                        DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) }
-                    }
+		case .notDetermined:
+			requestCalendarAccess { result in
+				switch result {
+				case let .success(granted):
+					if granted {
+						DispatchQueue.main.async { completion?(.success(.authorized)) }
+					}
+					else {
+						DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) }
+					}
 
-                case .failure(let error):
-                    DispatchQueue.main.async { completion?(.failure(ClendarError.mapFromError(error))) }
+				case let .failure(error):
+					DispatchQueue.main.async { completion?(.failure(ClendarError.mapFromError(error))) }
+				}
+			}
 
-                }
-            }
+		@unknown default:
+			DispatchQueue.main.async { completion?(.failure(ClendarError.failedToAuthorizeEventPersmissson(status))) }
+		}
+	}
 
-        @unknown default:
-            DispatchQueue.main.async { completion?(.failure(ClendarError.failedToAuthorizeEventPersmissson(status))) }
+	/// Create an event
+	/// - Parameters:
+	///   - title: event title
+	///   - startDate: event start date
+	///   - endDate: event end date
+	///   - completion: completion handler
+	func createEvent(
+		_ title: String,
+		startDate: Date,
+		endDate: Date?,
+		span: EKSpan = .thisEvent,
+		isAllDay: Bool = false,
+		completion: ((Result<EKEvent, ClendarError>) -> Void)?
+	) {
+		requestEventStoreAuthorization { [weak self] result in
+			switch result {
+			case let .success(status):
+				guard let self = self else { return }
+				guard status == .authorized else { return }
 
-        }
-    }
+				self.accessCalendar { [weak self] calendarResult in
+					guard let self = self else { return }
 
-    // MARK: - CRUD
+					switch calendarResult {
+					case let .success(calendar):
+						self.eventStore.createEvent(title: title, startDate: startDate, endDate: endDate, calendar: calendar, span: span, isAllDay: isAllDay, completion: completion)
 
-    /// Create an event
-    /// - Parameters:
-    ///   - title: event title
-    ///   - startDate: event start date
-    ///   - endDate: event end date
-    ///   - completion: completion handler
-    func createEvent(
-        _ title: String,
-        startDate: Date,
-        endDate: Date?,
-        span: EKSpan = .thisEvent,
-        isAllDay: Bool = false,
-        completion: ((Result<EKEvent, ClendarError>) -> Void)?
-    ) {
-        requestEventStoreAuthorization { [weak self] result in
-            switch result {
-            case .success(let status):
-                guard let self = self else { return }
-                guard status == .authorized else { return }
+					case let .failure(error):
+						DispatchQueue.main.async { completion?(.failure(error)) }
+					}
+				}
 
-                self.accessCalendar { [weak self] calendarResult in
-                    guard let self = self else { return }
+			case let .failure(error):
+				DispatchQueue.main.async { completion?(.failure(error)) }
+			}
+		}
+	}
 
-                    switch calendarResult {
-                    case .success(let calendar):
-                        self.eventStore.createEvent(title: title, startDate: startDate, endDate: endDate, calendar: calendar, span: span, isAllDay: isAllDay, completion: completion)
+	/// Delete an event
+	/// - Parameters:
+	///   - identifier: event identifier
+	///   - span: An object that indicates whether modifications should apply to a single event or all future events of a recurring event.
+	///   - completion: completion handler
+	func deleteEvent(identifier: String, span: EKSpan = .thisEvent, completion: ((Result<Void, ClendarError>) -> Void)?) {
+		requestEventStoreAuthorization { [weak self] result in
+			switch result {
+			case let .success(status):
+				guard let self = self else { return }
+				guard status == .authorized else { return }
 
-                    case .failure(let error):
-                        DispatchQueue.main.async { completion?(.failure(error)) }
+				self.accessCalendar { [weak self] calendarResult in
+					guard let self = self else { return }
 
-                    }
-                }
+					switch calendarResult {
+					case .success:
+						self.eventStore.deleteEvent(identifier: identifier, span: span, completion: completion)
 
-            case .failure(let error):
-                DispatchQueue.main.async { completion?(.failure(error)) }
+					case let .failure(error):
+						DispatchQueue.main.async { completion?(.failure(error)) }
+					}
+				}
 
-            }
-        }
-    }
+			case let .failure(error):
+				DispatchQueue.main.async { completion?(.failure(error)) }
+			}
+		}
+	}
 
-    /// Delete an event
-    /// - Parameters:
-    ///   - identifier: event identifier
-    ///   - span: An object that indicates whether modifications should apply to a single event or all future events of a recurring event.
-    ///   - completion: completion handler
-    func deleteEvent(identifier: String, span: EKSpan = .thisEvent, completion: ((Result<Void, ClendarError>) -> Void)?) {
-        requestEventStoreAuthorization { [weak self] result in
-            switch result {
-            case .success(let status):
-                guard let self = self else { return }
-                guard status == .authorized else { return }
+	/// Fetch events for today
+	/// - Parameter completion: completion handler
+	func fetchEventsForToday(completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
+		let today = Date()
+		fetchEvents(startDate: today.startDate, endDate: today.endDate, completion: completion)
+	}
 
-                self.accessCalendar { [weak self] calendarResult in
-                    guard let self = self else { return }
+	/// Fetch events for a specific day
+	/// - Parameters:
+	///   - date: day to fetch events from
+	///   - completion: completion handler
+	func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+		fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
+	}
 
-                    switch calendarResult {
-                    case .success:
-                        self.eventStore.deleteEvent(identifier: identifier, span: span, completion: completion)
+	/// Fetch events for a specific day
+	/// - Parameters:
+	///   - date: day to fetch events from
+	///   - completion: completion handler
+	func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+		fetchEvents(startDate: startDate, endDate: startDate.endDate, completion: completion)
+	}
 
-                    case .failure(let error):
-                        DispatchQueue.main.async { completion?(.failure(error)) }
+	/// Fetch events from date range
+	/// - Parameters:
+	///   - startDate: start date range
+	///   - endDate: end date range
+	///   - completion: completion handler
+	func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+		requestEventStoreAuthorization { [weak self] result in
+			switch result {
+			case let .success(status):
+				guard let self = self else { return }
+				guard status == .authorized else { return }
 
-                    }
-                }
+				let _calendars = self.eventStore.calendars(for: .event)
+				self.allDefaultCalendars = _calendars // IMPORTANT
 
-            case .failure(let error):
-                DispatchQueue.main.async { completion?(.failure(error)) }
+				let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: self.savedCalendars)
+				let events = self.eventStore.events(matching: predicate)
+				DispatchQueue.main.async { completion?(.success(events)) }
 
-            }
-        }
-    }
+			case let .failure(error):
+				DispatchQueue.main.async {
+					completion?(.failure(error))
+				}
+			}
+		}
+	}
 
-    // MARK: - Fetch Events
+	// MARK: Private
 
-    /// Fetch events for today
-    /// - Parameter completion: completion handler
-    func fetchEventsForToday(completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
-        let today = Date()
-        fetchEvents(startDate: today.startDate, endDate: today.endDate, completion: completion)
-    }
+	private var _savedCalendarIDs = [String]()
 
-    /// Fetch events for a specific day
-    /// - Parameters:
-    ///   - date: day to fetch events from
-    ///   - completion: completion handler
-    func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
-        fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
-    }
+	/// Request access to calendar
+	/// - Parameter completion: calendar object
+	private func accessCalendar(completion: ((Result<EKCalendar, ClendarError>) -> Void)?) {
+		requestEventStoreAuthorization { [weak self] result in
+			switch result {
+			case let .success(status):
+				guard let self = self else { return }
+				guard status == .authorized else { return }
 
-    /// Fetch events for a specific day
-    /// - Parameters:
-    ///   - date: day to fetch events from
-    ///   - completion: completion handler
-    func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
-        fetchEvents(startDate: startDate, endDate: startDate.endDate, completion: completion)
-    }
+				DispatchQueue.main.async {
+					completion?(.success(self.eventStore.calendarForApp()))
+				}
 
-    /// Fetch events from date range
-    /// - Parameters:
-    ///   - startDate: start date range
-    ///   - endDate: end date range
-    ///   - completion: completion handler
-    func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
-        requestEventStoreAuthorization { [weak self] result in
-            switch result {
-            case .success(let status):
-                guard let self = self else { return }
-                guard status == .authorized else { return }
+			case let .failure(error):
+				DispatchQueue.main.async {
+					completion?(.failure(error))
+				}
+			}
+		}
+	}
 
-                let _calendars = self.eventStore.calendars(for: .event)
-                self.allDefaultCalendars = _calendars // IMPORTANT
-
-                let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: self.savedCalendars)
-                let events = self.eventStore.events(matching: predicate)
-                DispatchQueue.main.async { completion?(.success(events)) }
-
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    completion?(.failure(error))
-                }
-            }
-
-        }
-    }
-
-    // MARK: - Private
-
-    /// Request access to calendar
-    /// - Parameter completion: calendar object
-    private func accessCalendar(completion: ((Result<EKCalendar, ClendarError>) -> Void)?) {
-        requestEventStoreAuthorization { [weak self] result in
-            switch result {
-            case .success(let status):
-                guard let self = self else { return }
-                guard status == .authorized else { return }
-
-                DispatchQueue.main.async {
-                    completion?(.success(self.eventStore.calendarForApp()))
-                }
-
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    completion?(.failure(error))
-                }
-
-            }
-        }
-    }
-
-    /// Prompt the user for access to their Calendar
-    /// - Parameter onAuthorized: on authorized
-    private func requestCalendarAccess(completion: ((Result<Bool, Error>) -> Void)?) {
-        eventStore.requestAccess(to: .event) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    NotificationCenter.default.post(name: .didAuthorizeCalendarAccess, object: nil)
-                    completion?(.success(granted))
-                }
-            }
-            else if let error = error {
-                DispatchQueue.main.async { completion?(.failure(error)) }
-            }
-            else {
-                DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) }
-            }
-        }
-    }
-    
+	/// Prompt the user for access to their Calendar
+	/// - Parameter onAuthorized: on authorized
+	private func requestCalendarAccess(completion: ((Result<Bool, Error>) -> Void)?) {
+		eventStore.requestAccess(to: .event) { granted, error in
+			if granted {
+				DispatchQueue.main.async {
+					NotificationCenter.default.post(name: .didAuthorizeCalendarAccess, object: nil)
+					completion?(.success(granted))
+				}
+			}
+			else if let error = error {
+				DispatchQueue.main.async { completion?(.failure(error)) }
+			}
+			else {
+				DispatchQueue.main.async { completion?(.failure(ClendarError.unableToAccessCalendar)) }
+			}
+		}
+	}
 }

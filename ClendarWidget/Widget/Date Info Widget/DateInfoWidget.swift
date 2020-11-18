@@ -17,18 +17,17 @@ import WidgetKit
  + https://github.com/pawello2222/WidgetExamples
  */
 struct DateInfoWidget: Widget {
-    var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: "DateInfoWidget",
-            provider: DateInfoWidgetTimelineProvider()
-        ) { (entry) in
-            DateInfoWidgetEntryView(entry: entry)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(.backgroundColor))
-        }
-        .configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
-        .description(NSLocalizedString("Check calendar at a glance", comment: ""))
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-    }
-
+	var body: some WidgetConfiguration {
+		StaticConfiguration(
+			kind: "DateInfoWidget",
+			provider: DateInfoWidgetTimelineProvider()
+		) { entry in
+			DateInfoWidgetEntryView(entry: entry)
+				.frame(maxWidth: .infinity, maxHeight: .infinity)
+				.background(Color(.backgroundColor))
+		}
+		.configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
+		.description(NSLocalizedString("Check calendar at a glance", comment: ""))
+		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+	}
 }

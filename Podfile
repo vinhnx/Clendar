@@ -11,6 +11,7 @@ target 'Clendar' do
   pod 'SwiftLint'
   pod 'R.swift'
   pod 'LicensePlist' # Installation path: `${PODS_ROOT}/LicensePlist/license-plist`
+  pod 'SwiftFormat/CLI'
 
   target 'ClendarTests' do
     inherit! :search_paths

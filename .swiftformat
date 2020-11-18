@@ -1,0 +1,54 @@
+# SwiftFormat config file:
+# + https://github.com/nicklockwood/SwiftFormat#config-file
+# + https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+# format options
+--allman false
+--indent tab
+--extensionacl on-declarations
+--commas inline
+--organizetypes
+
+# file options
+--exclude Pods
+
+# rules
+--disable \
+	elseOnSameLine, \
+	semicolons
+--enable \
+	anyObjectProtocol, \
+	blankLinesAroundMark, \
+	blankLinesBetweenScopes, \
+	consecutiveBlankLines, \
+	consecutiveSpaces, \
+	duplicateImports, \
+	emptyBraces, \
+	hoistPatternLet, \
+	initCoderUnavailable, \
+	isEmpty, \
+	leadingDelimiters, \
+	linebreakAtEndOfFile, \
+	modifierOrder, \
+	preferKeyPath, \
+	redundantBreak, \
+	redundantExtensionACL, \
+	redundantBackticks, \
+	redundantFileprivate, \
+	redundantInit, \
+	redundantNilInit, \
+	redundantObjc, \
+	redundantParens, \
+	redundantPattern, \
+	redundantRawValues, \
+	redundantSelf, \
+	redundantType, \
+	spaceAroundBraces, \
+	strongOutlets, \
+	todos, \
+	trailingClosures, \
+	organizeDeclarations, \
+	wrapSwitchCases, \
+	wrapMultilineStatementBraces, \
+	wrapEnumCases, \
+	

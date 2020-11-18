@@ -9,20 +9,22 @@
 import UIKit
 
 class Button: UIButton {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
-    }
+	// MARK: Lifecycle
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configure()
-    }
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		configure()
+	}
 
-    // MARK: - Private
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		configure()
+	}
 
-    func configure() {
-        titleLabel?.font = .boldFontWithSize(20)
-        applyCircle()
-    }
+	// MARK: Internal
+
+	func configure() {
+		titleLabel?.font = .boldFontWithSize(20)
+		applyCircle()
+	}
 }

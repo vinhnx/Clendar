@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import XCTest
 @testable import Clendar
+import XCTest
 
 class ClendarTests: XCTestCase {}

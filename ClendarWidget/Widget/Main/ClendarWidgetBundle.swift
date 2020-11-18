@@ -11,20 +11,20 @@ import WidgetKit
 
 @main
 struct ClendarWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        DateInfoWidgetBundle().body
-        CalendarGridWidgetBundle().body
-    }
+	var body: some Widget {
+		DateInfoWidgetBundle().body
+		CalendarGridWidgetBundle().body
+	}
 }
 
 struct DateInfoWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        DateInfoWidget()
-    }
+	var body: some Widget {
+		DateInfoWidget()
+	}
 }
 
 struct CalendarGridWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        CalendarGridWidget()
-    }
+	var body: some Widget {
+		CalendarGridWidget()
+	}
 }

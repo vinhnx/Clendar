@@ -6,213 +6,204 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
-import SwiftyFORM
 import SwiftDate
+import SwiftyFORM
+import UIKit
 
 final class SettingsNavigationController: UINavigationController {
+	// MARK: Lifecycle
 
-    // MARK: - Life Cycle
+	init() {
+		let settings = SettingsViewController(style: .insetGrouped)
+		super.init(rootViewController: settings)
+	}
 
-    init() {
-        let settings = SettingsViewController(style: .insetGrouped)
-        super.init(rootViewController: settings)
-    }
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	// MARK: Internal
 
-        checkUIMode()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
-    }
+		checkUIMode()
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
 
-    // MARK: - Private
-
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
-
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 }
 
 final class SettingsViewController: FormViewController {
+	// MARK: Lifecycle
 
-    // MARK: - Components
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-    lazy var themes: SegmentedControlFormItem = {
-        let proxy = SegmentedControlFormItem()
-        proxy.title = NSLocalizedString("Themes", comment: "")
-        proxy.items = Theme.titles
-        proxy.selected = SettingsManager.darkModeActivated
-            ? Theme.dark.rawValue
-            : Theme.light.rawValue
-        proxy.valueDidChangeBlock = { index in
-            let theme = Theme(rawValue: index)
-            SettingsManager.darkModeActivated = theme == .dark
-            UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
-            NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
-        }
-        return proxy
-    }()
+	// MARK: Internal
 
-    lazy var calendarMode: SegmentedControlFormItem = {
-        let proxy = SegmentedControlFormItem()
-        proxy.title = NSLocalizedString("View mode", comment: "")
-        proxy.items = CalendarViewMode.titles
-        proxy.selected = SettingsManager.monthViewCalendarMode
-            ? CalendarViewMode.month.rawValue
-            : CalendarViewMode.week.rawValue
-        proxy.valueDidChangeBlock = { index in
-            let mode = CalendarViewMode(rawValue: index)
-            SettingsManager.monthViewCalendarMode = mode == .month
-            NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
-        }
-        return proxy
-    }()
+	lazy var themes: SegmentedControlFormItem = {
+		let proxy = SegmentedControlFormItem()
+		proxy.title = NSLocalizedString("Themes", comment: "")
+		proxy.items = Theme.titles
+		proxy.selected = SettingsManager.darkModeActivated
+			? Theme.dark.rawValue
+			: Theme.light.rawValue
+		proxy.valueDidChangeBlock = { index in
+			let theme = Theme(rawValue: index)
+			SettingsManager.darkModeActivated = theme == .dark
+			UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
+			NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
+		}
+		return proxy
+	}()
 
-    lazy var showDaysOut: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Show days out", comment: "")
-        instance.value = SettingsManager.showDaysOut
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.showDaysOut = activate
-            NotificationCenter.default.post(name: .didChangeShowDaysOutPreferences, object: nil)
-        }
-        return instance
-    }()
+	lazy var calendarMode: SegmentedControlFormItem = {
+		let proxy = SegmentedControlFormItem()
+		proxy.title = NSLocalizedString("View mode", comment: "")
+		proxy.items = CalendarViewMode.titles
+		proxy.selected = SettingsManager.monthViewCalendarMode
+			? CalendarViewMode.month.rawValue
+			: CalendarViewMode.week.rawValue
+		proxy.valueDidChangeBlock = { index in
+			let mode = CalendarViewMode(rawValue: index)
+			SettingsManager.monthViewCalendarMode = mode == .month
+			NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
+		}
+		return proxy
+	}()
 
-    lazy var supplementaryViewMode: OptionPickerFormItem = {
-        let instance = OptionPickerFormItem()
-        instance.title(NSLocalizedString("Supplementary day view", comment: ""))
-        instance.append(DaySupplementaryType.titles)
-        instance.selectOptionWithTitle(SettingsManager.daySupplementaryType)
-        instance.valueDidChange = { selected in
-            SettingsManager.daySupplementaryType = selected?.title ?? DaySupplementaryType.defaultValue.rawValue
-            NotificationCenter.default.post(name: .didChangeDaySupplementaryTypePreferences, object: nil)
-        }
-        return instance
-    }()
+	lazy var showDaysOut: SwitchFormItem = {
+		let instance = SwitchFormItem()
+		instance.title = NSLocalizedString("Show days out", comment: "")
+		instance.value = SettingsManager.showDaysOut
+		instance.switchDidChangeBlock = { activate in
+			SettingsManager.showDaysOut = activate
+			NotificationCenter.default.post(name: .didChangeShowDaysOutPreferences, object: nil)
+		}
+		return instance
+	}()
 
-    lazy var quickEventMode: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Quick event", comment: "")
-        instance.value = SettingsManager.useExperimentalCreateEventMode
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.useExperimentalCreateEventMode = activate
-            NotificationCenter.default.post(name: .didChangeUseExperimentalCreateEventMode, object: nil)
-        }
-        return instance
-    }()
+	lazy var supplementaryViewMode: OptionPickerFormItem = {
+		let instance = OptionPickerFormItem()
+		instance.title(NSLocalizedString("Supplementary day view", comment: ""))
+		instance.append(DaySupplementaryType.titles)
+		instance.selectOptionWithTitle(SettingsManager.daySupplementaryType)
+		instance.valueDidChange = { selected in
+			SettingsManager.daySupplementaryType = selected?.title ?? DaySupplementaryType.defaultValue.rawValue
+			NotificationCenter.default.post(name: .didChangeDaySupplementaryTypePreferences, object: nil)
+		}
+		return instance
+	}()
 
-    lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Auto-select day when month changes", comment: "")
-        instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
-            NotificationCenter.default.post(name: .justReloadCalendar, object: nil)
-        }
-        return instance
-    }()
+	lazy var quickEventMode: SwitchFormItem = {
+		let instance = SwitchFormItem()
+		instance.title = NSLocalizedString("Quick event", comment: "")
+		instance.value = SettingsManager.useExperimentalCreateEventMode
+		instance.switchDidChangeBlock = { activate in
+			SettingsManager.useExperimentalCreateEventMode = activate
+			NotificationCenter.default.post(name: .didChangeUseExperimentalCreateEventMode, object: nil)
+		}
+		return instance
+	}()
 
-    lazy var defaultEventDuration: OptionPickerFormItem = {
-        let instance = OptionPickerFormItem()
-        instance.title(NSLocalizedString("Default event duration", comment: ""))
-        let minutesText = NSLocalizedString("minutes", comment: "")
-        instance.append(DefaultEventDurations.map { minute in "\(minute)" + " " + minutesText })
-        instance.selectOptionWithTitle("\(SettingsManager.defaultEventDuration)" + " " + minutesText)
-        instance.valueDidChange = { selected in
-            guard let title = selected?.title else { return }
-            guard let duration = title.parseInt() else { return }
-            SettingsManager.defaultEventDuration = duration
-            NotificationCenter.default.post(name: .didChangeDefaultEventDurationPreferences, object: nil)
-        }
-        return instance
-    }()
+	lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
+		let instance = SwitchFormItem()
+		instance.title = NSLocalizedString("Auto-select day when month changes", comment: "")
+		instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
+		instance.switchDidChangeBlock = { activate in
+			SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
+			NotificationCenter.default.post(name: .justReloadCalendar, object: nil)
+		}
+		return instance
+	}()
 
-    lazy var enableHapticFeedback: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Haptic feedback", comment: "")
-        instance.value = SettingsManager.enableHapticFeedback
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.enableHapticFeedback = activate
-        }
-        return instance
-    }()
+	lazy var defaultEventDuration: OptionPickerFormItem = {
+		let instance = OptionPickerFormItem()
+		instance.title(NSLocalizedString("Default event duration", comment: ""))
+		let minutesText = NSLocalizedString("minutes", comment: "")
+		instance.append(DefaultEventDurations.map { minute in "\(minute)" + " " + minutesText })
+		instance.selectOptionWithTitle("\(SettingsManager.defaultEventDuration)" + " " + minutesText)
+		instance.valueDidChange = { selected in
+			guard let title = selected?.title else { return }
+			guard let duration = title.parseInt() else { return }
+			SettingsManager.defaultEventDuration = duration
+			NotificationCenter.default.post(name: .didChangeDefaultEventDurationPreferences, object: nil)
+		}
+		return instance
+	}()
 
-    // MARK: - Life Cycle
+	lazy var enableHapticFeedback: SwitchFormItem = {
+		let instance = SwitchFormItem()
+		instance.title = NSLocalizedString("Haptic feedback", comment: "")
+		instance.value = SettingsManager.enableHapticFeedback
+		instance.switchDidChangeBlock = { activate in
+			SettingsManager.enableHapticFeedback = activate
+		}
+		return instance
+	}()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        hidesBottomBarWhenPushed = true
+		hidesBottomBarWhenPushed = true
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .done, target: self, action: #selector(dimissModal))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .done, target: self, action: #selector(dimissModal))
 
-        checkUIMode()
+		checkUIMode()
 
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
 
-    }
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+	override func populate(_ builder: FormBuilder) {
+		builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
-    // MARK: - Private
+		// General
+		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
+		builder += themes
+		builder += enableHapticFeedback
+		builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
+		// Calendars
+		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendars", comment: ""))
+		builder += ViewControllerFormItem()
+			.title(NSLocalizedString("Available calendars", comment: ""))
+			.viewController(CalendarsChooserViewController.self)
+		builder += SectionFooterTitleFormItem().title(NSLocalizedString("You can choose available calendars to shown in event list", comment: ""))
 
-    // MARK: - Form
+		// Calendar
+		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
+		builder += calendarMode
+		builder += showDaysOut
+		builder += shouldAutoSelectDayOnCalendarChange
+		builder += supplementaryViewMode
+		builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
 
-    override func populate(_ builder: FormBuilder) {
-        builder.navigationTitle = NSLocalizedString("Settings", comment: "")
+		// Quick Event
+		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
+		builder += defaultEventDuration
+		builder += quickEventMode
+		builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
 
-        // General
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
-        builder += themes
-        builder += enableHapticFeedback
-        builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
-
-        // Calendars
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendars", comment: ""))
-        builder += ViewControllerFormItem()
-            .title(NSLocalizedString("Available calendars", comment: ""))
-            .viewController(CalendarsChooserViewController.self)
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("You can choose available calendars to shown in event list", comment: ""))
-
-        // Calendar
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
-        builder += calendarMode
-        builder += showDaysOut
-        builder += shouldAutoSelectDayOnCalendarChange
-        builder += supplementaryViewMode
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
-
-        // Quick Event
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
-        builder += defaultEventDuration
-        builder += quickEventMode
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
-
-        // Info
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))
-        builder += StaticTextFormItem().title(NSLocalizedString("Name", comment: "")).value(AppInfo.appName)
-        builder += StaticTextFormItem().title(NSLocalizedString("Version", comment: "")).value(AppInfo.appVersionAndBuild)
-    }
-
+		// Info
+		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))
+		builder += StaticTextFormItem().title(NSLocalizedString("Name", comment: "")).value(AppInfo.appName)
+		builder += StaticTextFormItem().title(NSLocalizedString("Version", comment: "")).value(AppInfo.appVersionAndBuild)
+	}
 }

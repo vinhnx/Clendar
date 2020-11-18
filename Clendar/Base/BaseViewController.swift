@@ -9,26 +9,25 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+	// MARK: Lifecycle
 
-    // MARK: - Life Cycle
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	// MARK: Internal
 
-        checkUIMode()
-        
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+		checkUIMode()
 
-    // MARK: - Subclass
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
 
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 }

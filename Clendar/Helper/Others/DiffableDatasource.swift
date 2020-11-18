@@ -15,66 +15,66 @@ import UIKit
  */
 
 class Layout {
-    static func makeCollectionView() -> UICollectionView {
-        let layout = makeCollectionViewCompositionalLayout()
-        return UICollectionView(frame: .zero, collectionViewLayout: layout)
-    }
+	static func makeCollectionView() -> UICollectionView {
+		let layout = makeCollectionViewCompositionalLayout()
+		return UICollectionView(frame: .zero, collectionViewLayout: layout)
+	}
 
-    static func makeGridLayoutSection() -> NSCollectionLayoutSection {
-        // Each item will take up half of the width of the group
-        // that contains it, as well as the entire available height:
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.5),
-            heightDimension: .fractionalHeight(1)
-        ))
+	static func makeGridLayoutSection() -> NSCollectionLayoutSection {
+		// Each item will take up half of the width of the group
+		// that contains it, as well as the entire available height:
+		let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
+			widthDimension: .fractionalWidth(0.5),
+			heightDimension: .fractionalHeight(1)
+		))
 
-        // Each group will then take up the entire available
-        // width, and set its height to half of that width, to
-        // make each item square-shaped:
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .fractionalWidth(0.5)
-            ),
-            subitem: item,
-            count: 2
-        )
+		// Each group will then take up the entire available
+		// width, and set its height to half of that width, to
+		// make each item square-shaped:
+		let group = NSCollectionLayoutGroup.horizontal(
+			layoutSize: NSCollectionLayoutSize(
+				widthDimension: .fractionalWidth(1),
+				heightDimension: .fractionalWidth(0.5)
+			),
+			subitem: item,
+			count: 2
+		)
 
-        return NSCollectionLayoutSection(group: group)
-    }
+		return NSCollectionLayoutSection(group: group)
+	}
 
-    static func makeListLayoutSection() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)))
-        let inset: CGFloat = 10
-        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: 0, trailing: 0)
+	static func makeListLayoutSection() -> NSCollectionLayoutSection {
+		let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)))
+		let inset: CGFloat = 10
+		item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: 0, trailing: 0)
 
-        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [item])
+		let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+		let group = NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [item])
 
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: 0, trailing: 0)
-        section.interGroupSpacing = 10
+		let section = NSCollectionLayoutSection(group: group)
+		section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: 0, trailing: 0)
+		section.interGroupSpacing = 10
 
-        // Supplementary header view setup
-        let headerFooterSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(20)
-        )
+		// Supplementary header view setup
+		let headerFooterSize = NSCollectionLayoutSize(
+			widthDimension: .fractionalWidth(1.0),
+			heightDimension: .estimated(20)
+		)
 
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerFooterSize,
-            elementKind: UICollectionView.elementKindSectionHeader,
-            alignment: .top
-        )
+		let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+			layoutSize: headerFooterSize,
+			elementKind: UICollectionView.elementKindSectionHeader,
+			alignment: .top
+		)
 
-        section.boundarySupplementaryItems = [sectionHeader]
+		section.boundarySupplementaryItems = [sectionHeader]
 
-        return section
-    }
+		return section
+	}
 
-    static func makeCollectionViewCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { (_, _) in
-            makeListLayoutSection()
-        }
-    }
+	static func makeCollectionViewCompositionalLayout() -> UICollectionViewCompositionalLayout {
+		UICollectionViewCompositionalLayout { _, _ in
+			makeListLayoutSection()
+		}
+	}
 }

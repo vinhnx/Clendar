@@ -6,226 +6,218 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import CVCalendar
 import EventKit
 import EventKitUI
+import UIKit
 
 final class CalendarViewController: BaseViewController {
+	// MARK: Internal
 
-    // MARK: - Properties
+	@IBOutlet var monthLabel: UILabel! {
+		didSet {
+			monthLabel.textColor = .primaryColor
+			monthLabel.font = .boldFontWithSize(15)
+			monthLabel.text = Date().toMonthAndYearString.uppercased()
+			monthLabel.textAlignment = .right
+		}
+	}
 
-    @IBOutlet private var previousMonthButton: UIButton! {
-        didSet {
-            previousMonthButton.addTarget(self, action: #selector(selectPreviousDay), for: .touchUpInside)
-        }
-    }
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		calendarView.commitCalendarViewUpdate()
+		dayView.commitMenuViewUpdate()
+	}
 
-    @IBOutlet private var nextMonthButton: UIButton! {
-        didSet {
-            nextMonthButton.addTarget(self, action: #selector(selectNextDay), for: .touchUpInside)
-        }
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    @IBOutlet private var eventListContainerView: UIView!
+		addGestures()
+		addObservers()
+		selectToday()
 
-    @IBOutlet private var calendarView: CVCalendarView! {
-        didSet {
-            calendarView.calendarAppearanceDelegate = calendarConfiguration
-            calendarView.animatorDelegate = calendarConfiguration
-            calendarView.calendarDelegate = calendarConfiguration
-        }
-    }
+		view.backgroundColor = .backgroundColor
+		dayView.backgroundColor = .backgroundColor
+		eventListContainerView.backgroundColor = .backgroundColor
+		addChildViewController(eventList, containerView: eventListContainerView)
 
-    @IBOutlet private var dayView: CVCalendarMenuView! {
-        didSet {
-            dayView.delegate = calendarConfiguration
-        }
-    }
+		calendarConfiguration.didSelectDayView = { [weak self] dayView, _ in
+			guard let self = self else { return }
+			let selectedDate = dayView.convertedDate
+			self.selectedDateLabel.text = Date().toFullDateString.uppercased()
+			self.fetchEvents(selectedDate)
+		}
 
-    @IBOutlet private var addEventButton: Button! {
-        didSet {
-            addEventButton.tintColor = .buttonTintColor
-            addEventButton.backgroundColor = .primaryColor
-        }
-    }
+		calendarConfiguration.presentedDateUpdated = { [weak self] date in
+			guard let self = self else { return }
+			self.monthLabel.text = date.convertedDate()?.toMonthAndYearString.uppercased()
+		}
 
-    @IBOutlet private var settingsButton: Button! {
-        didSet {
-            settingsButton.tintColor = .primaryColor
-        }
-    }
+		settingsButton.addTarget(self, action: #selector(onTapSettingsButton), for: .touchUpInside)
 
-    @IBOutlet var monthLabel: UILabel! {
-        didSet {
-            monthLabel.textColor = .primaryColor
-            monthLabel.font = .boldFontWithSize(15)
-            monthLabel.text = Date().toMonthAndYearString.uppercased()
-            monthLabel.textAlignment = .right
-        }
-    }
+		addEventButton.addTarget(self, action: #selector(onTapAddEventButton), for: .touchUpInside)
+	}
 
-    @IBOutlet private var selectedDateLabel: UILabel! {
-        didSet {
-            selectedDateLabel.font = .boldFontWithSize(13)
-            selectedDateLabel.adjustsFontForContentSizeCategory = true
-            selectedDateLabel.textColor = .appDark
-            selectedDateLabel.text = Date().toFullDateString.uppercased()
-        }
-    }
+	func createEvent() {
+		if SettingsManager.useExperimentalCreateEventMode {
+			guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
+			present(createEventViewController, animated: true, completion: nil)
+		} else {
+			let createEventViewController = EventEditViewController(
+				eventStore: EventKitWrapper.shared.eventStore,
+				delegate: self
+			)
+			present(createEventViewController, animated: true)
+		}
+	}
 
-    private lazy var eventList = EventListViewController()
+	// MARK: Private
 
-    private lazy var calendarConfiguration = CalendarViewConfiguration(
-        calendar: CalendarManager.shared.calendar,
-        mode: .monthView
-    )
+	@IBOutlet private var eventListContainerView: UIView!
 
-    // MARK: - Life cycle
+	private lazy var eventList = EventListViewController()
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        calendarView.commitCalendarViewUpdate()
-        dayView.commitMenuViewUpdate()
-    }
+	private lazy var calendarConfiguration = CalendarViewConfiguration(
+		calendar: CalendarManager.shared.calendar,
+		mode: .monthView
+	)
 
-    // MARK: - Override
+	@IBOutlet private var previousMonthButton: UIButton! {
+		didSet {
+			previousMonthButton.addTarget(self, action: #selector(selectPreviousDay), for: .touchUpInside)
+		}
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	@IBOutlet private var nextMonthButton: UIButton! {
+		didSet {
+			nextMonthButton.addTarget(self, action: #selector(selectNextDay), for: .touchUpInside)
+		}
+	}
 
-        addGestures()
-        addObservers()
-        selectToday()
+	@IBOutlet private var calendarView: CVCalendarView! {
+		didSet {
+			calendarView.calendarAppearanceDelegate = calendarConfiguration
+			calendarView.animatorDelegate = calendarConfiguration
+			calendarView.calendarDelegate = calendarConfiguration
+		}
+	}
 
-        view.backgroundColor = .backgroundColor
-        dayView.backgroundColor = .backgroundColor
-        eventListContainerView.backgroundColor = .backgroundColor
-        addChildViewController(eventList, containerView: eventListContainerView)
+	@IBOutlet private var dayView: CVCalendarMenuView! {
+		didSet {
+			dayView.delegate = calendarConfiguration
+		}
+	}
 
-        calendarConfiguration.didSelectDayView = { [weak self] dayView, animationDidFinish in
-            guard let self = self else { return }
-            let selectedDate = dayView.convertedDate
-            self.selectedDateLabel.text = Date().toFullDateString.uppercased()
-            self.fetchEvents(selectedDate)
-        }
+	@IBOutlet private var addEventButton: Button! {
+		didSet {
+			addEventButton.tintColor = .buttonTintColor
+			addEventButton.backgroundColor = .primaryColor
+		}
+	}
 
-        calendarConfiguration.presentedDateUpdated = { [weak self] date in
-            guard let self = self else { return }
-            self.monthLabel.text = date.convertedDate()?.toMonthAndYearString.uppercased()
-        }
+	@IBOutlet private var settingsButton: Button! {
+		didSet {
+			settingsButton.tintColor = .primaryColor
+		}
+	}
 
-        settingsButton.addTarget(self, action: #selector(onTapSettingsButton), for: .touchUpInside)
+	@IBOutlet private var selectedDateLabel: UILabel! {
+		didSet {
+			selectedDateLabel.font = .boldFontWithSize(13)
+			selectedDateLabel.adjustsFontForContentSizeCategory = true
+			selectedDateLabel.textColor = .appDark
+			selectedDateLabel.text = Date().toFullDateString.uppercased()
+		}
+	}
 
-        addEventButton.addTarget(self, action: #selector(onTapAddEventButton), for: .touchUpInside)
-    }
+	private func addObservers() {
+		NotificationCenter.default.addObserver(forName: .didAuthorizeCalendarAccess, object: nil, queue: .main) { _ in
+			self.selectToday()
+		}
 
-    // MARK: - Private
+		NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { _ in
+			self.calendarView.reloadData()
+		}
 
-    private func addObservers() {
-        NotificationCenter.default.addObserver(forName: .didAuthorizeCalendarAccess, object: nil, queue: .main) { (_) in
-            self.selectToday()
-        }
+		NotificationCenter.default.addObserver(forName: .didDeleteEvent, object: nil, queue: .main) { _ in
+			self.calendarView.reloadData()
+		}
 
-        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (_) in
-            self.calendarView.reloadData()
-        }
+		NotificationCenter.default.addObserver(forName: .didChangeMonthViewCalendarModePreferences, object: nil, queue: .main) { _ in
+			let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
+			self.calendarView.changeMode(calendarMode)
+		}
 
-        NotificationCenter.default.addObserver(forName: .didDeleteEvent, object: nil, queue: .main) { (_) in
-            self.calendarView.reloadData()
-        }
+		NotificationCenter.default.addObserver(forName: .didChangeShowDaysOutPreferences, object: nil, queue: .main) { _ in
+			self.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
+			self.calendarView.reloadData()
+		}
 
-        NotificationCenter.default.addObserver(forName: .didChangeMonthViewCalendarModePreferences, object: nil, queue: .main) { (_) in
-            let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
-            self.calendarView.changeMode(calendarMode)
-        }
+		NotificationCenter.default.addObserver(forName: .didChangeDaySupplementaryTypePreferences, object: nil, queue: .main) { _ in
+			self.calendarView.reloadData()
+		}
 
-        NotificationCenter.default.addObserver(forName: .didChangeShowDaysOutPreferences, object: nil, queue: .main) { (_) in
-            self.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
-            self.calendarView.reloadData()
-        }
+		NotificationCenter.default.addObserver(forName: .didChangeSavedCalendarsPreferences, object: nil, queue: .main) { [weak self] _ in
+			guard let self = self else { return }
+			self.fetchEvents(self.calendarView.selectedDate)
+		}
 
-        NotificationCenter.default.addObserver(forName: .didChangeDaySupplementaryTypePreferences, object: nil, queue: .main) { (_) in
-            self.calendarView.reloadData()
-        }
+		NotificationCenter.default.addObserver(forName: .justReloadCalendar, object: nil, queue: .main) { _ in
+			self.calendarView.reloadData()
+		}
+	}
 
-        NotificationCenter.default.addObserver(forName: .didChangeSavedCalendarsPreferences, object: nil, queue: .main) { [weak self] (_) in
-            guard let self = self else { return }
-            self.fetchEvents(self.calendarView.selectedDate)
-        }
+	private func selectToday() {
+		genLightHaptic()
+		calendarView.toggleCurrentDayView()
+		eventList.fetchEvents()
+	}
 
-        NotificationCenter.default.addObserver(forName: .justReloadCalendar, object: nil, queue: .main) { (_) in
-            self.calendarView.reloadData()
-        }
-    }
+	@objc private func selectPreviousDay() {
+		genLightHaptic()
+		calendarView.loadPreviousView()
+	}
 
-    private func selectToday() {
-        genLightHaptic()
-        calendarView.toggleCurrentDayView()
-        eventList.fetchEvents()
-    }
+	@objc private func selectNextDay() {
+		genLightHaptic()
+		calendarView.loadNextView()
+	}
 
-    @objc private func selectPreviousDay() {
-        genLightHaptic()
-        calendarView.loadPreviousView()
-    }
+	private func addGestures() {
+		monthLabel.isUserInteractionEnabled = true
+		monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
+	}
 
-    @objc private func selectNextDay() {
-        genLightHaptic()
-        calendarView.loadNextView()
-    }
+	private func fetchEvents(_ date: Date?) {
+		guard let date = date else { return }
+		eventList.fetchEvents(for: date)
+	}
 
-    private func addGestures() {
-        monthLabel.isUserInteractionEnabled = true
-        monthLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapMonthLabel)))
-    }
+	@objc private func didTapMonthLabel() {
+		selectToday()
+	}
 
-    private func fetchEvents(_ date: Date?) {
-        guard let date = date else { return }
-        eventList.fetchEvents(for: date)
-    }
+	@objc private func onTapSettingsButton() {
+		genLightHaptic()
+		let settings = SettingsNavigationController()
+		present(settings, animated: true)
+	}
 
-    // MARK: - Actions
-
-    func createEvent() {
-        if SettingsManager.useExperimentalCreateEventMode {
-            guard let createEventViewController = R.storyboard.createEventViewController.instantiateInitialViewController() else { return }
-            present(createEventViewController, animated: true, completion: nil)
-        } else {
-            let createEventViewController = EventEditViewController(
-                eventStore: EventKitWrapper.shared.eventStore,
-                delegate: self
-            )
-            present(createEventViewController, animated: true)
-        }
-    }
-
-    @objc private func didTapMonthLabel() {
-        selectToday()
-    }
-
-    @objc private func onTapSettingsButton() {
-        genLightHaptic()
-        let settings = SettingsNavigationController()
-        present(settings, animated: true)
-    }
-
-    @objc private func onTapAddEventButton() {
-        createEvent()
-    }
-
+	@objc private func onTapAddEventButton() {
+		createEvent()
+	}
 }
 
 extension CalendarViewController: EKEventEditViewDelegate {
-    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-        dimissModal()
-        guard let event = controller.event else { return }
-        guard let date = event.startDate else { return }
-        fetchEvents(date)
-        calendarView.toggleViewWithDate(date)
-    }
+	func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith _: EKEventEditViewAction) {
+		dimissModal()
+		guard let event = controller.event else { return }
+		guard let date = event.startDate else { return }
+		fetchEvents(date)
+		calendarView.toggleViewWithDate(date)
+	}
 
-    func eventEditViewControllerDefaultCalendar(forNewEvents controller: EKEventEditViewController) -> EKCalendar {
-        EventKitWrapper.shared.defaultCalendar
-    }
+	func eventEditViewControllerDefaultCalendar(forNewEvents _: EKEventEditViewController) -> EKCalendar {
+		EventKitWrapper.shared.defaultCalendar
+	}
 }

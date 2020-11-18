@@ -11,126 +11,126 @@ import Foundation
 typealias TypedUserInfoKey<T> = (key: String, type: T.Type)
 
 extension Dictionary where Key == String, Value == Any {
-    subscript<T>(_ typedKey: TypedUserInfoKey<T>) -> T? {
-        self[typedKey.key] as? T
-    }
+	subscript<T>(_ typedKey: TypedUserInfoKey<T>) -> T? {
+		self[typedKey.key] as? T
+	}
 }
 
 // MARK: - Extensions
+
 extension Dictionary where Key == String {
+	// MARK: - Helper
 
-    // MARK: - Helper
+	/// Find value for key in-sensitive search, eg: "FooBar","fooBar","FOOBAR","FoOBaR"...
+	///
+	/// - Parameter key: key
+	/// - Returns: value
+	func valueForKeyInsensitive<T>(key: Key) -> T? {
+		let foundKey = keys.first { $0.compare(key, options: .caseInsensitive) == .orderedSame } ?? key // IMPORTANT: fallback to original key if search failed
+		return self[foundKey] as? T
+	}
 
-    /// Find value for key in-sensitive search, eg: "FooBar","fooBar","FOOBAR","FoOBaR"...
-    ///
-    /// - Parameter key: key
-    /// - Returns: value
-    func valueForKeyInsensitive<T>(key: Key) -> T? {
-        let foundKey = keys.first { $0.compare(key, options: .caseInsensitive) == .orderedSame } ?? key // IMPORTANT: fallback to original key if search failed
-        return self[foundKey] as? T
-    }
+	/// Merge two dictionaries, reference: https://stackoverflow.com/a/26728685/1477298
+	mutating func merge(dict: [Key: Value]) {
+		for (k, v) in dict {
+			updateValue(v, forKey: k)
+		}
+	}
 
-    /// Merge two dictionaries, reference: https://stackoverflow.com/a/26728685/1477298
-    mutating func merge(dict: [Key: Value]) {
-        for (k, v) in dict {
-            updateValue(v, forKey: k)
-        }
-    }
+	/// Array for key
+	///
+	/// - Parameter key: key
+	/// - Returns: value
+	func arrayFor<T>(key: Key) -> [T] {
+		valueForKeyInsensitive(key: key) ?? [T]()
+	}
 
-    /// Array for key
-    ///
-    /// - Parameter key: key
-    /// - Returns: value
-    func arrayFor<T>(key: Key) -> [T] {
-        valueForKeyInsensitive(key: key) ?? [T]()
-    }
+	/// Dictionary for key
+	///
+	/// - Parameter key: key
+	/// - Returns: dictionary
+	func dictionaryFor(key: Key) -> [String: Any] {
+		valueForKeyInsensitive(key: key) ?? [String: Any]()
+	}
 
-    /// Dictionary for key
-    ///
-    /// - Parameter key: key
-    /// - Returns: dictionary
-    func dictionaryFor(key: Key) -> [String: Any] {
-        valueForKeyInsensitive(key: key) ?? [String: Any]()
-    }
+	/// Subscript
+	///
+	/// - Parameter key: the key
+	/// - Returns: value subscript
+	func valueFor<T>(key: Key) -> T? {
+		valueForKeyInsensitive(key: key)
+	}
 
-    /// Subscript
-    ///
-    /// - Parameter key: the key
-    /// - Returns: value subscript
-    func valueFor<T>(key: Key) -> T? {
-        valueForKeyInsensitive(key: key)
-    }
+	/// String subscript
+	///
+	/// - Parameter key: the key
+	/// - Returns: value subscript, cast as String
+	func stringFor(key: Key) -> String {
+		valueForKeyInsensitive(key: key).orEmpty
+	}
 
-    /// String subscript
-    ///
-    /// - Parameter key: the key
-    /// - Returns: value subscript, cast as String
-    func stringFor(key: Key) -> String {
-        valueForKeyInsensitive(key: key).orEmpty
-    }
+	/// String subscript
+	///
+	/// - Parameter key: the key
+	/// - Returns: value subscript, cast as Int
+	func intFor(key: Key) -> Int {
+		valueForKeyInsensitive(key: key) ?? 0
+	}
 
-    /// String subscript
-    ///
-    /// - Parameter key: the key
-    /// - Returns: value subscript, cast as Int
-    func intFor(key: Key) -> Int {
-        valueForKeyInsensitive(key: key) ?? 0
-    }
+	/// Double for key
+	///
+	/// - Parameter key: key
+	/// - Returns: value
+	func doubleFor(key: Key) -> Double {
+		valueForKeyInsensitive(key: key) ?? 0.0
+	}
 
-    /// Double for key
-    ///
-    /// - Parameter key: key
-    /// - Returns: value
-    func doubleFor(key: Key) -> Double {
-        valueForKeyInsensitive(key: key) ?? 0.0
-    }
+	/// Float for key
+	///
+	/// - Parameter key: key
+	/// - Returns: value
+	func floatFor(key: Key) -> Float {
+		valueForKeyInsensitive(key: key) ?? 0.0
+	}
 
-    /// Float for key
-    ///
-    /// - Parameter key: key
-    /// - Returns: value
-    func floatFor(key: Key) -> Float {
-        valueForKeyInsensitive(key: key) ?? 0.0
-    }
+	/// Pretty dictionary
+	func prettyPrint() {
+		do {
+			let _serialized = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+			log(String(data: _serialized, encoding: .utf8) ?? description)
+		} catch {
+			logError(error)
+		}
+	}
 
-    /// Pretty dictionary
-    func prettyPrint() {
-        do {
-            let _serialized = try JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
-            log(String(data: _serialized, encoding: .utf8) ?? description)
-        } catch {
-            logError(error)
-        }
-    }
+	/// Remove empty string from dictionary, useful for analytics
+	///
+	/// - Returns: A filtered dictionary
+	func filterEmptyStringValue() -> [Key: Value] {
+		filter { (_, value) -> Bool in
+			if value is String {
+				return ((value as? String) ?? "").isEmpty == false
+			}
 
-    /// Remove empty string from dictionary, useful for analytics
-    ///
-    /// - Returns: A filtered dictionary
-    func filterEmptyStringValue() -> [Key: Value] {
-        filter { (_, value) -> Bool in
-            if value is String {
-                return ((value as? String) ?? "").isEmpty == false
-            }
+			return true
+		}
+	}
 
-            return true
-        }
-    }
+	var toData: Data? {
+		guard JSONSerialization.isValidJSONObject(self) else {
+			log("invalid json: \(self)")
+			return nil
+		}
 
-    var toData: Data? {
-        guard JSONSerialization.isValidJSONObject(self) else {
-            log("invalid json: \(self)")
-            return nil
-        }
+		do {
+			return try JSONSerialization.data(withJSONObject: self, options: [])
+		} catch {
+			logError(error)
+			return nil
+		}
+	}
 
-        do {
-            return try JSONSerialization.data(withJSONObject: self, options: [])
-        } catch {
-            logError(error)
-            return nil
-        }
-    }
-
-    var toString: String {
-        description
-    }
+	var toString: String {
+		description
+	}
 }

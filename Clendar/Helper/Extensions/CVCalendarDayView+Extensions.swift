@@ -6,11 +6,11 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import CVCalendar
+import Foundation
 
 extension CVCalendarDayView {
-    var convertedDate: Date? {
-        date.convertedDate()
-    }
+	var convertedDate: Date? {
+		date.convertedDate()
+	}
 }

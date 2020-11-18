@@ -6,26 +6,28 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import EventKit
+import Foundation
 
 class Section: Hashable {
-    var id = UUID()
-    var date: Date?
-    var events: [Event]
+	// MARK: Lifecycle
 
-    init(date: Date?, events: [Event]) {
-        self.date = date
-        self.events = events
-    }
+	init(date: Date?, events: [Event]) {
+		self.date = date
+		self.events = events
+	}
 
-    // MARK: - Hashable
+	// MARK: Internal
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+	var id = UUID()
+	var date: Date?
+	var events: [Event]
 
-    static func == (lhs: Section, rhs: Section) -> Bool {
-        lhs.id == rhs.id
-    }
+	static func == (lhs: Section, rhs: Section) -> Bool {
+		lhs.id == rhs.id
+	}
+
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
 }

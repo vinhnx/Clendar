@@ -6,107 +6,101 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import EventKitUI
+import UIKit
 
 class CalendarsChooserNavigationController: UINavigationController {
+	// MARK: Lifecycle
 
-    // MARK: - Life Cycle
+	init(
+		selectionStyle _: EKCalendarChooserSelectionStyle = .multiple,
+		displayStyle _: EKCalendarChooserDisplayStyle = .allCalendars,
+		entityType _: EKEntityType = .event,
+		eventStore _: EKEventStore = EventKitWrapper.shared.eventStore,
+		delegate: EKCalendarChooserDelegate
+	) {
+		let viewController = CalendarsChooserViewController(
+			selectionStyle: .multiple,
+			displayStyle: .allCalendars,
+			entityType: .event,
+			eventStore: EventKitWrapper.shared.eventStore
+		)
 
-    init(
-        selectionStyle style: EKCalendarChooserSelectionStyle = .multiple,
-        displayStyle: EKCalendarChooserDisplayStyle = .allCalendars,
-        entityType: EKEntityType = .event,
-        eventStore: EKEventStore = EventKitWrapper.shared.eventStore,
-        delegate: EKCalendarChooserDelegate
-    ) {
-        let viewController = CalendarsChooserViewController(
-            selectionStyle: .multiple,
-            displayStyle: .allCalendars,
-            entityType: .event,
-            eventStore: EventKitWrapper.shared.eventStore
-        )
-        
-        viewController.showsDoneButton = true
-        viewController.showsCancelButton = true
-        viewController.delegate = delegate
-        super.init(rootViewController: viewController)
-    }
+		viewController.showsDoneButton = true
+		viewController.showsCancelButton = true
+		viewController.delegate = delegate
+		super.init(rootViewController: viewController)
+	}
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-        checkUIMode()
+	// MARK: Internal
 
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+		checkUIMode()
 
-    // MARK: - Private
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
 
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
-
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 }
 
 class CalendarsChooserViewController: EKCalendarChooser {
+	// MARK: Lifecycle
 
-    // MARK: - Life Cycle
+	convenience init() {
+		self.init(selectionStyle: .multiple, displayStyle: .allCalendars, entityType: .event, eventStore: EventKitWrapper.shared.eventStore)
+		delegate = self
+		selectedCalendars = EventKitWrapper.shared.savedCalendars.asSet
+	}
 
-    convenience init() {
-        self.init(selectionStyle: .multiple, displayStyle: .allCalendars, entityType: .event, eventStore: EventKitWrapper.shared.eventStore)
-        self.delegate = self
-        self.selectedCalendars = EventKitWrapper.shared.savedCalendars.asSet
-    }
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	// MARK: Internal
 
-        checkUIMode()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
-    }
+		checkUIMode()
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
 
-    // MARK: - Private
-
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
-
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 }
 
 extension CalendarsChooserViewController: EKCalendarChooserDelegate {
+	func calendarChooserSelectionDidChange(_ calendarChooser: EKCalendarChooser) {
+		EventKitWrapper.shared.savedCalendarIDs = calendarChooser.selectedCalendars.map(\.calendarIdentifier)
+	}
 
-    func calendarChooserSelectionDidChange(_ calendarChooser: EKCalendarChooser) {
-        EventKitWrapper.shared.savedCalendarIDs = calendarChooser.selectedCalendars.map { $0.calendarIdentifier }
-    }
+	func calendarChooserDidFinish(_: EKCalendarChooser) {
+		dimissModal()
+	}
 
-    func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
-        dimissModal()
-    }
-
-    func calendarChooserDidCancel(_ calendarChooser: EKCalendarChooser) {
-        dimissModal()
-    }
-
+	func calendarChooserDidCancel(_: EKCalendarChooser) {
+		dimissModal()
+	}
 }

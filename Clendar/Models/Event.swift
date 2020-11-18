@@ -6,31 +6,32 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import EventKit
+import Foundation
 
 extension EKEvent: Identifiable {}
 
 class Event: Hashable, Identifiable {
-    var id:  String?
+	// MARK: Lifecycle
 
-    var event: EKEvent? {
-        didSet { id = event?.eventIdentifier }
-    }
+	init(event: EKEvent?) {
+		self.event = event
+		id = event?.eventIdentifier
+	}
 
-    init(event: EKEvent?) {
-        self.event = event
-        self.id = event?.eventIdentifier
-    }
+	// MARK: Internal
 
-    // MARK: - Hashable
+	var id: String?
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+	var event: EKEvent? {
+		didSet { id = event?.eventIdentifier }
+	}
 
-    static func == (lhs: Event, rhs: Event) -> Bool {
-        lhs.id == rhs.id
-    }
+	static func == (lhs: Event, rhs: Event) -> Bool {
+		lhs.id == rhs.id
+	}
 
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
 }

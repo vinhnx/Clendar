@@ -7,52 +7,53 @@
 //
 
 import Foundation
-import SwiftyChrono
 import SwiftDate
+import SwiftyChrono
 
 enum CalendarTypeSegment {
-    case lunar
-    case solar
+	case lunar
+	case solar
 }
 
 final class NaturalInputParser {
+	// MARK: Lifecycle
 
-    // MARK: - Model
+	init() {
+		Chrono.preferredLanguage = .english
+		Chrono.defaultImpliedHour = 9
+	}
 
-    struct InputParserResult {
-        var action: String
-        var startDate: Date
-        var endDate: Date?
-    }
+	// MARK: Internal
 
-    private lazy var chrono = Chrono()
+	struct InputParserResult {
+		var action: String
+		var startDate: Date
+		var endDate: Date?
+	}
 
-    init() {
-        Chrono.preferredLanguage = .english
-        Chrono.defaultImpliedHour = 9
-    }
+	func parse(_ input: String, type: CalendarTypeSegment = .solar) -> InputParserResult? {
+		guard input.isEmpty == false else { return nil }
+		let results = chrono.parse(text: input)
+		let process = results.process(with: input)
+		let startDate = process.startDate
+		let endDate = process.endDate
 
-    // MARK: - Public
+		switch type {
+		case .lunar:
+			let gregorianStartDate = startDate.toGregorianDate
+			let gregorianEndDate = endDate?.toGregorianDate
+			return InputParserResult(action: process.action,
+			                         startDate: gregorianStartDate,
+			                         endDate: gregorianEndDate)
 
-    func parse(_ input: String, type: CalendarTypeSegment = .solar) -> InputParserResult? {
-        guard input.isEmpty == false else { return nil }
-        let results = chrono.parse(text: input)
-        let process = results.process(with: input)
-        let startDate = process.startDate
-        let endDate = process.endDate
+		case .solar:
+			return InputParserResult(action: process.action,
+			                         startDate: startDate,
+			                         endDate: endDate)
+		}
+	}
 
-        switch type {
-        case .lunar:
-            let gregorianStartDate = startDate.toGregorianDate
-            let gregorianEndDate = endDate?.toGregorianDate
-            return InputParserResult(action: process.action,
-                                     startDate: gregorianStartDate,
-                                     endDate: gregorianEndDate)
+	// MARK: Private
 
-        case .solar:
-            return InputParserResult(action: process.action,
-                                     startDate: startDate,
-                                     endDate: endDate)
-        }
-    }
+	private lazy var chrono = Chrono()
 }

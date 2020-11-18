@@ -6,41 +6,39 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import EventKitUI
+import UIKit
 
 class EventEditViewController: EKEventEditViewController {
-    
-    // MARK: - Life Cycle
-    
-    init(eventStore: EKEventStore = EventKitWrapper.shared.eventStore, delegate: EKEventEditViewDelegate?) {
-        super.init(nibName: nil, bundle: nil)
-        self.eventStore = eventStore
-        self.editViewDelegate = delegate
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        checkUIMode()
-        
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { (_) in
-            self.checkUIMode()
-        }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    // MARK: - Private
-    
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
-    
+	// MARK: Lifecycle
+
+	init(eventStore: EKEventStore = EventKitWrapper.shared.eventStore, delegate: EKEventEditViewDelegate?) {
+		super.init(nibName: nil, bundle: nil)
+		self.eventStore = eventStore
+		editViewDelegate = delegate
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
+
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
+
+	// MARK: Internal
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		checkUIMode()
+
+		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+			self.checkUIMode()
+		}
+	}
+
+	func checkUIMode() {
+		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+	}
 }

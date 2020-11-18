@@ -6,30 +6,30 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import Haptica
+import UIKit
 
 // MARK: - UI
 
 var isDarkMode: Bool {
-    UITraitCollection.current.userInterfaceStyle == .dark
+	UITraitCollection.current.userInterfaceStyle == .dark
 }
 
 // MARK: - Haptic
 
 func genLightHaptic() {
-    guard SettingsManager.enableHapticFeedback else { return }
-    Haptic.impact(.light).generate()
+	guard SettingsManager.enableHapticFeedback else { return }
+	Haptic.impact(.light).generate()
 }
 
 func genErrorHaptic() {
-    guard SettingsManager.enableHapticFeedback else { return }
-    Haptic.notification(.error).generate()
+	guard SettingsManager.enableHapticFeedback else { return }
+	Haptic.notification(.error).generate()
 }
 
 func genSuccessHaptic() {
-    guard SettingsManager.enableHapticFeedback else { return }
-    Haptic.notification(.success).generate()
+	guard SettingsManager.enableHapticFeedback else { return }
+	Haptic.notification(.success).generate()
 }
 
 // MARK: - Others
