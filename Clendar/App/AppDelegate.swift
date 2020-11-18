@@ -6,15 +6,15 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
+import IQKeyboardManagerSwift
 import Logging
 import SwiftDate
-import IQKeyboardManagerSwift
+import UIKit
 import UserNotifications
 
 /*
- Issues tracking
- https://github.com/vinhnx/Clendar/issues
+  Issues tracking
+  https://github.com/vinhnx/Clendar/issues
 
 ==
  TODO:

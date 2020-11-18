@@ -12,6 +12,12 @@ name: R.swift.Library, nameSpecified:
 body: The MIT License (MIT…
 version: 5.2.0
 
+name: SwiftFormat, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 0.47.4
+
 name: SwiftLint, nameSpecified: 
 body: The MIT License (MIT…
 version: 0.39.2

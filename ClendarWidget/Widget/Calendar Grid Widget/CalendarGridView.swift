@@ -16,208 +16,210 @@ import WidgetKit
  */
 
 extension DateFormatter {
-    static var month: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM"
-        return formatter
-    }
+	static var month: DateFormatter {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "MMMM"
+		return formatter
+	}
 
-    static var monthAndYear: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
-        return formatter
-    }
+	static var monthAndYear: DateFormatter {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "MMMM yyyy"
+		return formatter
+	}
 }
 
 extension Calendar {
-    func generateDates(
-        inside interval: DateInterval,
-        matching components: DateComponents
-    ) -> [Date] {
-        var dates: [Date] = []
-        dates.append(interval.start)
+	func generateDates(
+		inside interval: DateInterval,
+		matching components: DateComponents
+	) -> [Date] {
+		var dates: [Date] = []
+		dates.append(interval.start)
 
-        enumerateDates(
-            startingAfter: interval.start,
-            matching: components,
-            matchingPolicy: .nextTime
-        ) { date, _, stop in
-            if let date = date {
-                if date < interval.end {
-                    dates.append(date)
-                } else {
-                    stop = true
-                }
-            }
-        }
+		enumerateDates(
+			startingAfter: interval.start,
+			matching: components,
+			matchingPolicy: .nextTime
+		) { date, _, stop in
+			if let date = date {
+				if date < interval.end {
+					dates.append(date)
+				} else {
+					stop = true
+				}
+			}
+		}
 
-        return dates
-    }
+		return dates
+	}
 }
 
 struct CalendarView<DateView>: View where DateView: View {
-    @Environment(\.calendar) var calendar
+	// MARK: Lifecycle
 
-    let interval: DateInterval
-    let showHeaders: Bool
-    let content: (Date) -> DateView
+	init(
+		interval: DateInterval,
+		showHeaders: Bool = true,
+		@ViewBuilder content: @escaping (Date) -> DateView
+	) {
+		self.interval = interval
+		self.showHeaders = showHeaders
+		self.content = content
+	}
 
-    init(
-        interval: DateInterval,
-        showHeaders: Bool = true,
-        @ViewBuilder content: @escaping (Date) -> DateView
-    ) {
-        self.interval = interval
-        self.showHeaders = showHeaders
-        self.content = content
-    }
+	// MARK: Internal
 
-    @ViewBuilder
-    var body: some View {
-        headerView()
-        Spacer()
-        weekDaysView()
-        daysGridView()
-        Spacer()
-    }
+	@Environment(\.calendar) var calendar
 
-    // MARK: - Views Builder
+	let interval: DateInterval
+	let showHeaders: Bool
+	let content: (Date) -> DateView
 
-    private func headerView(for month: Date = Date()) -> some View {
-        let component = calendar.component(.month, from: month)
-        let formatter = component == 1 ? DateFormatter.monthAndYear : .month
+	@ViewBuilder
+	var body: some View {
+		headerView()
+		Spacer()
+		weekDaysView()
+		daysGridView()
+		Spacer()
+	}
 
-        return Group {
-            if showHeaders {
-                Text(formatter.string(from: month).uppercased())
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(.moianesD))
-            }
-        }
-    }
+	// MARK: Private
 
-    private func weekDaysView() -> some View {
-        HStack(spacing: 12) {
-            ForEach(0..<7, id: \.self) {index in
-                Text(getWeekDaysSorted()[index].uppercased())
-                    .font(.system(size: 10, weight: .bold, design: .rounded))
-            }
-        }
-    }
+	private var months: [Date] {
+		calendar.generateDates(
+			inside: interval,
+			matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
+		)
+	}
 
-    private func daysGridView() -> some View {
-        LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
-            ForEach(months, id: \.self) { month in
-                ForEach(days(for: month), id: \.self) { date in
-                    if calendar.isDate(date, equalTo: month, toGranularity: .month) {
-                        content(date).id(date)
-                    } else {
-                        content(date).hidden()
-                    }
-                }
-            }
-        }
-    }
+	private var weeks: [Date] {
+		guard let monthInterval = calendar.dateInterval(of: .month, for: Date()) else { return [] }
 
-    // MARK: - Data Helpers
+		return calendar.generateDates(
+			inside: monthInterval,
+			matching: DateComponents(hour: 0, minute: 0, second: 0, weekday: calendar.firstWeekday)
+		)
+	}
 
-    private var months: [Date] {
-        calendar.generateDates(
-            inside: interval,
-            matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
-        )
-    }
+	private func headerView(for month: Date = Date()) -> some View {
+		let component = calendar.component(.month, from: month)
+		let formatter = component == 1 ? DateFormatter.monthAndYear : .month
 
-    private func days(for month: Date) -> [Date] {
-        guard
-            let monthInterval = calendar.dateInterval(of: .month, for: month),
-            let monthFirstWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.start),
-            let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
-        else { return [] }
+		return Group {
+			if showHeaders {
+				Text(formatter.string(from: month).uppercased())
+					.font(.system(size: 11, weight: .bold, design: .rounded))
+					.foregroundColor(Color(.moianesD))
+			}
+		}
+	}
 
-        return calendar.generateDates(
-            inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
-            matching: DateComponents(hour: 0, minute: 0, second: 0)
-        )
-    }
+	private func weekDaysView() -> some View {
+		HStack(spacing: 12) {
+			ForEach(0 ..< 7, id: \.self) { index in
+				Text(getWeekDaysSorted()[index].uppercased())
+					.font(.system(size: 10, weight: .bold, design: .rounded))
+			}
+		}
+	}
 
-    private var weeks: [Date] {
-        guard let monthInterval = calendar.dateInterval(of: .month, for: Date()) else { return [] }
+	private func daysGridView() -> some View {
+		LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
+			ForEach(months, id: \.self) { month in
+				ForEach(days(for: month), id: \.self) { date in
+					if calendar.isDate(date, equalTo: month, toGranularity: .month) {
+						content(date).id(date)
+					} else {
+						content(date).hidden()
+					}
+				}
+			}
+		}
+	}
 
-        return calendar.generateDates(
-            inside: monthInterval,
-            matching: DateComponents(hour: 0, minute: 0, second: 0, weekday: calendar.firstWeekday)
-        )
-    }
+	private func days(for month: Date) -> [Date] {
+		guard
+			let monthInterval = calendar.dateInterval(of: .month, for: month),
+			let monthFirstWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.start),
+			let monthLastWeek = calendar.dateInterval(of: .weekOfMonth, for: monthInterval.end)
+		else { return [] }
 
-    private func getWeekDaysSorted() -> [String] {
-        let weekDays = Calendar.current.veryShortWeekdaySymbols
-        let sortedWeekDays = Array(weekDays[Calendar.current.firstWeekday - 1 ..< Calendar.current.shortWeekdaySymbols.count] + weekDays[0 ..< Calendar.current.firstWeekday - 1])
-        return sortedWeekDays
-    }
+		return calendar.generateDates(
+			inside: DateInterval(start: monthFirstWeek.start, end: monthLastWeek.end),
+			matching: DateComponents(hour: 0, minute: 0, second: 0)
+		)
+	}
+
+	private func getWeekDaysSorted() -> [String] {
+		let weekDays = Calendar.current.veryShortWeekdaySymbols
+		let sortedWeekDays = Array(weekDays[Calendar.current.firstWeekday - 1 ..< Calendar.current.shortWeekdaySymbols.count] + weekDays[0 ..< Calendar.current.firstWeekday - 1])
+		return sortedWeekDays
+	}
 }
 
 struct CalendarGridView: View {
-    @Environment(\.widgetFamily) var family
+	@Environment(\.widgetFamily) var family
 
-    let entry: WidgetEntry
+	let entry: WidgetEntry
 
-    @ViewBuilder
-    var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallCalendarGridView(entry: entry)
-        case .systemMedium:
-            MediumCalendarGridView(entry: entry)
-        case .systemLarge:
-            LargeCalendarGridView(entry: entry)
-        @unknown default:
-            SmallCalendarGridView(entry: entry)
-        }
-    }
+	@ViewBuilder
+	var body: some View {
+		switch family {
+		case .systemSmall:
+			SmallCalendarGridView(entry: entry)
+		case .systemMedium:
+			MediumCalendarGridView(entry: entry)
+		case .systemLarge:
+			LargeCalendarGridView(entry: entry)
+		@unknown default:
+			SmallCalendarGridView(entry: entry)
+		}
+	}
 }
 
 struct SmallCalendarGridView: View {
-    let entry: WidgetEntry
+	let entry: WidgetEntry
 
-    var body: some View {
-        VStack(alignment: .center) {
-            // swiftlint:disable:next force_unwrapping
-            CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
-                Text(date.toShortDateString)
-                    .font(.system(size: 10, weight: .bold, design: .rounded))
-                    .foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
-                    .frame(width: 15, height: 15)
-                    .multilineTextAlignment(.trailing)
-            }
-        }.padding(.all)
-    }
+	var body: some View {
+		VStack(alignment: .center) {
+			// swiftlint:disable:next force_unwrapping
+			CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
+				Text(date.toShortDateString)
+					.font(.system(size: 10, weight: .bold, design: .rounded))
+					.foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
+					.frame(width: 15, height: 15)
+					.multilineTextAlignment(.trailing)
+			}
+		}.padding(.all)
+	}
 }
 
 struct MediumCalendarGridView: View {
-    let entry: WidgetEntry
+	let entry: WidgetEntry
 
-    var body: some View {
-        HStack {
-            SmallCalendarGridView(entry: entry)
-            DividerView()
-            EventsListWidgetView(entry: entry, minimizeContents: true)
-        }
-    }
+	var body: some View {
+		HStack {
+			SmallCalendarGridView(entry: entry)
+			DividerView()
+			EventsListWidgetView(entry: entry, minimizeContents: true)
+		}
+	}
 }
 
 struct LargeCalendarGridView: View {
-    let entry: WidgetEntry
+	let entry: WidgetEntry
 
-    var body: some View {
-        HStack {
-            VStack {
-                SmallCalendarWidgetView(entry: entry)
-                DividerView()
-                SmallCalendarGridView(entry: entry)
-            }
-            DividerView()
-            EventsListWidgetView(entry: entry, minimizeContents: true)
-        }
-    }
+	var body: some View {
+		HStack {
+			VStack {
+				SmallCalendarWidgetView(entry: entry)
+				DividerView()
+				SmallCalendarGridView(entry: entry)
+			}
+			DividerView()
+			EventsListWidgetView(entry: entry, minimizeContents: true)
+		}
+	}
 }

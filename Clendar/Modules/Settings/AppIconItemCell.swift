@@ -6,31 +6,36 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import SwiftyFORM
+import UIKit
 
 class AppIconItemCell: UITableViewCell, CellHeightProvider {
-    @IBOutlet var iconImageView: UIImageView! { didSet { iconImageView.applyRound(10) } }
-    @IBOutlet var titleLabel: UILabel!
+	// MARK: Internal
 
-    var xibHeight: CGFloat = 90
+	@IBOutlet var titleLabel: UILabel!
 
-    var onSelected: (() -> (Void))?
+	var xibHeight: CGFloat = 90
 
-    static func createCell() throws -> AppIconItemCell {
-        try Bundle.main.form_loadView("AppIconItemCell")
-    }
+	var onSelected: (() -> Void)?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        xibHeight = bounds.height
-    }
+	@IBOutlet var iconImageView: UIImageView! { didSet { iconImageView.applyRound(10) } }
 
-    func form_cellHeight(indexPath: IndexPath, tableView: UITableView) -> CGFloat {
-        xibHeight
-    }
+	static func createCell() throws -> AppIconItemCell {
+		try Bundle.main.form_loadView("AppIconItemCell")
+	}
 
-    @IBAction private func didSelectView() {
-        onSelected?()
-    }
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		xibHeight = bounds.height
+	}
+
+	func form_cellHeight(indexPath _: IndexPath, tableView _: UITableView) -> CGFloat {
+		xibHeight
+	}
+
+	// MARK: Private
+
+	@IBAction private func didSelectView() {
+		onSelected?()
+	}
 }

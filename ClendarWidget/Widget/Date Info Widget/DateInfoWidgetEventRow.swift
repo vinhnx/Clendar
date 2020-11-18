@@ -10,18 +10,18 @@ import Foundation
 import SwiftUI
 
 struct WidgetEventRow: View {
-    let event: Event
+	let event: Event
 
-    var body: some View {
-        HStack(spacing: 5) {
-            WidgetEventColorBar(event: event)
-            WidgetEventRowLabel(event: event)
-        }
-    }
+	var body: some View {
+		HStack(spacing: 5) {
+			WidgetEventColorBar(event: event)
+			WidgetEventRowLabel(event: event)
+		}
+	}
 }
 
 struct WidgetEventRowLabel: View {
-    let event: Event
+	let event: Event
 
     var body: some View {
         let message = event.event?.title ?? "-"
@@ -35,21 +35,20 @@ struct WidgetEventRowLabel: View {
 }
 
 struct WidgetEventColorBar: View {
-    let event: Event
+	let event: Event
 
-    var body: some View {
-        RoundedRectangle(cornerRadius: 4, style: .continuous)
-            .fill(Color(event.event?.calendar.cgColor ?? CGColor(gray: 1, alpha: 1)))
-            .frame(width: 5, height: 20)
-    }
-
+	var body: some View {
+		RoundedRectangle(cornerRadius: 4, style: .continuous)
+			.fill(Color(event.event?.calendar.cgColor ?? CGColor(gray: 1, alpha: 1)))
+			.frame(width: 5, height: 20)
+	}
 }
 
 extension Date {
-    var hourString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
-        return dateFormatter.string(from: self)
-    }
+	var hourString: String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+		dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
+		return dateFormatter.string(from: self)
+	}
 }

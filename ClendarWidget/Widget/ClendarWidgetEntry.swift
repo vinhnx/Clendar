@@ -10,6 +10,6 @@ import SwiftUI
 import WidgetKit
 
 struct WidgetEntry: TimelineEntry {
-    var date: Date
-    var events: [Event] = []
+	var date: Date
+	var events: [Event] = []
 }

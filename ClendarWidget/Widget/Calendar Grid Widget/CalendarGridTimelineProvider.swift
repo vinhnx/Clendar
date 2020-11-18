@@ -10,20 +10,18 @@ import SwiftUI
 import WidgetKit
 
 struct CalendarGridWidgetTimelineProvider: TimelineProvider {
-    typealias Entry = WidgetEntry
+	typealias Entry = WidgetEntry
 
-    // MARK: - TimelineProvider
+	func getSnapshot(in _: Context, completion: @escaping (WidgetEntry) -> Void) {
+		let entry = WidgetEntry(date: Date())
+		completion(entry)
+	}
 
-    func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> Void) {
-        let entry = WidgetEntry(date: Date())
-        completion(entry)
-    }
+	func getTimeline(in _: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
+		completion(Timeline(entries: [WidgetEntry(date: Date())], policy: .atEnd))
+	}
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
-        completion(Timeline(entries: [WidgetEntry(date: Date())], policy: .atEnd))
-    }
-
-    func placeholder(in context: Context) -> WidgetEntry {
-        WidgetEntry(date: Date())
-    }
+	func placeholder(in _: Context) -> WidgetEntry {
+		WidgetEntry(date: Date())
+	}
 }

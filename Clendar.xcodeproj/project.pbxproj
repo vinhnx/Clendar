@@ -822,8 +822,9 @@
 				A320CC6B225516E400C84B27 /* CopyFiles */,
 				5B872D6F5371C5616117097F /* [CP] Embed Pods Frameworks */,
 				A33F80FA22467EEF009CC46A /* SwiftLint */,
+				A37FB92925657F11007C637C /* SwiftFormat */,
 				A3064D2B254CEF5800C7F228 /* Embed App Extensions */,
-				A3FB5B46255C23BA0038AFCE /* ShellScript */,
+				A3FB5B46255C23BA0038AFCE /* Licenses */,
 			);
 			buildRules = (
 			);
@@ -1107,7 +1108,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		A3FB5B46255C23BA0038AFCE /* ShellScript */ = {
+		A37FB92925657F11007C637C /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1116,6 +1117,25 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+		};
+		A3FB5B46255C23BA0038AFCE /* Licenses */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Licenses;
 			outputFileListPaths = (
 			);
 			outputPaths = (

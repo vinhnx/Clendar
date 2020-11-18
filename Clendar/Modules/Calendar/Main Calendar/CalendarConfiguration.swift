@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import CVCalendar
 import SwiftDate
 import SwiftUI

@@ -9,7 +9,7 @@
 import Foundation
 
 extension Bool {
-    var asString: String {
-        self ? NSLocalizedString("On", comment: "") : NSLocalizedString("Off", comment: "")
-    }
+	var asString: String {
+		self ? NSLocalizedString("On", comment: "") : NSLocalizedString("Off", comment: "")
+	}
 }

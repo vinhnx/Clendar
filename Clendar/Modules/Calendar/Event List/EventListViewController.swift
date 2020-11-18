@@ -6,147 +6,142 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import EventKit
 import EventKitUI
+import UIKit
 
 internal typealias DataSource = UICollectionViewDiffableDataSource<Section, Event>
 
 final class EventListViewController: BaseViewController {
+	// MARK: Internal
 
-    // MARK: - Properties
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setupLayout()
 
-    private lazy var collectionView = Layout.makeCollectionView()
+		fetchEvents()
 
-    private lazy var datasource = makeDatasource()
+		view.backgroundColor = .backgroundColor
 
-    // MARK: - Override
+		NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { _ in
+			self.fetchEvents()
+		}
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLayout()
+	func fetchEvents(for date: Date = Date()) {
+		EventKitWrapper.shared.fetchEvents(for: date) { [weak self] result in
+			guard let self = self else { return }
+			switch result {
+			case let .success(events):
+				let items = events.compactMap(Event.init)
+				self.applySnapshot(items, date: date)
 
-        fetchEvents()
+			case let .failure(error): AlertManager.showWithError(error)
+			}
+		}
+	}
 
-        view.backgroundColor = .backgroundColor
+	func makeDatasource() -> DataSource {
+		DataSource(
+			collectionView: collectionView,
+			cellProvider: { collectionView, indexPath, event in
+				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListItemCell.reuseID, for: indexPath) as? EventListItemCell
+				let viewModel = EventListItemCell.ViewModel(event: event)
+				cell?.viewModel = viewModel
+				return cell
+			}
+		)
+	}
 
-        NotificationCenter.default.addObserver(forName: .EKEventStoreChanged, object: nil, queue: .main) { (_) in
-            self.fetchEvents()
-        }
-    }
+	func applySnapshot(_ items: [Event], date: Date?) {
+		guard let date = date else { return }
+		var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+		let section = Section(date: date, events: items)
+		snapshot.appendSections([section])
+		snapshot.appendItems(items, toSection: section)
+		datasource.apply(snapshot, animatingDifferences: true, completion: nil)
+	}
 
-    // MARK: - Public
+	// MARK: Private
 
-    func fetchEvents(for date: Date = Date()) {
-        EventKitWrapper.shared.fetchEvents(for: date) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let events):
-                let items = events.compactMap(Event.init)
-                self.applySnapshot(items, date: date)
+	private lazy var collectionView = Layout.makeCollectionView()
 
-            case .failure(let error): AlertManager.showWithError(error)
-            }
-        }
-    }
+	private lazy var datasource = makeDatasource()
 
-    // MARK: - Datasource
+	private func setupLayout() {
+		collectionView.backgroundColor = .backgroundColor
 
-    func makeDatasource() -> DataSource {
-        DataSource(
-            collectionView: collectionView,
-            cellProvider: { (collectionView, indexPath, event) in
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListItemCell.reuseID, for: indexPath) as? EventListItemCell
-                let viewModel = EventListItemCell.ViewModel(event: event)
-                cell?.viewModel = viewModel
-                return cell
-            }
-        )
-    }
+		// cell
+		collectionView.register(
+			UINib(nibName: EventListItemCell.reuseID, bundle: nil),
+			forCellWithReuseIdentifier: EventListItemCell.reuseID
+		)
 
-    func applySnapshot(_ items: [Event], date: Date?) {
-        guard let date = date else { return }
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
-        let section = Section(date: date, events: items)
-        snapshot.appendSections([section])
-        snapshot.appendItems(items, toSection: section)
-        datasource.apply(snapshot, animatingDifferences: true, completion: nil)
-    }
+		collectionView.dataSource = datasource
+		collectionView.delegate = self
 
-    private func setupLayout() {
-        collectionView.backgroundColor = .backgroundColor
+		view.addSubViewAndFit(collectionView)
 
-        // cell
-        collectionView.register(
-            UINib(nibName: EventListItemCell.reuseID, bundle: nil),
-            forCellWithReuseIdentifier: EventListItemCell.reuseID
-        )
-
-        collectionView.dataSource = datasource
-        collectionView.delegate = self
-
-        view.addSubViewAndFit(collectionView)
-
-        // add menu context
-        let interaction = UIContextMenuInteraction(delegate: self)
-        view.addInteraction(interaction)
-    }
+		// add menu context
+		let interaction = UIContextMenuInteraction(delegate: self)
+		view.addInteraction(interaction)
+	}
 }
 
 extension EventListViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        genLightHaptic()
-        guard let event = datasource.itemIdentifier(for: indexPath) else { return }
-        EventHandler.viewEvent(event, delegate: self)
-    }
+	func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		genLightHaptic()
+		guard let event = datasource.itemIdentifier(for: indexPath) else { return }
+		EventHandler.viewEvent(event, delegate: self)
+	}
 }
 
 extension EventListViewController: EKEventViewDelegate {
-    func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
-        controller.dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            guard action != .done else { return }
-            self.fetchEvents(for: controller.event.startDate)
-        }
-    }
+	func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
+		controller.dismiss(animated: true) { [weak self] in
+			guard let self = self else { return }
+			guard action != .done else { return }
+			self.fetchEvents(for: controller.event.startDate)
+		}
+	}
 }
 
 extension EventListViewController: UIContextMenuInteractionDelegate {
-    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-        nil
-    }
+	func contextMenuInteraction(_: UIContextMenuInteraction, configurationForMenuAtLocation _: CGPoint) -> UIContextMenuConfiguration? {
+		nil
+	}
 
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        guard let event = datasource.itemIdentifier(for: indexPath) else { return nil }
-        guard let ekEvent = event.event else { return nil }
+	func collectionView(_: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point _: CGPoint) -> UIContextMenuConfiguration? {
+		guard let event = datasource.itemIdentifier(for: indexPath) else { return nil }
+		guard let ekEvent = event.event else { return nil }
 
-        return UIContextMenuConfiguration(identifier: nil, previewProvider: {
-            EventViewerViewController(event: ekEvent)
-        }, actionProvider: { _ in
-            let view = UIAction(title: NSLocalizedString("View Event", comment: ""), image: UIImage(systemName: "viewfinder")) { (_) in
-                EventHandler.viewEvent(event, delegate: self)
-            }
+		return UIContextMenuConfiguration(identifier: nil, previewProvider: {
+			EventViewerViewController(event: ekEvent)
+		}, actionProvider: { _ in
+			let view = UIAction(title: NSLocalizedString("View Event", comment: ""), image: UIImage(systemName: "viewfinder")) { _ in
+				EventHandler.viewEvent(event, delegate: self)
+			}
 
-            let edit = UIAction(title: NSLocalizedString("Edit Event", comment: ""), image: UIImage(systemName: "pencil")) { (_) in
-                EventHandler.editEvent(event, delegate: self)
-            }
+			let edit = UIAction(title: NSLocalizedString("Edit Event", comment: ""), image: UIImage(systemName: "pencil")) { _ in
+				EventHandler.editEvent(event, delegate: self)
+			}
 
-            let delete = UIAction(title: NSLocalizedString("Delete Event", comment: ""), image: UIImage(systemName: "trash"), attributes: .destructive) { (_) in
-                EventHandler.deleteEvent(event)
-            }
+			let delete = UIAction(title: NSLocalizedString("Delete Event", comment: ""), image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
+				EventHandler.deleteEvent(event)
+			}
 
-            return UIMenu(children: [view, edit, delete])
-        })
-    }
+			return UIMenu(children: [view, edit, delete])
+		})
+	}
 }
 
 extension EventListViewController: EKEventEditViewDelegate {
-    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-        dismiss(animated: true) { [weak self] in
-            guard let self = self else { return }
-            guard action != .canceled else { return }
-            guard let event = controller.event else { return }
-            self.fetchEvents(for: event.startDate)
-        }
-    }
+	func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+		dismiss(animated: true) { [weak self] in
+			guard let self = self else { return }
+			guard action != .canceled else { return }
+			guard let event = controller.event else { return }
+			self.fetchEvents(for: event.startDate)
+		}
+	}
 }

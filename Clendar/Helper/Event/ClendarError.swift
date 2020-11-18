@@ -6,24 +6,26 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import EventKit
+import Foundation
 
 enum ClendarError: Error, LocalizedError {
-    case mapFromError(Error)
-    case unableToAccessCalendar
-    case failedToAuthorizeEventPersmissson(EKAuthorizationStatus? = nil)
+	case mapFromError(Error)
+	case unableToAccessCalendar
+	case failedToAuthorizeEventPersmissson(EKAuthorizationStatus? = nil)
 
-    var localizedDescription: String {
-        switch self {
-        case .mapFromError(let error): return error.localizedDescription
-        case .unableToAccessCalendar: return "Unable to access celendar"
-        case .failedToAuthorizeEventPersmissson(let status):
-            if let status = status {
-                return "Failed to authorize event persmissson, status: \(status)"
-            } else {
-                return "Failed to authorize event persmissson"
-            }
-        }
-    }
+	// MARK: Internal
+
+	var localizedDescription: String {
+		switch self {
+		case let .mapFromError(error): return error.localizedDescription
+		case .unableToAccessCalendar: return "Unable to access celendar"
+		case let .failedToAuthorizeEventPersmissson(status):
+			if let status = status {
+				return "Failed to authorize event persmissson, status: \(status)"
+			} else {
+				return "Failed to authorize event persmissson"
+			}
+		}
+	}
 }

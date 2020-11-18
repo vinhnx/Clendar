@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct DateInfoWidgetPlaceholder: View {
-    var body: some View {
-        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
-    }
+	var body: some View {
+		DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
+	}
 }

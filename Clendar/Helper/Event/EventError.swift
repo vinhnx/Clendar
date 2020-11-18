@@ -6,22 +6,26 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import EventKit
+import Foundation
 
 typealias ErrorLocalized = Error & LocalizedError
 
 enum ClendarError: ErrorLocalized {
-    case failedToAuthorizeEventPersmissson(EKAuthorizationStatus? = nil)
+	case failedToAuthorizeEventPersmissson(EKAuthorizationStatus? = nil)
 
-    var localizedDescription: String {
-        switch self {
-        case .failedToAuthorizeEventPersmissson(let status):
-            if let status = status {
-                return "Failed to authorize event persmissson, status: \(status)"
-            } else {
-                return "Failed to authorize event persmissson"
-            }
-        }
-    }
+	// MARK: Internal
+
+	//
+
+	var localizedDescription: String {
+		switch self {
+		case let .failedToAuthorizeEventPersmissson(status):
+			if let status = status {
+				return "Failed to authorize event persmissson, status: \(status)"
+			} else {
+				return "Failed to authorize event persmissson"
+			}
+		}
+	}
 }

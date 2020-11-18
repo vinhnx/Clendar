@@ -10,25 +10,25 @@ import Foundation
 import SwiftyChrono
 
 extension Array where Element == String {
-    var commonText: String {
-        var result = [String]()
+	var commonText: String {
+		var result = [String]()
 
-        for loop in enumerated() {
-            let lhs = loop.element
+		for loop in enumerated() {
+			let lhs = loop.element
 
-            guard let rhs = self[safe: loop.offset + 1] else {
-                result.append(lhs)
-                break
-            }
+			guard let rhs = self[safe: loop.offset + 1] else {
+				result.append(lhs)
+				break
+			}
 
-            let sharedText = lhs.commonPrefix(with: rhs, options: .caseInsensitive)
-            result.append(sharedText)
-        }
+			let sharedText = lhs.commonPrefix(with: rhs, options: .caseInsensitive)
+			result.append(sharedText)
+		}
 
-        return result.first ?? ""
-    }
+		return result.first ?? ""
+	}
 }
 
 extension Array where Element: Hashable {
-    var asSet: Set<Element> { Set(self) }
+	var asSet: Set<Element> { Set(self) }
 }

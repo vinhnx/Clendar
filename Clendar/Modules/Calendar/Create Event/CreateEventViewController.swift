@@ -6,36 +6,43 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import UIKit
 import EventKit
+import UIKit
 
 // NOTE: using EventKitUI's native controller to simplify for now
 
 enum CreateEventType {
-    case create
-    case edit
+	case create
+	case edit
 }
 
 struct CreateEventViewModel {
-    public private(set) var event: Event?
-    var text: String = ""
-    var startDate: Date = Date().nextHour
-    var endDate: Date? = Date().nextHour.offsetWithDefaultDuration
+	// MARK: Lifecycle
 
-    init(event: Event? = nil) {
-        self.event = event
-        guard let event = event?.event else { return }
-        text = event.title
-        startDate = event.startDate
-        endDate = event.endDate
-    }
+	init(event: Event? = nil) {
+		self.event = event
+		guard let event = event?.event else { return }
+		text = event.title
+		startDate = event.startDate
+		endDate = event.endDate
+	}
+
+	// MARK: Public
+
+	public private(set) var event: Event?
+
+	// MARK: Internal
+
+	var text: String = ""
+	var startDate = Date().nextHour
+	var endDate: Date? = Date().nextHour.offsetWithDefaultDuration
 }
 
 internal struct EventOverride {
-    let text: String
-    let startDate: Date
-    let endDate: Date?
-    let isAllDay: Bool
+	let text: String
+	let startDate: Date
+	let endDate: Date?
+	let isAllDay: Bool
 }
 
 class CreateEventViewController: BaseViewController {
@@ -227,14 +234,14 @@ class CreateEventViewController: BaseViewController {
 }
 
 extension CreateEventViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
+	}
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
-        parseDate(substring)
-        return true
-    }
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let substring = ((textField.text ?? "") as NSString).replacingCharacters(in: range, with: string)
+		parseDate(substring)
+		return true
+	}
 }

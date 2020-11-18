@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct WidgetPlaceholderView: View {
-    var body: some View {
-        WidgetEntryView(entry: WidgetEntry(date: Date()))
-    }
+	var body: some View {
+		WidgetEntryView(entry: WidgetEntry(date: Date()))
+	}
 }

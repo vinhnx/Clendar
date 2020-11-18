@@ -9,19 +9,18 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
+	// MARK: Internal
 
-    // MARK: - View Lifecycle
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setupView()
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
+	// MARK: Private
 
-    // MARK: - Private
-
-    private func setupView() {
-        navigationBar.isTranslucent = false
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-    }
+	private func setupView() {
+		navigationBar.isTranslucent = false
+		navigationBar.setBackgroundImage(UIImage(), for: .default)
+		navigationBar.shadowImage = UIImage()
+	}
 }
