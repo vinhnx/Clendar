@@ -11,7 +11,7 @@ import EventKit
 
 extension EKEvent {
 
-    func displayText(startDateOnly: Bool = false) -> String {
+    func durationText(startDateOnly: Bool = false) -> String {
         if isAllDay {
             return "All day"
         }
