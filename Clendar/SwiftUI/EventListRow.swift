@@ -10,18 +10,18 @@ import SwiftUI
 
 #warning("// TODO: SwiftUI migration")
 struct EventListItemRow: View {
-    var event: Event
+	var event: Event
 
-    var body: some View {
-        HStack {
-            if let event = event.event {
-                GroupBox(label: Label(event.title, systemImage: "heart.fill").lineLimit(nil)
-                            .foregroundColor(Color(event.calendar.cgColor)), content: {
-                                Text(event.durationText()).font(.footnote)
-                            })
-            } else {
-                EmptyView().redacted(reason: .placeholder)
-            }
-        }
-    }
+	var body: some View {
+		HStack {
+			if let event = event.event {
+				GroupBox(label: Label(event.title, systemImage: "heart.fill").lineLimit(nil)
+					.foregroundColor(Color(event.calendar.cgColor)), content: {
+						Text(event.durationText()).font(.footnote)
+					})
+			} else {
+				EmptyView().redacted(reason: .placeholder)
+			}
+		}
+	}
 }

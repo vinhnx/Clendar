@@ -13,125 +13,131 @@ import SwiftUI
 #warning("// TODO: SwiftUI migration")
 
 class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
+	// MARK: Lifecycle
 
-    // MARK: - Callbacks
+	// MARK: - Initialization
 
-    var presentedDateUpdated: ((_ date: CVDate) -> Void)?
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
 
-    var didSelectDayView: ((_ dayView: CVCalendarDayView, _ animationDidFinish: Bool) -> Void)?
+	init(calendar: Calendar, mode: CalendarMode, date: Binding<Date>) {
+		currentCalendar = calendar
+		self.mode = mode
+		_date = date
 
-    // MARK: - Properties
+		// NOTE: not sure which is better way
 
-    @Binding var date: Date
+		NotificationCenter.default.addObserver(forName: NSNotification.Name("foo"), object: nil, queue: .main) { _ in
+			self.calendarView?.loadNextView()
+		}
 
-    var calendarView: CVCalendarView?
+		NotificationCenter.default.addObserver(forName: NSNotification.Name("bar"), object: nil, queue: .main) { _ in
+			self.calendarView?.loadPreviousView()
+		}
+	}
 
-    public private(set) var mode: CalendarMode
+	// MARK: Public
 
-    public private(set) var currentCalendar: Calendar
+	public private(set) var mode: CalendarMode
 
-    // MARK: - Initialization
+	public private(set) var currentCalendar: Calendar
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+	// MARK: Internal
 
-    init(calendar: Calendar, mode: CalendarMode, date: Binding<Date>) {
-        self.currentCalendar = calendar
-        self.mode = mode
-        self._date = date
+	// MARK: - Callbacks
 
-        // NOTE: not sure which is better way
+	var presentedDateUpdated: ((_ date: CVDate) -> Void)?
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("foo"), object: nil, queue: .main) { (_) in
-            self.calendarView?.loadNextView()
-        }
+	var didSelectDayView: ((_ dayView: CVCalendarDayView, _ animationDidFinish: Bool) -> Void)?
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("bar"), object: nil, queue: .main) { (_) in
-            self.calendarView?.loadPreviousView()
-        }
-    }
+	// MARK: - Properties
 
-    // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
+	@Binding var date: Date
 
-    func presentationMode() -> CalendarMode { mode }
+	var calendarView: CVCalendarView?
 
-    func firstWeekday() -> Weekday { cv_defaultFirstWeekday }
+	// MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
 
-    func calendar() -> Calendar? { currentCalendar }
+	func presentationMode() -> CalendarMode { mode }
 
-    func shouldShowWeekdaysOut() -> Bool { SettingsManager.showDaysOut }
+	func firstWeekday() -> Weekday { cv_defaultFirstWeekday }
 
-    func shouldAutoSelectDayOnMonthChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
+	func calendar() -> Calendar? { currentCalendar }
 
-    func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
+	func shouldShowWeekdaysOut() -> Bool { SettingsManager.showDaysOut }
 
-    func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        genLightHaptic()
-        didSelectDayView?(dayView, animationDidFinish)
-    }
+	func shouldAutoSelectDayOnMonthChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
-    func presentedDateUpdated(_ date: CVDate) {
-        presentedDateUpdated?(date)
-    }
+	func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
-    func dayOfWeekFont() -> UIFont { .boldFontWithSize(11) }
+	func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+		genLightHaptic()
+		didSelectDayView?(dayView, animationDidFinish)
+	}
 
-    func dayOfWeekTextUppercase() -> Bool { true }
+	func presentedDateUpdated(_ date: CVDate) {
+		presentedDateUpdated?(date)
+	}
 
-    func weekdaySymbolType() -> WeekdaySymbolType { .short }
+	func dayOfWeekFont() -> UIFont { .boldFontWithSize(11) }
 
-    func dayOfWeekTextColor() -> UIColor { .nativeLightGray }
+	func dayOfWeekTextUppercase() -> Bool { true }
 
-    func dayOfWeekBackGroundColor() -> UIColor { .clear }
+	func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
-    func spaceBetweenWeekViews() -> CGFloat { 5 }
+	func dayOfWeekTextColor() -> UIColor { .nativeLightGray }
 
-    func shouldAnimateResizing() -> Bool { true }
+	func dayOfWeekBackGroundColor() -> UIColor { .clear }
 
-    func shouldShowCustomSingleSelection() -> Bool { true }
+	func spaceBetweenWeekViews() -> CGFloat { 5 }
 
-    func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
-        let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
-        circleView.fillColor = .appLightGray
-        return circleView
-    }
+	func shouldAnimateResizing() -> Bool { true }
 
-    func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-        dayView.isCurrentDay
-    }
+	func shouldShowCustomSingleSelection() -> Bool { true }
 
-    func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-        if SettingsManager.showDaysOut == false, dayView.isOut { return UIView() }
-        let type = DaySupplementaryType(rawValue: SettingsManager.daySupplementaryType) ?? DaySupplementaryType.defaultValue
-        return DaySupplementaryView.viewForDayView(dayView, isOut: dayView.isOut, type: type) ?? UIView()
-    }
+	func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
+		let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
+		circleView.fillColor = .appLightGray
+		return circleView
+	}
 
-    func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool { true }
+	func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
+		dayView.isCurrentDay
+	}
 
-    // MARK: - CVCalendarViewAppearanceDelegate
+	func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
+		if SettingsManager.showDaysOut == false, dayView.isOut { return UIView() }
+		let type = DaySupplementaryType(rawValue: SettingsManager.daySupplementaryType) ?? DaySupplementaryType.defaultValue
+		return DaySupplementaryView.viewForDayView(dayView, isOut: dayView.isOut, type: type) ?? UIView()
+	}
 
-    func spaceBetweenDayViews() -> CGFloat { 5 }
+	func supplementaryView(shouldDisplayOnDayView _: DayView) -> Bool { true }
 
-    func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
+	// MARK: - CVCalendarViewAppearanceDelegate
 
-    func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
+	func spaceBetweenDayViews() -> CGFloat { 5 }
 
-    func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        .mediumFontWithSize(18)
-    }
+	func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
 
-    func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return .white
-        case (.sunday, .out, _): return .appLightRed
-        case (.sunday, _, _): return .appRed
-        case (_, .in, _): return .appDark
-        default: return .appLightGray
-        }
-    }
+	func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
-    func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
-        .appRed
-    }
+	func dayLabelFont(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIFont {
+		.mediumFontWithSize(18)
+	}
+
+	func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
+		switch (weekDay, status, present) {
+		case (_, .selected, _),
+		     (_, .highlighted, _): return .white
+		case (.sunday, .out, _): return .appLightRed
+		case (.sunday, _, _): return .appRed
+		case (_, .in, _): return .appDark
+		default: return .appLightGray
+		}
+	}
+
+	func dayLabelBackgroundColor(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIColor? {
+		.appRed
+	}
 }

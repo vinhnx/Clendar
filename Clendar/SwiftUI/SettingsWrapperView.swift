@@ -11,9 +11,9 @@ import SwiftUI
 #warning("// TODO: SwiftUI migration")
 
 struct SettingsWrapperView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> SettingsNavigationController {
-        SettingsNavigationController()
-    }
+	func makeUIViewController(context _: Context) -> SettingsNavigationController {
+		SettingsNavigationController()
+	}
 
-    func updateUIViewController(_ uiViewController: SettingsNavigationController, context: Context) {}
+	func updateUIViewController(_: SettingsNavigationController, context _: Context) {}
 }

@@ -23,15 +23,15 @@ struct WidgetEventRow: View {
 struct WidgetEventRowLabel: View {
 	let event: Event
 
-    var body: some View {
-        let message = event.event?.title ?? "-"
-        let title = event.event?.durationText(startDateOnly: true) ?? "-"
-        let titleAndMessage = "[\(title)] \(message)"
-        Text(titleAndMessage)
-            .font(.system(size: 12, weight: .semibold, design: .rounded))
-            .foregroundColor(Color(.gray))
-            .lineLimit(2)
-    }
+	var body: some View {
+		let message = event.event?.title ?? "-"
+		let title = event.event?.durationText(startDateOnly: true) ?? "-"
+		let titleAndMessage = "[\(title)] \(message)"
+		Text(titleAndMessage)
+			.font(.system(size: 12, weight: .semibold, design: .rounded))
+			.foregroundColor(Color(.gray))
+			.lineLimit(2)
+	}
 }
 
 struct WidgetEventColorBar: View {

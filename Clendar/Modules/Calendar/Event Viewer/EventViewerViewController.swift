@@ -9,8 +9,6 @@
 import EventKitUI
 import UIKit
 
-
-
 class EventViewerNavigationController: UINavigationController {
 	// MARK: Lifecycle
 

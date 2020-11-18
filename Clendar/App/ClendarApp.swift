@@ -12,9 +12,9 @@ import SwiftUI
 
 @main
 struct ClendarApp: App {
-    var body: some Scene {
-        WindowGroup {
-            MainContentView()
-        }
-    }
+	var body: some Scene {
+		WindowGroup {
+			MainContentView()
+		}
+	}
 }
