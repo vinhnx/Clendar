@@ -9,6 +9,9 @@
 import UIKit
 import CVCalendar
 import SwiftDate
+import SwiftUI
+
+#warning("// TODO: SwiftUI migration")
 
 class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
 
@@ -20,13 +23,34 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
     // MARK: - Properties
 
+    @Binding var date: Date
+
+    var calendarView: CVCalendarView?
+
     public private(set) var mode: CalendarMode
 
     public private(set) var currentCalendar: Calendar
 
-    init(calendar: Calendar, mode: CalendarMode) {
+    // MARK: - Initialization
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    init(calendar: Calendar, mode: CalendarMode, date: Binding<Date>) {
         self.currentCalendar = calendar
         self.mode = mode
+        self._date = date
+
+        // NOTE: not sure which is better way
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("foo"), object: nil, queue: .main) { (_) in
+            self.calendarView?.loadNextView()
+        }
+
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("bar"), object: nil, queue: .main) { (_) in
+            self.calendarView?.loadPreviousView()
+        }
     }
 
     // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate

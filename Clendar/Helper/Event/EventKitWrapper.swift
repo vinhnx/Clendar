@@ -10,9 +10,11 @@ import EventKit
 import Foundation
 
 /// [WIP] Wrapper for EventKit
-final class EventKitWrapper {
+final class EventKitWrapper: ObservableObject {
 
     // MARK: - Properties
+
+    @Published public private(set) var events = [Event]()
 
     /// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
     public private(set) var eventStore = EKEventStore()
@@ -172,7 +174,7 @@ final class EventKitWrapper {
     /// - Parameters:
     ///   - date: day to fetch events from
     ///   - completion: completion handler
-    func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+    func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
         fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
     }
 
@@ -180,7 +182,7 @@ final class EventKitWrapper {
     /// - Parameters:
     ///   - date: day to fetch events from
     ///   - completion: completion handler
-    func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+    func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
         fetchEvents(startDate: startDate, endDate: startDate.endDate, completion: completion)
     }
 
@@ -189,7 +191,7 @@ final class EventKitWrapper {
     ///   - startDate: start date range
     ///   - endDate: end date range
     ///   - completion: completion handler
-    func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+    func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
         requestEventStoreAuthorization { [weak self] result in
             switch result {
             case .success(let status):
@@ -201,6 +203,7 @@ final class EventKitWrapper {
 
                 let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: self.savedCalendars)
                 let events = self.eventStore.events(matching: predicate)
+                self.events = events.compactMap(Event.init)
                 DispatchQueue.main.async { completion?(.success(events)) }
 
             case .failure(let error):

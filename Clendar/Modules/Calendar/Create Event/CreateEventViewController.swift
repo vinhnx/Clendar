@@ -61,12 +61,12 @@ class CreateEventViewController: BaseViewController {
 
     @IBOutlet private var isAllDayContainerView: UIView!
 
-    @IBOutlet private var deleteButton: Button! {
-        didSet {
-            deleteButton.tintColor = .buttonTintColor
-            deleteButton.backgroundColor = .detructiveColor
-        }
-    }
+//    @IBOutlet private var deleteButton: Button! {
+//        didSet {
+//            deleteButton.tintColor = .buttonTintColor
+//            deleteButton.backgroundColor = .detructiveColor
+//        }
+//    }
 
     @IBOutlet private var startDateStackContainerView: UIView!
 
@@ -141,7 +141,7 @@ class CreateEventViewController: BaseViewController {
 
         view.backgroundColor = .backgroundColor
 
-        deleteButton.isHidden = createEventType == .create
+//        deleteButton.isHidden = createEventType == .create
 
         bind(viewModel)
     }

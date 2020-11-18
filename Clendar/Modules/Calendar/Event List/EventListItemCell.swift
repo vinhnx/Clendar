@@ -24,7 +24,7 @@ class EventListItemCell: UICollectionViewCell {
         init(event: Event? = nil) {
             guard let event = event?.event else { return }
             message = event.title
-            title = event.displayText()
+            title = event.durationText()
             titleAndMessage = "[\(title)] \(message)"
             let color = UIColor(cgColor: event.calendar.cgColor)
             calendarColor = event.startDate.isInPast ? color.withAlphaComponent(0.3) : color
