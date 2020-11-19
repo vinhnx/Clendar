@@ -7,7 +7,6 @@
 --indent tab
 --extensionacl on-declarations
 --commas inline
---organizetypes
 
 # file options
 --exclude Pods
@@ -47,7 +46,6 @@
 	strongOutlets, \
 	todos, \
 	trailingClosures, \
-	organizeDeclarations, \
 	wrapSwitchCases, \
 	wrapMultilineStatementBraces, \
 	wrapEnumCases, \
