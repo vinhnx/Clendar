@@ -9,45 +9,40 @@
 import CVCalendar
 import SwiftUI
 
-#warning("// TODO: SwiftUI imigrat")
-
 struct CalendarWrapperView: UIViewRepresentable {
-	@Binding var date: Date
+	@EnvironmentObject var sharedState: SharedState
+	let calendarView = CVCalendarView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
 
-	func makeCoordinator() -> CalendarViewConfiguration {
-		CalendarViewConfiguration(
+	// MARK: - UIViewRepresentable
+
+	func makeCoordinator() -> CalendarViewCoordinator {
+		CalendarViewCoordinator(
 			calendar: CalendarManager.shared.calendar,
-			mode: .monthView,
-			date: $date
+			mode: .monthView
 		)
 	}
 
 	func makeUIView(context: Context) -> CVCalendarView {
-		let view = CVCalendarView(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
-		view.calendarAppearanceDelegate = context.coordinator
-		view.animatorDelegate = context.coordinator
-		view.calendarDelegate = context.coordinator
+		calendarView.calendarAppearanceDelegate = context.coordinator
+		calendarView.animatorDelegate = context.coordinator
+		calendarView.calendarDelegate = context.coordinator
+		calendarView.commitCalendarViewUpdate()
+		calendarView.setContentHuggingPriority(.required, for: .horizontal)
+		return calendarView
+	}
 
+	func updateUIView(_ view: CVCalendarView, context: Context) {
+		view.toggleViewWithDate(sharedState.selectedDate)
 		context.coordinator.calendarView = view // NOTE: this is to keep reference to UIView, not sure which is better way
-
-		view.commitCalendarViewUpdate()
-		view.setContentHuggingPriority(.required, for: .horizontal)
-		return view
-	}
-
-	func updateUIView(_ uiView: CVCalendarView, context _: Context) {
-		uiView.toggleViewWithDate(date)
-	}
-
-	func foo() {
-		print(#line)
+		context.coordinator.selectedDate = { date in
+			guard let convertedDate = date.convertedDate() else { return }
+			self.sharedState.selectedDate = convertedDate
+		}
 	}
 }
 
-struct CalenderView_Previews: PreviewProvider {
-	@State static var date = Date()
-
+struct CalendarWrapperView_Previews: PreviewProvider {
 	static var previews: some View {
-		CalendarWrapperView(date: $date)
+        CalendarWrapperView().environmentObject(SharedState())
 	}
 }

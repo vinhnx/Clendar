@@ -9,6 +9,8 @@
 import EventKit
 import UIKit
 
+#warning("// TODO: migrate to SwiftUI instead")
+
 // NOTE: using EventKitUI's native controller to simplify for now
 
 enum CreateEventType {
@@ -61,7 +63,7 @@ class CreateEventViewController: BaseViewController {
 
 		view.backgroundColor = .backgroundColor
 
-		//        deleteButton.isHidden = createEventType == .create
+		deleteButton.isHidden = createEventType == .create
 
 		bind(viewModel)
 	}
@@ -79,12 +81,12 @@ class CreateEventViewController: BaseViewController {
 
 	@IBOutlet private var isAllDayContainerView: UIView!
 
-	//    @IBOutlet private var deleteButton: Button! {
-	//        didSet {
-	//            deleteButton.tintColor = .buttonTintColor
-	//            deleteButton.backgroundColor = .detructiveColor
-	//        }
-	//    }
+	@IBOutlet private var deleteButton: CDButton! {
+		didSet {
+			deleteButton.tintColor = .buttonTintColor
+			deleteButton.backgroundColor = .detructiveColor
+		}
+	}
 
 	@IBOutlet private var startDateStackContainerView: UIView!
 

@@ -11,15 +11,15 @@ import Foundation
 
 /// [WIP] Wrapper for EventKit
 final class EventKitWrapper: ObservableObject {
-	// MARK: Lifecycle
 
+    // MARK: Lifecycle
+
+    static let shared = EventKitWrapper()
 	private init() {} // This prevents others from using the default '()' initializer for this class.
-
-	// MARK: Public
 
 	// MARK: - Properties
 
-	@Published public private(set) var events = [Event]()
+	@Published var events = [Event]()
 
 	/// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
 	public private(set) var eventStore = EKEventStore()
@@ -46,10 +46,6 @@ final class EventKitWrapper: ObservableObject {
 			NotificationCenter.default.post(name: .didChangeSavedCalendarsPreferences, object: nil)
 		}
 	}
-
-	// MARK: Internal
-
-	static let shared = EventKitWrapper()
 
 	// MARK: - Flow
 

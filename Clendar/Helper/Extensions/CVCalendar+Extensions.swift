@@ -17,4 +17,9 @@ extension CVCalendarView {
 	func reloadData() {
 		contentController.refreshPresentedMonth()
 	}
+
+	func changeModePerSettings() {
+		let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
+		changeMode(calendarMode)
+	}
 }

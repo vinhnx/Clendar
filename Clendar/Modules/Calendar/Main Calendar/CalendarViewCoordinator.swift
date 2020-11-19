@@ -7,34 +7,22 @@
 //
 
 import CVCalendar
-import SwiftDate
-import SwiftUI
+import Foundation
+import UIKit
 
-#warning("// TODO: SwiftUI migration")
-
-class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
+class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
 	// MARK: Lifecycle
-
-	// MARK: - Initialization
 
 	deinit {
 		NotificationCenter.default.removeObserver(self)
 	}
 
-	init(calendar: Calendar, mode: CalendarMode, date: Binding<Date>) {
+	init(
+		calendar: Calendar,
+		mode: CalendarMode
+	) {
 		currentCalendar = calendar
 		self.mode = mode
-		_date = date
-
-		// NOTE: not sure which is better way
-
-		NotificationCenter.default.addObserver(forName: NSNotification.Name("foo"), object: nil, queue: .main) { _ in
-			self.calendarView?.loadNextView()
-		}
-
-		NotificationCenter.default.addObserver(forName: NSNotification.Name("bar"), object: nil, queue: .main) { _ in
-			self.calendarView?.loadPreviousView()
-		}
 	}
 
 	// MARK: Public
@@ -43,17 +31,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
 	public private(set) var currentCalendar: Calendar
 
-	// MARK: Internal
-
-	// MARK: - Callbacks
-
-	var presentedDateUpdated: ((_ date: CVDate) -> Void)?
-
-	var didSelectDayView: ((_ dayView: CVCalendarDayView, _ animationDidFinish: Bool) -> Void)?
-
-	// MARK: - Properties
-
-	@Binding var date: Date
+	var selectedDate: ((CVDate) -> Void)?
 
 	var calendarView: CVCalendarView?
 
@@ -71,13 +49,13 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
 	func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
-	func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+	func didSelectDayView(_: CVCalendarDayView, animationDidFinish _: Bool) {
 		genLightHaptic()
-		didSelectDayView?(dayView, animationDidFinish)
 	}
 
 	func presentedDateUpdated(_ date: CVDate) {
-		presentedDateUpdated?(date)
+		genLightHaptic()
+		selectedDate?(date)
 	}
 
 	func dayOfWeekFont() -> UIFont { .boldFontWithSize(11) }

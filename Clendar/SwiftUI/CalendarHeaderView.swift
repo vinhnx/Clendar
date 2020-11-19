@@ -9,16 +9,11 @@
 import CVCalendar
 import SwiftUI
 
-#warning("// TODO: SwiftUI migration")
-
 struct CalendarHeaderView: UIViewRepresentable {
-	@Binding var date: Date
-
-	func makeCoordinator() -> CalendarViewConfiguration {
-		CalendarViewConfiguration(
+	func makeCoordinator() -> CalendarViewCoordinator {
+		CalendarViewCoordinator(
 			calendar: CalendarManager.shared.calendar,
-			mode: .monthView,
-			date: $date
+			mode: .monthView
 		)
 	}
 
@@ -33,9 +28,7 @@ struct CalendarHeaderView: UIViewRepresentable {
 }
 
 struct CalendarHeaderView_Previews: PreviewProvider {
-	@State static var date = Date()
-
 	static var previews: some View {
-		CalendarHeaderView(date: $date)
+		CalendarHeaderView()
 	}
 }
