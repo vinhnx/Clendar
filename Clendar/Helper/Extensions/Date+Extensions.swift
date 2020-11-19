@@ -10,23 +10,6 @@ import CVCalendar
 import Foundation
 import SwiftDate
 
-var isUSLocale: Bool { SwiftDate.defaultRegion.locale.identifier == Locales.englishUnitedStates.rawValue }
-
-var weekdays: [WeekDay] { [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday] }
-
-var weekdayNames: [String] { weekdays.map { day in day.name() } }
-
-func weekdayName(_ weekday: WeekDay) -> String { weekday.name() }
-
-func weekdayName(_ weekdayIndex: Int) -> String {
-	let weekday = WeekDay(rawValue: weekdayIndex) ?? defaultFirstWeekday
-	return weekday.name()
-}
-
-var defaultFirstWeekday: WeekDay { isUSLocale ? .sunday : .monday }
-
-var cv_defaultFirstWeekday: CVCalendarWeekday { isUSLocale ? .sunday : .monday }
-
 extension Date {
 	var startDate: Date {
 		dateAtStartOf(.day)
