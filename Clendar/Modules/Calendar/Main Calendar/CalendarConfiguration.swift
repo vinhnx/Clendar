@@ -32,7 +32,7 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
 	func presentationMode() -> CalendarMode { mode }
 
-	func firstWeekday() -> Weekday { cv_defaultFirstWeekday }
+	func firstWeekday() -> Weekday { CVCalendarWeekday(rawValue: Calendar.autoupdatingCurrent.firstWeekday) ?? .monday }
 
 	func calendar() -> Calendar? { currentCalendar }
 
