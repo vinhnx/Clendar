@@ -16,11 +16,11 @@ import SwiftUI
 
  ==
  TODO:
+ + [!] IAP, tip jars  => make more money
  + double check Vietnamese translation
  + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
  + landing page https://github.com/emilbaehr/automatic-app-landing-page
- + [!] IAP, tip jars  => make more money
  + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
  + lunar converter (+)
  + lunar event (+)
