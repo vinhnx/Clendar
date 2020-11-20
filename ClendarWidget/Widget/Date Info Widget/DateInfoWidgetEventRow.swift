@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct WidgetEventRow: View {
+    var id = UUID()
 	let event: Event
 
 	var body: some View {
