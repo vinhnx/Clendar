@@ -23,10 +23,10 @@ struct EventListView: View {
 							Button(
 								action: { self.selectedEvent = event },
 								label: {
-                                    Text("Edit Event")
+									Text("Edit Event")
 									Image(systemName: "square.and.pencil")
 								}
-                            )
+							)
 						}
 				}
 			}
