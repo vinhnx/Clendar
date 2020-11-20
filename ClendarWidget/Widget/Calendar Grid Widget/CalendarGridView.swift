@@ -109,7 +109,7 @@ struct CalendarView<DateView>: View where DateView: View {
 
 		return Group {
 			if showHeaders {
-				Text(formatter.string(from: month).uppercased())
+				Text(formatter.string(from: month).localizedUppercase)
 					.font(.system(size: 11, weight: .bold, design: .rounded))
 					.foregroundColor(Color(.moianesD))
 			}
@@ -119,7 +119,7 @@ struct CalendarView<DateView>: View where DateView: View {
 	private func weekDaysView() -> some View {
 		HStack(spacing: 12) {
 			ForEach(0 ..< 7, id: \.self) { index in
-				Text(getWeekDaysSorted()[index].uppercased())
+				Text(getWeekDaysSorted()[index].localizedUppercase)
 					.font(.system(size: 10, weight: .bold, design: .rounded))
 			}
 		}

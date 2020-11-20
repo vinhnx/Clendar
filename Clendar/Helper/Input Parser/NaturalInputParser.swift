@@ -26,7 +26,7 @@ final class NaturalInputParser {
 	// MARK: Internal
 
 	struct InputParserResult {
-		var action: String
+		var parsedText: String
 		var startDate: Date
 		var endDate: Date?
 	}
@@ -42,12 +42,12 @@ final class NaturalInputParser {
 		case .lunar:
 			let gregorianStartDate = startDate.toGregorianDate
 			let gregorianEndDate = endDate?.toGregorianDate
-			return InputParserResult(action: process.action,
+			return InputParserResult(parsedText: process.action,
 			                         startDate: gregorianStartDate,
 			                         endDate: gregorianEndDate)
 
 		case .solar:
-			return InputParserResult(action: process.action,
+			return InputParserResult(parsedText: process.action,
 			                         startDate: startDate,
 			                         endDate: endDate)
 		}

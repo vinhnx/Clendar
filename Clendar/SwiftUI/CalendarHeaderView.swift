@@ -18,7 +18,13 @@ struct CalendarHeaderView: UIViewRepresentable {
 	}
 
 	func makeUIView(context: Context) -> CVCalendarMenuView {
-		let view = CVCalendarMenuView(frame: CGRect(x: 0, y: 0, width: 300, height: 10))
+		let view = CVCalendarMenuView(
+			frame: CGRect(
+				x: 0, y: 0,
+				width: Constants.CalendarView.calendarWidth,
+				height: Constants.CalendarView.calendarHeaderHeight
+			)
+		)
 		view.delegate = context.coordinator
 		view.commitMenuViewUpdate()
 		return view

@@ -19,16 +19,15 @@ internal class EventViewerWrapperViewCoordinator: NSObject, EKEventViewDelegate 
     func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
         controller.dismiss(animated: true) { [weak self] in
             guard let self = self else { return }
-            self.wrapperView.sharedState.selectedDate = controller.event.startDate
+            self.wrapperView.store.selectedDate = controller.event.startDate
         }
     }
-    
 }
 
 struct EventViewerWrapperView: UIViewControllerRepresentable {
-    @EnvironmentObject var sharedState: SharedState
+    @EnvironmentObject var store: Store
 
-	var event: Event?
+    var event: Event?
 
     func makeCoordinator() -> EventViewerWrapperViewCoordinator {
         EventViewerWrapperViewCoordinator(self)

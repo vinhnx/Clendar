@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
 extension UIFont {
@@ -28,5 +29,27 @@ extension UIFont {
 
 	static func mediumFontWithSize(_ size: CGFloat) -> UIFont {
 		fontWithSize(size, weight: .medium)
+	}
+}
+
+extension Font {
+	static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> Font {
+		Font(UIFont.fontWithSize(size, weight: weight))
+	}
+
+	static func regularFontWithSize(_ size: CGFloat) -> Font {
+		Font(UIFont.fontWithSize(size))
+	}
+
+	static func boldFontWithSize(_ size: CGFloat) -> Font {
+		Font(UIFont.fontWithSize(size, weight: .bold))
+	}
+
+	static func semiboldFontWithSize(_ size: CGFloat) -> Font {
+		Font(UIFont.fontWithSize(size, weight: .semibold))
+	}
+
+	static func mediumFontWithSize(_ size: CGFloat) -> Font {
+		Font(UIFont.fontWithSize(size, weight: .medium))
 	}
 }

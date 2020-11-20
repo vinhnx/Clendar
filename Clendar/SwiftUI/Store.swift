@@ -1,5 +1,5 @@
 //
-//  SharedState.swift
+//  Store.swift
 //  Clendar
 //
 //  Created by Vĩnh Nguyễn on 11/19/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class SharedState: ObservableObject {
+class Store: ObservableObject {
 	@Published var selectedDate = Date()
-	@Published var backgroundColor = Color(.backgroundColor)
+	@Published var appBackgroundColor = Color(.backgroundColor)
 }

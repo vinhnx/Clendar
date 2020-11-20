@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-#warning("// TODO: SwiftUI migration")
-
 struct SettingsWrapperView: UIViewControllerRepresentable {
 	func makeUIViewController(context _: Context) -> SettingsNavigationController {
 		SettingsNavigationController()

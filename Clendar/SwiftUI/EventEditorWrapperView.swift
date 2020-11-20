@@ -9,8 +9,6 @@
 import EventKitUI
 import SwiftUI
 
-#warning("// TODO: SwiftUI migration")
-
 internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
 	var wrapperView: EventEditorWrapperView
 
@@ -24,7 +22,7 @@ internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDeleg
 		controller.dismiss(animated: true) {
 			guard action != .canceled else { return }
 			guard let event = controller.event else { return }
-			self.wrapperView.sharedState.selectedDate = event.startDate
+			self.wrapperView.store.selectedDate = event.startDate
 		}
 	}
 
@@ -34,7 +32,7 @@ internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDeleg
 }
 
 struct EventEditorWrapperView: UIViewControllerRepresentable {
-	@EnvironmentObject var sharedState: SharedState
+	@EnvironmentObject var store: Store
 
 	// MARK: - UIViewControllerRepresentable
 

@@ -14,16 +14,21 @@ struct PlainGroupBoxStyle: GroupBoxStyle {
 			configuration.label
 			configuration.content
 		}
+		.padding()
 	}
 }
 
 struct CardGroupBoxStyle: GroupBoxStyle {
 	func makeBody(configuration: Configuration) -> some View {
-		VStack(alignment: .leading) {
-			configuration.label
-			configuration.content
+		HStack {
+			VStack(alignment: .leading) {
+				configuration.label
+				configuration.content
+			}
+			Spacer()
 		}
 		.padding()
+		.frame(maxWidth: .infinity)
 		.background(Color(.systemGroupedBackground))
 		.clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 	}

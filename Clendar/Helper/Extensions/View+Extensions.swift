@@ -17,3 +17,13 @@ extension View {
 			.background(backgroundColor.edgesIgnoringSafeArea(.all))
 	}
 }
+
+// reference: https://github.com/onmyway133/blog/issues/604#issue-comment-box
+extension View {
+	// MARK: - Log
+
+	func log(_ any: Any) -> Self {
+		logInfo("\(any)")
+		return self
+	}
+}

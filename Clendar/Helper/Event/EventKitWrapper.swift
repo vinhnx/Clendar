@@ -9,12 +9,13 @@
 import EventKit
 import Foundation
 
+import SwiftUI
+
 /// [WIP] Wrapper for EventKit
 final class EventKitWrapper: ObservableObject {
+	// MARK: Lifecycle
 
-    // MARK: Lifecycle
-
-    static let shared = EventKitWrapper()
+	static let shared = EventKitWrapper()
 	private init() {} // This prevents others from using the default '()' initializer for this class.
 
 	// MARK: - Properties

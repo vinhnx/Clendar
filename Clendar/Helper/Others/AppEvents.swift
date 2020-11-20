@@ -9,6 +9,10 @@
 import Foundation
 
 extension Notification.Name {
+	// MARK: - General
+
+	static let addEventShortcutAction = Notification.Name(rawValue: "addEventShortcutAction")
+
 	// MARK: - Calendar
 
 	static let didAuthorizeCalendarAccess = Notification.Name(rawValue: "didAuthorizeCalendarAccess")
