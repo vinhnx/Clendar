@@ -19,6 +19,15 @@ struct EventListView: View {
 				ForEach(events, id: \.self.id) { event in
 					EventListRow(event: event)
 						.onTapGesture { self.selectedEvent = event }
+						.contextMenu {
+							Button(
+								action: { self.selectedEvent = event },
+								label: {
+                                    Text("Edit Event")
+									Image(systemName: "square.and.pencil")
+								}
+                            )
+						}
 				}
 			}
 		}
