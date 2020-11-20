@@ -13,11 +13,14 @@ import UIKit
 import UserNotifications
 
 /*
-  Issues tracking
-  https://github.com/vinhnx/Clendar/issues
+   Issues tracking
+   https://github.com/vinhnx/Clendar/issues
 
  ==
   TODO:
+  + IMPORTANT: SwiftUI migration -> NOW OR NEVER -> it's not too difficult
+     ==> use SwiftUI_migration branch
+
   + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
   + landing page https://github.com/emilbaehr/automatic-app-landing-page
   + [!] IAP, tip jars  => make more money
@@ -70,7 +73,7 @@ import UserNotifications
   + [done] selectable calendar to shown EKCalendarChooser
   */
 
-@UIApplicationMain
+// @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 
@@ -89,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		window?.overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
 		window?.tintColor = .primaryColor
-		window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
+		//        window?.rootViewController = R.storyboard.calendarViewController.instantiateInitialViewController()
 		window?.makeKeyAndVisible()
 
 		return true
@@ -130,7 +133,7 @@ extension AppDelegate {
 		}
 
 		if shortcutItem.type == R.info.uiApplicationShortcutItems.addEventAction.uiApplicationShortcutItemType {
-			(window?.rootViewController as? CalendarViewController)?.createEvent()
+			//            (window?.rootViewController as? CalendarViewController)?.createEvent()
 		}
 	}
 }

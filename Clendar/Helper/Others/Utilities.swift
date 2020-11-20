@@ -7,12 +7,17 @@
 //
 
 import Haptica
+import SwiftUI
 import UIKit
 
 // MARK: - UI
 
 var isDarkMode: Bool {
 	UITraitCollection.current.userInterfaceStyle == .dark
+}
+
+var appColorScheme: ColorScheme {
+	SettingsManager.darkModeActivated ? .dark : .light
 }
 
 // MARK: - Haptic
@@ -31,5 +36,3 @@ func genSuccessHaptic() {
 	guard SettingsManager.enableHapticFeedback else { return }
 	Haptic.notification(.success).generate()
 }
-
-// MARK: - Others

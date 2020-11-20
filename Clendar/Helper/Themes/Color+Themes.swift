@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
 extension UIColor {
@@ -108,4 +109,23 @@ extension UIColor {
 	static let lavixC = UIColor(hex: "386273")
 	static let lavixD = UIColor(hex: "818C7B")
 	static let lavixE = UIColor(hex: "BBBF99")
+}
+
+extension Color {
+	static let appGray = Color(.appGray)
+	static let appLightGray = Color(.appLightGray)
+	static let nativeLightGray = Color(.nativeLightGray)
+	static let appRed = Color(.appRed)
+	static let appLightRed = Color(.appLightRed)
+	static let appDark = Color(.appDark)
+	static let appPlaceholder = Color(.appPlaceholder)
+	static let appIndigo = Color(.appIndigo)
+	static let appTeal = Color(.appTeal)
+	static var backgroundColor = Color(.backgroundColor)
+	static var inversedBackgroundColor = Color(.inversedBackgroundColor)
+	static var primaryColor = Color(.primaryColor)
+	static var secondaryColor = Color(.secondaryColor)
+	static var buttonTintColor = Color(.buttonTintColor)
+	static var detructiveColor = Color(.detructiveColor)
+	static var confirmationColor = Color(.confirmationColor)
 }

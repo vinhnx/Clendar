@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 struct WidgetEventRow: View {
+	var id = UUID()
 	let event: Event
 
 	var body: some View {
@@ -25,7 +26,7 @@ struct WidgetEventRowLabel: View {
 
 	var body: some View {
 		let message = event.event?.title ?? "-"
-		let title = event.event?.displayText(startDateOnly: true) ?? "-"
+		let title = event.event?.durationText(startDateOnly: true) ?? "-"
 		let titleAndMessage = "[\(title)] \(message)"
 		Text(titleAndMessage)
 			.font(.system(size: 12, weight: .semibold, design: .rounded))
@@ -38,7 +39,7 @@ struct WidgetEventColorBar: View {
 	let event: Event
 
 	var body: some View {
-		RoundedRectangle(cornerRadius: 4, style: .continuous)
+		RoundedRectangle(cornerRadius: 5, style: .continuous)
 			.fill(Color(event.event?.calendar.cgColor ?? CGColor(gray: 1, alpha: 1)))
 			.frame(width: 5, height: 20)
 	}

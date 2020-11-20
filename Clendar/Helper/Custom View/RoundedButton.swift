@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Button: UIButton {
+class CDButton: UIButton {
 	// MARK: Lifecycle
 
 	override init(frame: CGRect) {

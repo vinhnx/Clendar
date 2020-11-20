@@ -7,10 +7,9 @@
 --indent tab
 --extensionacl on-declarations
 --commas inline
---organizetypes
 
 # file options
---exclude Pods
+--exclude Pods,R.generated.swift
 
 # rules
 --disable \
@@ -47,7 +46,6 @@
 	strongOutlets, \
 	todos, \
 	trailingClosures, \
-	organizeDeclarations, \
 	wrapSwitchCases, \
 	wrapMultilineStatementBraces, \
 	wrapEnumCases, \

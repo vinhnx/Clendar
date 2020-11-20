@@ -1,5 +1,5 @@
 //
-//  TextField.swift
+//  CDTextField.swift
 //  Clendar
 //
 //  Created by Vinh Nguyen on 24/3/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextField: UITextField {
+class CDTextField: UITextField {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		font = .mediumFontWithSize(18)

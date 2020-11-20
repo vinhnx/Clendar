@@ -9,13 +9,18 @@
 import EventKit
 import Foundation
 
+import SwiftUI
+
 /// [WIP] Wrapper for EventKit
-final class EventKitWrapper {
+final class EventKitWrapper: ObservableObject {
 	// MARK: Lifecycle
 
+	static let shared = EventKitWrapper()
 	private init() {} // This prevents others from using the default '()' initializer for this class.
 
-	// MARK: Public
+	// MARK: - Properties
+
+	@Published var events = [Event]()
 
 	/// Event store: An object that accesses the user’s calendar and reminder events and supports the scheduling of new events.
 	public private(set) var eventStore = EKEventStore()
@@ -43,9 +48,7 @@ final class EventKitWrapper {
 		}
 	}
 
-	// MARK: Internal
-
-	static let shared = EventKitWrapper()
+	// MARK: - Flow
 
 	/// Request event store authorization
 	/// - Parameter completion: completion handler with an EKAuthorizationStatus enum
@@ -80,6 +83,8 @@ final class EventKitWrapper {
 			DispatchQueue.main.async { completion?(.failure(ClendarError.failedToAuthorizeEventPersmissson(status))) }
 		}
 	}
+
+	// MARK: - CRUD
 
 	/// Create an event
 	/// - Parameters:
@@ -149,6 +154,8 @@ final class EventKitWrapper {
 		}
 	}
 
+	// MARK: - Fetch Events
+
 	/// Fetch events for today
 	/// - Parameter completion: completion handler
 	func fetchEventsForToday(completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
@@ -160,7 +167,7 @@ final class EventKitWrapper {
 	/// - Parameters:
 	///   - date: day to fetch events from
 	///   - completion: completion handler
-	func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+	func fetchEvents(for date: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
 		fetchEvents(startDate: date.startDate, endDate: date.endDate, completion: completion)
 	}
 
@@ -168,7 +175,7 @@ final class EventKitWrapper {
 	/// - Parameters:
 	///   - date: day to fetch events from
 	///   - completion: completion handler
-	func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+	func fetchEventsRangeUntilEndOfDay(from startDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
 		fetchEvents(startDate: startDate, endDate: startDate.endDate, completion: completion)
 	}
 
@@ -177,7 +184,7 @@ final class EventKitWrapper {
 	///   - startDate: start date range
 	///   - endDate: end date range
 	///   - completion: completion handler
-	func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)?) {
+	func fetchEvents(startDate: Date, endDate: Date, completion: ((Result<[EKEvent], ClendarError>) -> Void)? = nil) {
 		requestEventStoreAuthorization { [weak self] result in
 			switch result {
 			case let .success(status):
@@ -189,6 +196,7 @@ final class EventKitWrapper {
 
 				let predicate = self.eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: self.savedCalendars)
 				let events = self.eventStore.events(matching: predicate)
+				self.events = events.compactMap(Event.init)
 				DispatchQueue.main.async { completion?(.success(events)) }
 
 			case let .failure(error):
@@ -201,6 +209,7 @@ final class EventKitWrapper {
 
 	// MARK: Private
 
+	// Storage
 	private var _savedCalendarIDs = [String]()
 
 	/// Request access to calendar

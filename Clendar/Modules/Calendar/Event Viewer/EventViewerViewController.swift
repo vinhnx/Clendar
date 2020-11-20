@@ -12,7 +12,14 @@ import UIKit
 class EventViewerNavigationController: UINavigationController {
 	// MARK: Lifecycle
 
-	init(event: EKEvent, delegate: EKEventViewDelegate?) {
+	init() {
+		super.init(nibName: nil, bundle: nil)
+	}
+
+	init(
+		event: EKEvent?,
+		delegate: EKEventViewDelegate?
+	) {
 		let eventViewer = EventViewerViewController()
 		eventViewer.allowsEditing = true
 		eventViewer.event = event

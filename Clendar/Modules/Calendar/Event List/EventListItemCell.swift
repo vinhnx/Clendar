@@ -12,15 +12,15 @@ import UIKit
 class EventListItemCell: UICollectionViewCell {
 	// MARK: Internal
 
+	// MARK: - ViewModel
+
 	struct ViewModel {
 		// MARK: Lifecycle
-
-		//
 
 		init(event: Event? = nil) {
 			guard let event = event?.event else { return }
 			message = event.title
-			title = event.displayText()
+			title = event.durationText()
 			titleAndMessage = "[\(title)] \(message)"
 			let color = UIColor(cgColor: event.calendar.cgColor)
 			calendarColor = event.startDate.isInPast ? color.withAlphaComponent(0.3) : color
@@ -30,8 +30,6 @@ class EventListItemCell: UICollectionViewCell {
 
 		// MARK: Internal
 
-		//
-
 		var title: String = ""
 		var message: String = ""
 		var titleAndMessage: String = ""
@@ -39,6 +37,8 @@ class EventListItemCell: UICollectionViewCell {
 		var calendarColor: UIColor = .clear
 		var textColor: UIColor = .appGray
 	}
+
+	// MARK: - Views
 
 	static var reuseID = String(describing: EventListItemCell.self)
 

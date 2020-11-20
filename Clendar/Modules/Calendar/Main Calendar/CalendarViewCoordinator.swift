@@ -7,13 +7,20 @@
 //
 
 import CVCalendar
-import SwiftDate
+import Foundation
 import UIKit
 
-class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
+class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuViewDelegate, CVCalendarViewAppearanceDelegate {
 	// MARK: Lifecycle
 
-	init(calendar: Calendar, mode: CalendarMode) {
+	deinit {
+		NotificationCenter.default.removeObserver(self)
+	}
+
+	init(
+		calendar: Calendar,
+		mode: CalendarMode
+	) {
 		currentCalendar = calendar
 		self.mode = mode
 	}
@@ -24,11 +31,11 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
 	public private(set) var currentCalendar: Calendar
 
-	// MARK: Internal
+	var selectedDate: ((CVDate) -> Void)?
 
-	var presentedDateUpdated: ((_ date: CVDate) -> Void)?
+	var calendarView: CVCalendarView?
 
-	var didSelectDayView: ((_ dayView: CVCalendarDayView, _ animationDidFinish: Bool) -> Void)?
+	// MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
 
 	func presentationMode() -> CalendarMode { mode }
 
@@ -42,13 +49,13 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 
 	func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
 
-	func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+	func didSelectDayView(_: CVCalendarDayView, animationDidFinish _: Bool) {
 		genLightHaptic()
-		didSelectDayView?(dayView, animationDidFinish)
 	}
 
 	func presentedDateUpdated(_ date: CVDate) {
-		presentedDateUpdated?(date)
+		genLightHaptic()
+		selectedDate?(date)
 	}
 
 	func dayOfWeekFont() -> UIFont { .boldFontWithSize(11) }
@@ -84,6 +91,8 @@ class CalendarViewConfiguration: CVCalendarViewDelegate, CVCalendarMenuViewDeleg
 	}
 
 	func supplementaryView(shouldDisplayOnDayView _: DayView) -> Bool { true }
+
+	// MARK: - CVCalendarViewAppearanceDelegate
 
 	func spaceBetweenDayViews() -> CGFloat { 5 }
 

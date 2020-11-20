@@ -42,7 +42,7 @@
 
 		var body: some View {
 			VStack(alignment: .center) {
-				Text(entry.date.toMonthString.uppercased())
+				Text(entry.date.toMonthString.localizedUppercase)
 					.font(.system(size: 20, weight: .bold, design: .rounded))
 					.foregroundColor(.gray)
 				Text(entry.date.widgetDayString)
@@ -113,7 +113,7 @@
 			LazyVStack(alignment: .leading, spacing: 10) {
 				Section(
 					header:
-					Text(entry.date.toFullDateString.uppercased())
+					Text(entry.date.toFullDateString.localizedUppercase)
 						.font(.system(size: 11, weight: .bold, design: .rounded))
 						.foregroundColor(Color(.moianesB))
 				) {

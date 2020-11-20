@@ -9,6 +9,10 @@
 import Foundation
 
 extension Notification.Name {
+	// MARK: - General
+
+	static let addEventShortcutAction = Notification.Name(rawValue: "addEventShortcutAction")
+
 	// MARK: - Calendar
 
 	static let didAuthorizeCalendarAccess = Notification.Name(rawValue: "didAuthorizeCalendarAccess")
@@ -25,6 +29,10 @@ extension Notification.Name {
 	static let didChangeUseExperimentalCreateEventMode = Notification.Name(rawValue: "didChangeUseExperimentalCreateEventMode")
 	static let justReloadCalendar = Notification.Name(rawValue: "justReloadCalendar")
 	static let didChangeDefaultEventDurationPreferences = Notification.Name(rawValue: "didChangeDefaultEventDurationPreferences")
+}
 
-	// MARK: - Others
+extension Notification.Name {
+	var asPublisher: NotificationCenter.Publisher {
+		NotificationCenter.default.publisher(for: self)
+	}
 }

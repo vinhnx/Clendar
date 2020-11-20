@@ -54,6 +54,15 @@
           "revision": "6a434616545e1f8c17675b3afabb86ad0e5f97aa",
           "version": "1.8.4"
         }
+      },
+      {
+        "package": "Then",
+        "repositoryURL": "https://github.com/devxoul/Then",
+        "state": {
+          "branch": null,
+          "revision": "e421a7b3440a271834337694e6050133a3958bc7",
+          "version": "2.7.0"
+        }
       }
     ]
   },
