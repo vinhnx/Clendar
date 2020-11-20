@@ -9,1331 +9,1332 @@ import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
-	fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap { Locale(identifier: $0) } ?? Locale.current
-	fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-
-	/// Find first language and bundle for which the table exists
-	fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
-		// Filter preferredLanguages to localizations, use first locale
-		var languages = preferredLanguages
-			.map { Locale(identifier: $0) }
-			.prefix(1)
-			.flatMap { locale -> [String] in
-				if hostingBundle.localizations.contains(locale.identifier) {
-					if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
-						return [locale.identifier, language]
-					} else {
-						return [locale.identifier]
-					}
-				} else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
-					return [language]
-				} else {
-					return []
-				}
-			}
-
-		// If there's no languages, use development language as backstop
-		if languages.isEmpty {
-			if let developmentLocalization = hostingBundle.developmentLocalization {
-				languages = [developmentLocalization]
-			}
-		} else {
-			// Insert Base as second item (between locale identifier and languageCode)
-			languages.insert("Base", at: 1)
-
-			// Add development language as backstop
-			if let developmentLocalization = hostingBundle.developmentLocalization {
-				languages.append(developmentLocalization)
-			}
-		}
-
-		// Find first language for which table exists
-		// Note: key might not exist in chosen language (in that case, key will be shown)
-		for language in languages {
-			if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
-			   let lbundle = Bundle(url: lproj)
-			{
-				let strings = lbundle.url(forResource: tableName, withExtension: "strings")
-				let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
-
-				if strings != nil || stringsdict != nil {
-					return (Locale(identifier: language), lbundle)
-				}
-			}
-		}
-
-		// If table is available in main bundle, don't look for localized resources
-		let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
-		let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
-
-		if strings != nil || stringsdict != nil {
-			return (applicationLocale, hostingBundle)
-		}
-
-		// If table is not found for requested languages, key will be shown
-		return nil
-	}
-
-	/// Load string from Info.plist file
-	fileprivate static func infoPlistString(path: [String], key: String) -> String? {
-		var dict = hostingBundle.infoDictionary
-		for step in path {
-			guard let obj = dict?[step] as? [String: Any] else { return nil }
-			dict = obj
-		}
-		return dict?[key] as? String
-	}
-
-	static func validate() throws {
-		try intern.validate()
-	}
-
-	#if os(iOS) || os(tvOS)
-		/// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
-		struct storyboard {
-			/// Storyboard `LaunchScreen`.
-			static let launchScreen = _R.storyboard.launchScreen()
-
-			#if os(iOS) || os(tvOS)
-				/// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-				static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-					return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-				}
-			#endif
-
-			fileprivate init() {}
-		}
-	#endif
-
-	/// This `R.color` struct is generated, and contains static references to 2 colors.
-	struct color {
-		/// Color `Moianes A`.
-		static let moianesA = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes A")
-		/// Color `Moianes B`.
-		static let moianesB = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes B")
-
-		#if os(iOS) || os(tvOS)
-			/// `UIColor(named: "Moianes A", bundle: ..., traitCollection: ...)`
-			@available(tvOS 11.0, *)
-			@available(iOS 11.0, *)
-			static func moianesA(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-				return UIKit.UIColor(resource: R.color.moianesA, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIColor(named: "Moianes B", bundle: ..., traitCollection: ...)`
-			@available(tvOS 11.0, *)
-			@available(iOS 11.0, *)
-			static func moianesB(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-				return UIKit.UIColor(resource: R.color.moianesB, compatibleWith: traitCollection)
-			}
-		#endif
-
-		fileprivate init() {}
-	}
-
-	/// This `R.entitlements` struct is generated, and contains static references to 4 properties.
-	struct entitlements {
-		static let comAppleSecurityAppSandbox = true
-		static let comAppleSecurityNetworkClient = true
-		static let comAppleSecurityPersonalInformationAddressbook = true
-		static let comAppleSecurityPersonalInformationCalendars = true
-
-		fileprivate init() {}
-	}
-
-	/// This `R.file` struct is generated, and contains static references to 5 files.
-	struct file {
-		/// Resource file `Settings.bundle`.
-		static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
-		/// Resource file `dark_icon_120@2x.png`.
-		static let dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_120@2x", pathExtension: "png")
-		/// Resource file `dark_icon_180@3x.png`.
-		static let dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_180@3x", pathExtension: "png")
-		/// Resource file `dim_dark_icon_120@2x.png`.
-		static let dim_dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_120@2x", pathExtension: "png")
-		/// Resource file `dim_dark_icon_180@3x.png`.
-		static let dim_dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_180@3x", pathExtension: "png")
-
-		/// `bundle.url(forResource: "Settings", withExtension: "bundle")`
-		static func settingsBundle(_: Void = ()) -> Foundation.URL? {
-			let fileResource = R.file.settingsBundle
-			return fileResource.bundle.url(forResource: fileResource)
-		}
-
-		/// `bundle.url(forResource: "dark_icon_120@2x", withExtension: "png")`
-		static func dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
-			let fileResource = R.file.dark_icon_1202xPng
-			return fileResource.bundle.url(forResource: fileResource)
-		}
-
-		/// `bundle.url(forResource: "dark_icon_180@3x", withExtension: "png")`
-		static func dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
-			let fileResource = R.file.dark_icon_1803xPng
-			return fileResource.bundle.url(forResource: fileResource)
-		}
-
-		/// `bundle.url(forResource: "dim_dark_icon_120@2x", withExtension: "png")`
-		static func dim_dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
-			let fileResource = R.file.dim_dark_icon_1202xPng
-			return fileResource.bundle.url(forResource: fileResource)
-		}
-
-		/// `bundle.url(forResource: "dim_dark_icon_180@3x", withExtension: "png")`
-		static func dim_dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
-			let fileResource = R.file.dim_dark_icon_1803xPng
-			return fileResource.bundle.url(forResource: fileResource)
-		}
-
-		fileprivate init() {}
-	}
-
-	/// This `R.image` struct is generated, and contains static references to 6 images.
-	struct image {
-		/// Image `dark_icon_120`.
-		static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
-		/// Image `dark_icon_180`.
-		static let dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_180")
-		/// Image `dim_dark_icon_120`.
-		static let dim_dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_120")
-		/// Image `dim_dark_icon_180`.
-		static let dim_dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_180")
-		/// Image `next`.
-		static let next = Rswift.ImageResource(bundle: R.hostingBundle, name: "next")
-		/// Image `previous`.
-		static let previous = Rswift.ImageResource(bundle: R.hostingBundle, name: "previous")
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
-			static func dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.dark_icon_120, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "dark_icon_180", bundle: ..., traitCollection: ...)`
-			static func dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.dark_icon_180, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "dim_dark_icon_120", bundle: ..., traitCollection: ...)`
-			static func dim_dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.dim_dark_icon_120, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "dim_dark_icon_180", bundle: ..., traitCollection: ...)`
-			static func dim_dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.dim_dark_icon_180, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "next", bundle: ..., traitCollection: ...)`
-			static func next(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.next, compatibleWith: traitCollection)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UIImage(named: "previous", bundle: ..., traitCollection: ...)`
-			static func previous(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-				return UIKit.UIImage(resource: R.image.previous, compatibleWith: traitCollection)
-			}
-		#endif
-
-		fileprivate init() {}
-	}
-
-	/// This `R.nib` struct is generated, and contains static references to 2 nibs.
-	struct nib {
-		/// Nib `AppIconItemCell`.
-		static let appIconItemCell = _R.nib._AppIconItemCell()
-		/// Nib `EventListItemCell`.
-		static let eventListItemCell = _R.nib._EventListItemCell()
-
-		#if os(iOS) || os(tvOS)
-			/// `UINib(name: "AppIconItemCell", in: bundle)`
-			@available(*, deprecated, message: "Use UINib(resource: R.nib.appIconItemCell) instead")
-			static func appIconItemCell(_: Void = ()) -> UIKit.UINib {
-				return UIKit.UINib(resource: R.nib.appIconItemCell)
-			}
-		#endif
-
-		#if os(iOS) || os(tvOS)
-			/// `UINib(name: "EventListItemCell", in: bundle)`
-			@available(*, deprecated, message: "Use UINib(resource: R.nib.eventListItemCell) instead")
-			static func eventListItemCell(_: Void = ()) -> UIKit.UINib {
-				return UIKit.UINib(resource: R.nib.eventListItemCell)
-			}
-		#endif
-
-		static func appIconItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> AppIconItemCell? {
-			return R.nib.appIconItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
-		}
-
-		static func eventListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> EventListItemCell? {
-			return R.nib.eventListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
-		}
-
-		fileprivate init() {}
-	}
-
-	/// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-	struct reuseIdentifier {
-		/// Reuse identifier `EventListItemCell`.
-		static let eventListItemCell: Rswift.ReuseIdentifier<EventListItemCell> = Rswift.ReuseIdentifier(identifier: "EventListItemCell")
-
-		fileprivate init() {}
-	}
-
-	/// This `R.string` struct is generated, and contains static references to 2 localization tables.
-	struct string {
-		/// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
-		struct launchScreen {
-			fileprivate init() {}
-		}
-
-		/// This `R.string.localizable` struct is generated, and contains static references to 50 localization keys.
-		struct localizable {
-			/// en translation: App info
-			///
-			/// Locales: en, vi
-			static let appInfo = Rswift.StringResource(key: "App info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Auto-select day when month changes
-			///
-			/// Locales: en, vi
-			static let autoSelectDayWhenMonthChanges = Rswift.StringResource(key: "Auto-select day when month changes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Auto-select first day of month/week when calendar changes
-			///
-			/// Locales: en, vi
-			static let autoSelectFirstDayOfMonthWeekWhenCalendarChanges = Rswift.StringResource(key: "Auto-select first day of month/week when calendar changes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Available calendars
-			///
-			/// Locales: en, vi
-			static let availableCalendars = Rswift.StringResource(key: "Available calendars", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Calendar View
-			///
-			/// Locales: en, vi
-			static let calendarView = Rswift.StringResource(key: "Calendar View", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Calendar grid view
-			///
-			/// Locales: en, vi
-			static let calendarGridView = Rswift.StringResource(key: "Calendar grid view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Calendars
-			///
-			/// Locales: en, vi
-			static let calendars = Rswift.StringResource(key: "Calendars", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Cancel
-			///
-			/// Locales: en, vi
-			static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Change app Language
-			///
-			/// Locales: en, vi
-			static let changeAppLanguage = Rswift.StringResource(key: "Change app Language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Check calendar at a glance
-			///
-			/// Locales: en, vi
-			static let checkCalendarAtAGlance = Rswift.StringResource(key: "Check calendar at a glance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Choose your desired app icon
-			///
-			/// Locales: en, vi
-			static let chooseYourDesiredAppIcon = Rswift.StringResource(key: "Choose your desired app icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Custom App Icon
-			///
-			/// Locales: en, vi
-			static let customAppIcon = Rswift.StringResource(key: "Custom App Icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Dark
-			///
-			/// Locales: en, vi
-			static let dark = Rswift.StringResource(key: "Dark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Date
-			///
-			/// Locales: en, vi
-			static let date = Rswift.StringResource(key: "Date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Date Info Widget
-			///
-			/// Locales: en, vi
-			static let dateInfoWidget = Rswift.StringResource(key: "Date Info Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Default event duration
-			///
-			/// Locales: en, vi
-			static let defaultEventDuration = Rswift.StringResource(key: "Default event duration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Delete Event
-			///
-			/// Locales: en, vi
-			static let deleteEvent = Rswift.StringResource(key: "Delete Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Dim
-			///
-			/// Locales: en, vi
-			static let dim = Rswift.StringResource(key: "Dim", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Done
-			///
-			/// Locales: en, vi
-			static let done = Rswift.StringResource(key: "Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Edit Event
-			///
-			/// Locales: en, vi
-			static let editEvent = Rswift.StringResource(key: "Edit Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: English
-			///
-			/// Locales: en, vi
-			static let english = Rswift.StringResource(key: "English", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: General
-			///
-			/// Locales: en, vi
-			static let general = Rswift.StringResource(key: "General", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Haptic feedback
-			///
-			/// Locales: en, vi
-			static let hapticFeedback = Rswift.StringResource(key: "Haptic feedback", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Light
-			///
-			/// Locales: en, vi
-			static let light = Rswift.StringResource(key: "Light", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Lunar date
-			///
-			/// Locales: en, vi
-			static let lunarDate = Rswift.StringResource(key: "Lunar date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Month
-			///
-			/// Locales: en, vi
-			static let month = Rswift.StringResource(key: "Month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Month view
-			///
-			/// Locales: en, vi
-			static let monthView = Rswift.StringResource(key: "Month view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Month view calendar
-			///
-			/// Locales: en, vi
-			static let monthViewCalendar = Rswift.StringResource(key: "Month view calendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Name
-			///
-			/// Locales: en, vi
-			static let name = Rswift.StringResource(key: "Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: None
-			///
-			/// Locales: en, vi
-			static let none = Rswift.StringResource(key: "None", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: OK
-			///
-			/// Locales: en, vi
-			static let oK = Rswift.StringResource(key: "OK", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Off
-			///
-			/// Locales: en, vi
-			static let off = Rswift.StringResource(key: "Off", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: On
-			///
-			/// Locales: en, vi
-			static let on = Rswift.StringResource(key: "On", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: One dot
-			///
-			/// Locales: en, vi
-			static let oneDot = Rswift.StringResource(key: "One dot", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Quick Event
-			///
-			/// Locales: en, vi
-			static let quickEvent = Rswift.StringResource(key: "Quick Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Settings
-			///
-			/// Locales: en, vi
-			static let settings = Rswift.StringResource(key: "Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Show days out
-			///
-			/// Locales: en, vi
-			static let showDaysOut = Rswift.StringResource(key: "Show days out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Supplementary day view
-			///
-			/// Locales: en, vi
-			static let supplementaryDayView = Rswift.StringResource(key: "Supplementary day view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Themes
-			///
-			/// Locales: en, vi
-			static let themes = Rswift.StringResource(key: "Themes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Upcoming events
-			///
-			/// Locales: en, vi
-			static let upcomingEvents = Rswift.StringResource(key: "Upcoming events", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Version
-			///
-			/// Locales: en, vi
-			static let version = Rswift.StringResource(key: "Version", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Vietnamese
-			///
-			/// Locales: en, vi
-			static let vietnamese = Rswift.StringResource(key: "Vietnamese", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: View Event
-			///
-			/// Locales: en, vi
-			static let viewEvent = Rswift.StringResource(key: "View Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: View mode
-			///
-			/// Locales: en, vi
-			static let viewMode = Rswift.StringResource(key: "View mode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: Week view
-			///
-			/// Locales: en, vi
-			static let weekView = Rswift.StringResource(key: "Week view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: You can choose available calendars to shown in event list
-			///
-			/// Locales: en, vi
-			static let youCanChooseAvailableCalendarsToShownInEventList = Rswift.StringResource(key: "You can choose available calendars to shown in event list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
-			///
-			/// Locales: en, vi
-			static let betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved = Rswift.StringResource(key: "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: minutes
-			///
-			/// Locales: en, vi
-			static let minutes = Rswift.StringResource(key: "minutes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: write something at Friday 8PM...
-			///
-			/// Locales: en, vi
-			static let writeSomethingAtFriday8PM = Rswift.StringResource(key: "write something at Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-			/// en translation: 🎉 No more events today, enjoy your day!
-			///
-			/// Locales: en, vi
-			static let 🎉NoMoreEventsTodayEnjoyYourDay = Rswift.StringResource(key: "🎉 No more events today,\nenjoy your day!\n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-
-			/// en translation: App info
-			///
-			/// Locales: en, vi
-			static func appInfo(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("App info", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "App info"
-				}
-
-				return NSLocalizedString("App info", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Auto-select day when month changes
-			///
-			/// Locales: en, vi
-			static func autoSelectDayWhenMonthChanges(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Auto-select day when month changes", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Auto-select day when month changes"
-				}
-
-				return NSLocalizedString("Auto-select day when month changes", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Auto-select first day of month/week when calendar changes
-			///
-			/// Locales: en, vi
-			static func autoSelectFirstDayOfMonthWeekWhenCalendarChanges(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Auto-select first day of month/week when calendar changes", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Auto-select first day of month/week when calendar changes"
-				}
-
-				return NSLocalizedString("Auto-select first day of month/week when calendar changes", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Available calendars
-			///
-			/// Locales: en, vi
-			static func availableCalendars(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Available calendars", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Available calendars"
-				}
-
-				return NSLocalizedString("Available calendars", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Calendar View
-			///
-			/// Locales: en, vi
-			static func calendarView(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Calendar View", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Calendar View"
-				}
-
-				return NSLocalizedString("Calendar View", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Calendar grid view
-			///
-			/// Locales: en, vi
-			static func calendarGridView(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Calendar grid view", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Calendar grid view"
-				}
-
-				return NSLocalizedString("Calendar grid view", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Calendars
-			///
-			/// Locales: en, vi
-			static func calendars(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Calendars", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Calendars"
-				}
-
-				return NSLocalizedString("Calendars", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Cancel
-			///
-			/// Locales: en, vi
-			static func cancel(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Cancel", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Cancel"
-				}
-
-				return NSLocalizedString("Cancel", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Change app Language
-			///
-			/// Locales: en, vi
-			static func changeAppLanguage(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Change app Language", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Change app Language"
-				}
-
-				return NSLocalizedString("Change app Language", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Check calendar at a glance
-			///
-			/// Locales: en, vi
-			static func checkCalendarAtAGlance(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Check calendar at a glance", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Check calendar at a glance"
-				}
-
-				return NSLocalizedString("Check calendar at a glance", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Choose your desired app icon
-			///
-			/// Locales: en, vi
-			static func chooseYourDesiredAppIcon(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Choose your desired app icon", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Choose your desired app icon"
-				}
-
-				return NSLocalizedString("Choose your desired app icon", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Custom App Icon
-			///
-			/// Locales: en, vi
-			static func customAppIcon(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Custom App Icon", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Custom App Icon"
-				}
-
-				return NSLocalizedString("Custom App Icon", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Dark
-			///
-			/// Locales: en, vi
-			static func dark(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Dark", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Dark"
-				}
-
-				return NSLocalizedString("Dark", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Date
-			///
-			/// Locales: en, vi
-			static func date(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Date", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Date"
-				}
-
-				return NSLocalizedString("Date", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Date Info Widget
-			///
-			/// Locales: en, vi
-			static func dateInfoWidget(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Date Info Widget", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Date Info Widget"
-				}
-
-				return NSLocalizedString("Date Info Widget", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Default event duration
-			///
-			/// Locales: en, vi
-			static func defaultEventDuration(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Default event duration", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Default event duration"
-				}
-
-				return NSLocalizedString("Default event duration", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Delete Event
-			///
-			/// Locales: en, vi
-			static func deleteEvent(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Delete Event", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Delete Event"
-				}
-
-				return NSLocalizedString("Delete Event", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Dim
-			///
-			/// Locales: en, vi
-			static func dim(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Dim", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Dim"
-				}
-
-				return NSLocalizedString("Dim", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Done
-			///
-			/// Locales: en, vi
-			static func done(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Done", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Done"
-				}
-
-				return NSLocalizedString("Done", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Edit Event
-			///
-			/// Locales: en, vi
-			static func editEvent(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Edit Event", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Edit Event"
-				}
-
-				return NSLocalizedString("Edit Event", bundle: bundle, comment: "")
-			}
-
-			/// en translation: English
-			///
-			/// Locales: en, vi
-			static func english(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("English", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "English"
-				}
-
-				return NSLocalizedString("English", bundle: bundle, comment: "")
-			}
-
-			/// en translation: General
-			///
-			/// Locales: en, vi
-			static func general(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("General", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "General"
-				}
-
-				return NSLocalizedString("General", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Haptic feedback
-			///
-			/// Locales: en, vi
-			static func hapticFeedback(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Haptic feedback", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Haptic feedback"
-				}
-
-				return NSLocalizedString("Haptic feedback", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Light
-			///
-			/// Locales: en, vi
-			static func light(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Light", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Light"
-				}
-
-				return NSLocalizedString("Light", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Lunar date
-			///
-			/// Locales: en, vi
-			static func lunarDate(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Lunar date", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Lunar date"
-				}
-
-				return NSLocalizedString("Lunar date", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Month
-			///
-			/// Locales: en, vi
-			static func month(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Month", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Month"
-				}
-
-				return NSLocalizedString("Month", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Month view
-			///
-			/// Locales: en, vi
-			static func monthView(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Month view", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Month view"
-				}
-
-				return NSLocalizedString("Month view", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Month view calendar
-			///
-			/// Locales: en, vi
-			static func monthViewCalendar(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Month view calendar", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Month view calendar"
-				}
-
-				return NSLocalizedString("Month view calendar", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Name
-			///
-			/// Locales: en, vi
-			static func name(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Name", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Name"
-				}
-
-				return NSLocalizedString("Name", bundle: bundle, comment: "")
-			}
-
-			/// en translation: None
-			///
-			/// Locales: en, vi
-			static func none(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("None", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "None"
-				}
-
-				return NSLocalizedString("None", bundle: bundle, comment: "")
-			}
-
-			/// en translation: OK
-			///
-			/// Locales: en, vi
-			static func oK(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("OK", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "OK"
-				}
-
-				return NSLocalizedString("OK", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Off
-			///
-			/// Locales: en, vi
-			static func off(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Off", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Off"
-				}
-
-				return NSLocalizedString("Off", bundle: bundle, comment: "")
-			}
-
-			/// en translation: On
-			///
-			/// Locales: en, vi
-			static func on(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("On", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "On"
-				}
-
-				return NSLocalizedString("On", bundle: bundle, comment: "")
-			}
-
-			/// en translation: One dot
-			///
-			/// Locales: en, vi
-			static func oneDot(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("One dot", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "One dot"
-				}
-
-				return NSLocalizedString("One dot", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Quick Event
-			///
-			/// Locales: en, vi
-			static func quickEvent(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Quick Event", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Quick Event"
-				}
-
-				return NSLocalizedString("Quick Event", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Settings
-			///
-			/// Locales: en, vi
-			static func settings(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Settings", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Settings"
-				}
-
-				return NSLocalizedString("Settings", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Show days out
-			///
-			/// Locales: en, vi
-			static func showDaysOut(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Show days out", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Show days out"
-				}
-
-				return NSLocalizedString("Show days out", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Supplementary day view
-			///
-			/// Locales: en, vi
-			static func supplementaryDayView(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Supplementary day view", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Supplementary day view"
-				}
-
-				return NSLocalizedString("Supplementary day view", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Themes
-			///
-			/// Locales: en, vi
-			static func themes(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Themes", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Themes"
-				}
-
-				return NSLocalizedString("Themes", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Upcoming events
-			///
-			/// Locales: en, vi
-			static func upcomingEvents(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Upcoming events", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Upcoming events"
-				}
-
-				return NSLocalizedString("Upcoming events", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Version
-			///
-			/// Locales: en, vi
-			static func version(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Version", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Version"
-				}
-
-				return NSLocalizedString("Version", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Vietnamese
-			///
-			/// Locales: en, vi
-			static func vietnamese(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Vietnamese", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Vietnamese"
-				}
-
-				return NSLocalizedString("Vietnamese", bundle: bundle, comment: "")
-			}
-
-			/// en translation: View Event
-			///
-			/// Locales: en, vi
-			static func viewEvent(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("View Event", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "View Event"
-				}
-
-				return NSLocalizedString("View Event", bundle: bundle, comment: "")
-			}
-
-			/// en translation: View mode
-			///
-			/// Locales: en, vi
-			static func viewMode(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("View mode", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "View mode"
-				}
-
-				return NSLocalizedString("View mode", bundle: bundle, comment: "")
-			}
-
-			/// en translation: Week view
-			///
-			/// Locales: en, vi
-			static func weekView(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("Week view", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "Week view"
-				}
-
-				return NSLocalizedString("Week view", bundle: bundle, comment: "")
-			}
-
-			/// en translation: You can choose available calendars to shown in event list
-			///
-			/// Locales: en, vi
-			static func youCanChooseAvailableCalendarsToShownInEventList(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("You can choose available calendars to shown in event list", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "You can choose available calendars to shown in event list"
-				}
-
-				return NSLocalizedString("You can choose available calendars to shown in event list", bundle: bundle, comment: "")
-			}
-
-			/// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
-			///
-			/// Locales: en, vi
-			static func betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved."
-				}
-
-				return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: bundle, comment: "")
-			}
-
-			/// en translation: minutes
-			///
-			/// Locales: en, vi
-			static func minutes(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("minutes", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "minutes"
-				}
-
-				return NSLocalizedString("minutes", bundle: bundle, comment: "")
-			}
-
-			/// en translation: write something at Friday 8PM...
-			///
-			/// Locales: en, vi
-			static func writeSomethingAtFriday8PM(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("write something at Friday 8PM...", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "write something at Friday 8PM..."
-				}
-
-				return NSLocalizedString("write something at Friday 8PM...", bundle: bundle, comment: "")
-			}
-
-			/// en translation: 🎉 No more events today, enjoy your day!
-			///
-			/// Locales: en, vi
-			static func 🎉NoMoreEventsTodayEnjoyYourDay(preferredLanguages: [String]? = nil) -> String {
-				guard let preferredLanguages = preferredLanguages else {
-					return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: hostingBundle, comment: "")
-				}
-
-				guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-					return "🎉 No more events today,\nenjoy your day!\n"
-				}
-
-				return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: bundle, comment: "")
-			}
-
-			fileprivate init() {}
-		}
-
-		fileprivate init() {}
-	}
-
-	fileprivate struct intern: Rswift.Validatable {
-		fileprivate static func validate() throws {
-			try _R.validate()
-		}
-
-		fileprivate init() {}
-	}
-
-	fileprivate class Class {}
-
-	fileprivate init() {}
+  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap { Locale(identifier: $0) } ?? Locale.current
+  fileprivate static let hostingBundle = Bundle(for: R.Class.self)
+
+  /// Find first language and bundle for which the table exists
+  fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
+    // Filter preferredLanguages to localizations, use first locale
+    var languages = preferredLanguages
+      .map { Locale(identifier: $0) }
+      .prefix(1)
+      .flatMap { locale -> [String] in
+        if hostingBundle.localizations.contains(locale.identifier) {
+          if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+            return [locale.identifier, language]
+          } else {
+            return [locale.identifier]
+          }
+        } else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+          return [language]
+        } else {
+          return []
+        }
+      }
+
+    // If there's no languages, use development language as backstop
+    if languages.isEmpty {
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages = [developmentLocalization]
+      }
+    } else {
+      // Insert Base as second item (between locale identifier and languageCode)
+      languages.insert("Base", at: 1)
+
+      // Add development language as backstop
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages.append(developmentLocalization)
+      }
+    }
+
+    // Find first language for which table exists
+    // Note: key might not exist in chosen language (in that case, key will be shown)
+    for language in languages {
+      if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
+         let lbundle = Bundle(url: lproj)
+      {
+        let strings = lbundle.url(forResource: tableName, withExtension: "strings")
+        let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
+
+        if strings != nil || stringsdict != nil {
+          return (Locale(identifier: language), lbundle)
+        }
+      }
+    }
+
+    // If table is available in main bundle, don't look for localized resources
+    let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
+    let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
+
+    if strings != nil || stringsdict != nil {
+      return (applicationLocale, hostingBundle)
+    }
+
+    // If table is not found for requested languages, key will be shown
+    return nil
+  }
+
+  /// Load string from Info.plist file
+  fileprivate static func infoPlistString(path: [String], key: String) -> String? {
+    var dict = hostingBundle.infoDictionary
+    for step in path {
+      guard let obj = dict?[step] as? [String: Any] else { return nil }
+      dict = obj
+    }
+    return dict?[key] as? String
+  }
+
+  static func validate() throws {
+    try intern.validate()
+  }
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  struct storyboard {
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+  #endif
+
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  struct color {
+    /// Color `Moianes A`.
+    static let moianesA = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes A")
+    /// Color `Moianes B`.
+    static let moianesB = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes B")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Moianes A", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func moianesA(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.moianesA, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Moianes B", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func moianesB(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.moianesB, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
+  struct entitlements {
+    static let comAppleSecurityAppSandbox = true
+    static let comAppleSecurityNetworkClient = true
+    static let comAppleSecurityPersonalInformationAddressbook = true
+    static let comAppleSecurityPersonalInformationCalendars = true
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 5 files.
+  struct file {
+    /// Resource file `Settings.bundle`.
+    static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
+    /// Resource file `dark_icon_120@2x.png`.
+    static let dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_120@2x", pathExtension: "png")
+    /// Resource file `dark_icon_180@3x.png`.
+    static let dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_180@3x", pathExtension: "png")
+    /// Resource file `dim_dark_icon_120@2x.png`.
+    static let dim_dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_120@2x", pathExtension: "png")
+    /// Resource file `dim_dark_icon_180@3x.png`.
+    static let dim_dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_180@3x", pathExtension: "png")
+
+    /// `bundle.url(forResource: "Settings", withExtension: "bundle")`
+    static func settingsBundle(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.settingsBundle
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dark_icon_120@2x", withExtension: "png")`
+    static func dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dark_icon_1202xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dark_icon_180@3x", withExtension: "png")`
+    static func dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dark_icon_1803xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dim_dark_icon_120@2x", withExtension: "png")`
+    static func dim_dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dim_dark_icon_1202xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "dim_dark_icon_180@3x", withExtension: "png")`
+    static func dim_dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.dim_dark_icon_1803xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 6 images.
+  struct image {
+    /// Image `dark_icon_120`.
+    static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
+    /// Image `dark_icon_180`.
+    static let dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_180")
+    /// Image `dim_dark_icon_120`.
+    static let dim_dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_120")
+    /// Image `dim_dark_icon_180`.
+    static let dim_dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_180")
+    /// Image `next`.
+    static let next = Rswift.ImageResource(bundle: R.hostingBundle, name: "next")
+    /// Image `previous`.
+    static let previous = Rswift.ImageResource(bundle: R.hostingBundle, name: "previous")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
+    static func dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_icon_120, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_icon_180", bundle: ..., traitCollection: ...)`
+    static func dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_icon_180, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dim_dark_icon_120", bundle: ..., traitCollection: ...)`
+    static func dim_dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dim_dark_icon_120, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dim_dark_icon_180", bundle: ..., traitCollection: ...)`
+    static func dim_dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dim_dark_icon_180, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "next", bundle: ..., traitCollection: ...)`
+    static func next(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.next, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "previous", bundle: ..., traitCollection: ...)`
+    static func previous(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.previous, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `AppIconItemCell`.
+    static let appIconItemCell = _R.nib._AppIconItemCell()
+    /// Nib `EventListItemCell`.
+    static let eventListItemCell = _R.nib._EventListItemCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AppIconItemCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.appIconItemCell) instead")
+    static func appIconItemCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.appIconItemCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "EventListItemCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventListItemCell) instead")
+    static func eventListItemCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.eventListItemCell)
+    }
+    #endif
+
+    static func appIconItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
+      return R.nib.appIconItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
+    }
+
+    static func eventListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
+      return R.nib.eventListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `EventListItemCell`.
+    static let eventListItemCell: Rswift.ReuseIdentifier<EventListItemCell> = Rswift.ReuseIdentifier(identifier: "EventListItemCell")
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 50 localization keys.
+    struct localizable {
+      /// en translation: App info
+      ///
+      /// Locales: en, vi
+      static let appInfo = Rswift.StringResource(key: "App info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Auto-select day when month changes
+      ///
+      /// Locales: en, vi
+      static let autoSelectDayWhenMonthChanges = Rswift.StringResource(key: "Auto-select day when month changes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Auto-select first day of month/week when calendar changes
+      ///
+      /// Locales: en, vi
+      static let autoSelectFirstDayOfMonthWeekWhenCalendarChanges = Rswift.StringResource(key: "Auto-select first day of month/week when calendar changes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Available calendars
+      ///
+      /// Locales: en, vi
+      static let availableCalendars = Rswift.StringResource(key: "Available calendars", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Calendar View
+      ///
+      /// Locales: en, vi
+      static let calendarView = Rswift.StringResource(key: "Calendar View", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Calendar grid view
+      ///
+      /// Locales: en, vi
+      static let calendarGridView = Rswift.StringResource(key: "Calendar grid view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Calendars
+      ///
+      /// Locales: en, vi
+      static let calendars = Rswift.StringResource(key: "Calendars", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en, vi
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Change app Language
+      ///
+      /// Locales: en, vi
+      static let changeAppLanguage = Rswift.StringResource(key: "Change app Language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Check calendar at a glance
+      ///
+      /// Locales: en, vi
+      static let checkCalendarAtAGlance = Rswift.StringResource(key: "Check calendar at a glance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Choose your desired app icon
+      ///
+      /// Locales: en, vi
+      static let chooseYourDesiredAppIcon = Rswift.StringResource(key: "Choose your desired app icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Custom App Icon
+      ///
+      /// Locales: en, vi
+      static let customAppIcon = Rswift.StringResource(key: "Custom App Icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Dark
+      ///
+      /// Locales: en, vi
+      static let dark = Rswift.StringResource(key: "Dark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Date
+      ///
+      /// Locales: en, vi
+      static let date = Rswift.StringResource(key: "Date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Date Info Widget
+      ///
+      /// Locales: en, vi
+      static let dateInfoWidget = Rswift.StringResource(key: "Date Info Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Default event duration
+      ///
+      /// Locales: en, vi
+      static let defaultEventDuration = Rswift.StringResource(key: "Default event duration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Delete Event
+      ///
+      /// Locales: en, vi
+      static let deleteEvent = Rswift.StringResource(key: "Delete Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Dim
+      ///
+      /// Locales: en, vi
+      static let dim = Rswift.StringResource(key: "Dim", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en, vi
+      static let done = Rswift.StringResource(key: "Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Edit Event
+      ///
+      /// Locales: en, vi
+      static let editEvent = Rswift.StringResource(key: "Edit Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: English
+      ///
+      /// Locales: en, vi
+      static let english = Rswift.StringResource(key: "English", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: General
+      ///
+      /// Locales: en, vi
+      static let general = Rswift.StringResource(key: "General", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Haptic feedback
+      ///
+      /// Locales: en, vi
+      static let hapticFeedback = Rswift.StringResource(key: "Haptic feedback", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Light
+      ///
+      /// Locales: en, vi
+      static let light = Rswift.StringResource(key: "Light", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Lunar date
+      ///
+      /// Locales: en, vi
+      static let lunarDate = Rswift.StringResource(key: "Lunar date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Month
+      ///
+      /// Locales: en, vi
+      static let month = Rswift.StringResource(key: "Month", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Month view
+      ///
+      /// Locales: en, vi
+      static let monthView = Rswift.StringResource(key: "Month view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Month view calendar
+      ///
+      /// Locales: en, vi
+      static let monthViewCalendar = Rswift.StringResource(key: "Month view calendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Name
+      ///
+      /// Locales: en, vi
+      static let name = Rswift.StringResource(key: "Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: None
+      ///
+      /// Locales: en, vi
+      static let none = Rswift.StringResource(key: "None", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: OK
+      ///
+      /// Locales: en, vi
+      static let oK = Rswift.StringResource(key: "OK", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Off
+      ///
+      /// Locales: en, vi
+      static let off = Rswift.StringResource(key: "Off", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: On
+      ///
+      /// Locales: en, vi
+      static let on = Rswift.StringResource(key: "On", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: One dot
+      ///
+      /// Locales: en, vi
+      static let oneDot = Rswift.StringResource(key: "One dot", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Quick Event
+      ///
+      /// Locales: en, vi
+      static let quickEvent = Rswift.StringResource(key: "Quick Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Settings
+      ///
+      /// Locales: en, vi
+      static let settings = Rswift.StringResource(key: "Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Show days out
+      ///
+      /// Locales: en, vi
+      static let showDaysOut = Rswift.StringResource(key: "Show days out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Supplementary day view
+      ///
+      /// Locales: en, vi
+      static let supplementaryDayView = Rswift.StringResource(key: "Supplementary day view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Themes
+      ///
+      /// Locales: en, vi
+      static let themes = Rswift.StringResource(key: "Themes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Upcoming events
+      ///
+      /// Locales: en, vi
+      static let upcomingEvents = Rswift.StringResource(key: "Upcoming events", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Version
+      ///
+      /// Locales: en, vi
+      static let version = Rswift.StringResource(key: "Version", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Vietnamese
+      ///
+      /// Locales: en, vi
+      static let vietnamese = Rswift.StringResource(key: "Vietnamese", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: View Event
+      ///
+      /// Locales: en, vi
+      static let viewEvent = Rswift.StringResource(key: "View Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: View mode
+      ///
+      /// Locales: en, vi
+      static let viewMode = Rswift.StringResource(key: "View mode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Week view
+      ///
+      /// Locales: en, vi
+      static let weekView = Rswift.StringResource(key: "Week view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: You can choose available calendars to shown in event list
+      ///
+      /// Locales: en, vi
+      static let youCanChooseAvailableCalendarsToShownInEventList = Rswift.StringResource(key: "You can choose available calendars to shown in event list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
+      ///
+      /// Locales: en, vi
+      static let betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved = Rswift.StringResource(key: "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: minutes
+      ///
+      /// Locales: en, vi
+      static let minutes = Rswift.StringResource(key: "minutes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: write something at Friday 8PM...
+      ///
+      /// Locales: en, vi
+      static let writeSomethingAtFriday8PM = Rswift.StringResource(key: "write something at Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: 🎉 No more events today, enjoy your day! 
+      ///
+      /// Locales: en, vi
+      static let 🎉NoMoreEventsTodayEnjoyYourDay = Rswift.StringResource(key: "🎉 No more events today,\nenjoy your day!\n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+
+      /// en translation: App info
+      ///
+      /// Locales: en, vi
+      static func appInfo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("App info", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "App info"
+        }
+
+        return NSLocalizedString("App info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Auto-select day when month changes
+      ///
+      /// Locales: en, vi
+      static func autoSelectDayWhenMonthChanges(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Auto-select day when month changes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Auto-select day when month changes"
+        }
+
+        return NSLocalizedString("Auto-select day when month changes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Auto-select first day of month/week when calendar changes
+      ///
+      /// Locales: en, vi
+      static func autoSelectFirstDayOfMonthWeekWhenCalendarChanges(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Auto-select first day of month/week when calendar changes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Auto-select first day of month/week when calendar changes"
+        }
+
+        return NSLocalizedString("Auto-select first day of month/week when calendar changes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Available calendars
+      ///
+      /// Locales: en, vi
+      static func availableCalendars(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Available calendars", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Available calendars"
+        }
+
+        return NSLocalizedString("Available calendars", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Calendar View
+      ///
+      /// Locales: en, vi
+      static func calendarView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Calendar View", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Calendar View"
+        }
+
+        return NSLocalizedString("Calendar View", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Calendar grid view
+      ///
+      /// Locales: en, vi
+      static func calendarGridView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Calendar grid view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Calendar grid view"
+        }
+
+        return NSLocalizedString("Calendar grid view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Calendars
+      ///
+      /// Locales: en, vi
+      static func calendars(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Calendars", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Calendars"
+        }
+
+        return NSLocalizedString("Calendars", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en, vi
+      static func cancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Cancel"
+        }
+
+        return NSLocalizedString("Cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change app Language
+      ///
+      /// Locales: en, vi
+      static func changeAppLanguage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Change app Language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Change app Language"
+        }
+
+        return NSLocalizedString("Change app Language", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Check calendar at a glance
+      ///
+      /// Locales: en, vi
+      static func checkCalendarAtAGlance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Check calendar at a glance", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Check calendar at a glance"
+        }
+
+        return NSLocalizedString("Check calendar at a glance", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Choose your desired app icon
+      ///
+      /// Locales: en, vi
+      static func chooseYourDesiredAppIcon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Choose your desired app icon", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Choose your desired app icon"
+        }
+
+        return NSLocalizedString("Choose your desired app icon", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Custom App Icon
+      ///
+      /// Locales: en, vi
+      static func customAppIcon(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Custom App Icon", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Custom App Icon"
+        }
+
+        return NSLocalizedString("Custom App Icon", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dark
+      ///
+      /// Locales: en, vi
+      static func dark(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Dark", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Dark"
+        }
+
+        return NSLocalizedString("Dark", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Date
+      ///
+      /// Locales: en, vi
+      static func date(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Date", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Date"
+        }
+
+        return NSLocalizedString("Date", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Date Info Widget
+      ///
+      /// Locales: en, vi
+      static func dateInfoWidget(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Date Info Widget", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Date Info Widget"
+        }
+
+        return NSLocalizedString("Date Info Widget", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Default event duration
+      ///
+      /// Locales: en, vi
+      static func defaultEventDuration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Default event duration", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Default event duration"
+        }
+
+        return NSLocalizedString("Default event duration", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete Event
+      ///
+      /// Locales: en, vi
+      static func deleteEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete Event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete Event"
+        }
+
+        return NSLocalizedString("Delete Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dim
+      ///
+      /// Locales: en, vi
+      static func dim(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Dim", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Dim"
+        }
+
+        return NSLocalizedString("Dim", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en, vi
+      static func done(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Done"
+        }
+
+        return NSLocalizedString("Done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Edit Event
+      ///
+      /// Locales: en, vi
+      static func editEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Edit Event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Edit Event"
+        }
+
+        return NSLocalizedString("Edit Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: English
+      ///
+      /// Locales: en, vi
+      static func english(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("English", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "English"
+        }
+
+        return NSLocalizedString("English", bundle: bundle, comment: "")
+      }
+
+      /// en translation: General
+      ///
+      /// Locales: en, vi
+      static func general(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("General", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "General"
+        }
+
+        return NSLocalizedString("General", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Haptic feedback
+      ///
+      /// Locales: en, vi
+      static func hapticFeedback(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Haptic feedback", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Haptic feedback"
+        }
+
+        return NSLocalizedString("Haptic feedback", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Light
+      ///
+      /// Locales: en, vi
+      static func light(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Light", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Light"
+        }
+
+        return NSLocalizedString("Light", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Lunar date
+      ///
+      /// Locales: en, vi
+      static func lunarDate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Lunar date", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Lunar date"
+        }
+
+        return NSLocalizedString("Lunar date", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Month
+      ///
+      /// Locales: en, vi
+      static func month(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Month", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Month"
+        }
+
+        return NSLocalizedString("Month", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Month view
+      ///
+      /// Locales: en, vi
+      static func monthView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Month view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Month view"
+        }
+
+        return NSLocalizedString("Month view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Month view calendar
+      ///
+      /// Locales: en, vi
+      static func monthViewCalendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Month view calendar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Month view calendar"
+        }
+
+        return NSLocalizedString("Month view calendar", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Name
+      ///
+      /// Locales: en, vi
+      static func name(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Name"
+        }
+
+        return NSLocalizedString("Name", bundle: bundle, comment: "")
+      }
+
+      /// en translation: None
+      ///
+      /// Locales: en, vi
+      static func none(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("None", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "None"
+        }
+
+        return NSLocalizedString("None", bundle: bundle, comment: "")
+      }
+
+      /// en translation: OK
+      ///
+      /// Locales: en, vi
+      static func oK(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("OK", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "OK"
+        }
+
+        return NSLocalizedString("OK", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Off
+      ///
+      /// Locales: en, vi
+      static func off(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Off", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Off"
+        }
+
+        return NSLocalizedString("Off", bundle: bundle, comment: "")
+      }
+
+      /// en translation: On
+      ///
+      /// Locales: en, vi
+      static func on(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("On", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "On"
+        }
+
+        return NSLocalizedString("On", bundle: bundle, comment: "")
+      }
+
+      /// en translation: One dot
+      ///
+      /// Locales: en, vi
+      static func oneDot(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("One dot", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "One dot"
+        }
+
+        return NSLocalizedString("One dot", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Quick Event
+      ///
+      /// Locales: en, vi
+      static func quickEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Quick Event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Quick Event"
+        }
+
+        return NSLocalizedString("Quick Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Settings
+      ///
+      /// Locales: en, vi
+      static func settings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Settings"
+        }
+
+        return NSLocalizedString("Settings", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Show days out
+      ///
+      /// Locales: en, vi
+      static func showDaysOut(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Show days out", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Show days out"
+        }
+
+        return NSLocalizedString("Show days out", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Supplementary day view
+      ///
+      /// Locales: en, vi
+      static func supplementaryDayView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Supplementary day view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Supplementary day view"
+        }
+
+        return NSLocalizedString("Supplementary day view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Themes
+      ///
+      /// Locales: en, vi
+      static func themes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Themes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Themes"
+        }
+
+        return NSLocalizedString("Themes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Upcoming events
+      ///
+      /// Locales: en, vi
+      static func upcomingEvents(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Upcoming events", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Upcoming events"
+        }
+
+        return NSLocalizedString("Upcoming events", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Version
+      ///
+      /// Locales: en, vi
+      static func version(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Version", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Version"
+        }
+
+        return NSLocalizedString("Version", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Vietnamese
+      ///
+      /// Locales: en, vi
+      static func vietnamese(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Vietnamese", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Vietnamese"
+        }
+
+        return NSLocalizedString("Vietnamese", bundle: bundle, comment: "")
+      }
+
+      /// en translation: View Event
+      ///
+      /// Locales: en, vi
+      static func viewEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("View Event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "View Event"
+        }
+
+        return NSLocalizedString("View Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: View mode
+      ///
+      /// Locales: en, vi
+      static func viewMode(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("View mode", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "View mode"
+        }
+
+        return NSLocalizedString("View mode", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Week view
+      ///
+      /// Locales: en, vi
+      static func weekView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Week view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Week view"
+        }
+
+        return NSLocalizedString("Week view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can choose available calendars to shown in event list
+      ///
+      /// Locales: en, vi
+      static func youCanChooseAvailableCalendarsToShownInEventList(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can choose available calendars to shown in event list", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can choose available calendars to shown in event list"
+        }
+
+        return NSLocalizedString("You can choose available calendars to shown in event list", bundle: bundle, comment: "")
+      }
+
+      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
+      ///
+      /// Locales: en, vi
+      static func betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved."
+        }
+
+        return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: bundle, comment: "")
+      }
+
+      /// en translation: minutes
+      ///
+      /// Locales: en, vi
+      static func minutes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("minutes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "minutes"
+        }
+
+        return NSLocalizedString("minutes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: write something at Friday 8PM...
+      ///
+      /// Locales: en, vi
+      static func writeSomethingAtFriday8PM(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("write something at Friday 8PM...", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "write something at Friday 8PM..."
+        }
+
+        return NSLocalizedString("write something at Friday 8PM...", bundle: bundle, comment: "")
+      }
+
+      /// en translation: 🎉 No more events today, enjoy your day! 
+      ///
+      /// Locales: en, vi
+      static func 🎉NoMoreEventsTodayEnjoyYourDay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "🎉 No more events today,\nenjoy your day!\n"
+        }
+
+        return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  fileprivate struct intern: Rswift.Validatable {
+    fileprivate static func validate() throws {
+      try _R.validate()
+    }
+
+    fileprivate init() {}
+  }
+
+  fileprivate class Class {}
+
+  fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
-	static func validate() throws {
-		#if os(iOS) || os(tvOS)
-			try storyboard.validate()
-		#endif
-	}
+  static func validate() throws {
+    #if os(iOS) || os(tvOS)
+    try storyboard.validate()
+    #endif
+  }
 
-	#if os(iOS) || os(tvOS)
-		struct nib {
-			struct _AppIconItemCell: Rswift.NibResourceType {
-				let bundle = R.hostingBundle
-				let name = "AppIconItemCell"
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _AppIconItemCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AppIconItemCell"
 
-				func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> AppIconItemCell? {
-					return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
-				}
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
+      }
 
-				fileprivate init() {}
-			}
+      fileprivate init() {}
+    }
 
-			struct _EventListItemCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-				typealias ReusableType = EventListItemCell
+    struct _EventListItemCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = EventListItemCell
 
-				let bundle = R.hostingBundle
-				let identifier = "EventListItemCell"
-				let name = "EventListItemCell"
+      let bundle = R.hostingBundle
+      let identifier = "EventListItemCell"
+      let name = "EventListItemCell"
 
-				func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey: Any]? = nil) -> EventListItemCell? {
-					return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
-				}
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
+      }
 
-				fileprivate init() {}
-			}
+      fileprivate init() {}
+    }
 
-			fileprivate init() {}
-		}
-	#endif
+    fileprivate init() {}
+  }
+  #endif
 
-	#if os(iOS) || os(tvOS)
-		struct storyboard: Rswift.Validatable {
-			static func validate() throws {
-				#if os(iOS) || os(tvOS)
-					try launchScreen.validate()
-				#endif
-			}
+  #if os(iOS) || os(tvOS)
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      #if os(iOS) || os(tvOS)
+      try launchScreen.validate()
+      #endif
+    }
 
-			#if os(iOS) || os(tvOS)
-				struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-					typealias InitialController = UIKit.UIViewController
+    #if os(iOS) || os(tvOS)
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
 
-					let bundle = R.hostingBundle
-					let name = "LaunchScreen"
+      let bundle = R.hostingBundle
+      let name = "LaunchScreen"
 
-					static func validate() throws {
-						if #available(iOS 11.0, tvOS 11.0, *) {}
-					}
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
 
-					fileprivate init() {}
-				}
-			#endif
+      fileprivate init() {}
+    }
+    #endif
 
-			fileprivate init() {}
-		}
-	#endif
+    fileprivate init() {}
+  }
+  #endif
 
-	fileprivate init() {}
+  fileprivate init() {}
 }

@@ -9,7 +9,7 @@
 --commas inline
 
 # file options
---exclude Pods
+--exclude Pods,R.generated.swift
 
 # rules
 --disable \
