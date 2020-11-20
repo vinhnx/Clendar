@@ -2,7 +2,7 @@ disabled_rules: # rule identifiers to exclude from running
     - line_length
     - todo
     - trailing_whitespace
-    - variable_name
+    - identifier_name
     - void_return
     - colon
     - notification_center_detachment
