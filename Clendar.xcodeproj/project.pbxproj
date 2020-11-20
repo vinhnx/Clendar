@@ -234,7 +234,6 @@
 		A33DE4942541C4F20064D0AD /* Font+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Themes.swift"; sourceTree = "<group>"; };
 		A33DE4982541C50F0064D0AD /* Color+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Themes.swift"; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A33F80C922467A82009CC46A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A33F80D322467A85009CC46A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A33F80D522467A85009CC46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -569,7 +568,6 @@
 		A33F80F822467DD6009CC46A /* App */ = {
 			isa = PBXGroup;
 			children = (
-				A33F80C922467A82009CC46A /* AppDelegate.swift */,
 				A30BFEB825654CE700BA7F38 /* ClendarApp.swift */,
 			);
 			path = App;
