@@ -105,12 +105,14 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     /// Color `Moianes A`.
     static let moianesA = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes A")
     /// Color `Moianes B`.
     static let moianesB = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes B")
+    /// Color `TeaPlus`.
+    static let teaPlus = Rswift.ColorResource(bundle: R.hostingBundle, name: "TeaPlus")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "Moianes A", bundle: ..., traitCollection: ...)`
@@ -127,6 +129,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func moianesB(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.moianesB, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "TeaPlus", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func teaPlus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.teaPlus, compatibleWith: traitCollection)
     }
     #endif
 

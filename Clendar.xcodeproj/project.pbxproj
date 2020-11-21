@@ -1119,7 +1119,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+			shellScript = "# \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
 		};
 		A3FB5B46255C23BA0038AFCE /* Licenses */ = {
 			isa = PBXShellScriptBuildPhase;
