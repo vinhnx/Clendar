@@ -29,7 +29,7 @@ struct CardGroupBoxStyle: GroupBoxStyle {
 		}
 		.padding()
 		.frame(maxWidth: .infinity)
-		.background(Color(.systemGroupedBackground))
+        .background(Color(.backgroundColor))
 		.clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 	}
 }

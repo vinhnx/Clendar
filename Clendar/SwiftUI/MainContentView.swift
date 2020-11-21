@@ -24,10 +24,7 @@ struct MainContentView: View {
 				VStack {
 					makeCalendarHeaderView().padding(.bottom, 30)
 					makeCalendarGroupView(with: geometry)
-					VStack(alignment: .leading) {
-						makeSelectedDateLabel()
-						makeEventListView()
-					}
+                    makeEventListView().padding(.top, -50)
 				}
 				makeAddButton()
 			}
@@ -89,13 +86,15 @@ extension MainContentView {
 		Button(
 			action: { self.showCreateEventState.toggle() },
 			label: {
-				Image(systemName: "plus").font(.title)
-					.padding()
-					.foregroundColor(.buttonTintColor)
-					.background(Color.primaryColor)
-					.cornerRadius(30)
+                Image(systemName: "calendar.badge.plus")
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 30)
+                            .stroke(lineWidth: 2)
+                    )
 			}
 		)
+        .accentColor(.appRed)
 		.sheet(isPresented: $showCreateEventState) {
 			if SettingsManager.useExperimentalCreateEventMode {
 				QuickEventView(
@@ -115,7 +114,9 @@ extension MainContentView {
 	private func makeSettingsButton() -> some View {
 		Button(
 			action: { self.showSettingsState.toggle() },
-			label: { Image(systemName: "slider.horizontal.3") }
+			label: {
+                Image(systemName: "slider.horizontal.3")
+            }
 		)
 		.accentColor(.primaryColor)
 		.sheet(isPresented: $showSettingsState, content: {
@@ -128,25 +129,19 @@ extension MainContentView {
 			Button(
 				action: { calendarWrapperView.calendarView.loadPreviousView() },
 				label: { Image(systemName: "chevron.backward") }
-			).accentColor(.primaryColor)
+			).accentColor(.appGray)
 
-			Button(store.selectedDate.toMonthAndYearString.localizedUppercase) {
+			Button(store.selectedDate.toMonthString.localizedUppercase) {
 				store.selectedDate = Date()
 			}
-			.foregroundColor(.appDark)
-			.font(.boldFontWithSize(15))
+			.foregroundColor(.appRed)
+			.font(.boldFontWithSize(20))
 
 			Button(
 				action: { calendarWrapperView.calendarView.loadNextView() },
 				label: { Image(systemName: "chevron.forward") }
-			).accentColor(.primaryColor)
+			).accentColor(.appGray)
 		}
-	}
-
-	private func makeSelectedDateLabel() -> some View {
-		Text(store.selectedDate.toFullDateString.localizedUppercase)
-			.font(.boldFontWithSize(12))
-			.foregroundColor(.appDark)
 	}
 
 	private func makeCalendarHeaderView() -> some View {
@@ -158,12 +153,12 @@ extension MainContentView {
 	}
 
 	private func makeCalendarGroupView(with geometry: GeometryProxy) -> some View {
-		VStack(alignment: .center) {
+		VStack {
 			CalendarHeaderView()
 				.frame(width: geometry.size.width, height: Constants.CalendarView.calendarHeaderHeight)
 			calendarWrapperView
 				.frame(width: geometry.size.width, height: Constants.CalendarView.calendarHeight)
-		}
+        }
 	}
 
 	private func makeEventListView() -> some View {

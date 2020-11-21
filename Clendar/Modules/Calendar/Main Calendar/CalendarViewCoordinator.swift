@@ -96,12 +96,12 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
 	func spaceBetweenDayViews() -> CGFloat { 5 }
 
-	func dayLabelWeekdayDisabledColor() -> UIColor { .appLightGray }
+	func dayLabelWeekdayDisabledColor() -> UIColor { .appGray }
 
 	func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
 	func dayLabelFont(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIFont {
-		.mediumFontWithSize(18)
+		.mediumFontWithSize(15)
 	}
 
 	func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

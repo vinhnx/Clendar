@@ -12,7 +12,7 @@ import Foundation
 extension EKEvent {
 	func durationText(startDateOnly: Bool = false) -> String {
 		if isAllDay {
-			return "All day"
+            return NSLocalizedString("All day", comment: "")
 		}
 		else if startDateOnly {
 			let startDateString = startDate.toHourAndMinuteString
@@ -22,7 +22,7 @@ extension EKEvent {
 			let startDateString = startDate.toHourAndMinuteString
 			let endDateString = endDate.toHourAndMinuteString
 			return startDate != endDate
-				? "\(startDateString) to \(endDateString)"
+				? "\(startDateString) - \(endDateString)"
 				: startDateString
 		}
 	}

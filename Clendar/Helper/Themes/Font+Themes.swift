@@ -33,23 +33,23 @@ extension UIFont {
 }
 
 extension Font {
-	static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> Font {
-		Font(UIFont.fontWithSize(size, weight: weight))
+    static func fontWithSize(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        Font.system(size: size, weight: weight, design: .rounded)
 	}
 
 	static func regularFontWithSize(_ size: CGFloat) -> Font {
-		Font(UIFont.fontWithSize(size))
+        .fontWithSize(size, weight: .regular)
 	}
 
 	static func boldFontWithSize(_ size: CGFloat) -> Font {
-		Font(UIFont.fontWithSize(size, weight: .bold))
+        .fontWithSize(size, weight: .bold)
 	}
 
 	static func semiboldFontWithSize(_ size: CGFloat) -> Font {
-		Font(UIFont.fontWithSize(size, weight: .semibold))
+        .fontWithSize(size, weight: .semibold)
 	}
 
 	static func mediumFontWithSize(_ size: CGFloat) -> Font {
-		Font(UIFont.fontWithSize(size, weight: .medium))
+        .fontWithSize(size, weight: .medium)
 	}
 }

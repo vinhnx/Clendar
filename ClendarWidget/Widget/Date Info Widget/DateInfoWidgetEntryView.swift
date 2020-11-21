@@ -43,14 +43,14 @@
 		var body: some View {
 			VStack(alignment: .center) {
 				Text(entry.date.toMonthString.localizedUppercase)
-					.font(.system(size: 20, weight: .bold, design: .rounded))
+                    .font(.boldFontWithSize(20))
 					.foregroundColor(.gray)
 				Text(entry.date.widgetDayString)
-					.font(.system(size: 20, weight: .bold, design: .rounded))
-					.foregroundColor(Color(.moianesD))
+					.font(.boldFontWithSize(20))
+					.foregroundColor(.appRed)
 				Text(entry.date.toDateString)
-					.font(.system(size: 45, weight: .bold, design: .rounded))
-					.foregroundColor(Color(.appDark))
+					.font(.boldFontWithSize(45))
+					.foregroundColor(.appDark)
 			}.padding(.all)
 		}
 	}
@@ -97,7 +97,7 @@
 					: NSLocalizedString("Upcoming events", comment: "")
 
 				Text(text)
-					.font(.system(size: 20, weight: .bold, design: .rounded))
+					.font(.boldFontWithSize(20))
 					.foregroundColor(.gray)
 					.multilineTextAlignment(.center)
 					.minimumScaleFactor(0.8)
@@ -114,7 +114,7 @@
 				Section(
 					header:
 					Text(entry.date.toFullDateString.localizedUppercase)
-						.font(.system(size: 11, weight: .bold, design: .rounded))
+						.font(.boldFontWithSize(11))
 						.foregroundColor(Color(.moianesB))
 				) {
 					let events = entry.events.prefix(minimizeContents ? 3 : 6)
