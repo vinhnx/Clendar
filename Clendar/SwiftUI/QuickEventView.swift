@@ -67,17 +67,20 @@ struct QuickEventView: View {
 							self.parse(quickEventStore.query)
 						}
 					)
-					.font(.regularFontWithSize(15))
+                    .font(.mediumFontWithSize(15))
 					.foregroundColor(.appDark)
 
 					Toggle("All day", isOn: $isAllDay)
+                        .font(.mediumFontWithSize(12))
 
 					if !isAllDay {
 						Divider()
 						DatePicker("Starts", selection: $startTime)
 							.datePickerStyle(CompactDatePickerStyle())
+                            .font(.mediumFontWithSize(15))
 						DatePicker("Ends", selection: $endTime)
 							.datePickerStyle(CompactDatePickerStyle())
+                            .font(.mediumFontWithSize(15))
 					}
 				}
 			}
