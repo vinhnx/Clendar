@@ -29,7 +29,7 @@ struct WidgetEventRowLabel: View {
 		let title = event.event?.durationText(startDateOnly: true) ?? "-"
 		let titleAndMessage = "[\(title)] \(message)"
 		Text(titleAndMessage)
-			.font(.system(size: 12, weight: .semibold, design: .rounded))
+			.font(.semiboldFontWithSize(12))
 			.foregroundColor(Color(.gray))
 			.lineLimit(2)
 	}

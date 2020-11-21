@@ -24,6 +24,7 @@ struct EventListRow: View {
 						.lineLimit(nil)
 						.font(.regularFontWithSize(15))
 						.padding(.top, 5)
+                        .foregroundColor(.appDark)
 				}
 			)
 			.groupBoxStyle(CardGroupBoxStyle())

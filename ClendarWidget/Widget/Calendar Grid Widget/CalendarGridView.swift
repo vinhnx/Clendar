@@ -110,7 +110,7 @@ struct CalendarView<DateView>: View where DateView: View {
 		return Group {
 			if showHeaders {
 				Text(formatter.string(from: month).localizedUppercase)
-					.font(.system(size: 11, weight: .bold, design: .rounded))
+					.font(.boldFontWithSize(11))
 					.foregroundColor(Color(.moianesD))
 			}
 		}
@@ -120,7 +120,7 @@ struct CalendarView<DateView>: View where DateView: View {
 		HStack(spacing: 12) {
 			ForEach(0 ..< 7, id: \.self) { index in
 				Text(getWeekDaysSorted()[index].localizedUppercase)
-					.font(.system(size: 10, weight: .bold, design: .rounded))
+					.font(.boldFontWithSize(10))
 			}
 		}
 	}
@@ -187,7 +187,7 @@ struct SmallCalendarGridView: View {
 			// swiftlint:disable:next force_unwrapping
 			CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
 				Text(date.toShortDateString)
-					.font(.system(size: 10, weight: .bold, design: .rounded))
+					.font(.boldFontWithSize(10))
 					.foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
 					.frame(width: 15, height: 15)
 					.multilineTextAlignment(.trailing)
