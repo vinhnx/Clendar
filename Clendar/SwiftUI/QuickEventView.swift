@@ -26,7 +26,7 @@ struct QuickEventView: View {
 	@State private var parsedText = ""
 	@State private var startTime = Date()
 	@State private var endTime = Date().offsetWithDefaultDuration
-	@State private var isAllDay = true
+	@State private var isAllDay = false
 	@Binding var showCreateEventState: Bool
 	@Binding var createdEvent: EKEvent?
 
@@ -35,28 +35,38 @@ struct QuickEventView: View {
 			HStack {
 				Button(
 					action: { self.showCreateEventState.toggle() },
-					label: { Image(systemName: "chevron.down") }
+					label: {
+                        Image(systemName: "chevron.down")
+                            .padding(10)
+                    }
 				).accentColor(.primaryColor)
 
 				Spacer()
 				Text(parsedText.isEmpty ? "New Event" : parsedText)
-					.font(.boldFontWithSize(18))
+					.font(.boldFontWithSize(20))
 					.foregroundColor(.appDark)
 					.lineLimit(1)
 				Spacer()
 
 				Button(
 					action: { self.createNewEvent() },
-					label: { Image(systemName: "plus") }
+					label: {
+                        Image(systemName: "checkmark")
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(lineWidth: 2)
+                            )
+                    }
 				)
-				.accentColor(.primaryColor)
+				.accentColor(.appRed)
 				.disabled(quickEventStore.query.isEmpty)
 			}
 
 			Divider()
 
 			ScrollView(showsIndicators: false) {
-				VStack(spacing: 20) {
+				VStack(spacing: 30) {
 					Spacer()
 					TextField(
 						"write something at Friday 8PM...",
@@ -67,20 +77,20 @@ struct QuickEventView: View {
 							self.parse(quickEventStore.query)
 						}
 					)
-                    .font(.mediumFontWithSize(15))
+                    .font(.regularFontWithSize(20))
 					.foregroundColor(.appDark)
 
 					Toggle("All day", isOn: $isAllDay)
-                        .font(.mediumFontWithSize(12))
+                        .font(.mediumFontWithSize(20))
 
 					if !isAllDay {
 						Divider()
 						DatePicker("Starts", selection: $startTime)
 							.datePickerStyle(CompactDatePickerStyle())
-                            .font(.mediumFontWithSize(15))
+                            .font(.mediumFontWithSize(20))
 						DatePicker("Ends", selection: $endTime)
 							.datePickerStyle(CompactDatePickerStyle())
-                            .font(.mediumFontWithSize(15))
+                            .font(.mediumFontWithSize(20))
 					}
 				}
 			}

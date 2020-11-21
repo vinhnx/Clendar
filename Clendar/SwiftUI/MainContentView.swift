@@ -86,7 +86,7 @@ extension MainContentView {
 		Button(
 			action: { self.showCreateEventState.toggle() },
 			label: {
-                Image(systemName: "plus")
+                Image(systemName: "calendar.badge.plus")
                     .padding(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
@@ -94,7 +94,7 @@ extension MainContentView {
                     )
 			}
 		)
-        .accentColor(.primaryColor)
+        .accentColor(.appRed)
 		.sheet(isPresented: $showCreateEventState) {
 			if SettingsManager.useExperimentalCreateEventMode {
 				QuickEventView(
@@ -114,7 +114,9 @@ extension MainContentView {
 	private func makeSettingsButton() -> some View {
 		Button(
 			action: { self.showSettingsState.toggle() },
-			label: { Image(systemName: "slider.horizontal.3") }
+			label: {
+                Image(systemName: "slider.horizontal.3")
+            }
 		)
 		.accentColor(.primaryColor)
 		.sheet(isPresented: $showSettingsState, content: {
@@ -132,7 +134,7 @@ extension MainContentView {
 			Button(store.selectedDate.toMonthString.localizedUppercase) {
 				store.selectedDate = Date()
 			}
-			.foregroundColor(Color(.moianesD))
+			.foregroundColor(.appRed)
 			.font(.boldFontWithSize(20))
 
 			Button(

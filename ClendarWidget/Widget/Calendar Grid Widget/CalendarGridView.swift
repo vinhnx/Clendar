@@ -111,7 +111,7 @@ struct CalendarView<DateView>: View where DateView: View {
 			if showHeaders {
 				Text(formatter.string(from: month).localizedUppercase)
 					.font(.boldFontWithSize(11))
-					.foregroundColor(Color(.moianesD))
+					.foregroundColor(.appRed)
 			}
 		}
 	}
@@ -188,7 +188,7 @@ struct SmallCalendarGridView: View {
 			CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
 				Text(date.toShortDateString)
 					.font(.boldFontWithSize(10))
-					.foregroundColor(Calendar.current.isDateInToday(date) ? Color(.moianesD) : .gray)
+					.foregroundColor(Calendar.current.isDateInToday(date) ? .appRed : .gray)
 					.frame(width: 15, height: 15)
 					.multilineTextAlignment(.trailing)
 			}

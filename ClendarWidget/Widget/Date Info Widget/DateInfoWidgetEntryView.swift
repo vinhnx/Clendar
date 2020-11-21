@@ -47,10 +47,10 @@
 					.foregroundColor(.gray)
 				Text(entry.date.widgetDayString)
 					.font(.boldFontWithSize(20))
-					.foregroundColor(Color(.moianesD))
+					.foregroundColor(.appRed)
 				Text(entry.date.toDateString)
 					.font(.boldFontWithSize(45))
-					.foregroundColor(Color(.appDark))
+					.foregroundColor(.appDark)
 			}.padding(.all)
 		}
 	}

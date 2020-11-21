@@ -109,13 +109,13 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 		case (_, .selected, _),
 		     (_, .highlighted, _): return .white
 		case (.sunday, .out, _): return .appLightRed
-		case (.sunday, _, _): return .moianesD
+		case (.sunday, _, _): return .appRed
 		case (_, .in, _): return .appDark
 		default: return .appLightGray
 		}
 	}
 
 	func dayLabelBackgroundColor(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIColor? {
-		.moianesD
+		.appRed
 	}
 }
