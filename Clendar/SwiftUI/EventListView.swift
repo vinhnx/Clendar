@@ -14,7 +14,7 @@ struct EventListView: View {
 	var events = [Event]()
 
 	var body: some View {
-		ScrollView {
+		ScrollView(showsIndicators: false) {
 			LazyVStack(alignment: .leading, spacing: 10) {
 				ForEach(events, id: \.self.id) { event in
 					EventListRow(event: event)
