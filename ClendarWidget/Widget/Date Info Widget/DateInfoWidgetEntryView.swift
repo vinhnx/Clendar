@@ -45,7 +45,7 @@
 				Text(entry.date.toMonthString.localizedUppercase)
                     .font(.boldFontWithSize(20))
 					.foregroundColor(.gray)
-				Text(entry.date.widgetDayString)
+				Text(entry.date.toFullDayString)
 					.font(.boldFontWithSize(20))
 					.foregroundColor(.appRed)
 				Text(entry.date.toDateString)

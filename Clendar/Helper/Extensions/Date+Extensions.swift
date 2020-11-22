@@ -75,7 +75,7 @@ extension Date {
 }
 
 extension Date {
-	var widgetDayString: String {
+	var toFullDayString: String {
 		toString(.custom("EEEE"))
 	}
 }

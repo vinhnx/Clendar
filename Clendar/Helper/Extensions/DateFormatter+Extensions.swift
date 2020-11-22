@@ -23,7 +23,7 @@ extension DateFormatter {
 
 	static func format(_ date: Date, template: String) -> String {
 		let dateFormatter = DateFormatter()
-		dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = Locale.autoupdatingCurrent
 		dateFormatter.setLocalizedDateFormatFromTemplate(template)
 		return dateFormatter.string(from: date)
 	}

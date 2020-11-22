@@ -121,7 +121,7 @@ extension MainContentView {
                 Image(systemName: "slider.horizontal.3")
             }
 		)
-		.accentColor(.primaryColor)
+		.accentColor(.appLightGray)
 		.sheet(isPresented: $showSettingsState, content: {
 			SettingsWrapperView().styleModalBackground(store.appBackgroundColor)
 		})
@@ -132,19 +132,26 @@ extension MainContentView {
 			Button(
 				action: { calendarWrapperView.calendarView.loadPreviousView() },
 				label: { Image(systemName: "chevron.backward") }
-			).accentColor(.appGray)
+			).accentColor(.appLightGray)
 
-			Button(store.selectedDate.toMonthString.localizedUppercase) {
-				store.selectedDate = Date()
-			}
+            Button {
+                store.selectedDate = Date()
+            } label: {
+                VStack {
+                    Text(store.selectedDate.toMonthString.localizedUppercase)
+                        .font(.boldFontWithSize(18))
+                        .foregroundColor(.appRed)
+                    Text(store.selectedDate.toFullDayString)
+                        .font(.boldFontWithSize(15))
+                        .foregroundColor(.appGray)
+                }
+            }
             .accessibility(addTraits: .isHeader)
-			.foregroundColor(.appRed)
-			.font(.boldFontWithSize(20))
 
 			Button(
 				action: { calendarWrapperView.calendarView.loadNextView() },
 				label: { Image(systemName: "chevron.forward") }
-			).accentColor(.appGray)
+			).accentColor(.appLightGray)
 		}
 	}
 
