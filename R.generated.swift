@@ -105,28 +105,17 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 1 colors.
   struct color {
-    /// Color `Moianes A`.
-    static let moianesA = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes A")
-    /// Color `Moianes B`.
-    static let moianesB = Rswift.ColorResource(bundle: R.hostingBundle, name: "Moianes B")
+    /// Color `LaunchScreenBackgroundColor`.
+    static let launchScreenBackgroundColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "LaunchScreenBackgroundColor")
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Moianes A", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "LaunchScreenBackgroundColor", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func moianesA(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.moianesA, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "Moianes B", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func moianesB(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.moianesB, compatibleWith: traitCollection)
+    static func launchScreenBackgroundColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.launchScreenBackgroundColor, compatibleWith: traitCollection)
     }
     #endif
 
