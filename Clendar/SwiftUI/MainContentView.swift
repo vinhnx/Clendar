@@ -22,9 +22,12 @@ struct MainContentView: View {
 		GeometryReader { geometry in
 			ZStack(alignment: .bottomTrailing) {
 				VStack {
-					makeCalendarHeaderView().padding(.bottom, 30)
+					makeCalendarHeaderView()
+                        .padding(.bottom, 30)
 					makeCalendarGroupView(with: geometry)
-                    makeEventListView().padding(.top, -50)
+                    makeEventListView()
+                        .padding(.top, -30)
+                        .frame(minHeight: 300)
 				}
 				makeAddButton()
 			}
