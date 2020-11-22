@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EventListView: View {
 	@EnvironmentObject var store: Store
-	@State var selectedEvent: Event?
+	@State private var selectedEvent: Event?
 	var events = [Event]()
 
 	var body: some View {
