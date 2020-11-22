@@ -97,13 +97,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct ClendarApp: App {
+    @Environment(\.scenePhase) var scenePhase
 	// swiftlint:disable:next weak_delegate
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    let store = Store()
 
 	var body: some Scene {
 		WindowGroup {
 			MainContentView()
-				.environmentObject(Store())
+				.environmentObject(store)
+                .onChange(of: scenePhase) { (phase) in
+                    switch phase {
+                    case .active:
+                        store.selectedDate = Date()
+                    default:
+                        logInfo("App phase: \(phase)")
+                    }
+                }
 		}
 	}
 }
