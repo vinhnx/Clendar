@@ -16,6 +16,7 @@ import SwiftUI
 
  ==
  TODO:
+ + support split view for iPad (https://www.hackingwithswift.com/books/ios-swiftui/working-with-two-side-by-side-views-in-swiftui)
  + [!] IAP, tip jars  => make more money
  + double check Vietnamese translation
  + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
