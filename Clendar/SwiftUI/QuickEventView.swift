@@ -38,11 +38,13 @@ struct QuickEventView: View {
 					label: {
                         Image(systemName: "chevron.down")
                             .padding(10)
+                            .accessibility(label: Text("Collapse this view"))
                     }
 				).accentColor(.primaryColor)
 
 				Spacer()
 				Text(parsedText.isEmpty ? "New Event" : parsedText)
+                    .accessibility(label: Text("New Event"))
 					.font(.boldFontWithSize(20))
 					.foregroundColor(.appDark)
 					.lineLimit(1)
@@ -57,6 +59,7 @@ struct QuickEventView: View {
                                 RoundedRectangle(cornerRadius: 30)
                                     .stroke(lineWidth: 2)
                             )
+                            .accessibility(label: Text("Create new event"))
                     }
 				)
 				.accentColor(.appRed)
@@ -77,6 +80,7 @@ struct QuickEventView: View {
 							self.parse(quickEventStore.query)
 						}
 					)
+                    .accessibility(label: Text("Input event"))
                     .font(.regularFontWithSize(20))
 					.foregroundColor(.appDark)
 
@@ -88,9 +92,11 @@ struct QuickEventView: View {
 						DatePicker("Starts", selection: $startTime)
 							.datePickerStyle(CompactDatePickerStyle())
                             .font(.mediumFontWithSize(20))
+                            .accessibility(label: Text("Select event's starts time"))
 						DatePicker("Ends", selection: $endTime)
 							.datePickerStyle(CompactDatePickerStyle())
                             .font(.mediumFontWithSize(20))
+                            .accessibility(label: Text("Selecte event's ends time"))
 					}
 				}
 			}

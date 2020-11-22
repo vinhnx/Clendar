@@ -137,6 +137,7 @@ extension MainContentView {
 			Button(store.selectedDate.toMonthString.localizedUppercase) {
 				store.selectedDate = Date()
 			}
+            .accessibility(addTraits: .isHeader)
 			.foregroundColor(.appRed)
 			.font(.boldFontWithSize(20))
 

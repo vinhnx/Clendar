@@ -17,10 +17,12 @@ struct EventListRow: View {
 			GroupBox(
 				label:
                     Label(ekEvent.durationText().localizedUppercase, systemImage: "calendar")
-					.font(.boldFontWithSize(15))
-					.foregroundColor(Color(ekEvent.calendar.cgColor)),
+                    .accessibility(label: Text("Event duration"))
+                    .font(.boldFontWithSize(15))
+                    .foregroundColor(Color(ekEvent.calendar.cgColor)),
 				content: {
 					Text(ekEvent.title)
+                        .accessibility(label: Text("Title of the event"))
 						.lineLimit(nil)
 						.font(.mediumFontWithSize(18))
 						.padding(.top, 5)
