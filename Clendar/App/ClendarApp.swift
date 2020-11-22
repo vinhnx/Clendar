@@ -78,31 +78,15 @@ import SwiftUI
  */
 // Reference: https://swiftwithmajid.com/2020/08/19/managing-app-in-swiftui/
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-	func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		configure()
-		return true
-	}
-
-	// MARK: - Private
-
-	private func configure() {
-		logger.logLevel = .debug
-		SwiftDate.defaultRegion = Region.local
-		IQKeyboardManager.shared.enable = true
-		IQKeyboardManager.shared.enableAutoToolbar = false
-		IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-		UIApplication.shared.applicationIconBadgeNumber = 0
-	}
-}
-
 @main
 struct ClendarApp: App {
     @Environment(\.scenePhase) var scenePhase
-	// swiftlint:disable:next weak_delegate
-	@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     let store = Store()
+
+    init() {
+        configure()
+    }
 
 	var body: some Scene {
 		WindowGroup {
@@ -118,4 +102,20 @@ struct ClendarApp: App {
                 }
 		}
 	}
+
+}
+
+extension ClendarApp {
+
+    // MARK: - Private
+
+    private func configure() {
+        logger.logLevel = .debug
+        SwiftDate.defaultRegion = Region.local
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+
 }
