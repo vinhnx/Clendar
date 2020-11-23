@@ -26,7 +26,9 @@ import SwiftUI
  + lunar converter (+)
  + lunar event (+)
  + duong lich <-> am lich
+ + iPad app ?
  + watch app (?)
+ + macOS app https://developer.apple.com/forums/thread/649675
  ==
  OPTIONAL
  + accessibilty (use lib)

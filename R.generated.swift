@@ -266,12 +266,16 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 50 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 51 localization keys.
     struct localizable {
       /// en translation: App info
       ///
       /// Locales: en, vi
       static let appInfo = Rswift.StringResource(key: "App info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Auto-select day
+      ///
+      /// Locales: en, vi
+      static let autoSelectDay = Rswift.StringResource(key: "Auto-select day", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Auto-select day when month changes
       ///
       /// Locales: en, vi
@@ -482,6 +486,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("App info", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Auto-select day
+      ///
+      /// Locales: en, vi
+      static func autoSelectDay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Auto-select day", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Auto-select day"
+        }
+
+        return NSLocalizedString("Auto-select day", bundle: bundle, comment: "")
       }
 
       /// en translation: Auto-select day when month changes
