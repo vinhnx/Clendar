@@ -105,12 +105,13 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 4 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 5 properties.
   struct entitlements {
     static let comAppleSecurityAppSandbox = true
     static let comAppleSecurityNetworkClient = true
     static let comAppleSecurityPersonalInformationAddressbook = true
     static let comAppleSecurityPersonalInformationCalendars = true
+    static let comAppleSecurityPersonalInformationLocation = true
 
     fileprivate init() {}
   }

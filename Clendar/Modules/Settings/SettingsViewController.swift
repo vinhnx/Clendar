@@ -108,7 +108,7 @@ final class SettingsViewController: FormViewController {
 
 	lazy var quickEventMode: SwitchFormItem = {
 		let instance = SwitchFormItem()
-		instance.title = NSLocalizedString("Quick event", comment: "")
+		instance.title = NSLocalizedString("Quick Event", comment: "")
 		instance.value = SettingsManager.useExperimentalCreateEventMode
 		instance.switchDidChangeBlock = { activate in
 			SettingsManager.useExperimentalCreateEventMode = activate
@@ -119,7 +119,7 @@ final class SettingsViewController: FormViewController {
 
 	lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
 		let instance = SwitchFormItem()
-		instance.title = NSLocalizedString("Auto-select day when month changes", comment: "")
+		instance.title = NSLocalizedString("Auto-select day", comment: "")
 		instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
 		instance.switchDidChangeBlock = { activate in
 			SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
@@ -191,8 +191,8 @@ final class SettingsViewController: FormViewController {
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
 		builder += calendarMode
 		builder += showDaysOut
-		builder += shouldAutoSelectDayOnCalendarChange
 		builder += supplementaryViewMode
+        builder += shouldAutoSelectDayOnCalendarChange
 		builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
 
 		// Quick Event
