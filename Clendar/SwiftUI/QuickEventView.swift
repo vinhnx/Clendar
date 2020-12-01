@@ -89,14 +89,14 @@ struct QuickEventView: View {
 
 					if !isAllDay {
 						Divider()
-						DatePicker("Starts", selection: $startTime)
+						DatePicker("Start", selection: $startTime)
 							.datePickerStyle(CompactDatePickerStyle())
                             .font(.mediumFontWithSize(20))
-                            .accessibility(label: Text("Select event's starts time"))
-						DatePicker("Ends", selection: $endTime)
+                            .accessibility(label: Text("Select event's start time"))
+						DatePicker("End", selection: $endTime)
 							.datePickerStyle(CompactDatePickerStyle())
                             .font(.mediumFontWithSize(20))
-                            .accessibility(label: Text("Selecte event's ends time"))
+                            .accessibility(label: Text("Select event's end time"))
 					}
 				}
 			}
