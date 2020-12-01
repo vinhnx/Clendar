@@ -16,7 +16,6 @@ import SwiftUI
 
  ==
  TODO:
- + support split view for iPad (https://www.hackingwithswift.com/books/ios-swiftui/working-with-two-side-by-side-views-in-swiftui)
  + [!] IAP, tip jars  => make more money
  + double check Vietnamese translation
  + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
@@ -26,12 +25,11 @@ import SwiftUI
  + lunar converter (+)
  + lunar event (+)
  + duong lich <-> am lich
+ ==
+ OPTIONAL
  + iPad app ?
  + watch app (?)
  + macOS app https://developer.apple.com/forums/thread/649675
- ==
- OPTIONAL
- + accessibilty (use lib)
  + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + local notification
  + [future] future: reminders/tasks
@@ -41,7 +39,7 @@ import SwiftUI
  > ??? Everything under CVCalendar configs
  ==
  DONE:
- + [00:11 21/11/2020 --- DONE now, love SwiftUI!] IMPORTANT: SwiftUI migration -> NOW OR NEVER -> it's not too difficult
+ + [00:11 21/11/2020 --- DONE now] IMPORTANT: SwiftUI migration
  ==> use SwiftUI_migration branch
  + [done for UIKit, try to do in SwiftUI] menu context:
  [https://developer.apple.com/documentation/uikit/uicontextmenuinteraction
