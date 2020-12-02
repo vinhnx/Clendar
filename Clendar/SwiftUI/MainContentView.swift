@@ -173,7 +173,7 @@ extension MainContentView {
 	}
 
 	private func makeEventListView() -> some View {
-		EventListView()
+		EventListView(events: eventKitWrapper.events)
 			.environmentObject(store)
 	}
 }

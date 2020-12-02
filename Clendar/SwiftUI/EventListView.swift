@@ -10,13 +10,13 @@ import SwiftUI
 
 struct EventListView: View {
 	@EnvironmentObject var store: Store
-    @StateObject var eventKitWrapper = EventKitWrapper.shared
 	@State private var selectedEvent: Event?
+	var events = [Event]()
 
 	var body: some View {
 		ScrollView(showsIndicators: false) {
 			LazyVStack(alignment: .leading, spacing: 10) {
-                ForEach(eventKitWrapper.events) { event in
+				ForEach(events, id: \.self.id) { event in
 					EventListRow(event: event)
 						.onTapGesture { self.selectedEvent = event }
 						.contextMenu {
@@ -42,6 +42,6 @@ struct EventListView: View {
 
 struct EventListView_Previews: PreviewProvider {
 	static var previews: some View {
-		EventListView().environmentObject(Store())
+		EventListView(events: []).environmentObject(Store())
 	}
 }
