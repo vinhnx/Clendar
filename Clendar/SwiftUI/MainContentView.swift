@@ -127,12 +127,7 @@ extension MainContentView {
 
 	private func makeMonthHeaderView() -> some View {
 		HStack(spacing: 20) {
-			Button(
-				action: { calendarWrapperView.calendarView.loadPreviousView() },
-				label: { Image(systemName: "chevron.backward") }
-			).accentColor(.appLightGray)
-
-            Button {
+			Button {
                 store.selectedDate = Date()
             } label: {
                 VStack {
@@ -145,11 +140,6 @@ extension MainContentView {
                 }
             }
             .accessibility(addTraits: .isHeader)
-
-			Button(
-				action: { calendarWrapperView.calendarView.loadNextView() },
-				label: { Image(systemName: "chevron.forward") }
-			).accentColor(.appLightGray)
 		}
 	}
 
