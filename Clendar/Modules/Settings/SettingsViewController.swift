@@ -181,11 +181,11 @@ final class SettingsViewController: FormViewController {
 		builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
 		// Calendars
-		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendars", comment: ""))
-		builder += ViewControllerFormItem()
-			.title(NSLocalizedString("Available calendars", comment: ""))
-			.viewController(CalendarsChooserViewController.self)
-		builder += SectionFooterTitleFormItem().title(NSLocalizedString("You can choose available calendars to shown in event list", comment: ""))
+//		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendars", comment: ""))
+//		builder += ViewControllerFormItem()
+//			.title(NSLocalizedString("Available calendars", comment: ""))
+//			.viewController(CalendarsChooserViewController.self)
+//		builder += SectionFooterTitleFormItem().title(NSLocalizedString("You can choose available calendars to shown in event list", comment: ""))
 
 		// Calendar
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))

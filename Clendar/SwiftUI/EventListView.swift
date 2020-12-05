@@ -16,7 +16,7 @@ struct EventListView: View {
 	var body: some View {
 		ScrollView(showsIndicators: false) {
 			LazyVStack(alignment: .leading, spacing: 10) {
-				ForEach(events, id: \.self.id) { event in
+				ForEach(events) { event in
 					EventListRow(event: event)
 						.onTapGesture { self.selectedEvent = event }
 						.contextMenu {

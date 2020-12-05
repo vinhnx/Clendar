@@ -76,8 +76,6 @@ struct MainContentView: View {
 
 extension MainContentView {
 	private func selectDate(_ date: Date) {
-		guard calendarWrapperView.calendarView.contentController != nil else { return }
-		calendarWrapperView.calendarView.toggleViewWithDate(date)
 		fetchEvents(for: date)
 	}
 
