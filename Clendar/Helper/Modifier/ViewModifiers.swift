@@ -28,4 +28,3 @@ struct ModalBackgroundModifier: ViewModifier {
             .background(backgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
-

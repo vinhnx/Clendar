@@ -1,3 +1,10 @@
+//
+//  ClendarApp.swift
+//  Clendar
+//
+//  Created by Vinh Nguyen on 18/11/2020.
+//  Copyright © 2020 Vinh Nguyen. All rights reserved.
+//
 
 #if os(iOS)
 import IQKeyboardManagerSwift
