@@ -89,8 +89,8 @@ extension ContentView {
         ) {
             HStack {
                 Image(systemName: "calendar.badge.plus")
-                Text("Add event".localizedUppercase)
-                    .font(.boldFontWithSize(15))
+                Text("Add event")
+                    .font(.boldFontWithSize(13))
             }
             .padding()
             .foregroundColor(.white)

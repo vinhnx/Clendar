@@ -66,6 +66,33 @@
 		A3560CFE2567FB6F009088E7 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* Then */; };
 		A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3560D0B2567FC5B009088E7 /* EventListRow.swift */; };
 		A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
+		A359CDA62588E93D0089C4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A359CDA52588E93D0089C4A2 /* Assets.xcassets */; };
+		A359CDAD2588E93E0089C4A2 /* ClendarWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A359CDAC2588E93E0089C4A2 /* ClendarWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A359CDB22588E93E0089C4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CDB12588E93E0089C4A2 /* ContentView.swift */; };
+		A359CDB82588E9400089C4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A359CDB72588E9400089C4A2 /* Assets.xcassets */; };
+		A359CDBB2588E9400089C4A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */; };
+		A359CDBF2588E9400089C4A2 /* ClendarWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A359CDCE2588E95F0089C4A2 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A359CDCD2588E95F0089C4A2 /* EventKit.framework */; };
+		A359CDD52588E9650089C4A2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD42588E9650089C4A2 /* Logging */; };
+		A359CDD72588E96C0089C4A2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD62588E96C0089C4A2 /* SwiftDate */; };
+		A359CDDD2588EA180089C4A2 /* EventKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259812247B903009A50B6 /* EventKitWrapper.swift */; };
+		A359CDE32588EA1F0089C4A2 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
+		A359CDE92588EA280089C4A2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* Event.swift */; };
+		A359CDEF2588EA390089C4A2 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
+		A359CDF52588EA3F0089C4A2 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
+		A359CDFB2588EA450089C4A2 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B702250782900D0488B /* ClendarError.swift */; };
+		A359CE012588EA540089C4A2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
+		A359CE072588EA630089C4A2 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
+		A359CE0D2588EA680089C4A2 /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
+		A359CE132588EA6E0089C4A2 /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
+		A359CE192588EA780089C4A2 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
+		A359CE1F2588EA8A0089C4A2 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
+		A359CE252588EA940089C4A2 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
+		A359CE2B2588EA9B0089C4A2 /* EventStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24892248E8A400EB3B64 /* EventStore+Extensions.swift */; };
+		A359CE3F2588EABC0089C4A2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
+		A359CE4A2588EC380089C4A2 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEB825654CE700BA7F38 /* ClendarApp.swift */; };
+		A359CE502588EC5A0089C4A2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE74125669FE20046C1F5 /* Store.swift */; };
+		A359CE562588EC680089C4A2 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
 		A368474D2554457B004BDCC6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */; };
 		A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */; };
@@ -163,6 +190,20 @@
 			remoteGlobalIDString = A33F80C522467A82009CC46A;
 			remoteInfo = Clendar;
 		};
+		A359CDAE2588E93E0089C4A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A33F80BE22467A82009CC46A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A359CDAB2588E93E0089C4A2;
+			remoteInfo = "ClendarWatchApp Extension";
+		};
+		A359CDBD2588E9400089C4A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A33F80BE22467A82009CC46A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A359CDA22588E93A0089C4A2;
+			remoteInfo = ClendarWatchApp;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -184,6 +225,28 @@
 			dstSubfolderSpec = 10;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A359CDC02588E9400089C4A2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A359CDBF2588E9400089C4A2 /* ClendarWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A359CDC32588E9400089C4A2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A359CDAD2588E93E0089C4A2 /* ClendarWatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -253,6 +316,15 @@
 		A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetEntryView.swift; sourceTree = "<group>"; };
 		A3560D0B2567FC5B009088E7 /* EventListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRow.swift; sourceTree = "<group>"; };
 		A359CD872588E3260089C4A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClendarWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A359CDA52588E93D0089C4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A359CDA72588E93D0089C4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A359CDAC2588E93E0089C4A2 /* ClendarWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ClendarWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A359CDB12588E93E0089C4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A359CDB72588E9400089C4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A359CDBC2588E9400089C4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A359CDCD2588E95F0089C4A2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 		A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConstans.swift; sourceTree = "<group>"; };
 		A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
@@ -305,6 +377,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6F05DC27D5F182B66A657F36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3064D16254CEF5200C7F228 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +429,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A359CDA92588E93E0089C4A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A359CDD52588E9650089C4A2 /* Logging in Frameworks */,
+				A359CDCE2588E95F0089C4A2 /* EventKit.framework in Frameworks */,
+				A359CDD72588E96C0089C4A2 /* SwiftDate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -357,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				A38A4D9E254D740400B35F98 /* EventKit.framework */,
+				A359CDCD2588E95F0089C4A2 /* EventKit.framework */,
 				500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */,
 				4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */,
 				B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */,
@@ -499,6 +589,8 @@
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
 				A3064D1E254CEF5200C7F228 /* ClendarWidget */,
+				A359CDA42588E93A0089C4A2 /* ClendarWatchApp */,
+				A359CDB02588E93E0089C4A2 /* ClendarWatchApp Extension */,
 				A33F80C722467A82009CC46A /* Products */,
 				8C81B73E8AA33D23B6AB3B1C /* Pods */,
 				621629E75901BC78649E2A0A /* Frameworks */,
@@ -512,6 +604,8 @@
 				A33F80DA22467A85009CC46A /* ClendarTests.xctest */,
 				A33F80E522467A85009CC46A /* ClendarUITests.xctest */,
 				A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */,
+				A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */,
+				A359CDAC2588E93E0089C4A2 /* ClendarWatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -655,6 +749,34 @@
 				A359CD872588E3260089C4A2 /* ViewModifiers.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		A359CDA42588E93A0089C4A2 /* ClendarWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				A359CDA52588E93D0089C4A2 /* Assets.xcassets */,
+				A359CDA72588E93D0089C4A2 /* Info.plist */,
+			);
+			path = ClendarWatchApp;
+			sourceTree = "<group>";
+		};
+		A359CDB02588E93E0089C4A2 /* ClendarWatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A359CDB12588E93E0089C4A2 /* ContentView.swift */,
+				A359CDB72588E9400089C4A2 /* Assets.xcassets */,
+				A359CDBC2588E9400089C4A2 /* Info.plist */,
+				A359CDB92588E9400089C4A2 /* Preview Content */,
+			);
+			path = "ClendarWatchApp Extension";
+			sourceTree = "<group>";
+		};
+		A359CDB92588E9400089C4A2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A36A504E2250EE5800B12034 /* Logger */ = {
@@ -824,11 +946,13 @@
 				A37FB92925657F11007C637C /* SwiftFormat */,
 				A3064D2B254CEF5800C7F228 /* Embed App Extensions */,
 				A3FB5B46255C23BA0038AFCE /* Licenses */,
+				A359CDC02588E9400089C4A2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A3064D28254CEF5800C7F228 /* PBXTargetDependency */,
+				A359CDBE2588E9400089C4A2 /* PBXTargetDependency */,
 			);
 			name = Clendar;
 			packageProductDependencies = (
@@ -882,13 +1006,52 @@
 			productReference = A33F80E522467A85009CC46A /* ClendarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A359CDA22588E93A0089C4A2 /* ClendarWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A359CDC72588E9400089C4A2 /* Build configuration list for PBXNativeTarget "ClendarWatchApp" */;
+			buildPhases = (
+				A359CDA12588E93A0089C4A2 /* Resources */,
+				A359CDC32588E9400089C4A2 /* Embed App Extensions */,
+				6F05DC27D5F182B66A657F36 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A359CDAF2588E93E0089C4A2 /* PBXTargetDependency */,
+			);
+			name = ClendarWatchApp;
+			productName = ClendarWatchApp;
+			productReference = A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A359CDAB2588E93E0089C4A2 /* ClendarWatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A359CDC62588E9400089C4A2 /* Build configuration list for PBXNativeTarget "ClendarWatchApp Extension" */;
+			buildPhases = (
+				A359CDA82588E93E0089C4A2 /* Sources */,
+				A359CDA92588E93E0089C4A2 /* Frameworks */,
+				A359CDAA2588E93E0089C4A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ClendarWatchApp Extension";
+			packageProductDependencies = (
+				A359CDD42588E9650089C4A2 /* Logging */,
+				A359CDD62588E96C0089C4A2 /* SwiftDate */,
+			);
+			productName = "ClendarWatchApp Extension";
+			productReference = A359CDAC2588E93E0089C4A2 /* ClendarWatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A33F80BE22467A82009CC46A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Vinh Nguyen";
 				TargetAttributes = {
@@ -908,6 +1071,12 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 						TestTargetID = A33F80C522467A82009CC46A;
+					};
+					A359CDA22588E93A0089C4A2 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					A359CDAB2588E93E0089C4A2 = {
+						CreatedOnToolsVersion = 12.2;
 					};
 				};
 			};
@@ -938,6 +1107,8 @@
 				A33F80D922467A85009CC46A /* ClendarTests */,
 				A33F80E422467A85009CC46A /* ClendarUITests */,
 				A3064D18254CEF5200C7F228 /* ClendarWidgetExtension */,
+				A359CDA22588E93A0089C4A2 /* ClendarWatchApp */,
+				A359CDAB2588E93E0089C4A2 /* ClendarWatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -979,6 +1150,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A359CDA12588E93A0089C4A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A359CDA62588E93D0089C4A2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A359CDAA2588E93E0089C4A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A359CDBB2588E9400089C4A2 /* Preview Assets.xcassets in Resources */,
+				A359CDB82588E9400089C4A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1464,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A359CDA82588E93E0089C4A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A359CE4A2588EC380089C4A2 /* ClendarApp.swift in Sources */,
+				A359CE2B2588EA9B0089C4A2 /* EventStore+Extensions.swift in Sources */,
+				A359CE072588EA630089C4A2 /* EKEvent+Extensions.swift in Sources */,
+				A359CE502588EC5A0089C4A2 /* Store.swift in Sources */,
+				A359CDFB2588EA450089C4A2 /* ClendarError.swift in Sources */,
+				A359CE252588EA940089C4A2 /* Calendar+Extensions.swift in Sources */,
+				A359CE1F2588EA8A0089C4A2 /* DateFormatter+Extensions.swift in Sources */,
+				A359CE012588EA540089C4A2 /* UserDefaultsWrapper.swift in Sources */,
+				A359CE192588EA780089C4A2 /* Date+Extensions.swift in Sources */,
+				A359CDDD2588EA180089C4A2 /* EventKitWrapper.swift in Sources */,
+				A359CE0D2588EA680089C4A2 /* Font+Themes.swift in Sources */,
+				A359CE562588EC680089C4A2 /* LoggerConfiguration.swift in Sources */,
+				A359CE132588EA6E0089C4A2 /* Color+Themes.swift in Sources */,
+				A359CDB22588E93E0089C4A2 /* ContentView.swift in Sources */,
+				A359CDE32588EA1F0089C4A2 /* DateInfoWidgetEventRow.swift in Sources */,
+				A359CE3F2588EABC0089C4A2 /* AppInfo.swift in Sources */,
+				A359CDEF2588EA390089C4A2 /* UserDefaults+Extensions.swift in Sources */,
+				A359CDF52588EA3F0089C4A2 /* AppEvents.swift in Sources */,
+				A359CDE92588EA280089C4A2 /* Event.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1294,6 +1508,16 @@
 			isa = PBXTargetDependency;
 			target = A33F80C522467A82009CC46A /* Clendar */;
 			targetProxy = A33F80E622467A85009CC46A /* PBXContainerItemProxy */;
+		};
+		A359CDAF2588E93E0089C4A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A359CDAB2588E93E0089C4A2 /* ClendarWatchApp Extension */;
+			targetProxy = A359CDAE2588E93E0089C4A2 /* PBXContainerItemProxy */;
+		};
+		A359CDBE2588E9400089C4A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A359CDA22588E93A0089C4A2 /* ClendarWatchApp */;
+			targetProxy = A359CDBD2588E9400089C4A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1608,6 +1832,94 @@
 			};
 			name = Release;
 		};
+		A359CDC12588E9400089C4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6TWWD47PW9;
+				IBSC_MODULE = ClendarWatchApp_Extension;
+				INFOPLIST_FILE = ClendarWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		A359CDC22588E9400089C4A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6TWWD47PW9;
+				IBSC_MODULE = ClendarWatchApp_Extension;
+				INFOPLIST_FILE = ClendarWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		A359CDC42588E9400089C4A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ClendarWatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6TWWD47PW9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ClendarWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		A359CDC52588E9400089C4A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ClendarWatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6TWWD47PW9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ClendarWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1652,6 +1964,24 @@
 			buildConfigurations = (
 				A33F80F522467A85009CC46A /* Debug */,
 				A33F80F622467A85009CC46A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A359CDC62588E9400089C4A2 /* Build configuration list for PBXNativeTarget "ClendarWatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A359CDC42588E9400089C4A2 /* Debug */,
+				A359CDC52588E9400089C4A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A359CDC72588E9400089C4A2 /* Build configuration list for PBXNativeTarget "ClendarWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A359CDC12588E9400089C4A2 /* Debug */,
+				A359CDC22588E9400089C4A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1737,6 +2067,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		A359CDD42588E9650089C4A2 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		A359CDD62588E96C0089C4A2 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 		A38A4D85254D6F7300B35F98 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;

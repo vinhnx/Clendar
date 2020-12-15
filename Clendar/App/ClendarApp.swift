@@ -19,9 +19,8 @@ import SwiftUI
 
  ==
  TODO:
- + watchOS app
- + SwiftUI widget charts?
  + [!] IAP, tip jars  => make more money
+    > Testing IAP https://github.com/vinhnx/notes/issues/352
  + double check Vietnamese translation
  + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
@@ -44,6 +43,7 @@ import SwiftUI
  > ??? Everything under CVCalendar configs
  ==
  DONE:
+ + [basic -- view only done] watchOS app
  + [00:11 21/11/2020 --- DONE now] IMPORTANT: SwiftUI migration
  ==> use SwiftUI_migration branch
  + [done for UIKit, try to do in SwiftUI] menu context:
