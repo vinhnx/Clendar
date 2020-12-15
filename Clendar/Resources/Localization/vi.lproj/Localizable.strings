@@ -149,10 +149,12 @@
 
 "All day" = "Cả ngày";
 
-"Start" = "";
+"Start" = "Bắt đầu";
 
-"End" = "";
+"End" = "Kết thúc";
 
-"Select event's start time" = "";
+"Select event's start time" = "Thời gian bắt đầu sự kiện";
 
-"Select event's end time" = "";
+"Select event's end time" = "Thời gian kết thúc sự kiện";
+
+"Add event" = "Thêm sự kiện";

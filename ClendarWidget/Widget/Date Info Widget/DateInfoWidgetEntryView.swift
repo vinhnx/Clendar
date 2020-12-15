@@ -7,145 +7,144 @@
 //
 
 #if !targetEnvironment(macCatalyst)
+import SwiftDate
+import SwiftUI
+import WidgetKit
 
-	import SwiftDate
-	import SwiftUI
-	import WidgetKit
+struct DateInfoWidgetEntryView: View {
+    @Environment(\.widgetFamily) var family
 
-	struct DateInfoWidgetEntryView: View {
-		@Environment(\.widgetFamily) var family
+    let entry: WidgetEntry
 
-		let entry: WidgetEntry
+    @ViewBuilder
+    var body: some View {
+        switch family {
+        case .systemSmall:
+            SmallCalendarWidgetView(entry: entry)
 
-		@ViewBuilder
-		var body: some View {
-			switch family {
-			case .systemMedium:
-				MediumCalendarWidgetView(entry: entry)
+        case .systemMedium:
+            MediumCalendarWidgetView(entry: entry)
 
-			case .systemLarge:
-				LargeCalendarWidgetView(entry: entry)
+        case .systemLarge:
+            LargeCalendarWidgetView(entry: entry)
 
-			case .systemSmall:
-				SmallCalendarWidgetView(entry: entry)
+        @unknown default:
+            SmallCalendarWidgetView(entry: entry)
+        }
+    }
+}
 
-			@unknown default:
-				SmallCalendarWidgetView(entry: entry)
-			}
-		}
-	}
+// MARK: - Main Views
 
-	// MARK: - Main Views
+struct SmallCalendarWidgetView: View {
+    let entry: WidgetEntry
 
-	struct SmallCalendarWidgetView: View {
-		let entry: WidgetEntry
+    var body: some View {
+        VStack(alignment: .center) {
+            Text(entry.date.toMonthString.localizedUppercase)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.gray)
+            Text(entry.date.toFullDayString)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.appRed)
+            Text(entry.date.toDateString)
+                .font(.boldFontWithSize(45))
+                .foregroundColor(.appDark)
+        }.padding(.all)
+    }
+}
 
-		var body: some View {
-			VStack(alignment: .center) {
-				Text(entry.date.toMonthString.localizedUppercase)
-                    .font(.boldFontWithSize(20))
-					.foregroundColor(.gray)
-				Text(entry.date.toFullDayString)
-					.font(.boldFontWithSize(20))
-					.foregroundColor(.appRed)
-				Text(entry.date.toDateString)
-					.font(.boldFontWithSize(45))
-					.foregroundColor(.appDark)
-			}.padding(.all)
-		}
-	}
+struct MediumCalendarWidgetView: View {
+    let entry: WidgetEntry
 
-	struct MediumCalendarWidgetView: View {
-		let entry: WidgetEntry
+    var body: some View {
+        HStack {
+            SmallCalendarWidgetView(entry: entry)
+            DividerView()
+            EventsListWidgetView(entry: entry, minimizeContents: true)
+        }
+    }
+}
 
-		var body: some View {
-			HStack {
-				SmallCalendarWidgetView(entry: entry)
-				DividerView()
-				EventsListWidgetView(entry: entry, minimizeContents: true)
-			}
-		}
-	}
+struct LargeCalendarWidgetView: View {
+    let entry: WidgetEntry
 
-	struct LargeCalendarWidgetView: View {
-		let entry: WidgetEntry
+    var body: some View {
+        HStack {
+            SmallCalendarWidgetView(entry: entry)
+            DividerView()
+            VStack {
+                TodayOverviewWidgetView(entry: entry)
+                if entry.events.isEmpty == false {
+                    EventsListWidgetView(entry: entry)
+                }
+            }
+        }
+    }
+}
 
-		var body: some View {
-			HStack {
-				SmallCalendarWidgetView(entry: entry)
-				DividerView()
-				VStack {
-					TodayOverviewWidgetView(entry: entry)
-					if entry.events.isEmpty == false {
-						EventsListWidgetView(entry: entry)
-					}
-				}
-			}
-		}
-	}
+// MARK: - Helper Views
 
-	// MARK: - Helper Views
+struct TodayOverviewWidgetView: View {
+    let entry: WidgetEntry
 
-	struct TodayOverviewWidgetView: View {
-		let entry: WidgetEntry
+    var body: some View {
+        VStack(alignment: .center) {
+            let events = entry.events
+            let text = events.isEmpty
+                ? NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", comment: "")
+                : NSLocalizedString("Upcoming events", comment: "")
 
-		var body: some View {
-			VStack(alignment: .center) {
-				let events = entry.events
-				let text = events.isEmpty
-					? NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", comment: "")
-					: NSLocalizedString("Upcoming events", comment: "")
+            Text(text)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.8)
+        }.padding(.all)
+    }
+}
 
-				Text(text)
-					.font(.boldFontWithSize(20))
-					.foregroundColor(.gray)
-					.multilineTextAlignment(.center)
-					.minimumScaleFactor(0.8)
-			}.padding(.all)
-		}
-	}
+struct EventsListWidgetView: View {
+    let entry: WidgetEntry
+    var minimizeContents: Bool = false
 
-	struct EventsListWidgetView: View {
-		let entry: WidgetEntry
-		var minimizeContents: Bool = false
+    var body: some View {
+        LazyVStack(alignment: .leading, spacing: 10) {
+            Section(
+                header:
+                    Text(entry.date.toFullDateString.localizedUppercase)
+                    .font(.boldFontWithSize(11))
+                    .foregroundColor(Color(.moianesB))
+            ) {
+                let events = entry.events.prefix(minimizeContents ? 3 : 6)
+                ForEach(events, id: \.self) { event in
+                    WidgetEventRow(event: event)
+                }
+            }
+        }.padding(10)
+    }
+}
 
-		var body: some View {
-			LazyVStack(alignment: .leading, spacing: 10) {
-				Section(
-					header:
-					Text(entry.date.toFullDateString.localizedUppercase)
-						.font(.boldFontWithSize(11))
-						.foregroundColor(Color(.moianesB))
-				) {
-					let events = entry.events.prefix(minimizeContents ? 3 : 6)
-					ForEach(events, id: \.self) { event in
-						WidgetEventRow(event: event)
-					}
-				}
-			}.padding(10)
-		}
-	}
+struct DividerView: View {
+    var body: some View {
+        Divider().background(Color(.placeholderText))
+    }
+}
 
-	struct DividerView: View {
-		var body: some View {
-			Divider().background(Color(.placeholderText))
-		}
-	}
+// MARK: - Preview
 
-	// MARK: - Preview
+struct WidgetEntryView_Previews: PreviewProvider {
+    static var previews: some View {
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .environment(\.colorScheme, .dark)
 
-	struct WidgetEntryView_Previews: PreviewProvider {
-		static var previews: some View {
-			DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
-				.preferredColorScheme(.dark)
-				.previewContext(WidgetPreviewContext(family: .systemLarge))
-				.environment(\.colorScheme, .dark)
-
-			DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
-				.preferredColorScheme(.dark)
-				.previewContext(WidgetPreviewContext(family: .systemLarge))
-				.redacted(reason: .placeholder)
-		}
-	}
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .redacted(reason: .placeholder)
+    }
+}
 
 #endif

@@ -6,7 +6,10 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
+#if os(iOS)
 import IQKeyboardManagerSwift
+#endif
+
 import SwiftDate
 import SwiftUI
 
@@ -16,6 +19,8 @@ import SwiftUI
 
  ==
  TODO:
+ + watchOS app
+ + SwiftUI widget charts?
  + [!] IAP, tip jars  => make more money
  + double check Vietnamese translation
  + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
@@ -34,7 +39,7 @@ import SwiftUI
  + local notification
  + [future] future: reminders/tasks
  + settings:
- > [?] hightlight weekends (sat and sunday)
+ > [?] highlight weekends (sat and sunday)
  > ???? not sure how to reload CVconfiguration?] start of week
  > ??? Everything under CVCalendar configs
  ==
@@ -84,25 +89,14 @@ struct ClendarApp: App {
 
     let store = Store()
 
-    init() {
-        configure()
+    init() { configure() }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(store)
+        }
     }
-
-	var body: some Scene {
-		WindowGroup {
-			MainContentView()
-				.environmentObject(store)
-                .onChange(of: scenePhase) { (phase) in
-                    switch phase {
-                    case .active:
-                        store.selectedDate = Date()
-                    default:
-                        logInfo("App phase: \(phase)")
-                    }
-                }
-		}
-	}
-
 }
 
 extension ClendarApp {
@@ -110,12 +104,15 @@ extension ClendarApp {
     // MARK: - Private
 
     private func configure() {
-        logger.logLevel = .debug
-        SwiftDate.defaultRegion = Region.local
+        #if os(iOS)
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UIApplication.shared.applicationIconBadgeNumber = 0
+        #endif
+
+        logger.logLevel = .debug
+        SwiftDate.defaultRegion = Region.local
     }
 
 }

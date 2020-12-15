@@ -16,7 +16,7 @@ struct EventListView: View {
 	var body: some View {
 		ScrollView(showsIndicators: false) {
 			LazyVStack(alignment: .leading, spacing: 10) {
-				ForEach(events) { event in
+                ForEach(events, id: \.id) { event in
 					EventListRow(event: event)
 						.onTapGesture { self.selectedEvent = event }
 						.contextMenu {
@@ -35,7 +35,7 @@ struct EventListView: View {
 		.sheet(item: $selectedEvent) { event in
 			EventViewerWrapperView(event: event)
 				.environmentObject(store)
-				.styleModalBackground(store.appBackgroundColor)
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
 		}
 	}
 }

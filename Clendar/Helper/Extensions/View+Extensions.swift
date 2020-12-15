@@ -8,16 +8,6 @@
 
 import SwiftUI
 
-extension View {
-	/// Fix safe area background color
-	/// - Parameter backgroundColor: color
-	/// - Returns: View
-	func styleModalBackground(_ backgroundColor: Color) -> some View {
-		preferredColorScheme(appColorScheme)
-			.background(backgroundColor.edgesIgnoringSafeArea(.all))
-	}
-}
-
 // reference: https://github.com/onmyway133/blog/issues/604#issue-comment-box
 extension View {
 	// MARK: - Log
