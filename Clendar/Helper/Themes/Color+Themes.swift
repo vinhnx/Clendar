@@ -1,3 +1,9 @@
+//  UIColor+Themes.swift
+//  Clendar
+//
+//  Created by Vinh Nguyen on 10/22/20.
+//  Copyright © 2020 Vinh Nguyen. All rights reserved.
+//
 
 import SwiftUI
 import UIKit
