@@ -8,10 +8,11 @@
 
 import EventKit
 import SwiftUI
+import Shift
 
 struct ContentView: View {
     @EnvironmentObject var store: Store
-    @StateObject var eventKitWrapper = EventKitWrapper.shared
+    @StateObject var eventKitWrapper = Shift.shared
     @State private var showCreateEventState = false
     @State private var showSettingsState = false
     @State private var createdEvent: EKEvent?
@@ -163,7 +164,7 @@ extension ContentView {
     }
 
     private func makeEventListView() -> some View {
-        EventListView(events: eventKitWrapper.events)
+        EventListView(events: eventKitWrapper.events.compactMap(Event.init))
             .environmentObject(store)
     }
 }

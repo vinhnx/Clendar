@@ -7,13 +7,11 @@
 //
 
 import SwiftUI
+import Shift
 
 struct ContentView: View {
-    @StateObject
-    var eventKitWrapper = EventKitWrapper.shared
-
-    @State
-    private var selectedEvent: Event?
+    @StateObject var eventKitWrapper = Shift.shared
+    @State private var selectedEvent: Event?
 
     var body: some View {
         LazyVStack(alignment: .leading, spacing: 10) {
@@ -23,7 +21,7 @@ struct ContentView: View {
                     .font(.boldFontWithSize(11))
                     .foregroundColor(Color(.moianesB))
             ) {
-                ForEach(eventKitWrapper.events, id: \.self) { event in
+                ForEach(eventKitWrapper.events.compactMap(Event.init), id: \.self) { event in
                     WidgetEventRow(event: event)
                 }
             }

@@ -9,6 +9,7 @@
 import EventKit
 import EventKitUI
 import Foundation
+import Shift
 
 class EventHandler {
 	static func viewEvent(_ event: Event?, delegate: EKEventViewDelegate?) {
@@ -30,7 +31,7 @@ class EventHandler {
 		guard let eventID = event?.id else { return }
 
 		AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
-			EventKitWrapper.shared.deleteEvent(identifier: eventID) { result in
+			Shift.shared.deleteEvent(identifier: eventID) { result in
 				switch result {
 				case .success:
 					genSuccessHaptic()

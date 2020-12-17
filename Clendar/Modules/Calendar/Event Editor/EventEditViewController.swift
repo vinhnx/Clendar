@@ -8,12 +8,13 @@
 
 import EventKitUI
 import UIKit
+import Shift
 
 class EventEditViewController: EKEventEditViewController {
 	// MARK: Lifecycle
 
 	init(
-		eventStore: EKEventStore = EventKitWrapper.shared.eventStore,
+		eventStore: EKEventStore = Shift.shared.eventStore,
 		delegate: EKEventEditViewDelegate?
 	) {
 		super.init(nibName: nil, bundle: nil)

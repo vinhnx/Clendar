@@ -8,6 +8,7 @@
 
 import CVCalendar
 import UIKit
+import Shift
 
 class DaySupplementaryView: UIStackView {
 	static func viewForDayView(_ dayView: DayView, isOut: Bool, type: DaySupplementaryType = DaySupplementaryType.defaultValue) -> UIView? {
@@ -29,7 +30,7 @@ class DaySupplementaryView: UIStackView {
 			let view = DaySupplementaryView(frame: CGRect(x: dayView.center.x, y: dayView.frame.origin.y, width: size, height: size))
 			view.axis = .horizontal
 			view.distribution = .fill
-			EventKitWrapper.shared.fetchEvents(for: date) { result in
+			Shift.shared.fetchEvents(for: date) { result in
 				switch result {
 				case let .success(events):
 					if events.isEmpty == false {

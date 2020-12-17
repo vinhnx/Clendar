@@ -9,6 +9,7 @@
 import EventKit
 import EventKitUI
 import UIKit
+import Shift
 
 internal typealias DataSource = UICollectionViewDiffableDataSource<Section, Event>
 
@@ -29,7 +30,7 @@ final class EventListViewController: BaseViewController {
 	}
 
 	func fetchEvents(for date: Date = Date()) {
-		EventKitWrapper.shared.fetchEvents(for: date) { [weak self] result in
+		Shift.shared.fetchEvents(for: date) { [weak self] result in
 			guard let self = self else { return }
 			switch result {
 			case let .success(events):
