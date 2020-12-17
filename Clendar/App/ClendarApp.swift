@@ -12,6 +12,7 @@ import IQKeyboardManagerSwift
 
 import SwiftDate
 import SwiftUI
+import Shift
 
 /*
  Issues tracking
@@ -113,6 +114,7 @@ extension ClendarApp {
 
         logger.logLevel = .debug
         SwiftDate.defaultRegion = Region.local
+        Shift.configureWithAppName(AppInfo.appName)
     }
 
 }

@@ -8,6 +8,7 @@
 
 import EventKit
 import SwiftUI
+import Shift
 
 internal struct EventOverride {
 	let text: String
@@ -132,7 +133,7 @@ extension QuickEventView {
 
 		parse(input)
 
-		EventKitWrapper.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
+		Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
 			switch result {
 			case let .success(event):
 				genSuccessHaptic()

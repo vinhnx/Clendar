@@ -8,6 +8,7 @@
 
 import SwiftUI
 import WidgetKit
+import Shift
 
 // Reference: https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
 
@@ -27,7 +28,7 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
         // swiftlint:disable:next force_unwrapping
         let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
 
-        EventKitWrapper.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
+        Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
             switch result {
             case let .success(events):
                 let clendarEvents = events.compactMap(Event.init)
