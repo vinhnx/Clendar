@@ -30,7 +30,9 @@ struct CalendarHeaderView: UIViewRepresentable {
 		return view
 	}
 
-	func updateUIView(_: CVCalendarMenuView, context _: Context) {}
+    func updateUIView(_ view: CVCalendarMenuView, context: Context) {
+        view.commitMenuViewUpdate()
+    }
 }
 
 struct CalendarHeaderView_Previews: PreviewProvider {

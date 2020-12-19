@@ -266,7 +266,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 57 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 62 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -364,6 +364,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let end = Rswift.StringResource(key: "End", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: End time
+      ///
+      /// Locales: en, vi
+      static let endTime = Rswift.StringResource(key: "End time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: English
       ///
       /// Locales: en, vi
@@ -380,6 +384,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let light = Rswift.StringResource(key: "Light", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Location
+      ///
+      /// Locales: en, vi
+      static let location = Rswift.StringResource(key: "Location", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Lunar date
       ///
       /// Locales: en, vi
@@ -424,6 +432,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let quickEvent = Rswift.StringResource(key: "Quick Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Recurring date
+      ///
+      /// Locales: en, vi
+      static let recurringDate = Rswift.StringResource(key: "Recurring date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Recurring event
+      ///
+      /// Locales: en, vi
+      static let recurringEvent = Rswift.StringResource(key: "Recurring event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Select event's end time
       ///
       /// Locales: en, vi
@@ -444,6 +460,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let start = Rswift.StringResource(key: "Start", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Start time
+      ///
+      /// Locales: en, vi
+      static let startTime = Rswift.StringResource(key: "Start time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Supplementary day view
       ///
       /// Locales: en, vi
@@ -857,6 +877,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("End", bundle: bundle, comment: "")
       }
 
+      /// en translation: End time
+      ///
+      /// Locales: en, vi
+      static func endTime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("End time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "End time"
+        }
+
+        return NSLocalizedString("End time", bundle: bundle, comment: "")
+      }
+
       /// en translation: English
       ///
       /// Locales: en, vi
@@ -915,6 +950,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Light", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Location
+      ///
+      /// Locales: en, vi
+      static func location(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Location", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Location"
+        }
+
+        return NSLocalizedString("Location", bundle: bundle, comment: "")
       }
 
       /// en translation: Lunar date
@@ -1082,6 +1132,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Quick Event", bundle: bundle, comment: "")
       }
 
+      /// en translation: Recurring date
+      ///
+      /// Locales: en, vi
+      static func recurringDate(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Recurring date", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Recurring date"
+        }
+
+        return NSLocalizedString("Recurring date", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Recurring event
+      ///
+      /// Locales: en, vi
+      static func recurringEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Recurring event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Recurring event"
+        }
+
+        return NSLocalizedString("Recurring event", bundle: bundle, comment: "")
+      }
+
       /// en translation: Select event's end time
       ///
       /// Locales: en, vi
@@ -1155,6 +1235,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Start", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Start time
+      ///
+      /// Locales: en, vi
+      static func startTime(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Start time", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Start time"
+        }
+
+        return NSLocalizedString("Start time", bundle: bundle, comment: "")
       }
 
       /// en translation: Supplementary day view

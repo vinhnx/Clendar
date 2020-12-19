@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "Shift",
+        "repositoryURL": "https://github.com/vinhnx/Shift",
+        "state": {
+          "branch": null,
+          "revision": "304b4d3eec7deaf7c87e1d62641864c9ef2f7729",
+          "version": "0.1.0"
+        }
+      },
+      {
         "package": "swift-log",
         "repositoryURL": "https://github.com/apple/swift-log",
         "state": {

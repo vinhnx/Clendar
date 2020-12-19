@@ -19,23 +19,104 @@ struct ContentView: View {
 
     let calendarWrapperView = CalendarWrapperView()
 
-    var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .bottomTrailing) {
+    // MARK: - Views Compositions
+
+    private var settingsButton: some View {
+        Button(
+            action: { self.showSettingsState.toggle() },
+            label: {
+                Image(systemName: "slider.horizontal.3")
+                    .font(.boldFontWithSize(12))
+            }
+        )
+        .accentColor(.appRed)
+        .sheet(isPresented: $showSettingsState, content: {
+            SettingsWrapperView()
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+        })
+    }
+
+    private var monthHeaderView: some View {
+        HStack(spacing: 20) {
+            Button {
+                store.selectedDate = Date()
+            } label: {
                 VStack {
-                    makeCalendarHeaderView()
-                        .padding(.bottom, 30)
-                    makeCalendarGroupView(with: geometry)
-                    makeEventListView()
-                        .padding(.top, -30)
-                        .frame(minHeight: 300)
+                    Text(store.selectedDate.toMonthString.localizedUppercase)
+                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
+                    Text(store.selectedDate.toFullDayString)
+                        .modifier(BoldTextModifider())
                 }
-                makeAddButton()
+            }
+            .accessibility(addTraits: .isHeader)
+        }
+    }
+
+    private var calendarHeaderView: some View {
+        HStack {
+            settingsButton
+            Spacer()
+            monthHeaderView
+        }
+    }
+
+    private var addButton: some View {
+        Button(action: { showCreateEventState.toggle() }, label: {})
+            .buttonStyle(SolidButtonStyle(imageName: "calendar.badge.plus", title: "Add event"))
+        .sheet(isPresented: $showCreateEventState) {
+            if SettingsManager.useExperimentalCreateEventMode {
+                QuickEventView(
+                    showCreateEventState: $showCreateEventState,
+                    createdEvent: $createdEvent
+                )
+                .environmentObject(store)
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            } else {
+                EventEditorWrapperView()
+                    .environmentObject(store)
+                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
             }
         }
-        .onAppear(perform: {
-            self.selectDate(Date())
-        })
+    }
+
+    private func makeCalendarGroupView(_ geometry: GeometryProxy) -> some View {
+        Group {
+            CalendarHeaderView()
+                .frame(height: Constants.CalendarView.calendarHeaderHeight)
+
+            calendarWrapperView
+                .frame(height: Constants.CalendarView.calendarHeight)
+        }
+        .padding()
+    }
+
+    private var eventListView: some View {
+        EventListView(events: eventKitWrapper.events.compactMap(Event.init))
+            .environmentObject(store)
+    }
+
+    // MARK: - Body
+
+    var body: some View {
+        NavigationView {
+            GeometryReader { reader in
+                ZStack(alignment: .bottomTrailing) {
+                    VStack {
+                        calendarHeaderView
+                        makeCalendarGroupView(reader)
+                        eventListView
+                    }
+
+                    addButton
+                }
+            }
+            .padding()
+            .preferredColorScheme(appColorScheme)
+            .environment(\.colorScheme, appColorScheme)
+            .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
+            .modifier(HideNavigationBarModifier())
+        }
+        .onAppear { selectDate(Date()) }
         .onReceive(store.$selectedDate) { date in
             self.selectDate(date)
         }
@@ -68,10 +149,6 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
         }
-        .padding()
-        .preferredColorScheme(appColorScheme)
-        .environment(\.colorScheme, appColorScheme)
-        .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -82,90 +159,6 @@ extension ContentView {
 
     private func fetchEvents(for date: Date = Date()) {
         eventKitWrapper.fetchEvents(for: date)
-    }
-
-    private func makeAddButton() -> some View {
-        Button(
-            action: { self.showCreateEventState.toggle() }
-        ) {
-            HStack {
-                Image(systemName: "calendar.badge.plus")
-                Text("Add event")
-                    .font(.boldFontWithSize(13))
-            }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.appRed)
-            .cornerRadius(40)
-        }
-        .accentColor(.appRed)
-        .sheet(isPresented: $showCreateEventState) {
-            if SettingsManager.useExperimentalCreateEventMode {
-                QuickEventView(
-                    showCreateEventState: $showCreateEventState,
-                    createdEvent: $createdEvent
-                )
-                .environmentObject(store)
-                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-            } else {
-                EventEditorWrapperView()
-                    .environmentObject(store)
-                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-            }
-        }
-    }
-
-    private func makeSettingsButton() -> some View {
-        Button(
-            action: { self.showSettingsState.toggle() },
-            label: {
-                Image(systemName: "slider.horizontal.3")
-                    .font(.boldFontWithSize(12))
-            }
-        )
-        .accentColor(.appRed)
-        .sheet(isPresented: $showSettingsState, content: {
-            SettingsWrapperView()
-                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-        })
-    }
-
-    private func makeMonthHeaderView() -> some View {
-        HStack(spacing: 20) {
-            Button {
-                store.selectedDate = Date()
-            } label: {
-                VStack {
-                    Text(store.selectedDate.toMonthString.localizedUppercase)
-                        .modifier(TextModifider(fontSize: 18, color: .appRed))
-                    Text(store.selectedDate.toFullDayString)
-                        .modifier(TextModifider())
-                }
-            }
-            .accessibility(addTraits: .isHeader)
-        }
-    }
-
-    private func makeCalendarHeaderView() -> some View {
-        HStack {
-            makeSettingsButton()
-            Spacer()
-            makeMonthHeaderView()
-        }
-    }
-
-    private func makeCalendarGroupView(with geometry: GeometryProxy) -> some View {
-        VStack {
-            CalendarHeaderView()
-                .frame(width: geometry.size.width, height: Constants.CalendarView.calendarHeaderHeight)
-            calendarWrapperView
-                .frame(width: geometry.size.width, height: Constants.CalendarView.calendarHeight)
-        }
-    }
-
-    private func makeEventListView() -> some View {
-        EventListView(events: eventKitWrapper.events.compactMap(Event.init))
-            .environmentObject(store)
     }
 }
 

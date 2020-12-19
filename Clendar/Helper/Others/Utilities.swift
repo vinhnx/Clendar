@@ -16,10 +16,6 @@ var isDarkMode: Bool {
 	UITraitCollection.current.userInterfaceStyle == .dark
 }
 
-var appColorScheme: ColorScheme {
-	SettingsManager.darkModeActivated ? .dark : .light
-}
-
 // MARK: - Haptic
 
 func genLightHaptic() {
