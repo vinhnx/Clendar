@@ -8,10 +8,14 @@
 
 import SwiftUI
 
-struct TextModifider: ViewModifier {
+#if os(iOS)
+import UIKit
+#endif
+
+struct BoldTextModifider: ViewModifier {
     var fontSize: CGFloat = 15
     var color: Color = .appGray
-
+    
     func body(content: Content) -> some View {
         content
             .font(.boldFontWithSize(fontSize))
@@ -19,12 +23,42 @@ struct TextModifider: ViewModifier {
     }
 }
 
+struct MediumTextModifider: ViewModifier {
+    var fontSize: CGFloat = 15
+    var color: Color = .appGray
+
+    func body(content: Content) -> some View {
+        content
+            .font(.mediumFontWithSize(fontSize))
+            .foregroundColor(color)
+    }
+}
+
+struct RegularTextModifider: ViewModifier {
+    var fontSize: CGFloat = 15
+    var color: Color = .appGray
+
+    func body(content: Content) -> some View {
+        content
+            .font(.regularFontWithSize(fontSize))
+            .foregroundColor(color)
+    }
+}
+
 struct ModalBackgroundModifier: ViewModifier {
     var backgroundColor: Color = .clear
-
+    
     func body(content: Content) -> some View {
         content
             .preferredColorScheme(appColorScheme)
             .background(backgroundColor.edgesIgnoringSafeArea(.all))
+    }
+}
+
+struct HideNavigationBarModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
     }
 }

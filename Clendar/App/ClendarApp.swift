@@ -32,8 +32,6 @@ import Shift
  + duong lich <-> am lich
  ==
  OPTIONAL
- + iPad app ?
- + watch app (?)
  + macOS app https://developer.apple.com/forums/thread/649675
  + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + local notification
@@ -44,6 +42,8 @@ import Shift
  > ??? Everything under CVCalendar configs
  ==
  DONE:
+ + [done] iPad app ?
+ + [done] watch app (?)
  + [basic -- view only done] watchOS app
  + [00:11 21/11/2020 --- DONE now] IMPORTANT: SwiftUI migration
  ==> use SwiftUI_migration branch

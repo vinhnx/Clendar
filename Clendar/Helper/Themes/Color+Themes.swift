@@ -139,3 +139,11 @@ extension Color {
     static var detructiveColor = Color(.detructiveColor)
     static var confirmationColor = Color(.confirmationColor)
 }
+
+var appColorScheme: ColorScheme {
+    #if os(watchOS)
+    return ColorScheme.dark
+    #else
+    return SettingsManager.darkModeActivated ? ColorScheme.dark : .light
+    #endif
+}

@@ -14,19 +14,24 @@ struct ContentView: View {
     @State private var selectedEvent: Event?
 
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 10) {
-            Section(
-                header:
-                    Text(Date().toFullDateString.localizedUppercase)
-                    .font(.boldFontWithSize(11))
-                    .foregroundColor(Color(.moianesB))
-            ) {
-                ForEach(eventKitWrapper.events.compactMap(Event.init), id: \.self) { event in
-                    WidgetEventRow(event: event)
+        NavigationView {
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    Section(
+                        header:
+                            Text(Date().toFullDateString.localizedUppercase)
+                            .font(.boldFontWithSize(11))
+                            .foregroundColor(Color(.moianesB))
+                    ) {
+                        ForEach(eventKitWrapper.events.compactMap(Event.init), id: \.self) { event in
+                            NavigationLink(destination: EventViewer(event: event)) {
+                                WidgetEventRow(event: event)
+                            }
+                        }
+                    }
                 }
             }
         }
-        .padding()
         .onAppear { eventKitWrapper.fetchEventsForToday() }
     }
 }
