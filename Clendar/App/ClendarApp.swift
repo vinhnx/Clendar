@@ -20,10 +20,16 @@ import Shift
 
  ==
  TODO:
+ + clean up project folder
+ + REGISTER APPLE ACCOUNT AND JUST PUBLISH IT
+ + [WIP done] change Calendar control:
+    > https://github.com/kvyatkovskys/KVKCalendar
+    > when done, remeber to change settings apply too
  + [!] IAP, tip jars  => make more money
     > Testing IAP https://github.com/vinhnx/notes/issues/352
  + double check Vietnamese translation
- + [done for UIKit, try to do in SwiftUI] + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
+ + [done for UIKit, try to do in SwiftUI]
+ + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
  + landing page https://github.com/emilbaehr/automatic-app-landing-page
  + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
@@ -32,18 +38,21 @@ import Shift
  + duong lich <-> am lich
  ==
  OPTIONAL
+ + check KVKCalendar custom mode (day/week/month/year) and it's advanced customization feature
  + macOS app
+    > https://developer.apple.com/documentation/swiftui/hsplitview
     > https://developer.apple.com/forums/thread/649675
-    > https://developer.apple.com/tutorials/swiftui/creating-a-macos-app
  + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + local notification
  + [future] future: reminders/tasks
  + settings:
  > [?] highlight weekends (sat and sunday)
- > ???? not sure how to reload CVconfiguration?] start of week
+ > ??? not sure how to reload CVconfiguration?] start of week
  > ??? Everything under CVCalendar configs
+
  ==
  DONE:
+ > [done] use https://github.com/mohakapt/Stringz to manage localization
  + [done] iPad app ?
  + [done] watch app (?)
  + [basic -- view only done] watchOS app
@@ -118,5 +127,4 @@ extension ClendarApp {
         SwiftDate.defaultRegion = Region.local
         Shift.configureWithAppName(AppInfo.appName)
     }
-
 }
