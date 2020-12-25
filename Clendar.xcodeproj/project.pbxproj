@@ -78,7 +78,7 @@
 		A359CDB22588E93E0089C4A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CDB12588E93E0089C4A2 /* ContentView.swift */; };
 		A359CDB82588E9400089C4A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A359CDB72588E9400089C4A2 /* Assets.xcassets */; };
 		A359CDBB2588E9400089C4A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */; };
-		A359CDBF2588E9400089C4A2 /* ClendarWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A359CDBF2588E9400089C4A2 /* ClendarWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A359CDA32588E93A0089C4A2 /* ClendarWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A359CDCE2588E95F0089C4A2 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A359CDCD2588E95F0089C4A2 /* EventKit.framework */; };
 		A359CDD52588E9650089C4A2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD42588E9650089C4A2 /* Logging */; };
 		A359CDD72588E96C0089C4A2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD62588E96C0089C4A2 /* SwiftDate */; };
@@ -1516,6 +1516,7 @@
 		};
 		A359CDBE2588E9400089C4A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A359CDA22588E93A0089C4A2 /* ClendarWatchApp */;
 			targetProxy = A359CDBD2588E9400089C4A2 /* PBXContainerItemProxy */;
 		};
@@ -1552,7 +1553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1576,7 +1577,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1718,7 +1719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1740,7 +1741,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
