@@ -181,12 +181,15 @@ final class SettingsViewController: FormViewController {
 		builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
 		// Calendar
-		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
-		builder += calendarMode
-		builder += showDaysOut
-		builder += supplementaryViewMode
+        /*
+         TODO: support in future versions..
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
+        builder += calendarMode
+        builder += showDaysOut
+        builder += supplementaryViewMode
         builder += shouldAutoSelectDayOnCalendarChange
-		builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
+         */
 
 		// Quick Event
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))

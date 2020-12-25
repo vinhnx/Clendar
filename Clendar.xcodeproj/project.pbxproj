@@ -17,6 +17,7 @@
 		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */; };
+		A3089647259628BD007F76CC /* NewCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3089646259628BD007F76CC /* NewCalendarView.swift */; };
 		A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEB825654CE700BA7F38 /* ClendarApp.swift */; };
 		A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEBE25654D3400BA7F38 /* ContentView.swift */; };
 		A30BFECD25654DCE00BA7F38 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFECC25654DCE00BA7F38 /* CalendarWrapperView.swift */; };
@@ -164,9 +165,9 @@
 		A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE73C25669FD50046C1F5 /* CustomGroupBoxStyle.swift */; };
 		A3EDE74225669FE20046C1F5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE74125669FE20046C1F5 /* Store.swift */; };
 		A3EDE7472566A0180046C1F5 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE7462566A0180046C1F5 /* View+Extensions.swift */; };
-		A3EF7C2E258E26F900B7BA37 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoView.swift */; };
-		A3EF7C2F258E26F900B7BA37 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoView.swift */; };
-		A3EF7C30258E26F900B7BA37 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoView.swift */; };
+		A3EF7C2E258E26F900B7BA37 /* InfoWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */; };
+		A3EF7C2F258E26F900B7BA37 /* InfoWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */; };
+		A3EF7C30258E26F900B7BA37 /* InfoWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */; };
 		A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F25977224771F2009A50B6 /* AlertManager.swift */; };
 		A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */; };
 		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
@@ -274,6 +275,7 @@
 		A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClendarWidgetExtension.entitlements; sourceTree = "<group>"; };
 		A3064D46254CF15500C7F228 /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
 		A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetTimelineProvider.swift; sourceTree = "<group>"; };
+		A3089646259628BD007F76CC /* NewCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCalendarView.swift; sourceTree = "<group>"; };
 		A30BFEB825654CE700BA7F38 /* ClendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarApp.swift; sourceTree = "<group>"; };
 		A30BFEBE25654D3400BA7F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A30BFECC25654DCE00BA7F38 /* CalendarWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWrapperView.swift; sourceTree = "<group>"; };
@@ -371,7 +373,7 @@
 		A3EDE73C25669FD50046C1F5 /* CustomGroupBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGroupBoxStyle.swift; sourceTree = "<group>"; };
 		A3EDE74125669FE20046C1F5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A3EDE7462566A0180046C1F5 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
-		A3EF7C2D258E26F900B7BA37 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWrapView.swift; sourceTree = "<group>"; };
 		A3F25977224771F2009A50B6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A3F2597C2247762F009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -498,6 +500,32 @@
 				A3AFBD1F255F84C900760E5B /* Calendar Grid Widget */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		A308964325962896007F76CC /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A3089645259628B0007F76CC /* New */,
+				A3089644259628AA007F76CC /* Old */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A3089644259628AA007F76CC /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				A30BFECC25654DCE00BA7F38 /* CalendarWrapperView.swift */,
+				A30BFED125654DEF00BA7F38 /* CalendarHeaderView.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		A3089645259628B0007F76CC /* New */ = {
+			isa = PBXGroup;
+			children = (
+				A3089646259628BD007F76CC /* NewCalendarView.swift */,
+			);
+			path = New;
 			sourceTree = "<group>";
 		};
 		A31258942551B85700891CE2 /* AppIcons */ = {
@@ -827,9 +855,8 @@
 		A3BF8FAB258B9ED6003C7FD6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A308964325962896007F76CC /* Calendar */,
 				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
-				A30BFECC25654DCE00BA7F38 /* CalendarWrapperView.swift */,
-				A30BFED125654DEF00BA7F38 /* CalendarHeaderView.swift */,
 				A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */,
 				A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */,
 				A37FB8E325657857007C637C /* SettingsWrapperView.swift */,
@@ -840,7 +867,7 @@
 				A3BF8F9F258B9E5E003C7FD6 /* DaySupplementaryView.swift */,
 				A35B9B4D258CD4810027E1B3 /* EventViewer.swift */,
 				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
-				A3EF7C2D258E26F900B7BA37 /* InfoView.swift */,
+				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1334,7 +1361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E23633258CD7A7001BCB9F /* Unwrap.swift in Sources */,
-				A3EF7C2F258E26F900B7BA37 /* InfoView.swift in Sources */,
+				A3EF7C2F258E26F900B7BA37 /* InfoWrapView.swift in Sources */,
 				A38A4DB3254D744500B35F98 /* AppEvents.swift in Sources */,
 				A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */,
 				A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */,
@@ -1377,7 +1404,7 @@
 				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
-				A3EF7C2E258E26F900B7BA37 /* InfoView.swift in Sources */,
+				A3EF7C2E258E26F900B7BA37 /* InfoWrapView.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
 				A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */,
 				A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */,
@@ -1395,6 +1422,7 @@
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
+				A3089647259628BD007F76CC /* NewCalendarView.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
@@ -1479,7 +1507,7 @@
 				A35B9B62258CD6ED0027E1B3 /* MapWrapperView.swift in Sources */,
 				A359CE132588EA6E0089C4A2 /* Color+Themes.swift in Sources */,
 				A359CDB22588E93E0089C4A2 /* ContentView.swift in Sources */,
-				A3EF7C30258E26F900B7BA37 /* InfoView.swift in Sources */,
+				A3EF7C30258E26F900B7BA37 /* InfoWrapView.swift in Sources */,
 				A359CDE32588EA1F0089C4A2 /* DateInfoWidgetEventRow.swift in Sources */,
 				A3209BA1258CE315002470CF /* ViewModifiers.swift in Sources */,
 				A359CE3F2588EABC0089C4A2 /* AppInfo.swift in Sources */,
