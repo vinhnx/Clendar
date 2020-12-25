@@ -55,7 +55,7 @@ extension Calendar {
 	}
 }
 
-struct CalendarView<DateView>: View where DateView: View {
+struct CalendarGridView<DateView>: View where DateView: View {
 	// MARK: Lifecycle
 
 	init(
@@ -159,7 +159,7 @@ struct CalendarView<DateView>: View where DateView: View {
 	}
 }
 
-struct CalendarGridView: View {
+struct CalendarGridWidgetView: View {
 	@Environment(\.widgetFamily) var family
 
 	let entry: WidgetEntry
@@ -185,7 +185,7 @@ struct SmallCalendarGridView: View {
 	var body: some View {
 		VStack(alignment: .center) {
 			// swiftlint:disable:next force_unwrapping
-			CalendarView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
+			CalendarGridView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
 				Text(date.toShortDateString)
 					.font(.boldFontWithSize(10))
 					.foregroundColor(Calendar.current.isDateInToday(date) ? .appRed : .gray)

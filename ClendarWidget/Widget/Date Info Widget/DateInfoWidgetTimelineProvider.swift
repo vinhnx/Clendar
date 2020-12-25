@@ -31,7 +31,7 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
         Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
             switch result {
             case let .success(events):
-                let clendarEvents = events.compactMap(Event.init)
+                let clendarEvents = events.compactMap(ClendarEvent.init)
                 let entry = WidgetEntry(date: interval, events: clendarEvents)
                 entries.append(entry)
 

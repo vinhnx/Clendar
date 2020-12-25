@@ -11,5 +11,5 @@ import WidgetKit
 
 struct WidgetEntry: TimelineEntry {
 	var date: Date
-	var events: [Event] = []
+	var events: [ClendarEvent] = []
 }

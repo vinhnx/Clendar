@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EventListRow: View {
     var id = UUID() // somehow this fix problem when row should be reload after changes. Reference: https://github.com/onmyway133/blog/issues/625
-    var event: Event?
+    var event: ClendarEvent?
 
     var body: some View {
         if let ekEvent = event?.event {

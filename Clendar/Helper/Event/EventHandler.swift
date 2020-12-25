@@ -12,20 +12,20 @@ import Foundation
 import Shift
 
 class EventHandler {
-	static func viewEvent(_ event: Event?, delegate: EKEventViewDelegate?) {
+	static func viewEvent(_ event: ClendarEvent?, delegate: EKEventViewDelegate?) {
 		guard let ekEvent = event?.event else { return }
 		let eventViewer = EventViewerNavigationController(event: ekEvent, delegate: delegate)
 		UIViewController.topViewController?.present(eventViewer, animated: true, completion: nil)
 	}
 
-	static func editEvent(_ event: Event?, delegate: EKEventEditViewDelegate?) {
+	static func editEvent(_ event: ClendarEvent?, delegate: EKEventEditViewDelegate?) {
 		guard let ekEvent = event?.event else { return }
 		let eventViewer = EventEditViewController(delegate: delegate)
 		eventViewer.event = ekEvent
 		UIViewController.topViewController?.present(eventViewer, animated: true, completion: nil)
 	}
 
-	static func deleteEvent(_ event: Event?) {
+	static func deleteEvent(_ event: ClendarEvent?) {
 		UIViewController.topViewController?.dismissKeyboard()
 
 		guard let eventID = event?.id else { return }

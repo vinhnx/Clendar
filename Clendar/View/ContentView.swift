@@ -91,7 +91,7 @@ struct ContentView: View {
     }
 
     private var eventListView: some View {
-        EventListView(events: eventKitWrapper.events.compactMap(Event.init))
+        EventListView(events: eventKitWrapper.events.compactMap(ClendarEvent.init))
             .environmentObject(store)
     }
 

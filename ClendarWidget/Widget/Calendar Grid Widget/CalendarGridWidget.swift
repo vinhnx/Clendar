@@ -15,7 +15,7 @@ struct CalendarGridWidget: Widget {
 			kind: "CalendarGridWidget",
 			provider: DateInfoWidgetTimelineProvider()
 		) { entry in
-			CalendarGridView(entry: entry)
+			CalendarGridWidgetView(entry: entry)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
 				.background(Color(.backgroundColor))
 		}

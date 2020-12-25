@@ -8,20 +8,27 @@
 
 import SwiftUI
 
-struct InfoView: View {
-    var title: String
-    var titleImageName: String
-    var subtitle: String
+struct InfoWrapView<ContentView: View>: View {
+    struct InfoViewConfig {
+        var title: String
+        var titleImageName: String
+        var titleFontSize: CGFloat = 13
+        var titleFontColor: Color = .primaryColor
+    }
 
-    var titleFontSize: CGFloat = 13
-    var titleFontColor: Color = .primaryColor
+    let config: InfoViewConfig
+    let contentBuilder: () -> ContentView
+
+    init(config: InfoViewConfig, @ViewBuilder contentBuilder: @escaping () -> ContentView) {
+        self.config = config
+        self.contentBuilder = contentBuilder
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label(title, systemImage: titleImageName)
-                .modifier(BoldTextModifider(fontSize: titleFontSize, color: titleFontColor))
-            Text(subtitle)
-                .modifier(RegularTextModifider())
+            Label(config.title, systemImage: config.titleImageName)
+                .modifier(BoldTextModifider(fontSize: config.titleFontSize, color: config.titleFontColor))
+            contentBuilder()
         }
     }
 }

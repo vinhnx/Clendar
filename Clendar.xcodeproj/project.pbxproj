@@ -83,7 +83,7 @@
 		A359CDD52588E9650089C4A2 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD42588E9650089C4A2 /* Logging */; };
 		A359CDD72588E96C0089C4A2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A359CDD62588E96C0089C4A2 /* SwiftDate */; };
 		A359CDE32588EA1F0089C4A2 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
-		A359CDE92588EA280089C4A2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* Event.swift */; };
+		A359CDE92588EA280089C4A2 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A359CDEF2588EA390089C4A2 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A359CDF52588EA3F0089C4A2 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
 		A359CE012588EA540089C4A2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
@@ -110,7 +110,7 @@
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB8E325657857007C637C /* SettingsWrapperView.swift */; };
 		A38199F12548470F00C71D41 /* EventListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38199F02548470F00C71D41 /* EventListItemCell.xib */; };
-		A38199F625484D9E00C71D41 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* Event.swift */; };
+		A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A38199FA25484DB700C71D41 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F925484DB700C71D41 /* Section.swift */; };
 		A38199FE25484E7700C71D41 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199FD25484E7700C71D41 /* Layout.swift */; };
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
@@ -126,7 +126,7 @@
 		A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
-		A38A4DCA254D752200B35F98 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* Event.swift */; };
+		A38A4DCA254D752200B35F98 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8114224742F7009CC46A /* WorkItem.swift */; };
 		A38A4DD6254D755F00B35F98 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4DD5254D755F00B35F98 /* Logging */; };
 		A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
@@ -137,7 +137,7 @@
 		A39B71B3255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A39B71B4255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
-		A3AFBD2A255F85BA00760E5B /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridView.swift */; };
+		A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */; };
 		A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */; };
 		A3AFBD53255F871000760E5B /* CalendarGridTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */; };
@@ -339,7 +339,7 @@
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A37FB8E325657857007C637C /* SettingsWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapperView.swift; sourceTree = "<group>"; };
 		A38199F02548470F00C71D41 /* EventListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListItemCell.xib; sourceTree = "<group>"; };
-		A38199F525484D9E00C71D41 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A38199F525484D9E00C71D41 /* ClendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarEvent.swift; sourceTree = "<group>"; };
 		A38199F925484DB700C71D41 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A38199FD25484E7700C71D41 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A39B71BA255FB6540000162F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
-		A3AFBD20255F84E000760E5B /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
+		A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidgetView.swift; sourceTree = "<group>"; };
 		A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidget.swift; sourceTree = "<group>"; };
 		A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridTimelineProvider.swift; sourceTree = "<group>"; };
 		A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemCell.swift; sourceTree = "<group>"; };
@@ -772,7 +772,7 @@
 		A38199F425484D8600C71D41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A38199F525484D9E00C71D41 /* Event.swift */,
+				A38199F525484D9E00C71D41 /* ClendarEvent.swift */,
 				A38199F925484DB700C71D41 /* Section.swift */,
 				A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */,
 			);
@@ -792,7 +792,7 @@
 			children = (
 				A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */,
 				A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */,
-				A3AFBD20255F84E000760E5B /* CalendarGridView.swift */,
+				A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */,
 			);
 			path = "Calendar Grid Widget";
 			sourceTree = "<group>";
@@ -1341,7 +1341,7 @@
 				A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
-				A38A4DCA254D752200B35F98 /* Event.swift in Sources */,
+				A38A4DCA254D752200B35F98 /* ClendarEvent.swift in Sources */,
 				A38A4DAF254D743100B35F98 /* UserDefaultsWrapper.swift in Sources */,
 				A38A4D98254D73F400B35F98 /* Constants.swift in Sources */,
 				A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */,
@@ -1358,7 +1358,7 @@
 				A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */,
 				A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */,
-				A3AFBD2A255F85BA00760E5B /* CalendarGridView.swift in Sources */,
+				A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */,
 				A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */,
 				A3064D20254CEF5200C7F228 /* DateInfoWidget.swift in Sources */,
 				A31202C7254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift in Sources */,
@@ -1374,7 +1374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */,
-				A38199F625484D9E00C71D41 /* Event.swift in Sources */,
+				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A3EF7C2E258E26F900B7BA37 /* InfoView.swift in Sources */,
@@ -1486,7 +1486,7 @@
 				A359CDEF2588EA390089C4A2 /* UserDefaults+Extensions.swift in Sources */,
 				A359CDF52588EA3F0089C4A2 /* AppEvents.swift in Sources */,
 				A35B9B63258CD6ED0027E1B3 /* EventViewer.swift in Sources */,
-				A359CDE92588EA280089C4A2 /* Event.swift in Sources */,
+				A359CDE92588EA280089C4A2 /* ClendarEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1553,7 +1553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1577,7 +1577,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.ClendarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1719,7 +1719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1741,7 +1741,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

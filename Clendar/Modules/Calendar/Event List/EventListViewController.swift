@@ -11,7 +11,7 @@ import EventKitUI
 import UIKit
 import Shift
 
-internal typealias DataSource = UICollectionViewDiffableDataSource<Section, Event>
+internal typealias DataSource = UICollectionViewDiffableDataSource<Section, ClendarEvent>
 
 final class EventListViewController: BaseViewController {
 	// MARK: Internal
@@ -34,7 +34,7 @@ final class EventListViewController: BaseViewController {
 			guard let self = self else { return }
 			switch result {
 			case let .success(events):
-				let items = events.compactMap(Event.init)
+				let items = events.compactMap(ClendarEvent.init)
 				self.applySnapshot(items, date: date)
 
 			case let .failure(error): AlertManager.showWithError(error)
@@ -54,9 +54,9 @@ final class EventListViewController: BaseViewController {
 		)
 	}
 
-	func applySnapshot(_ items: [Event], date: Date?) {
+	func applySnapshot(_ items: [ClendarEvent], date: Date?) {
 		guard let date = date else { return }
-		var snapshot = NSDiffableDataSourceSnapshot<Section, Event>()
+		var snapshot = NSDiffableDataSourceSnapshot<Section, ClendarEvent>()
 		let section = Section(date: date, events: items)
 		snapshot.appendSections([section])
 		snapshot.appendItems(items, toSection: section)
