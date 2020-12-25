@@ -27,7 +27,7 @@ internal class EventViewerWrapperViewCoordinator: NSObject, EKEventViewDelegate 
 struct EventViewerWrapperView: UIViewControllerRepresentable {
     @EnvironmentObject var store: Store
 
-    var event: Event?
+    var event: ClendarEvent?
 
     func makeCoordinator() -> EventViewerWrapperViewCoordinator {
         EventViewerWrapperViewCoordinator(self)

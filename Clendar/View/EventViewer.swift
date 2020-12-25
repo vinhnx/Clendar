@@ -12,7 +12,7 @@ import SwiftUI
 struct EventViewer: View {
     @EnvironmentObject var store: Store
     @State private var didShowEventEdit = false
-    var event: Event
+    var event: ClendarEvent
 
     private var editButton: some View {
         Button(action: { didShowEventEdit.toggle() }, label: {})
@@ -36,14 +36,27 @@ struct EventViewer: View {
 
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
-            InfoView(title: "Recurring event", titleImageName: "repeat", subtitle: event.isDetached.asString)
-            if event.isDetached {
-                InfoView(title: "Recurring date", titleImageName: "calendar", subtitle: event.occurrenceDate.toString(.dateTime(.medium)))
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
+                Text(event.isDetached.asString).modifier(RegularTextModifider())
             }
 
-            InfoView(title: "All day", titleImageName: "tray.full.fill", subtitle: event.isAllDay.asString)
-            InfoView(title: "Start time", titleImageName: "clock", subtitle: event.startDate.toString(.dateTime(.medium)))
-            InfoView(title: "End time", titleImageName: "clock", subtitle: event.endDate.toString(.dateTime(.medium)))
+            if event.isDetached {
+                InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring date", titleImageName: "calendar")) {
+                    Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+                }
+            }
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full.fill")) {
+                Text(event.isAllDay.asString).modifier(RegularTextModifider())
+            }
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
+                Text(event.startDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+            }
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
+                Text(event.endDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+            }
         }
     }
 

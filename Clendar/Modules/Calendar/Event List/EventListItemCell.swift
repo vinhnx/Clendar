@@ -17,7 +17,7 @@ class EventListItemCell: UICollectionViewCell {
 	struct ViewModel {
 		// MARK: Lifecycle
 
-		init(event: Event? = nil) {
+		init(event: ClendarEvent? = nil) {
 			guard let event = event?.event else { return }
 			message = event.title
 			title = event.durationText()

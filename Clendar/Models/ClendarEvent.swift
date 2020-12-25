@@ -1,5 +1,5 @@
 //
-//  Event.swift
+//  ClendarEvent.swift
 //  Clendar
 //
 //  Created by Vinh Nguyen on 10/27/20.
@@ -11,7 +11,7 @@ import Foundation
 
 extension EKEvent: Identifiable {}
 
-class Event: Hashable, Identifiable {
+class ClendarEvent: Hashable, Identifiable {
 	// MARK: Lifecycle
 
 	init(event: EKEvent?) {
@@ -27,7 +27,7 @@ class Event: Hashable, Identifiable {
 		didSet { id = event?.eventIdentifier }
 	}
 
-	static func == (lhs: Event, rhs: Event) -> Bool {
+	static func == (lhs: ClendarEvent, rhs: ClendarEvent) -> Bool {
 		lhs.id == rhs.id
 	}
 

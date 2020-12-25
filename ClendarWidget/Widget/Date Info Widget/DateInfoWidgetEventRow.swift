@@ -11,7 +11,7 @@ import SwiftUI
 
 struct WidgetEventRow: View {
 	var id = UUID()
-	let event: Event
+	let event: ClendarEvent
 
 	var body: some View {
 		HStack(spacing: 5) {
@@ -22,7 +22,7 @@ struct WidgetEventRow: View {
 }
 
 struct WidgetEventRowLabel: View {
-	let event: Event
+	let event: ClendarEvent
 
 	var body: some View {
 		let message = event.event?.title ?? "-"
@@ -36,7 +36,7 @@ struct WidgetEventRowLabel: View {
 }
 
 struct WidgetEventColorBar: View {
-	let event: Event
+	let event: ClendarEvent
 
 	var body: some View {
 		RoundedRectangle(cornerRadius: 5, style: .continuous)

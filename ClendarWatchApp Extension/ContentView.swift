@@ -11,7 +11,7 @@ import Shift
 
 struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
-    @State private var selectedEvent: Event?
+    @State private var selectedEvent: ClendarEvent?
 
     var body: some View {
         NavigationView {
@@ -23,7 +23,7 @@ struct ContentView: View {
                             .font(.boldFontWithSize(11))
                             .foregroundColor(Color(.moianesB))
                     ) {
-                        ForEach(eventKitWrapper.events.compactMap(Event.init), id: \.self) { event in
+                        ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
                             NavigationLink(destination: EventViewer(event: event)) {
                                 WidgetEventRow(event: event)
                             }

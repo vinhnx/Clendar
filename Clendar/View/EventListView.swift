@@ -10,13 +10,13 @@ import SwiftUI
 
 struct EventListView: View {
     @EnvironmentObject var store: Store
-    @State private var selectedEvent: Event?
-    var events = [Event]()
+    @State private var selectedEvent: ClendarEvent?
+    var events = [ClendarEvent]()
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(alignment: .leading, spacing: 10) {
-                ForEach(events, id: \.id) { event in
+                ForEach(events, id: \.self) { event in
                     NavigationLink(
                         destination:
                             EventViewer(event: event)

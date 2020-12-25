@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import CVCalendar
 import Foundation
 import UIKit
 
@@ -86,29 +85,6 @@ enum DaySupplementaryType: String, CaseIterable {
 		case .none: return NSLocalizedString("None", comment: "")
 		case .lunarDate: return NSLocalizedString("Lunar date", comment: "")
 		case .oneDot: return NSLocalizedString("One dot", comment: "")
-		}
-	}
-}
-
-enum CalendarViewMode: Int, CaseIterable {
-	case month
-	case week
-
-	// MARK: Internal
-
-	static var titles: [String] = Self.allCases.map(\.text)
-
-	var mode: CVCalendarViewPresentationMode {
-		switch self {
-		case .week: return .weekView
-		case .month: return .monthView
-		}
-	}
-
-	var text: String {
-		switch self {
-		case .week: return NSLocalizedString("Week view", comment: "")
-		case .month: return NSLocalizedString("Month view", comment: "")
 		}
 	}
 }

@@ -32,7 +32,9 @@ import Shift
  + duong lich <-> am lich
  ==
  OPTIONAL
- + macOS app https://developer.apple.com/forums/thread/649675
+ + macOS app
+    > https://developer.apple.com/forums/thread/649675
+    > https://developer.apple.com/tutorials/swiftui/creating-a-macos-app
  + badge app style <- NOTE: should have background fetch to update badge as date change, disable for now!
  + local notification
  + [future] future: reminders/tasks

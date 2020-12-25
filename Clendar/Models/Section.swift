@@ -12,7 +12,7 @@ import Foundation
 class Section: Hashable {
 	// MARK: Lifecycle
 
-	init(date: Date?, events: [Event]) {
+	init(date: Date?, events: [ClendarEvent]) {
 		self.date = date
 		self.events = events
 	}
@@ -21,7 +21,7 @@ class Section: Hashable {
 
 	var id = UUID()
 	var date: Date?
-	var events: [Event]
+	var events: [ClendarEvent]
 
 	static func == (lhs: Section, rhs: Section) -> Bool {
 		lhs.id == rhs.id

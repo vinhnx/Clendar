@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks.sh
+${BUILT_PRODUCTS_DIR}/KVKCalendar/KVKCalendar.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyChrono/SwiftyChrono.framework
