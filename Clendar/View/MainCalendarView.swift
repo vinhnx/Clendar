@@ -1,5 +1,5 @@
 //
-//  NewCalendarView.swift
+//  MainCalendarView.swift
 //  Clendar
 //
 //  Created by Vĩnh Nguyễn on 25/12/2020.
@@ -11,7 +11,7 @@ import SwiftUI
 import KVKCalendar
 import EventKit
 
-struct NewCalendarView: UIViewRepresentable {
+struct MainCalendarView: UIViewRepresentable {
     @EnvironmentObject var store: Store
 
     var calendar: CalendarView = {
@@ -43,25 +43,25 @@ struct NewCalendarView: UIViewRepresentable {
                             style: style)
     }()
 
-    func makeUIView(context: UIViewRepresentableContext<NewCalendarView>) -> CalendarView {
+    func makeUIView(context: UIViewRepresentableContext<MainCalendarView>) -> CalendarView {
         calendar.dataSource = context.coordinator
         calendar.delegate = context.coordinator
         calendar.reloadData()
         return calendar
     }
 
-    func updateUIView(_ uiView: CalendarView, context: UIViewRepresentableContext<NewCalendarView>) {}
+    func updateUIView(_ uiView: CalendarView, context: UIViewRepresentableContext<MainCalendarView>) {}
 
-    func makeCoordinator() -> NewCalendarView.Coordinator {
+    func makeCoordinator() -> MainCalendarView.Coordinator {
         Coordinator(self)
     }
 
     // MARK: Calendar DataSource and Delegate
     class Coordinator: NSObject, CalendarDataSource, CalendarDelegate {
 
-        private let view: NewCalendarView
+        private let view: MainCalendarView
 
-        init(_ view: NewCalendarView) {
+        init(_ view: MainCalendarView) {
             self.view = view
             super.init()
         }
@@ -81,8 +81,8 @@ struct NewCalendarView: UIViewRepresentable {
 struct Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NewCalendarView()
-            NewCalendarView().environment(\.colorScheme, .dark)
+            MainCalendarView()
+            MainCalendarView().environment(\.colorScheme, .dark)
         }
     }
 }

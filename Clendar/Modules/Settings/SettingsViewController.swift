@@ -68,21 +68,6 @@ final class SettingsViewController: FormViewController {
 		return proxy
 	}()
 
-	lazy var calendarMode: SegmentedControlFormItem = {
-		let proxy = SegmentedControlFormItem()
-		proxy.title = NSLocalizedString("View mode", comment: "")
-		proxy.items = CalendarViewMode.titles
-		proxy.selected = SettingsManager.monthViewCalendarMode
-			? CalendarViewMode.month.rawValue
-			: CalendarViewMode.week.rawValue
-		proxy.valueDidChangeBlock = { index in
-			let mode = CalendarViewMode(rawValue: index)
-			SettingsManager.monthViewCalendarMode = mode == .month
-			NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
-		}
-		return proxy
-	}()
-
 	lazy var showDaysOut: SwitchFormItem = {
 		let instance = SwitchFormItem()
 		instance.title = NSLocalizedString("Show days out", comment: "")

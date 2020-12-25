@@ -43,7 +43,7 @@ struct ContentView: View {
             .environmentObject(store)
     }
 
-    private let calendarView = NewCalendarView()
+    private let calendarView = MainCalendarView()
 
     private var eventView: some View {
         VStack {
