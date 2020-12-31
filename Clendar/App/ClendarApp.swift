@@ -6,10 +6,6 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-#if os(iOS)
-import IQKeyboardManagerSwift
-#endif
-
 import SwiftDate
 import SwiftUI
 import Shift
@@ -22,14 +18,8 @@ import Shift
  TODO:
  + clean up project folder
  + REGISTER APPLE ACCOUNT AND JUST PUBLISH IT
- + [WIP done] change Calendar control:
-    > https://github.com/kvyatkovskys/KVKCalendar
-    > when done, remeber to change settings apply too
  + [!] IAP, tip jars  => make more money
     > Testing IAP https://github.com/vinhnx/notes/issues/352
- + double check Vietnamese translation
- + [done for UIKit, try to do in SwiftUI]
- + 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  + renew Apple Account -> create bundle id, setup IAP -> tip jar: https://github.com/lionheart/TipJarViewController
  + landing page https://github.com/emilbaehr/automatic-app-landing-page
  + rating prompt https://developer.apple.com/documentation/storekit/skstorereviewcontroller/requesting_app_store_reviews
@@ -52,6 +42,11 @@ import Shift
 
  ==
  DONE:
+ + [WIP done] change Calendar control:
+    > https://github.com/kvyatkovskys/KVKCalendar
+    > when done, remeber to change settings apply too
+ + [done] double check Vietnamese translation
+ + [done for UIKit, try to do in SwiftUI] 3D/haptic touch shortcut from homescreen (https://developer.apple.com/documentation/uikit/menus_and_shortcuts/add_home_screen_quick_actions)
  > [done] use https://github.com/mohakapt/Stringz to manage localization
  + [done] iPad app ?
  + [done] watch app (?)
@@ -97,16 +92,13 @@ import Shift
 
 @main
 struct ClendarApp: App {
-    @Environment(\.scenePhase) var scenePhase
-
     let store = Store()
 
     init() { configure() }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(store)
+            ContentView().environmentObject(store)
         }
     }
 }
@@ -117,9 +109,6 @@ extension ClendarApp {
 
     private func configure() {
         #if os(iOS)
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         UIApplication.shared.applicationIconBadgeNumber = 0
         #endif
 

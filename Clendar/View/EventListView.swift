@@ -21,7 +21,6 @@ struct EventListView: View {
                         destination:
                             EventViewer(event: event)
                             .navigationBarTitle("", displayMode: .inline)
-
                             .environmentObject(store)
                             .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                     ) {

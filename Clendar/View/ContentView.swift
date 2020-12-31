@@ -100,6 +100,7 @@ struct ContentView: View {
             .environment(\.colorScheme, appColorScheme)
             .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
             .modifier(HideNavigationBarModifier())
+            .ignoresSafeArea(.keyboard, edges: .bottom)
         }
         .onAppear {
             selectDate(Date())

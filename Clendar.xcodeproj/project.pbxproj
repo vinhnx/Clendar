@@ -24,7 +24,6 @@
 		A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
 		A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41372541FB2A009AAC32 /* AppEvents.swift */; };
 		A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
-		A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */; };
 		A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A31202C7254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
 		A312589E2551B91600891CE2 /* dark_icon_120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31258972551B91600891CE2 /* dark_icon_120@2x.png */; };
@@ -396,7 +395,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A30F56222549AA7600E96C0E /* IQKeyboardManagerSwift in Frameworks */,
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
@@ -932,7 +930,6 @@
 				A3BA42F5253F3AE00007DDFB /* Logging */,
 				A3187E8025499C29009524DF /* SwiftyFORM */,
 				A3D999E52549A69F003E08E2 /* SwiftDate */,
-				A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */,
 				A38EE832254EC6CA00045C12 /* Haptica */,
 				A3560CFD2567FB6F009088E7 /* Then */,
 				A3209B44258CE14C002470CF /* Shift */,
@@ -1068,7 +1065,6 @@
 				A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */,
 				A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */,
 				A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */,
-				A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
@@ -1963,14 +1959,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.6;
-			};
-		};
 		A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neoneye/SwiftyFORM";
@@ -2022,11 +2010,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A30F56212549AA7600E96C0E /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A30F56202549AA7600E96C0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
 		A3187E8025499C29009524DF /* SwiftyFORM */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
