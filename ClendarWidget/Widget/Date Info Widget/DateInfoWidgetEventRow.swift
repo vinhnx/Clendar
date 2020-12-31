@@ -39,9 +39,9 @@ struct WidgetEventColorBar: View {
 	let event: ClendarEvent
 
 	var body: some View {
-		RoundedRectangle(cornerRadius: 5, style: .continuous)
+        Capsule(style: .circular)
 			.fill(Color(event.event?.calendar.cgColor ?? CGColor(gray: 1, alpha: 1)))
-			.frame(width: 5, height: 20)
+			.frame(width: 3)
 	}
 }
 
