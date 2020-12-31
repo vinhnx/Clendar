@@ -69,6 +69,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+fastlane/Appfile
 
 # Code Injection
 # After new code Injection tools there's a generated folder /iOSInjectionProject
@@ -78,5 +79,6 @@ iOSInjectionProject/
 
 *.generated.swift
 
-# End of https://www.gitignore.io/api/swift
+TODO.md
 
+# End of https://www.gitignore.io/api/swift
