@@ -70,7 +70,7 @@ struct ContentView: View {
 
             Button(
                 action: { calendarView.calendar.scrollTo(Date()) },
-                label: { Image(systemName: "calendar.circle") }
+                label: { Image(systemName: "arrow.clockwise") }
             )
         }
         .accentColor(.appRed)
