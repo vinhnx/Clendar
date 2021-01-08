@@ -21,9 +21,17 @@ internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDeleg
 
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true) {
-            guard action != .canceled else { return }
-            guard let event = controller.event else { return }
-            self.wrapperView.store.selectedDate = event.startDate
+            switch action {
+            case .canceled, .deleted:
+                break
+            case .saved:
+                guard let event = controller.event else { return }
+                self.wrapperView.store.selectedDate = event.startDate
+                NotificationCenter.default.post(name: .didSaveEvent, object: event.startDate)
+            @unknown default:
+                break
+            }
+
         }
     }
 

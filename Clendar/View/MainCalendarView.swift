@@ -19,6 +19,7 @@ struct MainCalendarView: UIViewRepresentable {
         style.defaultType = .month
         style.followInSystemTheme = false
 
+        style.calendar = Calendar.shared()
         style.week.colorBackground = .backgroundColor
         style.week.colorDate = .appLightGray
         style.week.colorWeekendDate = .appLightGray

@@ -362,6 +362,7 @@
 		A3F25977224771F2009A50B6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A3F2597C2247762F009A50B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		A3FA4D19259E2F59009D4F39 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		A3FB5B36255C20D30038AFCE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -551,6 +552,7 @@
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
+				A3FA4D19259E2F59009D4F39 /* TODO.md */,
 				A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,

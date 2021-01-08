@@ -17,7 +17,7 @@ extension Notification.Name {
 
 	static let didAuthorizeCalendarAccess = Notification.Name(rawValue: "didAuthorizeCalendarAccess")
 	static let didDeleteEvent = Notification.Name(rawValue: "didDeleteEvent")
-	static let didCreateEvent = Notification.Name(rawValue: "didCreateEvent")
+	static let didSaveEvent = Notification.Name(rawValue: "didSaveEvent")
 
 	// MARK: - Settings
 

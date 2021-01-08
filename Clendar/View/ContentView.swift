@@ -123,6 +123,11 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
         }
+        .onReceive(NotificationCenter.default.publisher(for: .didSaveEvent)) { (notification) in
+            if let date = notification.object as? Date {
+                calendarView.calendar.scrollTo(date)
+            }
+        }
     }
 }
 
