@@ -16,7 +16,7 @@ struct EventViewer: View {
 
     private var editButton: some View {
         Button(action: { didShowEventEdit.toggle() }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: .primaryColor))
+            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: .appRed))
             .sheet(isPresented: $didShowEventEdit) {
                 #if !os(watchOS)
                 EventViewerWrapperView(event: event)
@@ -37,25 +37,25 @@ struct EventViewer: View {
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
-                Text(event.isDetached.asString).modifier(RegularTextModifider())
+                Text(event.isDetached.asString).modifier(MediumTextModifider())
             }
 
             if event.isDetached {
                 InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring date", titleImageName: "calendar")) {
-                    Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+                    Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
                 }
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full.fill")) {
-                Text(event.isAllDay.asString).modifier(RegularTextModifider())
+                Text(event.isAllDay.asString).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
-                Text(event.startDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+                Text(event.startDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
-                Text(event.endDate.toString(.dateTime(.medium))).modifier(RegularTextModifider())
+                Text(event.endDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
             }
         }
     }
@@ -65,7 +65,7 @@ struct EventViewer: View {
             VStack(alignment: .leading, spacing: 30) {
                 Unwrap(event.event) { (event: EKEvent) in
                     Text(event.title)
-                        .modifier(BoldTextModifider(fontSize: 20, color: .appRed))
+                        .modifier(BoldTextModifider(fontSize: 20, color: .appDark))
 
                     Divider()
 

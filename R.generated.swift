@@ -88,10 +88,21 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
 
-  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
   struct color {
+    /// Color `AccentColor`.
+    static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `LaunchScreenBackgroundColor`.
     static let launchScreenBackgroundColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "LaunchScreenBackgroundColor")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "LaunchScreenBackgroundColor", bundle: ..., traitCollection: ...)`

@@ -12,8 +12,8 @@ struct InfoWrapView<ContentView: View>: View {
     struct InfoViewConfig {
         var title: String
         var titleImageName: String
-        var titleFontSize: CGFloat = 13
-        var titleFontColor: Color = .primaryColor
+        var titleFontSize: CGFloat = 15
+        var titleFontColor: Color = .accentColor
     }
 
     let config: InfoViewConfig

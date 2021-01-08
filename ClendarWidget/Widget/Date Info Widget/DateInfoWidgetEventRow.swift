@@ -25,13 +25,15 @@ struct WidgetEventRowLabel: View {
 	let event: ClendarEvent
 
 	var body: some View {
-		let message = event.event?.title ?? "-"
-		let title = event.event?.durationText(startDateOnly: true) ?? "-"
-		let titleAndMessage = "[\(title)] \(message)"
-		Text(titleAndMessage)
-			.font(.semiboldFontWithSize(12))
-			.foregroundColor(Color(.gray))
-			.lineLimit(2)
+        VStack(alignment: .leading, content: {
+            let message = event.event?.title ?? "-"
+            let title = event.event?.durationText(startDateOnly: true) ?? "-"
+            let titleAndMessage = "[\(title)] \(message)"
+            Text(titleAndMessage)
+                .font(.semiboldFontWithSize(12))
+                .foregroundColor(Color(.gray))
+                .lineLimit(2)
+        })
 	}
 }
 
