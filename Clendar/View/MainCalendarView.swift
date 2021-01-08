@@ -20,9 +20,12 @@ struct MainCalendarView: UIViewRepresentable {
         style.followInSystemTheme = false
 
         style.calendar = Calendar.shared()
+        style.locale = Locale.current
+        style.timezone = TimeZone.current
+
         style.week.colorBackground = .backgroundColor
-        style.week.colorDate = .appLightGray
-        style.week.colorWeekendDate = .appLightGray
+        style.week.colorDate = .appDark
+        style.week.colorWeekendDate = .appDark
 
         style.month.scrollDirection = .horizontal
         style.month.colorBackground = .backgroundColor
@@ -35,6 +38,7 @@ struct MainCalendarView: UIViewRepresentable {
         style.month.colorTitleDate = .primaryColor
         style.month.colorBackgroundSelectDate = .appLightGray
         style.month.colorWeekendDate = .appRed
+        style.month.colorBackgroundCurrentDate = .appRed
         style.month.colorNameEmptyDay = style.month.colorDate.withAlphaComponent(0.3)
         style.month.showDatesForOtherMonths = true
         style.month.isAnimateSelection = true

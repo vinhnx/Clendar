@@ -40,7 +40,7 @@ public enum TimeHourSystem: Int {
         }
     }
     
-    @available(swift, deprecated: 0.4.2, obsoleted: 0.4.3, renamed: "current")
+    @available(*, deprecated, renamed: "current")
     public static var currentSystemOnDevice: TimeHourSystem? {
         let locale = NSLocale.current
         guard let formatter = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: locale) else { return nil }
@@ -74,7 +74,7 @@ public enum TimeHourSystem: Int {
 }
 
 public enum CalendarType: String, CaseIterable {
-    case day, week, month, year
+    case day, week, month, year, list
 }
 
 @available(swift, deprecated: 0.4.1, obsoleted: 0.4.2, renamed: "Event.Color")
@@ -93,10 +93,10 @@ public struct Event {
     
     /// unique identifier of Event
     public var ID: String
-    public var text: String
-    public var start: Date
-    public var end: Date
-    public var color: Event.Color? {
+    public var text: String = ""
+    public var start: Date = Date()
+    public var end: Date = Date()
+    public var color: Event.Color? = Event.Color(.systemBlue) {
         didSet {
             guard let tempColor = color else { return }
             
@@ -105,33 +105,27 @@ public struct Event {
             textColor = value.text
         }
     }
-    public var backgroundColor: UIColor
-    public var textColor: UIColor
-    public var isAllDay: Bool
-    public var isContainsFile: Bool
-    public var textForMonth: String
-    public var eventData: Any?
-    public var recurringType: Event.RecurringType
+    public var backgroundColor: UIColor = UIColor.systemBlue.withAlphaComponent(0.3)
+    public var textColor: UIColor = .white
+    public var isAllDay: Bool = false
+    public var isContainsFile: Bool = false
+    public var textForMonth: String = ""
+    public var textForList: String = ""
     
-    public init(ID: String, text: String = "", start: Date = Date(), end: Date = Date(), color: Event.Color? = Event.Color(UIColor.systemBlue), backgroundColor: UIColor = UIColor.systemBlue.withAlphaComponent(0.3), textColor: UIColor = .white, isAllDay: Bool = false, isContainsFile: Bool = false, textForMonth: String = "", eventData: Any? = nil, recurringType: Event.RecurringType = .none) {
+    @available(*, deprecated, renamed: "data")
+    public var eventData: Any? = nil
+    public var data: Any? = nil
+    
+    public var recurringType: Event.RecurringType = .none
+    
+    public init(ID: String) {
         self.ID = ID
-        self.text = text
-        self.start = start
-        self.end = end
-        self.color = color
-        self.backgroundColor = backgroundColor
-        self.textColor = textColor
-        self.isAllDay = isAllDay
-        self.isContainsFile = isContainsFile
-        self.textForMonth = textForMonth
-        self.eventData = eventData
-        self.recurringType = recurringType
         
-        guard let tempColor = color else { return }
-        
-        let value = prepareColor(tempColor)
-        self.backgroundColor = value.background
-        self.textColor = value.text
+        if let tempColor = color {
+            let value = prepareColor(tempColor)
+            backgroundColor = value.background
+            textColor = value.text
+        }
     }
     
     func prepareColor(_ color: Event.Color) -> (background: UIColor, text: UIColor) {
@@ -241,11 +235,16 @@ public protocol EventProtocol {
 protocol CalendarSettingProtocol: class {
     func reloadFrame(_ frame: CGRect)
     func updateStyle(_ style: Style)
+    func reloadData(_ events: [Event])
+    func setDate(_ date: Date)
     func setUI()
 }
 
 extension CalendarSettingProtocol {
     func setUI() {}
+    func updateStyle(_ style: Style) {}
+    func reloadData(_ events: [Event]) {}
+    func setDate(_ date: Date) {}
 }
 
 // MARK: - Data source protocol
@@ -287,11 +286,19 @@ protocol DisplayDataSource: class {
     
     func dequeueDateCell(date: Date?, type: CalendarType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell?
     
+    func dequeueListCell(date: Date?, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell?
+    
+    func dequeueListHeader(date: Date?, tableView: UITableView, section: Int) -> UIView?
+    
     @available(iOS 13.0, *)
     func willDisplayContextMenu(_ event: Event, date: Date?) -> UIContextMenuConfiguration?
 }
 
 extension DisplayDataSource {
+    func dequeueListHeader(date: Date?, tableView: UITableView, section: Int) -> UIView? { return nil }
+    
+    func dequeueListCell(date: Date?, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell? { return nil }
+    
     func dequeueDateCell(date: Date?, type: CalendarType, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell? { return nil }
     
     func willDisplayEventView(_ event: Event, frame: CGRect, date: Date?) -> EventViewGeneral? { return nil }
@@ -305,7 +312,9 @@ extension DisplayDataSource {
 // MARK: - Delegate protocol
 
 public protocol CalendarDelegate: class {
-    /// size cell for month view
+    func sizeForHeader(_ date: Date?, type: CalendarType) -> CGSize?
+    
+    /// size cell for (month, year, list) view
     func sizeForCell(_ date: Date?, type: CalendarType) -> CGSize?
     
     /// get a selecting date
@@ -337,6 +346,8 @@ public protocol CalendarDelegate: class {
 }
 
 public extension CalendarDelegate {
+    func sizeForHeader(_ date: Date?, type: CalendarType) -> CGSize? { return nil }
+    
     func sizeForCell(_ date: Date?, type: CalendarType) -> CGSize? { return nil }
     
     func didSelectDate(_ date: Date?, type: CalendarType, frame: CGRect?) {}
@@ -363,6 +374,8 @@ public extension CalendarDelegate {
 // MARK: - Private Display delegate
 
 protocol DisplayDelegate: class {
+    func sizeForHeader(_ date: Date?, type: CalendarType) -> CGSize?
+    
     func sizeForCell(_ date: Date?, type: CalendarType) -> CGSize?
     
     func didDisplayCalendarEvents(_ events: [Event], dates: [Date?], type: CalendarType)
@@ -385,14 +398,15 @@ protocol DisplayDelegate: class {
 // MARK: EKEvent
 
 public extension EKEvent {
-    func transform(text: String? = nil) -> Event {
-        let event = Event(ID: eventIdentifier,
-                          text: text ?? title,
-                          start: startDate,
-                          end: endDate,
-                          color: Event.Color(UIColor(cgColor: calendar.cgColor)),
-                          isAllDay: isAllDay,
-                          textForMonth: title)
+    func transform(text: String? = nil, textForMonth: String? = nil, textForList: String? = nil) -> Event {
+        var event = Event(ID: eventIdentifier)
+        event.text = text ?? title
+        event.start = startDate
+        event.end = endDate
+        event.color = Event.Color(UIColor(cgColor: calendar.cgColor))
+        event.isAllDay = isAllDay
+        event.textForMonth = textForMonth ?? title
+        event.textForList = textForList ?? title
         return event
     }
 }

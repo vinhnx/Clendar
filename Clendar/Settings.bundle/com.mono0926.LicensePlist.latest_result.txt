@@ -1,6 +1,6 @@
 name: KVKCalendar, nameSpecified: 
 body: Copyright (c) 2019 S…
-version: 0.4.3
+version: 0.4.4
 
 name: LicensePlist, nameSpecified: 
 body: MIT License

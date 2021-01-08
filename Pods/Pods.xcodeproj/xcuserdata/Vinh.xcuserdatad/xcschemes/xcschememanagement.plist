@@ -58,21 +58,21 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>12</integer>
 		</dict>
 		<key>SwiftLint.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>13</integer>
 		</dict>
 		<key>SwiftyChrono.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>14</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

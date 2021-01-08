@@ -1,4 +1,4 @@
-<img src="Screenshots/iphone.png" width="280"> <img src="Screenshots/ipad.png" width="530">
+<img src="Screenshots/iphone_month.png" width="280"> <img src="Screenshots/ipad_white.png" width="530">
 
 [![CI Status](https://img.shields.io/travis/kvyatkovskys/KVKCalendar.svg?style=flat)](https://travis-ci.org/kvyatkovskys/KVKCalendar)
 [![Version](https://img.shields.io/cocoapods/v/KVKCalendar.svg?style=flat)](https://cocoapods.org/pods/KVKCalendar)
@@ -17,8 +17,7 @@ Please, use [Issues](https://github.com/kvyatkovskys/KVKCalendar/issues) only fo
 
 ## Requirements
 
-- iOS 10.0+
-- MacOS 10.15+ (Supports Mac Catalyst)
+- iOS 10.0+, iPadOS 10.0+, MacOS 10.15+ (Supports Mac Catalyst)
 - Swift 5.0+
 
 ## Installation
@@ -64,8 +63,7 @@ extension ViewController {
         let models = // Get events from storage / API
         
         let events = models.compactMap({ (item) in
-            var event = Event()
-            event.ID = item.id
+            var event = Event(ID: item.id)
             event.start = item.startDate // start date event
             event.end = item.endDate // end date event
             event.color = item.color
