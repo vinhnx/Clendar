@@ -20,7 +20,11 @@ struct ContentView: View {
     // MARK: - Views Compositions
 
     private var addButton: some View {
-        Button(action: { showCreateEventState.toggle() }, label: {})
+        Button(
+            action: {
+                genLightHaptic()
+                showCreateEventState.toggle()
+        }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "calendar.badge.plus", title: "Add event"))
             .sheet(isPresented: $showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
@@ -57,7 +61,10 @@ struct ContentView: View {
     private var menuView: some View {
         HStack(spacing: 20) {
             Button(
-                action: { showSettingsState.toggle() },
+                action: {
+                    genLightHaptic()
+                    showSettingsState.toggle()
+                },
                 label: { Image(systemName: "gearshape") }
             )
             .sheet(
@@ -69,7 +76,10 @@ struct ContentView: View {
             )
 
             Button(
-                action: { calendarView.calendar.scrollTo(Date()) },
+                action: {
+                    genLightHaptic()
+                    calendarView.calendar.scrollTo(Date())
+                },
                 label: { Image(systemName: "arrow.clockwise") }
             )
         }
@@ -125,6 +135,7 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .didSaveEvent)) { (notification) in
             if let date = notification.object as? Date {
+                genLightHaptic()
                 calendarView.calendar.scrollTo(date)
             }
         }
@@ -133,6 +144,7 @@ struct ContentView: View {
 
 extension ContentView {
     private func selectDate(_ date: Date) {
+        genLightHaptic()
         fetchEvents(for: date)
     }
 
