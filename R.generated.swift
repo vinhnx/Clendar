@@ -277,7 +277,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 62 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 68 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -335,6 +335,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let chooseYourDesiredAppIcon = Rswift.StringResource(key: "Choose your desired app icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Collapse this view
+      ///
+      /// Locales: en, vi
+      static let collapseThisView = Rswift.StringResource(key: "Collapse this view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Create new event
+      ///
+      /// Locales: en, vi
+      static let createNewEvent = Rswift.StringResource(key: "Create new event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Custom App Icon
       ///
       /// Locales: en, vi
@@ -383,6 +391,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let english = Rswift.StringResource(key: "English", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Event duration
+      ///
+      /// Locales: en, vi
+      static let eventDuration = Rswift.StringResource(key: "Event duration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: General
       ///
       /// Locales: en, vi
@@ -391,6 +403,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let hapticFeedback = Rswift.StringResource(key: "Haptic feedback", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Input event
+      ///
+      /// Locales: en, vi
+      static let inputEvent = Rswift.StringResource(key: "Input event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Light
       ///
       /// Locales: en, vi
@@ -419,6 +435,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let name = Rswift.StringResource(key: "Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: New event
+      ///
+      /// Locales: en, vi
+      static let newEvent = Rswift.StringResource(key: "New event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: None
       ///
       /// Locales: en, vi
@@ -483,6 +503,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let themes = Rswift.StringResource(key: "Themes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Title of the event
+      ///
+      /// Locales: en, vi
+      static let titleOfTheEvent = Rswift.StringResource(key: "Title of the event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Upcoming events
       ///
       /// Locales: en, vi
@@ -738,6 +762,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Choose your desired app icon", bundle: bundle, comment: "")
       }
 
+      /// en translation: Collapse this view
+      ///
+      /// Locales: en, vi
+      static func collapseThisView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Collapse this view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Collapse this view"
+        }
+
+        return NSLocalizedString("Collapse this view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Create new event
+      ///
+      /// Locales: en, vi
+      static func createNewEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Create new event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Create new event"
+        }
+
+        return NSLocalizedString("Create new event", bundle: bundle, comment: "")
+      }
+
       /// en translation: Custom App Icon
       ///
       /// Locales: en, vi
@@ -918,6 +972,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("English", bundle: bundle, comment: "")
       }
 
+      /// en translation: Event duration
+      ///
+      /// Locales: en, vi
+      static func eventDuration(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Event duration", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Event duration"
+        }
+
+        return NSLocalizedString("Event duration", bundle: bundle, comment: "")
+      }
+
       /// en translation: General
       ///
       /// Locales: en, vi
@@ -946,6 +1015,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Haptic feedback", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Input event
+      ///
+      /// Locales: en, vi
+      static func inputEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Input event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Input event"
+        }
+
+        return NSLocalizedString("Input event", bundle: bundle, comment: "")
       }
 
       /// en translation: Light
@@ -1051,6 +1135,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Name", bundle: bundle, comment: "")
+      }
+
+      /// en translation: New event
+      ///
+      /// Locales: en, vi
+      static func newEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("New event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "New event"
+        }
+
+        return NSLocalizedString("New event", bundle: bundle, comment: "")
       }
 
       /// en translation: None
@@ -1291,6 +1390,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Themes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Title of the event
+      ///
+      /// Locales: en, vi
+      static func titleOfTheEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Title of the event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Title of the event"
+        }
+
+        return NSLocalizedString("Title of the event", bundle: bundle, comment: "")
       }
 
       /// en translation: Upcoming events

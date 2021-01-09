@@ -112,6 +112,7 @@
 		A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */; };
 		A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */; };
 		A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */; };
+		A38956AC25AA079A004C9334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4D85254D6F7300B35F98 /* SwiftDate */; };
 		A38A4D98254D73F400B35F98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810F22474137009CC46A /* Constants.swift */; };
 		A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38A4D9E254D740400B35F98 /* EventKit.framework */; };
@@ -1124,6 +1125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A359CDBB2588E9400089C4A2 /* Preview Assets.xcassets in Resources */,
+				A38956AC25AA079A004C9334 /* Localizable.strings in Resources */,
 				A359CDB82588E9400089C4A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
