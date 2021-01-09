@@ -78,7 +78,7 @@ enum DaySupplementaryType: String, CaseIterable {
 
 	static var titles: [String] = Self.allCases.map(\.localizedText)
 
-	static var defaultValue: Self { .oneDot }
+	static var defaultValue: Self { .none }
 
 	var localizedText: String {
 		switch self {
