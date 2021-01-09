@@ -35,10 +35,7 @@ struct QuickEventView: View {
 		VStack {
 			HStack {
 				Button(
-					action: {
-                        genLightHaptic()
-                        showCreateEventState.toggle()
-                    },
+					action: { showCreateEventState.toggle() },
 					label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
