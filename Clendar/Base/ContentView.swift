@@ -138,6 +138,7 @@ struct ContentView: View {
         }
         .onAppear {
             selectDate(Date())
+            ReviewManager().askForReviewIfNeeded()
         }
         .onReceive(store.$selectedDate) { date in
             selectDate(date)

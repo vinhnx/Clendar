@@ -30,6 +30,7 @@ extension ClendarApp {
     private func configure() {
         #if os(iOS)
         UIApplication.shared.applicationIconBadgeNumber = 0
+        ReviewManager().trackLaunch()
         #endif
 
         logger.logLevel = .debug
