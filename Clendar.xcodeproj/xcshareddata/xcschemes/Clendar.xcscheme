@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Clendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A33F80E422467A85009CC46A"
+               BuildableName = "ClendarUITests.xctest"
+               BlueprintName = "ClendarUITests"
+               ReferencedContainer = "container:Clendar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -44,16 +58,6 @@
                BlueprintIdentifier = "A33F80D922467A85009CC46A"
                BuildableName = "ClendarTests.xctest"
                BlueprintName = "ClendarTests"
-               ReferencedContainer = "container:Clendar.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A33F80E422467A85009CC46A"
-               BuildableName = "ClendarUITests.xctest"
-               BlueprintName = "ClendarUITests"
                ReferencedContainer = "container:Clendar.xcodeproj">
             </BuildableReference>
          </TestableReference>
