@@ -43,6 +43,7 @@ struct ContentView: View {
             Spacer()
             monthHeaderView
         }
+        .padding([.leading, .trailing], 20)
     }
 
     private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
@@ -53,7 +54,6 @@ struct ContentView: View {
                 .frame(height: Constants.CalendarView.calendarHeight)
         }
         .padding()
-
     }
 
     private var addButton: some View {
@@ -88,7 +88,7 @@ struct ContentView: View {
         VStack {
             topView
             makeCalendarGroupView()
-            eventListView.padding(.bottom, 50)
+            eventListView
         }
     }
 

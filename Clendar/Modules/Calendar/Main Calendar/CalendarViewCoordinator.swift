@@ -76,7 +76,7 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
         let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.frame, shape: CVShape.circle)
-        circleView.fillColor = .appLightGray
+        circleView.fillColor = UIColor.primaryColor.withAlphaComponent(0.3)
         return circleView
     }
 
