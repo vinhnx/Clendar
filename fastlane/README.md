@@ -81,11 +81,6 @@ Create release git tag and push to upstream
 fastlane ios buildAppStore
 ```
 Build App Store
-### ios testtime
-```
-fastlane ios testtime
-```
-
 ### ios makeAppStoreBuild
 ```
 fastlane ios makeAppStoreBuild
