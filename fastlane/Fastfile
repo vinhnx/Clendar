@@ -18,8 +18,194 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Create app on Apple Developer and App Store Connect sites"
-  lane :create_app do
-    produce
+
+  ### Constants
+  project = "Clendar.xcodeproj"
+  workspace = "Clendar.xcworkspace"
+  plist_path = "./Clendar/Resources/Info.plist"
+  app_name = "Clendar"
+  
+  ### .ipa build path
+  pwd = `pwd`
+  project_directory = pwd[0..-11]
+  xcodeproj = "#{project_directory}/#{project}"
+  output_directory = "./fastlane/builds"
+  
+  ### stages
+  before_all do
+    puts "🛠 Starting Fastlane..."
   end
+  
+  after_all do |lane|
+    notification(title: "[Fastlane]", message: "✅ Completed #{lane} lane!")
+  end
+  
+  error do |lane, exception|
+    clean_build_artifacts
+    notification(title: "[Fastlane] ⚠️ Lane #{lane} failed to executed!", message: exception.message)
+  end
+  
+  ### Version helper, semver
+  
+  desc "Increment the app version patch (0.0.X)"
+  lane :bumpPatch do
+    increment_version_number(
+      bump_type: "patch"
+    )
+  end
+  
+  desc "Increment the app version minor (0.X.0)"
+  lane :bumpMinor do
+    increment_version_number(
+      bump_type: "minor"
+    )
+  end
+  
+  desc "Increment the app version major (X.0.0)"
+  lane :bumpMajor do
+    increment_version_number(
+      bump_type: "major"
+    )
+  end
+  
+  desc "Increment the app's version number (required for app store build)"
+  lane :bumpVersion do
+    # check whether we should increase build version number
+    precheck = prompt(text: "\nCurrent build version number: #{get_version_number}.\nWould you like to increase the build number? ".blue, boolean: true)
+    
+    if precheck == true
+      # enter new version number
+      version_number = prompt(text: "\nCurrent build version number: #{get_version_number}" + "\nPlease enter new version number: ".yellow)
+      
+      # increase version number then commit
+      confirm = prompt(text: "Confirm bump to: " +  version_number + " ?", boolean: true)
+      raise "cancel..." if confirm == false
+      
+      increment_version_number(version_number: version_number)
+    end
+  end
+    
+  desc "Increment the app's build number"
+  lane :bumpBuild do
+    new_build_number = get_build_number.to_i + 1
+    increment_build_number(build_number: new_build_number)
+    # commitVersionBumpWrapper
+  end
+  
+  lane :bumpBuildCustom do |options|
+    # usage: `fastlane bumpBuildCustom number:${NEW_BUILD_NUMBER}`
+    new_build_number = options[:number]
+    increment_build_number(build_number: new_build_number)
+  end
+  
+  ### Test
+  
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+  
+  ### git
+    
+  lane :ensure_lane do |options|
+    ensure_git_branch(branch: options[:branch])
+  end
+  
+  desc "Make sure current branch is `main`"
+  lane :ensureMain do
+    # reference: https://docs.fastlane.tools/actions/#source-control
+    ensure_git_branch(
+      branch: 'main'
+    )
+  end
+  
+  desc "Create/make app store git tag for release"
+  lane :makeAppStoreGitTag do
+    add_git_tag(
+      tag: "v" + get_version_number + "-" + get_build_number
+    )
+  end
+  
+  desc "Push git tag to git `upstream`"
+  lane :pushGitTag do
+    push_git_tags(
+      remote: "upstream"
+    )
+  end
+  
+  desc "Create release git tag and push to upstream"
+  lane :makeAndPushReleaseTag do
+    ensure_git_status_clean
+    ensureMaster
+    makeAppStoreGitTag
+    pushGitTag
+  end
+  
+  ### Build
+  
+  ## APP STORE ##
+    
+  desc "Build App Store"
+  lane :buildAppStore do |options|
+    run_swiftlint
+    
+    # ensureMain
+    ensure_git_status_clean
+    
+    bumpVersion
+    bumpBuild
+    commitVersionBumpWrapper
+    
+    makeAppStoreBuild
+    makeAppStoreGitTag
+  end
+  
+  desc "Build app store"
+  lane :makeAppStoreBuild do
+  	# vars
+    scheme_name = "Clendar"
+    configuration = "Release"
+    export_method = "app-store"
+    
+    version = get_info_plist_value(path: plist_path, key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: plist_path, key: "CFBundleVersion")
+    output_name = "#{app_name}_APPSTORE_" + "v" + version + "-" + build
+    
+    gym(
+      workspace: workspace,
+      scheme: scheme_name, 
+      configuration: configuration,
+      output_name: output_name,
+      output_directory: output_directory,
+      export_options: {
+        method: export_method,
+        provisioningProfiles: { 
+          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
+          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
+          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
+          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
+        }
+      }
+    )
+  end
+  
+  # Helper
+  
+  desc "Commit version bump wrapper"
+  lane :commitVersionBumpWrapper do
+    commit_version_bump(
+      xcodeproj: project, # optional, if you have multiple Xcode project files, you must specify your main project here
+    )
+  end
+  
+  desc "run SwiftLint linter"
+  lane :run_swiftlint do
+    # reference: https://docs.fastlane.tools/actions/swiftlint/
+    swiftlint(
+      mode: :lint,      # SwiftLint mode: :lint (default) or :autocorrect
+      config_file: "#{project_directory}/.swiftlint.yml",     # The path of the configuration file (optional)
+      ignore_exit_status: true    # Allow fastlane to continue even if SwiftLint returns a non-zero exit status
+    )
+  end
+  
 end
