@@ -17,7 +17,44 @@ struct ContentView: View {
     @State private var showSettingsState = false
     @State private var createdEvent: EKEvent?
 
+    let calendarWrapperView = CalendarWrapperView()
+
     // MARK: - Views Compositions
+
+    private var monthHeaderView: some View {
+        HStack(spacing: 20) {
+            Button {
+                store.selectedDate = Date()
+            } label: {
+                VStack {
+                    Text(store.selectedDate.toMonthString.localizedUppercase)
+                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
+                    Text(store.selectedDate.toFullDayString)
+                        .modifier(BoldTextModifider())
+                }
+            }
+            .accessibility(addTraits: .isHeader)
+        }
+    }
+
+    private var topView: some View {
+        HStack {
+            menuView
+            Spacer()
+            monthHeaderView
+        }
+    }
+
+    private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
+        Group {
+            CalendarHeaderView()
+                .frame(height: Constants.CalendarView.calendarHeaderHeight)
+            calendarWrapperView
+                .frame(height: Constants.CalendarView.calendarHeight)
+        }
+        .padding()
+
+    }
 
     private var addButton: some View {
         Button(
@@ -47,14 +84,11 @@ struct ContentView: View {
             .environmentObject(store)
     }
 
-    private let calendarView = MainCalendarView()
-
     private var eventView: some View {
         VStack {
-            calendarView
-                .frame(maxHeight: Constants.CalendarView.calendarHeight)
-            eventListView
-                .padding(.bottom, 50)
+            topView
+            makeCalendarGroupView()
+            eventListView.padding(.bottom, 50)
         }
     }
 
@@ -78,23 +112,13 @@ struct ContentView: View {
             Button(
                 action: {
                     genLightHaptic()
-                    calendarView.calendar.scrollTo(Date())
+                    store.selectedDate = Date()
                 },
                 label: { Image(systemName: "arrow.clockwise") }
             )
         }
         .accentColor(.appRed)
-        .font(.mediumFontWithSize(20))
-    }
-
-    private var bottomBarView: some View {
-        HStack {
-            menuView
-            Spacer()
-            addButton
-        }
-        .padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 15))
-        .background(Color.backgroundColor)
+        .font(.mediumFontWithSize(15))
     }
 
     // MARK: - Body
@@ -103,7 +127,7 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 eventView
-                bottomBarView
+                addButton
             }
             .padding()
             .preferredColorScheme(appColorScheme)
@@ -127,17 +151,18 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
             selectDate(store.selectedDate)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeShowDaysOutPreferences)) { _ in
+            calendarWrapperView.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
+            calendarWrapperView.calendarView.reloadData()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeDaySupplementaryTypePreferences)) { _ in
+            calendarWrapperView.calendarView.reloadData()
+        }
         .onReceive(NotificationCenter.default.publisher(for: .justReloadCalendar)) { _ in
-            calendarView.calendar.reloadData()
+            calendarWrapperView.calendarView.reloadData()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didSaveEvent)) { (notification) in
-            if let date = notification.object as? Date {
-                genLightHaptic()
-                calendarView.calendar.scrollTo(date)
-            }
         }
     }
 }

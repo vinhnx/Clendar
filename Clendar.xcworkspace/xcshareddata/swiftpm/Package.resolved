@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CVCalendar",
+        "repositoryURL": "https://github.com/CVCalendar/CVCalendar",
+        "state": {
+          "branch": null,
+          "revision": "c78d3cc52e9a1716ea243b22a0f8f5531734a6df",
+          "version": "1.7.0"
+        }
+      },
+      {
         "package": "Haptica",
         "repositoryURL": "https://github.com/efremidze/Haptica",
         "state": {

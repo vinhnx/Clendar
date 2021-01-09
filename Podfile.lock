@@ -1,5 +1,4 @@
 PODS:
-  - KVKCalendar (0.4.4)
   - LicensePlist (3.0.5)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
@@ -9,7 +8,6 @@ PODS:
   - SwiftyChrono (1.1.0)
 
 DEPENDENCIES:
-  - KVKCalendar
   - LicensePlist
   - R.swift
   - SwiftFormat/CLI
@@ -18,7 +16,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - KVKCalendar
     - LicensePlist
     - R.swift
     - R.swift.Library
@@ -27,7 +24,6 @@ SPEC REPOS:
     - SwiftyChrono
 
 SPEC CHECKSUMS:
-  KVKCalendar: c45fb8818ead4be7a0e92af51ccb79dd9d99b50f
   LicensePlist: 11c638fa9dc22ddb5771cdf910242ae1ba2684da
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
@@ -35,6 +31,6 @@ SPEC CHECKSUMS:
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftyChrono: 233460655232c082ced7ac0e3a6a3b23d57a077d
 
-PODFILE CHECKSUM: 83def0edbb28683d19539b1c7df65046f139fc3c
+PODFILE CHECKSUM: 11c15bb5b00b1db0333cc6a51293afbd5861cbc0
 
 COCOAPODS: 1.10.1

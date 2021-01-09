@@ -11,6 +11,8 @@ import SwiftUI
 import KVKCalendar
 import EventKit
 
+// TODO: convert back to CVCalendar with custom day views
+
 struct MainCalendarView: UIViewRepresentable {
     @EnvironmentObject var store: Store
 

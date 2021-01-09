@@ -1,11 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KVKCalendar" "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KVKCalendar/KVKCalendar.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/KVKCalendar/KVKCalendar.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/KVKCalendar" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono"
-OTHER_LDFLAGS = $(inherited) -framework "EventKit" -framework "KVKCalendar" -framework "Rswift" -framework "SwiftyChrono" -framework "UIKit"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono"
+OTHER_LDFLAGS = $(inherited) -framework "Rswift" -framework "SwiftyChrono"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

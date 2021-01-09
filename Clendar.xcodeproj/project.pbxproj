@@ -17,7 +17,6 @@
 		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */; };
-		A3089647259628BD007F76CC /* MainCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3089646259628BD007F76CC /* MainCalendarView.swift */; };
 		A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEB825654CE700BA7F38 /* ClendarApp.swift */; };
 		A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEBE25654D3400BA7F38 /* ContentView.swift */; };
 		A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
@@ -111,6 +110,13 @@
 		A38199FA25484DB700C71D41 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F925484DB700C71D41 /* Section.swift */; };
 		A38199FE25484E7700C71D41 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199FD25484E7700C71D41 /* Layout.swift */; };
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
+		A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A383331025A96A8100F7ED70 /* CVCalendar */; };
+		A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */; };
+		A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */; };
+		A383332125A96BB900F7ED70 /* CalendarViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */; };
+		A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */; };
+		A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */; };
+		A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */; };
 		A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4D85254D6F7300B35F98 /* SwiftDate */; };
 		A38A4D98254D73F400B35F98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810F22474137009CC46A /* Constants.swift */; };
 		A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38A4D9E254D740400B35F98 /* EventKit.framework */; };
@@ -266,7 +272,6 @@
 		A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClendarWidgetExtension.entitlements; sourceTree = "<group>"; };
 		A3064D46254CF15500C7F228 /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
 		A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetTimelineProvider.swift; sourceTree = "<group>"; };
-		A3089646259628BD007F76CC /* MainCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarView.swift; sourceTree = "<group>"; };
 		A30BFEB825654CE700BA7F38 /* ClendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarApp.swift; sourceTree = "<group>"; };
 		A30BFEBE25654D3400BA7F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
@@ -334,6 +339,12 @@
 		A38199F925484DB700C71D41 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A38199FD25484E7700C71D41 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSectionHeaderView.swift; sourceTree = "<group>"; };
+		A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = Calendar/Old/CalendarHeaderView.swift; sourceTree = "<group>"; };
+		A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarWrapperView.swift; path = Calendar/Old/CalendarWrapperView.swift; sourceTree = "<group>"; };
+		A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewCoordinator.swift; sourceTree = "<group>"; };
+		A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySupplementaryView.swift; sourceTree = "<group>"; };
+		A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
+		A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendar+Extensions.swift"; sourceTree = "<group>"; };
 		A38A4D9E254D740400B35F98 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 		A39626BD2553081200F4ABEF /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -401,6 +412,7 @@
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
+				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
 				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
@@ -687,6 +699,8 @@
 		A33F811622474543009CC46A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */,
+				A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */,
 				A33F81172247454E009CC46A /* String+Extensions.swift */,
 				A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */,
 				A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */,
@@ -811,7 +825,9 @@
 		A3BF8FAB258B9ED6003C7FD6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3089646259628BD007F76CC /* MainCalendarView.swift */,
+				A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */,
+				A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */,
+				A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */,
 				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
 				A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */,
 				A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */,
@@ -838,6 +854,7 @@
 		A3C94659224E5FDB00123DEC /* Main Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */,
 			);
 			path = "Main Calendar";
 			sourceTree = "<group>";
@@ -935,6 +952,7 @@
 				A38EE832254EC6CA00045C12 /* Haptica */,
 				A3560CFD2567FB6F009088E7 /* Then */,
 				A3209B44258CE14C002470CF /* Shift */,
+				A383331025A96A8100F7ED70 /* CVCalendar */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1070,6 +1088,7 @@
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
+				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1359,26 +1378,29 @@
 				A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
+				A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* Font+Themes.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */,
 				A3EDE73325669FA60046C1F5 /* EventViewerWrapperView.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
+				A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */,
 				A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
-				A3089647259628BD007F76CC /* MainCalendarView.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
+				A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */,
 				A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */,
 				A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */,
 				A3EDE72E25669F8F0046C1F5 /* EventEditorWrapperView.swift in Sources */,
 				A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */,
 				A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */,
+				A383332125A96BB900F7ED70 /* CalendarViewCoordinator.swift in Sources */,
 				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
 				A35B9B4E258CD4810027E1B3 /* EventViewer.swift in Sources */,
 				A3EDE7472566A0180046C1F5 /* View+Extensions.swift in Sources */,
@@ -1398,6 +1420,8 @@
 				A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */,
 				A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
+				A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */,
+				A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */,
 				A38199FE25484E7700C71D41 /* Layout.swift in Sources */,
 				A33F81132247423A009CC46A /* NaturalInputParser.swift in Sources */,
 				A368474D2554457B004BDCC6 /* Bundle+Extensions.swift in Sources */,
@@ -1997,6 +2021,14 @@
 				minimumVersion = 2.7.0;
 			};
 		};
+		A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CVCalendar/CVCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 		A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/efremidze/Haptica";
@@ -2058,6 +2090,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		A383331025A96A8100F7ED70 /* CVCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */;
+			productName = CVCalendar;
 		};
 		A38A4D85254D6F7300B35F98 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
