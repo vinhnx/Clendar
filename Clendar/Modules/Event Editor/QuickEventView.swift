@@ -35,7 +35,10 @@ struct QuickEventView: View {
 		VStack {
 			HStack {
 				Button(
-					action: { self.showCreateEventState.toggle() },
+					action: {
+                        genLightHaptic()
+                        showCreateEventState.toggle()
+                    },
 					label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
@@ -52,7 +55,10 @@ struct QuickEventView: View {
 				Spacer()
 
 				Button(
-					action: { self.createNewEvent() },
+					action: {
+                        genSuccessHaptic()
+                        createNewEvent()
+                    },
 					label: {
                         Image(systemName: "calendar.badge.plus")
                             .font(.boldFontWithSize(20))
