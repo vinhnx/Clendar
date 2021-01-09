@@ -29,7 +29,7 @@ struct ContentView: View {
                 VStack {
                     Text(store.selectedDate.toMonthString.localizedUppercase)
                         .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
-                    Text(store.selectedDate.toFullDayString)
+                    Text(store.selectedDate.toDayAndDateString)
                         .modifier(BoldTextModifider())
                 }
             }

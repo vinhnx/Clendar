@@ -42,7 +42,7 @@ struct WidgetEventColorBar: View {
 
 	var body: some View {
         Capsule(style: .circular)
-			.fill(Color(event.event?.calendar.cgColor ?? CGColor(gray: 1, alpha: 1)))
+            .fill(event.calendarColor)
 			.frame(width: 3)
 	}
 }

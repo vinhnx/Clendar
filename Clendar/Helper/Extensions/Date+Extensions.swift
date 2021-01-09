@@ -19,35 +19,39 @@ extension Date {
     }
 
     var toHourAndMinuteString: String {
-        DateFormatter.format(self, template: "HH:mm")
+        DateFormatter.format(self, format: "HH:mm")
     }
 
     var toShortDateString: String {
-        DateFormatter.format(self, template: "d")
+        DateFormatter.format(self, format: "d")
     }
 
     var toDateString: String {
-        DateFormatter.format(self, template: "dd")
+        DateFormatter.format(self, format: "dd")
     }
 
     var toDayString: String {
-        DateFormatter.format(self, template: "E")
+        DateFormatter.format(self, format: "E")
     }
 
     var toMonthString: String {
-        DateFormatter.format(self, template: "MMMM")
+        DateFormatter.format(self, format: "MMMM")
     }
 
     var toMonthAndYearString: String {
-        DateFormatter.format(self, template: "MMMM yyyy")
+        DateFormatter.format(self, format: "MMMM yyyy")
     }
 
     var toFullDateString: String {
-        DateFormatter.format(self, template: "EEEE, MMM d, yyyy")
+        DateFormatter.format(self, format: "EEEE, MMM d, yyyy")
     }
 
     var toFullDayString: String {
-        DateFormatter.format(self, template: "EEEE")
+        DateFormatter.format(self, format: "EEEE")
+    }
+
+    var toDayAndDateString: String {
+        DateFormatter.nonlocalizedFormat(self, format: "EEEE dd")
     }
 
     var toChineseDate: Date {
@@ -64,8 +68,8 @@ extension Date {
         Calendar.current.startOfDay(for: self)
     }
 
-    func asStringWithTemplate(_ template: String) -> String {
-        DateFormatter.format(self, template: template)
+    func asStringWithTemplate(_ format: String) -> String {
+        DateFormatter.format(self, format: format)
     }
 
     var nextHour: Date {

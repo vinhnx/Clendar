@@ -47,7 +47,7 @@ final class EventListViewController: BaseViewController {
 			collectionView: collectionView,
 			cellProvider: { collectionView, indexPath, event in
 				let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EventListItemCell.reuseID, for: indexPath) as? EventListItemCell
-				let viewModel = EventListItemCell.ViewModel(event: event)
+				let viewModel = EventListItemCell.ViewModel(clendarEvent: event)
 				cell?.viewModel = viewModel
 				return cell
 			}

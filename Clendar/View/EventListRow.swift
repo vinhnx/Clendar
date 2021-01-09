@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-// TODO: change alignment left 
-
 struct EventListRow: View {
     var id = UUID() // somehow this fix problem when row should be reload after changes. Reference: https://github.com/onmyway133/blog/issues/625
     var event: ClendarEvent?
@@ -28,7 +26,7 @@ struct EventListRow: View {
                         .lineLimit(nil)
                         .font(.mediumFontWithSize(18))
                         .padding(.top, 5)
-                        .foregroundColor(.appGray)
+                        .foregroundColor(.appDark)
                 }
             )
             .groupBoxStyle(CardGroupBoxStyle())

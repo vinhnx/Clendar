@@ -17,12 +17,12 @@ class EventListItemCell: UICollectionViewCell {
 	struct ViewModel {
 		// MARK: Lifecycle
 
-		init(event: ClendarEvent? = nil) {
-			guard let event = event?.event else { return }
+		init(clendarEvent: ClendarEvent? = nil) {
+			guard let event = clendarEvent?.event else { return }
 			message = event.title
 			title = event.durationText()
 			titleAndMessage = "[\(title)] \(message)"
-			let color = UIColor(cgColor: event.calendar.cgColor)
+            let color = clendarEvent?.calendarUIColor ?? .primaryColor
 			calendarColor = event.startDate.isInPast ? color.withAlphaComponent(0.3) : color
 			dateDisplay = event.startDate?.toDateString ?? ""
 			textColor = event.startDate.isInPast ? .appLightGray : .appGray

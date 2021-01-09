@@ -110,8 +110,8 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
              (_, .highlighted, _): return .white
         case (.sunday, .out, _): return .appLightRed
         case (.sunday, _, _): return .appRed
-        case (_, .in, _): return .appGray
-        default: return .appLightGray
+        case (_, .in, _): return .appDark
+        default: return UIColor.appDark.withAlphaComponent(0.5)
         }
     }
 

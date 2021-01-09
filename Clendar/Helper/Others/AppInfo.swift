@@ -27,7 +27,7 @@ struct AppInfo {
     static var packageDate: String {
         guard let date = buildDate else { return "" }
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
+        formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-dd HH:mm:ss ZZZ")
         formatter.timeZone = TimeZone(abbreviation: "UTC")
         return formatter.string(from: date)
     }

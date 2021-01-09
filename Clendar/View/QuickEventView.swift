@@ -38,10 +38,10 @@ struct QuickEventView: View {
 					action: { self.showCreateEventState.toggle() },
 					label: {
                         Image(systemName: "chevron.down")
-                            .padding(10)
+                            .font(.boldFontWithSize(20))
                             .accessibility(label: Text("Collapse this view"))
                     }
-				).accentColor(.primaryColor)
+				).accentColor(.appRed)
 
 				Spacer()
 				Text(parsedText.isEmpty ? "New Event" : parsedText)
@@ -54,12 +54,8 @@ struct QuickEventView: View {
 				Button(
 					action: { self.createNewEvent() },
 					label: {
-                        Image(systemName: "checkmark")
-                            .padding(10)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(lineWidth: 2)
-                            )
+                        Image(systemName: "calendar.badge.plus")
+                            .font(.boldFontWithSize(20))
                             .accessibility(label: Text("Create new event"))
                     }
 				)

@@ -6,8 +6,9 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
+import UIKit
 import EventKit
-import Foundation
+import SwiftUI
 
 extension EKEvent: Identifiable {}
 
@@ -34,4 +35,15 @@ class ClendarEvent: Hashable, Identifiable {
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
 	}
+}
+
+extension ClendarEvent {
+    var calendarUIColor: UIColor {
+        guard let calendarColor = event?.calendar.cgColor else { return .primaryColor }
+        return UIColor(cgColor: calendarColor)
+    }
+
+    var calendarColor: Color {
+        return Color(calendarUIColor)
+    }
 }

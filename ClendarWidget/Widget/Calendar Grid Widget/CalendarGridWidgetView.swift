@@ -18,13 +18,13 @@ import WidgetKit
 extension DateFormatter {
 	static var month: DateFormatter {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "MMMM"
+		formatter.setLocalizedDateFormatFromTemplate("MMMM")
 		return formatter
 	}
 
 	static var monthAndYear: DateFormatter {
 		let formatter = DateFormatter()
-		formatter.dateFormat = "MMMM yyyy"
+		formatter.setLocalizedDateFormatFromTemplate("MMMM yyyy")
 		return formatter
 	}
 }

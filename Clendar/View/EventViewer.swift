@@ -16,7 +16,7 @@ struct EventViewer: View {
 
     private var editButton: some View {
         Button(action: { didShowEventEdit.toggle() }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: .appRed))
+            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: event.calendarColor))
             .sheet(isPresented: $didShowEventEdit) {
                 #if !os(watchOS)
                 EventViewerWrapperView(event: event)
@@ -96,6 +96,7 @@ struct EventViewer: View {
             editButton
             #endif
         }
+        .accentColor(event.calendarColor)
         .modifier(EventViewerPaddingModifier())
     }
 }

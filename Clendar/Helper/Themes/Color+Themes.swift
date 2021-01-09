@@ -9,6 +9,10 @@ import SwiftUI
 import UIKit
 
 extension UIColor {
+    var swiftUIColor: Color {
+        Color(self)
+    }
+
     convenience init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()
@@ -33,8 +37,14 @@ extension UIColor {
     static let appGray = UIColor.gray
     static let appLightGray = UIColor.lightGray
     static let appRed = UIColor.moianesD
-    static let appLightRed = UIColor.red.withAlphaComponent(0.3)
-    static let appDark = UIColor.darkGray
+    static let appLightRed = UIColor.appRed.withAlphaComponent(0.5)
+    static var appDark: UIColor {
+        #if os(iOS)
+        return UIColor { color in color.userInterfaceStyle == .dark ? .appLightGray : .darkGray }
+        #else
+        return .darkGray
+        #endif
+    }
 
     static var backgroundColor: UIColor {
         #if os(iOS)
