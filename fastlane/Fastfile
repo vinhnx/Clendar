@@ -149,7 +149,7 @@ platform :ios do
   lane :buildAppStore do |options|
     run_swiftlint
     
-    # ensureMain
+    ensureMain
     ensure_git_status_clean
     
     bumpVersion
@@ -169,7 +169,7 @@ platform :ios do
     
     version = get_info_plist_value(path: plist_path, key: "CFBundleShortVersionString")
     build = get_info_plist_value(path: plist_path, key: "CFBundleVersion")
-    output_name = "#{app_name}_APPSTORE_" + "v" + version + "-" + build
+    output_name = "#{app_name}-APPSTORE-version.#{version}-build.#{build}-time.#{Time.now.to_i}"
     
     gym(
       workspace: workspace,
