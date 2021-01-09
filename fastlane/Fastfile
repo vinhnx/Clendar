@@ -160,6 +160,7 @@ platform :ios do
     makeAppStoreGitTag
   end
   
+  # gym docs: https://docs.fastlane.tools/actions/gym/
   desc "Build app store"
   lane :makeAppStoreBuild do
   	# vars

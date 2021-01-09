@@ -10,8 +10,6 @@ scheme("Clendar")
 
 output_directory("./fastlane/builds")
 
-#codesigning_identity("Apple Distribution: NGUYEN VINH (6TWWD47PW9)")
-
 include_bitcode(true)
 
 include_symbols(true)
@@ -19,3 +17,5 @@ include_symbols(true)
 silent(true)
 			
 skip_profile_detection(true)
+
+clean(true)
