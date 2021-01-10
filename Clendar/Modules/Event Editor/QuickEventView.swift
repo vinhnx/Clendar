@@ -44,13 +44,7 @@ struct QuickEventView: View {
 				).accentColor(.appRed)
 
 				Spacer()
-				Text(parsedText.isEmpty ? "New Event" : parsedText)
-                    .accessibility(label: Text("New Event"))
-					.font(.boldFontWithSize(20))
-					.foregroundColor(.appDark)
-					.lineLimit(1)
-				Spacer()
-
+                
 				Button(
 					action: {
                         genSuccessHaptic()

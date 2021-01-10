@@ -20,7 +20,7 @@ struct SolidButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             Unwrap(imageName) { name in Image(systemName: name) }
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.mediumFontWithSize(titlefontSize))
         }
         .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))

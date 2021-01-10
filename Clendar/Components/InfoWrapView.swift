@@ -26,7 +26,7 @@ struct InfoWrapView<ContentView: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label(config.title, systemImage: config.titleImageName)
+            Label(LocalizedStringKey(config.title), systemImage: config.titleImageName)
                 .modifier(BoldTextModifider(fontSize: config.titleFontSize, color: config.titleFontColor))
             contentBuilder()
         }
