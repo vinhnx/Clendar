@@ -180,7 +180,7 @@ platform :ios do
       output_directory: output_directory,
       
       # skip export, just archive
-      skip_archive: true
+      skip_build_archive: true
 #      export_options: {
 #        method: export_method,
 #        provisioningProfiles: { 

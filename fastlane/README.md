@@ -76,14 +76,14 @@ Push git tag to git `upstream`
 fastlane ios makeAndPushReleaseTag
 ```
 Create release git tag and push to upstream
-### ios buildAppStore
+### ios release
 ```
-fastlane ios buildAppStore
+fastlane ios release
 ```
 Build App Store
-### ios makeAppStoreBuild
+### ios _makeAppStoreBuild
 ```
-fastlane ios makeAppStoreBuild
+fastlane ios _makeAppStoreBuild
 ```
 Build app store
 ### ios commitVersionBumpWrapper
