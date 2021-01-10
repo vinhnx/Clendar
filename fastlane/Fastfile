@@ -146,7 +146,7 @@ platform :ios do
   ## APP STORE ##
     
   desc "Build App Store"
-  lane :buildAppStore do |options|
+  lane :release do |options|
     run_swiftlint
     
     ensureMain
