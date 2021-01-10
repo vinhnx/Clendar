@@ -156,13 +156,13 @@ platform :ios do
     bumpBuild
     commitVersionBumpWrapper
     
-    makeAppStoreBuild
+    _makeAppStoreBuild
     makeAppStoreGitTag
   end
   
   # gym docs: https://docs.fastlane.tools/actions/gym/
   desc "Build app store"
-  lane :makeAppStoreBuild do
+  lane :_makeAppStoreBuild do
   	# vars
     scheme_name = "Clendar"
     configuration = "Release"
@@ -180,6 +180,7 @@ platform :ios do
       output_directory: output_directory,
       
       # skip export, just archive
+      skip_archive: true
 #      export_options: {
 #        method: export_method,
 #        provisioningProfiles: { 
