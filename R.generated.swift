@@ -233,6 +233,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.info` struct is generated, and contains static references to 1 properties.
+  struct info {
+    struct nsUserActivityTypes {
+      static let configurationIntent = infoPlistString(path: ["NSUserActivityTypes"], key: "ConfigurationIntent") ?? "ConfigurationIntent"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `AppIconItemCell`.
