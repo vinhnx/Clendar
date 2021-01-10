@@ -65,6 +65,7 @@
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
 		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
+		A348B4C025AA92D800DC7842 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEB825654CE700BA7F38 /* ClendarApp.swift */; };
 		A3560CFE2567FB6F009088E7 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* Then */; };
 		A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3560D0B2567FC5B009088E7 /* EventListRow.swift */; };
 		A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
@@ -1445,6 +1446,7 @@
 				A359CE3F2588EABC0089C4A2 /* AppInfo.swift in Sources */,
 				A3D6837A25A9A3FD009C31D5 /* EventViewer.swift in Sources */,
 				A359CDEF2588EA390089C4A2 /* UserDefaults+Extensions.swift in Sources */,
+				A348B4C025AA92D800DC7842 /* ClendarApp.swift in Sources */,
 				A359CDE92588EA280089C4A2 /* ClendarEvent.swift in Sources */,
 				A3D6838025A9A41A009C31D5 /* InfoWrapView.swift in Sources */,
 			);
