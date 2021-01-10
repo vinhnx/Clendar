@@ -136,7 +136,7 @@ platform :ios do
   desc "Create release git tag and push to upstream"
   lane :makeAndPushReleaseTag do
     ensure_git_status_clean
-    ensureMaster
+    ensureMain
     makeAppStoreGitTag
     pushGitTag
   end
@@ -178,15 +178,17 @@ platform :ios do
       configuration: configuration,
       output_name: output_name,
       output_directory: output_directory,
-      export_options: {
-        method: export_method,
-        provisioningProfiles: { 
-          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
-          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
-          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
-          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
-        }
-      }
+      
+      # skip export, just archive
+#      export_options: {
+#        method: export_method,
+#        provisioningProfiles: { 
+#          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
+#          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
+#          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
+#          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
+#        }
+#      }
     )
   end
   
