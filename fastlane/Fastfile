@@ -180,16 +180,17 @@ platform :ios do
       output_directory: output_directory,
       
       # skip export, just archive
-      skip_build_archive: true
-#      export_options: {
-#        method: export_method,
-#        provisioningProfiles: { 
-#          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
-#          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
+#      skip_build_archive: true
+      export_options: {
+        method: export_method,
+        provisioningProfiles: { 
+          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
+          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE"
+#          ,
 #          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
 #          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
-#        }
-#      }
+        }
+      }
     )
   end
   
