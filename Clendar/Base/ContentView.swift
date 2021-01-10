@@ -93,7 +93,7 @@ struct ContentView: View {
     }
 
     private var menuView: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 30) {
             Button(
                 action: {
                     genLightHaptic()
@@ -118,7 +118,7 @@ struct ContentView: View {
             )
         }
         .accentColor(.appRed)
-        .font(.mediumFontWithSize(15))
+        .font(.mediumFontWithSize(18))
     }
 
     // MARK: - Body
