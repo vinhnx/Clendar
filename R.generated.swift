@@ -288,7 +288,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 68 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 69 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -558,6 +558,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let writeSomethingAtFriday8PM = Rswift.StringResource(key: "write something at Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: 🎉 No events for today, enjoy your day! 
+      ///
+      /// Locales: en, vi
+      static let 🎉NoEventsForTodayEnjoyYourDay = Rswift.StringResource(key: "🎉 No events for today,\nenjoy your day!\n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: 🎉 No more events today, enjoy your day! 
       ///
       /// Locales: en, vi
@@ -1566,6 +1570,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("write something at Friday 8PM...", bundle: bundle, comment: "")
+      }
+
+      /// en translation: 🎉 No events for today, enjoy your day! 
+      ///
+      /// Locales: en, vi
+      static func 🎉NoEventsForTodayEnjoyYourDay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("🎉 No events for today,\nenjoy your day!\n", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "🎉 No events for today,\nenjoy your day!\n"
+        }
+
+        return NSLocalizedString("🎉 No events for today,\nenjoy your day!\n", bundle: bundle, comment: "")
       }
 
       /// en translation: 🎉 No more events today, enjoy your day! 

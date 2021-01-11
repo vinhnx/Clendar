@@ -109,6 +109,8 @@
 /* No comment provided by engineer. */
 "🎉 No more events today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào nữa,\nhãy tận hưởng một ngày của bạn!\n";
 
+"🎉 No events for today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào,\nhãy tận hưởng một ngày của bạn!\n";
+
 /* No comment provided by engineer. */
 "Auto-select day when month changes" = "Tự động chọn ngày";
 

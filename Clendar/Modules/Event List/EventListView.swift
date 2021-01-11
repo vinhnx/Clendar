@@ -14,36 +14,42 @@ struct EventListView: View {
     var events = [ClendarEvent]()
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            LazyVStack(alignment: .leading, spacing: 10) {
-                ForEach(events, id: \.self) { event in
-                    NavigationLink(
-                        destination:
-                            EventViewer(event: event)
-                            .navigationBarTitle("", displayMode: .inline)
-                            .environmentObject(store)
-                            .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                    ) {
-                        EventListRow(event: event)
-                    }
-                    .contextMenu {
-                        Button(
-                            action: { self.selectedEvent = event },
-                            label: {
-                                Text("Edit Event")
-                                    .accessibility(label: Text("Edit Event"))
-                                Image(systemName: "square.and.pencil")
+            ScrollView(showsIndicators: false) {
+                if events.isEmpty {
+                    Text("🎉 No events for today,\nenjoy your day!\n")
+                        .modifier(MediumTextModifider())
+                        .lineSpacing(10)
+                } else {
+                    LazyVStack(alignment: .leading, spacing: 10) {
+                        ForEach(events, id: \.self) { event in
+                            NavigationLink(
+                                destination:
+                                    EventViewer(event: event)
+                                    .navigationBarTitle("", displayMode: .inline)
+                                    .environmentObject(store)
+                                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+                            ) {
+                                EventListRow(event: event)
                             }
-                        )
+                            .contextMenu {
+                                Button(
+                                    action: { self.selectedEvent = event },
+                                    label: {
+                                        Text("Edit Event")
+                                            .accessibility(label: Text("Edit Event"))
+                                        Image(systemName: "square.and.pencil")
+                                    }
+                                )
+                            }
+                        }
                     }
                 }
             }
-        }
-        .sheet(item: $selectedEvent) { event in
-            EventViewerWrapperView(event: event)
-                .environmentObject(store)
-                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-        }
+            .sheet(item: $selectedEvent) { event in
+                EventViewerWrapperView(event: event)
+                    .environmentObject(store)
+                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            }
     }
 }
 
