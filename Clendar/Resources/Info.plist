@@ -47,13 +47,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs your permission to create events"</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view events"</string>
 	<key>NSContactsUsageDescription</key>
 	<string>"$(PRODUCT_NAME) might needs your permission to access Contacts name when creating events"</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>"$(PRODUCT_NAME) might needs your permission to access location when creating events"</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs your permission to create reminders"</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view reminders (if any)"</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
