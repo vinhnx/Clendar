@@ -66,7 +66,7 @@ struct QuickEventView: View {
 				VStack(spacing: 30) {
 					Spacer()
 					TextField(
-						"write something at Friday 8PM...",
+						"read a book this Friday 8PM...",
 						text: $quickEventStore.query,
 						onEditingChanged: { _ in
 							self.parse(quickEventStore.query)
