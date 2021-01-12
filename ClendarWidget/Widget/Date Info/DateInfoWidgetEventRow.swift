@@ -46,12 +46,3 @@ struct WidgetEventColorBar: View {
 			.frame(width: 3)
 	}
 }
-
-extension Date {
-	var hourString: String {
-		let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-		dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
-		return dateFormatter.string(from: self)
-	}
-}

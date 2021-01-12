@@ -19,15 +19,9 @@
 		A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */; };
 		A307DAA925ACBA9C00B5CE11 /* LunarDateInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DAA825ACBA9C00B5CE11 /* LunarDateInfoWidget.swift */; };
 		A307DAAE25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DAAD25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift */; };
-		A307DABD25ADD6B700B5CE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A307DABC25ADD6B700B5CE11 /* Assets.xcassets */; };
 		A307DAC425ADD6B700B5CE11 /* ClendarWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A307DAC925ADD6B700B5CE11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DAC825ADD6B700B5CE11 /* ContentView.swift */; };
-		A307DACB25ADD6B700B5CE11 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DACA25ADD6B700B5CE11 /* ClendarApp.swift */; };
-		A307DACD25ADD6B700B5CE11 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DACC25ADD6B700B5CE11 /* ComplicationController.swift */; };
-		A307DACF25ADD6BA00B5CE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A307DACE25ADD6BA00B5CE11 /* Assets.xcassets */; };
-		A307DAD225ADD6BA00B5CE11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A307DAD125ADD6BA00B5CE11 /* Preview Assets.xcassets */; };
 		A307DAD625ADD6BA00B5CE11 /* ClendarWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A307DABA25ADD6B300B5CE11 /* ClendarWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A307DAED25ADD73A00B5CE11 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A307DAEC25ADD73A00B5CE11 /* SwiftPackageProductDependency */; };
+		A307DAED25ADD73A00B5CE11 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A307DAEC25ADD73A00B5CE11 /* Shift */; };
 		A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
 		A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B4D258CD4810027E1B3 /* EventViewer.swift */; };
@@ -40,10 +34,18 @@
 		A307DB2925ADD85500B5CE11 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A307DB2F25ADD86000B5CE11 /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
 		A307DB3525ADD86900B5CE11 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
-		A307DB3C25ADD88300B5CE11 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A307DB3B25ADD88300B5CE11 /* SwiftPackageProductDependency */; };
+		A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A307DB3B25ADD88300B5CE11 /* SwiftDate */; };
 		A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A307DB4D25ADD8AA00B5CE11 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
 		A307DB5325ADD8BA00B5CE11 /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
+		A307DB9725ADE21900B5CE11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DB8D25ADE0BD00B5CE11 /* ContentView.swift */; };
+		A307DB9D25ADE30200B5CE11 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DB8C25ADE0BD00B5CE11 /* ClendarApp.swift */; };
+		A307DBA325ADE30700B5CE11 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DB8825ADE0BD00B5CE11 /* ComplicationController.swift */; };
+		A307DBB525ADE31F00B5CE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A307DB9025ADE0BD00B5CE11 /* Assets.xcassets */; };
+		A307DBC025ADE32C00B5CE11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A307DB8925ADE0BD00B5CE11 /* Assets.xcassets */; };
+		A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DBDF25ADE65500B5CE11 /* EmptyView.swift */; };
+		A307DBE625ADE66B00B5CE11 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DBDF25ADE65500B5CE11 /* EmptyView.swift */; };
+		A307DBEC25ADE66C00B5CE11 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DBDF25ADE65500B5CE11 /* EmptyView.swift */; };
 		A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEB825654CE700BA7F38 /* ClendarApp.swift */; };
 		A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30BFEBE25654D3400BA7F38 /* ContentView.swift */; };
 		A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
@@ -62,13 +64,13 @@
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
-		A3187E8125499C29009524DF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftPackageProductDependency */; };
+		A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftyFORM */; };
 		A3187E8525499FE1009524DF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
-		A3209B45258CE14C002470CF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B44258CE14C002470CF /* SwiftPackageProductDependency */; };
+		A3209B45258CE14C002470CF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B44258CE14C002470CF /* Shift */; };
 		A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
-		A3209B76258CE224002470CF /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B75258CE224002470CF /* SwiftPackageProductDependency */; };
+		A3209B76258CE224002470CF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B75258CE224002470CF /* Shift */; };
 		A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
@@ -88,7 +90,7 @@
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
 		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
-		A3560CFE2567FB6F009088E7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* SwiftPackageProductDependency */; };
+		A3560CFE2567FB6F009088E7 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* Then */; };
 		A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3560D0B2567FC5B009088E7 /* EventListRow.swift */; };
 		A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A35B9B4E258CD4810027E1B3 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B4D258CD4810027E1B3 /* EventViewer.swift */; };
@@ -106,14 +108,14 @@
 		A38199FA25484DB700C71D41 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F925484DB700C71D41 /* Section.swift */; };
 		A38199FE25484E7700C71D41 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199FD25484E7700C71D41 /* Layout.swift */; };
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
-		A383331125A96A8100F7ED70 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A383331025A96A8100F7ED70 /* SwiftPackageProductDependency */; };
+		A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A383331025A96A8100F7ED70 /* CVCalendar */; };
 		A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */; };
 		A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */; };
 		A383332125A96BB900F7ED70 /* CalendarViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */; };
 		A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */; };
 		A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */; };
 		A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */; };
-		A38A4D86254D6F7300B35F98 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4D85254D6F7300B35F98 /* SwiftPackageProductDependency */; };
+		A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4D85254D6F7300B35F98 /* SwiftDate */; };
 		A38A4D98254D73F400B35F98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F810F22474137009CC46A /* Constants.swift */; };
 		A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38A4D9E254D740400B35F98 /* EventKit.framework */; };
 		A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
@@ -123,10 +125,10 @@
 		A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
 		A38A4DCA254D752200B35F98 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F8114224742F7009CC46A /* WorkItem.swift */; };
-		A38A4DD6254D755F00B35F98 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4DD5254D755F00B35F98 /* SwiftPackageProductDependency */; };
+		A38A4DD6254D755F00B35F98 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A38A4DD5254D755F00B35F98 /* Logging */; };
 		A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
-		A38EE833254EC6CA00045C12 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE832254EC6CA00045C12 /* SwiftPackageProductDependency */; };
-		A38EE838254EC9C200045C12 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE837254EC9C200045C12 /* SwiftPackageProductDependency */; };
+		A38EE833254EC6CA00045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE832254EC6CA00045C12 /* Haptica */; };
+		A38EE838254EC9C200045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE837254EC9C200045C12 /* Haptica */; };
 		A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
 		A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39626BD2553081200F4ABEF /* EventHandler.swift */; };
 		A39B71B3255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
@@ -139,12 +141,12 @@
 		A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
 		A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
-		A3BA42F6253F3AE00007DDFB /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* SwiftPackageProductDependency */; };
+		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
 		A3D6839F25A9A4BF009C31D5 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
 		A3D6843725A9F467009C31D5 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6843625A9F467009C31D5 /* ReviewManager.swift */; };
-		A3D999E62549A69F003E08E2 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftPackageProductDependency */; };
+		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
 		A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */; };
@@ -269,15 +271,16 @@
 		A307DAA825ACBA9C00B5CE11 /* LunarDateInfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDateInfoWidget.swift; sourceTree = "<group>"; };
 		A307DAAD25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarSmallDateWidgetView.swift; sourceTree = "<group>"; };
 		A307DABA25ADD6B300B5CE11 /* ClendarWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClendarWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A307DABC25ADD6B700B5CE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A307DABE25ADD6B700B5CE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ClendarWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A307DAC825ADD6B700B5CE11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A307DACA25ADD6B700B5CE11 /* ClendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarApp.swift; sourceTree = "<group>"; };
-		A307DACC25ADD6B700B5CE11 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		A307DACE25ADD6BA00B5CE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A307DAD125ADD6BA00B5CE11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A307DAD325ADD6BA00B5CE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A307DB8825ADE0BD00B5CE11 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		A307DB8925ADE0BD00B5CE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A307DB8B25ADE0BD00B5CE11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A307DB8C25ADE0BD00B5CE11 /* ClendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarApp.swift; sourceTree = "<group>"; };
+		A307DB8D25ADE0BD00B5CE11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A307DB8E25ADE0BD00B5CE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A307DB9025ADE0BD00B5CE11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A307DB9125ADE0BD00B5CE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A307DBDF25ADE65500B5CE11 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		A30BFEB825654CE700BA7F38 /* ClendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarApp.swift; sourceTree = "<group>"; };
 		A30BFEBE25654D3400BA7F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
@@ -323,12 +326,6 @@
 		A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetEntryView.swift; sourceTree = "<group>"; };
 		A3560D0B2567FC5B009088E7 /* EventListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRow.swift; sourceTree = "<group>"; };
 		A359CD872588E3260089C4A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
-		A359CDA52588E93D0089C4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A359CDA72588E93D0089C4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A359CDB12588E93E0089C4A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A359CDB72588E9400089C4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A359CDBC2588E9400089C4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A359CDCD2588E95F0089C4A2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 		A35B9B4D258CD4810027E1B3 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
 		A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperView.swift; sourceTree = "<group>"; };
@@ -398,10 +395,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38A4DD6254D755F00B35F98 /* BuildFile in Frameworks */,
-				A38EE838254EC9C200045C12 /* BuildFile in Frameworks */,
-				A38A4D86254D6F7300B35F98 /* BuildFile in Frameworks */,
-				A3209B76258CE224002470CF /* BuildFile in Frameworks */,
+				A38A4DD6254D755F00B35F98 /* Logging in Frameworks */,
+				A38EE838254EC9C200045C12 /* Haptica in Frameworks */,
+				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
+				A3209B76258CE224002470CF /* Shift in Frameworks */,
 				A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */,
 				A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */,
 				A3064D1B254CEF5200C7F228 /* WidgetKit.framework in Frameworks */,
@@ -412,8 +409,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A307DB3C25ADD88300B5CE11 /* BuildFile in Frameworks */,
-				A307DAED25ADD73A00B5CE11 /* BuildFile in Frameworks */,
+				A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */,
+				A307DAED25ADD73A00B5CE11 /* Shift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,13 +418,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38EE833254EC6CA00045C12 /* BuildFile in Frameworks */,
-				A3BA42F6253F3AE00007DDFB /* BuildFile in Frameworks */,
-				A3209B45258CE14C002470CF /* BuildFile in Frameworks */,
-				A3560CFE2567FB6F009088E7 /* BuildFile in Frameworks */,
-				A3187E8125499C29009524DF /* BuildFile in Frameworks */,
-				A383331125A96A8100F7ED70 /* BuildFile in Frameworks */,
-				A3D999E62549A69F003E08E2 /* BuildFile in Frameworks */,
+				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
+				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
+				A3209B45258CE14C002470CF /* Shift in Frameworks */,
+				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
+				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
+				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
+				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,34 +507,34 @@
 			path = Lunar;
 			sourceTree = "<group>";
 		};
-		A307DABB25ADD6B300B5CE11 /* ClendarWatchApp */ = {
+		A307DB8725ADE0BD00B5CE11 /* ClendarWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A307DABC25ADD6B700B5CE11 /* Assets.xcassets */,
-				A307DABE25ADD6B700B5CE11 /* Info.plist */,
-			);
-			path = ClendarWatchApp;
-			sourceTree = "<group>";
-		};
-		A307DAC725ADD6B700B5CE11 /* ClendarWatchApp Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A307DAC825ADD6B700B5CE11 /* ContentView.swift */,
-				A307DACA25ADD6B700B5CE11 /* ClendarApp.swift */,
-				A307DACC25ADD6B700B5CE11 /* ComplicationController.swift */,
-				A307DACE25ADD6BA00B5CE11 /* Assets.xcassets */,
-				A307DAD325ADD6BA00B5CE11 /* Info.plist */,
-				A307DAD025ADD6BA00B5CE11 /* Preview Content */,
+				A307DB8825ADE0BD00B5CE11 /* ComplicationController.swift */,
+				A307DB8925ADE0BD00B5CE11 /* Assets.xcassets */,
+				A307DB8A25ADE0BD00B5CE11 /* Preview Content */,
+				A307DB8C25ADE0BD00B5CE11 /* ClendarApp.swift */,
+				A307DB8D25ADE0BD00B5CE11 /* ContentView.swift */,
+				A307DB8E25ADE0BD00B5CE11 /* Info.plist */,
 			);
 			path = "ClendarWatchApp Extension";
 			sourceTree = "<group>";
 		};
-		A307DAD025ADD6BA00B5CE11 /* Preview Content */ = {
+		A307DB8A25ADE0BD00B5CE11 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				A307DAD125ADD6BA00B5CE11 /* Preview Assets.xcassets */,
+				A307DB8B25ADE0BD00B5CE11 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A307DB8F25ADE0BD00B5CE11 /* ClendarWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				A307DB9025ADE0BD00B5CE11 /* Assets.xcassets */,
+				A307DB9125ADE0BD00B5CE11 /* Info.plist */,
+			);
+			path = ClendarWatchApp;
 			sourceTree = "<group>";
 		};
 		A31258942551B85700891CE2 /* AppIcons */ = {
@@ -618,10 +615,8 @@
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
 				A3064D1E254CEF5200C7F228 /* ClendarWidget */,
-				A359CDA42588E93A0089C4A2 /* ClendarWatchApp */,
-				A359CDB02588E93E0089C4A2 /* ClendarWatchApp Extension */,
-				A307DABB25ADD6B300B5CE11 /* ClendarWatchApp */,
-				A307DAC725ADD6B700B5CE11 /* ClendarWatchApp Extension */,
+				A307DB8F25ADE0BD00B5CE11 /* ClendarWatchApp */,
+				A307DB8725ADE0BD00B5CE11 /* ClendarWatchApp Extension */,
 				A33F80C722467A82009CC46A /* Products */,
 				8C81B73E8AA33D23B6AB3B1C /* Pods */,
 				621629E75901BC78649E2A0A /* Frameworks */,
@@ -755,34 +750,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A359CDA42588E93A0089C4A2 /* ClendarWatchApp */ = {
-			isa = PBXGroup;
-			children = (
-				A359CDA52588E93D0089C4A2 /* Assets.xcassets */,
-				A359CDA72588E93D0089C4A2 /* Info.plist */,
-			);
-			path = ClendarWatchApp;
-			sourceTree = "<group>";
-		};
-		A359CDB02588E93E0089C4A2 /* ClendarWatchApp Extension */ = {
-			isa = PBXGroup;
-			children = (
-				A359CDB12588E93E0089C4A2 /* ContentView.swift */,
-				A359CDB72588E9400089C4A2 /* Assets.xcassets */,
-				A359CDBC2588E9400089C4A2 /* Info.plist */,
-				A359CDB92588E9400089C4A2 /* Preview Content */,
-			);
-			path = "ClendarWatchApp Extension";
-			sourceTree = "<group>";
-		};
-		A359CDB92588E9400089C4A2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A359CDBA2588E9400089C4A2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		A36A504E2250EE5800B12034 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,6 +845,7 @@
 				A3EDE73C25669FD50046C1F5 /* CustomGroupBoxStyle.swift */,
 				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
 				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
+				A307DBDF25ADE65500B5CE11 /* EmptyView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -927,10 +895,10 @@
 			);
 			name = ClendarWidgetExtension;
 			packageProductDependencies = (
-				A38A4D85254D6F7300B35F98 /* SwiftPackageProductDependency */,
-				A38A4DD5254D755F00B35F98 /* SwiftPackageProductDependency */,
-				A38EE837254EC9C200045C12 /* SwiftPackageProductDependency */,
-				A3209B75258CE224002470CF /* SwiftPackageProductDependency */,
+				A38A4D85254D6F7300B35F98 /* SwiftDate */,
+				A38A4DD5254D755F00B35F98 /* Logging */,
+				A38EE837254EC9C200045C12 /* Haptica */,
+				A3209B75258CE224002470CF /* Shift */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -968,8 +936,8 @@
 			);
 			name = "ClendarWatchApp Extension";
 			packageProductDependencies = (
-				A307DAEC25ADD73A00B5CE11 /* SwiftPackageProductDependency */,
-				A307DB3B25ADD88300B5CE11 /* SwiftPackageProductDependency */,
+				A307DAEC25ADD73A00B5CE11 /* Shift */,
+				A307DB3B25ADD88300B5CE11 /* SwiftDate */,
 			);
 			productName = "ClendarWatchApp Extension";
 			productReference = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */;
@@ -1000,13 +968,13 @@
 			);
 			name = Clendar;
 			packageProductDependencies = (
-				A3BA42F5253F3AE00007DDFB /* SwiftPackageProductDependency */,
-				A3187E8025499C29009524DF /* SwiftPackageProductDependency */,
-				A3D999E52549A69F003E08E2 /* SwiftPackageProductDependency */,
-				A38EE832254EC6CA00045C12 /* SwiftPackageProductDependency */,
-				A3560CFD2567FB6F009088E7 /* SwiftPackageProductDependency */,
-				A3209B44258CE14C002470CF /* SwiftPackageProductDependency */,
-				A383331025A96A8100F7ED70 /* SwiftPackageProductDependency */,
+				A3BA42F5253F3AE00007DDFB /* Logging */,
+				A3187E8025499C29009524DF /* SwiftyFORM */,
+				A3D999E52549A69F003E08E2 /* SwiftDate */,
+				A38EE832254EC6CA00045C12 /* Haptica */,
+				A3560CFD2567FB6F009088E7 /* Then */,
+				A3209B44258CE14C002470CF /* Shift */,
+				A383331025A96A8100F7ED70 /* CVCalendar */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1096,13 +1064,13 @@
 			);
 			mainGroup = A33F80BD22467A82009CC46A;
 			packageReferences = (
-				A3BA42F4253F3AE00007DDFB /* RemoteSwiftPackageReference */,
-				A3187E7F25499C29009524DF /* RemoteSwiftPackageReference */,
-				A3D999E42549A69F003E08E2 /* RemoteSwiftPackageReference */,
-				A38EE831254EC6CA00045C12 /* RemoteSwiftPackageReference */,
-				A3560CFC2567FB6F009088E7 /* RemoteSwiftPackageReference */,
-				A3209B43258CE14C002470CF /* RemoteSwiftPackageReference */,
-				A383330F25A96A8000F7ED70 /* RemoteSwiftPackageReference */,
+				A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */,
+				A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */,
+				A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
+				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
+				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
+				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1132,7 +1100,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A307DABD25ADD6B700B5CE11 /* Assets.xcassets in Resources */,
+				A307DBB525ADE31F00B5CE11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1140,8 +1108,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A307DAD225ADD6BA00B5CE11 /* Preview Assets.xcassets in Resources */,
-				A307DACF25ADD6BA00B5CE11 /* Assets.xcassets in Resources */,
+				A307DBC025ADE32C00B5CE11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,7 +1260,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1366,6 +1333,7 @@
 				A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */,
 				A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */,
+				A307DBE625ADE66B00B5CE11 /* EmptyView.swift in Sources */,
 				A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */,
 				A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */,
 				A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */,
@@ -1382,21 +1350,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A307DB9D25ADE30200B5CE11 /* ClendarApp.swift in Sources */,
 				A307DB2325ADD84F00B5CE11 /* Unwrap.swift in Sources */,
 				A307DB4D25ADD8AA00B5CE11 /* Bool+Extensions.swift in Sources */,
+				A307DB9725ADE21900B5CE11 /* ContentView.swift in Sources */,
 				A307DB2925ADD85500B5CE11 /* EKEvent+Extensions.swift in Sources */,
+				A307DBEC25ADE66C00B5CE11 /* EmptyView.swift in Sources */,
 				A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */,
-				A307DAC925ADD6B700B5CE11 /* ContentView.swift in Sources */,
 				A307DB5325ADD8BA00B5CE11 /* Calendar+Extensions.swift in Sources */,
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* Store.swift in Sources */,
 				A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */,
-				A307DACB25ADD6B700B5CE11 /* ClendarApp.swift in Sources */,
 				A307DB0525ADD82400B5CE11 /* Color+Themes.swift in Sources */,
+				A307DBA325ADE30700B5CE11 /* ComplicationController.swift in Sources */,
 				A307DB3525ADD86900B5CE11 /* Date+Extensions.swift in Sources */,
 				A307DB1725ADD84000B5CE11 /* InfoWrapView.swift in Sources */,
 				A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */,
-				A307DACD25ADD6B700B5CE11 /* ComplicationController.swift in Sources */,
 				A307DB1D25ADD84800B5CE11 /* ViewModifiers.swift in Sources */,
 				A307DB2F25ADD86000B5CE11 /* Font+Themes.swift in Sources */,
 				A307DB1125ADD83500B5CE11 /* SolidButtonStyle.swift in Sources */,
@@ -1433,6 +1402,7 @@
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
+				A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
 				A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */,
 				A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */,
@@ -2014,7 +1984,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A3187E7F25499C29009524DF /* RemoteSwiftPackageReference */ = {
+		A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/neoneye/SwiftyFORM";
 			requirement = {
@@ -2022,7 +1992,7 @@
 				minimumVersion = 1.8.4;
 			};
 		};
-		A3209B43258CE14C002470CF /* RemoteSwiftPackageReference */ = {
+		A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift";
 			requirement = {
@@ -2030,7 +2000,7 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		A3560CFC2567FB6F009088E7 /* RemoteSwiftPackageReference */ = {
+		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
 			requirement = {
@@ -2038,7 +2008,7 @@
 				minimumVersion = 2.7.0;
 			};
 		};
-		A383330F25A96A8000F7ED70 /* RemoteSwiftPackageReference */ = {
+		A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CVCalendar/CVCalendar";
 			requirement = {
@@ -2046,7 +2016,7 @@
 				minimumVersion = 1.7.0;
 			};
 		};
-		A38EE831254EC6CA00045C12 /* RemoteSwiftPackageReference */ = {
+		A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/efremidze/Haptica";
 			requirement = {
@@ -2054,7 +2024,7 @@
 				minimumVersion = 3.0.2;
 			};
 		};
-		A3BA42F4253F3AE00007DDFB /* RemoteSwiftPackageReference */ = {
+		A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-log";
 			requirement = {
@@ -2062,7 +2032,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		A3D999E42549A69F003E08E2 /* RemoteSwiftPackageReference */ = {
+		A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate";
 			requirement = {
@@ -2073,69 +2043,69 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A307DAEC25ADD73A00B5CE11 /* SwiftPackageProductDependency */ = {
+		A307DAEC25ADD73A00B5CE11 /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* RemoteSwiftPackageReference */;
+			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
-		A307DB3B25ADD88300B5CE11 /* SwiftPackageProductDependency */ = {
+		A307DB3B25ADD88300B5CE11 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D999E42549A69F003E08E2 /* RemoteSwiftPackageReference */;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
-		A3187E8025499C29009524DF /* SwiftPackageProductDependency */ = {
+		A3187E8025499C29009524DF /* SwiftyFORM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3187E7F25499C29009524DF /* RemoteSwiftPackageReference */;
+			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
 			productName = SwiftyFORM;
 		};
-		A3209B44258CE14C002470CF /* SwiftPackageProductDependency */ = {
+		A3209B44258CE14C002470CF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* RemoteSwiftPackageReference */;
+			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
-		A3209B75258CE224002470CF /* SwiftPackageProductDependency */ = {
+		A3209B75258CE224002470CF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* RemoteSwiftPackageReference */;
+			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
-		A3560CFD2567FB6F009088E7 /* SwiftPackageProductDependency */ = {
+		A3560CFD2567FB6F009088E7 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3560CFC2567FB6F009088E7 /* RemoteSwiftPackageReference */;
+			package = A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-		A383331025A96A8100F7ED70 /* SwiftPackageProductDependency */ = {
+		A383331025A96A8100F7ED70 /* CVCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A383330F25A96A8000F7ED70 /* RemoteSwiftPackageReference */;
+			package = A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */;
 			productName = CVCalendar;
 		};
-		A38A4D85254D6F7300B35F98 /* SwiftPackageProductDependency */ = {
+		A38A4D85254D6F7300B35F98 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D999E42549A69F003E08E2 /* RemoteSwiftPackageReference */;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
-		A38A4DD5254D755F00B35F98 /* SwiftPackageProductDependency */ = {
+		A38A4DD5254D755F00B35F98 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3BA42F4253F3AE00007DDFB /* RemoteSwiftPackageReference */;
+			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
 		};
-		A38EE832254EC6CA00045C12 /* SwiftPackageProductDependency */ = {
+		A38EE832254EC6CA00045C12 /* Haptica */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A38EE831254EC6CA00045C12 /* RemoteSwiftPackageReference */;
+			package = A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */;
 			productName = Haptica;
 		};
-		A38EE837254EC9C200045C12 /* SwiftPackageProductDependency */ = {
+		A38EE837254EC9C200045C12 /* Haptica */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A38EE831254EC6CA00045C12 /* RemoteSwiftPackageReference */;
+			package = A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */;
 			productName = Haptica;
 		};
-		A3BA42F5253F3AE00007DDFB /* SwiftPackageProductDependency */ = {
+		A3BA42F5253F3AE00007DDFB /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3BA42F4253F3AE00007DDFB /* RemoteSwiftPackageReference */;
+			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
 		};
-		A3D999E52549A69F003E08E2 /* SwiftPackageProductDependency */ = {
+		A3D999E52549A69F003E08E2 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D999E42549A69F003E08E2 /* RemoteSwiftPackageReference */;
+			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */

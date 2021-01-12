@@ -1,39 +1,13 @@
 {
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
   "assets" : [
     {
+      "idiom" : "watch",
       "filename" : "Circular.imageset",
-      "idiom" : "watch",
       "role" : "circular"
-    },
-    {
-      "filename" : "Extra Large.imageset",
-      "idiom" : "watch",
-      "role" : "extra-large"
-    },
-    {
-      "filename" : "Graphic Bezel.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-bezel"
-    },
-    {
-      "filename" : "Graphic Circular.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-circular"
-    },
-    {
-      "filename" : "Graphic Corner.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-corner"
-    },
-    {
-      "filename" : "Graphic Extra Large.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-extra-large"
-    },
-    {
-      "filename" : "Graphic Large Rectangular.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-large-rectangular"
     },
     {
       "filename" : "Modular.imageset",
@@ -41,13 +15,39 @@
       "role" : "modular"
     },
     {
+      "role" : "utilitarian",
       "filename" : "Utilitarian.imageset",
+      "idiom" : "watch"
+    },
+    {
       "idiom" : "watch",
-      "role" : "utilitarian"
+      "role" : "extra-large",
+      "filename" : "Extra Large.imageset"
+    },
+    {
+      "role" : "graphic-corner",
+      "idiom" : "watch",
+      "filename" : "Graphic Corner.imageset"
+    },
+    {
+      "filename" : "Graphic Circular.imageset",
+      "role" : "graphic-circular",
+      "idiom" : "watch"
+    },
+    {
+      "role" : "graphic-bezel",
+      "idiom" : "watch",
+      "filename" : "Graphic Bezel.imageset"
+    },
+    {
+      "role" : "graphic-large-rectangular",
+      "filename" : "Graphic Large Rectangular.imageset",
+      "idiom" : "watch"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "graphic-extra-large",
+      "filename" : "Graphic Extra Large.imageset"
     }
-  ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
-  }
+  ]
 }

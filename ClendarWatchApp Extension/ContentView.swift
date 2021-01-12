@@ -15,17 +15,21 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    Section(
-                        header:
-                            Text(Date().toFullDateString.localizedUppercase)
-                            .font(.boldFontWithSize(11))
-                            .foregroundColor(Color(.moianesB))
-                    ) {
-                        ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
-                            NavigationLink(destination: EventViewer(event: event)) {
-                                WidgetEventRow(event: event)
+            if eventKitWrapper.events.isEmpty {
+                EmptyView()
+            } else {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 10) {
+                        Section(
+                            header:
+                                Text(Date().toFullDateString.localizedUppercase)
+                                .font(.boldFontWithSize(11))
+                                .foregroundColor(Color(.moianesB))
+                        ) {
+                            ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
+                                NavigationLink(destination: EventViewer(event: event)) {
+                                    WidgetEventRow(event: event)
+                                }
                             }
                         }
                     }

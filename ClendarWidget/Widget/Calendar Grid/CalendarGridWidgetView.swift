@@ -18,12 +18,14 @@ import WidgetKit
 extension DateFormatter {
 	static var month: DateFormatter {
 		let formatter = DateFormatter()
+        formatter.locale = Locale.autoupdatingCurrent
 		formatter.setLocalizedDateFormatFromTemplate("MMMM")
 		return formatter
 	}
 
 	static var monthAndYear: DateFormatter {
 		let formatter = DateFormatter()
+        formatter.locale = Locale.autoupdatingCurrent
 		formatter.setLocalizedDateFormatFromTemplate("MMMM yyyy")
 		return formatter
 	}
@@ -120,7 +122,9 @@ struct CalendarGridView<DateView>: View where DateView: View {
 		HStack(spacing: 12) {
 			ForEach(0 ..< 7, id: \.self) { index in
 				Text(getWeekDaysSorted()[index].localizedUppercase)
-					.font(.boldFontWithSize(10))
+					.font(.boldFontWithSize(9))
+                    .scaledToFill()
+                    .minimumScaleFactor(0.5)
 			}
 		}
 	}

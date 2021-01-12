@@ -16,9 +16,7 @@ struct EventListView: View {
     var body: some View {
             ScrollView(showsIndicators: false) {
                 if events.isEmpty {
-                    Text("🎉 No events for today,\nenjoy your day!\n")
-                        .modifier(MediumTextModifider())
-                        .lineSpacing(10)
+                    EmptyView()
                 } else {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         ForEach(events, id: \.self) { event in

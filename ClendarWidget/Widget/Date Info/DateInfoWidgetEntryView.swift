@@ -109,19 +109,23 @@ struct EventsListWidgetView: View {
     var minimizeContents: Bool = false
 
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 10) {
-            Section(
-                header:
-                    Text(entry.date.toFullDateString.localizedUppercase)
-                    .font(.boldFontWithSize(11))
-                    .foregroundColor(Color(.moianesB))
-            ) {
-                let events = entry.events.prefix(minimizeContents ? 3 : 6)
-                ForEach(events, id: \.self) { event in
-                    WidgetEventRow(event: event)
+        if entry.events.isEmpty {
+            EmptyView()
+        } else {
+            LazyVStack(alignment: .leading, spacing: 10) {
+                Section(
+                    header:
+                        Text(entry.date.toFullDateString.localizedUppercase)
+                        .font(.boldFontWithSize(11))
+                        .foregroundColor(Color(.moianesB))
+                ) {
+                    let events = entry.events.prefix(minimizeContents ? 3 : 6)
+                    ForEach(events, id: \.self) { event in
+                        WidgetEventRow(event: event)
+                    }
                 }
-            }
-        }.padding(10)
+            }.padding(10)
+        }
     }
 }
 
