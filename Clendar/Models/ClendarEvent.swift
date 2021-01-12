@@ -44,6 +44,6 @@ extension ClendarEvent {
     }
 
     var calendarColor: Color {
-        return Color(calendarUIColor)
+        Color(calendarUIColor)
     }
 }

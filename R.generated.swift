@@ -554,10 +554,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let minutes = Rswift.StringResource(key: "minutes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-      /// en translation: write something at Friday 8PM...
+      /// en translation: read a book this Friday 8PM...
       ///
       /// Locales: en, vi
-      static let writeSomethingAtFriday8PM = Rswift.StringResource(key: "write something at Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      static let readABookThisFriday8PM = Rswift.StringResource(key: "read a book this Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: 🎉 No events for today, enjoy your day! 
       ///
       /// Locales: en, vi
@@ -1557,19 +1557,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("minutes", bundle: bundle, comment: "")
       }
 
-      /// en translation: write something at Friday 8PM...
+      /// en translation: read a book this Friday 8PM...
       ///
       /// Locales: en, vi
-      static func writeSomethingAtFriday8PM(preferredLanguages: [String]? = nil) -> String {
+      static func readABookThisFriday8PM(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("write something at Friday 8PM...", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("read a book this Friday 8PM...", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "write something at Friday 8PM..."
+          return "read a book this Friday 8PM..."
         }
 
-        return NSLocalizedString("write something at Friday 8PM...", bundle: bundle, comment: "")
+        return NSLocalizedString("read a book this Friday 8PM...", bundle: bundle, comment: "")
       }
 
       /// en translation: 🎉 No events for today, enjoy your day! 
