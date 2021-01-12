@@ -185,10 +185,9 @@ platform :ios do
         method: export_method,
         provisioningProfiles: { 
           "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
-          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE"
-#          ,
-#          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
-#          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
+          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
+          "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
+          "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
         }
       }
     )

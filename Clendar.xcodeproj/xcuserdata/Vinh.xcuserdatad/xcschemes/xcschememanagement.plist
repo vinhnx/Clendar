@@ -12,12 +12,12 @@
 		<key>ClendarWatchApp (Complication).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>27</integer>
+			<integer>33</integer>
 		</dict>
 		<key>ClendarWatchApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>32</integer>
 		</dict>
 		<key>ClendarWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
