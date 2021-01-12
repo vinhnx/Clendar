@@ -23,17 +23,10 @@ extension DateFormatter {
 
 	static func format(_ date: Date, format: String) -> String {
 		let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = Locale.autoupdatingCurrent
 		dateFormatter.setLocalizedDateFormatFromTemplate(format)
 		return dateFormatter.string(from: date)
 	}
-
-    static func nonlocalizedFormat(_ date: Date, format: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = format
-        return dateFormatter.string(from: date)
-    }
 }
 
 public class CalendarManager {

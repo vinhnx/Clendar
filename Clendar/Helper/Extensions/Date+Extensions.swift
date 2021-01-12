@@ -51,7 +51,7 @@ extension Date {
     }
 
     var toDayAndDateString: String {
-        DateFormatter.nonlocalizedFormat(self, format: "EEEE dd")
+        DateFormatter.format(self, format: "EEEE dd")
     }
 
     var toChineseDate: Date {
