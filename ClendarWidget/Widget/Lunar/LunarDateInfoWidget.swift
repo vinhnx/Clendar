@@ -12,12 +12,12 @@ import WidgetKit
 struct LunarDateInfoWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
-            kind: "LunarDateInfoWidget",
+            kind: Constants.WidgetKind.lunarDateInfoWidget,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in
             LunarSmallDateWidgetView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(.backgroundColor))
+                .background(WidgetBackgroundView())
         }
         .configurationDisplayName(NSLocalizedString("Lunar Date", comment: ""))
         .description(NSLocalizedString("Lunar calendar at a glance", comment: ""))

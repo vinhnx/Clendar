@@ -154,7 +154,10 @@ final class SettingsViewController: FormViewController {
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
             try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
             // reload widget center
-            WidgetCenter.shared.reloadTimelines(ofKind: "DateInfoWidget")
+
+            for kind in [Constants.WidgetKind.dateInfoWidget, Constants.WidgetKind.calendarGridWidget, Constants.WidgetKind.lunarDateInfoWidget] {
+                WidgetCenter.shared.reloadTimelines(ofKind: kind)
+            }
         }
         return instance
     }()

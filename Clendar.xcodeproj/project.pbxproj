@@ -89,6 +89,8 @@
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
 		A33F843A25AF239D001324A0 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F843925AF239C001324A0 /* FileManager+Extensions.swift */; };
 		A33F844025AF23E8001324A0 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F843925AF239C001324A0 /* FileManager+Extensions.swift */; };
+		A33F846625AF3404001324A0 /* WidgetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */; };
+		A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */; };
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
 		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
@@ -326,6 +328,7 @@
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
 		A33F843925AF239C001324A0 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
+		A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBackgroundView.swift; sourceTree = "<group>"; };
 		A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetEntryView.swift; sourceTree = "<group>"; };
 		A3560D0B2567FC5B009088E7 /* EventListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRow.swift; sourceTree = "<group>"; };
 		A359CD872588E3260089C4A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
@@ -492,6 +495,7 @@
 		A3064D36254CF0D300C7F228 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				A33F846425AF33F0001324A0 /* Components */,
 				A3AFBD6F255F87EF00760E5B /* Main */,
 				A3AFBD68255F87CB00760E5B /* Models */,
 				A3AFBD35255F864D00760E5B /* Date Info */,
@@ -752,6 +756,14 @@
 				A33F843925AF239C001324A0 /* FileManager+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A33F846425AF33F0001324A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A36A504E2250EE5800B12034 /* Logger */ = {
@@ -1317,6 +1329,7 @@
 				A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */,
 				A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */,
 				A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */,
+				A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
 				A307DAA925ACBA9C00B5CE11 /* LunarDateInfoWidget.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
@@ -1385,6 +1398,7 @@
 				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
+				A33F846625AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
 				A3EF7C2E258E26F900B7BA37 /* InfoWrapView.swift in Sources */,
 				A33F81182247454E009CC46A /* String+Extensions.swift in Sources */,
 				A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */,

@@ -125,6 +125,7 @@ struct CalendarGridView<DateView>: View where DateView: View {
 					.font(.boldFontWithSize(9))
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
+                    .foregroundColor(.appDark)
 			}
 		}
 	}

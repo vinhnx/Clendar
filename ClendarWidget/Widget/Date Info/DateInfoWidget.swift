@@ -17,37 +17,16 @@ import WidgetKit
  + https://github.com/pawello2222/WidgetExamples
  */
 struct DateInfoWidget: Widget {
-	var body: some WidgetConfiguration {
-		StaticConfiguration(
-			kind: "DateInfoWidget",
-			provider: DateInfoWidgetTimelineProvider()
-		) { entry in
-			DateInfoWidgetEntryView(entry: entry)
-				.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(WidgetBackgroundColor())
-		}
-		.configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
-		.description(NSLocalizedString("Check calendar at a glance", comment: ""))
-		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-	}
-}
-
-struct WidgetBackgroundColor: View {
-    @ViewBuilder
-    var body: some View {
-        switch widgetThemeFromFile {
-        case WidgetTheme.dark.rawValue:
-            Color(.lavixA)
-        case WidgetTheme.light.rawValue:
-            Color(.hueC)
-        default:
-            Color(.backgroundColor)
+    var body: some WidgetConfiguration {
+        StaticConfiguration(
+            kind: Constants.WidgetKind.dateInfoWidget,
+            provider: DateInfoWidgetTimelineProvider()) { entry in
+            DateInfoWidgetEntryView(entry: entry)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(WidgetBackgroundView())
         }
-    }
-
-    private var widgetThemeFromFile: String {
-        let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
-        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return "" }
-        return text
+        .configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
+        .description(NSLocalizedString("Check calendar at a glance", comment: ""))
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
