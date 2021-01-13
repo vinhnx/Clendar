@@ -289,7 +289,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 71 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 75 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -479,6 +479,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let quickEvent = Rswift.StringResource(key: "Quick Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Rate Clendar
+      ///
+      /// Locales: en, vi
+      static let rateClendar = Rswift.StringResource(key: "Rate Clendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Recurring date
       ///
       /// Locales: en, vi
@@ -499,6 +503,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let settings = Rswift.StringResource(key: "Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Share Clendar
+      ///
+      /// Locales: en, vi
+      static let shareClendar = Rswift.StringResource(key: "Share Clendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Sharing
+      ///
+      /// Locales: en, vi
+      static let sharing = Rswift.StringResource(key: "Sharing", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!
+      ///
+      /// Locales: en, vi
+      static let sharingIsCaringIfYouLikeClendarPleaseLeaveAReviewOrHelpSharingThisAppToTheWorldThankYou = Rswift.StringResource(key: "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Show days out
       ///
       /// Locales: en, vi
@@ -1281,6 +1297,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Quick Event", bundle: bundle, comment: "")
       }
 
+      /// en translation: Rate Clendar
+      ///
+      /// Locales: en, vi
+      static func rateClendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Rate Clendar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Rate Clendar"
+        }
+
+        return NSLocalizedString("Rate Clendar", bundle: bundle, comment: "")
+      }
+
       /// en translation: Recurring date
       ///
       /// Locales: en, vi
@@ -1354,6 +1385,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Settings", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Share Clendar
+      ///
+      /// Locales: en, vi
+      static func shareClendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Share Clendar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Share Clendar"
+        }
+
+        return NSLocalizedString("Share Clendar", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sharing
+      ///
+      /// Locales: en, vi
+      static func sharing(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Sharing", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Sharing"
+        }
+
+        return NSLocalizedString("Sharing", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!
+      ///
+      /// Locales: en, vi
+      static func sharingIsCaringIfYouLikeClendarPleaseLeaveAReviewOrHelpSharingThisAppToTheWorldThankYou(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!"
+        }
+
+        return NSLocalizedString("Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", bundle: bundle, comment: "")
       }
 
       /// en translation: Show days out

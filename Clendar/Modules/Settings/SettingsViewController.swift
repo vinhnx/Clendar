@@ -151,11 +151,32 @@ final class SettingsViewController: FormViewController {
         instance.selectOptionWithTitle(SettingsManager.widgetTheme)
         instance.valueDidChange = { selected in
             SettingsManager.widgetTheme = selected?.title ?? WidgetTheme.defaultValue.localizedText
-
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
             try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
             // reload widget center
             WidgetCenter.shared.reloadTimelines(ofKind: "DateInfoWidget")
+        }
+        return instance
+    }()
+
+    lazy var writeReviewButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = NSLocalizedString("Rate Clendar", comment: "")
+        instance.action = { [weak self] in
+            if let writeReviewURL = URL(string: Constants.AppStore.reviewURL) {
+                UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+            }
+        }
+        return instance
+    }()
+
+    lazy var shareAppButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = NSLocalizedString("Share Clendar", comment: "")
+        instance.action = { [weak self] in
+            // swiftlint:disable:next force_unwrapping
+            let activity = UIActivityViewController(activityItems: [URL(string: Constants.AppStore.url)!], applicationActivities: nil)
+            self?.present(activity, animated: true, completion: nil)
         }
         return instance
     }()
@@ -202,6 +223,12 @@ final class SettingsViewController: FormViewController {
 		builder += defaultEventDuration
 		builder += quickEventMode
 		builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
+
+        // Sharing
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Sharing", comment: ""))
+        builder += writeReviewButton
+        builder += shareAppButton
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", comment: ""))
 
 		// Info
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

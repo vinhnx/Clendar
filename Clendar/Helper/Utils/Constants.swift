@@ -17,4 +17,9 @@ enum Constants {
 		static let calendarHeight: CGFloat = 250
 		static let calendarHeaderHeight: CGFloat = 10
 	}
+
+    enum AppStore {
+        static let url = "https://apps.apple.com/app/id1548102041"
+        static let reviewURL = url + "?action=write-review"
+    }
 }
