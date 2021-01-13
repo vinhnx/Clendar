@@ -150,7 +150,7 @@ final class SettingsViewController: FormViewController {
         instance.append(WidgetTheme.titles)
         instance.selectOptionWithTitle(SettingsManager.widgetTheme)
         instance.valueDidChange = { selected in
-            SettingsManager.widgetTheme = selected?.title ?? WidgetTheme.defaultValue.localizedText
+            SettingsManager.widgetTheme = selected?.title ?? WidgetTheme.defaultValue.rawValue
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
             try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
             // reload widget center

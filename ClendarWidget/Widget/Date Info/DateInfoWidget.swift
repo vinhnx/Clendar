@@ -36,9 +36,9 @@ struct WidgetBackgroundColor: View {
     @ViewBuilder
     var body: some View {
         switch widgetThemeFromFile {
-        case WidgetTheme.dark.localizedText:
+        case WidgetTheme.dark.rawValue:
             Color(.lavixA)
-        case WidgetTheme.light.localizedText:
+        case WidgetTheme.light.rawValue:
             Color(.hueC)
         default:
             Color(.backgroundColor)

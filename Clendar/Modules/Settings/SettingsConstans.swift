@@ -120,22 +120,22 @@ enum BadgeSettings: String, CaseIterable {
 	}
 }
 
-enum WidgetTheme: CaseIterable {
-    case system
-    case light
-    case dark
+enum WidgetTheme: String, CaseIterable {
+    case system = "System"
+    case light = "Light"
+    case dark = "Dark"
 
     // MARK: Internal
 
-    static var titles: [String] = Self.allCases.map(\.localizedText)
+    static var titles: [String] = Self.allCases.map(\.rawValue)
 
     static var defaultValue: Self { .system }
 
-    var localizedText: String {
-        switch self {
-        case .system: return NSLocalizedString("Follow system", comment: "")
-        case .light: return NSLocalizedString("Light", comment: "")
-        case .dark: return NSLocalizedString("Dark", comment: "")
-        }
-    }
+//    var localizedText: String {
+//        switch self {
+//        case .system: return NSLocalizedString("Follow system", comment: "")
+//        case .light: return NSLocalizedString("Light", comment: "")
+//        case .dark: return NSLocalizedString("Dark", comment: "")
+//        }
+//    }
 }
