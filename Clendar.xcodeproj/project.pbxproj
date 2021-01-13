@@ -87,6 +87,8 @@
 		A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811922474BE8009CC46A /* Collection+Extensions.swift */; };
 		A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811D22476767009CC46A /* Array+Extensions.swift */; };
 		A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */; };
+		A33F843A25AF239D001324A0 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F843925AF239C001324A0 /* FileManager+Extensions.swift */; };
+		A33F844025AF23E8001324A0 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F843925AF239C001324A0 /* FileManager+Extensions.swift */; };
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
 		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
@@ -323,6 +325,7 @@
 		A33F811922474BE8009CC46A /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811D22476767009CC46A /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SwiftyChrono.swift"; sourceTree = "<group>"; };
+		A33F843925AF239C001324A0 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 		A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidgetEntryView.swift; sourceTree = "<group>"; };
 		A3560D0B2567FC5B009088E7 /* EventListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRow.swift; sourceTree = "<group>"; };
 		A359CD872588E3260089C4A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
@@ -746,6 +749,7 @@
 				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
 				A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */,
 				A3EDE7462566A0180046C1F5 /* View+Extensions.swift */,
+				A33F843925AF239C001324A0 /* FileManager+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1331,6 +1335,7 @@
 				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
 				A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */,
 				A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */,
+				A33F844025AF23E8001324A0 /* FileManager+Extensions.swift in Sources */,
 				A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */,
 				A307DBE625ADE66B00B5CE11 /* EmptyView.swift in Sources */,
@@ -1421,6 +1426,7 @@
 				A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */,
 				A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */,
 				A33F8115224742F7009CC46A /* WorkItem.swift in Sources */,
+				A33F843A25AF239D001324A0 /* FileManager+Extensions.swift in Sources */,
 				A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */,
 				A3EDE73825669FB80046C1F5 /* EventListView.swift in Sources */,
 				A3187E8525499FE1009524DF /* AppInfo.swift in Sources */,

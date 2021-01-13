@@ -12,5 +12,7 @@
 	<true/>
 	<key>com.apple.security.personal-information.location</key>
 	<true/>
+	<key>com.apple.security.application-groups</key>
+	<string>group.com.vinhnx.Clendar</string>
 </dict>
 </plist>

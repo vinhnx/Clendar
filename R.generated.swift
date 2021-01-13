@@ -116,9 +116,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 5 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 6 properties.
   struct entitlements {
     static let comAppleSecurityAppSandbox = true
+    static let comAppleSecurityApplicationGroups = infoPlistString(path: [], key: "com.apple.security.application-groups") ?? "group.com.vinhnx.Clendar"
     static let comAppleSecurityNetworkClient = true
     static let comAppleSecurityPersonalInformationAddressbook = true
     static let comAppleSecurityPersonalInformationCalendars = true
@@ -288,7 +289,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 69 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 71 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -406,6 +407,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let eventDuration = Rswift.StringResource(key: "Event duration", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Follow system
+      ///
+      /// Locales: en, vi
+      static let followSystem = Rswift.StringResource(key: "Follow system", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: General
       ///
       /// Locales: en, vi
@@ -542,6 +547,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let weekView = Rswift.StringResource(key: "Week view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Widget theme
+      ///
+      /// Locales: en, vi
+      static let widgetTheme = Rswift.StringResource(key: "Widget theme", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: You can choose available calendars to shown in event list
       ///
       /// Locales: en, vi
@@ -1000,6 +1009,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Event duration", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Follow system
+      ///
+      /// Locales: en, vi
+      static func followSystem(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Follow system", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Follow system"
+        }
+
+        return NSLocalizedString("Follow system", bundle: bundle, comment: "")
       }
 
       /// en translation: General
@@ -1510,6 +1534,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Week view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Widget theme
+      ///
+      /// Locales: en, vi
+      static func widgetTheme(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Widget theme", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Widget theme"
+        }
+
+        return NSLocalizedString("Widget theme", bundle: bundle, comment: "")
       }
 
       /// en translation: You can choose available calendars to shown in event list

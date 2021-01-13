@@ -10,6 +10,8 @@ import SwiftDate
 import SwiftyFORM
 import UIKit
 
+import WidgetKit
+
 final class SettingsNavigationController: UINavigationController {
 	// MARK: Lifecycle
 
@@ -64,6 +66,10 @@ final class SettingsViewController: FormViewController {
 			SettingsManager.darkModeActivated = theme == .dark
 			UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
 			NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
+//
+//            let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
+//            try? String(theme?.text ?? Theme.light.text).write(to: url, atomically: false, encoding: .utf8)
+//            WidgetCenter.shared.reloadTimelines(ofKind: "DateInfoWidget")
 		}
 		return proxy
 	}()
@@ -138,6 +144,22 @@ final class SettingsViewController: FormViewController {
 		return instance
 	}()
 
+    lazy var widgetTheme: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title(NSLocalizedString("Widget theme", comment: ""))
+        instance.append(WidgetTheme.titles)
+        instance.selectOptionWithTitle(SettingsManager.widgetTheme)
+        instance.valueDidChange = { selected in
+            SettingsManager.widgetTheme = selected?.title ?? WidgetTheme.defaultValue.localizedText
+
+            let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
+            try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
+            // reload widget center
+            WidgetCenter.shared.reloadTimelines(ofKind: "DateInfoWidget")
+        }
+        return instance
+    }()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -162,11 +184,11 @@ final class SettingsViewController: FormViewController {
 		// General
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
 		builder += themes
+        builder += widgetTheme
 		builder += enableHapticFeedback
 		builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
 		// Calendar
-
         // TODO: support in future versions..
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
         // builder += calendarMode
@@ -174,7 +196,6 @@ final class SettingsViewController: FormViewController {
         builder += supplementaryViewMode
         builder += shouldAutoSelectDayOnCalendarChange
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
-
 
 		// Quick Event
 		builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))

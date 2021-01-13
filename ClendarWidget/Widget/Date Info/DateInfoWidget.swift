@@ -24,10 +24,30 @@ struct DateInfoWidget: Widget {
 		) { entry in
 			DateInfoWidgetEntryView(entry: entry)
 				.frame(maxWidth: .infinity, maxHeight: .infinity)
-				.background(Color(.backgroundColor))
+                .background(WidgetBackgroundColor())
 		}
 		.configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
 		.description(NSLocalizedString("Check calendar at a glance", comment: ""))
 		.supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
 	}
+}
+
+struct WidgetBackgroundColor: View {
+    @ViewBuilder
+    var body: some View {
+        switch widgetThemeFromFile {
+        case WidgetTheme.dark.localizedText:
+            Color(.lavixA)
+        case WidgetTheme.light.localizedText:
+            Color(.hueC)
+        default:
+            Color(.backgroundColor)
+        }
+    }
+
+    private var widgetThemeFromFile: String {
+        let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
+        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return "" }
+        return text
+    }
 }

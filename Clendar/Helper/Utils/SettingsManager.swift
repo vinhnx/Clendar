@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct SettingsManager {
 	@UserDefault("darkModeActivated", defaultValue: isDarkMode)
@@ -38,4 +39,7 @@ struct SettingsManager {
 
 	@UserDefault("currentAppIconName", defaultValue: AppIcon.defaultValue)
 	static var currentAppIconName: String?
+
+    @UserDefault("widgetTheme", defaultValue: DaySupplementaryType.defaultValue.rawValue)
+    static var widgetTheme: String
 }
