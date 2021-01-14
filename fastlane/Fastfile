@@ -154,10 +154,9 @@ platform :ios do
     
     bumpVersion
     bumpBuild
+    commitVersionBumpWrapper
     
     _makeAppStoreBuild
-    
-    commitVersionBumpWrapper
     makeAppStoreGitTag
   end
   
