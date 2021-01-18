@@ -153,6 +153,7 @@ platform :ios do
     ensure_git_status_clean
     
     bumpVersion
+    commitVersionBumpWrapper
     bumpBuild
     commitVersionBumpWrapper
     
