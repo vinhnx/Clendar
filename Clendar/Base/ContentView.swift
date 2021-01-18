@@ -51,7 +51,11 @@ struct ContentView: View {
             CalendarHeaderView()
                 .frame(height: Constants.CalendarView.calendarHeaderHeight)
             calendarWrapperView
-                .frame(height: Constants.CalendarView.calendarHeight)
+                .frame(
+                    width: geometry?.frame(in: .local).width,
+                    height: Constants.CalendarView.calendarHeight
+                )
+                .padding(.top, -20)
         }
         .padding()
     }

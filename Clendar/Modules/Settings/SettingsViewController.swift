@@ -66,10 +66,6 @@ final class SettingsViewController: FormViewController {
 			SettingsManager.darkModeActivated = theme == .dark
 			UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
 			NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
-//
-//            let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
-//            try? String(theme?.text ?? Theme.light.text).write(to: url, atomically: false, encoding: .utf8)
-//            WidgetCenter.shared.reloadTimelines(ofKind: "DateInfoWidget")
 		}
 		return proxy
 	}()
