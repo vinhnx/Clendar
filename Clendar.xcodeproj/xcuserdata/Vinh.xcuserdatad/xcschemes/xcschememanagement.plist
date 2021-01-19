@@ -12,12 +12,12 @@
 		<key>ClendarWatchApp (Complication).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>15</integer>
 		</dict>
 		<key>ClendarWatchApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>14</integer>
 		</dict>
 		<key>ClendarWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
@@ -28,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A3064D18254CEF5200C7F228</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A307DAB925ADD6B300B5CE11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
