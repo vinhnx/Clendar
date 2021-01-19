@@ -25,7 +25,7 @@ struct ReviewManager {
         }
 
         let numberOfLaunches = userDefaults.integer(forKey: "numberOfLaunches")
-        userDefaults.set(numberOfLaunches + 1, forKey: "numerOfLaunches")
+        userDefaults.set(numberOfLaunches + 1, forKey: "numberOfLaunches")
     }
 
     func askForReviewIfNeeded() {
@@ -43,7 +43,7 @@ struct ReviewManager {
         let numberOfLaunches = userDefaults.integer(forKey: "numberOfLaunches")
 
         guard timeInstalled > minimumInstallTime,
-              numberOfLaunches > minimumLaunches
+              numberOfLaunches >= minimumLaunches
         else { return false }
 
         return true
