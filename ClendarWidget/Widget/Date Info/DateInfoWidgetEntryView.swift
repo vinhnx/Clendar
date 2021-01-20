@@ -50,7 +50,9 @@ struct SmallCalendarWidgetView: View {
             Text(entry.date.toDateString)
                 .font(.boldFontWithSize(45))
                 .foregroundColor(.appDark)
-        }.padding(.all)
+                .minimumScaleFactor(0.5)
+        }
+        .padding(.all)
     }
 }
 
