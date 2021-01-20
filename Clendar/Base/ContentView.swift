@@ -66,7 +66,7 @@ struct ContentView: View {
                 genLightHaptic()
                 showCreateEventState.toggle()
         }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "calendar.badge.plus", title: "Add event"))
+            .buttonStyle(SolidButtonStyle(imageName: "calendar.badge.plus", title: "New Event"))
             .sheet(isPresented: $showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
@@ -168,6 +168,9 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .addEventShortcutAction)) { (_) in
+            showCreateEventState = true // show create event view
         }
     }
 }

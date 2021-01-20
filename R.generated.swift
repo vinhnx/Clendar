@@ -289,7 +289,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 75 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 74 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -451,10 +451,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let name = Rswift.StringResource(key: "Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
-      /// en translation: New event
-      ///
-      /// Locales: en, vi
-      static let newEvent = Rswift.StringResource(key: "New event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: None
       ///
       /// Locales: en, vi
@@ -1190,21 +1186,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Name", bundle: bundle, comment: "")
-      }
-
-      /// en translation: New event
-      ///
-      /// Locales: en, vi
-      static func newEvent(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("New event", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "New event"
-        }
-
-        return NSLocalizedString("New event", bundle: bundle, comment: "")
       }
 
       /// en translation: None

@@ -12,6 +12,10 @@ import UIKit
 typealias VoidBlock = () -> Void
 
 enum Constants {
+
+    static let addEventQuickActionKey = "type"
+    static let addEventQuickActionID = "com.vinhnx.Clendar.addEventShortcut"
+
     enum CalendarView {
         static let calendarWidth: CGFloat = UIScreen.main.bounds.size.width - (30 * 2)
         static let calendarHeight: CGFloat = 250
