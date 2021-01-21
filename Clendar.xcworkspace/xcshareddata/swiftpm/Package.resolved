@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/vinhnx/Shift",
         "state": {
           "branch": null,
-          "revision": "304b4d3eec7deaf7c87e1d62641864c9ef2f7729",
-          "version": "0.1.0"
+          "revision": "37e494c9aaf77af96205a87dea7b7fb589268916",
+          "version": "0.2.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/malcommac/SwiftDate",
         "state": {
           "branch": null,
-          "revision": "a25913b19833860b61fac161a706e44834f03c47",
-          "version": "6.2.0"
+          "revision": "6190d0cefff3013e77ed567e6b074f324e5c5bf5",
+          "version": "6.3.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/neoneye/SwiftyFORM",
         "state": {
           "branch": null,
-          "revision": "6a434616545e1f8c17675b3afabb86ad0e5f97aa",
-          "version": "1.8.4"
+          "revision": "85b2ceb0bb8419192fcb734097c544fb71e5d3fe",
+          "version": "1.8.5"
         }
       },
       {

@@ -11,7 +11,19 @@ import SwiftUI
 import Shift
 
 // swiftlint:disable:next private_over_fileprivate
-fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
+fileprivate var shortcutItemToProcess: UIApplicationShortcutItem? {
+    didSet {
+        guard let name = shortcutItemToProcess?.userInfo?[Constants.addEventQuickActionKey] as? String else { return }
+
+        switch name {
+        case Constants.addEventQuickActionID:
+            NotificationCenter.default.post(name: .addEventShortcutAction, object: nil)
+
+        default:
+            break
+        }
+    }
+}
 
 @main
 struct ClendarApp: App {
@@ -29,29 +41,13 @@ struct ClendarApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(store)
+            ContentView().environmentObject(store)
         }
         .onChange(of: phase) { (newPhase) in
             switch newPhase {
-            case .active :
-                guard let name = shortcutItemToProcess?.userInfo?[Constants.addEventQuickActionKey] as? String else { return }
-
-                switch name {
-                case Constants.addEventQuickActionID:
-                    NotificationCenter.default.post(name: .addEventShortcutAction, object: nil)
-                default:
-                    break
-                }
-
-            case .inactive:
-                break
-
-            case .background:
-                addQuickActions()
-
-            @unknown default:
-                break
+            case .background: addQuickActions()
+            case .active, .inactive: break
+            @unknown default: break
             }
         }
     }
