@@ -159,11 +159,6 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didChangeDaySupplementaryTypePreferences)) { _ in
             calendarWrapperView.calendarView.reloadData()
         }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
-            isMonthView = SettingsManager.isOnMonthViewSettings
-            calendarWrapperView.calendarView.changeModePerSettings()
-            calendarWrapperView.calendarView.commitCalendarViewUpdate()
-        }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
         }
