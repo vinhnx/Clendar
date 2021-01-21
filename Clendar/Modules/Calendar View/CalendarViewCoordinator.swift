@@ -117,7 +117,7 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
         }
     }
 
-    func dayLabelBackgroundColor(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIColor? {
-        .appRed
+    func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
+        .primaryColor
     }
 }
