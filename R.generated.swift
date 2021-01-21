@@ -270,7 +270,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 18 images.
+  /// This `R.image` struct is generated, and contains static references to 16 images.
   struct image {
     /// Image `dark_icon_120`.
     static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
@@ -300,14 +300,10 @@ struct R: Rswift.Validatable {
     static let icon5_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon5_120")
     /// Image `icon5_180`.
     static let icon5_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon5_180")
-    /// Image `next`.
-    static let next = Rswift.ImageResource(bundle: R.hostingBundle, name: "next")
     /// Image `original_120`.
     static let original_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_120")
     /// Image `original_180`.
     static let original_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_180")
-    /// Image `previous`.
-    static let previous = Rswift.ImageResource(bundle: R.hostingBundle, name: "previous")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
@@ -408,13 +404,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "next", bundle: ..., traitCollection: ...)`
-    static func next(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.next, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "original_120", bundle: ..., traitCollection: ...)`
     static func original_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.original_120, compatibleWith: traitCollection)
@@ -425,13 +414,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "original_180", bundle: ..., traitCollection: ...)`
     static func original_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.original_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "previous", bundle: ..., traitCollection: ...)`
-    static func previous(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.previous, compatibleWith: traitCollection)
     }
     #endif
 
