@@ -1,16 +1,16 @@
 {
   "images" : [
     {
+      "filename" : "graphic-corner40mm@2x.png",
       "idiom" : "watch",
-      "screen-width" : ">161",
       "scale" : "2x",
-      "filename" : "graphic-corner40mm@2x.png"
+      "screen-width" : ">161"
     },
     {
+      "filename" : "graphic-corner44mm@2x.png",
       "idiom" : "watch",
-      "screen-width" : ">183",
       "scale" : "2x",
-      "filename" : "graphic-corner44mm@2x.png"
+      "screen-width" : ">183"
     }
   ],
   "info" : {

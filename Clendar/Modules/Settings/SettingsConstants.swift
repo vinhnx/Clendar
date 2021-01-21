@@ -10,48 +10,65 @@ import Foundation
 import UIKit
 
 enum AppIcon: CaseIterable {
-    case light
+    case `default`
+    case original
     case dark
     case dimmedDark
+    case icon1
+    case icon2
+    case icon3
+    case icon4
+    case icon5
 
     // MARK: Internal
 
     static var titles: [String] = Self.allCases.map(\.localizedText)
-    static var defaultValue: String { AppIcon.light.localizedText }
+    static var defaultValue: String { AppIcon.default.localizedText }
 
     var iconName: String? {
         switch self {
-        case .light: return nil
+        case .default: return nil
+        case .original: return "original"
         case .dark: return "dark_icon"
         case .dimmedDark: return "dim_dark_icon"
+        case .icon1: return "icon1"
+        case .icon2: return "icon2"
+        case .icon3: return "icon3"
+        case .icon4: return "icon4"
+        case .icon5: return "icon5"
         }
     }
 
     var localizedText: String {
         switch self {
-        case .light: return NSLocalizedString("Light", comment: "")
+        case .default: return NSLocalizedString("Default", comment: "")
+        case .original: return NSLocalizedString("Original", comment: "")
         case .dark: return NSLocalizedString("Dark", comment: "")
         case .dimmedDark: return NSLocalizedString("Dim", comment: "")
+        case .icon1: return "icon1"
+        case .icon2: return "icon2"
+        case .icon3: return "icon3"
+        case .icon4: return "icon4"
+        case .icon5: return "icon5"
         }
     }
 
     var displayImage: UIImage? {
         switch self {
-        case .light: return Bundle.main.icon
+        case .default: return Bundle.main.icon
+        case .original: return "original_120".asImage
         case .dark: return "dark_icon_120".asImage
         case .dimmedDark: return "dim_dark_icon_120".asImage
-        }
-    }
-
-    static func mapFromString(_ string: String?) -> Self {
-        switch string {
-        case AppIcon.dark.localizedText: return .dark
-        case AppIcon.dimmedDark.localizedText: return .dimmedDark
-        default: return .light
+        case .icon1: return "icon1_120".asImage
+        case .icon2: return "icon2_120".asImage
+        case .icon3: return "icon3_120".asImage
+        case .icon4: return "icon4_120".asImage
+        case .icon5: return "icon5_120".asImage
         }
     }
 }
 
+// TODO: add more theme: (#E4ECF5 looks good, true OLED...)
 enum Theme: Int, CaseIterable {
     case dark
     case light
