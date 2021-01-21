@@ -32,7 +32,7 @@
 		A307DB1D25ADD84800B5CE11 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A307DB2325ADD84F00B5CE11 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */; };
 		A307DB2925ADD85500B5CE11 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
-		A307DB2F25ADD86000B5CE11 /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
+		A307DB2F25ADD86000B5CE11 /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A307DB3525ADD86900B5CE11 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A307DB3B25ADD88300B5CE11 /* SwiftDate */; };
 		A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
@@ -74,7 +74,7 @@
 		A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
-		A33DE4952541C4F20064D0AD /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
+		A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80DF22467A85009CC46A /* ClendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80DE22467A85009CC46A /* ClendarTests.swift */; };
@@ -93,14 +93,14 @@
 		A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */; };
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
 		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
-		A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Themes.swift */; };
+		A34211B8254D025C008D9B8E /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A3560CFE2567FB6F009088E7 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* Then */; };
 		A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3560D0B2567FC5B009088E7 /* EventListRow.swift */; };
 		A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A35B9B4E258CD4810027E1B3 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B4D258CD4810027E1B3 /* EventViewer.swift */; };
 		A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */; };
 		A35B9B5C258CD4A30027E1B3 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */; };
-		A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
+		A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */; };
 		A368474D2554457B004BDCC6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */; };
 		A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */; };
 		A3684755255445F0004BDCC6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F81172247454E009CC46A /* String+Extensions.swift */; };
@@ -133,7 +133,7 @@
 		A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A38EE833254EC6CA00045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE832254EC6CA00045C12 /* Haptica */; };
 		A38EE838254EC9C200045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE837254EC9C200045C12 /* Haptica */; };
-		A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */; };
+		A38EE840254ECBD600045C12 /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */; };
 		A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39626BD2553081200F4ABEF /* EventHandler.swift */; };
 		A39B71B3255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A39B71B4255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
@@ -147,9 +147,12 @@
 		A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
+		A3C5D76325B9A939009A2CA2 /* CalendarChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* CalendarChooserViewController.swift */; };
+		A3C5D77325B9AA4F009A2CA2 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
+		A3C5D77925B9AA53009A2CA2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
 		A3D6839F25A9A4BF009C31D5 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
-		A3D6843725A9F467009C31D5 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6843625A9F467009C31D5 /* ReviewManager.swift */; };
+		A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6843625A9F467009C31D5 /* RatingManager.swift */; };
 		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
 		A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
@@ -308,7 +311,7 @@
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
-		A33DE4942541C4F20064D0AD /* Font+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Themes.swift"; sourceTree = "<group>"; };
+		A33DE4942541C4F20064D0AD /* Font+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Styles.swift"; sourceTree = "<group>"; };
 		A33DE4982541C50F0064D0AD /* Color+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Themes.swift"; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -336,7 +339,7 @@
 		A35B9B4D258CD4810027E1B3 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
 		A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperView.swift; sourceTree = "<group>"; };
 		A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
-		A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConstans.swift; sourceTree = "<group>"; };
+		A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
 		A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -365,8 +368,9 @@
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+Extensions.swift"; sourceTree = "<group>"; };
 		A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarError.swift; sourceTree = "<group>"; };
+		A3C5D76225B9A939009A2CA2 /* CalendarChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarChooserViewController.swift; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
-		A3D6843625A9F467009C31D5 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
+		A3D6843625A9F467009C31D5 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
 		A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetBundle.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
@@ -596,7 +600,7 @@
 			children = (
 				A37FB8E325657857007C637C /* SettingsWrapperView.swift */,
 				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
-				A367FBF2254DCA840059F6D7 /* SettingsConstans.swift */,
+				A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */,
 				A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */,
 				A31258B42551C23300891CE2 /* AppIconItemCell.xib */,
 				A31258B92551C2A100891CE2 /* AppIconItemCell.swift */,
@@ -607,7 +611,7 @@
 		A33DE4932541C4E50064D0AD /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				A33DE4942541C4F20064D0AD /* Font+Themes.swift */,
+				A33DE4942541C4F20064D0AD /* Font+Styles.swift */,
 				A33DE4982541C50F0064D0AD /* Color+Themes.swift */,
 			);
 			path = Themes;
@@ -697,6 +701,7 @@
 				A3187E65254998C1009524DF /* Event Viewer */,
 				A3C9465A224E5FE700123DEC /* Event List */,
 				A3D6832025A9A207009C31D5 /* Calendar View */,
+				A3C5D76125B9A926009A2CA2 /* Calendar Chooser */,
 				A31C7A57224E4BB400CB93A5 /* Settings */,
 			);
 			path = Modules;
@@ -829,6 +834,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A3C5D76125B9A926009A2CA2 /* Calendar Chooser */ = {
+			isa = PBXGroup;
+			children = (
+				A3C5D76225B9A939009A2CA2 /* CalendarChooserViewController.swift */,
+			);
+			path = "Calendar Chooser";
+			sourceTree = "<group>";
+		};
 		A3C9465A224E5FE700123DEC /* Event List */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,7 +902,7 @@
 				A30E48222541F4EF00B4B027 /* Utilities.swift */,
 				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
 				A38199FD25484E7700C71D41 /* Layout.swift */,
-				A3D6843625A9F467009C31D5 /* ReviewManager.swift */,
+				A3D6843625A9F467009C31D5 /* RatingManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1326,7 +1339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E23633258CD7A7001BCB9F /* Unwrap.swift in Sources */,
-				A38EE840254ECBD600045C12 /* SettingsConstans.swift in Sources */,
+				A38EE840254ECBD600045C12 /* SettingsConstants.swift in Sources */,
 				A3DC1D46254E4CF500824E6A /* Calendar+Extensions.swift in Sources */,
 				A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */,
 				A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
@@ -1344,7 +1357,7 @@
 				A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */,
 				A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
 				A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */,
-				A34211B8254D025C008D9B8E /* Font+Themes.swift in Sources */,
+				A34211B8254D025C008D9B8E /* Font+Styles.swift in Sources */,
 				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
 				A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */,
 				A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */,
@@ -1375,6 +1388,7 @@
 				A307DB2925ADD85500B5CE11 /* EKEvent+Extensions.swift in Sources */,
 				A307DBEC25ADE66C00B5CE11 /* EmptyView.swift in Sources */,
 				A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */,
+				A3C5D77925B9AA53009A2CA2 /* UserDefaultsWrapper.swift in Sources */,
 				A307DB5325ADD8BA00B5CE11 /* Calendar+Extensions.swift in Sources */,
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* Store.swift in Sources */,
@@ -1385,7 +1399,8 @@
 				A307DB1725ADD84000B5CE11 /* InfoWrapView.swift in Sources */,
 				A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */,
 				A307DB1D25ADD84800B5CE11 /* ViewModifiers.swift in Sources */,
-				A307DB2F25ADD86000B5CE11 /* Font+Themes.swift in Sources */,
+				A307DB2F25ADD86000B5CE11 /* Font+Styles.swift in Sources */,
+				A3C5D77325B9AA4F009A2CA2 /* UserDefaults+Extensions.swift in Sources */,
 				A307DB1125ADD83500B5CE11 /* SolidButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1406,7 +1421,7 @@
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
 				A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */,
-				A33DE4952541C4F20064D0AD /* Font+Themes.swift in Sources */,
+				A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */,
 				A3EDE73325669FA60046C1F5 /* EventViewerWrapperView.swift in Sources */,
@@ -1414,9 +1429,9 @@
 				A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */,
 				A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
-				A367FBF3254DCA840059F6D7 /* SettingsConstans.swift in Sources */,
+				A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
-				A3D6843725A9F467009C31D5 /* ReviewManager.swift in Sources */,
+				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
@@ -1449,6 +1464,7 @@
 				A38199FA25484DB700C71D41 /* Section.swift in Sources */,
 				A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */,
 				A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */,
+				A3C5D76325B9A939009A2CA2 /* CalendarChooserViewController.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
 				A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */,
 				A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */,

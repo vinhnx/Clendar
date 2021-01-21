@@ -9,82 +9,82 @@
 import EventKitUI
 import UIKit
 
-class EventViewerNavigationController: UINavigationController {
-	// MARK: Lifecycle
+class EventViewerNavigationController: BaseNavigationController {
+    // MARK: Lifecycle
 
-	init() {
-		super.init(nibName: nil, bundle: nil)
-	}
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
 
-	init(
-		event: EKEvent?,
-		delegate: EKEventViewDelegate?
-	) {
-		let eventViewer = EventViewerViewController()
-		eventViewer.allowsEditing = true
-		eventViewer.event = event
-		eventViewer.delegate = delegate
-		super.init(rootViewController: eventViewer)
-	}
+    init(
+        event: EKEvent?,
+        delegate: EKEventViewDelegate?
+    ) {
+        let eventViewer = EventViewerViewController()
+        eventViewer.allowsEditing = true
+        eventViewer.event = event
+        eventViewer.delegate = delegate
+        super.init(rootViewController: eventViewer)
+    }
 
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
-	deinit {
-		NotificationCenter.default.removeObserver(self)
-	}
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
-	// MARK: Internal
+    // MARK: Internal
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-		checkUIMode()
+        checkUIMode()
 
-		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-			self.checkUIMode()
-		}
-	}
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+            self.checkUIMode()
+        }
+    }
 
-	func checkUIMode() {
-		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-	}
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
 }
 
 class EventViewerViewController: EKEventViewController {
-	// MARK: Lifecycle
+    // MARK: Lifecycle
 
-	convenience init(event: EKEvent) {
-		self.init()
-		self.event = event
-	}
+    convenience init(event: EKEvent) {
+        self.init()
+        self.event = event
+    }
 
-	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-	}
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
 
-	required init?(coder: NSCoder) {
-		super.init(coder: coder)
-	}
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 
-	deinit {
-		NotificationCenter.default.removeObserver(self)
-	}
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
-	// MARK: Internal
+    // MARK: Internal
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-		checkUIMode()
+        checkUIMode()
 
-		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-			self.checkUIMode()
-		}
-	}
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+            self.checkUIMode()
+        }
+    }
 
-	func checkUIMode() {
-		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-	}
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
 }

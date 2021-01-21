@@ -171,7 +171,7 @@
 
 "Location" = "Location";
 
-"New event" = "New event";
+"New Event" = "New Event";
 
 "Input event" = "Input event";
 
@@ -199,4 +199,14 @@
 
 "Share Clendar" = "Share Clendar";
 
-"New Event" = "New Event";
+"Calendars Visibility" = "Calendars Visibility";
+
+"Week" = "Week";
+
+"Calendar" = "Calendar";
+
+"Delete" = "Delete";
+
+"Edit" = "Edit";
+
+"Are you sure you want to delete this event?" = "Are you sure you want to delete this event?";

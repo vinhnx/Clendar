@@ -10,8 +10,10 @@ import SwiftDate
 import SwiftyFORM
 import UIKit
 import WidgetKit
+import EventKitUI
 
-final class SettingsNavigationController: UINavigationController {
+final class SettingsNavigationController: BaseNavigationController {
+
     // MARK: Lifecycle
 
     init() {
@@ -45,6 +47,7 @@ final class SettingsNavigationController: UINavigationController {
 }
 
 final class SettingsViewController: FormViewController {
+
     // MARK: Lifecycle
 
     deinit {
@@ -148,8 +151,10 @@ final class SettingsViewController: FormViewController {
         instance.append(WidgetTheme.titles)
         instance.selectOptionWithTitle(SettingsManager.widgetTheme)
         instance.valueDidChange = { selected in
+            guard let selected = selected else { return }
+
             genLightHaptic()
-            SettingsManager.widgetTheme = selected?.title ?? WidgetTheme.defaultValue.rawValue
+            SettingsManager.widgetTheme = selected.title
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
             try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
             // reload widget center
@@ -184,6 +189,22 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var calendarView: SegmentedControlFormItem = {
+        let proxy = SegmentedControlFormItem()
+        proxy.title = NSLocalizedString("Calendar View", comment: "")
+        proxy.items = CalendarViewMode.titles
+        proxy.selected = SettingsManager.isOnMonthViewSettings
+            ? CalendarViewMode.month.rawValue
+            : CalendarViewMode.week.rawValue
+        proxy.valueDidChangeBlock = { index in
+            genLightHaptic()
+            let calendarView = CalendarViewMode(rawValue: index)
+            SettingsManager.calendarViewMode = calendarView?.localizedText ?? CalendarViewMode.defaultValue.localizedText
+            NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
+        }
+        return proxy
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -213,10 +234,11 @@ final class SettingsViewController: FormViewController {
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
 
         // Calendar
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar View", comment: ""))
-        // builder += calendarMode
-        builder += showDaysOut
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
+        builder += calendarView
+        builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(CalendarChooserViewController.self)
         builder += supplementaryViewMode
+        builder += showDaysOut
         builder += shouldAutoSelectDayOnCalendarChange
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
 

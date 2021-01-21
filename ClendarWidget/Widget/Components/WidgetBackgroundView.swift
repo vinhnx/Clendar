@@ -12,9 +12,9 @@ struct WidgetBackgroundView: View {
     @ViewBuilder
     var body: some View {
         switch widgetThemeFromFile {
-        case WidgetTheme.dark.rawValue:
+        case WidgetTheme.dark.localizedText:
             Color(.lavixA)
-        case WidgetTheme.light.rawValue:
+        case WidgetTheme.light.localizedText:
             Color(.hueC)
         default:
             Color(.backgroundColor)

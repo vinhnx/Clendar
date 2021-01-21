@@ -17,7 +17,9 @@ struct CalendarWrapperView: UIViewRepresentable {
         $0.frame = CGRect(
             x: 0, y: 0,
             width: Constants.CalendarView.calendarWidth,
-            height: Constants.CalendarView.calendarHeight
+            height: (SettingsManager.isOnMonthViewSettings
+                        ? Constants.CalendarView.calendarMonthViewHeight
+                        : Constants.CalendarView.calendarWeekViewHeight)
         )
     }
 
@@ -26,7 +28,7 @@ struct CalendarWrapperView: UIViewRepresentable {
     func makeCoordinator() -> CalendarViewCoordinator {
         CalendarViewCoordinator(
             calendar: CalendarManager.shared.calendar,
-            mode: .monthView
+            calendarViewMode: SettingsManager.calendarViewModePerSettings
         )
     }
 
@@ -36,6 +38,7 @@ struct CalendarWrapperView: UIViewRepresentable {
         calendarView.calendarDelegate = context.coordinator
         calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        calendarView.commitCalendarViewUpdate()
         return calendarView
     }
 

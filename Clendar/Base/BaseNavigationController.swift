@@ -9,18 +9,31 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-	// MARK: Internal
+    // MARK: Life Cycle
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		setupView()
-	}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        checkUIMode()
 
-	// MARK: Private
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+            self.checkUIMode()
+        }
+    }
 
-	private func setupView() {
-		navigationBar.isTranslucent = false
-		navigationBar.setBackgroundImage(UIImage(), for: .default)
-		navigationBar.shadowImage = UIImage()
-	}
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // MARK: Private
+
+    private func setupView() {
+        navigationBar.isTranslucent = false
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+    }
+
+    private func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
 }

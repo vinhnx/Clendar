@@ -1,5 +1,5 @@
 //
-//  ReviewManager.swift
+//  RatingManager.swift
 //  Clendar
 //
 //  Created by Vinh Nguyen on 09/01/2021.
@@ -10,7 +10,7 @@ import Foundation
 import StoreKit
 
 // reference: https://www.donnywals.com/optimizing-your-applications-reviews/
-struct ReviewManager {
+struct RatingManager {
     let userDefaults: UserDefaults
     let minimumInstallTime: TimeInterval = 60 * 60 * 24 * 1 // 1 days
     let minimumLaunches = 3
@@ -29,6 +29,7 @@ struct ReviewManager {
     }
 
     func askForReviewIfNeeded() {
+        #if !DEBUG
         guard shouldAskForReview()
         else { return }
 
@@ -36,6 +37,7 @@ struct ReviewManager {
         if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
         }
+        #endif
     }
 
     private func shouldAskForReview() -> Bool {

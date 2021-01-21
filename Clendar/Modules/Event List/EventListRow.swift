@@ -16,17 +16,22 @@ struct EventListRow: View {
         if let ekEvent = event?.event {
             GroupBox(
                 label:
-                    Label(ekEvent.durationText().localizedUppercase, systemImage: "calendar")
+                    Text(ekEvent.durationText().localizedUppercase)
                     .accessibility(label: Text("Event duration"))
                     .font(.boldFontWithSize(15))
                     .foregroundColor(Color(ekEvent.calendar.cgColor)),
                 content: {
-                    Text(ekEvent.title)
-                        .accessibility(label: Text("Title of the event"))
-                        .lineLimit(nil)
-                        .font(.mediumFontWithSize(18))
-                        .padding(.top, 5)
-                        .foregroundColor(.appDark)
+                    HStack(spacing: 10) {
+                        Capsule(style: .circular)
+                            .fill(Color(ekEvent.calendar.cgColor))
+                            .frame(width: 5)
+
+                        Text(ekEvent.title)
+                            .accessibility(label: Text("Title of the event"))
+                            .lineLimit(nil)
+                            .font(.mediumFontWithSize(18))
+                            .foregroundColor(.appDark)
+                    }
                 }
             )
             .groupBoxStyle(CardGroupBoxStyle())

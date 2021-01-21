@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Shift
 
 struct EventListView: View {
     @EnvironmentObject var store: Store
@@ -29,16 +30,23 @@ struct EventListView: View {
                             ) {
                                 EventListRow(event: event)
                             }
-                            .contextMenu {
+                            .contextMenu(menuItems: {
                                 Button(
                                     action: { self.selectedEvent = event },
                                     label: {
-                                        Text("Edit Event")
-                                            .accessibility(label: Text("Edit Event"))
+                                        Text("Edit").accessibility(label: Text("Edit Event"))
                                         Image(systemName: "square.and.pencil")
                                     }
                                 )
-                            }
+
+                                Button(
+                                    action: { handleDeleteEvent(event) },
+                                    label: {
+                                        Text("Delete").accessibility(label: Text("Delete Event"))
+                                        Image(systemName: "trash")
+                                    }
+                                )
+                            })
                         }
                     }
                 }
@@ -48,6 +56,22 @@ struct EventListView: View {
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
             }
+    }
+
+    private func handleDeleteEvent(_ event: ClendarEvent) {
+        guard let id = event.id else { return }
+        AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
+            Shift.shared.deleteEvent(identifier: id) { (result) in
+                switch result {
+                case .success:
+                    genSuccessHaptic()
+                    logInfo("event deleted!")
+                case .failure(let error):
+                    genErrorHaptic()
+                    logInfo(error.localizedDescription)
+                }
+            }
+        })
     }
 }
 

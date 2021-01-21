@@ -11,38 +11,38 @@ import UIKit
 import Shift
 
 class EventEditViewController: EKEventEditViewController {
-	// MARK: Lifecycle
+    // MARK: Lifecycle
 
-	init(
-		eventStore: EKEventStore = Shift.shared.eventStore,
-		delegate: EKEventEditViewDelegate?
-	) {
-		super.init(nibName: nil, bundle: nil)
-		self.eventStore = eventStore
-		editViewDelegate = delegate
-	}
+    init(
+        eventStore: EKEventStore = Shift.shared.eventStore,
+        delegate: EKEventEditViewDelegate?
+    ) {
+        super.init(nibName: nil, bundle: nil)
+        self.eventStore = eventStore
+        editViewDelegate = delegate
+    }
 
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
-	deinit {
-		NotificationCenter.default.removeObserver(self)
-	}
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
-	// MARK: Internal
+    // MARK: Internal
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-		checkUIMode()
+        checkUIMode()
 
-		NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-			self.checkUIMode()
-		}
-	}
+        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
+            self.checkUIMode()
+        }
+    }
 
-	func checkUIMode() {
-		overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-	}
+    func checkUIMode() {
+        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+    }
 }

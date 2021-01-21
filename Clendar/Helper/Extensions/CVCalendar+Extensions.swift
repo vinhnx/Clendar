@@ -10,16 +10,21 @@ import CVCalendar
 import Foundation
 
 extension CVCalendarView {
-	var selectedDate: Date? {
-		presentedDate.convertedDate()
-	}
+    var selectedDate: Date? {
+        presentedDate.convertedDate()
+    }
 
-	func reloadData() {
-		contentController.refreshPresentedMonth()
-	}
+    func reloadData() {
+        contentController.refreshPresentedMonth()
+    }
 
-	func changeModePerSettings() {
-		let calendarMode: CVCalendarViewPresentationMode = SettingsManager.monthViewCalendarMode ? .monthView : .weekView
-		changeMode(calendarMode)
-	}
+    func changeModePerSettings() {
+        changeMode(SettingsManager.calendarViewModePerSettings)
+    }
+}
+
+extension SettingsManager {
+    static var calendarViewModePerSettings: CVCalendarViewPresentationMode {
+        SettingsManager.isOnMonthViewSettings ? .monthView : .weekView
+    }
 }

@@ -19,15 +19,15 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     init(
         calendar: Calendar,
-        mode: CalendarMode
+        calendarViewMode: CalendarMode
     ) {
         currentCalendar = calendar
-        self.mode = mode
+        self.calendarViewMode = calendarViewMode
     }
 
     // MARK: Public
 
-    public private(set) var mode: CalendarMode
+    public private(set) var calendarViewMode: CalendarMode
 
     public private(set) var currentCalendar: Calendar
 
@@ -37,9 +37,11 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     // MARK: - CVCalendarViewDelegate, CVCalendarMenuViewDelegate
 
-    func presentationMode() -> CalendarMode { mode }
+    func presentationMode() -> CalendarMode { calendarViewMode }
 
-    func firstWeekday() -> Weekday { CVCalendarWeekday(rawValue: Calendar.autoupdatingCurrent.firstWeekday) ?? .monday }
+    func firstWeekday() -> Weekday {
+        CVCalendarWeekday(rawValue: Calendar.autoupdatingCurrent.firstWeekday) ?? .monday
+    }
 
     func calendar() -> Calendar? { currentCalendar }
 
@@ -58,7 +60,7 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
         selectedDate?(date)
     }
 
-    func dayOfWeekFont() -> UIFont { .boldFontWithSize(11) }
+    func dayOfWeekFont() -> UIFont { .boldFontWithSize(10) }
 
     func dayOfWeekTextUppercase() -> Bool { true }
 
@@ -94,14 +96,14 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     // MARK: - CVCalendarViewAppearanceDelegate
 
-    func spaceBetweenDayViews() -> CGFloat { 5 }
+    func spaceBetweenDayViews() -> CGFloat { 0 }
 
     func dayLabelWeekdayDisabledColor() -> UIColor { .appGray }
 
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIFont {
-        .mediumFontWithSize(15)
+        .boldFontWithSize(14)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

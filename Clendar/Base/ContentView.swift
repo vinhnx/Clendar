@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var showCreateEventState = false
     @State private var showSettingsState = false
     @State private var createdEvent: EKEvent?
+    @State private var isMonthView = true
 
     let calendarWrapperView = CalendarWrapperView()
 
@@ -53,7 +54,7 @@ struct ContentView: View {
             calendarWrapperView
                 .frame(
                     width: geometry?.frame(in: .local).width,
-                    height: Constants.CalendarView.calendarHeight
+                    height: isMonthView ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
                 )
                 .padding(.top, -20)
         }
@@ -66,7 +67,7 @@ struct ContentView: View {
                 genLightHaptic()
                 showCreateEventState.toggle()
         }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "calendar.badge.plus", title: "New Event"))
+            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
@@ -86,6 +87,7 @@ struct ContentView: View {
     private var eventListView: some View {
         EventListView(events: eventKitWrapper.events.compactMap(ClendarEvent.init))
             .environmentObject(store)
+            .padding(.top, isMonthView ? -50 : 0)
     }
 
     private var eventView: some View {
@@ -103,7 +105,7 @@ struct ContentView: View {
                     genLightHaptic()
                     showSettingsState.toggle()
                 },
-                label: { Image(systemName: "gearshape") }
+                label: { Image(systemName: "slider.horizontal.3") }
             )
             .sheet(
                 isPresented: $showSettingsState,
@@ -112,17 +114,9 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             )
-
-            Button(
-                action: {
-                    genLightHaptic()
-                    store.selectedDate = Date()
-                },
-                label: { Image(systemName: "arrow.clockwise") }
-            )
         }
         .accentColor(.appRed)
-        .font(.mediumFontWithSize(18))
+        .font(.boldFontWithSize(18))
     }
 
     // MARK: - Body
@@ -141,8 +135,7 @@ struct ContentView: View {
             .ignoresSafeArea(.keyboard, edges: .bottom)
         }
         .onAppear {
-            selectDate(Date())
-            ReviewManager().askForReviewIfNeeded()
+            configure()
         }
         .onReceive(store.$selectedDate) { date in
             selectDate(date)
@@ -156,6 +149,9 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
             selectDate(store.selectedDate)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
+            selectDate(store.selectedDate)
+        }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeShowDaysOutPreferences)) { _ in
             calendarWrapperView.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
             calendarWrapperView.calendarView.reloadData()
@@ -163,8 +159,10 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didChangeDaySupplementaryTypePreferences)) { _ in
             calendarWrapperView.calendarView.reloadData()
         }
-        .onReceive(NotificationCenter.default.publisher(for: .justReloadCalendar)) { _ in
-            calendarWrapperView.calendarView.reloadData()
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
+            isMonthView = SettingsManager.isOnMonthViewSettings
+            calendarWrapperView.calendarView.changeModePerSettings()
+            calendarWrapperView.calendarView.commitCalendarViewUpdate()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
@@ -176,13 +174,19 @@ struct ContentView: View {
 }
 
 extension ContentView {
+    private func configure() {
+        RatingManager().askForReviewIfNeeded()
+        isMonthView = SettingsManager.isOnMonthViewSettings
+        selectDate(Date())
+    }
+
     private func selectDate(_ date: Date) {
         genLightHaptic()
         fetchEvents(for: date)
     }
 
     private func fetchEvents(for date: Date = Date()) {
-        eventKitWrapper.fetchEvents(for: date)
+        eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
     }
 }
 

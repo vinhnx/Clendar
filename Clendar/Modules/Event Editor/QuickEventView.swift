@@ -35,7 +35,9 @@ struct QuickEventView: View {
         VStack {
             HStack {
                 Button(
-                    action: { showCreateEventState.toggle() },
+                    action: {
+                        genLightHaptic()
+                        showCreateEventState.toggle() },
                     label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
@@ -44,10 +46,11 @@ struct QuickEventView: View {
                 ).accentColor(.appRed)
 
                 Spacer()
+                Text("New Event").font(.semiboldFontWithSize(15))
+                Spacer()
 
                 Button(
                     action: {
-                        genSuccessHaptic()
                         createNewEvent()
                     },
                     label: {
@@ -79,18 +82,19 @@ struct QuickEventView: View {
                     .foregroundColor(.appDark)
 
                     Toggle("All day", isOn: $isAllDay)
-                        .font(.mediumFontWithSize(20))
+                        .font(.mediumFontWithSize(15))
                         .toggleStyle(SwitchToggleStyle(tint: .appRed))
+                        .fixedSize()
 
                     if !isAllDay {
                         Divider()
                         DatePicker("Start", selection: $startTime)
                             .datePickerStyle(CompactDatePickerStyle())
-                            .font(.mediumFontWithSize(20))
+                            .font(.mediumFontWithSize(15))
                             .accessibility(label: Text("Select event's start time"))
                         DatePicker("End", selection: $endTime)
                             .datePickerStyle(CompactDatePickerStyle())
-                            .font(.mediumFontWithSize(20))
+                            .font(.mediumFontWithSize(15))
                             .accessibility(label: Text("Select event's end time"))
                     }
                 }

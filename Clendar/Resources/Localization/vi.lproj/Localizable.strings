@@ -1,3 +1,4 @@
+
 /* No comment provided by engineer. */
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Bạn có thể chọn sử dụng chế độ phân tích cú pháp ngôn ngữ tự nhiên thử nghiệm khi tạo sự kiện mới. Tính năng này sẽ được cải thiện.";
 
@@ -103,6 +104,8 @@
 /* No comment provided by engineer. */
 "Week view" = "Tuần";
 
+"Week" = "Tuần";
+
 /* No comment provided by engineer. */
 "You can choose available calendars to shown in event list" = "Bạn có thể chọn các lịch có sẵn để hiển thị trong danh sách sự kiện";
 
@@ -171,8 +174,6 @@
 
 "Location" = "Địa điểm";
 
-"New event" = "Sự kiện mới";
-
 "Input event" = "Nhập sự kiện";
 
 "Select event's start time" = "Chọn thời gian bắt đầu";
@@ -200,3 +201,13 @@
 "Share Clendar" = "Chia sẻ Clendar";
 
 "New Event" = "Sự kiện mới";
+
+"Calendars Visibility" = "Chế độ hiển thị lịch";
+
+"Calendar" = "Lịch";
+
+"Delete" = "Xóa";
+
+"Edit" = "Sửa";
+
+"Are you sure you want to delete this event?" = "Bạn có chắc chắn muốn xóa sự kiện này?";

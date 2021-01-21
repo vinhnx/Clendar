@@ -10,8 +10,8 @@ import SwiftUI
 
 struct SolidButtonStyle: ButtonStyle {
     var imageName: String?
-    var title: String
-    var titlefontSize: CGFloat = 18
+    var title: String?
+    var titlefontSize: CGFloat = 15
     var backgroundColor = Color.appRed
     var foregroundColor = Color.white
     var cornerRadius: CGFloat = 30
@@ -19,9 +19,14 @@ struct SolidButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         HStack {
-            Unwrap(imageName) { name in Image(systemName: name) }
-            Text(LocalizedStringKey(title))
-                .font(.mediumFontWithSize(titlefontSize))
+            Unwrap(imageName) { name in
+                Image(systemName: name)
+            }
+
+            Unwrap(title) { title in
+                Text(LocalizedStringKey(title))
+                    .font(.mediumFontWithSize(titlefontSize))
+            }
         }
         .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
         .foregroundColor(foregroundColor)

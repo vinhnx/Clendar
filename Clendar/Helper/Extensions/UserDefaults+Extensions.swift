@@ -6,10 +6,9 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import EventKit
 import Foundation
 
 extension UserDefaults {
-	@UserDefault("savedCalendarIDs", defaultValue: [])
-	static var savedCalendarIDs: [String]
+    @UserDefault("savedCalendarIDs", defaultValue: [])
+    static var savedCalendarIDs: [String]
 }
