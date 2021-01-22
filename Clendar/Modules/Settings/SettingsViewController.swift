@@ -235,7 +235,7 @@ final class SettingsViewController: FormViewController {
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
-        builder += calendarView // TODO: crash https://appstoreconnect.apple.com/testflight/v3/providers/2211197/apps/1548102041/feedback/download/AHZa2LB7qrCtaMH1HVhd0wQ.zip
+        // builder += calendarView // TODO: crash https://appstoreconnect.apple.com/testflight/v3/providers/2211197/apps/1548102041/feedback/download/AHZa2LB7qrCtaMH1HVhd0wQ.zip
         builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(CalendarChooserViewController.self)
         builder += supplementaryViewMode
         builder += showDaysOut
