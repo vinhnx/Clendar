@@ -13,7 +13,6 @@ import Shift
 struct ContentView: View {
     @EnvironmentObject var store: Store
     @StateObject var eventKitWrapper = Shift.shared
-    @State private var showCreateEventState = false
     @State private var showSettingsState = false
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = true
@@ -65,13 +64,13 @@ struct ContentView: View {
         Button(
             action: {
                 genLightHaptic()
-                showCreateEventState.toggle()
+                store.showCreateEventState.toggle()
         }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
-            .sheet(isPresented: $showCreateEventState) {
+            .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
-                        showCreateEventState: $showCreateEventState,
+                        showCreateEventState: $store.showCreateEventState,
                         createdEvent: $createdEvent
                     )
                     .environmentObject(store)
@@ -161,9 +160,6 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .addEventShortcutAction)) { (_) in
-            showCreateEventState = true // show create event view
         }
     }
 }

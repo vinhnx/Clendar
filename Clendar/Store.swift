@@ -9,6 +9,7 @@
 import SwiftUI
 
 class Store: ObservableObject {
-	@Published var selectedDate = Date()
-	@Published var appBackgroundColor = Color(.backgroundColor)
+    @Published var selectedDate = Date()
+    @Published var appBackgroundColor = Color(.backgroundColor)
+    @Published var showCreateEventState = false
 }
