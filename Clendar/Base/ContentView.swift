@@ -152,14 +152,19 @@ struct ContentView: View {
             selectDate(store.selectedDate)
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeShowDaysOutPreferences)) { _ in
-            calendarWrapperView.calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
-            calendarWrapperView.calendarView.reloadData()
+            calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
+            calendarView.reloadData()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeDaySupplementaryTypePreferences)) { _ in
-            calendarWrapperView.calendarView.reloadData()
+            calendarView.reloadData()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
+            isMonthView = SettingsManager.isOnMonthViewSettings
+            calendarView.changeModePerSettings()
+            calendarView.commitCalendarViewUpdate()
         }
     }
 }

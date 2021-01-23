@@ -10,19 +10,20 @@ import CVCalendar
 import SwiftUI
 import Then
 
+// keep a global instance to prevent crash when changing settings
+let calendarView = CVCalendarView().then {
+    $0.frame = CGRect(
+        x: 0, y: 0,
+        width: Constants.CalendarView.calendarWidth,
+        height: (SettingsManager.isOnMonthViewSettings
+                    ? Constants.CalendarView.calendarMonthViewHeight
+                    : Constants.CalendarView.calendarWeekViewHeight)
+    )
+}
+
 struct CalendarWrapperView: UIViewRepresentable {
     @EnvironmentObject var store: Store
-
-    let calendarView = CVCalendarView().then {
-        $0.frame = CGRect(
-            x: 0, y: 0,
-            width: Constants.CalendarView.calendarWidth,
-            height: (SettingsManager.isOnMonthViewSettings
-                        ? Constants.CalendarView.calendarMonthViewHeight
-                        : Constants.CalendarView.calendarWeekViewHeight)
-        )
-    }
-
+    
     // MARK: - UIViewRepresentable
 
     func makeCoordinator() -> CalendarViewCoordinator {
@@ -38,7 +39,6 @@ struct CalendarWrapperView: UIViewRepresentable {
         calendarView.calendarDelegate = context.coordinator
         calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        calendarView.commitCalendarViewUpdate()
         return calendarView
     }
 
