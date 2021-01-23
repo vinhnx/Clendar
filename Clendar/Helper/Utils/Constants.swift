@@ -17,7 +17,14 @@ enum Constants {
     static let addEventQuickActionID = "com.vinhnx.Clendar.addEventShortcut"
 
     enum CalendarView {
-        static let calendarWidth: CGFloat = UIScreen.main.bounds.size.width - (30 * 2)
+        static var calendarWidth: CGFloat {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                return 260
+            } else {
+                return UIScreen.main.bounds.size.width - (30 * 2)
+            }
+        }
+
         static let calendarMonthViewHeight: CGFloat = 250
         static let calendarWeekViewHeight: CGFloat = 30
         static let calendarHeaderHeight: CGFloat = 10

@@ -49,7 +49,10 @@ struct ContentView: View {
     private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
         Group {
             CalendarHeaderView()
-                .frame(height: Constants.CalendarView.calendarHeaderHeight)
+                .frame(
+                    width: geometry?.frame(in: .local).width,
+                    height: Constants.CalendarView.calendarHeaderHeight
+                )
             calendarWrapperView
                 .frame(
                     width: geometry?.frame(in: .local).width,
@@ -65,7 +68,7 @@ struct ContentView: View {
             action: {
                 genLightHaptic()
                 store.showCreateEventState.toggle()
-        }, label: {})
+            }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
