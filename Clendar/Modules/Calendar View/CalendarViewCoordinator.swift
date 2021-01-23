@@ -120,4 +120,8 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         .primaryColor
     }
+
+    func shouldSelectRange() -> Bool {
+        false
+    }
 }

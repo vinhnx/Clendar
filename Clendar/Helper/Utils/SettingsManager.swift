@@ -22,7 +22,7 @@ struct SettingsManager {
     @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
     static var daySupplementaryType: String
 
-    @UserDefault("useExperimentalCreateEventMode", defaultValue: true)
+    @UserDefault("useExperimentalCreateEventMode", defaultValue: false)
     static var useExperimentalCreateEventMode: Bool
 
     @UserDefault("shouldAutoSelectDayOnCalendarChange", defaultValue: false)
