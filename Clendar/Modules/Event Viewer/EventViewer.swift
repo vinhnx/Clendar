@@ -40,16 +40,6 @@ struct EventViewer: View {
                 Text(event.isDetached.asString).modifier(MediumTextModifider())
             }
 
-            if event.isDetached {
-                InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring date", titleImageName: "calendar")) {
-                    Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
-                }
-            }
-
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full.fill")) {
-                Text(event.isAllDay.asString).modifier(MediumTextModifider())
-            }
-
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
                 Text(event.startDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
             }
@@ -57,6 +47,20 @@ struct EventViewer: View {
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
                 Text(event.endDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
             }
+
+            /*
+             // TODO: this is not working
+             if event.isDetached {
+                 InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring date", titleImageName: "calendar")) {
+                     Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
+                 }
+             }
+             */
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full.fill")) {
+                Text(event.isAllDay.asString).modifier(MediumTextModifider())
+            }
+
         }
     }
 
