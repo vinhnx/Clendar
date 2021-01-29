@@ -14,7 +14,9 @@ struct ContentView: View {
     @State private var selectedEvent: ClendarEvent?
 
     var body: some View {
-        NavigationView {
+        // watchOS needs only 1 NavigationView (https://developer.apple.com/forums/thread/658881)
+        // since we already configure one in @main ClendarApp's scene, don't put it here
+        Group {
             if eventKitWrapper.events.isEmpty {
                 EmptyView()
             } else {
@@ -27,7 +29,11 @@ struct ContentView: View {
                                 .foregroundColor(Color(.moianesB))
                         ) {
                             ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
-                                NavigationLink(destination: EventViewer(event: event)) {
+                                NavigationLink(
+                                    destination:
+                                        EventViewer(event: event)
+
+                                ) {
                                     WidgetEventRow(event: event)
                                 }
                             }
