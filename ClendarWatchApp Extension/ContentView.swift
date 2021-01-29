@@ -29,13 +29,10 @@ struct ContentView: View {
                                 .foregroundColor(Color(.moianesB))
                         ) {
                             ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
-                                NavigationLink(
-                                    destination:
-                                        EventViewer(event: event)
-
-                                ) {
+                                NavigationLink(destination:EventViewer(event: event)) {
                                     WidgetEventRow(event: event)
                                 }
+                                .focusable()
                             }
                         }
                     }

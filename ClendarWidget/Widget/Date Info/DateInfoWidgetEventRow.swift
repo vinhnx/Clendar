@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 
 struct WidgetEventRow: View {
+    @Environment(\.isFocused) var isFocused
+
 	var id = UUID()
 	let event: ClendarEvent
 
@@ -18,6 +20,8 @@ struct WidgetEventRow: View {
 			WidgetEventColorBar(event: event)
 			WidgetEventRowLabel(event: event)
 		}
+        .scaleEffect(isFocused ? 1.2 : 1)
+        .animation(.easeInOut, value: isFocused)
 	}
 }
 
