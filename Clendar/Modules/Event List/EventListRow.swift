@@ -29,7 +29,7 @@ struct EventListRow: View {
                         Text(ekEvent.title)
                             .accessibility(label: Text("Title of the event"))
                             .lineLimit(nil)
-                            .font(.regularFontWithSize(15))
+                            .font(.mediumFontWithSize(15))
                             .foregroundColor(.appDark)
                     }
                 }
