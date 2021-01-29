@@ -37,16 +37,20 @@ struct QuickEventView: View {
                 Button(
                     action: {
                         genLightHaptic()
-                        showCreateEventState.toggle() },
+                        showCreateEventState = false
+                    },
                     label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
                             .accessibility(label: Text("Collapse this view"))
                     }
-                ).accentColor(.appRed)
+                )
+                .accentColor(.appRed)
+                .keyboardShortcut(.escape)
 
                 Spacer()
-                Text("New Event").font(.semiboldFontWithSize(15))
+                Text("New Event")
+                    .font(.semiboldFontWithSize(15))
                 Spacer()
 
                 Button(
@@ -61,6 +65,7 @@ struct QuickEventView: View {
                 )
                 .accentColor(.appRed)
                 .disabled(quickEventStore.query.isEmpty)
+                .keyboardShortcut("s", modifiers: [.command])
             }
 
             Divider()
@@ -68,12 +73,10 @@ struct QuickEventView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     Spacer()
-                    TextField(
+                    MultilineTextField(
                         "read a book this Friday 8PM...",
                         text: $quickEventStore.query,
-                        onEditingChanged: { _ in
-                            self.parse(quickEventStore.query)
-                        }, onCommit: {
+                        onCommit: {
                             self.parse(quickEventStore.query)
                         }
                     )
@@ -82,6 +85,7 @@ struct QuickEventView: View {
                     .foregroundColor(.appDark)
 
                     Toggle("All day", isOn: $isAllDay)
+                        .keyboardShortcut(.tab)
                         .font(.mediumFontWithSize(15))
                         .toggleStyle(SwitchToggleStyle(tint: .appRed))
                         .fixedSize()
@@ -136,7 +140,7 @@ extension QuickEventView {
             case let .success(event):
                 genSuccessHaptic()
                 self.createdEvent = event
-                self.showCreateEventState.toggle()
+                self.showCreateEventState = false
 
             case let .failure(error):
                 genErrorHaptic()

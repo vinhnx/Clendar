@@ -34,6 +34,7 @@ struct ContentView: View {
                 }
             }
             .accessibility(addTraits: .isHeader)
+            .keyboardShortcut("h", modifiers: [.command, .shift])
         }
     }
 
@@ -63,7 +64,7 @@ struct ContentView: View {
         .padding()
     }
 
-    private var addButton: some View {
+    private var createEventButton: some View {
         Button(
             action: {
                 genLightHaptic()
@@ -84,6 +85,7 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             }
+            .keyboardShortcut("n", modifiers: [.command])
     }
 
     private var eventListView: some View {
@@ -116,6 +118,7 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             )
+            .keyboardShortcut(",", modifiers: [.command])
         }
         .accentColor(.appRed)
         .font(.boldFontWithSize(18))
@@ -127,7 +130,7 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 eventView
-                addButton
+                createEventButton
             }
             .padding()
             .preferredColorScheme(appColorScheme)

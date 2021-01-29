@@ -137,6 +137,8 @@
 		A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39626BD2553081200F4ABEF /* EventHandler.swift */; };
 		A39B71B3255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A39B71B4255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
+		A3A43E7225C45FAA00E60616 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A43E7125C45FA900E60616 /* MultilineTextField.swift */; };
+		A3A43E7C25C46CDB00E60616 /* KeyboardShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A43E7B25C46CDB00E60616 /* KeyboardShortcutsViewController.swift */; };
 		A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
 		A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */; };
 		A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */; };
@@ -184,6 +186,7 @@
 		A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */; };
 		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
 		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
+		A3FF3B4F25C19F04005039DC /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -371,6 +374,8 @@
 		A39626BD2553081200F4ABEF /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A39B71BA255FB6540000162F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A3A43E7125C45FA900E60616 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		A3A43E7B25C46CDB00E60616 /* KeyboardShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsViewController.swift; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidgetView.swift; sourceTree = "<group>"; };
 		A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidget.swift; sourceTree = "<group>"; };
@@ -455,6 +460,7 @@
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
+				A3FF3B4F25C19F04005039DC /* SwiftyStoreKit in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
 				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
@@ -634,6 +640,7 @@
 				A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */,
 				A31258B42551C23300891CE2 /* AppIconItemCell.xib */,
 				A31258B92551C2A100891CE2 /* AppIconItemCell.swift */,
+				A3A43E7B25C46CDB00E60616 /* KeyboardShortcutsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -959,6 +966,7 @@
 				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
 				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
 				A307DBDF25ADE65500B5CE11 /* EmptyView.swift */,
+				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1088,6 +1096,7 @@
 				A3560CFD2567FB6F009088E7 /* Then */,
 				A3209B44258CE14C002470CF /* Shift */,
 				A383331025A96A8100F7ED70 /* CVCalendar */,
+				A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1184,6 +1193,7 @@
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
+				A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1548,6 +1558,7 @@
 				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
 				A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */,
+				A3A43E7225C45FAA00E60616 /* MultilineTextField.swift in Sources */,
 				A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */,
 				A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */,
 				A33F8115224742F7009CC46A /* WorkItem.swift in Sources */,
@@ -1555,6 +1566,7 @@
 				A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */,
 				A3EDE73825669FB80046C1F5 /* EventListView.swift in Sources */,
 				A3187E8525499FE1009524DF /* AppInfo.swift in Sources */,
+				A3A43E7C25C46CDB00E60616 /* KeyboardShortcutsViewController.swift in Sources */,
 				A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */,
 				A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */,
 				A38199FA25484DB700C71D41 /* Section.swift in Sources */,
@@ -2172,6 +2184,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2239,6 +2259,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

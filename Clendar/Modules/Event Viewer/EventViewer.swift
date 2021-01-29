@@ -14,16 +14,27 @@ struct EventViewer: View {
     @State private var didShowEventEdit = false
     var event: ClendarEvent
 
+    @ViewBuilder
     private var editButton: some View {
+        #if os(watchOS)
+        editEventButton
+        #else
+        editEventButton
+            .keyboardShortcut("e", modifiers: [.command, .shift])
+        #endif
+
+    }
+
+    private var editEventButton: some View {
         Button(action: { didShowEventEdit.toggle() }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: event.calendarColor))
-            .sheet(isPresented: $didShowEventEdit) {
-                #if !os(watchOS)
-                EventViewerWrapperView(event: event)
-                    .environmentObject(store)
-                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                #endif
-            }
+           .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: event.calendarColor))
+           .sheet(isPresented: $didShowEventEdit) {
+               #if !os(watchOS)
+               EventViewerWrapperView(event: event)
+                   .environmentObject(store)
+                   .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+               #endif
+           }
     }
 
     private var mapViewWidth: CGFloat {
@@ -36,16 +47,16 @@ struct EventViewer: View {
 
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
-                Text(event.isDetached.asString).modifier(MediumTextModifider())
-            }
-
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
                 Text(event.startDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
                 Text(event.endDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
+            }
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
+                Text(event.isDetached.asString).modifier(MediumTextModifider())
             }
 
             /*
