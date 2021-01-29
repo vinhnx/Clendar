@@ -44,7 +44,7 @@ struct RatingManager {
         let timeInstalled = Date().timeIntervalSince1970 - userDefaults.double(forKey: "firstLaunch")
         let numberOfLaunches = userDefaults.integer(forKey: "numberOfLaunches")
 
-        guard timeInstalled > minimumInstallTime,
+        guard timeInstalled > minimumInstallTime ||
               numberOfLaunches >= minimumLaunches
         else { return false }
 
