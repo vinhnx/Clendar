@@ -186,7 +186,6 @@
 		A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */; };
 		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
 		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
-		A3FF3B4F25C19F04005039DC /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
 /* End PBXBuildFile section */
@@ -460,7 +459,6 @@
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
-				A3FF3B4F25C19F04005039DC /* SwiftyStoreKit in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
 				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
@@ -1096,7 +1094,6 @@
 				A3560CFD2567FB6F009088E7 /* Then */,
 				A3209B44258CE14C002470CF /* Shift */,
 				A383331025A96A8100F7ED70 /* CVCalendar */,
-				A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1193,7 +1190,6 @@
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
-				A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -2184,14 +2180,6 @@
 				minimumVersion = 6.2.0;
 			};
 		};
-		A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.16.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2259,11 +2247,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
-		};
-		A3FF3B4E25C19F04005039DC /* SwiftyStoreKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3FF3B4D25C19F04005039DC /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
-			productName = SwiftyStoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
