@@ -12,8 +12,6 @@
 		A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3064D1C254CEF5200C7F228 /* SwiftUI.framework */; };
 		A3064D20254CEF5200C7F228 /* DateInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D1F254CEF5200C7F228 /* DateInfoWidget.swift */; };
 		A3064D23254CEF5800C7F228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3064D22254CEF5800C7F228 /* Assets.xcassets */; };
-		A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */; };
-		A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */; };
 		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */; };
@@ -106,6 +104,8 @@
 		A3684755255445F0004BDCC6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F81172247454E009CC46A /* String+Extensions.swift */; };
 		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
+		A37F0AE425C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */; };
+		A37F0AE525C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */; };
 		A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37FB8E325657857007C637C /* SettingsWrapperView.swift */; };
 		A38199F12548470F00C71D41 /* EventListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A38199F02548470F00C71D41 /* EventListItemCell.xib */; };
 		A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
@@ -283,7 +283,6 @@
 		A3064D1A254CEF5200C7F228 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A3064D1C254CEF5200C7F228 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		A3064D1F254CEF5200C7F228 /* DateInfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfoWidget.swift; sourceTree = "<group>"; };
-		A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ClendarWidget.intentdefinition; sourceTree = "<group>"; };
 		A3064D22254CEF5800C7F228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3064D24254CEF5800C7F228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClendarWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -357,6 +356,8 @@
 		A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A37F0AE625C4807500DFFC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/ClendarWidget.intentdefinition; sourceTree = "<group>"; };
+		A37F0AF725C4807B00DFFC41 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A37FB8E325657857007C637C /* SettingsWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWrapperView.swift; sourceTree = "<group>"; };
 		A38199F02548470F00C71D41 /* EventListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListItemCell.xib; sourceTree = "<group>"; };
 		A38199F525484D9E00C71D41 /* ClendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarEvent.swift; sourceTree = "<group>"; };
@@ -517,7 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				A3064D24254CEF5800C7F228 /* Info.plist */,
-				A3064D21254CEF5200C7F228 /* ClendarWidget.intentdefinition */,
+				A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */,
 				A3064D22254CEF5800C7F228 /* Assets.xcassets */,
 				A3064D36254CF0D300C7F228 /* Widget */,
 			);
@@ -1457,7 +1458,7 @@
 				A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */,
 				A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */,
 				A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */,
-				A3064D25254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
+				A37F0AE525C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */,
 				A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */,
 				A34211B8254D025C008D9B8E /* Font+Styles.swift in Sources */,
 				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
@@ -1536,7 +1537,7 @@
 				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
-				A3064D26254CEF5800C7F228 /* ClendarWidget.intentdefinition in Sources */,
+				A37F0AE425C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
@@ -1637,6 +1638,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A37F0AE625C4807500DFFC41 /* Base */,
+				A37F0AF725C4807B00DFFC41 /* vi */,
+			);
+			name = ClendarWidget.intentdefinition;
+			sourceTree = "<group>";
+		};
 		A39B71B6255FB64F0000162F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
