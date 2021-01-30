@@ -35,6 +35,7 @@ struct ContentView: View {
             }
             .accessibility(addTraits: .isHeader)
             .keyboardShortcut("h", modifiers: [.command, .shift])
+            .hoverEffect()
         }
     }
 
@@ -119,6 +120,7 @@ struct ContentView: View {
                 }
             )
             .keyboardShortcut(",", modifiers: [.command])
+            .hoverEffect()
         }
         .accentColor(.appRed)
         .font(.boldFontWithSize(18))
