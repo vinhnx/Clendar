@@ -7,6 +7,9 @@
 //
 
 import ClockKit
+import SwiftUI
+import Shift
+import EventKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -30,7 +33,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
         // Call the handler with the last entry date you can currently provide or nil if you can't support future timelines
-        handler(nil)
+        handler(Shift.shared.events.last?.startDate)
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
@@ -41,19 +44,74 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        Shift.shared.fetchEventsRangeUntilEndOfDay(from: Date()) { result in
+            switch result {
+            case let .success(response):
+                let clendarEvents = response.compactMap(ClendarEvent.init)
+                if let template = self.makeTemplate(date: Date(), event: clendarEvents.first, complication: complication) {
+                    handler(
+                        CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+                    )
+                } else {
+                    handler(nil)
+                }
+            case .failure:
+                handler(nil)
+            }
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
         // Call the handler with the timeline entries after the given date
-        handler(nil)
+        let events = Shift.shared.events.compactMap(ClendarEvent.init)
+        guard !events.isEmpty else {
+            handler(nil)
+            return
+        }
+
+        let fiveMinutes = 5.0 * 60.0
+        var entries: [CLKComplicationTimelineEntry] = []
+        var current = date
+        let endDate = date.addingTimeInterval(3600.0)
+
+        while (current.compare(endDate) == .orderedAscending) && (entries.count < limit) {
+            if let nextEvent = events.first,
+               let nextEKEvent = nextEvent.event,
+               let nextEventDate = nextEKEvent.startDate,
+               let ctemplate = self.makeTemplate(date: nextEventDate, event: nextEvent, complication: complication) {
+                let entry = CLKComplicationTimelineEntry(
+                    date: current,
+                    complicationTemplate: ctemplate)
+                entries.append(entry)
+            }
+            current = current.addingTimeInterval(fiveMinutes)
+        }
+
+        handler(entries)
     }
 
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        handler(makeTemplate(complication: complication))
+    }
+}
+
+extension ComplicationController {
+    func makeTemplate(
+        date: Date = Date(),
+        event: ClendarEvent? = nil,
+        complication: CLKComplication
+    ) -> CLKComplicationTemplate? {
+        switch complication.family {
+        case .graphicCircular:
+            return CLKComplicationTemplateGraphicCircularView(ComplicationViewCircular(date: date))
+        case .graphicCorner:
+            return CLKComplicationTemplateGraphicCornerCircularView(ComplicationViewCircular(date: date))
+        case .graphicRectangular:
+            return event.flatMap { event in CLKComplicationTemplateGraphicRectangularFullView(ComplicationViewRectangular(event: event)) }
+        default:
+            return nil
+        }
     }
 }

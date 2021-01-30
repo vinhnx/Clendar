@@ -29,7 +29,7 @@ struct WidgetEventRowLabel: View {
 	let event: ClendarEvent
 
 	var body: some View {
-        VStack(alignment: .leading, content: {
+        VStack(alignment: .leading) {
             let message = event.event?.title ?? "-"
             let title = event.event?.durationText(startDateOnly: true) ?? "-"
             let titleAndMessage = "[\(title)] \(message)"
@@ -37,7 +37,7 @@ struct WidgetEventRowLabel: View {
                 .font(.semiboldFontWithSize(12))
                 .foregroundColor(Color(.gray))
                 .lineLimit(2)
-        })
+        }
 	}
 }
 
