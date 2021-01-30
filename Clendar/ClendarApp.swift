@@ -29,7 +29,17 @@ struct ClendarApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(store)
+            ContentView()
+                .environmentObject(store)
+                .onContinueUserActivity(Constants.SiriShortcut.addEvent) { (_) in
+                    store.showCreateEventState = true
+                }
+                .onContinueUserActivity(Constants.SiriShortcut.openSettings) { (_) in
+                    store.showSettingsState = true
+                }
+                .onContinueUserActivity(Constants.SiriShortcut.openShortcutsView) { (_) in
+                    store.showSiriShortcuts = true
+                }
         }
         .onChange(of: phase) { (newPhase) in
             switch newPhase {

@@ -150,6 +150,9 @@
 		A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */; };
 		A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */; };
 		A3AFBD53255F871000760E5B /* CalendarGridTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */; };
+		A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568DF25C5BDD600E3C09F /* SiriButton.swift */; };
+		A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */; };
+		A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */; };
 		A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */; };
 		A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
@@ -390,6 +393,9 @@
 		A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidgetView.swift; sourceTree = "<group>"; };
 		A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidget.swift; sourceTree = "<group>"; };
 		A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridTimelineProvider.swift; sourceTree = "<group>"; };
+		A3B568DF25C5BDD600E3C09F /* SiriButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriButton.swift; sourceTree = "<group>"; };
+		A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutsView.swift; sourceTree = "<group>"; };
+		A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutBuilder.swift; sourceTree = "<group>"; };
 		A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListItemCell.swift; sourceTree = "<group>"; };
 		A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Extensions.swift"; sourceTree = "<group>"; };
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
@@ -743,6 +749,7 @@
 		A33F80F922467DDB009CC46A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3B5690225C5D94000E3C09F /* Siri Shortcuts */,
 				A3D6833E25A9A2E1009C31D5 /* Event List */,
 				A3187E66254998CB009524DF /* Event Editor */,
 				A3187E65254998C1009524DF /* Event Viewer */,
@@ -881,6 +888,16 @@
 				A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A3B5690225C5D94000E3C09F /* Siri Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				A3B568DF25C5BDD600E3C09F /* SiriButton.swift */,
+				A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */,
+				A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */,
+			);
+			path = "Siri Shortcuts";
 			sourceTree = "<group>";
 		};
 		A3C5D76125B9A926009A2CA2 /* Calendar Chooser */ = {
@@ -1544,10 +1561,12 @@
 				A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
+				A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */,
 				A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */,
 				A3EDE73325669FA60046C1F5 /* EventViewerWrapperView.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
 				A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */,
+				A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */,
 				A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */,
@@ -1559,6 +1578,7 @@
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
+				A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */,
 				A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */,
 				A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */,
 				A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */,

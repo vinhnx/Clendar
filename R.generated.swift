@@ -116,14 +116,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 6 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 7 properties.
   struct entitlements {
+    static let comAppleDeveloperSiri = true
     static let comAppleSecurityAppSandbox = true
-    static let comAppleSecurityApplicationGroups = infoPlistString(path: [], key: "com.apple.security.application-groups") ?? "group.com.vinhnx.Clendar"
     static let comAppleSecurityNetworkClient = true
     static let comAppleSecurityPersonalInformationAddressbook = true
     static let comAppleSecurityPersonalInformationCalendars = true
     static let comAppleSecurityPersonalInformationLocation = true
+
+    struct comAppleSecurityApplicationGroups {
+      static let groupComVinhnxClendar = infoPlistString(path: ["com.apple.security.application-groups"], key: "group.com.vinhnx.Clendar") ?? "group.com.vinhnx.Clendar"
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
@@ -270,7 +276,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 16 images.
+  /// This `R.image` struct is generated, and contains static references to 17 images.
   struct image {
     /// Image `dark_icon_120`.
     static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
@@ -304,6 +310,8 @@ struct R: Rswift.Validatable {
     static let original_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_120")
     /// Image `original_180`.
     static let original_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_180")
+    /// Image `spotlight_icon`.
+    static let spotlight_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "spotlight_icon")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
@@ -417,12 +425,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "spotlight_icon", bundle: ..., traitCollection: ...)`
+    static func spotlight_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.spotlight_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct nsUserActivityTypes {
+      static let comVinhnxClendarSiriShortcutAddEvent = infoPlistString(path: ["NSUserActivityTypes"], key: "com.vinhnx.Clendar.SiriShortcut.addEvent") ?? "com.vinhnx.Clendar.SiriShortcut.addEvent"
+      static let comVinhnxClendarSiriShortcutOpenSettings = infoPlistString(path: ["NSUserActivityTypes"], key: "com.vinhnx.Clendar.SiriShortcut.openSettings") ?? "com.vinhnx.Clendar.SiriShortcut.openSettings"
+      static let comVinhnxClendarSiriShortcutOpenShortcuts = infoPlistString(path: ["NSUserActivityTypes"], key: "com.vinhnx.Clendar.SiriShortcut.openShortcuts") ?? "com.vinhnx.Clendar.SiriShortcut.openShortcuts"
       static let configurationIntent = infoPlistString(path: ["NSUserActivityTypes"], key: "ConfigurationIntent") ?? "ConfigurationIntent"
 
       fileprivate init() {}
@@ -475,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 91 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 98 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -549,6 +567,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let collapseThisView = Rswift.StringResource(key: "Collapse this view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Create new Clendar event(s)
+      ///
+      /// Locales: en, vi
+      static let createNewClendarEventS = Rswift.StringResource(key: "Create new Clendar event(s)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Create new event
       ///
       /// Locales: en, vi
@@ -673,6 +695,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let name = Rswift.StringResource(key: "Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: New Clendar Event
+      ///
+      /// Locales: en, vi
+      static let newClendarEvent = Rswift.StringResource(key: "New Clendar Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: New Event
       ///
       /// Locales: en, vi
@@ -697,6 +723,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let oneDot = Rswift.StringResource(key: "One dot", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Open Clendar Settings
+      ///
+      /// Locales: en, vi
+      static let openClendarSettings = Rswift.StringResource(key: "Open Clendar Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Open Clendar Siri Shortcuts
+      ///
+      /// Locales: en, vi
+      static let openClendarSiriShortcuts = Rswift.StringResource(key: "Open Clendar Siri Shortcuts", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Open Settings
+      ///
+      /// Locales: en, vi
+      static let openSettings = Rswift.StringResource(key: "Open Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Original
       ///
       /// Locales: en, vi
@@ -753,10 +791,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi
       static let sharingIsCaringIfYouLikeClendarPleaseLeaveAReviewOrHelpSharingThisAppToTheWorldThankYou = Rswift.StringResource(key: "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Show Siri shortcuts view
+      ///
+      /// Locales: en, vi
+      static let showSiriShortcutsView = Rswift.StringResource(key: "Show Siri shortcuts view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Show days out
       ///
       /// Locales: en, vi
       static let showDaysOut = Rswift.StringResource(key: "Show days out", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
+      /// en translation: Siri Shortcuts
+      ///
+      /// Locales: en, vi
+      static let siriShortcuts = Rswift.StringResource(key: "Siri Shortcuts", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: Start
       ///
       /// Locales: en, vi
@@ -1110,6 +1156,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Collapse this view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Create new Clendar event(s)
+      ///
+      /// Locales: en, vi
+      static func createNewClendarEventS(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Create new Clendar event(s)", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Create new Clendar event(s)"
+        }
+
+        return NSLocalizedString("Create new Clendar event(s)", bundle: bundle, comment: "")
       }
 
       /// en translation: Create new event
@@ -1577,6 +1638,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Name", bundle: bundle, comment: "")
       }
 
+      /// en translation: New Clendar Event
+      ///
+      /// Locales: en, vi
+      static func newClendarEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("New Clendar Event", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "New Clendar Event"
+        }
+
+        return NSLocalizedString("New Clendar Event", bundle: bundle, comment: "")
+      }
+
       /// en translation: New Event
       ///
       /// Locales: en, vi
@@ -1665,6 +1741,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("One dot", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Open Clendar Settings
+      ///
+      /// Locales: en, vi
+      static func openClendarSettings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Open Clendar Settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Open Clendar Settings"
+        }
+
+        return NSLocalizedString("Open Clendar Settings", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Open Clendar Siri Shortcuts
+      ///
+      /// Locales: en, vi
+      static func openClendarSiriShortcuts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Open Clendar Siri Shortcuts", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Open Clendar Siri Shortcuts"
+        }
+
+        return NSLocalizedString("Open Clendar Siri Shortcuts", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Open Settings
+      ///
+      /// Locales: en, vi
+      static func openSettings(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Open Settings", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Open Settings"
+        }
+
+        return NSLocalizedString("Open Settings", bundle: bundle, comment: "")
       }
 
       /// en translation: Original
@@ -1877,6 +1998,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", bundle: bundle, comment: "")
       }
 
+      /// en translation: Show Siri shortcuts view
+      ///
+      /// Locales: en, vi
+      static func showSiriShortcutsView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Show Siri shortcuts view", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Show Siri shortcuts view"
+        }
+
+        return NSLocalizedString("Show Siri shortcuts view", bundle: bundle, comment: "")
+      }
+
       /// en translation: Show days out
       ///
       /// Locales: en, vi
@@ -1890,6 +2026,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Show days out", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Siri Shortcuts
+      ///
+      /// Locales: en, vi
+      static func siriShortcuts(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Siri Shortcuts", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Siri Shortcuts"
+        }
+
+        return NSLocalizedString("Siri Shortcuts", bundle: bundle, comment: "")
       }
 
       /// en translation: Start

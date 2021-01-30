@@ -11,12 +11,19 @@ import UIKit
 // typealiasing
 typealias VoidBlock = () -> Void
 
-enum Constants {
+struct Constants {
 
     static let addEventQuickActionKey = "type"
     static let addEventQuickActionID = "com.vinhnx.Clendar.addEventShortcut"
 
-    enum CalendarView {
+    struct SiriShortcut {
+        static let prefix = "com.vinhnx.Clendar.SiriShortcut"
+        static let addEvent = prefix + ".addEvent"
+        static let openSettings = prefix + ".openSettings"
+        static let openShortcutsView = prefix + ".openShortcuts"
+    }
+
+    struct CalendarView {
         static var calendarWidth: CGFloat {
             if UIDevice.current.userInterfaceIdiom == .pad {
                 return 260
@@ -30,12 +37,12 @@ enum Constants {
         static let calendarHeaderHeight: CGFloat = 10
     }
 
-    enum AppStore {
+    struct AppStore {
         static let url = "https://apps.apple.com/app/id1548102041"
         static let reviewURL = url + "?action=write-review"
     }
 
-    enum WidgetKind {
+    struct WidgetKind {
         static let calendarGridWidget = "CalendarGridWidget"
         static let dateInfoWidget = "DateInfoWidget"
         static let lunarDateInfoWidget = "LunarDateInfoWidget"

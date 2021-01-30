@@ -13,9 +13,8 @@ import Shift
 struct ContentView: View {
     @EnvironmentObject var store: Store
     @StateObject var eventKitWrapper = Shift.shared
-    @State private var showSettingsState = false
     @State private var createdEvent: EKEvent?
-    @State private var isMonthView = true
+    @State private var isMonthView = SettingsManager.isOnMonthViewSettings
 
     let calendarWrapperView = CalendarWrapperView()
 
@@ -40,8 +39,9 @@ struct ContentView: View {
     }
 
     private var topView: some View {
-        HStack {
+        HStack(spacing: 20) {
             menuView
+            shortcutsView
             Spacer()
             monthHeaderView
         }
@@ -69,7 +69,7 @@ struct ContentView: View {
         Button(
             action: {
                 genLightHaptic()
-                store.showCreateEventState.toggle()
+                store.showCreateEventState = true
             }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
@@ -108,12 +108,12 @@ struct ContentView: View {
             Button(
                 action: {
                     genLightHaptic()
-                    showSettingsState.toggle()
+                    store.showSettingsState = true
                 },
                 label: { Image(systemName: "slider.horizontal.3") }
             )
             .sheet(
-                isPresented: $showSettingsState,
+                isPresented: $store.showSettingsState,
                 content: {
                     SettingsWrapperView()
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
@@ -123,6 +123,29 @@ struct ContentView: View {
             .hoverEffect()
         }
         .accentColor(.appRed)
+        .font(.boldFontWithSize(18))
+    }
+
+    private var shortcutsView: some View {
+        HStack(spacing: 30) {
+            Button(
+                action: {
+                    genLightHaptic()
+                    store.showSiriShortcuts = true
+                },
+                label: { Image(systemName: "wand.and.stars") }
+            )
+            .sheet(
+                isPresented: $store.showSiriShortcuts,
+                content: {
+                    SiriShortcutsView()
+                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+                }
+            )
+            .keyboardShortcut("o", modifiers: [.command, .shift])
+            .hoverEffect()
+        }
+        .accentColor(Color(.moianesB))
         .font(.boldFontWithSize(18))
     }
 
