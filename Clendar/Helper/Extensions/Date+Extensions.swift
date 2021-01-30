@@ -30,6 +30,10 @@ extension Date {
         DateFormatter.format(self, format: "dd")
     }
 
+    var toDateAndMonthString: String {
+        DateFormatter.format(self, format: "MMM d")
+    }
+
     var toDayString: String {
         DateFormatter.format(self, format: "E")
     }

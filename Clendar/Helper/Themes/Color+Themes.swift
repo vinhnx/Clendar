@@ -8,6 +8,21 @@
 import SwiftUI
 import UIKit
 
+// TODO: some good color themes
+/*
+
+//            Color(.white)
+//            Color(hex: 0xF6F5F0)
+//            Color(hex: 0x1F2126)
+//            Color(.black)
+     Color(hex: 0xE4ECF5) << this one look good!
+//            Color(hex: 0x949EA8)
+//            Color(hex: 0xBBBF99)
+//            Color(hex: 0x818C7B)
+//            Color(hex: 0x386273)
+//            Color(hex: 0xC4B087)
+ */
+
 extension UIColor {
     var swiftUIColor: Color {
         Color(self)

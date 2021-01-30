@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ClockKit
 
 @main
 struct ClendarApp: App {
