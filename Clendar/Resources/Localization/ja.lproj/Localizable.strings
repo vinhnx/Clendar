@@ -1,0 +1,191 @@
+/* No comment provided by engineer. */
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[ベータ]新しいイベントを作成するときに、実験的な自然言語解析モードを使用するように選択できます。 この機能は改善されます。";
+
+/* No comment provided by engineer. */
+"App info" = "アプリ情報";
+"Auto-select day" = "日の自動選択";
+
+/* No comment provided by engineer. */
+"Auto-select day when month changes" = "月が変わる日を自動選択";
+
+/* No comment provided by engineer. */
+"Auto-select first day of month/week when calendar changes" = "カレンダーが変更された月/週の最初の日を自動選択";
+
+/* No comment provided by engineer. */
+"Available calendars" = "利用可能なカレンダー";
+
+/* No comment provided by engineer. */
+"Calendar grid view" = "カレンダーグリッドビュー";
+
+/* No comment provided by engineer. */
+"Calendar View" = "カレンダービュー";
+
+/* No comment provided by engineer. */
+"Calendars" = "カレンダー";
+
+/* No comment provided by engineer. */
+"Cancel" = "キャンセル";
+
+/* No comment provided by engineer. */
+"Check calendar at a glance" = "一目でカレンダーを確認";
+
+/* No comment provided by engineer. */
+"Choose your desired app icon" = "希望のアプリアイコンを選択してください";
+
+/* No comment provided by engineer. */
+"Custom App Icon" = "カスタムアプリアイコン";
+
+/* No comment provided by engineer. */
+"Dark" = "Dark";
+
+/* No comment provided by engineer. */
+"Date" = "日付";
+
+/* No comment provided by engineer. */
+"Date Info Widget" = "日付情報ウィジェット";
+
+/* No comment provided by engineer. */
+"Default event duration" = "デフォルトのイベント期間";
+
+/* No comment provided by engineer. */
+"Delete Event" = "イベントの削除";
+
+/* No comment provided by engineer. */
+"Dim" = "薄暗い";
+
+/* No comment provided by engineer. */
+"Done" = "完了";
+
+/* No comment provided by engineer. */
+"Edit Event" = "イベントの編集";
+
+/* No comment provided by engineer. */
+"General" = "一般";
+
+/* No comment provided by engineer. */
+"Haptic feedback" = "触覚フィードバック";
+
+/* No comment provided by engineer. */
+"Light" = "Light";
+
+/* No comment provided by engineer. */
+"Lunar date" = "毎月の日付";
+
+/* No comment provided by engineer. */
+"minutes" = "分";
+
+/* No comment provided by engineer. */
+"Month" = "月";
+
+/* No comment provided by engineer. */
+"Month view" = "月表示";
+
+/* No comment provided by engineer. */
+"Month view calendar" = "月表示カレンダー";
+
+/* No comment provided by engineer. */
+"Name" = "名前";
+
+/* No comment provided by engineer. */
+"None" = "無し";
+
+/* No comment provided by engineer. */
+"Off" = "オフ";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"On" = "オン";
+
+/* No comment provided by engineer. */
+"One dot" = "ワンドット";
+
+/* No comment provided by engineer. */
+"Quick Event" = "クイックイベント";
+
+/* No comment provided by engineer. */
+"Settings" = "設定";
+
+/* No comment provided by engineer. */
+"Show days out" = "日を表示する";
+
+/* No comment provided by engineer. */
+"Supplementary day view" = "補足日ビュー";
+
+/* No comment provided by engineer. */
+"Themes" = "テーマ";
+
+/* No comment provided by engineer. */
+"Upcoming events" = "今後のイベント";
+
+/* No comment provided by engineer. */
+"Version" = "バージョン";
+
+/* No comment provided by engineer. */
+"View Event" = "イベントを見る";
+
+/* No comment provided by engineer. */
+"View mode" = "ビューモード";
+
+/* No comment provided by engineer. */
+"Week view" = "週ビュー";
+
+/* No comment provided by engineer. */
+"read a book this Friday 8PM..." = "今週の金曜日の午後8時に本を読む...";
+
+/* No comment provided by engineer. */
+"You can choose available calendars to shown in event list" = "イベントリストに表示する利用可能なカレンダーを選択できます";
+
+/* No comment provided by engineer. */
+"🎉 No more events today,\nenjoy your day!\n" = "🎉今日はこれ以上のイベントはありません、\nあなたの一日をお楽しみください\n";
+"🎉 No events for today,\nenjoy your day!\n" = "🎉今日はイベントはありません。\nお楽しみください\n";
+"English" = "英語";
+"Vietnamese" = "ベトナム語";
+"Change app Language" = "アプリの言語を変更する";
+"All day" = "一日中";
+"Start" = "開始";
+"End" = "終わり";
+"Add event" = "イベントを追加";
+"Recurring event" = "定期的なイベント";
+"Recurring date" = "繰り返し日";
+"Start time" = "始まる時間";
+"End time" = "終了時間";
+"Location" = "Location";
+"New Event" = "新しいイベント";
+"Input event" = "入力イベント";
+"Select event's start time" = "イベントの開始時間を選択します";
+"Select event's end time" = "イベントの終了時間を選択します";
+"Title of the event" = "イベントのタイトル";
+"Event duration" = "イベント期間";
+"Collapse this view" = "このビューを折りたたむ";
+"Create new event" = "新しいイベントを作成する";
+"Follow system" = "フォローシステム";
+"Widget theme" = "ウィジェットのテーマ";
+"Rate Clendar" = "レートカレンダー";
+"Sharing" = "共有";
+"Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "共有は思いやりです。 あなたがクレンダーが好きなら、レビューを残すか、このアプリを世界に共有するのを手伝ってください、ありがとう！";
+"Share Clendar" = "カレンダーを共有する";
+"Calendars Visibility" = "カレンダーの可視性";
+"Week" = "週間";
+"Calendar" = "カレンダー";
+"Delete" = "削除";
+"Edit" = "編集";
+"Are you sure you want to delete this event?" = "このイベントを削除してもよろしいですか？";
+"Default" = "デフォルト";
+"Original" = "元の";
+"Keyboard shortcuts" = "キーボードショートカット";
+"Productivity, increased! 🚀" = "生産性が向上しました！ 🚀";
+"Events" = "イベント";
+"Dismiss view" = "ビューを閉じる";
+"Save event" = "イベントを保存";
+"Toggle all day switch" = "終日スイッチを切り替えます";
+"Switch to current date" = "現在の日付に切り替えます";
+"Preferences" = "環境設定";
+"Open Settings" = "設定を開く";
+"Siri Shortcuts" = "Siriのショートカット";
+"Show Siri shortcuts view" = "Siriのショートカットビューを表示する";
+"Open Clendar Siri Shortcuts" = "カレンダーを開くSiriショートカット";
+"Create new Clendar event(s)" = "新しいカレンダーイベントを作成する）";
+"Open Clendar Settings" = "カレンダー設定を開く";
+"New Clendar Event" = "新しいカレンダーイベント";
