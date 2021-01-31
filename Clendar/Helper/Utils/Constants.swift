@@ -12,6 +12,7 @@ import UIKit
 typealias VoidBlock = () -> Void
 
 struct Constants {
+    static let supportEmail = "clendar.app@outlook.com"
 
     static let addEventQuickActionKey = "type"
     static let addEventQuickActionID = "com.vinhnx.Clendar.addEventShortcut"

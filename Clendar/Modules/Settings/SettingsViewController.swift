@@ -189,6 +189,15 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var feedbackMailButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = NSLocalizedString("Feedback/Report Issue", comment: "")
+        instance.action = {
+            MailComposer().showFeedbackComposer()
+        }
+        return instance
+    }()
+
     lazy var calendarView: SegmentedControlFormItem = {
         let proxy = SegmentedControlFormItem()
         proxy.title = NSLocalizedString("Calendar View", comment: "")
@@ -250,9 +259,10 @@ final class SettingsViewController: FormViewController {
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
 
         // Sharing
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Sharing", comment: ""))
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
         builder += writeReviewButton
         builder += shareAppButton
+        builder += feedbackMailButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

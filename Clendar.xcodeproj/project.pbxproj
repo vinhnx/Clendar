@@ -72,6 +72,7 @@
 		A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
+		A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */; };
 		A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
@@ -336,6 +337,7 @@
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
+		A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		A33DE4942541C4F20064D0AD /* Font+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Styles.swift"; sourceTree = "<group>"; };
 		A33DE4982541C50F0064D0AD /* Color+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Themes.swift"; sourceTree = "<group>"; };
 		A33EE21425C6E3D900BE80F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ClendarWidget.strings"; sourceTree = "<group>"; };
@@ -1004,6 +1006,7 @@
 				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
 				A307DBDF25ADE65500B5CE11 /* EmptyView.swift */,
 				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
+				A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1640,6 +1643,7 @@
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
 				A31258BF2551C32000891CE2 /* AppIconChooserViewContronller.swift in Sources */,
 				A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */,
+				A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */,
 				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
 				A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */,
 				A31258BA2551C2A100891CE2 /* AppIconItemCell.swift in Sources */,
