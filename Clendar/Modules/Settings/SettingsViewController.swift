@@ -253,7 +253,6 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Sharing", comment: ""))
         builder += writeReviewButton
         builder += shareAppButton
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!", comment: ""))
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

@@ -1,0 +1,191 @@
+/* No comment provided by engineer. */
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Puede optar por utilizar el modo de análisis de lenguaje natural experimental al crear un nuevo evento. Esta característica se mejorará.";
+
+/* No comment provided by engineer. */
+"App info" = "Informacion de la applicacion";
+"Auto-select day" = "Seleccionar día automáticamente";
+
+/* No comment provided by engineer. */
+"Auto-select day when month changes" = "Seleccionar automáticamente el día cuando cambia el mes";
+
+/* No comment provided by engineer. */
+"Auto-select first day of month/week when calendar changes" = "Seleccionar automáticamente el primer día del mes / semana cuando cambia el calendario";
+
+/* No comment provided by engineer. */
+"Available calendars" = "Calendarios disponibles";
+
+/* No comment provided by engineer. */
+"Calendar grid view" = "Vista de cuadrícula de calendario";
+
+/* No comment provided by engineer. */
+"Calendar View" = "Vista de calendario";
+
+/* No comment provided by engineer. */
+"Calendars" = "Calendarios";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancelar";
+
+/* No comment provided by engineer. */
+"Check calendar at a glance" = "Consulta el calendario de un vistazo";
+
+/* No comment provided by engineer. */
+"Choose your desired app icon" = "Elija el icono de la aplicación que desee";
+
+/* No comment provided by engineer. */
+"Custom App Icon" = "Icono de aplicación personalizada";
+
+/* No comment provided by engineer. */
+"Dark" = "Oscura";
+
+/* No comment provided by engineer. */
+"Date" = "Fecha";
+
+/* No comment provided by engineer. */
+"Date Info Widget" = "Widget de información de fecha";
+
+/* No comment provided by engineer. */
+"Default event duration" = "Duración predeterminada del evento";
+
+/* No comment provided by engineer. */
+"Delete Event" = "Eliminar evento";
+
+/* No comment provided by engineer. */
+"Dim" = "Oscura";
+
+/* No comment provided by engineer. */
+"Done" = "Hecho";
+
+/* No comment provided by engineer. */
+"Edit Event" = "Editar evento";
+
+/* No comment provided by engineer. */
+"General" = "General";
+
+/* No comment provided by engineer. */
+"Haptic feedback" = "Retroalimentación háptica";
+
+/* No comment provided by engineer. */
+"Light" = "Ligera";
+
+/* No comment provided by engineer. */
+"Lunar date" = "Fecha mensual";
+
+/* No comment provided by engineer. */
+"minutes" = "minutos";
+
+/* No comment provided by engineer. */
+"Month" = "Mes";
+
+/* No comment provided by engineer. */
+"Month view" = "Vista de mes";
+
+/* No comment provided by engineer. */
+"Month view calendar" = "Calendario de vista mensual";
+
+/* No comment provided by engineer. */
+"Name" = "Nombre";
+
+/* No comment provided by engineer. */
+"None" = "Ninguna";
+
+/* No comment provided by engineer. */
+"Off" = "Apagada";
+
+/* No comment provided by engineer. */
+"OK" = "Okay";
+
+/* No comment provided by engineer. */
+"On" = "En";
+
+/* No comment provided by engineer. */
+"One dot" = "Un punto";
+
+/* No comment provided by engineer. */
+"Quick Event" = "Evento rápido";
+
+/* No comment provided by engineer. */
+"Settings" = "Configuraciones";
+
+/* No comment provided by engineer. */
+"Show days out" = "Mostrar días fuera";
+
+/* No comment provided by engineer. */
+"Supplementary day view" = "Vista complementaria del día";
+
+/* No comment provided by engineer. */
+"Themes" = "Themes";
+
+/* No comment provided by engineer. */
+"Upcoming events" = "Próximos Eventos";
+
+/* No comment provided by engineer. */
+"Version" = "Versión";
+
+/* No comment provided by engineer. */
+"View Event" = "Ver evento";
+
+/* No comment provided by engineer. */
+"View mode" = "Modo de vista";
+
+/* No comment provided by engineer. */
+"Week view" = "Vista de semana";
+
+/* No comment provided by engineer. */
+"read a book this Friday 8PM..." = "leer un libro este viernes 8PM ...";
+
+/* No comment provided by engineer. */
+"You can choose available calendars to shown in event list" = "Puede elegir los calendarios disponibles para mostrar en la lista de eventos";
+
+/* No comment provided by engineer. */
+"🎉 No more events today,\nenjoy your day!\n" = "🎉 ¡No más eventos hoy, disfruta tu día!";
+"🎉 No events for today,\nenjoy your day!\n" = "🎉 No hay eventos para hoy, ¡disfruta tu día!";
+"English" = "Inglés";
+"Vietnamese" = "vietnamita";
+"Change app Language" = "Cambiar el idioma de la aplicación";
+"All day" = "Todo el dia";
+"Start" = "comienzo";
+"End" = "Fin";
+"Add event" = "Añadir evento";
+"Recurring event" = "Evento recurrente";
+"Recurring date" = "Fecha recurrente";
+"Start time" = "Hora de inicio";
+"End time" = "Hora de finalización";
+"Location" = "Ubicación";
+"New Event" = "Nuevo evento";
+"Input event" = "Evento de entrada";
+"Select event's start time" = "Seleccione la hora de inicio del evento";
+"Select event's end time" = "Seleccionar la hora de finalización del evento";
+"Title of the event" = "Título del evento";
+"Event duration" = "Duración del evento";
+"Collapse this view" = "Contraer esta vista";
+"Create new event" = "Crear nuevo evento";
+"Follow system" = "Seguir el sistema";
+"Widget theme" = "Tema de widget";
+"Rate Clendar" = "Calendario de tarifas";
+"Sharing" = "Compartiendo";
+"Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Compartir es demostrar interés. Si le gusta Clendar, deje un comentario o ayude a compartir esta aplicación con el mundo, ¡gracias!";
+"Share Clendar" = "Share Clendar";
+"Calendars Visibility" = "Visibilidad de calendarios";
+"Week" = "Semana";
+"Calendar" = "Calendario";
+"Delete" = "Eliminar";
+"Edit" = "Editar";
+"Are you sure you want to delete this event?" = "¿Estás seguro de que deseas eliminar este evento?";
+"Default" = "Defecto";
+"Original" = "Original";
+"Keyboard shortcuts" = "Atajos de teclado";
+"Productivity, increased! 🚀" = "¡Productividad aumentada! 🚀";
+"Events" = "Eventos";
+"Dismiss view" = "Descartar vista";
+"Save event" = "Guardar evento";
+"Toggle all day switch" = "Cambiar todo el día";
+"Switch to current date" = "Cambiar a la fecha actual";
+"Preferences" = "Preferencias";
+"Open Settings" = "Configuración abierta";
+"Siri Shortcuts" = "Atajos de Siri";
+"Show Siri shortcuts view" = "Mostrar vista de atajos de Siri";
+"Open Clendar Siri Shortcuts" = "Abrir accesos directos de Siri al calendario";
+"Create new Clendar event(s)" = "Crear nuevos eventos de calendario";
+"Open Clendar Settings" = "Abrir configuración de calendario";
+"New Clendar Event" = "Nuevo evento de calendario";
