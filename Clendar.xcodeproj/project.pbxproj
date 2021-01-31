@@ -285,6 +285,7 @@
 
 /* Begin PBXFileReference section */
 		2E601AF73FF37D0E3B274C07 /* ja */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3FB7A4DBB8A0F82CC57DE606 /* zh-hans */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = "zh-hans"; path = "zh-hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6239D11B3B53DFE055C329D8 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -337,6 +338,7 @@
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
 		A33DE4942541C4F20064D0AD /* Font+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Styles.swift"; sourceTree = "<group>"; };
 		A33DE4982541C50F0064D0AD /* Color+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Themes.swift"; sourceTree = "<group>"; };
+		A33EE21425C6E3D900BE80F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ClendarWidget.strings"; sourceTree = "<group>"; };
 		A33F80C622467A82009CC46A /* Clendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33F80D022467A85009CC46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A33F80D522467A85009CC46A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1214,6 +1216,7 @@
 				Base,
 				vi,
 				ja,
+				"zh-Hans",
 			);
 			mainGroup = A33F80BD22467A82009CC46A;
 			packageReferences = (
@@ -1691,6 +1694,7 @@
 				A37F0AE625C4807500DFFC41 /* Base */,
 				A37F0AF725C4807B00DFFC41 /* vi */,
 				A3A60CA325C6D53300E13409 /* ja */,
+				A33EE21425C6E3D900BE80F1 /* zh-Hans */,
 			);
 			name = ClendarWidget.intentdefinition;
 			sourceTree = "<group>";
@@ -1701,6 +1705,7 @@
 				A39B71B5255FB64F0000162F /* en */,
 				A39B71BA255FB6540000162F /* vi */,
 				2E601AF73FF37D0E3B274C07 /* ja */,
+				3FB7A4DBB8A0F82CC57DE606 /* zh-hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

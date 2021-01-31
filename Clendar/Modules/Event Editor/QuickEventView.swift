@@ -76,7 +76,7 @@ struct QuickEventView: View {
                 VStack(spacing: 30) {
                     Spacer()
                     MultilineTextField(
-                        "read a book this Friday 8PM...",
+                        R.string.localizable.readABookThisFriday8PM(),
                         text: $quickEventStore.query,
                         onCommit: {
                             self.parse(quickEventStore.query)

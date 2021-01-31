@@ -138,8 +138,8 @@
 "You can choose available calendars to shown in event list" = "イベントリストに表示する利用可能なカレンダーを選択できます";
 
 /* No comment provided by engineer. */
-"🎉 No more events today,\nenjoy your day!\n" = "🎉今日はこれ以上のイベントはありません、\nあなたの一日をお楽しみください\n";
-"🎉 No events for today,\nenjoy your day!\n" = "🎉今日はイベントはありません。\nお楽しみください\n";
+"🎉 No more events today,\nenjoy your day!\n" = "🎉 今日はこれ以上のイベントはありません、あなたの一日を楽しんでください！";
+"🎉 No events for today,\nenjoy your day!\n" = "🎉 今日のイベントはありません、あなたの一日を楽しんでください！";
 "English" = "英語";
 "Vietnamese" = "ベトナム語";
 "Change app Language" = "アプリの言語を変更する";

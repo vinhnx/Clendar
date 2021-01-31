@@ -39,7 +39,7 @@ struct ContentView: View {
     }
 
     private var topView: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 10) {
             menuView
             shortcutsView
             Spacer()
@@ -119,6 +119,7 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             )
+            .frame(width: 44, height: 44)
             .keyboardShortcut(",", modifiers: [.command])
             .hoverEffect()
         }
@@ -142,6 +143,7 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             )
+            .frame(width: 44, height: 44)
             .keyboardShortcut("o", modifiers: [.command, .shift])
             .hoverEffect()
         }

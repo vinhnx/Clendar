@@ -10,9 +10,11 @@ import SwiftUI
 
 struct EmptyView: View {
     var body: some View {
-        Text("🎉 No events for today,\nenjoy your day!\n")
-            .modifier(BoldTextModifider())
-            .lineSpacing(10)
-            .multilineTextAlignment(.center)
+        VStack {
+            Text("🎉 No events for today,\nenjoy your day!\n")
+                .modifier(BoldTextModifider())
+                .lineSpacing(10)
+                .multilineTextAlignment(.center)
+        }.padding()
     }
 }
