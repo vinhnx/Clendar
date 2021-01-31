@@ -1,0 +1,191 @@
+/* No comment provided by engineer. */
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[베타] 새 이벤트를 생성 할 때 실험적인 자연어 구문 분석 모드를 사용하도록 선택할 수 있습니다. 이 기능은 개선 될 것입니다.";
+
+/* No comment provided by engineer. */
+"App info" = "앱 정보";
+"Auto-select day" = "요일 자동 선택";
+
+/* No comment provided by engineer. */
+"Auto-select day when month changes" = "월이 변경되는 날짜 자동 선택";
+
+/* No comment provided by engineer. */
+"Auto-select first day of month/week when calendar changes" = "달력이 변경 될 때 월 /주의 첫째 날 자동 선택";
+
+/* No comment provided by engineer. */
+"Available calendars" = "사용 가능한 캘린더";
+
+/* No comment provided by engineer. */
+"Calendar grid view" = "캘린더 그리드보기";
+
+/* No comment provided by engineer. */
+"Calendar View" = "달력보기";
+
+/* No comment provided by engineer. */
+"Calendars" = "달력";
+
+/* No comment provided by engineer. */
+"Cancel" = "취소";
+
+/* No comment provided by engineer. */
+"Check calendar at a glance" = "한눈에 캘린더 확인";
+
+/* No comment provided by engineer. */
+"Choose your desired app icon" = "원하는 앱 아이콘을 선택하세요";
+
+/* No comment provided by engineer. */
+"Custom App Icon" = "맞춤 앱 아이콘";
+
+/* No comment provided by engineer. */
+"Dark" = "어두운";
+
+/* No comment provided by engineer. */
+"Date" = "데이트";
+
+/* No comment provided by engineer. */
+"Date Info Widget" = "날짜 정보 위젯";
+
+/* No comment provided by engineer. */
+"Default event duration" = "기본 이벤트 기간";
+
+/* No comment provided by engineer. */
+"Delete Event" = "이벤트 삭제";
+
+/* No comment provided by engineer. */
+"Dim" = "어둑한";
+
+/* No comment provided by engineer. */
+"Done" = "끝난";
+
+/* No comment provided by engineer. */
+"Edit Event" = "이벤트 수정";
+
+/* No comment provided by engineer. */
+"General" = "일반";
+
+/* No comment provided by engineer. */
+"Haptic feedback" = "햅틱 피드백";
+
+/* No comment provided by engineer. */
+"Light" = "빛";
+
+/* No comment provided by engineer. */
+"Lunar date" = "월간 날짜";
+
+/* No comment provided by engineer. */
+"minutes" = "의사록";
+
+/* No comment provided by engineer. */
+"Month" = "달";
+
+/* No comment provided by engineer. */
+"Month view" = "월별보기";
+
+/* No comment provided by engineer. */
+"Month view calendar" = "월별 달력";
+
+/* No comment provided by engineer. */
+"Name" = "이름";
+
+/* No comment provided by engineer. */
+"None" = "없음";
+
+/* No comment provided by engineer. */
+"Off" = "떨어져서";
+
+/* No comment provided by engineer. */
+"OK" = "확인";
+
+/* No comment provided by engineer. */
+"On" = "의 위에";
+
+/* No comment provided by engineer. */
+"One dot" = "한 점";
+
+/* No comment provided by engineer. */
+"Quick Event" = "빠른 이벤트 평가";
+
+/* No comment provided by engineer. */
+"Settings" = "설정";
+
+/* No comment provided by engineer. */
+"Show days out" = "나날의 표시";
+
+/* No comment provided by engineer. */
+"Supplementary day view" = "추가 일보기";
+
+/* No comment provided by engineer. */
+"Themes" = "테마";
+
+/* No comment provided by engineer. */
+"Upcoming events" = "다가오는 이벤트";
+
+/* No comment provided by engineer. */
+"Version" = "버전";
+
+/* No comment provided by engineer. */
+"View Event" = "이벤트보기";
+
+/* No comment provided by engineer. */
+"View mode" = "보기 모드";
+
+/* No comment provided by engineer. */
+"Week view" = "주간보기";
+
+/* No comment provided by engineer. */
+"read a book this Friday 8PM..." = "이번 주 금요일 오후 8시 책을 읽으십시오 ...";
+
+/* No comment provided by engineer. */
+"You can choose available calendars to shown in event list" = "이벤트 목록에 표시 할 사용 가능한 캘린더를 선택할 수 있습니다.";
+
+/* No comment provided by engineer. */
+"🎉 No more events today,\nenjoy your day!\n" = "🎉 오늘은 더 이상 이벤트가 없습니다. 즐거운 하루 되세요!";
+"🎉 No events for today,\nenjoy your day!\n" = "🎉 오늘은 이벤트가 없습니다. 즐거운 하루 되세요!";
+"English" = "영어";
+"Vietnamese" = "베트남어";
+"Change app Language" = "앱 언어 변경";
+"All day" = "하루 종일";
+"Start" = "스타트";
+"End" = "종료";
+"Add event" = "이벤트 추가";
+"Recurring event" = "반복 이벤트";
+"Recurring date" = "되풀이 날짜";
+"Start time" = "시작 시간";
+"End time" = "종료 시간";
+"Location" = "위치";
+"New Event" = "새로운 이벤트";
+"Input event" = "입력 이벤트";
+"Select event's start time" = "이벤트 시작 시간 선택";
+"Select event's end time" = "이벤트 종료 시간 선택";
+"Title of the event" = "이벤트 제목";
+"Event duration" = "이벤트 기간";
+"Collapse this view" = "이보기 축소";
+"Create new event" = "새 이벤트 만들기";
+"Follow system" = "팔로우 시스템";
+"Widget theme" = "위젯 테마";
+"Rate Clendar" = "요금 달력";
+"Sharing" = "나누는";
+"Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "공유는 배려입니다. Clendar가 마음에 들면 리뷰를 남기거나이 앱을 전 세계에 공유하는 데 도움을주세요. 감사합니다!";
+"Share Clendar" = "캘린더 공유";
+"Calendars Visibility" = "캘린더 가시성";
+"Week" = "주";
+"Calendar" = "달력";
+"Delete" = "지우다";
+"Edit" = "편집하다";
+"Are you sure you want to delete this event?" = "이 이벤트를 삭제 하시겠습니까?";
+"Default" = "기본";
+"Original" = "실물";
+"Keyboard shortcuts" = "키보드 단축키";
+"Productivity, increased! 🚀" = "생산성 증가! 🚀";
+"Events" = "이벤트";
+"Dismiss view" = "보기 닫기";
+"Save event" = "이벤트 저장";
+"Toggle all day switch" = "종일 전환 전환";
+"Switch to current date" = "현재 날짜로 전환";
+"Preferences" = "환경 설정";
+"Open Settings" = "설정 열기";
+"Siri Shortcuts" = "Siri 단축키";
+"Show Siri shortcuts view" = "Siri 단축키보기 표시";
+"Open Clendar Siri Shortcuts" = "캘린더 Siri 단축키 열기";
+"Create new Clendar event(s)" = "새 캘린더 이벤트 생성)";
+"Open Clendar Settings" = "캘린더 설정 열기";
+"New Clendar Event" = "새로운 캘린더 이벤트";
