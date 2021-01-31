@@ -22,17 +22,17 @@ class KeyboardShortcutsViewController: FormViewController {
         // \u{001B}: escape
         // \u{0009}: tab
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Events", comment: ""))
-        builder += StaticTextFormItem().title("Create new event").value("\u{2318} N")
-        builder += StaticTextFormItem().title("Edit Event").value("\u{2318} \u{21E7} E")
-        builder += StaticTextFormItem().title("Dismiss view").value("\u{2318} ESC")
-        builder += StaticTextFormItem().title("Save event").value("\u{2318} \u{21E7} S")
-        builder += StaticTextFormItem().title("Toggle all day switch").value("\u{2318} TAB")
+        builder += StaticTextFormItem().title(NSLocalizedString("Create new event", comment: "")).value("\u{2318} N")
+        builder += StaticTextFormItem().title(NSLocalizedString("Edit Event", comment: "")).value("\u{2318} \u{21E7} E")
+        builder += StaticTextFormItem().title(NSLocalizedString("Dismiss view", comment: "")).value("\u{2318} ESC")
+        builder += StaticTextFormItem().title(NSLocalizedString("Save event", comment: "")).value("\u{2318} \u{21E7} S")
+        builder += StaticTextFormItem().title(NSLocalizedString("Toggle all day switch", comment: "")).value("\u{2318} TAB")
 
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
-        builder += StaticTextFormItem().title("Switch to current date").value("\u{2318} \u{21E7} H")
+        builder += StaticTextFormItem().title(NSLocalizedString("Switch to current date", comment: "")).value("\u{2318} \u{21E7} H")
 
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
-        builder += StaticTextFormItem().title("Preferences").value("\u{2318} ,")
+        builder += StaticTextFormItem().title(NSLocalizedString("Preferences", comment: "")).value("\u{2318} ,")
         builder += StaticTextFormItem().title(R.string.localizable.showSiriShortcutsView()).value("\u{2318} \u{21E7} O")
     }
 }

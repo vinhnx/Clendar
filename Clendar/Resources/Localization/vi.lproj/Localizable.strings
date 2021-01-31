@@ -1,4 +1,3 @@
-
 /* No comment provided by engineer. */
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Bạn có thể chọn sử dụng chế độ phân tích cú pháp ngôn ngữ tự nhiên thử nghiệm khi tạo sự kiện mới. Tính năng này sẽ được cải thiện.";
 
@@ -103,7 +102,6 @@
 
 /* No comment provided by engineer. */
 "Week view" = "Tuần";
-
 "Week" = "Tuần";
 
 /* No comment provided by engineer. */
@@ -111,12 +109,10 @@
 
 /* No comment provided by engineer. */
 "🎉 No more events today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào nữa,\nhãy tận hưởng một ngày của bạn!\n";
-
 "🎉 No events for today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào,\nhãy tận hưởng một ngày của bạn!\n";
 
 /* No comment provided by engineer. */
 "Auto-select day when month changes" = "Tự động chọn ngày";
-
 "Auto-select day" = "Tự động chọn ngày";
 
 /* No comment provided by engineer. */
@@ -145,103 +141,51 @@
 
 /* No comment provided by engineer. */
 "read a book this Friday 8PM..." = "đọc sách vào 8 giờ tối thứ sáu...";
-
 "English" = "Tiếng Anh";
-
 "Vietnamese" = "Tiếng Việt";
-
 "Change app Language" = "Thay đổi ngôn ngữ";
-
 "All day" = "Cả ngày";
-
 "Start" = "Bắt đầu";
-
 "End" = "Kết thúc";
-
-"Select event's start time" = "Thời gian bắt đầu sự kiện";
-
-"Select event's end time" = "Thời gian kết thúc sự kiện";
-
 "Add event" = "Thêm sự kiện";
-
 "Recurring event" = "Sự kiện lập lại";
-
 "Recurring date" = "Ngày lập sự kiện";
-
 "Start time" = "Thời gian bắt đầu";
-
 "End time" = "Thời gian kết thúc";
-
 "Location" = "Địa điểm";
-
 "Input event" = "Nhập sự kiện";
-
 "Select event's start time" = "Chọn thời gian bắt đầu";
-
 "Select event's end time" = "Chọn thời gian kết thúc";
-
 "Title of the event" = "Tiêu đề của sự kiện";
-
 "Event duration" = "Thời lượng sự kiện";
-
 "Collapse this view" = "Thu gọn chế độ xem này";
-
 "Create new event" = "Tạo sự kiện mới";
-
 "Follow system" = "Theo hệ thống";
-
 "Widget theme" = "Chủ đề Widget";
-
 "Rate Clendar" = "Đánh giá Clendar";
-
 "Sharing" = "Chia sẻ";
-
 "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Chia sẻ là quan tâm. Nếu bạn thích Clendar, vui lòng để lại đánh giá hoặc giúp chia sẻ ứng dụng này với mọi người, cảm ơn bạn!";
-
 "Share Clendar" = "Chia sẻ Clendar";
-
 "New Event" = "Sự kiện mới";
-
 "Calendars Visibility" = "Chế độ hiển thị lịch";
-
 "Calendar" = "Lịch";
-
 "Delete" = "Xóa";
-
 "Edit" = "Sửa";
-
 "Are you sure you want to delete this event?" = "Bạn có chắc chắn muốn xóa sự kiện này?";
-
 "Default" = "Mặc định";
-
 "Original" = "Nguyên bản";
-
 "Keyboard shortcuts" = "Phím tắt bàn phím";
-
 "Productivity, increased! 🚀" = "Năng suất, tăng! 🚀";
-
 "Events" = "Sự kiện";
-
 "Dismiss view" = "Đóng màn hình";
-
 "Save event" = "Lưu tạo sự kiện";
-
 "Toggle all day switch" = "Chuyển đổi cả ngày";
-
 "Switch to current date" = "Chuyển sang ngày hiện tại";
-
 "Preferences" = "Tùy chọn";
-
 "Open Settings" = "Mở Cài đặt";
-
 "Siri Shortcuts" = "Siri Shortcuts";
-
 "Show Siri shortcuts view" = "Hiển thị chế độ xem lối tắt Siri";
-
 "Open Clendar Siri Shortcuts" = "Mở Clendar Siri Shortcuts";
-
 "Create new Clendar event(s)" = "Tạo (các) sự kiện Clendar mới";
-
 "Open Clendar Settings" = "Mở Cài đặt Clendar";
-
 "New Clendar Event" = "Sự kiện Clendar Mới";

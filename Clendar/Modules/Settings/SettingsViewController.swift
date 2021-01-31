@@ -232,7 +232,7 @@ final class SettingsViewController: FormViewController {
         builder += widgetTheme
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
-        builder += ViewControllerFormItem().title("Keyboard shortcuts").viewController(KeyboardShortcutsViewController.self)
+        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))

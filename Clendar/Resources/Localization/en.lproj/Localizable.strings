@@ -3,7 +3,6 @@
 
 /* No comment provided by engineer. */
 "App info" = "App info";
-
 "Auto-select day" = "Auto-select day";
 
 /* No comment provided by engineer. */
@@ -136,111 +135,57 @@
 "read a book this Friday 8PM..." = "read a book this Friday 8PM...";
 
 /* No comment provided by engineer. */
-"You can choose available calendars to shown in event list" = "You can choose available calendars to shown in event list";
+"You can choose available calendars to shown in event list" = "You can choose available calendars to show in event list";
 
 /* No comment provided by engineer. */
 "🎉 No more events today,\nenjoy your day!\n" = "🎉 No more events today,\nenjoy your day!\n";
-
 "🎉 No events for today,\nenjoy your day!\n" = "🎉 No events for today,\nenjoy your day!\n";
-
 "English" = "English";
-
 "Vietnamese" = "Vietnamese";
-
 "Change app Language" = "Change app Language";
-
 "All day" = "All day";
-
 "Start" = "Start";
-
 "End" = "End";
-
-"Select event's start time" = "Select event's start time";
-
-"Select event's end time" = "Select event's end time";
-
 "Add event" = "Add event";
-
 "Recurring event" = "Recurring event";
-
 "Recurring date" = "Recurring date";
-
 "Start time" = "Start time";
-
 "End time" = "End time";
-
 "Location" = "Location";
-
 "New Event" = "New Event";
-
 "Input event" = "Input event";
-
 "Select event's start time" = "Select event's start time";
-
 "Select event's end time" = "Select event's end time";
-
 "Title of the event" = "Title of the event";
-
 "Event duration" = "Event duration";
-
 "Collapse this view" = "Collapse this view";
-
 "Create new event" = "Create new event";
-
 "Follow system" = "Follow system";
-
 "Widget theme" = "Widget theme";
-
 "Rate Clendar" = "Rate Clendar";
-
 "Sharing" = "Sharing";
-
 "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!";
-
 "Share Clendar" = "Share Clendar";
-
 "Calendars Visibility" = "Calendars Visibility";
-
 "Week" = "Week";
-
 "Calendar" = "Calendar";
-
 "Delete" = "Delete";
-
 "Edit" = "Edit";
-
 "Are you sure you want to delete this event?" = "Are you sure you want to delete this event?";
-
 "Default" = "Default";
-
 "Original" = "Original";
-
 "Keyboard shortcuts" = "Keyboard shortcuts";
-
 "Productivity, increased! 🚀" = "Productivity, increased! 🚀";
-
 "Events" = "Events";
-
 "Dismiss view" = "Dismiss view";
-
 "Save event" = "Save event";
-
 "Toggle all day switch" = "Toggle all day switch";
-
 "Switch to current date" = "Switch to current date";
-
 "Preferences" = "Preferences";
-
 "Open Settings" = "Open Settings";
-
 "Siri Shortcuts" = "Siri Shortcuts";
-
 "Show Siri shortcuts view" = "Show Siri shortcuts view";
-
 "Open Clendar Siri Shortcuts" = "Open Clendar Siri Shortcuts";
-
 "Create new Clendar event(s)" = "Create new Clendar event(s)";
-
 "Open Clendar Settings" = "Open Clendar Settings";
-
 "New Clendar Event" = "New Clendar Event";

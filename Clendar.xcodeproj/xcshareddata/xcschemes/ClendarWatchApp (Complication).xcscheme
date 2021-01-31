@@ -55,10 +55,8 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Clendar">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A307DAB925ADD6B300B5CE11"
@@ -66,27 +64,14 @@
             BlueprintName = "ClendarWatchApp"
             ReferencedContainer = "container:Clendar.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      launchAutomaticallySubstyle = "32">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Clendar">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A307DAB925ADD6B300B5CE11"
-            BuildableName = "ClendarWatchApp.app"
-            BlueprintName = "ClendarWatchApp"
-            ReferencedContainer = "container:Clendar.xcodeproj">
-         </BuildableReference>
-      </RemoteRunnable>
+      debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"

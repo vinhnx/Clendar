@@ -284,6 +284,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E601AF73FF37D0E3B274C07 /* ja */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D7350FCF6A4BA80FB26A6DB /* Pods_ClendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6239D11B3B53DFE055C329D8 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +390,7 @@
 		A39B71BA255FB6540000162F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3A43E7125C45FA900E60616 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		A3A43E7B25C46CDB00E60616 /* KeyboardShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardShortcutsViewController.swift; sourceTree = "<group>"; };
+		A3A60CA325C6D53300E13409 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidgetView.swift; sourceTree = "<group>"; };
 		A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridWidget.swift; sourceTree = "<group>"; };
@@ -1211,6 +1213,7 @@
 				en,
 				Base,
 				vi,
+				ja,
 			);
 			mainGroup = A33F80BD22467A82009CC46A;
 			packageReferences = (
@@ -1337,9 +1340,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1683,6 +1690,7 @@
 			children = (
 				A37F0AE625C4807500DFFC41 /* Base */,
 				A37F0AF725C4807B00DFFC41 /* vi */,
+				A3A60CA325C6D53300E13409 /* ja */,
 			);
 			name = ClendarWidget.intentdefinition;
 			sourceTree = "<group>";
@@ -1692,6 +1700,7 @@
 			children = (
 				A39B71B5255FB64F0000162F /* en */,
 				A39B71BA255FB6540000162F /* vi */,
+				2E601AF73FF37D0E3B274C07 /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

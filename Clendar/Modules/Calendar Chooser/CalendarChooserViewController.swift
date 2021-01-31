@@ -107,8 +107,6 @@ class CalendarChooserViewController: EKCalendarChooser {
 extension CalendarChooserViewController: EKCalendarChooserDelegate {
     // MARK: - EKCalendarChooserDelegate
     func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
-        logInfo(calendarChooser.selectedCalendars)
-
         let calendarIDs = calendarChooser.selectedCalendars.compactMap { $0.calendarIdentifier }
         updateSelectedCalendarIDs(calendarIDs)
 
@@ -116,14 +114,11 @@ extension CalendarChooserViewController: EKCalendarChooserDelegate {
     }
 
     func calendarChooserSelectionDidChange(_ calendarChooser: EKCalendarChooser) {
-        logInfo("Changed selection")
-
         let calendarIDs = calendarChooser.selectedCalendars.compactMap { $0.calendarIdentifier }
         updateSelectedCalendarIDs(calendarIDs)
     }
 
     func calendarChooserDidCancel(_ calendarChooser: EKCalendarChooser) {
-        logInfo("Cancel tapped")
         dismiss(animated: true, completion: nil)
     }
 }
