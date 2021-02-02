@@ -75,7 +75,7 @@ struct QuickEventView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     Spacer()
-                    MultilineTextField(
+                    TextField(
                         R.string.localizable.readABookThisFriday8PM(),
                         text: $quickEventStore.query,
                         onCommit: {
@@ -95,15 +95,16 @@ struct QuickEventView: View {
                     if !isAllDay {
                         Divider()
                         DatePicker("Start", selection: $startTime)
-                            .datePickerStyle(CompactDatePickerStyle())
+                            .datePickerStyle(GraphicalDatePickerStyle())
                             .font(.mediumFontWithSize(15))
                             .accessibility(label: Text("Select event's start time"))
                         DatePicker("End", selection: $endTime)
-                            .datePickerStyle(CompactDatePickerStyle())
+                            .datePickerStyle(GraphicalDatePickerStyle())
                             .font(.mediumFontWithSize(15))
                             .accessibility(label: Text("Select event's end time"))
                     }
                 }
+                .padding(.bottom, 300)
             }
         }
         .onReceive(quickEventStore.$query) { output in

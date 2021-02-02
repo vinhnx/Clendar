@@ -45,7 +45,7 @@ struct ContentView: View {
             Spacer()
             monthHeaderView
         }
-        .padding([.leading, .trailing], 20)
+        .padding([.leading, .trailing], 10)
     }
 
     private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
