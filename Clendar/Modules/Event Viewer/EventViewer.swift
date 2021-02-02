@@ -48,19 +48,19 @@ struct EventViewer: View {
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
-                Text(event.startDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
+                Text(event.startDate.toString(.dateTime(.full))).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
-                Text(event.endDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
-            }
-
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
-                Text(event.isDetached.asString).modifier(MediumTextModifider())
+                Text(event.endDate.toString(.dateTime(.full))).modifier(MediumTextModifider())
             }
 
             /*
              // TODO: this is not working
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring event", titleImageName: "repeat")) {
+                Text(event.isDetached.asString).modifier(MediumTextModifider())
+            }
+
              if event.isDetached {
                  InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Recurring date", titleImageName: "calendar")) {
                      Text(event.occurrenceDate.toString(.dateTime(.medium))).modifier(MediumTextModifider())
