@@ -80,6 +80,10 @@ extension Date {
         dateByAdding(1, .hour).dateAtStartOf(.hour).date
     }
 
+    var toFullEventDate: String {
+        DateFormatter.format(self, format: "EEEE, MMM d, yyyy. HH:mm")
+    }
+
     #if !os(watchOS)
     var offsetWithDefaultDuration: Date {
         dateByAdding(SettingsManager.defaultEventDuration, .minute).date
