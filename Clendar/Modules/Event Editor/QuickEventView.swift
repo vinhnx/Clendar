@@ -152,6 +152,7 @@ extension QuickEventView {
                 genSuccessHaptic()
                 self.createdEvent = event
                 self.showCreateEventState = false
+                self.store.selectedDate = event.startDate
 
             case let .failure(error):
                 genErrorHaptic()
