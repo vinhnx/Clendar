@@ -19,7 +19,7 @@ import WidgetKit
 struct DateInfoWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
-            kind: Constants.WidgetKind.dateInfoWidget,
+            kind: Constants.WidgetKind.dateInfoWidget.rawValue,
             provider: DateInfoWidgetTimelineProvider()) { entry in
             DateInfoWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

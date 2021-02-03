@@ -12,15 +12,22 @@ import WidgetKit
 @main
 struct ClendarWidgetBundle: WidgetBundle {
     var body: some Widget {
-        DateInfoWidgetBundle().body
         CalendarGridWidgetBundle().body
+        DateInfoWidgetBundle().body
         LunarWidgetBundle().body
+        EventListWidgetBundle().body
     }
 }
 
 struct DateInfoWidgetBundle: WidgetBundle {
     var body: some Widget {
         DateInfoWidget()
+    }
+}
+
+struct EventListWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        EventListWidget()
     }
 }
 

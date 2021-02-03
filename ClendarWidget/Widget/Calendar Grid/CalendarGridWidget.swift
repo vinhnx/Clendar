@@ -12,7 +12,7 @@ import WidgetKit
 struct CalendarGridWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
-            kind: Constants.WidgetKind.calendarGridWidget,
+            kind: Constants.WidgetKind.calendarGridWidget.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in
             CalendarGridWidgetView(entry: entry)

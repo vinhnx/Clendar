@@ -493,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 100 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 102 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -643,6 +643,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let event = Rswift.StringResource(key: "Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Event List Widget
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let eventListWidget = Rswift.StringResource(key: "Event List Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -875,6 +879,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let youCanChooseAvailableCalendarsToShownInEventList = Rswift.StringResource(key: "You can choose available calendars to shown in event list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Your day events at a glance
+      ///
+      /// Locales: en, vi
+      static let yourDayEventsAtAGlance = Rswift.StringResource(key: "Your day events at a glance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi"], comment: nil)
       /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1449,6 +1457,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Event List Widget
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func eventListWidget(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Event List Widget", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Event List Widget"
+        }
+
+        return NSLocalizedString("Event List Widget", bundle: bundle, comment: "")
       }
 
       /// en translation: Event duration
@@ -2319,6 +2342,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You can choose available calendars to shown in event list", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your day events at a glance
+      ///
+      /// Locales: en, vi
+      static func yourDayEventsAtAGlance(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Your day events at a glance", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Your day events at a glance"
+        }
+
+        return NSLocalizedString("Your day events at a glance", bundle: bundle, comment: "")
       }
 
       /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.

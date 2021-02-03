@@ -12,7 +12,7 @@ import WidgetKit
 struct LunarDateInfoWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
-            kind: Constants.WidgetKind.lunarDateInfoWidget,
+            kind: Constants.WidgetKind.lunarDateInfoWidget.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in
             LunarSmallDateWidgetView(entry: entry)

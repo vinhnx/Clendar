@@ -43,9 +43,10 @@ struct Constants {
         static let reviewURL = url + "?action=write-review"
     }
 
-    struct WidgetKind {
-        static let calendarGridWidget = "CalendarGridWidget"
-        static let dateInfoWidget = "DateInfoWidget"
-        static let lunarDateInfoWidget = "LunarDateInfoWidget"
+    enum WidgetKind: String, CaseIterable {
+        case calendarGridWidget = "CalendarGridWidget"
+        case dateInfoWidget = "DateInfoWidget"
+        case lunarDateInfoWidget = "LunarDateInfoWidget"
+        case eventListWidget = "EventListWidget"
     }
 }

@@ -24,7 +24,7 @@ struct LunarSmallDateWidgetView: View {
                 .foregroundColor(.appDark)
             Text(DateFormatter.lunarDateString(forDate: entry.date))
                 .font(.boldFontWithSize(20))
-                .foregroundColor(.appLightRed)
+                .foregroundColor(.red)
         }.padding(.all)
     }
 }
