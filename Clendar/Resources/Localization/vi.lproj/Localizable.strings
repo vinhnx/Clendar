@@ -154,8 +154,8 @@
 "End time" = "Thời gian kết thúc";
 "Location" = "Địa điểm";
 "Input event" = "Nhập sự kiện";
-"Select event's start time" = "Chọn thời gian bắt đầu";
-"Select event's end time" = "Chọn thời gian kết thúc";
+"Select event start time" = "Chọn thời gian bắt đầu";
+"Select event end time" = "Chọn thời gian kết thúc";
 "Title of the event" = "Tiêu đề của sự kiện";
 "Event duration" = "Thời lượng sự kiện";
 "Collapse this view" = "Thu gọn chế độ xem này";

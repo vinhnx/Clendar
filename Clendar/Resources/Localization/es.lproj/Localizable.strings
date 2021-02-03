@@ -154,8 +154,8 @@
 "Location" = "Ubicación";
 "New Event" = "Nuevo evento";
 "Input event" = "Evento de entrada";
-"Select event's start time" = "Seleccione la hora de inicio del evento";
-"Select event's end time" = "Seleccionar la hora de finalización del evento";
+"Select event start time" = "Seleccione la hora de inicio del evento";
+"Select event end time" = "Seleccionar la hora de finalización del evento";
 "Title of the event" = "Título del evento";
 "Event duration" = "Duración del evento";
 "Collapse this view" = "Contraer esta vista";

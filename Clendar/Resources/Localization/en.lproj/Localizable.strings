@@ -154,8 +154,8 @@
 "Location" = "Location";
 "New Event" = "New Event";
 "Input event" = "Input event";
-"Select event's start time" = "Select event start time";
-"Select event's end time" = "Select event end time";
+"Select event start time" = "Select event start time";
+"Select event end time" = "Select event end time";
 "Title of the event" = "Title of the event";
 "Event duration" = "Event duration";
 "Collapse this view" = "Collapse this view";

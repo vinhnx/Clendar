@@ -154,8 +154,8 @@
 "Location" = "Location";
 "New Event" = "新しいイベント";
 "Input event" = "入力イベント";
-"Select event's start time" = "イベントの開始時間を選択します";
-"Select event's end time" = "イベントの終了時間を選択します";
+"Select event start time" = "イベントの開始時間を選択します";
+"Select event end time" = "イベントの終了時間を選択します";
 "Title of the event" = "イベントのタイトル";
 "Event duration" = "イベント期間";
 "Collapse this view" = "このビューを折りたたむ";

@@ -154,8 +154,8 @@
 "Location" = "위치";
 "New Event" = "새로운 이벤트";
 "Input event" = "입력 이벤트";
-"Select event's start time" = "이벤트 시작 시간 선택";
-"Select event's end time" = "이벤트 종료 시간 선택";
+"Select event start time" = "이벤트 시작 시간 선택";
+"Select event end time" = "이벤트 종료 시간 선택";
 "Title of the event" = "이벤트 제목";
 "Event duration" = "이벤트 기간";
 "Collapse this view" = "이보기 축소";

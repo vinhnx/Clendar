@@ -154,8 +154,8 @@
 "Location" = "地点";
 "New Event" = "新事件";
 "Input event" = "输入事件";
-"Select event's start time" = "选择活动的开始时间";
-"Select event's end time" = "选择活动的结束时间";
+"Select event start time" = "选择活动的开始时间";
+"Select event end time" = "选择活动的结束时间";
 "Title of the event" = "活动标题";
 "Event duration" = "活动时间";
 "Collapse this view" = "收起这个看法";
