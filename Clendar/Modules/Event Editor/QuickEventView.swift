@@ -94,14 +94,26 @@ struct QuickEventView: View {
 
                     if !isAllDay {
                         Divider()
-                        DatePicker("Start", selection: $startTime)
-                            .datePickerStyle(GraphicalDatePickerStyle())
-                            .font(.mediumFontWithSize(15))
-                            .accessibility(label: Text("Select event's start time"))
-                        DatePicker("End", selection: $endTime)
-                            .datePickerStyle(GraphicalDatePickerStyle())
-                            .font(.mediumFontWithSize(15))
-                            .accessibility(label: Text("Select event's end time"))
+
+                        VStack {
+                            Text("Start time")
+                                .font(.semiboldFontWithSize(15))
+                            DatePicker("Start time", selection: $startTime)
+                                .datePickerStyle(GraphicalDatePickerStyle())
+                                .font(.mediumFontWithSize(15))
+                                .accessibility(label: Text("Select event start time"))
+                        }
+
+                        Divider()
+
+                        VStack {
+                            Text("End time")
+                                .font(.semiboldFontWithSize(15))
+                            DatePicker("End time", selection: $endTime)
+                                .datePickerStyle(GraphicalDatePickerStyle())
+                                .font(.mediumFontWithSize(15))
+                                .accessibility(label: Text("Select event end time"))
+                        }
                     }
                 }
                 .padding(.bottom, 300)
@@ -132,11 +144,7 @@ extension QuickEventView {
     }
 
     private func createNewEvent(_: EventOverride? = nil) {
-        let input = quickEventStore.query
-
-        guard input.isEmpty == false else { return }
-
-        parse(input)
+        guard quickEventStore.query.isEmpty == false else { return }
 
         Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
             switch result {

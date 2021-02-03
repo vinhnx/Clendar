@@ -105,7 +105,7 @@ enum AlertManager {
 	/// - Parameters:
 	///   - error: ClendarError instance that conforms to LocalizedError protocol
 	///   - okAction: optional action
-	static func showWithError(_ error: LocalizedError, okAction: VoidBlock? = nil) {
+	static func showWithError(_ error: Error, okAction: VoidBlock? = nil) {
 		DispatchQueue.main.async {
 			guard shouldShowAlert else { return }
 			let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
