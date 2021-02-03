@@ -778,11 +778,11 @@ struct R: Rswift.Validatable {
       /// en translation: Select event end time
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
-      static let selectEventSEndTime = Rswift.StringResource(key: "Select event's end time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      static let selectEventEndTime = Rswift.StringResource(key: "Select event end time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Select event start time
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
-      static let selectEventSStartTime = Rswift.StringResource(key: "Select event's start time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      static let selectEventStartTime = Rswift.StringResource(key: "Select event start time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Settings
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1949,31 +1949,31 @@ struct R: Rswift.Validatable {
       /// en translation: Select event end time
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
-      static func selectEventSEndTime(preferredLanguages: [String]? = nil) -> String {
+      static func selectEventEndTime(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Select event's end time", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("Select event end time", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Select event's end time"
+          return "Select event end time"
         }
 
-        return NSLocalizedString("Select event's end time", bundle: bundle, comment: "")
+        return NSLocalizedString("Select event end time", bundle: bundle, comment: "")
       }
 
       /// en translation: Select event start time
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
-      static func selectEventSStartTime(preferredLanguages: [String]? = nil) -> String {
+      static func selectEventStartTime(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Select event's start time", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("Select event start time", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Select event's start time"
+          return "Select event start time"
         }
 
-        return NSLocalizedString("Select event's start time", bundle: bundle, comment: "")
+        return NSLocalizedString("Select event start time", bundle: bundle, comment: "")
       }
 
       /// en translation: Settings

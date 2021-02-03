@@ -11,14 +11,9 @@ import UIKit
 
 enum AppIcon: CaseIterable {
     case `default`
-    case original
-    case dark
-    case dimmedDark
     case icon1
-    case icon2
     case icon3
     case icon4
-    case icon5
 
     // MARK: Internal
 
@@ -28,42 +23,27 @@ enum AppIcon: CaseIterable {
     var iconName: String? {
         switch self {
         case .default: return nil
-        case .original: return "original"
-        case .dark: return "dark_icon"
-        case .dimmedDark: return "dim_dark_icon"
         case .icon1: return "icon1"
-        case .icon2: return "icon2"
         case .icon3: return "icon3"
         case .icon4: return "icon4"
-        case .icon5: return "icon5"
         }
     }
 
     var localizedText: String {
         switch self {
         case .default: return NSLocalizedString("Default", comment: "")
-        case .original: return NSLocalizedString("Original", comment: "")
-        case .dark: return NSLocalizedString("Dark", comment: "")
-        case .dimmedDark: return NSLocalizedString("Dim", comment: "")
         case .icon1: return "icon1"
-        case .icon2: return "icon2"
         case .icon3: return "icon3"
         case .icon4: return "icon4"
-        case .icon5: return "icon5"
         }
     }
 
     var displayImage: UIImage? {
         switch self {
         case .default: return Bundle.main.icon
-        case .original: return "original_120".asImage
-        case .dark: return "dark_icon_120".asImage
-        case .dimmedDark: return "dim_dark_icon_120".asImage
         case .icon1: return "icon1_120".asImage
-        case .icon2: return "icon2_120".asImage
         case .icon3: return "icon3_120".asImage
         case .icon4: return "icon4_120".asImage
-        case .icon5: return "icon5_120".asImage
         }
     }
 }
