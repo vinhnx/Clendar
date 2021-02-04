@@ -67,6 +67,10 @@ Formatter
 
 -   SwiftFormat
 
+Action
+
+-   SwiftLint is integrated on GitHub Action
+
 ### Requirements
 
 -   Xcode 12.0
