@@ -69,7 +69,7 @@ Formatter
 
 Action
 
--   SwiftLint is integrated on GitHub Action
+-   [SwiftLint is integrated on GitHub Action workflow](https://github.com/vinhnx/Clendar/actions?query=workflow%3ASwiftLint) 🚀
 
 ### Requirements
 
