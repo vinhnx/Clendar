@@ -83,7 +83,7 @@ Action
 📖
 I believe the best way to Learn is by doing.
 
-SwiftUI is evolving and I think it's the future of writing iOS apps.
+SwiftUI is evolving and I think it's the future of writing apps.
 
 The true power of SwiftUI, to me, is it's flexibility, thanks to it's vast realm of view modifiers and expressiveness with property wrappers.
 
