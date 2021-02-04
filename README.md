@@ -119,3 +119,10 @@ And, if you like, you can purchase the app on the [App Store](https://apps.apple
 Thanks and take care! 🍀
 
 I'm on [@vinhnx](https:/twitter.com/vinhnx) on almost everywhere.
+
+### What's 'Clendar'?
+
+It's just Calendar, without an 'a'. I thought it's unique, but turns out it's not going well with ASO (App Store Optimization) and SEO (Search Engine Optimization). 
+
+But, whatever!
+
