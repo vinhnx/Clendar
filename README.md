@@ -1,13 +1,18 @@
-<h1 align="center">Clendar - minimal calendar</h1>
+<h1 align="center">
+Clendar - minimal calendar
+</h1>
 <p align="center">Minimal Calendar & Widgets</p>
+
+<p align="center"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/0f/4d/31/0f4d3185-cf37-c985-4631-a5b14b72dba0/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp"></p>
 
 <p align="center"><a href="https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-US?size=250x83&amp;releaseDate=1600214400&h=b81fd00fac3280be6ec30d3d3a1461f0" alt="Download on the App Store" style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a></p>
 
 <p align="center">
-<img src="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/d1/b4/1b/
-d1b41bdc-7768-2801-398d-7d14816fae15/1e54cef4-5d94-4ec0-985c-dcb2a7811404_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot1-crunch.png/230x0w.webp">
+<img src="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/d1/b4/1b/d1b41bdc-7768-2801-398d-7d14816fae15/1e54cef4-5d94-4ec0-985c-dcb2a7811404_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot1-crunch.png/230x0w.webp">
+
 <img src="https://is3-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/d2/ce/15/d2ce15fd-72b4-81ac-e569-80eabdab46fd/77d4d577-253b-4aba-90f1-90af385fb168_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot2-crunch.png/230x0w.webp">
-<img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource124/v4/a9/7a/e3/a97ae3cc-5530-216d-f07d-0ea0458ec920/8155a459-e574-4ab3-8119-c68191921ddd_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot3-crunch.png/230x0w.webp">
+
+<img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/bd/d6/14/bdd61414-7f34-9273-d9ce-89154553f447/a08150b8-5d25-4dbd-af6a-08d0bfa67f7d_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot5-crunch.png/230x0w.webp">
 </p>
 
 ### Description
