@@ -118,7 +118,7 @@ And, if you like, you can purchase the app on the [App Store](https://apps.apple
 
 Thanks and take care! 🍀
 
-I'm on [@vinhnx](https:/twitter.com/vinhnx) on almost everywhere.
+I'm on vinhnx on almost everywhere. [Twitter](https:/twitter.com/vinhnx)
 
 ### What's 'Clendar'?
 
