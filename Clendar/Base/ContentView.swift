@@ -204,7 +204,6 @@ struct ContentView: View {
 
 extension ContentView {
     private func configure() {
-        RatingManager().askForReviewIfNeeded()
         isMonthView = SettingsManager.isOnMonthViewSettings
         selectDate(Date())
     }

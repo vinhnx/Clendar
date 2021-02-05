@@ -170,6 +170,7 @@ final class SettingsViewController: FormViewController {
         instance.title = NSLocalizedString("Rate Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
+            RatingManager().requestReview()
             if let writeReviewURL = URL(string: Constants.AppStore.reviewURL) {
                 UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
             }

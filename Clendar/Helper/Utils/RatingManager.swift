@@ -32,12 +32,14 @@ struct RatingManager {
         #if !DEBUG
         guard shouldAskForReview()
         else { return }
-
-        // https://stackoverflow.com/a/63954318/1477298
-        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
-        }
+        requestReview()
         #endif
+    }
+
+    func requestReview() {
+        // https://stackoverflow.com/a/63954318/1477298
+        guard let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
+        SKStoreReviewController.requestReview(in: scene)
     }
 
     private func shouldAskForReview() -> Bool {
