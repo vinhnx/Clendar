@@ -40,7 +40,6 @@ struct EventListView: View {
                                     }
                                 )
                                 .help("Edit Event")
-                                .hoverEffect()
 
                                 Button(
                                     action: { handleDeleteEvent(event) },
@@ -50,7 +49,6 @@ struct EventListView: View {
                                     }
                                 )
                                 .help("Delete Event")
-                                .hoverEffect()
                             })
                         }
                     }

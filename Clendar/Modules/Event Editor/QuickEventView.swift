@@ -46,7 +46,6 @@ struct QuickEventView: View {
                 )
                 .accentColor(.appRed)
                 .keyboardShortcut(.escape)
-                .hoverEffect()
                 .help("Collapse this view")
 
                 Spacer()
@@ -66,7 +65,6 @@ struct QuickEventView: View {
                 .accentColor(.appRed)
                 .disabled(quickEventStore.query.isEmpty)
                 .keyboardShortcut("s", modifiers: [.command])
-                .hoverEffect()
                 .help("Create new event")
             }
 
