@@ -62,8 +62,24 @@ struct ClendarApp: App {
             @unknown default: break
             }
         }
-    }
+        .commands {
+            CommandGroup(replacing: CommandGroupPlacement.newItem) {
+                Button("Create new event") {
+                    store.showCreateEventState = true
+                }.keyboardShortcut("n", modifiers: [.command])
 
+                Button("Switch to current date") {
+                    store.selectedDate = Date()
+                }.keyboardShortcut("h", modifiers: [.command, .shift])
+            }
+
+            CommandGroup(after: CommandGroupPlacement.appInfo) {
+                Button("Preferences") {
+                    store.showSettingsState = true
+                }.keyboardShortcut(",", modifiers: [.command])
+            }
+        }
+    }
 }
 
 extension ClendarApp {
@@ -106,7 +122,7 @@ extension ClendarApp {
         }
 
         // handle App Store transaction
-        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { _, product in
             // return true if the content can be delivered by your app
             // return false otherwise
             CosumablePurchaseProductIdentifier.allCases.compactMap { $0.rawValue }.contains(product.productIdentifier)

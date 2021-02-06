@@ -12,10 +12,11 @@ import SwiftyStoreKit
 import StoreKit
 
 struct ClendarPlusView: View {
+    var viewModel: ModalWrapperView
+
     @State private var isLoading = false
     @State private var products = [SKProduct]()
     @State private var confettiCounter = 0
-    @State private var showView: Bool = false
 
     var buttonStack: some View {
         ScrollView(showsIndicators: false) {
@@ -38,19 +39,36 @@ struct ClendarPlusView: View {
         }
     }
 
+    var closeButton: some View {
+        Button(
+            action: {
+                genLightHaptic()
+                self.viewModel.closeAction()
+            },
+            label: {
+                Image(systemName: "chevron.down")
+                    .font(.boldFontWithSize(20))
+                    .accessibility(label: Text("Collapse this view"))
+            }
+        )
+        .accentColor(.appRed)
+        .keyboardShortcut(.escape)
+    }
+
+    var titleLabel: some View {
+        Text("Tip Jar")
+            .font(.boldFontWithSize(20))
+            .gradientForeground(colors: [.red, .blue])
+    }
+
+    // MARK: - Body
+
     var body: some View {
         ZStack {
             VStack(spacing: 30) {
-                Text("Tip Jar")
-                    .font(.boldFontWithSize(20))
-                    .gradientForeground(colors: [.red, .blue])
 
                 buttonStack
-
-                Text("Swipe down to dismiss")
-                    .font(.mediumFontWithSize(13))
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
+                closeButton
             }
 
             ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)

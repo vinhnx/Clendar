@@ -107,13 +107,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view events&quot;</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view events"</string>
 	<key>NSContactsUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) might needs your permission to access Contacts name when creating events&quot;</string>
+	<string>"$(PRODUCT_NAME) might needs your permission to access Contacts name when creating events"</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) might needs your permission to access location when creating events&quot;</string>
+	<string>"$(PRODUCT_NAME) might needs your permission to access location when creating events"</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view reminders (if any)&quot;</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view reminders (if any)"</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
@@ -133,7 +133,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIRequiresFullScreen</key>
-	<false/>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -142,8 +142,6 @@
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>

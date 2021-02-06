@@ -42,12 +42,11 @@ struct QuickEventView: View {
                     label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
-                            .accessibility(label: Text("Collapse this view"))
                     }
                 )
                 .accentColor(.appRed)
                 .keyboardShortcut(.escape)
-                .hoverEffect()
+                .help("Collapse this view")
 
                 Spacer()
                 Text("New Event")
@@ -61,13 +60,12 @@ struct QuickEventView: View {
                     label: {
                         Image(systemName: "calendar.badge.plus")
                             .font(.boldFontWithSize(20))
-                            .accessibility(label: Text("Create new event"))
                     }
                 )
                 .accentColor(.appRed)
                 .disabled(quickEventStore.query.isEmpty)
                 .keyboardShortcut("s", modifiers: [.command])
-                .hoverEffect()
+                .help("Create new event")
             }
 
             Divider()

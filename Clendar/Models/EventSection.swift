@@ -1,5 +1,5 @@
 //
-//  Section.swift
+//  EventSection.swift
 //  Clendar
 //
 //  Created by Vinh Nguyen on 10/27/20.
@@ -9,7 +9,7 @@
 import EventKit
 import Foundation
 
-class Section: Hashable {
+class EventSection: Hashable {
 	// MARK: Lifecycle
 
 	init(date: Date?, events: [ClendarEvent]) {
@@ -23,7 +23,7 @@ class Section: Hashable {
 	var date: Date?
 	var events: [ClendarEvent]
 
-	static func == (lhs: Section, rhs: Section) -> Bool {
+	static func == (lhs: EventSection, rhs: EventSection) -> Bool {
 		lhs.id == rhs.id
 	}
 

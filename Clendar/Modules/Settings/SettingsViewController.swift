@@ -220,8 +220,13 @@ final class SettingsViewController: FormViewController {
         let instance = ButtonFormItem()
         instance.title = "☕️ " + NSLocalizedString("Tip Jar", comment: "")
         instance.action = {
-            let swiftUIView = ClendarPlusView()
+            let viewModel = ModalWrapperView()
+            let swiftUIView = ClendarPlusView(viewModel: viewModel)
             let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
+
             self.present(hostingController, animated: true, completion: nil)
         }
 
@@ -232,8 +237,12 @@ final class SettingsViewController: FormViewController {
         let instance = ButtonFormItem()
         instance.title = "🪄 " + R.string.localizable.siriShortcuts()
         instance.action = {
-            let swiftUIView = SiriShortcutsView()
+            let viewModel = ModalWrapperView()
+            let swiftUIView = SiriShortcutsView(viewModel: viewModel)
             let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
             self.present(hostingController, animated: true, completion: nil)
         }
 
@@ -267,10 +276,13 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
         builder += widgetTheme
+        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+
+        #if !targetEnvironment(macCatalyst)
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
-        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
         builder += siriShortcutButton
+        #endif
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))

@@ -35,7 +35,6 @@ struct EventListRow: View {
                 }
             )
             .groupBoxStyle(CardGroupBoxStyle())
-            .hoverEffect()
         }
         else {
             EmptyView().redacted(reason: .placeholder)
