@@ -220,8 +220,13 @@ final class SettingsViewController: FormViewController {
         let instance = ButtonFormItem()
         instance.title = "☕️ " + NSLocalizedString("Tip Jar", comment: "")
         instance.action = {
-            let swiftUIView = ClendarPlusView()
+            let viewModel = ModalWrapperView()
+            let swiftUIView = ClendarPlusView(viewModel: viewModel)
             let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
+
             self.present(hostingController, animated: true, completion: nil)
         }
 
@@ -232,8 +237,12 @@ final class SettingsViewController: FormViewController {
         let instance = ButtonFormItem()
         instance.title = "🪄 " + R.string.localizable.siriShortcuts()
         instance.action = {
-            let swiftUIView = SiriShortcutsView()
+            let viewModel = ModalWrapperView()
+            let swiftUIView = SiriShortcutsView(viewModel: viewModel)
             let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
             self.present(hostingController, animated: true, completion: nil)
         }
 

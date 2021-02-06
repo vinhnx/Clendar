@@ -59,6 +59,7 @@
 		A31258BF2551C32000891CE2 /* AppIconChooserViewContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */; };
 		A31258C62551C41D00891CE2 /* dim_dark_icon_180@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31258C42551C41D00891CE2 /* dim_dark_icon_180@3x.png */; };
 		A31258C72551C41D00891CE2 /* dim_dark_icon_120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A31258C52551C41D00891CE2 /* dim_dark_icon_120@2x.png */; };
+		A315F9FB25CF04A800E909DB /* ModalWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */; };
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
@@ -341,6 +342,7 @@
 		A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconChooserViewContronller.swift; sourceTree = "<group>"; };
 		A31258C42551C41D00891CE2 /* dim_dark_icon_180@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dim_dark_icon_180@3x.png"; sourceTree = "<group>"; };
 		A31258C52551C41D00891CE2 /* dim_dark_icon_120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dim_dark_icon_120@2x.png"; sourceTree = "<group>"; };
+		A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWrapperView.swift; sourceTree = "<group>"; };
 		A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Extensions.swift"; sourceTree = "<group>"; };
 		A3187E67254998EE009524DF /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
@@ -1044,6 +1046,7 @@
 				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
 				A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */,
 				A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */,
+				A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1651,6 +1654,7 @@
 				A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */,
 				A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
+				A315F9FB25CF04A800E909DB /* ModalWrapperView.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */,
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
 				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,

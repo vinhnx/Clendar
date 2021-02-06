@@ -9,42 +9,64 @@
 import SwiftUI
 
 struct SiriShortcutsView: View {
-    var body: some View {
-        VStack(spacing: 50) {
 
-            Text(R.string.localizable.siriShortcuts())
-                .font(.boldFontWithSize(20))
-                .gradientForeground(colors: [.red, .blue])
+    var viewModel = ModalWrapperView()
 
-            ScrollView {
-                VStack(spacing: 50) {
-                    Text("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below")
-                        .font(.mediumFontWithSize(15))
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
+    var closeButton: some View {
+        Button(
+            action: {
+                genLightHaptic()
+                self.viewModel.closeAction()
+            },
+            label: {
+                Image(systemName: "chevron.down")
+                    .font(.boldFontWithSize(20))
+                    .accessibility(label: Text("Collapse this view"))
+            }
+        )
+        .accentColor(.appRed)
+        .keyboardShortcut(.escape)
+    }
 
-                    VStack(spacing: 20) {
-                        Text(R.string.localizable.createNewClendarEventS())
-                        SiriButton(shortcut: ShortcutBuilder.addEventShortcut).frame(height: 30)
-                    }
+    var titleLabel: some View {
+        Text(R.string.localizable.siriShortcuts())
+            .font(.boldFontWithSize(20))
+            .gradientForeground(colors: [.red, .blue])
+    }
 
-                    VStack(spacing: 20) {
-                        Text(R.string.localizable.openSettings())
-                        SiriButton(shortcut: ShortcutBuilder.openSettingsShortcut).frame(height: 30)
-                    }
+    var contentView: some View {
+        ScrollView {
+            VStack(spacing: 50) {
+                Text("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below")
+                    .font(.mediumFontWithSize(15))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
 
-                    VStack(spacing: 20) {
-                        Text(R.string.localizable.showSiriShortcutsView())
-                        SiriButton(shortcut: ShortcutBuilder.openSiriShortcut).frame(height: 30)
-                    }
+                VStack(spacing: 20) {
+                    Text(R.string.localizable.createNewClendarEventS())
+                    SiriButton(shortcut: ShortcutBuilder.addEventShortcut).frame(height: 30)
+                }
+
+                VStack(spacing: 20) {
+                    Text(R.string.localizable.openSettings())
+                    SiriButton(shortcut: ShortcutBuilder.openSettingsShortcut).frame(height: 30)
+                }
+
+                VStack(spacing: 20) {
+                    Text(R.string.localizable.showSiriShortcutsView())
+                    SiriButton(shortcut: ShortcutBuilder.openSiriShortcut).frame(height: 30)
                 }
             }
+        }
+    }
 
-            Text("Swipe down to dismiss")
-                .font(.mediumFontWithSize(13))
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
+    // MARK: - Body
 
+    var body: some View {
+        VStack(spacing: 50) {
+            titleLabel
+            contentView
+            closeButton
         }
         .padding()
     }
