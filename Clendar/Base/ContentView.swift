@@ -181,7 +181,7 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
             confettiCounter += 1
-            Popup.showSuccess("Tip received. Thank you so much and have a nice day! 😊")
+            Popup.showSuccess("Tip received. Thank you so much and wish you have a nice day! 😊")
         }
     }
 }
