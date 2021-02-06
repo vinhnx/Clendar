@@ -14,7 +14,7 @@ struct SolidButtonStyle: ButtonStyle {
     var titlefontSize: CGFloat = 15
     var backgroundColor = Color.appRed
     var foregroundColor = Color.white
-    var cornerRadius: CGFloat = 10
+    var cornerRadius: CGFloat = 30
     var animated = true
 
     func makeBody(configuration: Configuration) -> some View {

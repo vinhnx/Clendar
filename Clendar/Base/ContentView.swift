@@ -112,7 +112,7 @@ struct ContentView: View {
                     genLightHaptic()
                     store.showSettingsState = true
                 },
-                label: { Image(systemName: "line.horizontal.2.decrease.circle") }
+                label: { Image(systemName: "gearshape") }
             )
             .sheet(
                 isPresented: $store.showSettingsState,
