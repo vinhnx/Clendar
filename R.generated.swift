@@ -649,8 +649,8 @@ struct R: Rswift.Validatable {
       static let eventListWidget = Rswift.StringResource(key: "Event List Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Event deleted!
       ///
-      /// Locales: en, ja, zh-hans, es, ko
-      static let eventDeleted = Rswift.StringResource(key: "Event deleted!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let eventDeleted = Rswift.StringResource(key: "Event deleted!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1492,7 +1492,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Event deleted!
       ///
-      /// Locales: en, ja, zh-hans, es, ko
+      /// Locales: en, vi, ja, zh-hans, es, ko
       static func eventDeleted(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Event deleted!", bundle: hostingBundle, comment: "")
