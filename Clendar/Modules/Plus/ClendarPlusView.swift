@@ -73,16 +73,16 @@ struct PurchaseButton: View {
                 genErrorHaptic()
 
                 switch error.code {
-                case .unknown: logInfo("Unknown error. Please contact support")
-                case .clientInvalid: logInfo("Not allowed to make the payment")
+                case .unknown: Popup.showInfo("Unknown error. Please contact support")
+                case .clientInvalid: Popup.showInfo("Not allowed to make the payment")
                 case .paymentCancelled: break
-                case .paymentInvalid: logInfo("The purchase identifier was invalid")
-                case .paymentNotAllowed: logInfo("The device is not allowed to make the payment")
-                case .storeProductNotAvailable: logInfo("The product is not available in the current storefront")
-                case .cloudServicePermissionDenied: logInfo("Access to cloud service information is not allowed")
-                case .cloudServiceNetworkConnectionFailed: logInfo("Could not connect to the network")
-                case .cloudServiceRevoked: logInfo("User has revoked permission to use this cloud service")
-                default: logInfo((error as NSError).localizedDescription)
+                case .paymentInvalid: Popup.showInfo("The purchase identifier was invalid")
+                case .paymentNotAllowed: Popup.showInfo("The device is not allowed to make the payment")
+                case .storeProductNotAvailable: Popup.showInfo("The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: Popup.showInfo("Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: Popup.showInfo("Could not connect to the network")
+                case .cloudServiceRevoked: Popup.showInfo("User has revoked permission to use this cloud service")
+                default: Popup.showInfo((error as NSError).localizedDescription)
                 }
             }
         }
@@ -159,6 +159,7 @@ struct ClendarPlusView: View {
 
             if let error = result.error {
                 logError(error)
+                AlertManager.showWithError(error)
             }
             else {
                 if case let invalidProductIDs = result.invalidProductIDs, !invalidProductIDs.isEmpty {

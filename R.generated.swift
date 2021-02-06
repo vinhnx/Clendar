@@ -493,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 105 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 106 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -647,6 +647,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let eventListWidget = Rswift.StringResource(key: "Event List Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Event deleted!
+      ///
+      /// Locales: en, ja, zh-hans, es, ko
+      static let eventDeleted = Rswift.StringResource(key: "Event deleted!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1484,6 +1488,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Event List Widget", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Event deleted!
+      ///
+      /// Locales: en, ja, zh-hans, es, ko
+      static func eventDeleted(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Event deleted!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Event deleted!"
+        }
+
+        return NSLocalizedString("Event deleted!", bundle: bundle, comment: "")
       }
 
       /// en translation: Event duration

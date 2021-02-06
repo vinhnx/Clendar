@@ -89,16 +89,7 @@ enum AlertManager {
 	///   - message: the message string
 	///   - okAction: the completion handler to execute when user tap on "OK"
 	static func showNoCancelAlertWithMessage(title: String? = nil, message: String, okAction: VoidBlock? = nil) {
-		DispatchQueue.main.async {
-			guard shouldShowAlert else { return }
-			let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-			let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
-				okAction?()
-			}
-
-			alertController.addAction(okAction)
-			alertController.dismissAndShow()
-		}
+        Popup.showInfo(message)
 	}
 
 	/// Show error alert
@@ -106,16 +97,7 @@ enum AlertManager {
 	///   - error: ClendarError instance that conforms to LocalizedError protocol
 	///   - okAction: optional action
 	static func showWithError(_ error: Error, okAction: VoidBlock? = nil) {
-		DispatchQueue.main.async {
-			guard shouldShowAlert else { return }
-			let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
-			let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
-				okAction?()
-			}
-
-			alertController.addAction(okAction)
-			alertController.dismissAndShow()
-		}
+        Popup.showError(error)
 	}
 
 	/// General showing Settings alert constuctor
