@@ -82,6 +82,10 @@ extension ClendarApp {
     }
 
     private func setupStoreKit() {
+        // this is App Store purchase handling
+        // ref: https://github.com/bizz84/SwiftyStoreKit/wiki/App-Store-Purchases
+
+        // handle transaction
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -92,12 +96,20 @@ extension ClendarApp {
                     }
                     
                     // Unlock content
+                    NotificationCenter.default.post(name: .inAppPurchaseSuccess, object: nil)
                 case .failed, .purchasing, .deferred:
                     break // do nothing
                 @unknown default:
                     break
                 }
             }
+        }
+
+        // handle App Store transaction
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+            // return true if the content can be delivered by your app
+            // return false otherwise
+            CosumablePurchaseProductIdentifier.allCases.compactMap { $0.rawValue }.contains(product.productIdentifier)
         }
     }
 

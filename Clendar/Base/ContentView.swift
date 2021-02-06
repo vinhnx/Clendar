@@ -9,6 +9,7 @@
 import EventKit
 import SwiftUI
 import Shift
+import ConfettiSwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var store: Store
@@ -17,6 +18,7 @@ struct ContentView: View {
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = SettingsManager.isOnMonthViewSettings
     @State private var showPlusView: Bool = false
+    @State private var confettiCounter = 0
 
     let calendarWrapperView = CalendarWrapperView()
 
@@ -135,6 +137,7 @@ struct ContentView: View {
             ZStack(alignment: .bottomTrailing) {
                 eventView
                 createEventButton
+                ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
             }
             .padding()
             .preferredColorScheme(appColorScheme)
@@ -175,6 +178,10 @@ struct ContentView: View {
             isMonthView = SettingsManager.isOnMonthViewSettings
             calendarView.changeModePerSettings()
             calendarView.commitCalendarViewUpdate()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
+            confettiCounter += 1
+            Popup.showSuccess("Tip received. Thank you so much and have a nice day! 😊")
         }
     }
 }

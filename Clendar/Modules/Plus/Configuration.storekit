@@ -52,12 +52,12 @@
       "localizations" : [
         {
           "description" : "Thank you so much!",
-          "displayName" : "Free-Size Tip",
+          "displayName" : "Free-Sized Tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.vinhnx.clendar.iap.tip.fourth",
-      "referenceName" : "Free-Size Tip",
+      "referenceName" : "Free-Sized Tip",
       "type" : "Consumable"
     }
   ],
