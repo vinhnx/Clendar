@@ -67,7 +67,7 @@ struct PurchaseButton: View {
             case .success(let purchase):
                 logInfo("Purchase Success: \(purchase.productId)!")
                 genSuccessHaptic()
-                store.inAppPurchaseSuccess = true
+                NotificationCenter.default.post(name: .inAppPurchaseSuccess, object: nil)
 
             case .error(let error):
                 genErrorHaptic()
@@ -90,14 +90,11 @@ struct PurchaseButton: View {
 }
 
 struct ClendarPlusView: View {
-    @EnvironmentObject var store: Store
-
     @State private var isLoading = false
     @State private var isPurchasing = false
     @State private var iapProducts = [SKProduct]()
     @State private var confettiCounter = 0
-
-    @Binding var showView: Bool
+    @State private var showView: Bool = false
 
     var buttonStack: some View {
         ScrollView(showsIndicators: false) {
@@ -108,10 +105,13 @@ struct ClendarPlusView: View {
                     .multilineTextAlignment(.center)
 
                 ForEach(iapProducts, id: \.self) { product in
-                    PurchaseButton(isLoading: $isLoading, model: product)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .id(UUID())
+                    PurchaseButton(
+                        isLoading: $isLoading,
+                        model: product
+                    )
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .id(UUID())
                 }
             }
         }
@@ -146,7 +146,7 @@ struct ClendarPlusView: View {
 
             ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
         }
-        .onReceive(store.$inAppPurchaseSuccess, perform: { (_) in
+        .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess), perform: { (_) in
             confettiCounter += 1
         })
         .onAppear {

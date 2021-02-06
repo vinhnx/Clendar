@@ -44,7 +44,6 @@ struct ContentView: View {
         HStack(spacing: 10) {
             menuView
             shortcutsView
-            plusView
             Spacer()
             monthHeaderView
         }
@@ -148,29 +147,6 @@ struct ContentView: View {
             )
             .frame(width: 44, height: 44)
             .keyboardShortcut("o", modifiers: [.command, .shift])
-            .hoverEffect()
-        }
-        .accentColor(Color(.moianesB))
-        .font(.boldFontWithSize(18))
-    }
-
-    private var plusView: some View {
-        HStack(spacing: 30) {
-            Button(
-                action: {
-                    genLightHaptic()
-                    showPlusView = true
-                },
-                label: { Image(systemName: "giftcard.fill") }
-            )
-            .sheet(
-                isPresented: $showPlusView,
-                content: {
-                    ClendarPlusView(showView: $showPlusView)
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                }
-            )
-            .frame(width: 44, height: 44)
             .hoverEffect()
         }
         .accentColor(Color(.moianesB))

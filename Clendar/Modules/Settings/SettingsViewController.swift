@@ -11,6 +11,7 @@ import SwiftyFORM
 import UIKit
 import WidgetKit
 import EventKitUI
+import SwiftUI
 
 final class SettingsNavigationController: BaseNavigationController {
 
@@ -167,7 +168,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var writeReviewButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Rate Clendar", comment: "")
+        instance.title = "⭐️ " + NSLocalizedString("Rate Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
             RatingManager().requestReview()
@@ -180,7 +181,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var shareAppButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Share Clendar", comment: "")
+        instance.title = "🕊 " + NSLocalizedString("Share Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
             // swiftlint:disable:next force_unwrapping
@@ -192,7 +193,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var feedbackMailButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Feedback/Report Issue", comment: "")
+        instance.title = "📨 " + NSLocalizedString("Feedback/Report Issue", comment: "")
         instance.action = {
             MailComposer().showFeedbackComposer()
         }
@@ -213,6 +214,18 @@ final class SettingsViewController: FormViewController {
             NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
         }
         return proxy
+    }()
+
+    lazy var tipJarButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "☕️ " + NSLocalizedString("Tip Jar", comment: "")
+        instance.action = {
+            let swiftUIView = ClendarPlusView()
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
     }()
 
     override func viewDidLoad() {
@@ -261,6 +274,7 @@ final class SettingsViewController: FormViewController {
 
         // Sharing
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
+        builder += tipJarButton
         builder += writeReviewButton
         builder += shareAppButton
         builder += feedbackMailButton

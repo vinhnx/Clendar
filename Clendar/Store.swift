@@ -12,7 +12,6 @@ class Store: ObservableObject {
     // events
     @Published var selectedDate = Date()
     @Published var appBackgroundColor = Color(.backgroundColor)
-    @Published var inAppPurchaseSuccess = false
 
     // views presentation
     @Published var showCreateEventState = false
