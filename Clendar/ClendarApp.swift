@@ -122,7 +122,7 @@ extension ClendarApp {
         }
 
         // handle App Store transaction
-        SwiftyStoreKit.shouldAddStorePaymentHandler = { payment, product in
+        SwiftyStoreKit.shouldAddStorePaymentHandler = { _, product in
             // return true if the content can be delivered by your app
             // return false otherwise
             CosumablePurchaseProductIdentifier.allCases.compactMap { $0.rawValue }.contains(product.productIdentifier)
