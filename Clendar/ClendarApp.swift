@@ -9,6 +9,7 @@
 import SwiftDate
 import SwiftUI
 import Shift
+import SwiftyStoreKit
 
 // swiftlint:disable:next private_over_fileprivate
 fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
@@ -91,9 +92,30 @@ extension ClendarApp {
         UIApplication.shared.applicationIconBadgeNumber = 0
         #endif
 
+        setupStoreKit()
         logger.logLevel = .debug
         SwiftDate.defaultRegion = Region.local
         Shift.configureWithAppName(AppInfo.appName)
+    }
+
+    private func setupStoreKit() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    
+                    // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                @unknown default:
+                    break
+                }
+            }
+        }
     }
 }
 

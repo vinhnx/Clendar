@@ -20,6 +20,11 @@ struct SiriShortcutsView: View {
 
             ScrollView {
                 VStack(spacing: 50) {
+                    Text("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below")
+                        .font(.mediumFontWithSize(15))
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+
                     VStack(spacing: 20) {
                         Text(R.string.localizable.createNewClendarEventS())
                         SiriButton(shortcut: ShortcutBuilder.addEventShortcut).frame(height: 30)
@@ -48,7 +53,7 @@ struct SiriShortcutsView: View {
                         .accessibility(label: Text("Collapse this view"))
                 }
             )
-            .accentColor(.appRed)
+            .accentColor(.primaryColor)
             .keyboardShortcut(.escape)
             .hoverEffect()
 

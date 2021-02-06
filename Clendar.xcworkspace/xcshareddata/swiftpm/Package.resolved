@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ConfettiSwiftUI",
+        "repositoryURL": "https://github.com/simibac/ConfettiSwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "4aac70f5264e59dfed75d6f1c282bb147f101a49",
+          "version": "0.2.1"
+        }
+      },
+      {
         "package": "CVCalendar",
         "repositoryURL": "https://github.com/CVCalendar/CVCalendar",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "4084702c85102c2d17d58e42ec5a750094944864",
           "version": "3.0.2"
+        }
+      },
+      {
+        "package": "Laden",
+        "repositoryURL": "https://github.com/vinhnx/Laden",
+        "state": {
+          "branch": null,
+          "revision": "50b02e73c657ee8a9868b9ab7d5ac84c5c7e32f2",
+          "version": "0.1.0"
         }
       },
       {
@@ -53,6 +71,15 @@
           "branch": null,
           "revision": "85b2ceb0bb8419192fcb734097c544fb71e5d3fe",
           "version": "1.8.5"
+        }
+      },
+      {
+        "package": "SwiftyStoreKit",
+        "repositoryURL": "https://github.com/bizz84/SwiftyStoreKit.git",
+        "state": {
+          "branch": null,
+          "revision": "3b54c8eac2840b0cdd576634e83d9ebeb70f847c",
+          "version": "0.16.3"
         }
       },
       {
