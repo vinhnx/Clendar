@@ -267,10 +267,13 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
         builder += widgetTheme
+        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+
+        #if !targetEnvironment(macCatalyst)
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
-        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
         builder += siriShortcutButton
+        #endif
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
