@@ -14,8 +14,11 @@ struct PurchaseButtonStyle: ButtonStyle {
     var titlefontSize: CGFloat = 20
     var price: String?
     var pricefontSize: CGFloat = 15
-    var backgroundColor: Color = Color(.moianesB)
-    var foregroundColor: Color = Color(.lavixA)
+//    var backgroundColor: Color = Color(.moianesB)
+//    var foregroundColor: Color = Color(.moianesA)
+    var backgroundColor: Color = .blue
+    var foregroundColor: Color = .white
+
     var cornerRadius: CGFloat = 10
     var animated = true
 
@@ -28,7 +31,7 @@ struct PurchaseButtonStyle: ButtonStyle {
             VStack(alignment: .leading) {
                 Unwrap(price) { title in
                     Text(title)
-                        .font(.mediumFontWithSize(titlefontSize))
+                        .font(.boldFontWithSize(pricefontSize))
                 }
                 
                 Unwrap(title) { title in
