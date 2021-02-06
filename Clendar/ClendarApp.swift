@@ -9,6 +9,7 @@
 import SwiftDate
 import SwiftUI
 import Shift
+import SwiftyStoreKit
 
 // swiftlint:disable:next private_over_fileprivate
 fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
@@ -16,7 +17,6 @@ fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
 @main
 struct ClendarApp: App {
 
-    // swiftlint:disable:next weak_delegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @Environment(\.scenePhase) var phase
@@ -55,9 +55,48 @@ struct ClendarApp: App {
                     break
                 }
 
-            case .background: addQuickActions()
+            case .background:
+                addQuickActions()
+
             case .inactive: break
             @unknown default: break
+            }
+        }
+    }
+
+}
+
+extension ClendarApp {
+
+    // MARK: - Private
+
+    private func configure() {
+        #if os(iOS)
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        #endif
+
+        setupStoreKit()
+        logger.logLevel = .debug
+        SwiftDate.defaultRegion = Region.local
+        Shift.configureWithAppName(AppInfo.appName)
+    }
+
+    private func setupStoreKit() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+                        // Deliver content from server, then:
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                    
+                    // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                @unknown default:
+                    break
+                }
             }
         }
     }
@@ -65,7 +104,7 @@ struct ClendarApp: App {
     /**
      During the transition to a background state is a good time to update any dynamic quick actions because this code is always executed before the user returns to the Home screen.
      */
-    func addQuickActions() {
+    private func addQuickActions() {
         var userInfo: [String: NSSecureCoding] {
             [Constants.addEventQuickActionKey : Constants.addEventQuickActionID as NSSecureCoding]
         }
@@ -79,21 +118,6 @@ struct ClendarApp: App {
                 userInfo: userInfo
             )
         ]
-    }
-}
-
-extension ClendarApp {
-
-    // MARK: - Private
-
-    private func configure() {
-        #if os(iOS)
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        #endif
-
-        logger.logLevel = .debug
-        SwiftDate.defaultRegion = Region.local
-        Shift.configureWithAppName(AppInfo.appName)
     }
 }
 

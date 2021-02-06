@@ -11,12 +11,18 @@ import SwiftUI
 struct SiriShortcutsView: View {
     var body: some View {
         VStack(spacing: 50) {
+
             Text(R.string.localizable.siriShortcuts())
                 .font(.boldFontWithSize(20))
                 .gradientForeground(colors: [.red, .blue])
 
             ScrollView {
                 VStack(spacing: 50) {
+                    Text("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below")
+                        .font(.mediumFontWithSize(15))
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+
                     VStack(spacing: 20) {
                         Text(R.string.localizable.createNewClendarEventS())
                         SiriButton(shortcut: ShortcutBuilder.addEventShortcut).frame(height: 30)
@@ -33,6 +39,12 @@ struct SiriShortcutsView: View {
                     }
                 }
             }
+
+            Text("Swipe down to dismiss")
+                .font(.mediumFontWithSize(13))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+
         }
         .padding()
     }

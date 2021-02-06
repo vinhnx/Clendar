@@ -493,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 102 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 106 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -647,6 +647,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let eventListWidget = Rswift.StringResource(key: "Event List Widget", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Event deleted!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let eventDeleted = Rswift.StringResource(key: "Event deleted!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -671,6 +675,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let hapticFeedback = Rswift.StringResource(key: "Haptic feedback", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; feel free to leave me a tip.  Any tip amount at all helps a lot, thank you very much!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let ifYouReFeelingClendarIsHelpfulAndWouldLikeToSupportTheAppDevelopmentEffortLikeNewFeaturesExtraThemesAppIconsInTheFutureTipsAreGreatlyAppreciatedAnyTipAmountHelpsALotThankYouVeryMuch = Rswift.StringResource(key: "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Input event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -827,6 +835,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let supplementaryDayView = Rswift.StringResource(key: "Supplementary day view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Swipe down to collapse
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let swipeDownToCollapse = Rswift.StringResource(key: "Swipe down to collapse", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Switch to current date
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -879,6 +891,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let youCanChooseAvailableCalendarsToShownInEventList = Rswift.StringResource(key: "You can choose available calendars to shown in event list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: You can now quick shortcuts to Siri and Shortcuts app. Try adding one below
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let youCanNowQuickShortcutsToSiriAndShortcutsAppTryAddingOneBelow = Rswift.StringResource(key: "You can now quick shortcuts to Siri and Shortcuts app. Try adding one below", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Your day events at a glance
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1474,6 +1490,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Event List Widget", bundle: bundle, comment: "")
       }
 
+      /// en translation: Event deleted!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func eventDeleted(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Event deleted!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Event deleted!"
+        }
+
+        return NSLocalizedString("Event deleted!", bundle: bundle, comment: "")
+      }
+
       /// en translation: Event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1562,6 +1593,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Haptic feedback", bundle: bundle, comment: "")
+      }
+
+      /// en translation: If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; feel free to leave me a tip.  Any tip amount at all helps a lot, thank you very much!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func ifYouReFeelingClendarIsHelpfulAndWouldLikeToSupportTheAppDevelopmentEffortLikeNewFeaturesExtraThemesAppIconsInTheFutureTipsAreGreatlyAppreciatedAnyTipAmountHelpsALotThankYouVeryMuch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!"
+        }
+
+        return NSLocalizedString("If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!", bundle: bundle, comment: "")
       }
 
       /// en translation: Input event
@@ -2149,6 +2195,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Supplementary day view", bundle: bundle, comment: "")
       }
 
+      /// en translation: Swipe down to collapse
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func swipeDownToCollapse(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Swipe down to collapse", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Swipe down to collapse"
+        }
+
+        return NSLocalizedString("Swipe down to collapse", bundle: bundle, comment: "")
+      }
+
       /// en translation: Switch to current date
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2342,6 +2403,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You can choose available calendars to shown in event list", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can now quick shortcuts to Siri and Shortcuts app. Try adding one below
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func youCanNowQuickShortcutsToSiriAndShortcutsAppTryAddingOneBelow(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can now quick shortcuts to Siri and Shortcuts app. Try adding one below"
+        }
+
+        return NSLocalizedString("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below", bundle: bundle, comment: "")
       }
 
       /// en translation: Your day events at a glance

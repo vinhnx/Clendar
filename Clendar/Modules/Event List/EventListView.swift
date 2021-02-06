@@ -66,10 +66,10 @@ struct EventListView: View {
                 switch result {
                 case .success:
                     genSuccessHaptic()
-                    logInfo("event deleted!")
+                    Popup.showInfo("Event deleted!")
                 case .failure(let error):
                     genErrorHaptic()
-                    logInfo(error.localizedDescription)
+                    Popup.showError(error)
                 }
             }
         })

@@ -64,6 +64,11 @@
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
 		A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftyFORM */; };
 		A3187E8525499FE1009524DF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
+		A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */; };
+		A31AFDCD25CE79FA0092D44D /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; };
+		A31AFDCE25CE79FA0092D44D /* ConfettiSwiftUI in CopyFiles */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A31AFDEA25CE944C0092D44D /* Loaf in Frameworks */ = {isa = PBXBuildFile; productRef = A31AFDE925CE944C0092D44D /* Loaf */; };
+		A31AFDF125CE95260092D44D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AFDF025CE95260092D44D /* PopUp.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
 		A3209B45258CE14C002470CF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B44258CE14C002470CF /* Shift */; };
@@ -176,6 +181,9 @@
 		A3C5D7C525B9BF66009A2CA2 /* icon2_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D7C325B9BF66009A2CA2 /* icon2_180.png */; };
 		A3C5D7C625B9BF66009A2CA2 /* icon2_120.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C5D7C425B9BF66009A2CA2 /* icon2_120.png */; };
 		A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9465B224E5FF800123DEC /* EventListViewController.swift */; };
+		A3D3EACA25CE3C3F00EC3D1D /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
+		A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */; };
+		A3D3EAE025CE5A8700EC3D1D /* Laden in Frameworks */ = {isa = PBXBuildFile; productRef = A3D3EADF25CE5A8700EC3D1D /* Laden */; };
 		A3D6839F25A9A4BF009C31D5 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
 		A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D6843625A9F467009C31D5 /* RatingManager.swift */; };
 		A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A3D999E52549A69F003E08E2 /* SwiftDate */; };
@@ -269,6 +277,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A31AFDCE25CE79FA0092D44D /* ConfettiSwiftUI in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,8 @@
 		A3187E67254998EE009524DF /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
 		A3187E8425499FE1009524DF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButtonStyle.swift; sourceTree = "<group>"; };
+		A31AFDF025CE95260092D44D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
@@ -424,6 +435,8 @@
 		A3C5D7C325B9BF66009A2CA2 /* icon2_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2_180.png; sourceTree = "<group>"; };
 		A3C5D7C425B9BF66009A2CA2 /* icon2_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2_120.png; sourceTree = "<group>"; };
 		A3C9465B224E5FF800123DEC /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarPlusView.swift; sourceTree = "<group>"; };
+		A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		A3D6843625A9F467009C31D5 /* RatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingManager.swift; sourceTree = "<group>"; };
 		A3DC1D77254E54CC00824E6A /* ClendarWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarWidgetBundle.swift; sourceTree = "<group>"; };
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -487,12 +500,16 @@
 			files = (
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
+				A31AFDEA25CE944C0092D44D /* Loaf in Frameworks */,
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
+				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
 				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
+				A3D3EAE025CE5A8700EC3D1D /* Laden in Frameworks */,
 				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
+				A31AFDCD25CE79FA0092D44D /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +779,7 @@
 		A33F80F922467DDB009CC46A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3D3EAC825CE3C3200EC3D1D /* Plus */,
 				A3B5690225C5D94000E3C09F /* Siri Shortcuts */,
 				A3D6833E25A9A2E1009C31D5 /* Event List */,
 				A3187E66254998CB009524DF /* Event Editor */,
@@ -987,6 +1005,15 @@
 			path = "Calendar/Event List";
 			sourceTree = "<group>";
 		};
+		A3D3EAC825CE3C3200EC3D1D /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */,
+				A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */,
+			);
+			path = Plus;
+			sourceTree = "<group>";
+		};
 		A3D6832025A9A207009C31D5 /* Calendar View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,6 +1030,7 @@
 				A359CD872588E3260089C4A2 /* ViewModifiers.swift */,
 				A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */,
 				A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */,
+				A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */,
 				A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */,
 				A3EDE73C25669FD50046C1F5 /* CustomGroupBoxStyle.swift */,
 				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
@@ -1034,6 +1062,7 @@
 				A3187E8425499FE1009524DF /* AppInfo.swift */,
 				A33F8114224742F7009CC46A /* WorkItem.swift */,
 				A3F25977224771F2009A50B6 /* AlertManager.swift */,
+				A31AFDF025CE95260092D44D /* PopUp.swift */,
 				A30E48222541F4EF00B4B027 /* Utilities.swift */,
 				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
 				A38199FD25484E7700C71D41 /* Layout.swift */,
@@ -1147,6 +1176,10 @@
 				A3560CFD2567FB6F009088E7 /* Then */,
 				A3209B44258CE14C002470CF /* Shift */,
 				A383331025A96A8100F7ED70 /* CVCalendar */,
+				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
+				A3D3EADF25CE5A8700EC3D1D /* Laden */,
+				A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */,
+				A31AFDE925CE944C0092D44D /* Loaf */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1247,6 +1280,10 @@
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
+				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
+				A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1604,6 +1641,7 @@
 				A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */,
 				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,
 				A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */,
+				A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
 				A37F0AE425C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */,
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
@@ -1650,11 +1688,13 @@
 				A3EDE74225669FE20046C1F5 /* Store.swift in Sources */,
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
 				A3EDE72925669F640046C1F5 /* QuickEventView.swift in Sources */,
+				A3D3EACA25CE3C3F00EC3D1D /* ClendarPlusView.swift in Sources */,
 				A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */,
 				A35B9B5C258CD4A30027E1B3 /* Unwrap.swift in Sources */,
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
 				A31258BF2551C32000891CE2 /* AppIconChooserViewContronller.swift in Sources */,
 				A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */,
+				A31AFDF125CE95260092D44D /* PopUp.swift in Sources */,
 				A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */,
 				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
 				A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */,
@@ -2222,6 +2262,22 @@
 				minimumVersion = 1.8.4;
 			};
 		};
+		A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+		A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/schmidyy/Loaf";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
 		A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift";
@@ -2262,6 +2318,22 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.3;
+			};
+		};
+		A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinhnx/Laden";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 		A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate";
@@ -2287,6 +2359,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
 			productName = SwiftyFORM;
+		};
+		A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		A31AFDE925CE944C0092D44D /* Loaf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */;
+			productName = Loaf;
 		};
 		A3209B44258CE14C002470CF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2332,6 +2414,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
+		};
+		A3D3EADF25CE5A8700EC3D1D /* Laden */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */;
+			productName = Laden;
 		};
 		A3D999E52549A69F003E08E2 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;

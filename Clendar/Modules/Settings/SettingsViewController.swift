@@ -11,6 +11,7 @@ import SwiftyFORM
 import UIKit
 import WidgetKit
 import EventKitUI
+import SwiftUI
 
 final class SettingsNavigationController: BaseNavigationController {
 
@@ -167,7 +168,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var writeReviewButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Rate Clendar", comment: "")
+        instance.title = "⭐️ " + NSLocalizedString("Rate Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
             RatingManager().requestReview()
@@ -180,7 +181,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var shareAppButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Share Clendar", comment: "")
+        instance.title = "🕊 " + NSLocalizedString("Share Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
             // swiftlint:disable:next force_unwrapping
@@ -192,7 +193,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var feedbackMailButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = NSLocalizedString("Feedback/Report Issue", comment: "")
+        instance.title = "📨 " + NSLocalizedString("Feedback/Report Issue", comment: "")
         instance.action = {
             MailComposer().showFeedbackComposer()
         }
@@ -214,6 +215,32 @@ final class SettingsViewController: FormViewController {
         }
         return proxy
     }()
+
+    lazy var tipJarButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "☕️ " + NSLocalizedString("Tip Jar", comment: "")
+        instance.action = {
+            let swiftUIView = ClendarPlusView()
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
+    }()
+
+    lazy var siriShortcutButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🪄 " + R.string.localizable.siriShortcuts()
+        instance.action = {
+            let swiftUIView = SiriShortcutsView()
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
+    }()
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -243,6 +270,7 @@ final class SettingsViewController: FormViewController {
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+        builder += siriShortcutButton
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
@@ -261,6 +289,7 @@ final class SettingsViewController: FormViewController {
 
         // Sharing
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
+        builder += tipJarButton
         builder += writeReviewButton
         builder += shareAppButton
         builder += feedbackMailButton

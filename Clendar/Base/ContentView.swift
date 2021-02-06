@@ -12,9 +12,11 @@ import Shift
 
 struct ContentView: View {
     @EnvironmentObject var store: Store
+
     @StateObject var eventKitWrapper = Shift.shared
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = SettingsManager.isOnMonthViewSettings
+    @State private var showPlusView: Bool = false
 
     let calendarWrapperView = CalendarWrapperView()
 
@@ -41,7 +43,6 @@ struct ContentView: View {
     private var topView: some View {
         HStack(spacing: 10) {
             menuView
-            shortcutsView
             Spacer()
             monthHeaderView
         }
@@ -110,7 +111,7 @@ struct ContentView: View {
                     genLightHaptic()
                     store.showSettingsState = true
                 },
-                label: { Image(systemName: "slider.horizontal.3") }
+                label: { Image(systemName: "line.horizontal.2.decrease.circle") }
             )
             .sheet(
                 isPresented: $store.showSettingsState,
@@ -124,30 +125,6 @@ struct ContentView: View {
             .hoverEffect()
         }
         .accentColor(.appRed)
-        .font(.boldFontWithSize(18))
-    }
-
-    private var shortcutsView: some View {
-        HStack(spacing: 30) {
-            Button(
-                action: {
-                    genLightHaptic()
-                    store.showSiriShortcuts = true
-                },
-                label: { Image(systemName: "wand.and.stars") }
-            )
-            .sheet(
-                isPresented: $store.showSiriShortcuts,
-                content: {
-                    SiriShortcutsView()
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                }
-            )
-            .frame(width: 44, height: 44)
-            .keyboardShortcut("o", modifiers: [.command, .shift])
-            .hoverEffect()
-        }
-        .accentColor(Color(.moianesB))
         .font(.boldFontWithSize(18))
     }
 

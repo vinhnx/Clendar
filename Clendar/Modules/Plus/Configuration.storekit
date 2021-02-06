@@ -1,0 +1,74 @@
+{
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "4B4684C5",
+      "localizations" : [
+        {
+          "description" : "Coffee-Sized Tip",
+          "displayName" : "Coffee-Sized Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vinhnx.clendar.iap.tip.one",
+      "referenceName" : "Coffee-Sized Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "F30BCAE5",
+      "localizations" : [
+        {
+          "description" : "Lunch-Sized Tip",
+          "displayName" : "Lunch-Sized Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vinhnx.clendar.iap.tip.two",
+      "referenceName" : "Lunch-Sized Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "3F396F04",
+      "localizations" : [
+        {
+          "description" : "Dinner-Sized Tip",
+          "displayName" : "Dinner-Sized Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vinhnx.clendar.iap.tip.three",
+      "referenceName" : "Dinner-Sized Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "7550F895",
+      "localizations" : [
+        {
+          "description" : "Thank you so much!",
+          "displayName" : "Free-Size Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vinhnx.clendar.iap.tip.fourth",
+      "referenceName" : "Free-Size Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}
