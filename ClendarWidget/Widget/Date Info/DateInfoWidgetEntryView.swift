@@ -6,7 +6,6 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-#if !targetEnvironment(macCatalyst)
 import SwiftDate
 import SwiftUI
 import WidgetKit
@@ -152,5 +151,3 @@ struct WidgetEntryView_Previews: PreviewProvider {
             .redacted(reason: .placeholder)
     }
 }
-
-#endif
