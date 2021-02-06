@@ -35,18 +35,22 @@ struct EventListView: View {
                                 Button(
                                     action: { self.selectedEvent = event },
                                     label: {
-                                        Text("Edit").accessibility(label: Text("Edit Event"))
+                                        Text("Edit")
                                         Image(systemName: "square.and.pencil")
                                     }
-                                ).hoverEffect()
+                                )
+                                .help("Edit Event")
+                                .hoverEffect()
 
                                 Button(
                                     action: { handleDeleteEvent(event) },
                                     label: {
-                                        Text("Delete").accessibility(label: Text("Delete Event"))
+                                        Text("Delete")
                                         Image(systemName: "trash")
                                     }
-                                ).hoverEffect()
+                                )
+                                .help("Delete Event")
+                                .hoverEffect()
                             })
                         }
                     }
