@@ -493,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 104 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 105 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -831,6 +831,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let supplementaryDayView = Rswift.StringResource(key: "Supplementary day view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Swipe down to collapse
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let swipeDownToCollapse = Rswift.StringResource(key: "Swipe down to collapse", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Switch to current date
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2170,6 +2174,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Supplementary day view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Swipe down to collapse
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func swipeDownToCollapse(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Swipe down to collapse", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Swipe down to collapse"
+        }
+
+        return NSLocalizedString("Swipe down to collapse", bundle: bundle, comment: "")
       }
 
       /// en translation: Switch to current date

@@ -127,21 +127,10 @@ struct ClendarPlusView: View {
 
                 buttonStack
 
-                Button(
-                    action: {
-                        genLightHaptic()
-                        showView = false
-                    },
-                    label: {
-                        Image(systemName: "chevron.down")
-                            .font(.boldFontWithSize(20))
-                            .accessibility(label: Text("Collapse this view"))
-                    }
-                )
-                .accentColor(.primaryColor)
-                .keyboardShortcut(.escape)
-                .hoverEffect()
-
+                Text("Swipe down to dismiss")
+                    .font(.mediumFontWithSize(13))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
             }
 
             ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)

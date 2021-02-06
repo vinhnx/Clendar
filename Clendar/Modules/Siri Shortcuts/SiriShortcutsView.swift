@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct SiriShortcutsView: View {
-    @Binding var showView: Bool
-
     var body: some View {
         VStack(spacing: 50) {
 
@@ -42,20 +40,10 @@ struct SiriShortcutsView: View {
                 }
             }
 
-            Button(
-                action: {
-                    genLightHaptic()
-                    showView = false
-                },
-                label: {
-                    Image(systemName: "chevron.down")
-                        .font(.boldFontWithSize(20))
-                        .accessibility(label: Text("Collapse this view"))
-                }
-            )
-            .accentColor(.primaryColor)
-            .keyboardShortcut(.escape)
-            .hoverEffect()
+            Text("Swipe down to dismiss")
+                .font(.mediumFontWithSize(13))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
 
         }
         .padding()

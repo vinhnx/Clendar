@@ -228,6 +228,20 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var siriShortcutButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🪄 " + R.string.localizable.siriShortcuts()
+        instance.action = {
+            let swiftUIView = SiriShortcutsView()
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
+    }()
+
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -256,6 +270,7 @@ final class SettingsViewController: FormViewController {
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+        builder += siriShortcutButton
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))

@@ -6,13 +6,13 @@
       "internalID" : "4B4684C5",
       "localizations" : [
         {
-          "description" : "You Rock!",
-          "displayName" : "Clendar Tip 1",
+          "description" : "Coffee-Sized Tip",
+          "displayName" : "Coffee-Sized Tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.vinhnx.clendar.iap.tip.one",
-      "referenceName" : "Clendar Tip 1",
+      "referenceName" : "Coffee-Sized Tip",
       "type" : "Consumable"
     },
     {
@@ -21,13 +21,13 @@
       "internalID" : "F30BCAE5",
       "localizations" : [
         {
-          "description" : "Awesomeee!",
-          "displayName" : "Clendar Tip 2",
+          "description" : "Lunch-Sized Tip",
+          "displayName" : "Lunch-Sized Tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.vinhnx.clendar.iap.tip.two",
-      "referenceName" : "Clendar Tip 2",
+      "referenceName" : "Lunch-Sized Tip",
       "type" : "Consumable"
     },
     {
@@ -36,28 +36,28 @@
       "internalID" : "3F396F04",
       "localizations" : [
         {
-          "description" : "3333",
-          "displayName" : "Clendar Tip 3",
+          "description" : "Dinner-Sized Tip",
+          "displayName" : "Dinner-Sized Tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.vinhnx.clendar.iap.tip.three",
-      "referenceName" : "Clendar Tip 3",
+      "referenceName" : "Dinner-Sized Tip",
       "type" : "Consumable"
     },
     {
-      "displayPrice" : "3.99",
+      "displayPrice" : "4.99",
       "familyShareable" : false,
       "internalID" : "7550F895",
       "localizations" : [
         {
-          "description" : "4",
-          "displayName" : "Clendar Tip 4",
+          "description" : "Thank you so much!",
+          "displayName" : "Free-Size Tip",
           "locale" : "en_US"
         }
       ],
       "productID" : "com.vinhnx.clendar.iap.tip.fourth",
-      "referenceName" : "Clendar Tip 4",
+      "referenceName" : "Free-Size Tip",
       "type" : "Consumable"
     }
   ],
