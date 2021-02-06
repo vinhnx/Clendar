@@ -56,31 +56,15 @@ struct ClendarApp: App {
                     break
                 }
 
-            case .background: addQuickActions()
+            case .background:
+                addQuickActions()
+
             case .inactive: break
             @unknown default: break
             }
         }
     }
 
-    /**
-     During the transition to a background state is a good time to update any dynamic quick actions because this code is always executed before the user returns to the Home screen.
-     */
-    func addQuickActions() {
-        var userInfo: [String: NSSecureCoding] {
-            [Constants.addEventQuickActionKey : Constants.addEventQuickActionID as NSSecureCoding]
-        }
-
-        UIApplication.shared.shortcutItems = [
-            UIApplicationShortcutItem(
-                type: Constants.addEventQuickActionID,
-                localizedTitle: NSLocalizedString("New Event", comment: ""),
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(type: .compose),
-                userInfo: userInfo
-            )
-        ]
-    }
 }
 
 extension ClendarApp {
@@ -116,6 +100,25 @@ extension ClendarApp {
                 }
             }
         }
+    }
+
+    /**
+     During the transition to a background state is a good time to update any dynamic quick actions because this code is always executed before the user returns to the Home screen.
+     */
+    private func addQuickActions() {
+        var userInfo: [String: NSSecureCoding] {
+            [Constants.addEventQuickActionKey : Constants.addEventQuickActionID as NSSecureCoding]
+        }
+
+        UIApplication.shared.shortcutItems = [
+            UIApplicationShortcutItem(
+                type: Constants.addEventQuickActionID,
+                localizedTitle: NSLocalizedString("New Event", comment: ""),
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(type: .compose),
+                userInfo: userInfo
+            )
+        ]
     }
 }
 
