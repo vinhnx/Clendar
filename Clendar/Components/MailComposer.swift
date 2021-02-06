@@ -9,40 +9,7 @@
 import UIKit
 import MessageUI
 
-class MailComposer: MFMailComposeViewController {
-    
-    // MARK: Lifecycle
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        self.mailComposeDelegate = self
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-    // MARK: Internal
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        checkUIMode()
-
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-            self.checkUIMode()
-        }
-    }
-
-    // MARK: - Private
-
-    private func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
+class MailComposer: NSObject {
 
     // MARK: - Public
 
@@ -51,9 +18,10 @@ class MailComposer: MFMailComposeViewController {
 
         genLightHaptic()
 
-        setToRecipients([Constants.supportEmail])
-        setSubject(NSLocalizedString("Feedback/Report Issue", comment: ""))
-        setMessageBody("""
+        let mail = MFMailComposeViewController()
+        mail.setToRecipients([Constants.supportEmail])
+        mail.setSubject(NSLocalizedString("Feedback/Report Issue", comment: ""))
+        mail.setMessageBody("""
 
 
 
@@ -62,8 +30,8 @@ class MailComposer: MFMailComposeViewController {
                         * Build: \(AppInfo.appBuild)
                         * Device: \(AppInfo.deviceName)
                         """, isHTML: false)
-
-        UINavigationController.topViewController?.present(self, animated: true, completion: nil)
+        mail.mailComposeDelegate = self
+        UINavigationController.topViewController?.present(mail, animated: true, completion: nil)
     }
 }
 
