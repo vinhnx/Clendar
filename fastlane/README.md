@@ -86,6 +86,11 @@ Build App Store
 fastlane ios _makeAppStoreBuild
 ```
 Build app store
+### ios _makeMacAppStoreBuild
+```
+fastlane ios _makeMacAppStoreBuild
+```
+Build app store
 ### ios commitVersionBumpWrapper
 ```
 fastlane ios commitVersionBumpWrapper

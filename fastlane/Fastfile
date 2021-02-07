@@ -157,7 +157,9 @@ platform :ios do
     bumpBuild
     commitVersionBumpWrapper
     
-    _makeAppStoreBuild
+    _makeAppStoreBuild # iOS build
+    _makeMacAppStoreBuild # macOS build
+    
     makeAppStoreGitTag
   end
   
@@ -189,6 +191,37 @@ platform :ios do
           "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE",
           "com.vinhnx.Clendar.watchkitapp" => "Clendar WatchApp - RELEASE",
           "com.vinhnx.Clendar.watchkitapp.watchkitextension" => "Clendar WatchKit extension - RELEASE"
+        }
+      }
+    )
+  end
+  
+  desc "Build app store"
+  lane :_makeMacAppStoreBuild do
+  	# vars
+    scheme_name = "Clendar"
+    configuration = "Release"
+    export_method = "app-store"
+    
+    version = get_info_plist_value(path: plist_path, key: "CFBundleShortVersionString")
+    build = get_info_plist_value(path: plist_path, key: "CFBundleVersion")
+    output_name = "#{app_name}-APPSTORE-version.#{version}-build.#{build}-time.#{Time.now.to_i}"
+    
+    build_mac_app(
+      workspace: workspace,
+      scheme: scheme_name, 
+      configuration: configuration,
+      output_name: output_name,
+      output_directory: output_directory,
+      
+      # skip export, just archive
+#      skip_build_archive: true
+      skip_package_pkg: true,
+      export_options: {
+        method: export_method,
+        provisioningProfiles: { 
+          "com.vinhnx.Clendar" => "Clendar main app - RELEASE",
+          "com.vinhnx.Clendar.ClendarWidget" => "Clendar Widget - RELEASE"
         }
       }
     )
