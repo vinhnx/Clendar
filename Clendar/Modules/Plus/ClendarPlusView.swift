@@ -66,7 +66,7 @@ struct ClendarPlusView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 30) {
-
+                titleLabel
                 buttonStack
                 closeButton
             }
