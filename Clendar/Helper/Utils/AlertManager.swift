@@ -111,4 +111,52 @@ enum AlertManager {
 			_ = URL(string: UIApplication.openSettingsURLString).flatMap { UIApplication.shared.open($0, options: [:], completionHandler: nil) }
 		}, onCancel: onCancel)
 	}
+
+    /// Show alert
+    ///
+    /// - Parameters:
+    ///   - title: the title string
+    ///   - message: the message string
+    ///   - actionTitle: the action title string
+    ///   - okAction: the completion handler to execute when user tap on "OK"
+    ///   - onCancel: the completion handler to execute when user tap on "Cancel"
+    static func showAlert(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidBlock? = nil, deleteAction: VoidBlock? = nil, onCancel: VoidBlock? = nil) {
+        genLightHaptic()
+        DispatchQueue.main.async {
+            guard shouldShowAlert else { return }
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
+                onCancel?()
+            }
+
+            alertController.addAction(cancelAction)
+
+            if actionTitle.isEmpty == false {
+                let openAction = UIAlertAction(title: actionTitle, style: .default) { _ in
+                    okAction?()
+                }
+                alertController.addAction(openAction)
+            }
+
+            if showDelete {
+                let delete = UIAlertAction(title: deleteTitle, style: .destructive) { _ in
+                    deleteAction?()
+                }
+                alertController.addAction(delete)
+            }
+
+            UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    /// Show action sheet
+    ///
+    /// - Parameters:
+    ///   - title: the title string
+    ///   - message: the message string
+    ///   - actionTitle: the action title string
+    ///   - okAction: the completion handler to execute when user tap on "OK"
+    static func showAlert(title: String? = nil, message: String, actionTitle: String, okAction: VoidBlock? = nil) {
+        showAlert(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
+    }
 }
