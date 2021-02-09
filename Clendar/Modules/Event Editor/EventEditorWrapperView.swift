@@ -50,7 +50,8 @@ struct EventEditorWrapperView: UIViewControllerRepresentable {
     }
 
     func makeUIViewController(context: Context) -> EventEditViewController {
-        EventEditViewController(
+        ContactsPermission.request()
+        return EventEditViewController(
             eventStore: Shift.shared.eventStore,
             delegate: context.coordinator
         )
