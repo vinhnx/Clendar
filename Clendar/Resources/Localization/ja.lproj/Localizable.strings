@@ -198,3 +198,5 @@
 "Swipe down to collapse" = "下にスワイプして折りたたむ";
 "Event deleted!" = "イベントが削除されました！";
 "Tip received. Thank you very much and have a great day! 😊" = "受け取ったヒント。 どうもありがとうございました、そして素晴らしい一日を！ 😊";
+"Unable to determine email sending state" = "メールの送信状態を判断できません";
+"Unable to open email client, please try again later" = "メールクライアントを開くことができません。しばらくしてからもう一度お試しください";

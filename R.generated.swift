@@ -493,7 +493,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 107 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 108 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -859,6 +859,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let toggleAllDaySwitch = Rswift.StringResource(key: "Toggle all day switch", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Unable to determine email sending state
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let unableToDetermineEmailSendingState = Rswift.StringResource(key: "Unable to determine email sending state", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Upcoming events
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2287,6 +2291,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Toggle all day switch", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unable to determine email sending state
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func unableToDetermineEmailSendingState(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Unable to determine email sending state", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Unable to determine email sending state"
+        }
+
+        return NSLocalizedString("Unable to determine email sending state", bundle: bundle, comment: "")
       }
 
       /// en translation: Upcoming events
