@@ -7,39 +7,40 @@
 //
 
 import UIKit
-import MessageUI
+
+// ref: https://stuartbreckenridge.com/2021/01/the-diminishing-utility-of-mfmailcomposeviewcontroller/
 
 class MailComposer: NSObject {
 
     // MARK: - Public
 
     func showFeedbackComposer() {
-        guard MFMailComposeViewController.canSendMail() else { return }
-
-        genLightHaptic()
-
-        let mail = MFMailComposeViewController()
-        mail.setToRecipients([Constants.supportEmail])
-        mail.setSubject(NSLocalizedString("Feedback/Report Issue", comment: ""))
-        mail.setMessageBody("""
+        let subject = NSLocalizedString("Feedback/Report Issue", comment: "")
+        let body = """
 
 
 
                         ---
+
                         * Version: \(AppInfo.appVersion)
                         * Build: \(AppInfo.appBuild)
                         * Device: \(AppInfo.deviceName)
-                        """, isHTML: false)
-        mail.mailComposeDelegate = self
-        UINavigationController.topViewController?.present(mail, animated: true, completion: nil)
-    }
-}
+                        """
 
-extension MailComposer: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true) {
-            if result == .sent {
-                genSuccessHaptic()
+        let mailto = "mailto:\(Constants.supportEmail)?subject=\(subject)&body=\(body)"
+
+        guard let escapedMailto = mailto.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let url = URL(string: escapedMailto) else { return }
+
+        guard UIApplication.shared.canOpenURL(url) else {
+            Popup.showErrorMessage(NSLocalizedString("Unable to determine email sending state", comment: ""))
+            return
+        }
+
+        UIApplication.shared.open(url, options: [.universalLinksOnly : false]) { (success) in
+            // Handle success/failure
+            if !success {
+                Popup.showErrorMessage(NSLocalizedString("Unable to determine email sending state", comment: ""))
             }
         }
     }

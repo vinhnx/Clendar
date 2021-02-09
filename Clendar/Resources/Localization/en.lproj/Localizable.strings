@@ -198,3 +198,5 @@
 "Swipe down to collapse" = "Swipe down to collapse";
 "Event deleted!" = "Event deleted!";
 "Tip received. Thank you very much and have a great day! 😊" = "Tip received. Thank you very much and have a great day! 😊";
+"Unable to determine email sending state" = "Unable to determine email sending state";
+"Unable to open email client, please try again later" = "Unable to open email client, please try again later";

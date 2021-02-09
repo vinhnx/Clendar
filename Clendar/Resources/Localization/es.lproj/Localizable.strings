@@ -198,3 +198,5 @@
 "Swipe down to collapse" = "Desliza hacia abajo para colapsar";
 "Event deleted!" = "Evento eliminado";
 "Tip received. Thank you very much and have a great day! 😊" = "Propina recibida. ¡Muchas gracias y que tengas un gran día! 😊";
+"Unable to determine email sending state" = "No se puede determinar el estado de envío del correo electrónico";
+"Unable to open email client, please try again later" = "No se puede abrir el cliente de correo electrónico, vuelva a intentarlo más tarde";
