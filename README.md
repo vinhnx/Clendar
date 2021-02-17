@@ -128,4 +128,4 @@ But, whatever!
 
 Thanks and take care! 🍀
 
-I'm on vinhnx on almost everywhere. [Twitter](https:/twitter.com/vinhnx)
+I'm on `@vinhnx` on almost everywhere.
