@@ -114,11 +114,9 @@ I want Clendar to be open source but I don't want people to republish the app wi
 
 The GPL requires that you give the original developer credit and it also requires that the modified app also be open source. So please don't do this! 🙏🏻
 
-And, if you like, you can purchase the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200).
+**Inspiration: https://github.com/jeffreybergier/WaterMe**
 
-Thanks and take care! 🍀
-
-I'm on vinhnx on almost everywhere. [Twitter](https:/twitter.com/vinhnx)
+And, if you like, you can download the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tips via In-App Purchase options.
 
 ### What's 'Clendar'?
 
@@ -126,3 +124,8 @@ It's just Calendar, without an 'a'. I thought it's unique, but turns out it's no
 
 But, whatever!
 
+---
+
+Thanks and take care! 🍀
+
+I'm on vinhnx on almost everywhere. [Twitter](https:/twitter.com/vinhnx)
