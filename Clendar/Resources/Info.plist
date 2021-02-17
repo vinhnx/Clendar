@@ -118,6 +118,8 @@
 	<string>&quot;$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events&quot;</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view reminders&quot;</string>
+    <key>NSContactsUsageDescription</key>
+    <string>&quot;$(PRODUCT_NAME) needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone.&quot;</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>

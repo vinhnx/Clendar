@@ -67,7 +67,7 @@ struct ContentView: View {
         .padding()
     }
 
-    private var createEventButton: some View {
+    private var addEventButton: some View {
         Button(
             action: {
                 genLightHaptic()
@@ -134,7 +134,7 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 eventView
-                createEventButton
+                addEventButton
                 ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
             }
             .padding()
