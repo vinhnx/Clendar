@@ -45,10 +45,11 @@ Core:
 -   iPadOS
 -   WidgetKit
 -   SiriKit
--   EventKit/EvenKitUI
+-   EventKit/EvenKit UI
 -   WatchKit
 -   Combine
--   macCatalyst (coming soon..)
+-   Catalyst
+-   In-app purchase
 
 Build delivery tool
 
