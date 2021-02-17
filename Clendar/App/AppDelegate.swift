@@ -6,6 +6,9 @@
 //  Copyright © 2019 Vinh Nguyen. All rights reserved.
 //
 
+// NOTE: THIS IS DEPRECATED, using SwiftUI's @main attribute instead, check `ClendarApp.swift` instead
+
+/*
 import IQKeyboardManagerSwift
 import Logging
 import SwiftDate
@@ -137,3 +140,4 @@ extension AppDelegate {
 		}
 	}
 }
+*/
