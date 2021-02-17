@@ -27,7 +27,7 @@ Main features:
 -   Keyboard shortcuts supported! Clendar now support various keyboard shortcuts at your convenience.
 -   Siri shortcuts
 -   Apple Watch complications
--   Universal app. Can run on iPad, iPhone and Apple Watch.
+-   Universal app. Can run on iPad, iPhone and Apple Watch and MacOS.
 -   Custom app icons
 -   Natural language parsing. Just type down "do something next Friday at 8PM" and Clendar will try to automatically parse the phrases when creating calendar event. (This feature can be turned off in the settings)
 -   Lunar day view.
