@@ -109,6 +109,10 @@ my notes about SwiftUI:
 
 By publishing Clendar, I would like to give back to the community. 😊
 
+### Contributing
+
+Contributing is more than welcome, if you feel like helping the app, or want to add new feature, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
+
 ### Why GPL License?
 
 I want Clendar to be open source but I don't want people to republish the app with a different name on the App Store. Please do not fork this project and submit to the App Store under your own account.
