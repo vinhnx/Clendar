@@ -14,6 +14,7 @@ enum AppIcon: CaseIterable {
     case icon1
     case icon3
     case icon4
+    case icon6
 
     // MARK: Internal
 
@@ -26,6 +27,7 @@ enum AppIcon: CaseIterable {
         case .icon1: return "icon1"
         case .icon3: return "icon3"
         case .icon4: return "icon4"
+        case .icon6: return "icon6"
         }
     }
 
@@ -35,6 +37,7 @@ enum AppIcon: CaseIterable {
         case .icon1: return "icon1"
         case .icon3: return "icon3"
         case .icon4: return "icon4"
+        case .icon6: return "icon6"
         }
     }
 
@@ -44,6 +47,7 @@ enum AppIcon: CaseIterable {
         case .icon1: return "icon1_120".asImage
         case .icon3: return "icon3_120".asImage
         case .icon4: return "icon4_120".asImage
+        case .icon6: return "icon6_120".asImage
         }
     }
 }

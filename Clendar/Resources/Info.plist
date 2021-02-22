@@ -80,6 +80,16 @@
 				<key>UIPrerenderedIcon</key>
 				<true/>
 			</dict>
+			<key>icon6</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon6_120</string>
+					<string>icon6_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
 			<key>original</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -113,15 +123,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs your permission to create and view events"</string>
+	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view events&quot;</string>
 	<key>NSContactsUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone."</string>
+	<string>&quot;$(PRODUCT_NAME) needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone.&quot;</string>
 	<key>NSLocationUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events"</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>"$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events"</string>
+	<string>&quot;$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events&quot;</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>&quot;$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events&quot;</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>"$(PRODUCT_NAME) needs your permission to create and view reminders"</string>
+	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view reminders&quot;</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
