@@ -134,7 +134,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 21 files.
+  /// This `R.file` struct is generated, and contains static references to 19 files.
   struct file {
     /// Resource file `Settings.bundle`.
     static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
@@ -170,10 +170,6 @@ struct R: Rswift.Validatable {
     static let icon6_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon6_120", pathExtension: "png")
     /// Resource file `icon6_180.png`.
     static let icon6_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon6_180", pathExtension: "png")
-    /// Resource file `icon7_120.png`.
-    static let icon7_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon7_120", pathExtension: "png")
-    /// Resource file `icon7_180.png`.
-    static let icon7_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon7_180", pathExtension: "png")
     /// Resource file `original_120.png`.
     static let original_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "original_120", pathExtension: "png")
     /// Resource file `original_180.png`.
@@ -281,18 +277,6 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "icon7_120", withExtension: "png")`
-    static func icon7_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon7_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon7_180", withExtension: "png")`
-    static func icon7_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon7_180Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
     /// `bundle.url(forResource: "original_120", withExtension: "png")`
     static func original_120Png(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.original_120Png
@@ -308,7 +292,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 21 images.
+  /// This `R.image` struct is generated, and contains static references to 19 images.
   struct image {
     /// Image `dark_icon_120`.
     static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
@@ -342,10 +326,6 @@ struct R: Rswift.Validatable {
     static let icon6_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon6_120")
     /// Image `icon6_180`.
     static let icon6_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon6_180")
-    /// Image `icon7_120`.
-    static let icon7_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon7_120")
-    /// Image `icon7_180`.
-    static let icon7_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon7_180")
     /// Image `original_120`.
     static let original_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_120")
     /// Image `original_180`.
@@ -462,20 +442,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icon6_180", bundle: ..., traitCollection: ...)`
     static func icon6_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon6_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon7_120", bundle: ..., traitCollection: ...)`
-    static func icon7_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon7_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon7_180", bundle: ..., traitCollection: ...)`
-    static func icon7_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon7_180, compatibleWith: traitCollection)
     }
     #endif
 
