@@ -51,7 +51,7 @@ Core:
 -   WatchKit
 -   Combine
 -   Catalyst
--   In-app purchase
+-   StoreKit
 
 Build delivery tool
 
