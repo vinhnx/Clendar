@@ -17,7 +17,7 @@ Clendar - minimal calendar
 
 ### Description
 
-Calendar app should be made simpler. Whether you are looking for not only an app to jot down your calendar events, but also an app with simple design? Clendar could be the one you are looking for, with features like widget, themes, keyboard shortcuts, natural language parsing...
+Calendar app should be made simpler. Whether you are looking for not only an app to jot down your calendar events, but also with simple design? Clendar could be the one you are looking for, with features like widget, themes, keyboard shortcuts, natural language parsing...
 
 Meet Clendar, a calendar built with simplicity and minimalism in mind.
 
