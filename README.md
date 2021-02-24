@@ -15,6 +15,8 @@ Clendar - minimal calendar
 <img src="https://is2-ssl.mzstatic.com/image/thumb/PurpleSource114/v4/bd/d6/14/bdd61414-7f34-9273-d9ce-89154553f447/a08150b8-5d25-4dbd-af6a-08d0bfa67f7d_Apple_iPhone_12_Pro_Max_6_7-inch_1242x2688_Screenshot5-crunch.png/230x0w.webp">
 </p>
 
+> [Landing Page](https://vinhnx.github.io/clendar-site/)
+
 ### Description
 
 Calendar app should be made simpler. Whether you are looking for not only an app to jot down your calendar events, but also with simple design? Clendar could be the one you are looking for, with features like widget, themes, keyboard shortcuts, natural language parsing...
