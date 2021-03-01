@@ -27,7 +27,7 @@ extension Date {
     }
 
     var toDateString: String {
-        DateFormatter.format(self, format: "dd")
+        DateFormatter.format(self, format: "d")
     }
 
     var toDateAndMonthString: String {
@@ -55,7 +55,7 @@ extension Date {
     }
 
     var toDayAndDateString: String {
-        DateFormatter.format(self, format: "EEEE dd")
+        DateFormatter.format(self, format: "EEEE d")
     }
 
     var toChineseDate: Date {

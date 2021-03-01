@@ -50,7 +50,7 @@ struct SmallCalendarWidgetView: View {
                 Text(entry.date.toFullDayString)
                     .font(.boldFontWithSize(20))
                     .foregroundColor(.appRed)
-                Text(entry.date.toDateString)
+                Text(entry.date.toShortDateString)
                     .font(.boldFontWithSize(45))
                     .foregroundColor(.appDark)
                     .minimumScaleFactor(0.5)
