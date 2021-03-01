@@ -200,3 +200,8 @@
 "Tip received. Thank you very much and have a great day! 😊" = "Đã nhận tiền tip. Cảm ơn bạn rất nhiều và có một ngày tuyệt vời! 😊";
 "Unable to determine email sending state" = "Không thể xác định trạng thái gửi email";
 "Unable to open email client, please try again later" = "Không thể mở ứng dụng email, vui lòng thử lại sau";
+"Events deleted!" = "Sự kiện đã bị xóa!";
+"Delete All Future Events" = "Xóa tất cả các sự kiện trong tương lai";
+"Delete This Event Only" = "Chỉ xóa sự kiện này";
+"This is a repeating event." = "Đây là một sự kiện lặp lại.";
+"Is Recurring" = "Định kỳ";

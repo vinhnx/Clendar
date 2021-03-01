@@ -200,3 +200,8 @@
 "Tip received. Thank you very much and have a great day! 😊" = "팁을 받았습니다. 감사합니다. 좋은 하루 되세요! 😊";
 "Unable to determine email sending state" = "이메일 전송 상태를 확인할 수 없습니다.";
 "Unable to open email client, please try again later" = "이메일 클라이언트를 열 수 없습니다. 나중에 다시 시도하십시오.";
+"Events deleted!" = "이벤트가 삭제되었습니다!";
+"Delete All Future Events" = "모든 향후 이벤트 삭제";
+"Delete This Event Only" = "이 이벤트 만 삭제";
+"This is a repeating event." = "이것은 반복되는 이벤트입니다.";
+"Is Recurring" = "되풀이";

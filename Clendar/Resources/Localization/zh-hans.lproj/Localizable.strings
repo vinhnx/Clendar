@@ -200,3 +200,8 @@
 "Tip received. Thank you very much and have a great day! 😊" = "收到小费。 非常感谢，祝您有美好的一天！ 😊";
 "Unable to determine email sending state" = "无法确定电子邮件的发送状态";
 "Unable to open email client, please try again later" = "无法打开电子邮件客户端，请稍后再试";
+"Events deleted!" = "活动已删除！";
+"Delete All Future Events" = "删除所有未来事件";
+"Delete This Event Only" = "仅删除此事件";
+"This is a repeating event." = "这是重复的事件。";
+"Is Recurring" = "正在重复";
