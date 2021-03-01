@@ -63,18 +63,60 @@ struct EventListView: View {
 
     private func handleDeleteEvent(_ event: ClendarEvent) {
         guard let id = event.id else { return }
-        AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
-            Shift.shared.deleteEvent(identifier: id) { (result) in
-                switch result {
-                case .success:
-                    genSuccessHaptic()
-                    Popup.showInfo("Event deleted!")
-                case .failure(let error):
-                    genErrorHaptic()
-                    Popup.showError(error)
+        let isRepeatingEvent = event.event?.hasRecurrenceRules == true
+        let message = isRepeatingEvent ? "This is a repeating event." : "Are you sure you want to delete this event?"
+        if isRepeatingEvent {
+            DispatchQueue.main.async {
+                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+                let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
+                alertController.addAction(cancelAction)
+
+                let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
+                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
+                        switch result {
+                        case .success:
+                            genSuccessHaptic()
+                            Popup.showInfo("Event deleted!")
+                        case .failure(let error):
+                            genErrorHaptic()
+                            Popup.showError(error)
+                        }
+                    }
                 }
+                alertController.addAction(deleteOne)
+
+                let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
+                    Shift.shared.deleteEvent(identifier: id, span: .futureEvents) { (result) in
+                        switch result {
+                        case .success:
+                            genSuccessHaptic()
+                            Popup.showInfo("Events deleted!")
+                        case .failure(let error):
+                            genErrorHaptic()
+                            Popup.showError(error)
+                        }
+                    }
+                }
+                alertController.addAction(deleteAll)
+
+                UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
             }
-        })
+        } else {
+            DispatchQueue.main.async {
+                AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
+                    Shift.shared.deleteEvent(identifier: id) { (result) in
+                        switch result {
+                        case .success:
+                            genSuccessHaptic()
+                            Popup.showInfo("Event deleted!")
+                        case .failure(let error):
+                            genErrorHaptic()
+                            Popup.showError(error)
+                        }
+                    }
+                })
+            }
+        }
     }
 }
 
