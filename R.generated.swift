@@ -527,7 +527,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 109 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 114 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -637,10 +637,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let delete = Rswift.StringResource(key: "Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Delete All Future Events
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let deleteAllFutureEvents = Rswift.StringResource(key: "Delete All Future Events", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Delete Event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let deleteEvent = Rswift.StringResource(key: "Delete Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Delete This Event Only
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let deleteThisEventOnly = Rswift.StringResource(key: "Delete This Event Only", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Dim
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -693,6 +701,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let events = Rswift.StringResource(key: "Events", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Events deleted!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let eventsDeleted = Rswift.StringResource(key: "Events deleted!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Feedback/Report Issue
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -717,6 +729,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let inputEvent = Rswift.StringResource(key: "Input event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Is Recurring
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let isRecurring = Rswift.StringResource(key: "Is Recurring", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Keyboard shortcuts
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -881,6 +897,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let themes = Rswift.StringResource(key: "Themes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: This is a repeating event.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let thisIsARepeatingEvent = Rswift.StringResource(key: "This is a repeating event.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Tip received. Thank you very much and have a great day! 😊
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1371,6 +1391,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Delete", bundle: bundle, comment: "")
       }
 
+      /// en translation: Delete All Future Events
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func deleteAllFutureEvents(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete All Future Events", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete All Future Events"
+        }
+
+        return NSLocalizedString("Delete All Future Events", bundle: bundle, comment: "")
+      }
+
       /// en translation: Delete Event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1384,6 +1419,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Delete Event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete This Event Only
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func deleteThisEventOnly(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Delete This Event Only", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Delete This Event Only"
+        }
+
+        return NSLocalizedString("Delete This Event Only", bundle: bundle, comment: "")
       }
 
       /// en translation: Dim
@@ -1581,6 +1631,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Events", bundle: bundle, comment: "")
       }
 
+      /// en translation: Events deleted!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func eventsDeleted(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Events deleted!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Events deleted!"
+        }
+
+        return NSLocalizedString("Events deleted!", bundle: bundle, comment: "")
+      }
+
       /// en translation: Feedback/Report Issue
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1669,6 +1734,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Input event", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Is Recurring
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func isRecurring(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Is Recurring", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Is Recurring"
+        }
+
+        return NSLocalizedString("Is Recurring", bundle: bundle, comment: "")
       }
 
       /// en translation: Keyboard shortcuts
@@ -2284,6 +2364,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Themes", bundle: bundle, comment: "")
+      }
+
+      /// en translation: This is a repeating event.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func thisIsARepeatingEvent(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("This is a repeating event.", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "This is a repeating event."
+        }
+
+        return NSLocalizedString("This is a repeating event.", bundle: bundle, comment: "")
       }
 
       /// en translation: Tip received. Thank you very much and have a great day! 😊
