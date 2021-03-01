@@ -47,16 +47,20 @@ struct EventViewer: View {
 
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "clock")) {
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "hourglass.tophalf.fill")) {
                 Text(event.startDate.toFullEventDate).modifier(MediumTextModifider())
             }
 
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "clock")) {
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "hourglass.bottomhalf.fill")) {
                 Text(event.endDate.toFullEventDate).modifier(MediumTextModifider())
             }
 
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full.fill")) {
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full")) {
                 Text(event.isAllDay.asString).modifier(MediumTextModifider())
+            }
+
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Is Recurring", titleImageName: "repeat.circle")) {
+                Text(event.hasRecurrenceRules.asString).modifier(MediumTextModifider())
             }
 
         }
