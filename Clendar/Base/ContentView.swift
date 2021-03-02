@@ -6,18 +6,12 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import EventKit
 import SwiftUI
-import Shift
 import ConfettiSwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var store: Store
-
-    @StateObject var eventKitWrapper = Shift.shared
-    @State private var createdEvent: EKEvent?
-    @State private var isMonthView = SettingsManager.isOnMonthViewSettings
-    @State private var showPlusView: Bool = false
+    @EnvironmentObject var store: SharedStore
+    @ObservedObject var viewModel: ContentViewModel
     @State private var confettiCounter = 0
 
     let calendarWrapperView = CalendarWrapperView()
@@ -26,18 +20,17 @@ struct ContentView: View {
 
     private var monthHeaderView: some View {
         HStack(spacing: 20) {
-            Button {
-                store.selectedDate = Date()
-            } label: {
-                VStack {
-                    Text(store.selectedDate.toMonthString.localizedUppercase)
-                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
-                    Text(store.selectedDate.toDayAndDateString)
-                        .modifier(BoldTextModifider())
+            Button { store.selectedDate = Date() }
+                label: {
+                    VStack {
+                        Text(store.selectedDate.toMonthString.localizedUppercase)
+                            .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
+                        Text(store.selectedDate.toDayAndDateString)
+                            .modifier(BoldTextModifider())
+                    }
                 }
-            }
-            .accessibility(addTraits: .isHeader)
-            .keyboardShortcut("h", modifiers: [.command, .shift])
+                .accessibility(addTraits: .isHeader)
+                .keyboardShortcut("h", modifiers: [.command, .shift])
         }
     }
 
@@ -60,7 +53,7 @@ struct ContentView: View {
             calendarWrapperView
                 .frame(
                     width: geometry?.frame(in: .local).width,
-                    height: isMonthView ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
+                    height: SettingsManager.isOnMonthViewSettings ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
                 )
                 .padding(.top, -20)
         }
@@ -77,8 +70,7 @@ struct ContentView: View {
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
-                        showCreateEventState: $store.showCreateEventState,
-                        createdEvent: $createdEvent
+                        showCreateEventState: $store.showCreateEventState
                     )
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
@@ -92,9 +84,9 @@ struct ContentView: View {
     }
 
     private var eventListView: some View {
-        EventListView(events: eventKitWrapper.events.compactMap(ClendarEvent.init))
+        EventListView(events: viewModel.events)
             .environmentObject(store)
-            .padding(.top, isMonthView ? -50 : 0)
+            .padding(.top, SettingsManager.isOnMonthViewSettings ? -50 : 0)
     }
 
     private var eventView: some View {
@@ -128,24 +120,29 @@ struct ContentView: View {
         .font(.boldFontWithSize(18))
     }
 
+    private var contentView: some View {
+        ZStack(alignment: .bottomTrailing) {
+            eventView
+            addEventButton
+            ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
+        }
+        .padding()
+        .preferredColorScheme(appColorScheme)
+        .environment(\.colorScheme, appColorScheme)
+        .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
+        .modifier(HideNavigationBarModifier())
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+    }
+
     // MARK: - Body
 
     var body: some View {
         NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                eventView
-                addEventButton
-                ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
-            }
-            .padding()
-            .preferredColorScheme(appColorScheme)
-            .environment(\.colorScheme, appColorScheme)
-            .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
-            .modifier(HideNavigationBarModifier())
-            .ignoresSafeArea(.keyboard, edges: .bottom)
+            contentView
+            EmptyView(text: R.string.localizable.noEventSelected())
         }
         .onAppear {
-            configure()
+            store.selectedDate = Date()
         }
         .onReceive(store.$selectedDate) { date in
             selectDate(date)
@@ -173,7 +170,6 @@ struct ContentView: View {
             store.appBackgroundColor = .backgroundColor
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
-            isMonthView = SettingsManager.isOnMonthViewSettings
             calendarView.changeModePerSettings()
             calendarView.commitCalendarViewUpdate()
         }
@@ -185,23 +181,20 @@ struct ContentView: View {
 }
 
 extension ContentView {
-    private func configure() {
-        isMonthView = SettingsManager.isOnMonthViewSettings
-        selectDate(Date())
-    }
-
     private func selectDate(_ date: Date) {
         genLightHaptic()
         fetchEvents(for: date)
     }
 
     private func fetchEvents(for date: Date = Date()) {
-        eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+        viewModel.fetchEvents(for: date)
     }
 }
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Store())
+        ContentView(
+            viewModel: ContentViewModel()
+        ).environmentObject(SharedStore())
     }
 }
