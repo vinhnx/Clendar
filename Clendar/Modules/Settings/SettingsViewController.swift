@@ -57,21 +57,24 @@ final class SettingsViewController: FormViewController {
 
     // MARK: Internal
 
-    lazy var themes: SegmentedControlFormItem = {
-        let proxy = SegmentedControlFormItem()
-        proxy.title = NSLocalizedString("Themes", comment: "")
-        proxy.items = Theme.titles
-        proxy.selected = SettingsManager.darkModeActivated
-            ? Theme.dark.rawValue
-            : Theme.light.rawValue
-        proxy.valueDidChangeBlock = { index in
+    lazy var themes: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title(NSLocalizedString("Themes", comment: ""))
+        instance.append(AppTheme.titles)
+
+        let title = AppTheme(rawValue: SettingsManager.currentAppTheme)?.localizedText ?? AppTheme.defaultValue.localizedText
+        instance.selectOptionWithTitle(title)
+        instance.valueDidChange = { selected in
             genLightHaptic()
-            let theme = Theme(rawValue: index)
-            SettingsManager.darkModeActivated = theme == .dark
-            UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = theme == .dark ? .dark : .light
+
+            let type = AppTheme.mapFromText(selected?.title)
+            SettingsManager.darkModeActivated = type == .dark || type == .trueDark
+            SettingsManager.currentAppTheme = type.rawValue
+
+            UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
         }
-        return proxy
+        return instance
     }()
 
     lazy var showDaysOut: SwitchFormItem = {
@@ -89,10 +92,15 @@ final class SettingsViewController: FormViewController {
         let instance = OptionPickerFormItem()
         instance.title(NSLocalizedString("Supplementary day view", comment: ""))
         instance.append(DaySupplementaryType.titles)
-        instance.selectOptionWithTitle(SettingsManager.daySupplementaryType)
+
+        let title = DaySupplementaryType(rawValue: SettingsManager.daySupplementaryType)?.localizedText ?? DaySupplementaryType.defaultValue.localizedText
+        instance.selectOptionWithTitle(title)
         instance.valueDidChange = { selected in
             genLightHaptic()
-            SettingsManager.daySupplementaryType = selected?.title ?? DaySupplementaryType.defaultValue.rawValue
+
+            let type = DaySupplementaryType.mapFromText(selected?.title)
+            SettingsManager.daySupplementaryType = type.rawValue
+
             NotificationCenter.default.post(name: .didChangeDaySupplementaryTypePreferences, object: nil)
         }
         return instance
@@ -150,14 +158,22 @@ final class SettingsViewController: FormViewController {
         let instance = OptionPickerFormItem()
         instance.title(NSLocalizedString("Widget theme", comment: ""))
         instance.append(WidgetTheme.titles)
-        instance.selectOptionWithTitle(SettingsManager.widgetTheme)
+
+        let title = WidgetTheme(rawValue: SettingsManager.widgetTheme)?.localizedText ?? WidgetTheme.defaultValue.localizedText
+        instance.selectOptionWithTitle(title)
         instance.valueDidChange = { selected in
             guard let selected = selected else { return }
 
             genLightHaptic()
-            SettingsManager.widgetTheme = selected.title
+
+            // decode selected theme
+            let theme = WidgetTheme.mapFromText(selected.title)
+            SettingsManager.widgetTheme = theme.rawValue
+
+            // save widget config to app group container file
             let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
-            try? String(SettingsManager.widgetTheme).write(to: url, atomically: false, encoding: .utf8)
+            try? String(theme.localizedText).write(to: url, atomically: false, encoding: .utf8)
+
             // reload widget center
             Constants.WidgetKind.allCases.forEach { kind in
                 WidgetCenter.shared.reloadTimelines(ofKind: kind.rawValue)
@@ -209,8 +225,10 @@ final class SettingsViewController: FormViewController {
             : CalendarViewMode.week.rawValue
         proxy.valueDidChangeBlock = { index in
             genLightHaptic()
-            let calendarView = CalendarViewMode(rawValue: index)
-            SettingsManager.calendarViewMode = calendarView?.localizedText ?? CalendarViewMode.defaultValue.localizedText
+
+            let type = CalendarViewMode(rawValue: index)
+            SettingsManager.calendarViewMode = type?.rawValue ?? CalendarViewMode.defaultValue.rawValue
+
             NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
         }
         return proxy

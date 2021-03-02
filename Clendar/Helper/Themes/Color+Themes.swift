@@ -63,7 +63,21 @@ extension UIColor {
 
     static var backgroundColor: UIColor {
         #if os(iOS)
-        return UIColor { color in color.userInterfaceStyle == .dark ? .lavixA : .hueC }
+        return UIColor { color in
+            if color.userInterfaceStyle == .dark {
+                switch SettingsManager.currentAppTheme {
+                case AppTheme.dark.rawValue: return .lavixA
+                case AppTheme.trueDark.rawValue: return .black
+                default: return .lavixA
+                }
+            } else {
+                switch SettingsManager.currentAppTheme {
+                case AppTheme.light.rawValue: return .hueC
+                case AppTheme.trueLight.rawValue: return .white
+                default: return .hueC
+                }
+            }
+        }
         #else
         return .lavixA
         #endif

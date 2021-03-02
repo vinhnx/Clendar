@@ -10,17 +10,20 @@ import Foundation
 import SwiftUI
 
 struct SettingsManager {
+    @UserDefault("currentAppTheme", defaultValue: AppTheme.defaultValue.rawValue)
+    static var currentAppTheme: Int
+
     @UserDefault("darkModeActivated", defaultValue: isDarkMode)
     static var darkModeActivated: Bool
 
-    @UserDefault("calendarViewMode", defaultValue: CalendarViewMode.defaultValue.localizedText)
-    static var calendarViewMode: String
+    @UserDefault("calendarViewMode", defaultValue: CalendarViewMode.defaultValue.rawValue)
+    static var calendarViewMode: Int
 
     @UserDefault("showDaysOut", defaultValue: true)
     static var showDaysOut: Bool
 
     @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
-    static var daySupplementaryType: String
+    static var daySupplementaryType: Int
 
     @UserDefault("useExperimentalCreateEventMode", defaultValue: false)
     static var useExperimentalCreateEventMode: Bool
@@ -28,24 +31,21 @@ struct SettingsManager {
     @UserDefault("shouldAutoSelectDayOnCalendarChange", defaultValue: false)
     static var shouldAutoSelectDayOnCalendarChange: Bool
 
-    @UserDefault("badgeSettings", defaultValue: BadgeSettings.none.rawValue)
-    static var badgeSettings: String
-
     @UserDefault("defaultEventDuration", defaultValue: 60)
     static var defaultEventDuration: Int
 
     @UserDefault("enableHapticFeedback", defaultValue: true)
     static var enableHapticFeedback: Bool
 
-    @UserDefault("currentAppIconName", defaultValue: AppIcon.defaultValue)
-    static var currentAppIconName: String?
+    @UserDefault("currentAppIcon", defaultValue: AppIcon.defaultValue.rawValue)
+    static var currentAppIcon: Int
 
-    @UserDefault("widgetTheme", defaultValue: WidgetTheme.defaultValue.localizedText)
-    static var widgetTheme: String
+    @UserDefault("widgetTheme", defaultValue: WidgetTheme.defaultValue.rawValue)
+    static var widgetTheme: Int
 }
 
 extension SettingsManager {
     static var isOnMonthViewSettings: Bool {
-        calendarViewMode == CalendarViewMode.month.localizedText
+        calendarViewMode == CalendarViewMode.month.rawValue
     }
 }

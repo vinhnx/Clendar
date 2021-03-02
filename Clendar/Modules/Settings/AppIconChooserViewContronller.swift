@@ -20,9 +20,9 @@ class AppIconChooserViewController: FormViewController {
                 let cell = try AppIconItemCell.createCell()
                 cell.iconImageView.image = appIcon.displayImage
                 cell.titleLabel.text = appIcon.localizedText
-                cell.accessoryType = SettingsManager.currentAppIconName == appIcon.localizedText ? .checkmark : .none
+                cell.accessoryType = SettingsManager.currentAppIcon == appIcon.rawValue ? .checkmark : .none
                 cell.onSelected = {
-                    SettingsManager.currentAppIconName = appIcon.localizedText
+                    SettingsManager.currentAppIcon = appIcon.rawValue
                     UIApplication.shared.setAlternateIconName(appIcon.iconName) { error in
                         if let error = error {
                             AlertManager.showWithError(ClendarError.mapFromError(error))
