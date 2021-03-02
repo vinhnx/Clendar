@@ -138,8 +138,8 @@
 "You can choose available calendars to shown in event list" = "You can choose available calendars to show in event list";
 
 /* No comment provided by engineer. */
-"🎉 No more events today,\nenjoy your day!\n" = "🎉 No more events today,\nenjoy your day!\n";
-"🎉 No events for today,\nenjoy your day!\n" = "🎉 No events for today,\nenjoy your day!\n";
+"No more events today,\nenjoy your day!\n🎉" = "No more events today,\nenjoy your day!\n🎉";
+"No events for today,\nenjoy your day!\n🎉" = "No events for today,\nenjoy your day!\n🎉";
 "English" = "English";
 "Vietnamese" = "Vietnamese";
 "Change app Language" = "Change app Language";
@@ -205,3 +205,6 @@
 "Delete This Event Only" = "Delete This Event Only";
 "This is a repeating event." = "This is a repeating event.";
 "Is Recurring" = "Is Recurring";
+"No event selected" = "No event selected";
+"True Dark" = "True Dark";
+"True Light" = "True Light";

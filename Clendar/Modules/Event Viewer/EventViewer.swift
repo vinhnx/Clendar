@@ -10,7 +10,7 @@ import EventKit
 import SwiftUI
 
 struct EventViewer: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
     @State private var didShowEventEdit = false
     var event: ClendarEvent
 

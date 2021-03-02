@@ -22,14 +22,13 @@ internal class QuickEventStore: ObservableObject {
 }
 
 struct QuickEventView: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
     @StateObject private var quickEventStore = QuickEventStore()
     @State private var parsedText = ""
     @State private var startTime = Date()
     @State private var endTime = Date().offsetWithDefaultDuration
     @State private var isAllDay = false
     @Binding var showCreateEventState: Bool
-    @Binding var createdEvent: EKEvent?
 
     var body: some View {
         VStack {
@@ -148,7 +147,6 @@ extension QuickEventView {
             switch result {
             case let .success(event):
                 genSuccessHaptic()
-                self.createdEvent = event
                 self.showCreateEventState = false
                 self.store.selectedDate = event.startDate
 

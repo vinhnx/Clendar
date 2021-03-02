@@ -108,8 +108,8 @@
 "You can choose available calendars to shown in event list" = "Bạn có thể chọn các lịch có sẵn để hiển thị trong danh sách sự kiện";
 
 /* No comment provided by engineer. */
-"🎉 No more events today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào nữa,\nhãy tận hưởng một ngày của bạn!\n";
-"🎉 No events for today,\nenjoy your day!\n" = "🎉 Hôm nay không có sự kiện nào,\nhãy tận hưởng một ngày của bạn!\n";
+"No more events today,\nenjoy your day!\n🎉" = "Hôm nay không có sự kiện nào nữa,\nhãy tận hưởng một ngày của bạn!\n🎉";
+"No events for today,\nenjoy your day!\n🎉" = "Hôm nay không có sự kiện nào,\nhãy tận hưởng một ngày của bạn!\n🎉";
 
 /* No comment provided by engineer. */
 "Auto-select day when month changes" = "Tự động chọn ngày";
@@ -205,3 +205,6 @@
 "Delete This Event Only" = "Chỉ xóa sự kiện này";
 "This is a repeating event." = "Đây là một sự kiện lặp lại.";
 "Is Recurring" = "Định kỳ";
+"No event selected" = "Không có sự kiện nào được chọn";
+"True Dark" = "Cực tối";
+"True Light" = "Cực sáng";

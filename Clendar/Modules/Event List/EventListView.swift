@@ -10,7 +10,7 @@ import SwiftUI
 import Shift
 
 struct EventListView: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
     @State private var selectedEvent: ClendarEvent?
     var events = [ClendarEvent]()
 
@@ -122,6 +122,6 @@ struct EventListView: View {
 
 struct EventListView_Previews: PreviewProvider {
     static var previews: some View {
-        EventListView(events: []).environmentObject(Store())
+        EventListView(events: []).environmentObject(SharedStore())
     }
 }

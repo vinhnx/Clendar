@@ -17,11 +17,13 @@ fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
 @main
 struct ClendarApp: App {
 
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self)
+    var appDelegate
 
-    @Environment(\.scenePhase) var phase
+    @Environment(\.scenePhase)
+    var phase
 
-    let store = Store()
+    let store = SharedStore()
 
     init() {
         configure()
@@ -29,7 +31,7 @@ struct ClendarApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentViewModel())
                 .environmentObject(store)
                 .onContinueUserActivity(Constants.SiriShortcut.addEvent) { (_) in
                     store.showCreateEventState = true
@@ -63,7 +65,7 @@ struct ClendarApp: App {
             }
         }
         .commands {
-            CommandGroup(replacing: CommandGroupPlacement.newItem) {
+            CommandGroup(replacing: .newItem) {
                 Button("Create new event") {
                     store.showCreateEventState = true
                 }.keyboardShortcut("n", modifiers: [.command])
@@ -73,7 +75,7 @@ struct ClendarApp: App {
                 }.keyboardShortcut("h", modifiers: [.command, .shift])
             }
 
-            CommandGroup(after: CommandGroupPlacement.appInfo) {
+            CommandGroup(after: .appInfo) {
                 Button("Preferences") {
                     store.showSettingsState = true
                 }.keyboardShortcut(",", modifiers: [.command])
@@ -110,7 +112,7 @@ extension ClendarApp {
                         // Deliver content from server, then:
                         SwiftyStoreKit.finishTransaction(purchase.transaction)
                     }
-                    
+
                     // Unlock content
                     NotificationCenter.default.post(name: .inAppPurchaseSuccess, object: nil)
                 case .failed, .purchasing, .deferred:

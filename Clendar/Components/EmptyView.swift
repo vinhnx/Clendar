@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct EmptyView: View {
+    var text: String = "No events for today,\nenjoy your day!\n🎉"
+
     var body: some View {
         VStack {
-            Text("🎉 No events for today,\nenjoy your day!\n")
+            Text(LocalizedStringKey(text))
                 .modifier(BoldTextModifider())
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)

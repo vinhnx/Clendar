@@ -138,8 +138,8 @@
 "You can choose available calendars to shown in event list" = "Puede elegir los calendarios disponibles para mostrar en la lista de eventos";
 
 /* No comment provided by engineer. */
-"🎉 No more events today,\nenjoy your day!\n" = "🎉 ¡No más eventos hoy, disfruta tu día!";
-"🎉 No events for today,\nenjoy your day!\n" = "🎉 No hay eventos para hoy, ¡disfruta tu día!";
+"No more events today,\nenjoy your day!\n🎉" = "¡No más eventos hoy, disfruta tu día! 🎉";
+"No events for today,\nenjoy your day!\n🎉" = "No hay eventos para hoy, ¡disfruta tu día! 🎉";
 "English" = "Inglés";
 "Vietnamese" = "vietnamita";
 "Change app Language" = "Cambiar el idioma de la aplicación";
@@ -205,3 +205,6 @@
 "Delete This Event Only" = "Eliminar solo este evento";
 "This is a repeating event." = "Este es un evento que se repite.";
 "Is Recurring" = "Es recurrente";
+"No event selected" = "Ningún evento seleccionado";
+"True Dark" = "Verdadero oscuro";
+"True Light" = "Luz verdadera";

@@ -138,8 +138,8 @@
 "You can choose available calendars to shown in event list" = "이벤트 목록에 표시 할 사용 가능한 캘린더를 선택할 수 있습니다.";
 
 /* No comment provided by engineer. */
-"🎉 No more events today,\nenjoy your day!\n" = "🎉 오늘은 더 이상 이벤트가 없습니다. 즐거운 하루 되세요!";
-"🎉 No events for today,\nenjoy your day!\n" = "🎉 오늘은 이벤트가 없습니다. 즐거운 하루 되세요!";
+"No more events today,\nenjoy your day!\n🎉" = "오늘은 더 이상 이벤트가 없습니다. 즐거운 하루 되세요! 🎉 ";
+"No events for today,\nenjoy your day!\n🎉" = "오늘은 이벤트가 없습니다. 즐거운 하루 되세요! 🎉 ";
 "English" = "영어";
 "Vietnamese" = "베트남어";
 "Change app Language" = "앱 언어 변경";
@@ -205,3 +205,6 @@
 "Delete This Event Only" = "이 이벤트 만 삭제";
 "This is a repeating event." = "이것은 반복되는 이벤트입니다.";
 "Is Recurring" = "되풀이";
+"No event selected" = "선택한 이벤트가 없습니다.";
+"True Dark" = "진정한 어둠";
+"True Light" = "진정한 빛";

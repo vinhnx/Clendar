@@ -22,7 +22,7 @@ let calendarView = CVCalendarView().then {
 }
 
 struct CalendarWrapperView: UIViewRepresentable {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
     
     // MARK: - UIViewRepresentable
 
@@ -55,6 +55,6 @@ struct CalendarWrapperView: UIViewRepresentable {
 
 struct CalendarWrapperView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarWrapperView().environmentObject(Store())
+        CalendarWrapperView().environmentObject(SharedStore())
     }
 }

@@ -25,7 +25,7 @@ internal class EventViewerWrapperViewCoordinator: NSObject, EKEventViewDelegate 
 }
 
 struct EventViewerWrapperView: UIViewControllerRepresentable {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
 
     var event: ClendarEvent?
 

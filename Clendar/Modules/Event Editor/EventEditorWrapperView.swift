@@ -41,7 +41,7 @@ internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDeleg
 }
 
 struct EventEditorWrapperView: UIViewControllerRepresentable {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
 
     // MARK: - UIViewControllerRepresentable
 

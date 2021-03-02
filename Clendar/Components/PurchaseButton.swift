@@ -12,7 +12,7 @@ import SwiftyStoreKit
 import StoreKit
 
 struct PurchaseButton: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var store: SharedStore
     @Binding var isLoading: Bool
     @State private var isPurchasing: Bool = false
 

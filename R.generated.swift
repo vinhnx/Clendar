@@ -527,7 +527,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 114 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 117 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -773,6 +773,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let newEvent = Rswift.StringResource(key: "New Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: No event selected
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let noEventSelected = Rswift.StringResource(key: "No event selected", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: No events for today, enjoy your day! 🎉
+      ///
+      /// Locales: en, vi, ja, es, ko
+      static let noEventsForTodayEnjoyYourDay🎉 = Rswift.StringResource(key: "No events for today,\nenjoy your day!\n🎉", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "es", "ko"], comment: nil)
+      /// en translation: No more events today, enjoy your day! 🎉
+      ///
+      /// Locales: en, vi, ja, es, ko
+      static let noMoreEventsTodayEnjoyYourDay🎉 = Rswift.StringResource(key: "No more events today,\nenjoy your day!\n🎉", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "es", "ko"], comment: nil)
       /// en translation: None
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -913,6 +925,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let toggleAllDaySwitch = Rswift.StringResource(key: "Toggle all day switch", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: True Dark
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let trueDark = Rswift.StringResource(key: "True Dark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: True Light
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let trueLight = Rswift.StringResource(key: "True Light", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Unable to determine email sending state
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -977,14 +997,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let readABookThisFriday8PM = Rswift.StringResource(key: "read a book this Friday 8PM...", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
-      /// en translation: 🎉 No events for today, enjoy your day! 
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko
-      static let 🎉NoEventsForTodayEnjoyYourDay = Rswift.StringResource(key: "🎉 No events for today,\nenjoy your day!\n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
-      /// en translation: 🎉 No more events today, enjoy your day! 
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko
-      static let 🎉NoMoreEventsTodayEnjoyYourDay = Rswift.StringResource(key: "🎉 No more events today,\nenjoy your day!\n", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
 
       /// en translation: Add event
       ///
@@ -1901,6 +1913,51 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("New Event", bundle: bundle, comment: "")
       }
 
+      /// en translation: No event selected
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func noEventSelected(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("No event selected", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "No event selected"
+        }
+
+        return NSLocalizedString("No event selected", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No events for today, enjoy your day! 🎉
+      ///
+      /// Locales: en, vi, ja, es, ko
+      static func noEventsForTodayEnjoyYourDay🎉(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("No events for today,\nenjoy your day!\n🎉", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "No events for today,\nenjoy your day!\n🎉"
+        }
+
+        return NSLocalizedString("No events for today,\nenjoy your day!\n🎉", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No more events today, enjoy your day! 🎉
+      ///
+      /// Locales: en, vi, ja, es, ko
+      static func noMoreEventsTodayEnjoyYourDay🎉(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("No more events today,\nenjoy your day!\n🎉", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "No more events today,\nenjoy your day!\n🎉"
+        }
+
+        return NSLocalizedString("No more events today,\nenjoy your day!\n🎉", bundle: bundle, comment: "")
+      }
+
       /// en translation: None
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2426,6 +2483,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Toggle all day switch", bundle: bundle, comment: "")
       }
 
+      /// en translation: True Dark
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func trueDark(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("True Dark", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "True Dark"
+        }
+
+        return NSLocalizedString("True Dark", bundle: bundle, comment: "")
+      }
+
+      /// en translation: True Light
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func trueLight(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("True Light", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "True Light"
+        }
+
+        return NSLocalizedString("True Light", bundle: bundle, comment: "")
+      }
+
       /// en translation: Unable to determine email sending state
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2664,36 +2751,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("read a book this Friday 8PM...", bundle: bundle, comment: "")
-      }
-
-      /// en translation: 🎉 No events for today, enjoy your day! 
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko
-      static func 🎉NoEventsForTodayEnjoyYourDay(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("🎉 No events for today,\nenjoy your day!\n", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "🎉 No events for today,\nenjoy your day!\n"
-        }
-
-        return NSLocalizedString("🎉 No events for today,\nenjoy your day!\n", bundle: bundle, comment: "")
-      }
-
-      /// en translation: 🎉 No more events today, enjoy your day! 
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko
-      static func 🎉NoMoreEventsTodayEnjoyYourDay(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "🎉 No more events today,\nenjoy your day!\n"
-        }
-
-        return NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
