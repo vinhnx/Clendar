@@ -142,7 +142,7 @@ struct ContentView: View {
             EmptyView(text: R.string.localizable.noEventSelected())
         }
         .onAppear {
-            store.selectedDate = Date()
+            selectDate(Date())
         }
         .onReceive(store.$selectedDate) { date in
             selectDate(date)
