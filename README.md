@@ -23,7 +23,12 @@ Clendar - minimal calendar
 
 I believe the best way to Learn is by doing.
 
-SwiftUI is evolving and I think it's the future of writing apps.
+[SwiftUI](https://developer.apple.com/xcode/swiftui/) is evolving and I think it's the future of writing apps.
+
+> SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs.
+>
+> -- Apple
+
 
 The true power of SwiftUI, to me, is it's flexibility, thanks to it's vast realm of view modifiers and expressiveness with property wrappers.
 
