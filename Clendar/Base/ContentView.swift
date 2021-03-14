@@ -111,7 +111,10 @@ struct ContentView: View {
                     genLightHaptic()
                     store.showSettingsState = true
                 },
-                label: { Image(systemName: "gearshape") }
+                label: {
+                    Image(systemName: "gearshape")
+                        .frame(width: 50, height: 50)
+                }
             )
             .sheet(
                 isPresented: $store.showSettingsState,
@@ -120,7 +123,6 @@ struct ContentView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
             )
-            .frame(width: 44, height: 44)
             .keyboardShortcut(",", modifiers: [.command])
         }
         .accentColor(.appRed)
