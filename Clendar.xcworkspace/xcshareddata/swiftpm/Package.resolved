@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/vinhnx/Shift",
         "state": {
           "branch": null,
-          "revision": "c8162132a667e8e877db17f12e43116ac728140b",
-          "version": "0.2.2"
+          "revision": "a4653dfbfb2ef050180dc71bbdb53a9393c6ca12",
+          "version": "0.3.0"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/apple/swift-log",
         "state": {
           "branch": null,
-          "revision": "173f567a2dfec11d74588eea82cecea555bdc0bc",
-          "version": "1.4.0"
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/neoneye/SwiftyFORM",
         "state": {
           "branch": null,
-          "revision": "85b2ceb0bb8419192fcb734097c544fb71e5d3fe",
-          "version": "1.8.5"
+          "revision": "fa1b7aefb7e7f9c4040279f94dd38af75eeebd0b",
+          "version": "1.8.6"
         }
       },
       {
