@@ -50,14 +50,11 @@ extension UIColor {
         #if os(iOS)
         return UIColor { color in
             switch SettingsManager.currentAppTheme {
-            case AppTheme.light.rawValue:
-                return .hueC
-            case AppTheme.trueLight.rawValue:
-                return .white
-            case AppTheme.dark.rawValue:
-                return .lavixA
-            case AppTheme.trueDark.rawValue:
-                return .black
+            case AppTheme.light.rawValue: return .hueC
+            case AppTheme.trueLight.rawValue: return .white
+            case AppTheme.dark.rawValue: return .lavixA
+            case AppTheme.trueDark.rawValue: return .black
+            case AppTheme.E4ECF5.rawValue: return UIColor(hex: "E4ECF5")
             default:
                 return color.userInterfaceStyle == .dark ? .lavixA : .hueC
             }

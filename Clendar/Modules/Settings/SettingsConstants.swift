@@ -57,6 +57,7 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
     case dark
     case trueLight
     case trueDark
+    case E4ECF5
 
     // MARK: Internal
 
@@ -70,6 +71,7 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
         case .light: return NSLocalizedString("Light", comment: "")
         case .trueDark: return NSLocalizedString("True Dark", comment: "")
         case .trueLight: return NSLocalizedString("True Light", comment: "")
+        case .E4ECF5: return NSLocalizedString("E4ECF5", comment: "")
         }
     }
 
@@ -81,6 +83,7 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
         case AppTheme.light.localizedText: return .light
         case AppTheme.trueDark.localizedText: return .trueDark
         case AppTheme.trueLight.localizedText: return .trueLight
+        case AppTheme.E4ECF5.localizedText: return .E4ECF5
         default: return .light
         }
     }
