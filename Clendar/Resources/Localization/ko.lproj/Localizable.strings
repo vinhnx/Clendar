@@ -208,3 +208,9 @@
 "No event selected" = "선택한 이벤트가 없습니다.";
 "True Dark" = "진정한 어둠";
 "True Light" = "진정한 빛";
+
+/* No comment provided by engineer. */
+"No more events today,\nenjoy your day!\n" = "오늘은 이벤트가 없습니다. \n 즐거운 하루 되세요! \n";
+"No events for today,\nenjoy your day!\n" = "오늘은 이벤트가 없습니다. \n 즐거운 하루 되세요! \n";
+"Clendar, new event" = "Clendar, new event";
+"Clendar, open settings" = "Clendar, open settings";

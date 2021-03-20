@@ -208,3 +208,9 @@
 "No event selected" = "イベントが選択されていません";
 "True Dark" = "トゥルーダーク";
 "True Light" = "真の光";
+
+/* No comment provided by engineer. */
+"No more events today,\nenjoy your day!\n" = "今日はイベントはありません。\n お楽しみください！\n";
+"No events for today,\nenjoy your day!\n" = "今日はイベントはありません。\n お楽しみください！\n";
+"Clendar, new event" = "Clendar, new event";
+"Clendar, open settings" = "Clendar, open settings";

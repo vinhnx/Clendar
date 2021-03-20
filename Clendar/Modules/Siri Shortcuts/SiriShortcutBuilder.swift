@@ -16,7 +16,7 @@ struct ShortcutBuilder {
         makeSiriShortcut(
             id: Constants.SiriShortcut.addEvent,
             title: R.string.localizable.createNewClendarEventS(),
-            phase: R.string.localizable.newClendarEvent()
+            phase: R.string.localizable.clendarNewEvent()
         )
     }()
 
@@ -24,15 +24,7 @@ struct ShortcutBuilder {
         makeSiriShortcut(
             id: Constants.SiriShortcut.openSettings,
             title: R.string.localizable.openClendarSettings(),
-            phase: R.string.localizable.openSettings()
-        )
-    }()
-
-    static let openSiriShortcut: INShortcut = {
-        makeSiriShortcut(
-            id: Constants.SiriShortcut.openShortcutsView,
-            title: R.string.localizable.showSiriShortcutsView(),
-            phase: R.string.localizable.openClendarSiriShortcuts()
+            phase: R.string.localizable.clendarOpenSettings()
         )
     }()
 

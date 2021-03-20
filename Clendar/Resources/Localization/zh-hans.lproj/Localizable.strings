@@ -138,8 +138,8 @@
 "You can choose available calendars to shown in event list" = "您可以选择可用的日历以显示在事件列表中";
 
 /* No comment provided by engineer. */
-"No more events today,\nenjoy your day!\n" = "today今天不再有活动，祝您愉快！🎉";
-"No events for today,\nenjoy your day!\n" = "today今天没有活动，祝您愉快！🎉";
+"No more events today,\nenjoy your day!\n" = "今天没有活动，\n 祝您愉快！\n";
+"No events for today,\nenjoy your day!\n" = "今天没有活动，\n 祝您愉快！\n";
 "English" = "英语";
 "Vietnamese" = "越南文";
 "Change app Language" = "更改应用语言";
@@ -208,3 +208,8 @@
 "No event selected" = "未选择活动";
 "True Dark" = "真正的黑暗";
 "True Light" = "真光";
+
+/* No comment provided by engineer. */
+"No more events today,\nenjoy your day!\n🎉" = "今天没有活动，\n 祝您愉快！\n";
+"No events for today,\nenjoy your day!\n🎉" = "今天没有活动，\n 祝您愉快！\n";
+"Clendar, new event" = "Clendar, new event";

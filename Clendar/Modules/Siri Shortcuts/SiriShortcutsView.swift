@@ -51,11 +51,6 @@ struct SiriShortcutsView: View {
                     Text(R.string.localizable.openSettings())
                     SiriButton(shortcut: ShortcutBuilder.openSettingsShortcut).frame(height: 30)
                 }
-
-                VStack(spacing: 20) {
-                    Text(R.string.localizable.showSiriShortcutsView())
-                    SiriButton(shortcut: ShortcutBuilder.openSiriShortcut).frame(height: 30)
-                }
             }
         }
     }

@@ -208,3 +208,9 @@
 "No event selected" = "Không có sự kiện nào được chọn";
 "True Dark" = "Cực tối";
 "True Light" = "Cực sáng";
+
+/* No comment provided by engineer. */
+"No more events today,\nenjoy your day!\n" = "Không có sự kiện nào cho ngày hôm nay, \n hãy tận hưởng một ngày của bạn! \n";
+"No events for today,\nenjoy your day!\n" = "Không có sự kiện nào cho ngày hôm nay, \n hãy tận hưởng một ngày của bạn! \n";
+"Clendar, new event" = "Clendar, new event";
+"Clendar, open settings" = "Clendar, open settings";

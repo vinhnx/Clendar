@@ -208,3 +208,9 @@
 "No event selected" = "No event selected";
 "True Dark" = "True Dark";
 "True Light" = "True Light";
+
+/* No comment provided by engineer. */
+"No more events today,\nenjoy your day!\n" = "No more events today,\nenjoy your day!\n";
+"No events for today,\nenjoy your day!\n" = "No events for today,\nenjoy your day!\n";
+"Clendar, new event" = "Clendar, new event";
+"Clendar, open settings" = "Clendar, open settings";
