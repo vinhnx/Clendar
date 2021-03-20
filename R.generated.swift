@@ -603,8 +603,8 @@ struct R: Rswift.Validatable {
       static let clendarNewEvent = Rswift.StringResource(key: "Clendar, new event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Clendar, open settings
       ///
-      /// Locales: en, vi, ja, es, ko
-      static let clendarOpenSettings = Rswift.StringResource(key: "Clendar, open settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "es", "ko"], comment: nil)
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let clendarOpenSettings = Rswift.StringResource(key: "Clendar, open settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Collapse this view
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1286,7 +1286,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Clendar, open settings
       ///
-      /// Locales: en, vi, ja, es, ko
+      /// Locales: en, vi, ja, zh-hans, es, ko
       static func clendarOpenSettings(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Clendar, open settings", bundle: hostingBundle, comment: "")
