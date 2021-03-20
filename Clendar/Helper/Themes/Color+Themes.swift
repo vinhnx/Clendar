@@ -8,21 +8,6 @@
 import SwiftUI
 import UIKit
 
-// TODO: some good color themes
-/*
-
-//            Color(.white)
-//            Color(hex: 0xF6F5F0)
-//            Color(hex: 0x1F2126)
-//            Color(.black)
-     Color(hex: 0xE4ECF5) << this one look good!
-//            Color(hex: 0x949EA8)
-//            Color(hex: 0xBBBF99)
-//            Color(hex: 0x818C7B)
-//            Color(hex: 0x386273)
-//            Color(hex: 0xC4B087)
- */
-
 extension UIColor {
     var swiftUIColor: Color {
         Color(self)
@@ -64,22 +49,21 @@ extension UIColor {
     static var backgroundColor: UIColor {
         #if os(iOS)
         return UIColor { color in
-            if color.userInterfaceStyle == .dark {
-                switch SettingsManager.currentAppTheme {
-                case AppTheme.dark.rawValue: return .lavixA
-                case AppTheme.trueDark.rawValue: return .black
-                default: return .lavixA
-                }
-            } else {
-                switch SettingsManager.currentAppTheme {
-                case AppTheme.light.rawValue: return .hueC
-                case AppTheme.trueLight.rawValue: return .white
-                default: return .hueC
-                }
+            switch SettingsManager.currentAppTheme {
+            case AppTheme.light.rawValue:
+                return .hueC
+            case AppTheme.trueLight.rawValue:
+                return .white
+            case AppTheme.dark.rawValue:
+                return .lavixA
+            case AppTheme.trueDark.rawValue:
+                return .black
+            default:
+                return color.userInterfaceStyle == .dark ? .lavixA : .hueC
             }
         }
         #else
-        return .lavixA
+        return .hueC
         #endif
     }
 
