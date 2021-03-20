@@ -128,6 +128,7 @@ enum WidgetTheme: Int, CaseIterable, SettingsValueMappable {
     case system
     case light
     case dark
+    case E4ECF5
 
     // MARK: Internal
 
@@ -140,6 +141,7 @@ enum WidgetTheme: Int, CaseIterable, SettingsValueMappable {
         case .system: return NSLocalizedString("Follow system", comment: "")
         case .light: return NSLocalizedString("Light", comment: "")
         case .dark: return NSLocalizedString("Dark", comment: "")
+        case .E4ECF5: return "E4ECF5"
         }
     }
 
@@ -150,6 +152,7 @@ enum WidgetTheme: Int, CaseIterable, SettingsValueMappable {
         case WidgetTheme.system.localizedText: return .system
         case WidgetTheme.light.localizedText: return .light
         case WidgetTheme.dark.localizedText: return .dark
+        case WidgetTheme.E4ECF5.localizedText: return .E4ECF5
         default: return .system
         }
     }
