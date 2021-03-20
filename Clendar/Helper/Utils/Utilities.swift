@@ -20,7 +20,7 @@ var isDarkMode: Bool {
 
 func genLightHaptic() {
 	guard SettingsManager.enableHapticFeedback else { return }
-	Haptic.impact(.light).generate()
+    Haptic.impact(.soft).generate()
 }
 
 func genErrorHaptic() {
