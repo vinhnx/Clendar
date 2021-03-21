@@ -39,23 +39,19 @@ struct SmallCalendarWidgetView: View {
     let entry: WidgetEntry
 
     var body: some View {
-        ZStack {
-            ContainerRelativeShape()
-                .fill(Color.clear)
-
-            VStack(alignment: .center) {
-                Text(entry.date.toMonthString.localizedUppercase)
-                    .font(.boldFontWithSize(20))
-                    .foregroundColor(.gray)
-                Text(entry.date.toFullDayString)
-                    .font(.boldFontWithSize(20))
-                    .foregroundColor(.appRed)
-                Text(entry.date.toShortDateString)
-                    .font(.boldFontWithSize(45))
-                    .foregroundColor(.appDark)
-                    .minimumScaleFactor(0.5)
-            }
+        VStack(alignment: .center) {
+            Text(entry.date.toMonthString.localizedUppercase)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.gray)
+            Text(entry.date.toFullDayString)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.appRed)
+            Text(entry.date.toDateString)
+                .font(.boldFontWithSize(45))
+                .foregroundColor(.appDark)
+                .minimumScaleFactor(0.5)
         }
+        .padding(.all)
     }
 }
 
@@ -94,23 +90,18 @@ struct TodayOverviewWidgetView: View {
     let entry: WidgetEntry
 
     var body: some View {
-        ZStack {
-            ContainerRelativeShape()
-                .fill(Color.clear)
+        VStack(alignment: .center) {
+            let events = entry.events
+            let text = events.isEmpty
+                ? NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", comment: "")
+                : NSLocalizedString("Upcoming events", comment: "")
 
-            VStack(alignment: .center) {
-                let events = entry.events
-                let text = events.isEmpty
-                    ? NSLocalizedString("🎉 No more events today,\nenjoy your day!\n", comment: "")
-                    : NSLocalizedString("Upcoming events", comment: "")
-
-                Text(text)
-                    .font(.boldFontWithSize(20))
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.8)
-            }
-        }
+            Text(text)
+                .font(.boldFontWithSize(20))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.8)
+        }.padding(.all)
     }
 }
 
@@ -122,24 +113,19 @@ struct EventsListWidgetView: View {
         if entry.events.isEmpty {
             EmptyView()
         } else {
-            ZStack {
-                ContainerRelativeShape()
-                    .fill(Color.clear)
-
-                VStack(alignment: .leading, spacing: 10) {
-                    Section(
-                        header:
-                            Text(entry.date.toFullDateString.localizedUppercase)
-                            .font(.boldFontWithSize(11))
-                            .foregroundColor(Color(.moianesB))
-                    ) {
-                        let events = entry.events.prefix(minimizeContents ? 3 : 6)
-                        ForEach(events, id: \.self) { event in
-                            WidgetEventRow(event: event)
-                        }
+            LazyVStack(alignment: .leading, spacing: 10) {
+                Section(
+                    header:
+                        Text(entry.date.toFullDateString.localizedUppercase)
+                        .font(.boldFontWithSize(11))
+                        .foregroundColor(Color(.moianesB))
+                ) {
+                    let events = entry.events.prefix(minimizeContents ? 3 : 6)
+                    ForEach(events, id: \.self) { event in
+                        WidgetEventRow(event: event)
                     }
                 }
-            }
+            }.padding(10)
         }
     }
 }
@@ -154,8 +140,6 @@ struct DividerView: View {
 
 struct WidgetEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallCalendarWidgetView(entry: WidgetEntry(date: Date()))
-
         DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
             .preferredColorScheme(.dark)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
