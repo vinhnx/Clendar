@@ -8,7 +8,7 @@
 
 import SwiftUI
 import ClockKit
-import Shift
+
 
 struct ComplicationViewCircular: View {
     let date: Date

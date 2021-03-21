@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Shift
+
 
 struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared

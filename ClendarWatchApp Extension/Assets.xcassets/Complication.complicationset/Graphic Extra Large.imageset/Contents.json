@@ -2,31 +2,31 @@
   "images" : [
     {
       "filename" : "graphic-extra-large38mm@2x.png",
-      "idiom" : "watch",
       "scale" : "2x",
-      "screen-width" : "<=145"
+      "screen-width" : "<=145",
+      "idiom" : "watch"
     },
     {
-      "filename" : "graphic-extra-large40mm@2x.png",
       "idiom" : "watch",
       "scale" : "2x",
+      "filename" : "graphic-extra-large40mm@2x.png",
       "screen-width" : ">161"
     },
     {
-      "filename" : "graphic-extra-large42mm@2x.png",
       "idiom" : "watch",
+      "screen-width" : ">145",
       "scale" : "2x",
-      "screen-width" : ">145"
+      "filename" : "graphic-extra-large42mm@2x.png"
     },
     {
-      "filename" : "graphic-extra-large44mm@2x.png",
-      "idiom" : "watch",
       "scale" : "2x",
-      "screen-width" : ">183"
+      "filename" : "graphic-extra-large44mm@2x.png",
+      "screen-width" : ">183",
+      "idiom" : "watch"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
