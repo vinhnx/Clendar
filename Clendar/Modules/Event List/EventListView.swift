@@ -19,7 +19,7 @@ struct EventListView: View {
             if events.isEmpty {
                 EmptyView()
             } else {
-                LazyVStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 10) {
                     ForEach(events, id: \.self) { event in
                         NavigationLink(
                             destination:
@@ -30,7 +30,6 @@ struct EventListView: View {
                         ) {
                             EventListRow(event: event)
                         }
-                        .id(UUID()) // NOTE: should this fix for "Fatal error: each layout item may only occur once: file SwiftUI, line 0"?
                         .contextMenu(menuItems: {
                             Button(
                                 action: { self.selectedEvent = event },
