@@ -8,7 +8,7 @@
 
 import ClockKit
 import SwiftUI
-
+import Shift
 import EventKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {

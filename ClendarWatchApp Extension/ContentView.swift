@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import Shift
 
 struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
@@ -21,7 +21,7 @@ struct ContentView: View {
                 EmptyView()
             } else {
                 ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Section(
                             header:
                                 Text(Date().toFullDateString.localizedUppercase)

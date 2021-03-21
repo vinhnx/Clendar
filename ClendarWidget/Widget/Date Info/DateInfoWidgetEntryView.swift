@@ -126,7 +126,7 @@ struct EventsListWidgetView: View {
                 ContainerRelativeShape()
                     .fill(Color.clear)
 
-                LazyVStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 10) {
                     Section(
                         header:
                             Text(entry.date.toFullDateString.localizedUppercase)
