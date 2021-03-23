@@ -2,14 +2,14 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "graphic-large-rectangular40mm@2x.png",
       "screen-width" : ">161",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "graphic-large-rectangular40mm@2x.png"
     },
     {
       "idiom" : "watch",
-      "filename" : "graphic-large-rectangular44mm@2x.png",
       "scale" : "2x",
+      "filename" : "graphic-large-rectangular44mm@2x.png",
       "screen-width" : ">183"
     }
   ],
