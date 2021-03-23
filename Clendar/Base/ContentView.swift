@@ -144,6 +144,9 @@ struct ContentView: View {
             .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
             .modifier(HideNavigationBarModifier())
             .ignoresSafeArea(.keyboard, edges: .bottom)
+
+            Text("No event selected")
+                .modifier(BoldTextModifider())
         }
         .onAppear {
             configure()
