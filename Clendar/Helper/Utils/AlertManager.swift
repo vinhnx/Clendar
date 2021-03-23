@@ -42,10 +42,12 @@ enum AlertManager {
 	///   - actionTitle: the action title string
 	///   - okAction: the completion handler to execute when user tap on "OK"
 	///   - onCancel: the completion handler to execute when user tap on "Cancel"
-	static func showActionSheet(title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidBlock? = nil, deleteAction: VoidBlock? = nil, onCancel: VoidBlock? = nil) {
-		genLightHaptic()
+    static func showActionSheet(onView: UIView? = UIViewController.topViewController?.view, title: String? = nil, message: String = "", actionTitle: String = "", showDelete: Bool = false, deleteTitle: String = "Delete", okAction: VoidBlock? = nil, deleteAction: VoidBlock? = nil, onCancel: VoidBlock? = nil) {
+
 		DispatchQueue.main.async {
 			guard shouldShowAlert else { return }
+            genLightHaptic()
+
 			let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 			let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
 				onCancel?()
@@ -66,6 +68,12 @@ enum AlertManager {
 				}
 				alertController.addAction(delete)
 			}
+
+            if let presenter = alertController.popoverPresentationController {
+                presenter.permittedArrowDirections = .init(rawValue: 0)
+                presenter.sourceView = onView
+                presenter.sourceRect = CGRect(x: onView?.bounds.midX ?? 0, y: onView?.bounds.midY ?? 0, width: 0, height: 0)
+            }
 
 			UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
 		}

@@ -98,6 +98,12 @@ struct EventListView: View {
                 }
                 alertController.addAction(deleteAll)
 
+                if let presenter = alertController.popoverPresentationController {
+                    presenter.permittedArrowDirections = .init(rawValue: 0)
+                    presenter.sourceView = UIViewController.topViewController?.view
+                    presenter.sourceRect = CGRect(x: UIViewController.topViewController?.view.bounds.midX ?? 0, y: UIViewController.topViewController?.view.bounds.midY ?? 0, width: 0, height: 0)
+                }
+
                 UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
             }
         } else {
