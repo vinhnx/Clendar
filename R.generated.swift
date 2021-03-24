@@ -134,42 +134,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 19 files.
+  /// This `R.file` struct is generated, and contains static references to 5 files.
   struct file {
     /// Resource file `Settings.bundle`.
     static let settingsBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Settings", pathExtension: "bundle")
-    /// Resource file `dark_icon_120@2x.png`.
-    static let dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_120@2x", pathExtension: "png")
-    /// Resource file `dark_icon_180@3x.png`.
-    static let dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dark_icon_180@3x", pathExtension: "png")
-    /// Resource file `dim_dark_icon_120@2x.png`.
-    static let dim_dark_icon_1202xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_120@2x", pathExtension: "png")
-    /// Resource file `dim_dark_icon_180@3x.png`.
-    static let dim_dark_icon_1803xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "dim_dark_icon_180@3x", pathExtension: "png")
-    /// Resource file `icon1_120.png`.
-    static let icon1_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon1_120", pathExtension: "png")
-    /// Resource file `icon1_180.png`.
-    static let icon1_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon1_180", pathExtension: "png")
-    /// Resource file `icon2_120.png`.
-    static let icon2_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon2_120", pathExtension: "png")
-    /// Resource file `icon2_180.png`.
-    static let icon2_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon2_180", pathExtension: "png")
     /// Resource file `icon3_120.png`.
     static let icon3_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon3_120", pathExtension: "png")
     /// Resource file `icon3_180.png`.
     static let icon3_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon3_180", pathExtension: "png")
-    /// Resource file `icon4_120.png`.
-    static let icon4_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon4_120", pathExtension: "png")
-    /// Resource file `icon4_180.png`.
-    static let icon4_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon4_180", pathExtension: "png")
-    /// Resource file `icon5_120.png`.
-    static let icon5_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon5_120", pathExtension: "png")
-    /// Resource file `icon5_180.png`.
-    static let icon5_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon5_180", pathExtension: "png")
-    /// Resource file `icon6_120.png`.
-    static let icon6_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon6_120", pathExtension: "png")
-    /// Resource file `icon6_180.png`.
-    static let icon6_180Png = Rswift.FileResource(bundle: R.hostingBundle, name: "icon6_180", pathExtension: "png")
     /// Resource file `original_120.png`.
     static let original_120Png = Rswift.FileResource(bundle: R.hostingBundle, name: "original_120", pathExtension: "png")
     /// Resource file `original_180.png`.
@@ -178,54 +150,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "Settings", withExtension: "bundle")`
     static func settingsBundle(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.settingsBundle
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "dark_icon_120@2x", withExtension: "png")`
-    static func dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.dark_icon_1202xPng
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "dark_icon_180@3x", withExtension: "png")`
-    static func dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.dark_icon_1803xPng
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "dim_dark_icon_120@2x", withExtension: "png")`
-    static func dim_dark_icon_1202xPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.dim_dark_icon_1202xPng
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "dim_dark_icon_180@3x", withExtension: "png")`
-    static func dim_dark_icon_1803xPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.dim_dark_icon_1803xPng
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon1_120", withExtension: "png")`
-    static func icon1_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon1_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon1_180", withExtension: "png")`
-    static func icon1_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon1_180Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon2_120", withExtension: "png")`
-    static func icon2_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon2_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon2_180", withExtension: "png")`
-    static func icon2_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon2_180Png
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -238,42 +162,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "icon3_180", withExtension: "png")`
     static func icon3_180Png(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.icon3_180Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon4_120", withExtension: "png")`
-    static func icon4_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon4_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon4_180", withExtension: "png")`
-    static func icon4_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon4_180Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon5_120", withExtension: "png")`
-    static func icon5_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon5_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon5_180", withExtension: "png")`
-    static func icon5_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon5_180Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon6_120", withExtension: "png")`
-    static func icon6_120Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon6_120Png
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    /// `bundle.url(forResource: "icon6_180", withExtension: "png")`
-    static func icon6_180Png(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icon6_180Png
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -292,102 +180,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 19 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
-    /// Image `dark_icon_120`.
-    static let dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_120")
-    /// Image `dark_icon_180`.
-    static let dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_icon_180")
-    /// Image `dim_dark_icon_120`.
-    static let dim_dark_icon_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_120")
-    /// Image `dim_dark_icon_180`.
-    static let dim_dark_icon_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "dim_dark_icon_180")
-    /// Image `icon1_120`.
-    static let icon1_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon1_120")
-    /// Image `icon1_180`.
-    static let icon1_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon1_180")
-    /// Image `icon2_120`.
-    static let icon2_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon2_120")
-    /// Image `icon2_180`.
-    static let icon2_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon2_180")
     /// Image `icon3_120`.
     static let icon3_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon3_120")
     /// Image `icon3_180`.
     static let icon3_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon3_180")
-    /// Image `icon4_120`.
-    static let icon4_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon4_120")
-    /// Image `icon4_180`.
-    static let icon4_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon4_180")
-    /// Image `icon5_120`.
-    static let icon5_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon5_120")
-    /// Image `icon5_180`.
-    static let icon5_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon5_180")
-    /// Image `icon6_120`.
-    static let icon6_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon6_120")
-    /// Image `icon6_180`.
-    static let icon6_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon6_180")
     /// Image `original_120`.
     static let original_120 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_120")
     /// Image `original_180`.
     static let original_180 = Rswift.ImageResource(bundle: R.hostingBundle, name: "original_180")
     /// Image `spotlight_icon`.
     static let spotlight_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "spotlight_icon")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "dark_icon_120", bundle: ..., traitCollection: ...)`
-    static func dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dark_icon_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "dark_icon_180", bundle: ..., traitCollection: ...)`
-    static func dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dark_icon_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "dim_dark_icon_120", bundle: ..., traitCollection: ...)`
-    static func dim_dark_icon_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dim_dark_icon_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "dim_dark_icon_180", bundle: ..., traitCollection: ...)`
-    static func dim_dark_icon_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.dim_dark_icon_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon1_120", bundle: ..., traitCollection: ...)`
-    static func icon1_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon1_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon1_180", bundle: ..., traitCollection: ...)`
-    static func icon1_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon1_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon2_120", bundle: ..., traitCollection: ...)`
-    static func icon2_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon2_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon2_180", bundle: ..., traitCollection: ...)`
-    static func icon2_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon2_180, compatibleWith: traitCollection)
-    }
-    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "icon3_120", bundle: ..., traitCollection: ...)`
@@ -400,48 +204,6 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icon3_180", bundle: ..., traitCollection: ...)`
     static func icon3_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon3_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon4_120", bundle: ..., traitCollection: ...)`
-    static func icon4_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon4_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon4_180", bundle: ..., traitCollection: ...)`
-    static func icon4_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon4_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon5_120", bundle: ..., traitCollection: ...)`
-    static func icon5_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon5_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon5_180", bundle: ..., traitCollection: ...)`
-    static func icon5_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon5_180, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon6_120", bundle: ..., traitCollection: ...)`
-    static func icon6_120(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon6_120, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "icon6_180", bundle: ..., traitCollection: ...)`
-    static func icon6_180(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.icon6_180, compatibleWith: traitCollection)
     }
     #endif
 
