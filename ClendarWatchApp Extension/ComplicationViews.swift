@@ -9,7 +9,6 @@
 import SwiftUI
 import ClockKit
 
-
 struct ComplicationViewCircular: View {
     let date: Date
 

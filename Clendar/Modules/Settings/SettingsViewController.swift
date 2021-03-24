@@ -298,7 +298,7 @@ final class SettingsViewController: FormViewController {
 
         #if !targetEnvironment(macCatalyst)
         builder += enableHapticFeedback
-        builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
+        // builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += siriShortcutButton
         #endif
 

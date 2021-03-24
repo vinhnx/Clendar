@@ -112,7 +112,7 @@ struct ContentView: View {
                     store.showSettingsState = true
                 },
                 label: {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "slider.horizontal.3")
                         .frame(width: 50, height: 50)
                 }
             )
@@ -190,6 +190,11 @@ struct ContentView: View {
 
 extension ContentView {
     private func configure() {
+//        if !UserDefaults.didChangeAlternativeAppIcon {
+//            UserDefaults.didChangeAlternativeAppIcon = true
+//            UIApplication.shared.setAlternateIconName(nil)
+//        }
+
         isMonthView = SettingsManager.isOnMonthViewSettings
         selectDate(Date())
     }

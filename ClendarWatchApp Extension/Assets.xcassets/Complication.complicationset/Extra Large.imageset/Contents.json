@@ -1,21 +1,21 @@
 {
   "images" : [
     {
+      "filename" : "extra-large38mm@2x.png",
+      "idiom" : "watch",
       "screen-width" : "<=145",
-      "idiom" : "watch",
-      "scale" : "2x",
-      "filename" : "extra-large38mm@2x.png"
+      "scale" : "2x"
     },
     {
-      "scale" : "2x",
+      "idiom" : "watch",
       "filename" : "extra-large40mm@2x.png",
-      "idiom" : "watch",
-      "screen-width" : ">161"
+      "screen-width" : ">161",
+      "scale" : "2x"
     },
     {
+      "idiom" : "watch",
       "filename" : "extra-large42mm@2x.png",
       "screen-width" : ">145",
-      "idiom" : "watch",
       "scale" : "2x"
     },
     {

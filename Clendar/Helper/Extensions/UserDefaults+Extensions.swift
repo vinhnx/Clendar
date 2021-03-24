@@ -11,4 +11,7 @@ import Foundation
 extension UserDefaults {
     @UserDefault("savedCalendarIDs", defaultValue: [])
     static var savedCalendarIDs: [String]
+
+    @UserDefault("didChangeAlternativeAppIcon", defaultValue: false)
+    static var didChangeAlternativeAppIcon: Bool
 }
