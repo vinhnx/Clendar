@@ -1,14 +1,10 @@
 {
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  },
   "images" : [
     {
-      "scale" : "2x",
-      "screen-width" : ">161",
       "filename" : "graphic-corner40mm@2x.png",
-      "idiom" : "watch"
+      "idiom" : "watch",
+      "screen-width" : ">161",
+      "scale" : "2x"
     },
     {
       "scale" : "2x",
@@ -16,5 +12,9 @@
       "filename" : "graphic-corner44mm@2x.png",
       "idiom" : "watch"
     }
-  ]
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
 }

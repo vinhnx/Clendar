@@ -5,44 +5,44 @@
   },
   "assets" : [
     {
-      "filename" : "Circular.imageset",
       "role" : "circular",
+      "filename" : "Circular.imageset",
       "idiom" : "watch"
     },
     {
+      "role" : "modular",
       "filename" : "Modular.imageset",
-      "idiom" : "watch",
-      "role" : "modular"
+      "idiom" : "watch"
     },
     {
       "role" : "utilitarian",
-      "idiom" : "watch",
-      "filename" : "Utilitarian.imageset"
+      "filename" : "Utilitarian.imageset",
+      "idiom" : "watch"
     },
     {
-      "role" : "extra-large",
       "filename" : "Extra Large.imageset",
-      "idiom" : "watch"
-    },
-    {
-      "role" : "graphic-corner",
-      "filename" : "Graphic Corner.imageset",
-      "idiom" : "watch"
-    },
-    {
-      "role" : "graphic-circular",
-      "filename" : "Graphic Circular.imageset",
-      "idiom" : "watch"
-    },
-    {
-      "role" : "graphic-bezel",
       "idiom" : "watch",
+      "role" : "extra-large"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "graphic-corner",
+      "filename" : "Graphic Corner.imageset"
+    },
+    {
+      "filename" : "Graphic Circular.imageset",
+      "role" : "graphic-circular",
+      "idiom" : "watch"
+    },
+    {
+      "idiom" : "watch",
+      "role" : "graphic-bezel",
       "filename" : "Graphic Bezel.imageset"
     },
     {
       "filename" : "Graphic Large Rectangular.imageset",
-      "role" : "graphic-large-rectangular",
-      "idiom" : "watch"
+      "idiom" : "watch",
+      "role" : "graphic-large-rectangular"
     },
     {
       "role" : "graphic-extra-large",
