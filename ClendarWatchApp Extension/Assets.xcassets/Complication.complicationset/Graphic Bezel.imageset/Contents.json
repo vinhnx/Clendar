@@ -5,16 +5,16 @@
   },
   "images" : [
     {
-      "screen-width" : ">161",
       "filename" : "graphic-bezel40mm@2x.png",
-      "scale" : "2x",
-      "idiom" : "watch"
+      "screen-width" : ">161",
+      "idiom" : "watch",
+      "scale" : "2x"
     },
     {
-      "scale" : "2x",
-      "filename" : "graphic-bezel44mm@2x.png",
+      "screen-width" : ">183",
       "idiom" : "watch",
-      "screen-width" : ">183"
+      "filename" : "graphic-bezel44mm@2x.png",
+      "scale" : "2x"
     }
   ]
 }

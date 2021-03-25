@@ -3,26 +3,26 @@
     {
       "filename" : "extra-large38mm@2x.png",
       "idiom" : "watch",
-      "screen-width" : "<=145",
-      "scale" : "2x"
+      "scale" : "2x",
+      "screen-width" : "<=145"
     },
     {
+      "screen-width" : ">161",
       "idiom" : "watch",
       "filename" : "extra-large40mm@2x.png",
-      "screen-width" : ">161",
       "scale" : "2x"
     },
     {
+      "screen-width" : ">145",
       "idiom" : "watch",
       "filename" : "extra-large42mm@2x.png",
-      "screen-width" : ">145",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "screen-width" : ">183",
+      "filename" : "extra-large44mm@2x.png",
       "scale" : "2x",
-      "filename" : "extra-large44mm@2x.png"
+      "screen-width" : ">183"
     }
   ],
   "info" : {
