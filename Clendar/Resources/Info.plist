@@ -10,12 +10,42 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
+			<key>icon4</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon4_120</string>
+					<string>icon4_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
 			<key>icon3</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>icon3_120</string>
 					<string>icon3_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>icon2</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon2_120</string>
+					<string>icon2_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>icon1</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon1_120</string>
+					<string>icon1_180</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<true/>

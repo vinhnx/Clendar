@@ -37,8 +37,8 @@ struct SettingsManager {
     @UserDefault("enableHapticFeedback", defaultValue: true)
     static var enableHapticFeedback: Bool
 
-//    @UserDefault("currentAppIcon", defaultValue: AppIcon.defaultValue.rawValue)
-//    static var currentAppIcon: Int
+    @UserDefault("currentAppIcon", defaultValue: AppIcon.defaultValue.rawValue)
+    static var currentAppIcon: Int
 
     @UserDefault("widgetTheme", defaultValue: WidgetTheme.defaultValue.rawValue)
     static var widgetTheme: Int

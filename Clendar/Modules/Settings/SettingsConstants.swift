@@ -15,7 +15,10 @@ protocol SettingsValueMappable {
 
 enum AppIcon: Int, CaseIterable {
     case `default`
+    case icon1
+    case icon2
     case icon3
+    case icon4
     case original
 
     // MARK: Internal
@@ -27,7 +30,10 @@ enum AppIcon: Int, CaseIterable {
     var iconName: String? {
         switch self {
         case .default: return nil
+        case .icon1: return "icon1"
+        case .icon2: return "icon2"
         case .icon3: return "icon3"
+        case .icon4: return "icon4"
         case .original: return "original"
         }
     }
@@ -42,7 +48,7 @@ enum AppIcon: Int, CaseIterable {
     var displayImage: UIImage? {
         switch self {
         case .default: return Bundle.main.icon
-        case .icon3: return "icon3_120".asImage
+        case .icon1, .icon2, .icon3, .icon4: return "\(iconName ?? "")_120".asImage
         case .original: return "original_120".asImage
         }
     }
