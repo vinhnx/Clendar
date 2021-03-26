@@ -56,6 +56,7 @@ enum AppIcon: Int, CaseIterable {
 
 // TODO: add all current color schemes pallete as premium features?
 enum AppTheme: Int, CaseIterable, SettingsValueMappable {
+    case system
     case light
     case dark
     case trueLight
@@ -70,6 +71,7 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
 
     var localizedText: String {
         switch self {
+        case .system: return NSLocalizedString("Follow system", comment: "")
         case .dark: return NSLocalizedString("Dark", comment: "")
         case .light: return NSLocalizedString("Light", comment: "")
         case .trueDark: return NSLocalizedString("True Dark", comment: "")
@@ -82,6 +84,7 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
 
     static func mapFromText(_ text: String?) -> Self {
         switch text {
+        case AppTheme.system.localizedText: return .system
         case AppTheme.dark.localizedText: return .dark
         case AppTheme.light.localizedText: return .light
         case AppTheme.trueDark.localizedText: return .trueDark

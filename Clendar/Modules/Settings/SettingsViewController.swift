@@ -43,7 +43,7 @@ final class SettingsNavigationController: BaseNavigationController {
     }
 
     func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+        overrideUserInterfaceStyle = isDarkMode ? .dark : .light
     }
 }
 
@@ -68,10 +68,20 @@ final class SettingsViewController: FormViewController {
             genLightHaptic()
 
             let type = AppTheme.mapFromText(selected?.title)
-            SettingsManager.darkModeActivated = type == .dark || type == .trueDark
             SettingsManager.currentAppTheme = type.rawValue
 
-            UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
+            switch type {
+            case .light, .trueLight, .E4ECF5:
+                SettingsManager.darkModeActivated = false
+                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .light
+            case .dark, .trueDark:
+                SettingsManager.darkModeActivated = true
+                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .dark
+            default:
+                SettingsManager.darkModeActivated = isDarkMode
+                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
+            }
+
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
         }
         return instance

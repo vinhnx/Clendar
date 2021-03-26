@@ -164,6 +164,16 @@ var appColorScheme: ColorScheme {
     #if os(watchOS)
     return ColorScheme.dark
     #else
-    return SettingsManager.darkModeActivated ? ColorScheme.dark : .light
+    switch SettingsManager.currentAppTheme {
+    case AppTheme.light.rawValue,
+         AppTheme.trueLight.rawValue,
+         AppTheme.E4ECF5.rawValue:
+        return .light
+    case AppTheme.dark.rawValue,
+         AppTheme.trueDark.rawValue:
+        return .dark
+    default:
+        return .dark
+    }
     #endif
 }
