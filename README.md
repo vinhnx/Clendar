@@ -99,7 +99,11 @@ Action
 
 Contributing is more than welcome, if you feel like helping the app, or want to add new feature, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
 
-**Inspiration: https://github.com/jeffreybergier/WaterMe**
+### License
+
+[MIT License](https://github.com/vinhnx/Clendar/blob/main/LICENSE)
+
+** Open-source Inspiration: https://github.com/jeffreybergier/WaterMe**
 
 And, if you like, you can download the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tips via In-App Purchase options.
 
