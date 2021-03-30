@@ -99,12 +99,6 @@ Action
 
 Contributing is more than welcome, if you feel like helping the app, or want to add new feature, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
 
-### Why GPL License?
-
-I want Clendar to be open source but I don't want people to republish the app with a different name on the App Store. Please do not fork this project and submit to the App Store under your own account.
-
-The GPL requires that you give the original developer credit and it also requires that the modified app also be open source. So please don't do this! 🙏🏻
-
 **Inspiration: https://github.com/jeffreybergier/WaterMe**
 
 And, if you like, you can download the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tips via In-App Purchase options.
