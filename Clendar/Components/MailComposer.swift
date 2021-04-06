@@ -33,14 +33,14 @@ class MailComposer: NSObject {
         guard let url = URL(string: escapedMailto) else { return }
 
         guard UIApplication.shared.canOpenURL(url) else {
-            Popup.showErrorMessage(NSLocalizedString("Unable to determine email sending state", comment: ""))
+            AlertManager.show(message: NSLocalizedString("Unable to determine email sending state", comment: ""))
             return
         }
 
         UIApplication.shared.open(url, options: [.universalLinksOnly : false]) { (success) in
             // Handle success/failure
             if !success {
-                Popup.showErrorMessage(NSLocalizedString("Unable to determine email sending state", comment: ""))
+                AlertManager.show(message: NSLocalizedString("Unable to determine email sending state", comment: ""))
             }
         }
     }

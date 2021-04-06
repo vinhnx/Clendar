@@ -183,18 +183,13 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
             confettiCounter += 1
-            Popup.showSuccess("Tip received. Thank you so much and wish you have a nice day! 😊")
+            AlertManager.show(message: "Tip received. Thank you so much and wish you have a nice day! 😊")
         }
     }
 }
 
 extension ContentView {
     private func configure() {
-//        if !UserDefaults.didChangeAlternativeAppIcon {
-//            UserDefaults.didChangeAlternativeAppIcon = true
-//            UIApplication.shared.setAlternateIconName(nil)
-//        }
-
         isMonthView = SettingsManager.isOnMonthViewSettings
         selectDate(Date())
     }

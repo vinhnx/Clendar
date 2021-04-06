@@ -68,8 +68,6 @@
 		A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */; };
 		A31AFDCD25CE79FA0092D44D /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; };
 		A31AFDCE25CE79FA0092D44D /* ConfettiSwiftUI in CopyFiles */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		A31AFDEA25CE944C0092D44D /* Loaf in Frameworks */ = {isa = PBXBuildFile; productRef = A31AFDE925CE944C0092D44D /* Loaf */; };
-		A31AFDF125CE95260092D44D /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AFDF025CE95260092D44D /* PopUp.swift */; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
 		A31F616D260D62C6003CFE1C /* icon2_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A31F615C260D62C5003CFE1C /* icon2_180.png */; };
@@ -343,7 +341,6 @@
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
 		A3187E8425499FE1009524DF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButtonStyle.swift; sourceTree = "<group>"; };
-		A31AFDF025CE95260092D44D /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A31F615C260D62C5003CFE1C /* icon2_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2_180.png; sourceTree = "<group>"; };
@@ -500,7 +497,6 @@
 			files = (
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
-				A31AFDEA25CE944C0092D44D /* Loaf in Frameworks */,
 				A3209B45258CE14C002470CF /* Shift in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
@@ -1035,7 +1031,6 @@
 				A3187E8425499FE1009524DF /* AppInfo.swift */,
 				A33F8114224742F7009CC46A /* WorkItem.swift */,
 				A3F25977224771F2009A50B6 /* AlertManager.swift */,
-				A31AFDF025CE95260092D44D /* PopUp.swift */,
 				A30E48222541F4EF00B4B027 /* Utilities.swift */,
 				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
 				A38199FD25484E7700C71D41 /* Layout.swift */,
@@ -1161,7 +1156,6 @@
 				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
 				A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */,
-				A31AFDE925CE944C0092D44D /* Loaf */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1265,7 +1259,6 @@
 				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
 				A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1678,7 +1671,6 @@
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
 				A31258BF2551C32000891CE2 /* AppIconChooserViewContronller.swift in Sources */,
 				A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */,
-				A31AFDF125CE95260092D44D /* PopUp.swift in Sources */,
 				A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */,
 				A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */,
 				A30BFEB925654CE700BA7F38 /* ClendarApp.swift in Sources */,
@@ -2264,14 +2256,6 @@
 				minimumVersion = 0.2.1;
 			};
 		};
-		A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/schmidyy/Loaf";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.7.0;
-			};
-		};
 		A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift";
@@ -2358,11 +2342,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		A31AFDE925CE944C0092D44D /* Loaf */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A31AFDE825CE944C0092D44D /* XCRemoteSwiftPackageReference "Loaf" */;
-			productName = Loaf;
 		};
 		A3209B44258CE14C002470CF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -63,16 +63,16 @@ struct PurchaseButton: View {
 
             case .error(let error):
                 switch error.code {
-                case .unknown: Popup.showInfo("Unknown error. Please contact support")
-                case .clientInvalid: Popup.showInfo("Not allowed to make the payment")
                 case .paymentCancelled: break
-                case .paymentInvalid: Popup.showInfo("The purchase identifier was invalid")
-                case .paymentNotAllowed: Popup.showInfo("The device is not allowed to make the payment")
-                case .storeProductNotAvailable: Popup.showInfo("The product is not available in the current storefront")
-                case .cloudServicePermissionDenied: Popup.showInfo("Access to cloud service information is not allowed")
-                case .cloudServiceNetworkConnectionFailed: Popup.showInfo("Could not connect to the network")
-                case .cloudServiceRevoked: Popup.showInfo("User has revoked permission to use this cloud service")
-                default: Popup.showInfo((error as NSError).localizedDescription)
+                case .unknown: AlertManager.show(message: "Unknown error. Please contact support")
+                case .clientInvalid: AlertManager.show(message: "Not allowed to make the payment")
+                case .paymentInvalid: AlertManager.show(message: "The purchase identifier was invalid")
+                case .paymentNotAllowed: AlertManager.show(message: "The device is not allowed to make the payment")
+                case .storeProductNotAvailable: AlertManager.show(message: "The product is not available in the current storefront")
+                case .cloudServicePermissionDenied: AlertManager.show(message: "Access to cloud service information is not allowed")
+                case .cloudServiceNetworkConnectionFailed: AlertManager.show(message: "Could not connect to the network")
+                case .cloudServiceRevoked: AlertManager.show(message: "User has revoked permission to use this cloud service")
+                default: AlertManager.show(message: (error as NSError).localizedDescription)
                 }
             }
         }

@@ -90,23 +90,41 @@ enum AlertManager {
 		showActionSheet(title: title, message: message, actionTitle: actionTitle, okAction: okAction, onCancel: nil)
 	}
 
-	/// Show OK only alert
-	///
-	/// - Parameters:
-	///   - title: the title string
-	///   - message: the message string
-	///   - okAction: the completion handler to execute when user tap on "OK"
-	static func showNoCancelAlertWithMessage(title: String? = nil, message: String, okAction: VoidBlock? = nil) {
-        Popup.showInfo(message)
-	}
+    /// Show OK only alert
+    ///
+    /// - Parameters:
+    ///   - title: the title string
+    ///   - message: the message string
+    ///   - okAction: the completion handler to execute when user tap on "OK"
+    static func show(title: String? = nil, message: String, okAction: VoidBlock? = nil) {
+        DispatchQueue.main.async {
+            guard shouldShowAlert else { return }
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
+                okAction?()
+            }
 
-	/// Show error alert
-	/// - Parameters:
-	///   - error: ClendarError instance that conforms to LocalizedError protocol
-	///   - okAction: optional action
-	static func showWithError(_ error: Error, okAction: VoidBlock? = nil) {
-        Popup.showError(error)
-	}
+            alertController.addAction(okAction)
+            alertController.dismissAndShow()
+        }
+    }
+
+    /// Show error alert
+    /// - Parameters:
+    ///   - error: ClendarError instance that conforms to LocalizedError protocol
+    ///   - okAction: optional action
+    static func showWithError(_ error: Error, okAction: VoidBlock? = nil) {
+        DispatchQueue.main.async {
+            guard shouldShowAlert else { return }
+            let alertController = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default) { _ in
+                okAction?()
+            }
+
+            alertController.addAction(okAction)
+            alertController.dismissAndShow()
+        }
+    }
 
 	/// General showing Settings alert constuctor
 	///

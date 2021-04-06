@@ -73,12 +73,8 @@ struct EventListView: View {
                 let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
                     Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
                         switch result {
-                        case .success:
-                            genSuccessHaptic()
-                            Popup.showInfo("Event deleted!")
-                        case .failure(let error):
-                            genErrorHaptic()
-                            Popup.showError(error)
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
                 }
@@ -87,12 +83,8 @@ struct EventListView: View {
                 let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
                     Shift.shared.deleteEvent(identifier: id, span: .futureEvents) { (result) in
                         switch result {
-                        case .success:
-                            genSuccessHaptic()
-                            Popup.showInfo("Events deleted!")
-                        case .failure(let error):
-                            genErrorHaptic()
-                            Popup.showError(error)
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
                 }
@@ -111,12 +103,8 @@ struct EventListView: View {
                 AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
                     Shift.shared.deleteEvent(identifier: id) { (result) in
                         switch result {
-                        case .success:
-                            genSuccessHaptic()
-                            Popup.showInfo("Event deleted!")
-                        case .failure(let error):
-                            genErrorHaptic()
-                            Popup.showError(error)
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
                 })
