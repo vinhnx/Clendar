@@ -71,7 +71,7 @@ struct ContentView: View {
         Button(
             action: {
                 genLightHaptic()
-                store.showCreateEventState = true
+                store.showCreateEventState.toggle()
             }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
@@ -109,7 +109,7 @@ struct ContentView: View {
             Button(
                 action: {
                     genLightHaptic()
-                    store.showSettingsState = true
+                    store.showSettingsState.toggle()
                 },
                 label: {
                     Image(systemName: "slider.horizontal.3")

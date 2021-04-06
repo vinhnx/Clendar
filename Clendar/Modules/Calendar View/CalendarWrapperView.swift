@@ -37,8 +37,8 @@ struct CalendarWrapperView: UIViewRepresentable {
         calendarView.calendarAppearanceDelegate = context.coordinator
         calendarView.animatorDelegate = context.coordinator
         calendarView.calendarDelegate = context.coordinator
-        calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+//        calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return calendarView
     }
 
