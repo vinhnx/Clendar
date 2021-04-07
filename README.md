@@ -61,7 +61,7 @@ Core:
 -   iPadOS
 -   WidgetKit
 -   SiriKit
--   EventKit/EvenKit UI
+-   EventKit/EvenKit UI - wrapper with my own [Shift package](https://github.com/vinhnx/Shift) 📆
 -   WatchKit
 -   Combine
 -   Catalyst
@@ -94,6 +94,11 @@ Action
 -   iOS 14.0
 -   watchOS 7.0
 -   Ruby (for Fastlane build automation)
+
+### My own Swift Packages currently used in Clendar
+
++ [Shift](https://github.com/vinhnx/Shift) - Result-based wrapper for EventKit. SwiftUI supported!
++ [Laden](https://github.com/vinhnx/Laden) - SwiftUI loading indicator view
 
 ### Contributing
 
