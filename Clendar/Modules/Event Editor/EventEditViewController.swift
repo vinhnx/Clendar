@@ -14,11 +14,13 @@ class EventEditViewController: EKEventEditViewController {
     // MARK: Lifecycle
 
     init(
+        event: EKEvent? = nil,
         eventStore: EKEventStore = Shift.shared.eventStore,
         delegate: EKEventEditViewDelegate?
     ) {
         super.init(nibName: nil, bundle: nil)
         self.eventStore = eventStore
+        self.event = event
         editViewDelegate = delegate
     }
 

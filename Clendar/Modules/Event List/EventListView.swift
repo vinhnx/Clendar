@@ -11,7 +11,8 @@ import Shift
 
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore
-    @State private var selectedEvent: ClendarEvent?
+    @State private var editingEvent: ClendarEvent?
+
     var events = [ClendarEvent]()
 
     var body: some View {
@@ -31,21 +32,16 @@ struct EventListView: View {
                             EventListRow(event: event)
                         }
                         .contextMenu(menuItems: {
-                            Button(
-                                action: { self.selectedEvent = event },
-                                label: {
-                                    Text("Edit")
-                                    Image(systemName: "square.and.pencil")
-                                }
-                            )
-                            .help("Edit Event")
+                            Button(action: { editingEvent = event }, label: {
+                                Text("Edit")
+                                Image(systemName: "square.and.pencil")
+                            })
+                            .help("Preview Event")
 
-                            Button(
-                                action: { handleDeleteEvent(event) },
-                                label: {
-                                    Text("Delete")
-                                    Image(systemName: "trash")
-                                }
+                            Button(action: { handleDeleteEvent(event) }, label: {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                            }
                             )
                             .help("Delete Event")
                         })
@@ -53,8 +49,8 @@ struct EventListView: View {
                 }
             }
         }
-        .sheet(item: $selectedEvent) { event in
-            EventViewerWrapperView(event: event)
+        .sheet(item: $editingEvent) { (event) in
+            EventEditorWrapperView(event: event)
                 .environmentObject(store)
                 .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
         }

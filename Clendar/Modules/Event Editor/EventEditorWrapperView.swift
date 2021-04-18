@@ -43,6 +43,8 @@ internal class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDeleg
 struct EventEditorWrapperView: UIViewControllerRepresentable {
     @EnvironmentObject var store: SharedStore
 
+    var event: ClendarEvent?
+
     // MARK: - UIViewControllerRepresentable
 
     func makeCoordinator() -> EventEditorWrapperViewCoordinator {
@@ -51,6 +53,7 @@ struct EventEditorWrapperView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> EventEditViewController {
         EventEditViewController(
+            event: event?.event,
             eventStore: Shift.shared.eventStore,
             delegate: context.coordinator
         )
