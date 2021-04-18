@@ -36,7 +36,7 @@ struct EventListView: View {
                                 Text("Edit")
                                 Image(systemName: "square.and.pencil")
                             })
-                            .help("Preview Event")
+                            .help("Edit Event")
 
                             Button(action: { handleDeleteEvent(event) }, label: {
                                 Text("Delete")
