@@ -75,17 +75,17 @@ struct ContentView: View {
             }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
-                if SettingsManager.useExperimentalCreateEventMode {
+//                if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
                         showCreateEventState: $store.showCreateEventState
                     )
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                } else {
-                    EventEditorWrapperView()
-                        .environmentObject(store)
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                }
+//                } else {
+//                    EventEditorWrapperView()
+//                        .environmentObject(store)
+//                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+//                }
             }
             .keyboardShortcut("n", modifiers: [.command])
     }
