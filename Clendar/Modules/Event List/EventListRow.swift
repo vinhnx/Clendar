@@ -30,7 +30,11 @@ struct EventListRow: View {
                             .accessibility(label: Text("Title of the event"))
                             .lineLimit(nil)
                             .font(.mediumFontWithSize(15))
-                            .foregroundColor(.appDark)
+                            .foregroundColor(
+                                ekEvent.isExpired()
+                                    ? .appGray
+                                    : .appDark
+                            )
                     }
                 }
             )
