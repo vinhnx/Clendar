@@ -12,8 +12,9 @@ import SwiftUI
 
 extension EKEvent: Identifiable {
     func isExpired() -> Bool {
+        if hasRecurrenceRules { return false }
         let currentDate = Date()
-        return self.startDate < currentDate
+        return startDate < currentDate
     }
 }
 

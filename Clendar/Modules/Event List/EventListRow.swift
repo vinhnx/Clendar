@@ -30,13 +30,12 @@ struct EventListRow: View {
                             .accessibility(label: Text("Title of the event"))
                             .lineLimit(nil)
                             .font(.mediumFontWithSize(15))
-                            .foregroundColor(
-                                ekEvent.isExpired()
-                                    ? .appGray
-                                    : .appDark
-                            )
+                            .foregroundColor(.appDark)
                     }
                 }
+            )
+            .opacity(
+                ekEvent.isExpired() ? 0.3 : 1.0
             )
             .groupBoxStyle(CardGroupBoxStyle())
         }
