@@ -10,7 +10,12 @@ import UIKit
 import EventKit
 import SwiftUI
 
-extension EKEvent: Identifiable {}
+extension EKEvent: Identifiable {
+    func isExpired() -> Bool {
+        let currentDate = Date()
+        return self.startDate < currentDate
+    }
+}
 
 class ClendarEvent: Hashable, Identifiable {
 	// MARK: Lifecycle
