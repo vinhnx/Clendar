@@ -34,9 +34,7 @@ struct EventListRow: View {
                     }
                 }
             )
-            .opacity(
-                ekEvent.isExpired() ? 0.3 : 1.0
-            )
+            .opacity(ekEvent.isExpired() ? 0.3 : 1.0) // gray out past events https://github.com/vinhnx/Clendar/issues/146
             .groupBoxStyle(CardGroupBoxStyle())
         }
         else {
