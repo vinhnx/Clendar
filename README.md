@@ -36,7 +36,7 @@ You can create an "Hello, World!" app with just a few lines of code (check out t
 
 SwiftUI give you the most flexible tool an Apple developer could ever ask for, all you need is a bit of creativity, and the [possibilities](https://github.com/Juanpe/About-SwiftUI), [are](https://github.com/chinsyo/awesome-swiftui), [limitless](https://github.com/onmyway133/awesome-swiftui).
 
-Clendar would not be possible without the public knowledge of the community about SwiftUI that I came across often while learning about the technologies and to build the app. To name a few, in no particular order:
+Clendar would not be possible without the public knowledge of the community. To name a few, in no particular order:
 
 -   https://swiftwithmajid.com
 -   https://raywenderlich.com
