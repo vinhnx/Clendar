@@ -104,6 +104,15 @@ Action
 
 Contributing is more than welcome, if you feel like helping the app, or want to add new feature, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
 
+### Contributors
+
+Huge thanks everyone who took their precious time and effort to contribute to the project.
+
++ [@AlexanderSutul](https://github.com/AlexanderSutul)
++ [your name here?...](https://github.com/vinhnx/Clendar/issues)
+
+💡🧡
+
 ### License
 
 [MIT License](https://github.com/vinhnx/Clendar/blob/main/LICENSE)
