@@ -325,7 +325,7 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += defaultEventDuration
         // builder += quickEventMode
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
+        // builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
 
         // Sharing
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))

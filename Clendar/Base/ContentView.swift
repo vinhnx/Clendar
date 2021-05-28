@@ -112,7 +112,7 @@ struct ContentView: View {
                     store.showSettingsState.toggle()
                 },
                 label: {
-                    Image(systemName: "slider.horizontal.3")
+                    Image(systemName: "gearshape")
                         .frame(width: 50, height: 50)
                 }
             )
@@ -126,7 +126,7 @@ struct ContentView: View {
             .keyboardShortcut(",", modifiers: [.command])
         }
         .accentColor(.appRed)
-        .font(.boldFontWithSize(18))
+        .font(.regularFontWithSize(20))
     }
 
     // MARK: - Body
