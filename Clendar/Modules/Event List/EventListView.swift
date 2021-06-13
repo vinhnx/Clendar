@@ -21,7 +21,7 @@ struct EventListView: View {
                 EmptyView()
             } else {
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(events, id: \.self) { event in
+                    ForEach(events, id: \.id) { event in
                         NavigationLink(
                             destination:
                                 EventViewer(event: event)
