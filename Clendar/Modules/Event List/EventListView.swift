@@ -9,6 +9,8 @@
 import SwiftUI
 import Shift
 
+// TODO: convert ForEach VStack -> List
+
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore
     @State private var editingEvent: ClendarEvent?
@@ -21,7 +23,7 @@ struct EventListView: View {
                 EmptyView()
             } else {
                 VStack(alignment: .leading, spacing: 10) {
-                    ForEach(events, id: \.id) { event in
+                    ForEach(events) { event in
                         NavigationLink(
                             destination:
                                 EventViewer(event: event)
@@ -41,8 +43,7 @@ struct EventListView: View {
                             Button(action: { handleDeleteEvent(event) }, label: {
                                 Text("Delete")
                                 Image(systemName: "trash")
-                            }
-                            )
+                            })
                             .help("Delete Event")
                         })
                     }

@@ -26,7 +26,7 @@ struct ClendarPlusView: View {
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
 
-                ForEach(products, id: \.productIdentifier) { product in
+                ForEach(products) { product in
                     PurchaseButton(
                         isLoading: $isLoading,
                         model: product
@@ -111,3 +111,5 @@ struct ClendarPlusView: View {
         }
     }
 }
+
+extension SKProduct: Identifiable {}
