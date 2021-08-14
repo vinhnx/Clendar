@@ -21,26 +21,22 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
-        var entries = [WidgetEntry]()
 
-        let currentDate = Date()
+        Task {
+            var entries = [WidgetEntry]()
 
-        // swiftlint:disable:next force_unwrapping
-        let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
+            let currentDate = Date()
 
-        Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
-            switch result {
-            case let .success(events):
-                let clendarEvents = events.compactMap(ClendarEvent.init)
-                let entry = WidgetEntry(date: interval, events: clendarEvents)
-                entries.append(entry)
+            // swiftlint:disable:next force_unwrapping
+            let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
 
-                let timeline = Timeline(entries: entries, policy: .after(interval))
-                completion(timeline)
+            let events = try await Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate)
+            let clendarEvents = events.compactMap(ClendarEvent.init)
+            let entry = WidgetEntry(date: interval, events: clendarEvents)
+            entries.append(entry)
 
-            case let .failure(error):
-                logError(error)
-            }
+            let timeline = Timeline(entries: entries, policy: .after(interval))
+            completion(timeline)
         }
     }
 

@@ -67,22 +67,30 @@ struct EventListView: View {
                 alertController.addAction(cancelAction)
 
                 let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
-                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id, span: .thisEvent)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
+
                 }
                 alertController.addAction(deleteOne)
 
                 let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
-                    Shift.shared.deleteEvent(identifier: id, span: .futureEvents) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
+
                 }
                 alertController.addAction(deleteAll)
 
@@ -97,12 +105,16 @@ struct EventListView: View {
         } else {
             DispatchQueue.main.async {
                 AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
-                    Shift.shared.deleteEvent(identifier: id) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
+                    
                 })
             }
         }

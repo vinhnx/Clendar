@@ -31,15 +31,15 @@ class EventHandler {
         guard let eventID = event?.id else { return }
 
         AlertManager.showActionSheet(message: NSLocalizedString("Are you sure you want to delete this event?", comment: ""), showDelete: true, deleteAction: {
-            Shift.shared.deleteEvent(identifier: eventID) { result in
-                switch result {
-                case .success:
-                    genSuccessHaptic()
-                    UIViewController.topViewController?.dimissModal()
-                case let .failure(error):
+
+            Task {
+                do {
+                    try await Shift.shared.deleteEvent(identifier: eventID)
+                } catch {
                     AlertManager.showWithError(error)
                 }
             }
+            
         })
     }
 }

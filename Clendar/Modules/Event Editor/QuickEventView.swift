@@ -143,14 +143,13 @@ extension QuickEventView {
     private func createNewEvent(_: EventOverride? = nil) {
         guard quickEventStore.query.isEmpty == false else { return }
 
-        Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
-            switch result {
-            case let .success(event):
+        Task {
+            do {
+                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
                 genSuccessHaptic()
                 self.showCreateEventState = false
-                self.store.selectedDate = event.startDate
-
-            case let .failure(error):
+                self.store.selectedDate = createdEvent.startDate
+            } catch {
                 genErrorHaptic()
                 AlertManager.showWithError(error)
             }

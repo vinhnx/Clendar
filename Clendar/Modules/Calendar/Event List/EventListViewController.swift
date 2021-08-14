@@ -30,14 +30,13 @@ final class EventListViewController: BaseViewController {
     }
 
     func fetchEvents(for date: Date = Date()) {
-        Shift.shared.fetchEvents(for: date) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case let .success(events):
+        Task {
+            do {
+                let events = try await Shift.shared.fetchEvents(for: date)
                 let items = events.compactMap(ClendarEvent.init)
                 self.applySnapshot(items, date: date)
-
-            case let .failure(error): AlertManager.showWithError(error)
+            } catch {
+                AlertManager.showWithError(error)
             }
         }
     }
