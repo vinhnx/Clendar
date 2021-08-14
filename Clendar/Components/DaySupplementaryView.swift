@@ -30,17 +30,18 @@ class DaySupplementaryView: UIStackView {
             let view = DaySupplementaryView(frame: CGRect(x: dayView.center.x, y: dayView.frame.origin.y, width: size, height: size))
             view.axis = .horizontal
             view.distribution = .fill
-            Shift.shared.fetchEvents(for: date) { result in
-                switch result {
-                case let .success(events):
-                    if events.isEmpty == false {
+            
+            Task {
+                do {
+                    let events = try await Shift.shared.fetchEvents(for: date)
+                    if !events.isEmpty {
                         let colorView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
                         colorView.backgroundColor = UIColor.primaryColor
                         colorView.applyCircle()
                         view.addArrangedSubview(colorView)
                     }
-
-                case let .failure(error): logError(error)
+                } catch {
+                    logError(error)
                 }
             }
 

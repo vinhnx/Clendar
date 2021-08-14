@@ -8,8 +8,8 @@
 
 import EventKit
 import SwiftUI
-import Shift
 import ConfettiSwiftUI
+import Shift
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -202,7 +202,9 @@ extension ContentView {
     }
 
     private func fetchEvents(for date: Date = Date()) {
-        eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+        Task {
+            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+        }
     }
 }
 

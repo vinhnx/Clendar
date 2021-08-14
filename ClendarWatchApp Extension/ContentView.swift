@@ -39,7 +39,9 @@ struct ContentView: View {
                 }
             }
         }
-        .onAppear { eventKitWrapper.fetchEventsForToday() }
+        .task {
+            try? await eventKitWrapper.fetchEventsForToday()
+        }
     }
 }
 

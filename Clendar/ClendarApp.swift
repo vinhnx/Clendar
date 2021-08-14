@@ -8,8 +8,8 @@
 
 import SwiftDate
 import SwiftUI
-import Shift
 import SwiftyStoreKit
+import Shift
 
 // swiftlint:disable:next private_over_fileprivate
 fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?

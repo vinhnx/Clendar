@@ -41,9 +41,9 @@
         "package": "Shift",
         "repositoryURL": "https://github.com/vinhnx/Shift",
         "state": {
-          "branch": null,
-          "revision": "a3b7ad8b991b46fd7ff93f837bb4691bea4ea0a6",
-          "version": "0.3.1"
+          "branch": "feature/async_await",
+          "revision": "9a95a346ce0ea355e2a821932f08cc452322f061",
+          "version": null
         }
       },
       {

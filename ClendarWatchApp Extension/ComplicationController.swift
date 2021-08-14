@@ -8,8 +8,8 @@
 
 import ClockKit
 import SwiftUI
-import Shift
 import EventKit
+import Shift
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -44,9 +44,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        Shift.shared.fetchEventsRangeUntilEndOfDay(from: Date()) { result in
-            switch result {
-            case let .success(response):
+        Task {
+            do {
+                let response = try await Shift.shared.fetchEventsRangeUntilEndOfDay(from: Date())
                 let clendarEvents = response.compactMap(ClendarEvent.init)
                 if let template = self.makeTemplate(date: Date(), event: clendarEvents.first, complication: complication) {
                     handler(
@@ -55,10 +55,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 } else {
                     handler(nil)
                 }
-            case .failure:
+            }
+            catch {
                 handler(nil)
             }
         }
+
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
