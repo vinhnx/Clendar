@@ -2260,8 +2260,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift";
 			requirement = {
-				branch = feature/async_await;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
 			};
 		};
 		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {
