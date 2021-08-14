@@ -38,21 +38,6 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
             let timeline = Timeline(entries: entries, policy: .after(interval))
             completion(timeline)
         }
-
-//        Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
-//            switch result {
-//            case let .success(events):
-//                let clendarEvents = events.compactMap(ClendarEvent.init)
-//                let entry = WidgetEntry(date: interval, events: clendarEvents)
-//                entries.append(entry)
-//
-//                let timeline = Timeline(entries: entries, policy: .after(interval))
-//                completion(timeline)
-//
-//            case let .failure(error):
-//                logError(error)
-//            }
-//        }
     }
 
     func placeholder(in _: Context) -> WidgetEntry {
