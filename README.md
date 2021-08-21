@@ -1,3 +1,5 @@
+[![SwiftLint](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml)
+
 <h1 align="center">
 Clendar - minimal calendar
 </h1>
