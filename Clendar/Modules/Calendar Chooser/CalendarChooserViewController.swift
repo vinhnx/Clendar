@@ -18,7 +18,7 @@ class CalendarChooserNavigationController: BaseNavigationController {
     }
 
     init(
-        eventStore: EKEventStore = Shift.shared.eventStore,
+        eventStore: EKEventStore,
         delegate: EKCalendarChooserDelegate
     ) {
         let chooser = CalendarChooserViewController()
@@ -58,11 +58,11 @@ class CalendarChooserViewController: EKCalendarChooser {
 
     // MARK: Lifecycle
 
-    convenience init() {
+    @MainActor convenience init() {
         self.init(eventStore: Shift.shared.eventStore)
     }
 
-    init(eventStore: EKEventStore = Shift.shared.eventStore) {
+    init(eventStore: EKEventStore) {
         super.init(selectionStyle: .multiple, displayStyle: .allCalendars, entityType: .event, eventStore: eventStore)
         self.selectedCalendars = Set(eventStore.selectableCalendarsFromSettings)
         self.delegate = self

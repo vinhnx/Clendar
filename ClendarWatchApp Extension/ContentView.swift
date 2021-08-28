@@ -40,7 +40,7 @@ struct ContentView: View {
             }
         }
         .task {
-            try? await eventKitWrapper.fetchEventsForToday()
+            _ = try? await eventKitWrapper.fetchEventsForToday()
         }
     }
 }
