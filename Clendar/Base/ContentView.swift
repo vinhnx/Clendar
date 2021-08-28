@@ -31,9 +31,8 @@ struct ContentView: View {
             } label: {
                 VStack {
                     Text(store.selectedDate.toMonthString.localizedUppercase)
-//                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
+                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
                         .font(.boldFontWithSize(20))
-                        .gradientForeground(colors: [.red, .blue])
                     Text(store.selectedDate.toDayAndDateString)
                         .modifier(BoldTextModifider())
                 }
@@ -114,7 +113,7 @@ struct ContentView: View {
                     store.showSettingsState.toggle()
                 },
                 label: {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "gearshape.fill")
                         .frame(width: 50, height: 50)
                 }
             )

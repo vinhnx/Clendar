@@ -19,16 +19,16 @@ var isDarkMode: Bool {
 // MARK: - Haptic
 
 func genLightHaptic() {
-	guard SettingsManager.enableHapticFeedback else { return }
+    guard SettingsManager.enableHapticFeedback else { return }
     Haptic.impact(.soft).generate()
 }
 
 func genErrorHaptic() {
-	guard SettingsManager.enableHapticFeedback else { return }
-	Haptic.notification(.error).generate()
+    guard SettingsManager.enableHapticFeedback else { return }
+    Haptic.notification(.error).generate()
 }
 
 func genSuccessHaptic() {
-	guard SettingsManager.enableHapticFeedback else { return }
-	Haptic.notification(.success).generate()
+    guard SettingsManager.enableHapticFeedback else { return }
+    Haptic.notification(.success).generate()
 }

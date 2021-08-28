@@ -34,6 +34,17 @@ struct SolidButtonStyle: ButtonStyle {
         .cornerRadius(cornerRadius)
         .opacity(configuration.isPressed ? 0.7 : 1)
         .scaleEffect(animated ? (configuration.isPressed ? 0.8 : 1) : 1)
-        .animation(animated ? .easeInOut(duration: 0.2) : .none)
+    }
+}
+
+struct SolidButtonModifer: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .tint(Color.appRed)
+        #if os(iOS)
+            .controlSize(.large)
+        #endif
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.capsule)
     }
 }

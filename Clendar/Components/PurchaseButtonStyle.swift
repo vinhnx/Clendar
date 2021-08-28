@@ -46,6 +46,5 @@ struct PurchaseButtonStyle: ButtonStyle {
         .cornerRadius(cornerRadius)
         .opacity(configuration.isPressed ? 0.7 : 1)
         .scaleEffect(animated ? (configuration.isPressed ? 0.8 : 1) : 1)
-        .animation(animated ? .easeInOut(duration: 0.2) : .none)
     }
 }
