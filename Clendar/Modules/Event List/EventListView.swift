@@ -20,37 +20,35 @@ struct EventListView: View {
             EmptyView()
         }
         else {
-            List {
-                ForEach(events, id: \.id) { event in
-                    NavigationLink(
-                        destination:
-                            EventViewer(event: event)
-                            .navigationBarTitle("", displayMode: .inline)
-                            .environmentObject(store)
-                            .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                    ) {
-                        EventListRow(event: event)
+            List(events, id: \.id) { event in
+                NavigationLink(
+                    destination:
+                        EventViewer(event: event)
+                        .navigationBarTitle("", displayMode: .inline)
+                        .environmentObject(store)
+                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+                ) {
+                    EventListRow(event: event)
+                }
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    Button {
+                        handleDeleteEvent(event)
+                    } label: {
+                        Text("Delete")
+                        Image(systemName: "trash")
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button {
-                            handleDeleteEvent(event)
-                        } label: {
-                            Text("Delete")
-                            Image(systemName: "trash")
-                        }
-                        .tint(.appRed)
-                        .help("Delete Event")
+                    .tint(.appRed)
+                    .help("Delete Event")
+                }
+                .swipeActions(edge: .trailing) {
+                    Button {
+                        editingEvent = event
+                    } label: {
+                        Text("Edit")
+                        Image(systemName: "square.and.pencil")
                     }
-                    .swipeActions(edge: .trailing) {
-                        Button {
-                            editingEvent = event
-                        } label: {
-                            Text("Edit")
-                            Image(systemName: "square.and.pencil")
-                        }
-                        .tint(.teal)
-                        .help("Edit Event")
-                    }
+                    .tint(.teal)
+                    .help("Edit Event")
                 }
                 .listRowBackground(Color.backgroundColor)
                 .listRowSeparator(.hidden)
@@ -122,7 +120,7 @@ struct EventListView: View {
                             genErrorHaptic()
                         }
                     }
-                    
+
                 })
             }
         }
