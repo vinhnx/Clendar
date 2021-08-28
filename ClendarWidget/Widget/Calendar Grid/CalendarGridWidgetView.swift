@@ -120,7 +120,7 @@ struct CalendarGridView<DateView>: View where DateView: View {
 
 	private func weekDaysView() -> some View {
 		HStack(spacing: 12) {
-			ForEach(0 ..< 7, id: \.self) { index in
+			ForEach(0 ..< 7) { index in
 				Text(getWeekDaysSorted()[index].localizedUppercase)
 					.font(.boldFontWithSize(9))
                     .scaledToFill()
@@ -176,7 +176,7 @@ struct CalendarGridWidgetView: View {
 			SmallCalendarGridView(entry: entry)
 		case .systemMedium:
 			MediumCalendarGridView(entry: entry)
-		case .systemLarge:
+		case .systemLarge, .systemExtraLarge:
 			LargeCalendarGridView(entry: entry)
 		@unknown default:
 			SmallCalendarGridView(entry: entry)

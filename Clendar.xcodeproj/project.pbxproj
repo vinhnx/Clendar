@@ -2261,7 +2261,7 @@
 			repositoryURL = "https://github.com/vinhnx/Shift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
+				minimumVersion = 0.5.0;
 			};
 		};
 		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {

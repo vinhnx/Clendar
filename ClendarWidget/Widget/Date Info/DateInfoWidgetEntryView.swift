@@ -24,7 +24,7 @@ struct DateInfoWidgetEntryView: View {
         case .systemMedium:
             MediumCalendarWidgetView(entry: entry)
 
-        case .systemLarge:
+        case .systemLarge, .systemExtraLarge:
             LargeCalendarWidgetView(entry: entry)
 
         @unknown default:
@@ -121,7 +121,7 @@ struct EventsListWidgetView: View {
                         .foregroundColor(Color(.moianesB))
                 ) {
                     let events = entry.events.prefix(minimizeContents ? 3 : 6)
-                    ForEach(events, id: \.id) { event in
+                    ForEach(events, id: \.event?.eventIdentifier) { event in
                         WidgetEventRow(event: event)
                     }
                 }

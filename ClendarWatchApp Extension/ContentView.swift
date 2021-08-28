@@ -28,7 +28,7 @@ struct ContentView: View {
                                 .font(.boldFontWithSize(11))
                                 .foregroundColor(Color(.moianesB))
                         ) {
-                            ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.id) { event in
+                            ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init)) { event in
                                 NavigationLink(destination:EventViewer(event: event)) {
                                     WidgetEventRow(event: event)
                                 }
@@ -40,7 +40,7 @@ struct ContentView: View {
             }
         }
         .task {
-            try? await eventKitWrapper.fetchEventsForToday()
+            _ = try? await eventKitWrapper.fetchEventsForToday()
         }
     }
 }

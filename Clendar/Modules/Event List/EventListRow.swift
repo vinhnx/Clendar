@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct EventListRow: View {
-    // var id = UUID() // somehow this fix problem when row should be reload after changes. Reference: https://github.com/onmyway133/blog/issues/625
     var event: ClendarEvent?
 
     var body: some View {
@@ -18,7 +17,7 @@ struct EventListRow: View {
                 label:
                     Text(ekEvent.durationText().localizedUppercase)
                     .accessibility(label: Text("Event duration"))
-                    .font(.boldFontWithSize(13))
+                    .font(.boldFontWithSize(15))
                     .foregroundColor(Color(ekEvent.calendar.cgColor)),
                 content: {
                     HStack(spacing: 10) {
@@ -29,7 +28,7 @@ struct EventListRow: View {
                         Text(ekEvent.title)
                             .accessibility(label: Text("Title of the event"))
                             .lineLimit(nil)
-                            .font(.mediumFontWithSize(15))
+                            .font(.mediumFontWithSize(18))
                             .foregroundColor(.appDark)
                     }
                 }

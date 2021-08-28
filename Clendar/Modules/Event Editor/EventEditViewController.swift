@@ -15,7 +15,7 @@ class EventEditViewController: EKEventEditViewController {
 
     init(
         event: EKEvent? = nil,
-        eventStore: EKEventStore = Shift.shared.eventStore,
+        eventStore: EKEventStore,
         delegate: EKEventEditViewDelegate?
     ) {
         super.init(nibName: nil, bundle: nil)
