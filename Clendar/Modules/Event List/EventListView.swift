@@ -9,8 +9,6 @@
 import SwiftUI
 import Shift
 
-// TODO: convert ForEach VStack -> List
-
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore
     @State private var editingEvent: ClendarEvent?
