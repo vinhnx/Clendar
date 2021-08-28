@@ -17,8 +17,8 @@ fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
 @main
 struct ClendarApp: App {
 
-    @UIApplicationDelegateAdaptor(AppDelegate.self)
-    var appDelegate
+    // swiftlint:disable:next weak_delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @Environment(\.scenePhase)
     var phase
