@@ -30,6 +30,9 @@ struct EventListView: View {
                 ) {
                     EventListRow(event: event)
                 }
+                .listRowBackground(Color.backgroundColor)
+                .listRowSeparator(.hidden)
+                .listRowInsets(.none)
                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                     Button {
                         handleDeleteEvent(event)
