@@ -50,8 +50,6 @@ struct EventListView: View {
                     .tint(.teal)
                     .help("Edit Event")
                 }
-                .listRowBackground(Color.backgroundColor)
-                .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
             .sheet(item: $editingEvent) { (event) in

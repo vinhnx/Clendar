@@ -25,7 +25,7 @@ struct SolidButtonStyle: ButtonStyle {
 
             Unwrap(title) { title in
                 Text(LocalizedStringKey(title))
-                    .font(.mediumFontWithSize(titlefontSize))
+                    .font(.boldFontWithSize(titlefontSize))
             }
         }
         .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
@@ -41,9 +41,9 @@ struct SolidButtonModifer: ViewModifier {
     func body(content: Content) -> some View {
         content
             .tint(Color.appRed)
-        #if os(iOS)
+#if os(iOS)
             .controlSize(.large)
-        #endif
+#endif
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
     }
