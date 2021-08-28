@@ -82,6 +82,7 @@ struct QuickEventView: View {
                     .accessibility(label: Text("Input event"))
                     .font(.regularFontWithSize(18))
                     .foregroundColor(.appDark)
+                    .submitLabel(.done)
 
                     Toggle("All day", isOn: $isAllDay)
                         .keyboardShortcut(.tab)
