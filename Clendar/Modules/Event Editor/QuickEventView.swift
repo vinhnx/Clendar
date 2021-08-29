@@ -43,9 +43,9 @@ struct QuickEventView: View {
                             .font(.boldFontWithSize(20))
                     }
                 )
-                .accentColor(.appRed)
-                .keyboardShortcut(.escape)
-                .help("Collapse this view")
+                    .accentColor(.appRed)
+                    .keyboardShortcut(.escape)
+                    .help("Collapse this view")
 
                 Spacer()
                 Text("New Event")
@@ -61,10 +61,10 @@ struct QuickEventView: View {
                             .font(.boldFontWithSize(20))
                     }
                 )
-                .accentColor(.appRed)
-                .disabled(quickEventStore.query.isEmpty)
-                .keyboardShortcut("s", modifiers: [.command])
-                .help("Create new event")
+                    .accentColor(.appRed)
+                    .disabled(quickEventStore.query.isEmpty)
+                    .keyboardShortcut("s", modifiers: [.command])
+                    .help("Create new event")
             }
 
             Divider()
@@ -72,17 +72,15 @@ struct QuickEventView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     Spacer()
-                    TextField(
-                        R.string.localizable.readABookThisFriday8PM(),
-                        text: $quickEventStore.query,
-                        onCommit: {
-                            self.parse(quickEventStore.query)
+
+                    TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.query)
+                        .accessibility(label: Text("Input event"))
+                        .font(.regularFontWithSize(18))
+                            .foregroundColor(.appDark)
+                        .submitLabel(.done)
+                        .onSubmit(of: .text) {
+                            parse(quickEventStore.query)
                         }
-                    )
-                    .accessibility(label: Text("Input event"))
-                    .font(.regularFontWithSize(18))
-                    .foregroundColor(.appDark)
-                    .submitLabel(.done)
 
                     Toggle("All day", isOn: $isAllDay)
                         .keyboardShortcut(.tab)
