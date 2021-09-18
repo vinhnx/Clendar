@@ -9,7 +9,9 @@
 import EventKit
 import SwiftUI
 import ConfettiSwiftUI
-import Shift
+// import Shift
+
+// https://www.swiftbysundell.com/articles/defining-dynamic-colors-in-swift/
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -201,9 +203,10 @@ extension ContentView {
     }
 
     private func fetchEvents(for date: Date = Date()) {
-        Task {
-            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
-        }
+        eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+//        Task {
+//            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+//        }
     }
 }
 

@@ -19,7 +19,6 @@
 		A307DAAE25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DAAD25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift */; };
 		A307DAC425ADD6B700B5CE11 /* ClendarWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A307DAD625ADD6BA00B5CE11 /* ClendarWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A307DABA25ADD6B300B5CE11 /* ClendarWatchApp.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A307DAED25ADD73A00B5CE11 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A307DAEC25ADD73A00B5CE11 /* Shift */; };
 		A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
 		A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B4D258CD4810027E1B3 /* EventViewer.swift */; };
@@ -80,9 +79,7 @@
 		A31F6176260D62C6003CFE1C /* icon1_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A31F6169260D62C6003CFE1C /* icon1_180.png */; };
 		A31F6177260D62C6003CFE1C /* original_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A31F616B260D62C6003CFE1C /* original_180.png */; };
 		A31F6178260D62C6003CFE1C /* original_120.png in Resources */ = {isa = PBXBuildFile; fileRef = A31F616C260D62C6003CFE1C /* original_120.png */; };
-		A3209B45258CE14C002470CF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B44258CE14C002470CF /* Shift */; };
 		A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
-		A3209B76258CE224002470CF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3209B75258CE224002470CF /* Shift */; };
 		A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
@@ -166,6 +163,9 @@
 		A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */; };
 		A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */; };
 		A3AFBD53255F871000760E5B /* CalendarGridTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */; };
+		A3B1FCBC26F5F246001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
+		A3B1FCBD26F5F247001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
+		A3B1FCBE26F5F247001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
 		A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568DF25C5BDD600E3C09F /* SiriButton.swift */; };
 		A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */; };
 		A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */; };
@@ -410,6 +410,7 @@
 		A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
 		A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendar+Extensions.swift"; sourceTree = "<group>"; };
 		A38A4D9E254D740400B35F98 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		A390841D26F59D250010FDDA /* ShiftWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftWrapper.swift; sourceTree = "<group>"; };
 		A39626BD2553081200F4ABEF /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A39B71BA255FB6540000162F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -475,7 +476,6 @@
 				A38A4DD6254D755F00B35F98 /* Logging in Frameworks */,
 				A38EE838254EC9C200045C12 /* Haptica in Frameworks */,
 				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
-				A3209B76258CE224002470CF /* Shift in Frameworks */,
 				A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */,
 				A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */,
 				A3064D1B254CEF5200C7F228 /* WidgetKit.framework in Frameworks */,
@@ -487,7 +487,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */,
-				A307DAED25ADD73A00B5CE11 /* Shift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +496,6 @@
 			files = (
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
-				A3209B45258CE14C002470CF /* Shift in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
@@ -816,6 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
+				A390841D26F59D250010FDDA /* ShiftWrapper.swift */,
 				A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */,
 				A33F810122468B69009CC46A /* BaseViewController.swift */,
 			);
@@ -1076,7 +1075,6 @@
 				A38A4D85254D6F7300B35F98 /* SwiftDate */,
 				A38A4DD5254D755F00B35F98 /* Logging */,
 				A38EE837254EC9C200045C12 /* Haptica */,
-				A3209B75258CE224002470CF /* Shift */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -1114,7 +1112,6 @@
 			);
 			name = "ClendarWatchApp Extension";
 			packageProductDependencies = (
-				A307DAEC25ADD73A00B5CE11 /* Shift */,
 				A307DB3B25ADD88300B5CE11 /* SwiftDate */,
 			);
 			productName = "ClendarWatchApp Extension";
@@ -1151,7 +1148,6 @@
 				A3D999E52549A69F003E08E2 /* SwiftDate */,
 				A38EE832254EC6CA00045C12 /* Haptica */,
 				A3560CFD2567FB6F009088E7 /* Then */,
-				A3209B44258CE14C002470CF /* Shift */,
 				A383331025A96A8100F7ED70 /* CVCalendar */,
 				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
@@ -1254,7 +1250,6 @@
 				A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
-				A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
 				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
@@ -1536,6 +1531,7 @@
 				A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */,
 				A307DBE625ADE66B00B5CE11 /* EmptyView.swift in Sources */,
+				A3B1FCBD26F5F247001344D2 /* ShiftWrapper.swift in Sources */,
 				A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */,
 				A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */,
 				A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */,
@@ -1565,6 +1561,7 @@
 				A37F0B0E25C50C6000DFFC41 /* ComplicationViews.swift in Sources */,
 				A307DB5325ADD8BA00B5CE11 /* Calendar+Extensions.swift in Sources */,
 				A371157D25C51B9000D65F59 /* View+Gradient.swift in Sources */,
+				A3B1FCBE26F5F247001344D2 /* ShiftWrapper.swift in Sources */,
 				A371156F25C51AEC00D65F59 /* Color+Extensions.swift in Sources */,
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* SharedStore.swift in Sources */,
@@ -1620,6 +1617,7 @@
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
+				A3B1FCBC26F5F246001344D2 /* ShiftWrapper.swift in Sources */,
 				A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */,
 				A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */,
 				A315FA2025CF0FA900E909DB /* DateInfoWidgetEntryView.swift in Sources */,
@@ -1817,14 +1815,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				IBSC_MODULE = ClendarWatchApp_Extension;
 				INFOPLIST_FILE = ClendarWatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Clendar WatchApp - Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1839,14 +1837,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				IBSC_MODULE = ClendarWatchApp_Extension;
 				INFOPLIST_FILE = ClendarWatchApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Clendar WatchApp - Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1859,7 +1857,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ClendarWatchApp Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				ENABLE_PREVIEWS = YES;
@@ -1871,7 +1870,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "Clendar WatchKit extension - Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1884,7 +1883,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ClendarWatchApp Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = 6TWWD47PW9;
 				ENABLE_PREVIEWS = YES;
@@ -1896,7 +1896,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "Clendar WatchKit extension - Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2050,8 +2050,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2079,8 +2080,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -2256,14 +2258,6 @@
 				minimumVersion = 0.2.1;
 			};
 		};
-		A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vinhnx/Shift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.0;
-			};
-		};
 		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -2323,11 +2317,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A307DAEC25ADD73A00B5CE11 /* Shift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
-			productName = Shift;
-		};
 		A307DB3B25ADD88300B5CE11 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
@@ -2342,16 +2331,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		A3209B44258CE14C002470CF /* Shift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
-			productName = Shift;
-		};
-		A3209B75258CE224002470CF /* Shift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3209B43258CE14C002470CF /* XCRemoteSwiftPackageReference "Shift" */;
-			productName = Shift;
 		};
 		A3560CFD2567FB6F009088E7 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -8,7 +8,7 @@
 
 import EventKit
 import SwiftUI
-import Shift
+// import Shift
 
 internal struct EventOverride {
     let text: String
@@ -76,7 +76,7 @@ struct QuickEventView: View {
                     TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.query)
                         .accessibility(label: Text("Input event"))
                         .font(.regularFontWithSize(18))
-                            .foregroundColor(.appDark)
+                        .foregroundColor(.appDark)
                         .submitLabel(.done)
                         .onSubmit(of: .text) {
                             parse(quickEventStore.query)
@@ -141,15 +141,25 @@ extension QuickEventView {
 
     private func createNewEvent(_: EventOverride? = nil) {
         guard quickEventStore.query.isEmpty == false else { return }
-
-        Task {
-            do {
-                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
+//        Task {
+//            do {
+//                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
+//                genSuccessHaptic()
+//                self.showCreateEventState = false
+//                self.store.selectedDate = createdEvent.startDate
+//            } catch {
+//                genErrorHaptic()
+//                AlertManager.showWithError(error)
+//            }
+//        }
+        Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
+            switch result {
+            case let .success(event):
                 genSuccessHaptic()
                 self.showCreateEventState = false
-                self.store.selectedDate = createdEvent.startDate
-            } catch {
-                genErrorHaptic()
+                self.store.selectedDate = event.startDate
+
+            case let .failure(error):
                 AlertManager.showWithError(error)
             }
         }

@@ -8,7 +8,7 @@
 
 import EventKitUI
 import SwiftUI
-import Shift
+// import Shift
 
 class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
     var wrapperView: EventEditorWrapperView

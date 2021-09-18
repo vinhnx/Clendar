@@ -9,7 +9,7 @@
 import EventKit
 import EventKitUI
 import UIKit
-import Shift
+// import Shift
 
 internal typealias DataSource = UICollectionViewDiffableDataSource<EventSection, ClendarEvent>
 
@@ -30,12 +30,23 @@ final class EventListViewController: BaseViewController {
     }
 
     func fetchEvents(for date: Date = Date()) {
-        Task {
-            do {
-                let events = try await Shift.shared.fetchEvents(for: date)
+//        Task {
+//            do {
+//                let events = try await Shift.shared.fetchEvents(for: date)
+//                let items = events.compactMap(ClendarEvent.init)
+//                self.applySnapshot(items, date: date)
+//            } catch {
+//                AlertManager.showWithError(error)
+//            }
+//        }
+        Shift.shared.fetchEvents(for: date) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(events):
                 let items = events.compactMap(ClendarEvent.init)
                 self.applySnapshot(items, date: date)
-            } catch {
+
+            case let .failure(error):
                 AlertManager.showWithError(error)
             }
         }
