@@ -78,17 +78,19 @@ struct ContentView: View {
             }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
-//                if SettingsManager.useExperimentalCreateEventMode {
+                if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
                         showCreateEventState: $store.showCreateEventState
                     )
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-//                } else {
-//                    EventEditorWrapperView()
-//                        .environmentObject(store)
-//                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-//                }
+                }
+                else {
+                    NewEventView(
+                        eventStore: eventKitWrapper.eventStore,
+                        event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
+                    ).environmentObject(store)
+                }
             }
             .keyboardShortcut("n", modifiers: [.command])
     }
@@ -115,7 +117,7 @@ struct ContentView: View {
                     store.showSettingsState.toggle()
                 },
                 label: {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "line.horizontal.2.decrease.circle")
                         .frame(width: 50, height: 50)
                 }
             )

@@ -60,7 +60,7 @@
 		A315FA2C25CF102F00E909DB /* EventSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F925484DB700C71D41 /* EventSection.swift */; };
 		A315FA3225CF104800E909DB /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
 		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
-		A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* EventEditViewController.swift */; };
+		A3187E68254998EE009524DF /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* NewEventView.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
 		A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftyFORM */; };
 		A3187E8525499FE1009524DF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
@@ -337,7 +337,7 @@
 		A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconChooserViewContronller.swift; sourceTree = "<group>"; };
 		A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWrapperView.swift; sourceTree = "<group>"; };
 		A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Extensions.swift"; sourceTree = "<group>"; };
-		A3187E67254998EE009524DF /* EventEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
+		A3187E67254998EE009524DF /* NewEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
 		A3187E8425499FE1009524DF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButtonStyle.swift; sourceTree = "<group>"; };
@@ -645,7 +645,7 @@
 			children = (
 				A3EDE72825669F640046C1F5 /* QuickEventView.swift */,
 				A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */,
-				A3187E67254998EE009524DF /* EventEditViewController.swift */,
+				A3187E67254998EE009524DF /* NewEventView.swift */,
 			);
 			path = "Event Editor";
 			sourceTree = "<group>";
@@ -1649,7 +1649,7 @@
 				A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */,
 				A371157B25C51B9000D65F59 /* View+Gradient.swift in Sources */,
 				A38199FA25484DB700C71D41 /* EventSection.swift in Sources */,
-				A3187E68254998EE009524DF /* EventEditViewController.swift in Sources */,
+				A3187E68254998EE009524DF /* NewEventView.swift in Sources */,
 				A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */,
 				A315FA3225CF104800E909DB /* DateInfoWidgetEventRow.swift in Sources */,
 				A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */,
