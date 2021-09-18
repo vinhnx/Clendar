@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-import Shift
+import EventKit
+// import Shift
 
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore
@@ -16,51 +17,60 @@ struct EventListView: View {
     var events = [ClendarEvent]()
 
     var body: some View {
-        if events.isEmpty {
-            EmptyView()
-        }
-        else {
-            List(events, id: \.id) { event in
-                NavigationLink(
-                    destination:
-                        EventViewer(event: event)
-                        .navigationBarTitle("", displayMode: .inline)
-                        .environmentObject(store)
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                ) {
-                    EventListRow(event: event)
-                }
-                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                    Button {
-                        handleDeleteEvent(event)
-                    } label: {
-                        Text("Delete")
-                        Image(systemName: "trash")
-                    }
-                    .tint(.appRed)
-                    .help("Delete Event")
-                }
-                .swipeActions(edge: .trailing) {
-                    Button {
-                        editingEvent = event
-                    } label: {
-                        Text("Edit")
-                        Image(systemName: "square.and.pencil")
-                    }
-                    .tint(.teal)
-                    .help("Edit Event")
-                }
-            }
-            .listStyle(.plain)
-            .sheet(item: $editingEvent) { (event) in
-                EventEditorWrapperView(event: event)
+        List(events, id: \.id) { event in
+            NavigationLink(
+                destination:
+                    EventViewer(event: event)
+                    .navigationBarTitle("", displayMode: .inline)
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            ) {
+                EventListRow(event: event)
+            }
+            .listRowBackground(Color.backgroundColor)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.none)
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button {
+                    handleDeleteEvent(event)
+                } label: {
+                    Text("Delete")
+                    Image(systemName: "trash")
+                }
+                .tint(.appRed)
+                .help("Delete Event")
+            }
+            .swipeActions(edge: .trailing) {
+                Button {
+                    editingEvent = event
+                } label: {
+                    Text("Edit")
+                    Image(systemName: "square.and.pencil")
+                }
+                .tint(.teal)
+                .help("Edit Event")
             }
         }
+        .listStyle(.plain)
+        .sheet(item: $editingEvent) { (event) in
+            EventEditorWrapperView(event: event)
+                .environmentObject(store)
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+        }
     }
+}
 
-    private func handleDeleteEvent(_ event: ClendarEvent) {
+struct EventListView_Previews: PreviewProvider {
+    static var previews: some View {
+        EventListView(events: []).environmentObject(SharedStore())
+    }
+}
+
+extension View where Self == EventListView {
+
+    // MARK: - Private
+
+    fileprivate func handleDeleteEvent(_ event: ClendarEvent) {
         guard let id = event.id else { return }
         let isRepeatingEvent = event.event?.hasRecurrenceRules == true
         let message = isRepeatingEvent ? "This is a repeating event." : "Are you sure you want to delete this event?"
@@ -72,12 +82,18 @@ struct EventListView: View {
 
                 let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
 
-                    Task {
-                        do {
-                            try await Shift.shared.deleteEvent(identifier: id, span: .thisEvent)
-                            genSuccessHaptic()
-                        } catch {
-                            genErrorHaptic()
+//                    Task {
+//                        do {
+//                            try await Shift.shared.deleteEvent(identifier: id, span: .thisEvent)
+//                            genSuccessHaptic()
+//                        } catch {
+//                            genErrorHaptic()
+//                        }
+//                    }
+                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
+                        switch result {
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
 
@@ -86,12 +102,18 @@ struct EventListView: View {
 
                 let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
 
-                    Task {
-                        do {
-                            try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
-                            genSuccessHaptic()
-                        } catch {
-                            genErrorHaptic()
+//                    Task {
+//                        do {
+//                            try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
+//                            genSuccessHaptic()
+//                        } catch {
+//                            genErrorHaptic()
+//                        }
+//                    }
+                    Shift.shared.deleteEvent(identifier: id, span: .futureEvents) { (result) in
+                        switch result {
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
 
@@ -110,12 +132,18 @@ struct EventListView: View {
             DispatchQueue.main.async {
                 AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
 
-                    Task {
-                        do {
-                            try await Shift.shared.deleteEvent(identifier: id)
-                            genSuccessHaptic()
-                        } catch {
-                            genErrorHaptic()
+//                    Task {
+//                        do {
+//                            try await Shift.shared.deleteEvent(identifier: id)
+//                            genSuccessHaptic()
+//                        } catch {
+//                            genErrorHaptic()
+//                        }
+//                    }
+                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
+                        switch result {
+                        case .success: genSuccessHaptic()
+                        case .failure: genErrorHaptic()
                         }
                     }
 
@@ -123,10 +151,5 @@ struct EventListView: View {
             }
         }
     }
-}
 
-struct EventListView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventListView(events: []).environmentObject(SharedStore())
-    }
 }

@@ -8,27 +8,20 @@
 
 import EventKit
 import SwiftUI
-import Shift
-
-internal struct EventOverride {
-    let text: String
-    let startDate: Date
-    let endDate: Date?
-    let isAllDay: Bool
-}
+// import Shift
 
 internal class QuickEventStore: ObservableObject {
     @Published var query = ""
 }
 
 struct QuickEventView: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var store: SharedStore
     @StateObject private var quickEventStore = QuickEventStore()
     @State private var parsedText = ""
-    @State private var startTime = Date()
-    @State private var endTime = Date().offsetWithDefaultDuration
     @State private var isAllDay = false
-    @Binding var showCreateEventState: Bool
+    @Binding var startTime: Date
+    @Binding var endTime: Date
 
     var body: some View {
         VStack {
@@ -36,16 +29,16 @@ struct QuickEventView: View {
                 Button(
                     action: {
                         genLightHaptic()
-                        showCreateEventState = false
+                        presentationMode.wrappedValue.dismiss()
                     },
                     label: {
                         Image(systemName: "chevron.down")
                             .font(.boldFontWithSize(20))
                     }
                 )
-                .accentColor(.appRed)
-                .keyboardShortcut(.escape)
-                .help("Collapse this view")
+                    .accentColor(.appRed)
+                    .keyboardShortcut(.escape)
+                    .help("Collapse this view")
 
                 Spacer()
                 Text("New Event")
@@ -61,10 +54,10 @@ struct QuickEventView: View {
                             .font(.boldFontWithSize(20))
                     }
                 )
-                .accentColor(.appRed)
-                .disabled(quickEventStore.query.isEmpty)
-                .keyboardShortcut("s", modifiers: [.command])
-                .help("Create new event")
+                    .accentColor(.appRed)
+                    .disabled(quickEventStore.query.isEmpty)
+                    .keyboardShortcut("s", modifiers: [.command])
+                    .help("Create new event")
             }
 
             Divider()
@@ -72,17 +65,15 @@ struct QuickEventView: View {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 30) {
                     Spacer()
-                    TextField(
-                        R.string.localizable.readABookThisFriday8PM(),
-                        text: $quickEventStore.query,
-                        onCommit: {
-                            self.parse(quickEventStore.query)
+
+                    TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.query)
+                        .accessibility(label: Text("Input event"))
+                        .font(.regularFontWithSize(18))
+                        .foregroundColor(.appDark)
+                        .submitLabel(.done)
+                        .onSubmit(of: .text) {
+                            parse(quickEventStore.query)
                         }
-                    )
-                    .accessibility(label: Text("Input event"))
-                    .font(.regularFontWithSize(18))
-                    .foregroundColor(.appDark)
-                    .submitLabel(.done)
 
                     Toggle("All day", isOn: $isAllDay)
                         .keyboardShortcut(.tab)
@@ -141,17 +132,27 @@ extension QuickEventView {
         return true
     }
 
-    private func createNewEvent(_: EventOverride? = nil) {
+    private func createNewEvent() {
         guard quickEventStore.query.isEmpty == false else { return }
-
-        Task {
-            do {
-                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
+//        Task {
+//            do {
+//                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
+//                genSuccessHaptic()
+//                self.showCreateEventState = false
+//                self.store.selectedDate = createdEvent.startDate
+//            } catch {
+//                genErrorHaptic()
+//                AlertManager.showWithError(error)
+//            }
+//        }
+        Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay) { result in
+            switch result {
+            case let .success(event):
                 genSuccessHaptic()
-                self.showCreateEventState = false
-                self.store.selectedDate = createdEvent.startDate
-            } catch {
-                genErrorHaptic()
+                self.presentationMode.wrappedValue.dismiss()
+                self.store.selectedDate = event.startDate
+
+            case let .failure(error):
                 AlertManager.showWithError(error)
             }
         }

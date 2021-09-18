@@ -8,7 +8,7 @@
 
 import EventKitUI
 import UIKit
-import Shift
+// import Shift
 
 class CalendarChooserNavigationController: BaseNavigationController {
     // MARK: Lifecycle

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Shift
+// import Shift
 
 struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
@@ -28,7 +28,7 @@ struct ContentView: View {
                                 .font(.boldFontWithSize(11))
                                 .foregroundColor(Color(.moianesB))
                         ) {
-                            ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init)) { event in
+                            ForEach(eventKitWrapper.events.compactMap(ClendarEvent.init), id: \.self) { event in
                                 NavigationLink(destination:EventViewer(event: event)) {
                                     WidgetEventRow(event: event)
                                 }
@@ -39,9 +39,11 @@ struct ContentView: View {
                 }
             }
         }
-        .task {
-            _ = try? await eventKitWrapper.fetchEventsForToday()
-        }
+        .onAppear { eventKitWrapper.fetchEventsForToday() }
+
+//        .task {
+//            _ = try? await eventKitWrapper.fetchEventsForToday()
+//        }
     }
 }
 

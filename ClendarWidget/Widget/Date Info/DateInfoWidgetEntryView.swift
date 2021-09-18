@@ -121,7 +121,7 @@ struct EventsListWidgetView: View {
                         .foregroundColor(Color(.moianesB))
                 ) {
                     let events = entry.events.prefix(minimizeContents ? 3 : 6)
-                    ForEach(events, id: \.event?.eventIdentifier) { event in
+                    ForEach(events, id: \.self) { event in
                         WidgetEventRow(event: event)
                     }
                 }

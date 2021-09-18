@@ -116,16 +116,15 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-//    lazy var quickEventMode: SwitchFormItem = {
-//        let instance = SwitchFormItem()
-//        instance.title = NSLocalizedString("Quick Event", comment: "")
-//        instance.value = SettingsManager.useExperimentalCreateEventMode
-//        instance.switchDidChangeBlock = { activate in
-//            SettingsManager.useExperimentalCreateEventMode = activate
-//            NotificationCenter.default.post(name: .didChangeUseExperimentalCreateEventMode, object: nil)
-//        }
-//        return instance
-//    }()
+    lazy var quickEventMode: SwitchFormItem = {
+        let instance = SwitchFormItem()
+        instance.title = NSLocalizedString("Quick Event", comment: "")
+        instance.value = SettingsManager.useExperimentalCreateEventMode
+        instance.switchDidChangeBlock = { activate in
+            SettingsManager.useExperimentalCreateEventMode = activate
+        }
+        return instance
+    }()
 
     lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
         let instance = SwitchFormItem()
@@ -323,9 +322,9 @@ final class SettingsViewController: FormViewController {
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
+        builder += quickEventMode
         builder += defaultEventDuration
-        // builder += quickEventMode
-        // builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
 
         // Sharing
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))

@@ -9,7 +9,9 @@
 import EventKit
 import SwiftUI
 import ConfettiSwiftUI
-import Shift
+// import Shift
+
+// https://www.swiftbysundell.com/articles/defining-dynamic-colors-in-swift/
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -17,7 +19,6 @@ struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = SettingsManager.isOnMonthViewSettings
-    @State private var showPlusView: Bool = false
     @State private var confettiCounter = 0
 
     let calendarWrapperView = CalendarWrapperView()
@@ -48,7 +49,6 @@ struct ContentView: View {
             Spacer()
             monthHeaderView
         }
-        .padding([.leading, .trailing], 10)
     }
 
     private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
@@ -76,17 +76,32 @@ struct ContentView: View {
             }, label: {})
             .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
-//                if SettingsManager.useExperimentalCreateEventMode {
+                if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
-                        showCreateEventState: $store.showCreateEventState
+                        startTime: Binding(get: {
+                            store.selectedDate
+                        }, set: { newValue in
+                            store.selectedDate = newValue
+                        }),
+                        endTime: Binding(get: {
+                            store.selectedDate
+                        }, set: { newValue in
+                            store.selectedDate = newValue
+                        })
                     )
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-//                } else {
-//                    EventEditorWrapperView()
-//                        .environmentObject(store)
-//                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-//                }
+                }
+                else {
+                    NewEventView(
+                        eventStore: eventKitWrapper.eventStore,
+                        event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
+                            .then {
+                                $0.startDate = store.selectedDate
+                                $0.endDate = store.selectedDate
+                            }
+                    ).environmentObject(store)
+                }
             }
             .keyboardShortcut("n", modifiers: [.command])
     }
@@ -113,7 +128,7 @@ struct ContentView: View {
                     store.showSettingsState.toggle()
                 },
                 label: {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "line.horizontal.2.decrease.circle")
                         .frame(width: 50, height: 50)
                 }
             )
@@ -201,9 +216,10 @@ extension ContentView {
     }
 
     private func fetchEvents(for date: Date = Date()) {
-        Task {
-            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
-        }
+        eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+//        Task {
+//            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+//        }
     }
 }
 
