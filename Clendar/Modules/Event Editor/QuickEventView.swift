@@ -10,25 +10,18 @@ import EventKit
 import SwiftUI
 // import Shift
 
-internal struct EventOverride {
-    let text: String
-    let startDate: Date
-    let endDate: Date?
-    let isAllDay: Bool
-}
-
 internal class QuickEventStore: ObservableObject {
     @Published var query = ""
 }
 
 struct QuickEventView: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var store: SharedStore
     @StateObject private var quickEventStore = QuickEventStore()
     @State private var parsedText = ""
-    @State private var startTime = Date()
-    @State private var endTime = Date().offsetWithDefaultDuration
     @State private var isAllDay = false
-    @Binding var showCreateEventState: Bool
+    @Binding var startTime: Date
+    @Binding var endTime: Date
 
     var body: some View {
         VStack {
@@ -36,7 +29,7 @@ struct QuickEventView: View {
                 Button(
                     action: {
                         genLightHaptic()
-                        showCreateEventState = false
+                        presentationMode.wrappedValue.dismiss()
                     },
                     label: {
                         Image(systemName: "chevron.down")
@@ -139,7 +132,7 @@ extension QuickEventView {
         return true
     }
 
-    private func createNewEvent(_: EventOverride? = nil) {
+    private func createNewEvent() {
         guard quickEventStore.query.isEmpty == false else { return }
 //        Task {
 //            do {
@@ -156,7 +149,7 @@ extension QuickEventView {
             switch result {
             case let .success(event):
                 genSuccessHaptic()
-                self.showCreateEventState = false
+                self.presentationMode.wrappedValue.dismiss()
                 self.store.selectedDate = event.startDate
 
             case let .failure(error):

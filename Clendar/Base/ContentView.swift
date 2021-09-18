@@ -19,7 +19,6 @@ struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = SettingsManager.isOnMonthViewSettings
-    @State private var showPlusView: Bool = false
     @State private var confettiCounter = 0
 
     let calendarWrapperView = CalendarWrapperView()
@@ -50,7 +49,6 @@ struct ContentView: View {
             Spacer()
             monthHeaderView
         }
-        .padding([.leading, .trailing], 10)
     }
 
     private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
@@ -80,7 +78,16 @@ struct ContentView: View {
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
-                        showCreateEventState: $store.showCreateEventState
+                        startTime: Binding(get: {
+                            store.selectedDate
+                        }, set: { newValue in
+                            store.selectedDate = newValue
+                        }),
+                        endTime: Binding(get: {
+                            store.selectedDate
+                        }, set: { newValue in
+                            store.selectedDate = newValue
+                        })
                     )
                     .environmentObject(store)
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
@@ -89,6 +96,10 @@ struct ContentView: View {
                     NewEventView(
                         eventStore: eventKitWrapper.eventStore,
                         event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
+                            .then {
+                                $0.startDate = store.selectedDate
+                                $0.endDate = store.selectedDate
+                            }
                     ).environmentObject(store)
                 }
             }
