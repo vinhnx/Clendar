@@ -26,13 +26,14 @@ struct ClendarPlusView: View {
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
 
-                ForEach(products) { product in
+                ForEach(products, id: \.self) { product in
                     PurchaseButton(
                         isLoading: $isLoading,
                         model: product
                     )
                     .padding()
                     .frame(maxWidth: .infinity)
+                    .id(UUID())
                 }
             }
         }

@@ -12,6 +12,7 @@ import SwiftUI
 struct WidgetEventRow: View {
     @Environment(\.isFocused) var isFocused
 
+	var id = UUID()
 	let event: ClendarEvent
 
 	var body: some View {
