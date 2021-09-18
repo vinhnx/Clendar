@@ -17,6 +17,7 @@ struct EmptyView: View {
                 .modifier(BoldTextModifider())
                 .lineSpacing(10)
                 .multilineTextAlignment(.center)
+            Spacer()
         }.padding()
     }
 }
