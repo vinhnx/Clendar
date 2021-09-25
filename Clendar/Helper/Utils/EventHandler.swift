@@ -18,7 +18,10 @@ class EventHandler {
         UIViewController.topViewController?.present(eventViewer, animated: true, completion: nil)
     }
 
-    @MainActor static func editEvent(_ event: ClendarEvent?, delegate: EKEventEditViewDelegate?) {
+#if compiler(>=5.5) && canImport(_Concurrency)
+    @MainActor
+#endif
+    static func editEvent(_ event: ClendarEvent?, delegate: EKEventEditViewDelegate?) {
         guard let ekEvent = event?.event else { return }
         let eventViewer = EventEditViewController(eventStore: Shift.shared.eventStore, delegate: delegate)
         eventViewer.event = ekEvent
