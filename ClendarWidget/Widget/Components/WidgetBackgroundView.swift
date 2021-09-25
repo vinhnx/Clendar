@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct WidgetBackgroundView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     @ViewBuilder
     var body: some View {
         switch widgetThemeFromFile {
         case WidgetTheme.system.localizedText:
-            Color(.backgroundColor)
+            Color(colorScheme == .dark ? .lavixA : .hueC)
         case WidgetTheme.dark.localizedText:
             Color(.lavixA)
         case WidgetTheme.light.localizedText:
@@ -21,7 +23,7 @@ struct WidgetBackgroundView: View {
         case WidgetTheme.E4ECF5.localizedText:
             Color(hex: 0xE4ECF5)
         default:
-            Color(.backgroundColor)
+            Color(.hueC)
         }
     }
 

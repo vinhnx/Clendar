@@ -96,7 +96,7 @@ extension ClendarApp {
         setupStoreKit()
         logger.logLevel = .debug
         
-        if SettingsManager.currentAppTheme == 0 {
+        if SettingsManager.currentAppTheme == AppTheme.dark.rawValue {
             SettingsManager.darkModeActivated = isDarkMode
         }
 
