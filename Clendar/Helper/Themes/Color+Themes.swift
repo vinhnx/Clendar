@@ -151,7 +151,7 @@ extension Color {
     static let appRed = Color(.appRed)
     static let appLightRed = Color(.appLightRed)
     static let appDark = Color(.appDark)
-    static var backgroundColor = Color(.backgroundColor)
+    static var backgroundColor = { return Color(.backgroundColor) } 
     static var inversedBackgroundColor = Color(.inversedBackgroundColor)
     static var primaryColor = Color(.primaryColor)
     static var secondaryColor = Color(.secondaryColor)
@@ -173,7 +173,7 @@ var appColorScheme: ColorScheme {
          AppTheme.trueDark.rawValue:
         return .dark
     default:
-        return .dark
+        return SettingsManager.darkModeActivated ? .dark : .light
     }
     #endif
 }

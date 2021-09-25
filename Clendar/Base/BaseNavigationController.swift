@@ -33,7 +33,7 @@ class BaseNavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
     }
 
-    private func checkUIMode() {
+    func checkUIMode() {
         overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
     }
 }

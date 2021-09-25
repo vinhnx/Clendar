@@ -95,6 +95,11 @@ extension ClendarApp {
 
         setupStoreKit()
         logger.logLevel = .debug
+        
+        if SettingsManager.currentAppTheme == 0 {
+            SettingsManager.darkModeActivated = isDarkMode
+        }
+
         SwiftDate.defaultRegion = Region.local
         Shift.configureWithAppName(AppInfo.appName)
     }

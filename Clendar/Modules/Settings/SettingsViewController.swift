@@ -29,22 +29,6 @@ final class SettingsNavigationController: BaseNavigationController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    // MARK: Internal
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        checkUIMode()
-
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-            self.checkUIMode()
-        }
-    }
-
-    func checkUIMode() {
-        overrideUserInterfaceStyle = isDarkMode ? .dark : .light
-    }
 }
 
 final class SettingsViewController: FormViewController {
@@ -64,7 +48,7 @@ final class SettingsViewController: FormViewController {
 
         let title = AppTheme(rawValue: SettingsManager.currentAppTheme)?.localizedText ?? AppTheme.defaultValue.localizedText
         instance.selectOptionWithTitle(title)
-        instance.valueDidChange = { selected in
+        instance.valueDidChange = { [weak self] selected in
             genLightHaptic()
 
             let type = AppTheme.mapFromText(selected?.title)
@@ -73,13 +57,13 @@ final class SettingsViewController: FormViewController {
             switch type {
             case .light, .trueLight, .E4ECF5:
                 SettingsManager.darkModeActivated = false
-                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .light
+                self?.view.window?.windowScene?.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .light
             case .dark, .trueDark:
                 SettingsManager.darkModeActivated = true
-                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .dark
-            default:
+                self?.view.window?.windowScene?.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = .dark
+            case .system:
                 SettingsManager.darkModeActivated = isDarkMode
-                UIApplication.shared.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = isDarkMode ? .dark : .light
+                self?.view.window?.windowScene?.windows.first { $0.isKeyWindow }?.overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
             }
 
             NotificationCenter.default.post(name: .didChangeUserInterfacePreferences, object: nil)
