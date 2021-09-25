@@ -190,7 +190,7 @@ struct ContentView: View {
             calendarView.reloadData()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
-            store.appBackgroundColor = .backgroundColor
+            store.appBackgroundColor = .backgroundColor()
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
             isMonthView = SettingsManager.isOnMonthViewSettings

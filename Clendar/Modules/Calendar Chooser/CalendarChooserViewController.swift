@@ -37,21 +37,6 @@ class CalendarChooserNavigationController: BaseNavigationController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    // MARK: Internal
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        checkUIMode()
-
-        NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
-            self.checkUIMode()
-        }
-    }
-
-    func checkUIMode() {
-        overrideUserInterfaceStyle = SettingsManager.darkModeActivated ? .dark : .light
-    }
 }
 
 class CalendarChooserViewController: EKCalendarChooser {
