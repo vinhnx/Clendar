@@ -112,6 +112,8 @@ struct CalendarGridView<DateView>: View where DateView: View {
 				Text(formatter.string(from: month).localizedUppercase)
 					.font(.boldFontWithSize(11))
 					.foregroundColor(.appRed)
+                    .scaledToFill()
+                    .minimumScaleFactor(0.5)
 			}
 		}
 	}
