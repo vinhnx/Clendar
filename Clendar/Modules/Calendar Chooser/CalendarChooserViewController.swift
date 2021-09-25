@@ -43,10 +43,7 @@ class CalendarChooserViewController: EKCalendarChooser {
 
     // MARK: Lifecycle
 
-#if compiler(>=5.5) && canImport(_Concurrency)
-    @MainActor
-#endif
-    convenience init() {
+    @MainActor convenience init() {
         self.init(eventStore: Shift.shared.eventStore)
     }
 
