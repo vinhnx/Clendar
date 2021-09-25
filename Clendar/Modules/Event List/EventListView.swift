@@ -30,6 +30,23 @@ struct EventListView: View {
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 ) {
                     EventListRow(event: event)
+                        .contextMenu(
+                            ContextMenu(menuItems: {
+                                Button { editingEvent = event } label: {
+                                    Text("Edit")
+                                    Image(systemName: "square.and.pencil")
+                                }
+                                .tint(.teal)
+                                .help("Edit Event")
+
+                                Button { handleDeleteEvent(event) } label: {
+                                    Text("Delete")
+                                    Image(systemName: "trash")
+                                }
+                                .tint(.appRed)
+                                .help("Delete Event")
+                            })
+                        )
                 }
                 .listRowBackground(Color.backgroundColor())
                 .listRowSeparator(.hidden)
