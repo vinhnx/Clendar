@@ -60,11 +60,11 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
         selectedDate?(date)
     }
 
-    func dayOfWeekFont() -> UIFont { .boldFontWithSize(12) }
+    func dayOfWeekFont() -> UIFont { .regularFontWithSize(12) }
 
     func dayOfWeekTextUppercase() -> Bool { true }
 
-    func weekdaySymbolType() -> WeekdaySymbolType { .veryShort }
+    func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
     func dayOfWeekTextColor() -> UIColor { .appGray }
 
@@ -103,7 +103,7 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIFont {
-        .boldFontWithSize(15)
+        .boldFontWithSize(16)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

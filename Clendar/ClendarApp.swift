@@ -32,6 +32,7 @@ struct ClendarApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accentColor(.appRed)
                 .environmentObject(store)
                 .onContinueUserActivity(Constants.SiriShortcut.addEvent) { (_) in
                     store.showCreateEventState = true

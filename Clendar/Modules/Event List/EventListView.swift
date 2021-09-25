@@ -50,7 +50,7 @@ struct EventListView: View {
                 }
                 .listRowBackground(Color.backgroundColor())
                 .listRowSeparator(.hidden)
-                .listRowInsets(.none)
+                .listRowInsets(.init(top: 0, leading: -10, bottom: 0, trailing: 0))
                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                     Button {
                         handleDeleteEvent(event)
@@ -72,6 +72,7 @@ struct EventListView: View {
                     .help("Edit Event")
                 }
             }
+            .padding(.bottom, 30)
             .listStyle(.plain)
             .sheet(item: $editingEvent) { (event) in
                 EventEditorWrapperView(event: event)
