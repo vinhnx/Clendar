@@ -81,10 +81,8 @@ struct CalendarGridView<DateView>: View where DateView: View {
 	@ViewBuilder
 	var body: some View {
 		headerView()
-		Spacer()
 		weekDaysView()
 		daysGridView()
-		Spacer()
 	}
 
 	// MARK: Private
@@ -123,6 +121,7 @@ struct CalendarGridView<DateView>: View where DateView: View {
 			ForEach(0 ..< 7) { index in
 				Text(getWeekDaysSorted()[index].localizedUppercase)
 					.font(.boldFontWithSize(9))
+                    .frame(height: 10)
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
                     .foregroundColor(.appDark)
@@ -194,7 +193,7 @@ struct SmallCalendarGridView: View {
 				Text(date.toShortDateString)
 					.font(.boldFontWithSize(10))
 					.foregroundColor(Calendar.current.isDateInToday(date) ? .appRed : .gray)
-					.frame(width: 15, height: 15)
+					.frame(width: 15, height: 10)
 					.multilineTextAlignment(.trailing)
 			}
 		}.padding(.all)

@@ -41,7 +41,7 @@ struct SmallCalendarWidgetView: View {
     var body: some View {
         VStack(alignment: .center) {
             Text(entry.date.toMonthString.localizedUppercase)
-                .font(.boldFontWithSize(20))
+                .font(.boldFontWithSize(18))
                 .foregroundColor(.gray)
             Text(entry.date.toFullDayString)
                 .font(.boldFontWithSize(20))

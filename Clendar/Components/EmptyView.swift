@@ -15,7 +15,7 @@ struct EmptyView: View {
         VStack {
             Text(LocalizedStringKey(text))
                 .modifier(BoldTextModifider())
-                .lineSpacing(10)
+                .lineSpacing(5)
                 .multilineTextAlignment(.center)
             Spacer()
         }.padding()
