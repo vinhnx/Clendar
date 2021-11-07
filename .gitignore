@@ -23,6 +23,8 @@ DerivedData/
 xcuserdata/
 **/xcuserdata/
 Clendar.xcodeproj/xcuserdata/Vinh.xcuserdatad/xcschemes/xcschememanagement.plist
+Clendar.xcodeproj/xcshareddata/xcschemes/ClendarWatchApp.xcscheme
+Clendar.xcodeproj/xcshareddata/xcschemes/ClendarWatchApp (Complication).xcscheme
 
 ## Other
 *.moved-aside
