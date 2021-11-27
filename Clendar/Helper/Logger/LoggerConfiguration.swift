@@ -14,13 +14,19 @@ import Logging
 var logger = Logger(label: "com.Clendar.logger")
 
 func log<T: CustomDebugStringConvertible>(_ thing: T) {
+    #if DEBUG
 	logger.debug("\(thing.debugDescription)")
+    #endif
 }
 
 func logError<E: Error>(_ error: E) {
+    #if DEBUG
 	logger.error("\(error.localizedDescription)")
+    #endif
 }
 
 func logInfo<T: CustomDebugStringConvertible>(_ thing: T) {
+    #if DEBUG
 	logger.info("\(thing.debugDescription)")
+    #endif
 }
