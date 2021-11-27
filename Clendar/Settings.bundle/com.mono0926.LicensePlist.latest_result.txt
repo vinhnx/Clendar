@@ -28,17 +28,23 @@ body: MIT License
 Copyrig…
 version: 1.1.0
 
+name: ConfettiSwiftUI, nameSpecified: ConfettiSwiftUI, owner: simibac, version: 0.3.0
+
 name: CVCalendar, nameSpecified: CVCalendar, owner: CVCalendar, version: 1.7.0
 
 name: Haptica, nameSpecified: Haptica, owner: efremidze, version: 3.0.2
 
-name: Shift, nameSpecified: Shift, owner: vinhnx, version: 0.1.1
+name: Laden, nameSpecified: Laden, owner: vinhnx, version: 0.1.0
+
+name: Shift, nameSpecified: Shift, owner: vinhnx, version: 0.7.0
 
 name: swift-log, nameSpecified: swift-log, owner: apple, version: 1.4.0
 
 name: SwiftDate, nameSpecified: SwiftDate, owner: malcommac, version: 6.2.0
 
 name: SwiftyFORM, nameSpecified: SwiftyFORM, owner: neoneye, version: 1.8.4
+
+name: SwiftyStoreKit, nameSpecified: SwiftyStoreKit, owner: bizz84, version: 0.16.3
 
 name: Then, nameSpecified: Then, owner: devxoul, version: 2.7.0
 

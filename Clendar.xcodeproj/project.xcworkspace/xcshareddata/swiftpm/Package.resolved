@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ConfettiSwiftUI",
+        "repositoryURL": "https://github.com/simibac/ConfettiSwiftUI",
+        "state": {
+          "branch": null,
+          "revision": "7d07b954afdeffeac7c3ed913296f7d73b600003",
+          "version": "0.3.0"
+        }
+      },
+      {
         "package": "CVCalendar",
         "repositoryURL": "https://github.com/CVCalendar/CVCalendar",
         "state": {
@@ -20,12 +29,21 @@
         }
       },
       {
-        "package": "Shift",
-        "repositoryURL": "https://github.com/vinhnx/Shift",
+        "package": "Laden",
+        "repositoryURL": "https://github.com/vinhnx/Laden",
         "state": {
           "branch": null,
-          "revision": "532f97d83e7058d407a6eaa6573702aaf8c31723",
-          "version": "0.1.1"
+          "revision": "50b02e73c657ee8a9868b9ab7d5ac84c5c7e32f2",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "Shift",
+        "repositoryURL": "https://github.com/vinhnx/Shift.git",
+        "state": {
+          "branch": null,
+          "revision": "40126cd5964d183819c23ebab5d9d51a82298216",
+          "version": "0.7.0"
         }
       },
       {
@@ -53,6 +71,15 @@
           "branch": null,
           "revision": "6a434616545e1f8c17675b3afabb86ad0e5f97aa",
           "version": "1.8.4"
+        }
+      },
+      {
+        "package": "SwiftyStoreKit",
+        "repositoryURL": "https://github.com/bizz84/SwiftyStoreKit.git",
+        "state": {
+          "branch": null,
+          "revision": "3b54c8eac2840b0cdd576634e83d9ebeb70f847c",
+          "version": "0.16.3"
         }
       },
       {
