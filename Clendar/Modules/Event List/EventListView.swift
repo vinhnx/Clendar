@@ -8,7 +8,7 @@
 
 import SwiftUI
 import EventKit
-// import Shift
+import Shift
 
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore
@@ -104,18 +104,12 @@ extension View where Self == EventListView {
 
                 let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
 
-//                    Task {
-//                        do {
-//                            try await Shift.shared.deleteEvent(identifier: id, span: .thisEvent)
-//                            genSuccessHaptic()
-//                        } catch {
-//                            genErrorHaptic()
-//                        }
-//                    }
-                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id, span: .thisEvent)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
 
@@ -124,18 +118,12 @@ extension View where Self == EventListView {
 
                 let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
 
-//                    Task {
-//                        do {
-//                            try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
-//                            genSuccessHaptic()
-//                        } catch {
-//                            genErrorHaptic()
-//                        }
-//                    }
-                    Shift.shared.deleteEvent(identifier: id, span: .futureEvents) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
 
@@ -154,21 +142,14 @@ extension View where Self == EventListView {
             DispatchQueue.main.async {
                 AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
 
-//                    Task {
-//                        do {
-//                            try await Shift.shared.deleteEvent(identifier: id)
-//                            genSuccessHaptic()
-//                        } catch {
-//                            genErrorHaptic()
-//                        }
-//                    }
-                    Shift.shared.deleteEvent(identifier: id, span: .thisEvent) { (result) in
-                        switch result {
-                        case .success: genSuccessHaptic()
-                        case .failure: genErrorHaptic()
+                    Task {
+                        do {
+                            try await Shift.shared.deleteEvent(identifier: id)
+                            genSuccessHaptic()
+                        } catch {
+                            genErrorHaptic()
                         }
                     }
-
                 })
             }
         }

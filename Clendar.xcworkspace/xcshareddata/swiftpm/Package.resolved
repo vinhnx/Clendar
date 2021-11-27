@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "Shift",
+        "repositoryURL": "https://github.com/vinhnx/Shift.git",
+        "state": {
+          "branch": "try_async_await",
+          "revision": "a407db9cb67a7f6faa44a0e9c6868d8ac21cb3df",
+          "version": null
+        }
+      },
+      {
         "package": "swift-log",
         "repositoryURL": "https://github.com/apple/swift-log",
         "state": {

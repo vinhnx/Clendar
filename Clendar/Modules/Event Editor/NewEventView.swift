@@ -9,7 +9,7 @@
 import EventKitUI
 import UIKit
 import SwiftUI
-// import Shift
+import Shift
 
 struct NewEventView: UIViewControllerRepresentable {
     func makeCoordinator() -> Coordinator {
@@ -61,7 +61,7 @@ struct NewEventView: UIViewControllerRepresentable {
             }
         }
 
-        @MainActor func eventEditViewControllerDefaultCalendar(forNewEvents _: EKEventEditViewController) -> EKCalendar {
+        func eventEditViewControllerDefaultCalendar(forNewEvents _: EKEventEditViewController) -> EKCalendar {
             Shift.shared.defaultCalendar ?? EKCalendar(for: .event, eventStore: EKEventStore())
         }
     }

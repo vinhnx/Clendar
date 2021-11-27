@@ -163,9 +163,6 @@
 		A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */; };
 		A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */; };
 		A3AFBD53255F871000760E5B /* CalendarGridTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */; };
-		A3B1FCBC26F5F246001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
-		A3B1FCBD26F5F247001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
-		A3B1FCBE26F5F247001344D2 /* ShiftWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A390841D26F59D250010FDDA /* ShiftWrapper.swift */; };
 		A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568DF25C5BDD600E3C09F /* SiriButton.swift */; };
 		A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */; };
 		A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */; };
@@ -175,6 +172,9 @@
 		A3BA42F1253F38FB0007DDFB /* Calendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
+		A3C579CA2752864000B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579C92752864000B636EF /* Shift */; };
+		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
+		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* CalendarChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* CalendarChooserViewController.swift */; };
 		A3C5D77325B9AA4F009A2CA2 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A3C5D77925B9AA53009A2CA2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
@@ -478,6 +478,7 @@
 				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
 				A38A4D9F254D740500B35F98 /* EventKit.framework in Frameworks */,
 				A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */,
+				A3C579CC275286EF00B636EF /* Shift in Frameworks */,
 				A3064D1B254CEF5200C7F228 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */,
+				A3C579CE275286FC00B636EF /* Shift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +496,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C579CA2752864000B636EF /* Shift in Frameworks */,
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
@@ -1075,6 +1078,7 @@
 				A38A4D85254D6F7300B35F98 /* SwiftDate */,
 				A38A4DD5254D755F00B35F98 /* Logging */,
 				A38EE837254EC9C200045C12 /* Haptica */,
+				A3C579CB275286EF00B636EF /* Shift */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -1113,6 +1117,7 @@
 			name = "ClendarWatchApp Extension";
 			packageProductDependencies = (
 				A307DB3B25ADD88300B5CE11 /* SwiftDate */,
+				A3C579CD275286FC00B636EF /* Shift */,
 			);
 			productName = "ClendarWatchApp Extension";
 			productReference = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */;
@@ -1152,6 +1157,7 @@
 				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
 				A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */,
+				A3C579C92752864000B636EF /* Shift */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1254,6 +1260,7 @@
 				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
 				A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1531,7 +1538,6 @@
 				A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */,
 				A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */,
 				A307DBE625ADE66B00B5CE11 /* EmptyView.swift in Sources */,
-				A3B1FCBD26F5F247001344D2 /* ShiftWrapper.swift in Sources */,
 				A3209B4C258CE167002470CF /* Bool+Extensions.swift in Sources */,
 				A3AFBD2A255F85BA00760E5B /* CalendarGridWidgetView.swift in Sources */,
 				A3AFBD2E255F85BF00760E5B /* CalendarGridWidget.swift in Sources */,
@@ -1561,7 +1567,6 @@
 				A37F0B0E25C50C6000DFFC41 /* ComplicationViews.swift in Sources */,
 				A307DB5325ADD8BA00B5CE11 /* Calendar+Extensions.swift in Sources */,
 				A371157D25C51B9000D65F59 /* View+Gradient.swift in Sources */,
-				A3B1FCBE26F5F247001344D2 /* ShiftWrapper.swift in Sources */,
 				A371156F25C51AEC00D65F59 /* Color+Extensions.swift in Sources */,
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* SharedStore.swift in Sources */,
@@ -1617,7 +1622,6 @@
 				A33F81202247677F009CC46A /* Array+SwiftyChrono.swift in Sources */,
 				A307DBE025ADE65500B5CE11 /* EmptyView.swift in Sources */,
 				A3EDE73D25669FD50046C1F5 /* CustomGroupBoxStyle.swift in Sources */,
-				A3B1FCBC26F5F246001344D2 /* ShiftWrapper.swift in Sources */,
 				A3B568E725C5C45D00E3C09F /* SiriShortcutsView.swift in Sources */,
 				A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */,
 				A315FA2025CF0FA900E909DB /* DateInfoWidgetEntryView.swift in Sources */,
@@ -2290,6 +2294,14 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vinhnx/Shift.git";
+			requirement = {
+				branch = try_async_await;
+				kind = branch;
+			};
+		};
 		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
@@ -2366,6 +2378,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		A3C579C92752864000B636EF /* Shift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			productName = Shift;
+		};
+		A3C579CB275286EF00B636EF /* Shift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			productName = Shift;
+		};
+		A3C579CD275286FC00B636EF /* Shift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			productName = Shift;
 		};
 		A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;

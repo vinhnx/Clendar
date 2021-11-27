@@ -8,6 +8,12 @@
 
 import UIKit
 
+var window: UIWindow? {
+    let scenes = UIApplication.shared.connectedScenes
+    let windowScene = scenes.first as? UIWindowScene
+    return windowScene?.windows.first
+}
+
 extension UIViewController {
 	// MARK: - Container
 
@@ -75,8 +81,7 @@ extension UIViewController {
 	}
 
 	static var topViewController: UIViewController? {
-		let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-		return UIViewController.topViewController(window?.rootViewController)
+        UIViewController.topViewController(window?.rootViewController)
 	}
 
 	/// Safe present view controller

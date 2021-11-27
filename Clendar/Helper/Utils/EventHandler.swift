@@ -9,7 +9,7 @@
 import EventKit
 import EventKitUI
 import Foundation
-// import Shift
+import Shift
 
 class EventHandler {
     static func viewEvent(_ event: ClendarEvent?, delegate: EKEventViewDelegate?) {
@@ -18,7 +18,7 @@ class EventHandler {
         UIViewController.topViewController?.present(eventViewer, animated: true, completion: nil)
     }
 
-    @MainActor static func editEvent(_ event: ClendarEvent?, delegate: EKEventEditViewDelegate?) {
+    static func editEvent(_ event: ClendarEvent?, delegate: EKEventEditViewDelegate?) {
         guard let ekEvent = event?.event else { return }
         let eventViewer = EventEditViewController(eventStore: Shift.shared.eventStore, delegate: delegate)
         eventViewer.event = ekEvent
@@ -31,22 +31,13 @@ class EventHandler {
         guard let eventID = event?.id else { return }
 
         AlertManager.showActionSheet(message: NSLocalizedString("Are you sure you want to delete this event?", comment: ""), showDelete: true, deleteAction: {
-            Shift.shared.deleteEvent(identifier: eventID) { result in
-                switch result {
-                case .success:
-                    genSuccessHaptic()
-                    UIViewController.topViewController?.dimissModal()
-                case let .failure(error):
+            Task {
+                do {
+                    try await Shift.shared.deleteEvent(identifier: eventID)
+                } catch {
                     AlertManager.showWithError(error)
                 }
             }
-//            Task {
-//                do {
-//                    try await Shift.shared.deleteEvent(identifier: eventID)
-//                } catch {
-//                    AlertManager.showWithError(error)
-//                }
-//            }
         })
     }
 }

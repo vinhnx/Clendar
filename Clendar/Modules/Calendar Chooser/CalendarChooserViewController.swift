@@ -8,7 +8,7 @@
 
 import EventKitUI
 import UIKit
-// import Shift
+import Shift
 
 class CalendarChooserNavigationController: BaseNavigationController {
     // MARK: Lifecycle
@@ -43,7 +43,7 @@ class CalendarChooserViewController: EKCalendarChooser {
 
     // MARK: Lifecycle
 
-    @MainActor convenience init() {
+    convenience init() {
         self.init(eventStore: Shift.shared.eventStore)
     }
 

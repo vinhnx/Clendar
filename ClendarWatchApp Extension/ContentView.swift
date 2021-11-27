@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-// import Shift
+import Shift
 
 struct ContentView: View {
     @StateObject var eventKitWrapper = Shift.shared
@@ -39,11 +39,9 @@ struct ContentView: View {
                 }
             }
         }
-        .onAppear { eventKitWrapper.fetchEventsForToday() }
-
-//        .task {
-//            _ = try? await eventKitWrapper.fetchEventsForToday()
-//        }
+        .task {
+            _ = try? await eventKitWrapper.fetchEventsForToday()
+        }
     }
 }
 

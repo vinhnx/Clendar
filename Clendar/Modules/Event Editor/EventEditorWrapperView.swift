@@ -8,7 +8,7 @@
 
 import EventKitUI
 import SwiftUI
-// import Shift
+import Shift
 
 class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
     var wrapperView: EventEditorWrapperView
@@ -35,7 +35,7 @@ class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
         }
     }
 
-    @MainActor func eventEditViewControllerDefaultCalendar(forNewEvents _: EKEventEditViewController) -> EKCalendar {
+    func eventEditViewControllerDefaultCalendar(forNewEvents _: EKEventEditViewController) -> EKCalendar {
         Shift.shared.defaultCalendar ?? EKCalendar(for: .event, eventStore: EKEventStore())
     }
 }
