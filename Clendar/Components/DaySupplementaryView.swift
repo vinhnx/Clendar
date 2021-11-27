@@ -8,7 +8,7 @@
 
 import CVCalendar
 import UIKit
-// import Shift
+import Shift
 
 class DaySupplementaryView: UIStackView {
     static func viewForDayView(_ dayView: DayView, isOut: Bool, type: DaySupplementaryType = DaySupplementaryType.defaultValue) -> UIView? {
@@ -24,43 +24,6 @@ class DaySupplementaryView: UIStackView {
             label.text = lunarDate
             label.textAlignment = .center
             return label
-
-        case .oneDot:
-            let size: CGFloat = 5.0
-            let view = DaySupplementaryView(frame: CGRect(x: dayView.center.x, y: dayView.frame.origin.y, width: size, height: size))
-            view.axis = .horizontal
-            view.distribution = .fill
-
-//            Task {
-//                do {
-//                    let events = try await Shift.shared.fetchEvents(for: date)
-//                    if !events.isEmpty {
-//                        let colorView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
-//                        colorView.backgroundColor = UIColor.primaryColor
-//                        colorView.applyCircle()
-//                        view.addArrangedSubview(colorView)
-//                    }
-//                } catch {
-//                    logError(error)
-//                }
-//            }
-
-            Shift.shared.fetchEvents(for: date) { result in
-                switch result {
-                case let .success(events):
-                    if events.isEmpty == false {
-                        let colorView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
-                        colorView.backgroundColor = UIColor.primaryColor
-                        colorView.applyCircle()
-                        view.addArrangedSubview(colorView)
-                    }
-
-                case let .failure(error):
-                    logError(error)
-                }
-            }
-
-            return view
 
         case .none:
             return nil

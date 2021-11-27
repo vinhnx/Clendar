@@ -98,7 +98,6 @@ enum AppTheme: Int, CaseIterable, SettingsValueMappable {
 enum DaySupplementaryType: Int, CaseIterable, SettingsValueMappable {
     case none
     case lunarDate
-    case oneDot
 
     // MARK: Internal
 
@@ -110,7 +109,6 @@ enum DaySupplementaryType: Int, CaseIterable, SettingsValueMappable {
         switch self {
         case .none: return NSLocalizedString("None", comment: "")
         case .lunarDate: return NSLocalizedString("Lunar date", comment: "")
-        case .oneDot: return NSLocalizedString("One dot", comment: "")
         }
     }
 
@@ -119,7 +117,6 @@ enum DaySupplementaryType: Int, CaseIterable, SettingsValueMappable {
     static func mapFromText(_ text: String?) -> Self {
         switch text {
         case DaySupplementaryType.lunarDate.localizedText: return .lunarDate
-        case DaySupplementaryType.oneDot.localizedText: return .oneDot
         case DaySupplementaryType.none.localizedText: return .none
         default: return .none
         }
