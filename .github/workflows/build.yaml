@@ -10,6 +10,8 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - uses: fwal/setup-swift@v1 #  GitHub Action that setup a Swift environment (https://github.com/fwal/setup-swift)
+            - name: Force Xcode version
+              run: sudo xcode-select -switch /Applications/Xcode_13.1.app
             - name: Build
               run: swift build
             # - name: Run tests
