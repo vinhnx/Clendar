@@ -1,0 +1,16 @@
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+name: Swift
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: macos-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - uses: fwal/setup-swift@v1 #  GitHub Action that setup a Swift environment (https://github.com/fwal/setup-swift)
+            - name: Build
+              run: swift build
+            # - name: Run tests
+            #   run: swift test
