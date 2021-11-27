@@ -74,7 +74,7 @@ struct ContentView: View {
                 genLightHaptic()
                 store.showCreateEventState.toggle()
             }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil"))
+            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
