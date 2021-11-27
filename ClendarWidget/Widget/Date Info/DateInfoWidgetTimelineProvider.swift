@@ -8,7 +8,7 @@
 
 import SwiftUI
 import WidgetKit
-// import Shift
+import Shift
 
 // Reference: https://wwdcbysundell.com/2020/getting-started-with-widgetkit/
 
@@ -21,26 +21,21 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
     }
 
     func getTimeline(in _: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
-        var entries = [WidgetEntry]()
 
         let currentDate = Date()
 
         // swiftlint:disable:next force_unwrapping
         let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
 
-        Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate) { result in
-            switch result {
-            case let .success(events):
-                let clendarEvents = events.compactMap(ClendarEvent.init)
-                let entry = WidgetEntry(date: interval, events: clendarEvents)
-                entries.append(entry)
+        Task {
+            var entries = [WidgetEntry]()
+            let events = (try? await Shift.shared.fetchEventsRangeUntilEndOfDay(from: currentDate)) ?? []
+            let clendarEvents = events.compactMap(ClendarEvent.init)
+            let entry = WidgetEntry(date: interval, events: clendarEvents)
+            entries.append(entry)
 
-                let timeline = Timeline(entries: entries, policy: .after(interval))
-                completion(timeline)
-
-            case let .failure(error):
-                logError(error)
-            }
+            let timeline = Timeline(entries: entries, policy: .after(interval))
+            completion(timeline)
         }
     }
 
