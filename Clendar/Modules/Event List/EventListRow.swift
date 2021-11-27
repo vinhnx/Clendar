@@ -18,7 +18,7 @@ struct EventListRow: View {
                 label:
                     Text(ekEvent.durationText().localizedUppercase)
                     .accessibility(label: Text("Event duration"))
-                    .font(.boldFontWithSize(15))
+                    .font(.mediumFontWithSize(13))
                     .foregroundColor(Color(ekEvent.calendar.cgColor)),
                 content: {
                     HStack(spacing: 10) {
@@ -28,8 +28,8 @@ struct EventListRow: View {
 
                         Text(ekEvent.title)
                             .accessibility(label: Text("Title of the event"))
-                            .lineLimit(nil)
-                            .font(.mediumFontWithSize(18))
+                            .lineLimit(2)
+                            .font(.mediumFontWithSize(16))
                             .foregroundColor(.appDark)
                     }
                 }

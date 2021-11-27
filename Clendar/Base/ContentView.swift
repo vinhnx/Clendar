@@ -30,7 +30,7 @@ struct ContentView: View {
             Button {
                 store.selectedDate = Date()
             } label: {
-                VStack {
+                VStack(alignment: .trailing) {
                     Text(store.selectedDate.toMonthString.localizedUppercase)
                         .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
                         .font(.boldFontWithSize(20))
@@ -41,6 +41,7 @@ struct ContentView: View {
             .accessibility(addTraits: .isHeader)
             .keyboardShortcut("h", modifiers: [.command, .shift])
         }
+        .padding(.trailing, 10)
     }
 
     private var topView: some View {
@@ -128,7 +129,7 @@ struct ContentView: View {
                     store.showSettingsState.toggle()
                 },
                 label: {
-                    Image(systemName: "line.horizontal.2.decrease.circle")
+                    Image(systemName: "slider.horizontal.3")
                         .frame(width: 50, height: 50)
                 }
             )
@@ -142,7 +143,7 @@ struct ContentView: View {
             .keyboardShortcut(",", modifiers: [.command])
         }
         .accentColor(.appRed)
-        .font(.regularFontWithSize(20))
+        .font(.boldFontWithSize(20))
     }
 
     // MARK: - Body
