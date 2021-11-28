@@ -5,47 +5,34 @@
 
 name: CI
 
-on: [push]
+on:
+    push:
+        branches:
+            - main
+    pull_request:
 
 jobs:
-    build:
-        runs-on: macos-11 # specify macOS 11 -> https://github.com/actions/virtual-environments/issues/4060
-        strategy:
-            matrix:
-                run-config:
-                    - { scheme: "Clendar", destination: "platform=macOS" }
-                    - {
-                          scheme: "Clendar",
-                          destination: "platform=iOS Simulator,OS=15.0.0,name=iPhone 13",
-                      }
+    test:
+        runs-on: macOS-latest
+        env:
+            WORKSPACE: Clendar.xcworkspace
+            SCHEME: Clendar
+            SDK: iphonesimulator
+            DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
 
         steps:
-            - name: Checkout Project
-              uses: actions/checkout@v1
+            - uses: actions/checkout@v1
 
-            - name: Use latest Swift version
-              uses: fwal/setup-swift@v1 #  GitHub Action that setup a Swift environment (https://github.com/fwal/setup-swift)
+            - name: Generate Xcode Project
+              run: make project
 
-            - name: Show the currently detailed version of Xcode for CLI
-              run: xcode-select -p
-
-            - name: Show what's in Applications
-              run: ls -al /Applications
-
-            - name: Switch to Xcode 13.1
-              run: sudo xcode-select -s /Applications/Xcode_13.1.app
-
-            - name: Show Build Settings
-              run: xcodebuild -workspace Clendar.xcworkspace -scheme '${{ matrix.run-config['scheme'] }}' -showBuildSettings
-
-            - name: Show Build SDK
-              run: xcodebuild -workspace Clendar.xcworkspace -scheme '${{ matrix.run-config['scheme'] }}' -showsdks
-
-            - name: Show Available Destinations
-              run: xcodebuild -workspace Clendar.xcworkspace -scheme '${{ matrix.run-config['scheme'] }}' -showdestinations
-
-            # - name: lint
-            #   run: swift format lint --configuration .swift-format-config -r .
-
-            - name: build and test
-              run: xcodebuild clean test -scheme '${{ matrix.run-config['scheme'] }}' -destination '${{ matrix.run-config['destination'] }}' -showBuildTimingSummary
+            - name: Build and Test
+              run: |
+                  set -o pipefail && xcodebuild clean build test \
+                    -workspace "$WORKSPACE" \
+                    -scheme "$SCHEME" \
+                    -sdk "$SDK" \
+                    -destination "$DESTINATION" \
+                    -configuration Debug \
+                    -enableCodeCoverage YES \
+                    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
