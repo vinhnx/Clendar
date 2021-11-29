@@ -93,9 +93,10 @@ Action
 
 ### Requirements
 
--   Xcode 12.0
--   iOS 14.0
--   watchOS 7.0
+ (for async/await):
+-   Xcode 13.1
+-   iOS 15.0
+-   watchOS 8.0
 -   Ruby (for Fastlane build automation)
 
 ### My own Swift Packages currently used in Clendar
