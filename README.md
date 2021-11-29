@@ -110,9 +110,10 @@ Contributing is more than welcome, if you feel like helping the app, or want to 
 
 ### Contributors
 
-Huge thanks everyone who took their precious time and effort to contribute to the project.
-
-+ [@AlexanderSutul](https://github.com/AlexanderSutul)
+🙏🏻🤯🎉
+Huge thanks everyone who took their precious time and effort to contribute to the project:
++ [Aleksandr Sutulov](https://github.com/AlexanderSutul)
++ [Jan Matoniak](https://github.com/kapucnov2321)
 + [your name here?...](https://github.com/vinhnx/Clendar/issues)
 
 💡🧡
