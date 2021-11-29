@@ -122,7 +122,11 @@ Huge thanks everyone who took their precious time and effort to contribute to th
 
 [MIT License](https://github.com/vinhnx/Clendar/blob/main/LICENSE)
 
-And, if you like, you can download the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tips via In-App Purchase options.
+You can do whatever you want with this source code: modify, tweak or use as learning resources, for example... 🛠👨🏻‍💻
+
+But, please don't re-distribute the app on App Store with different name. 🥺
+
+And, if you like, you can purcahse the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tips via In-App Purchase options. Thank you in advance! 📲
 
 ### Open-source inspiration
 + https://github.com/jeffreybergier/WaterMe
