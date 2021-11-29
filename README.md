@@ -19,18 +19,19 @@ Clendar - minimal calendar
 
 > [Landing Page](https://vinhnx.github.io/clendar-site/)
 
-### Ok, this is the readme
+### About
 
-📖
+This project is started out as an UIKit base app for me to learn new WWDC features over the years. But one day, I decided to convert the whole app from UIKit -> SwiftUI and boom, here we are.
 
-I believe the best way to Learn is by doing.
+This is the PR => https://github.com/vinhnx/Clendar/pull/35
 
-[SwiftUI](https://developer.apple.com/xcode/swiftui/) is evolving and I think it's the future of writing apps.
+### SwiftUI
+
+📖 I believe the best way to Learn is by doing. [SwiftUI](https://developer.apple.com/xcode/swiftui/) is evolving and I think it's the future of writing apps.
 
 > SwiftUI is an innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift. Build user interfaces for any Apple device using just one set of tools and APIs.
 >
 > -- Apple
-
 
 The true power of SwiftUI, to me, is it's flexibility, thanks to it's vast realm of view modifiers and expressiveness with property wrappers.
 
