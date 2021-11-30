@@ -65,8 +65,6 @@
 		A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftyFORM */; };
 		A3187E8525499FE1009524DF /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E8425499FE1009524DF /* AppInfo.swift */; };
 		A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */; };
-		A31AFDCD25CE79FA0092D44D /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; };
-		A31AFDCE25CE79FA0092D44D /* ConfettiSwiftUI in CopyFiles */ = {isa = PBXBuildFile; productRef = A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */; };
 		A31C7A5B224E4BD600CB93A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */; };
 		A31F616D260D62C6003CFE1C /* icon2_180.png in Resources */ = {isa = PBXBuildFile; fileRef = A31F615C260D62C5003CFE1C /* icon2_180.png */; };
@@ -191,6 +189,7 @@
 		A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */; };
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
 		A3E23633258CD7A7001BCB9F /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */; };
+		A3EBA83F27561146000188FD /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A3EBA83E27561146000188FD /* ConfettiSwiftUI */; };
 		A3EDE72925669F640046C1F5 /* QuickEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE72825669F640046C1F5 /* QuickEventView.swift */; };
 		A3EDE72E25669F8F0046C1F5 /* EventEditorWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */; };
 		A3EDE73325669FA60046C1F5 /* EventViewerWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */; };
@@ -277,7 +276,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A31AFDCE25CE79FA0092D44D /* ConfettiSwiftUI in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +503,7 @@
 				A3D3EAE025CE5A8700EC3D1D /* Laden in Frameworks */,
 				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
-				A31AFDCD25CE79FA0092D44D /* ConfettiSwiftUI in Frameworks */,
+				A3EBA83F27561146000188FD /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,8 +1152,8 @@
 				A383331025A96A8100F7ED70 /* CVCalendar */,
 				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
-				A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */,
 				A3C579C92752864000B636EF /* Shift */,
+				A3EBA83E27561146000188FD /* ConfettiSwiftUI */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1257,8 +1255,8 @@
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
 				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
-				A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
+				A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -2252,14 +2250,6 @@
 				minimumVersion = 1.8.4;
 			};
 		};
-		A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.1;
-			};
-		};
 		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -2296,7 +2286,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 0.7.0;
 			};
 		};
@@ -2324,6 +2314,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2336,11 +2334,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
 			productName = SwiftyFORM;
-		};
-		A31AFDCC25CE79FA0092D44D /* ConfettiSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A31AFDCB25CE79FA0092D44D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
 		};
 		A3560CFD2567FB6F009088E7 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2406,6 +2399,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3D999E42549A69F003E08E2 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
+		};
+		A3EBA83E27561146000188FD /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/simibac/ConfettiSwiftUI",
         "state": {
           "branch": null,
-          "revision": "4aac70f5264e59dfed75d6f1c282bb147f101a49",
-          "version": "0.2.1"
+          "revision": "7d07b954afdeffeac7c3ed913296f7d73b600003",
+          "version": "0.3.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/efremidze/Haptica",
         "state": {
           "branch": null,
-          "revision": "4084702c85102c2d17d58e42ec5a750094944864",
-          "version": "3.0.2"
+          "revision": "e03932406d2f36f10beefd31717730b2c2fa9014",
+          "version": "3.0.3"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vinhnx/Shift.git",
         "state": {
           "branch": null,
-          "revision": "40126cd5964d183819c23ebab5d9d51a82298216",
-          "version": "0.7.0"
+          "revision": "cb4806f9b67f958543262d2e9b925c492f7c7f80",
+          "version": "0.7.2"
         }
       },
       {
