@@ -302,10 +302,10 @@ final class SettingsViewController: FormViewController {
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += siriShortcutButton
-        #endif
         builder += languageButton
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", comment: ""))
-
+        #endif
+        
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
         builder += calendarView
