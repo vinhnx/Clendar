@@ -12,9 +12,9 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/CalendarHeatmap</string>
+			<string>com.mono0926.LicensePlist/ConfettiSwiftUI</string>
 			<key>Title</key>
-			<string>CalendarHeatmap</string>
+			<string>ConfettiSwiftUI</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -36,9 +36,9 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>com.mono0926.LicensePlist/IQKeyboardManager</string>
+			<string>com.mono0926.LicensePlist/Laden</string>
 			<key>Title</key>
-			<string>IQKeyboardManagerSwift</string>
+			<string>Laden</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -68,6 +68,14 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/Shift</string>
+			<key>Title</key>
+			<string>Shift</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/swift-log</string>
 			<key>Title</key>
 			<string>swift-log</string>
@@ -79,6 +87,14 @@
 			<string>com.mono0926.LicensePlist/SwiftDate</string>
 			<key>Title</key>
 			<string>SwiftDate</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SwiftFormat</string>
+			<key>Title</key>
+			<string>SwiftFormat</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -103,6 +119,22 @@
 			<string>com.mono0926.LicensePlist/SwiftyFORM</string>
 			<key>Title</key>
 			<string>SwiftyFORM</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SwiftyStoreKit</string>
+			<key>Title</key>
+			<string>SwiftyStoreKit</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/Then</string>
+			<key>Title</key>
+			<string>Then</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
