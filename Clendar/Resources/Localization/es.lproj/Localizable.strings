@@ -1,143 +1,143 @@
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Puede optar por utilizar el modo de análisis de lenguaje natural experimental al crear un nuevo evento. Esta característica se mejorará.";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "App info" = "Informacion de la applicacion";
 "Auto-select day" = "Seleccionar día automáticamente";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select day when month changes" = "Seleccionar automáticamente el día cuando cambia el mes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select first day of month/week when calendar changes" = "Seleccionar automáticamente el primer día del mes / semana cuando cambia el calendario";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Available calendars" = "Calendarios disponibles";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar grid view" = "Vista de cuadrícula de calendario";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar View" = "Vista de calendario";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendars" = "Calendarios";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Cancel" = "Cancelar";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Check calendar at a glance" = "Consulta el calendario de un vistazo";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Choose your desired app icon" = "Elija el icono de la aplicación que desee";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Custom App Icon" = "Icono de aplicación personalizada";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dark" = "Oscura";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date" = "Fecha";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date Info Widget" = "Widget de información de fecha";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Default event duration" = "Duración predeterminada del evento";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Delete Event" = "Eliminar evento";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dim" = "Oscura";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Done" = "Hecho";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Edit Event" = "Editar evento";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "General" = "General";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Haptic feedback" = "Retroalimentación háptica";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Light" = "Ligera";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Lunar date" = "Fecha mensual";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "minutes" = "minutos";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month" = "Mes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view" = "Vista de mes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view calendar" = "Calendario de vista mensual";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Name" = "Nombre";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "None" = "Ninguna";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Off" = "Apagada";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "OK" = "Okay";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "On" = "En";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "One dot" = "Un punto";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Quick Event" = "Evento rápido";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Settings" = "Configuraciones";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Show days out" = "Mostrar días fuera";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Supplementary day view" = "Vista complementaria del día";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Themes" = "Themes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Upcoming events" = "Próximos Eventos";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Version" = "Versión";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View Event" = "Ver evento";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View mode" = "Modo de vista";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Week view" = "Vista de semana";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "read a book this Friday 8PM..." = "leer un libro este viernes 8PM ...";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "You can choose available calendars to shown in event list" = "Puede elegir los calendarios disponibles para mostrar en la lista de eventos";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n🎉" = "¡No más eventos hoy, disfruta tu día! 🎉";
 "No events for today,\nenjoy your day!\n🎉" = "No hay eventos para hoy, ¡disfruta tu día! 🎉";
 "English" = "Inglés";
@@ -209,8 +209,12 @@
 "True Dark" = "Verdadero oscuro";
 "True Light" = "Luz verdadera";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n" = "No hay eventos para hoy, \n ¡disfruta tu día! \n";
 "No events for today,\nenjoy your day!\n" = "No hay eventos para hoy, \n ¡disfruta tu día! \n";
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
+"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "Se le redirigirá a la aplicación Configuración para seleccionar el idioma de la aplicación que prefiera. Después de elegir el idioma, reinicie la aplicación para aplicar efectos (Consejo: puede tocar el ícono superior izquierdo, debajo de la barra de estado para iniciar rápidamente la aplicación).";
+"Language" = "Idioma";
+"Support" = "Apoyo";
+"Tip jar" = "Tarro de propinas";

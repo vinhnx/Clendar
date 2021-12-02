@@ -1,143 +1,143 @@
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "App info" = "App info";
 "Auto-select day" = "Auto-select day";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select day when month changes" = "Auto-select day when month changes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select first day of month/week when calendar changes" = "Auto-select first day of month/week when calendar changes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Available calendars" = "Available calendars";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar grid view" = "Calendar grid view";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar View" = "Calendar View";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendars" = "Calendars";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Cancel" = "Cancel";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Check calendar at a glance" = "Check calendar at a glance";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Choose your desired app icon" = "Choose your desired app icon";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Custom App Icon" = "Custom App Icon";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dark" = "Dark";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date" = "Date";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date Info Widget" = "Date Info Widget";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Default event duration" = "Default event duration";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Delete Event" = "Delete Event";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dim" = "Dim";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Done" = "Done";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Edit Event" = "Edit Event";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "General" = "General";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Haptic feedback" = "Haptic feedback";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Light" = "Light";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Lunar date" = "Lunar date";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "minutes" = "minutes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month" = "Month";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view" = "Month view";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view calendar" = "Month view calendar";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Name" = "Name";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "None" = "None";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Off" = "Off";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "OK" = "OK";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "On" = "On";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "One dot" = "One dot";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Quick Event" = "Quick Event";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Settings" = "Settings";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Show days out" = "Show days out";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Supplementary day view" = "Supplementary day view";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Themes" = "Themes";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Upcoming events" = "Upcoming events";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Version" = "Version";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View Event" = "View Event";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View mode" = "View mode";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Week view" = "Week view";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "read a book this Friday 8PM..." = "read a book this Friday 8PM...";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "You can choose available calendars to shown in event list" = "You can choose available calendars to show in event list";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n🎉" = "No more events today,\nenjoy your day!\n🎉";
 "No events for today,\nenjoy your day!\n🎉" = "No events for today,\nenjoy your day!\n🎉";
 "English" = "English";
@@ -209,8 +209,12 @@
 "True Dark" = "True Dark";
 "True Light" = "True Light";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n" = "No more events today,\nenjoy your day!\n";
 "No events for today,\nenjoy your day!\n" = "No events for today,\nenjoy your day!\n";
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
+"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).";
+"Language" = "Language";
+"Support" = "Support";
+"Tip jar" = "Tip jar";

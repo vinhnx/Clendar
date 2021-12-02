@@ -1,143 +1,143 @@
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[베타] 새 이벤트를 생성 할 때 실험적인 자연어 구문 분석 모드를 사용하도록 선택할 수 있습니다. 이 기능은 개선 될 것입니다.";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "App info" = "앱 정보";
 "Auto-select day" = "요일 자동 선택";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select day when month changes" = "월이 변경되는 날짜 자동 선택";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select first day of month/week when calendar changes" = "달력이 변경 될 때 월 /주의 첫째 날 자동 선택";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Available calendars" = "사용 가능한 캘린더";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar grid view" = "캘린더 그리드보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar View" = "달력보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendars" = "달력";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Cancel" = "취소";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Check calendar at a glance" = "한눈에 캘린더 확인";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Choose your desired app icon" = "원하는 앱 아이콘을 선택하세요";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Custom App Icon" = "맞춤 앱 아이콘";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dark" = "어두운";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date" = "데이트";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date Info Widget" = "날짜 정보 위젯";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Default event duration" = "기본 이벤트 기간";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Delete Event" = "이벤트 삭제";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dim" = "어둑한";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Done" = "끝난";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Edit Event" = "이벤트 수정";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "General" = "일반";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Haptic feedback" = "햅틱 피드백";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Light" = "빛";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Lunar date" = "월간 날짜";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "minutes" = "의사록";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month" = "달";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view" = "월별보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view calendar" = "월별 달력";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Name" = "이름";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "None" = "없음";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Off" = "떨어져서";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "OK" = "확인";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "On" = "의 위에";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "One dot" = "한 점";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Quick Event" = "빠른 이벤트 평가";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Settings" = "설정";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Show days out" = "나날의 표시";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Supplementary day view" = "추가 일보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Themes" = "테마";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Upcoming events" = "다가오는 이벤트";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Version" = "버전";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View Event" = "이벤트보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View mode" = "보기 모드";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Week view" = "주간보기";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "read a book this Friday 8PM..." = "이번 주 금요일 오후 8시 책을 읽으십시오 ...";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "You can choose available calendars to shown in event list" = "이벤트 목록에 표시 할 사용 가능한 캘린더를 선택할 수 있습니다.";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n🎉" = "오늘은 더 이상 이벤트가 없습니다. 즐거운 하루 되세요! 🎉 ";
 "No events for today,\nenjoy your day!\n🎉" = "오늘은 이벤트가 없습니다. 즐거운 하루 되세요! 🎉 ";
 "English" = "영어";
@@ -209,8 +209,12 @@
 "True Dark" = "진정한 어둠";
 "True Light" = "진정한 빛";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n" = "오늘은 이벤트가 없습니다. \n 즐거운 하루 되세요! \n";
 "No events for today,\nenjoy your day!\n" = "오늘은 이벤트가 없습니다. \n 즐거운 하루 되세요! \n";
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
+"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "선호하는 앱 언어를 선택하기 위해 설정 앱으로 리디렉션됩니다. 언어를 선택한 후 응용 프로그램을 다시 실행하여 효과를 적용하십시오(팁: 상태 표시줄 아래의 왼쪽 상단 아이콘을 눌러 앱을 빠르게 실행할 수 있음).";
+"Language" = "언어";
+"Support" = "지원하다";
+"Tip jar" = "팁 항아리";

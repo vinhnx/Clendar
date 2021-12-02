@@ -1,143 +1,143 @@
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[测试版]创建新事件时，您可以选择使用实验性自然语言解析模式。 此功能将得到改善。";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "App info" = "应用程式资讯";
 "Auto-select day" = "自动选择日期";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select day when month changes" = "自动选择月份更改的日期";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Auto-select first day of month/week when calendar changes" = "日历更改时自动选择每月/每周的第一天";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Available calendars" = "可用日历";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar grid view" = "日历网格视图";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendar View" = "日历视图";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Calendars" = "行事历";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Cancel" = "取消";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Check calendar at a glance" = "日历一目了然";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Choose your desired app icon" = "选择所需的应用程序图标";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Custom App Icon" = "自定义应用程序图标";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dark" = "黑暗";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date" = "日期";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Date Info Widget" = "日期信息小部件";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Default event duration" = "默认事件持续时间";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Delete Event" = "删除活动";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Dim" = "暗淡";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Done" = "完成了";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Edit Event" = "编辑活动";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "General" = "一般";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Haptic feedback" = "触觉反馈";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Light" = "光";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Lunar date" = "每月的日期";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "minutes" = "分钟";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month" = "月";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view" = "月视图";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Month view calendar" = "月视图日历";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Name" = "名称";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "None" = "没有";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Off" = "关";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "OK" = "行";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "On" = "上";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "One dot" = "一点";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Quick Event" = "快速事件";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Settings" = "设定值";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Show days out" = "显示天数";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Supplementary day view" = "补充日视图";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Themes" = "主题";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Upcoming events" = "接下来的活动";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Version" = "版";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View Event" = "查看活动";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "View mode" = "查看模式";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "Week view" = "周视图";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "read a book this Friday 8PM..." = "这个星期五晚上8点看书...";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "You can choose available calendars to shown in event list" = "您可以选择可用的日历以显示在事件列表中";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n" = "今天没有活动，\n 祝您愉快！\n";
 "No events for today,\nenjoy your day!\n" = "今天没有活动，\n 祝您愉快！\n";
 "English" = "英语";
@@ -209,8 +209,12 @@
 "True Dark" = "真正的黑暗";
 "True Light" = "真光";
 
-/* No comment provided by engineer. */
+// No comment provided by engineer.
 "No more events today,\nenjoy your day!\n🎉" = "今天没有活动，\n 祝您愉快！\n";
 "No events for today,\nenjoy your day!\n🎉" = "今天没有活动，\n 祝您愉快！\n";
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
+"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "您将被重定向到“设置”应用以选择您喜欢的应用语言。 选择语言后，请重新启动应用程序以应用效果（提示：您可以点击状态栏下方的左上角图标快速启动应用程序）。";
+"Language" = "语";
+"Support" = "支持";
+"Tip jar" = "小费罐";

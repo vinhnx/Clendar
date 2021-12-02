@@ -41,6 +41,16 @@ final class SettingsViewController: FormViewController {
 
     // MARK: Internal
 
+    lazy var languageButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🇺🇳 " + NSLocalizedString("Language", comment: "")
+        instance.action = { [weak self] in
+            self?.openAppSpecificSettings()
+        }
+
+        return instance
+    }()
+
     lazy var themes: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
         instance.title(NSLocalizedString("Themes", comment: ""))
@@ -229,7 +239,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var tipJarButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "☕️ " + NSLocalizedString("Tip Jar", comment: "")
+        instance.title = "☕️ " + NSLocalizedString("Tip jar", comment: "")
         instance.action = {
             let viewModel = ModalWrapperView()
             let swiftUIView = ClendarPlusView(viewModel: viewModel)
@@ -288,12 +298,13 @@ final class SettingsViewController: FormViewController {
         builder += themes
         builder += widgetTheme
         builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
-
         #if !targetEnvironment(macCatalyst)
         builder += enableHapticFeedback
         builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += siriShortcutButton
         #endif
+        builder += languageButton
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", comment: ""))
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
@@ -322,4 +333,18 @@ final class SettingsViewController: FormViewController {
         builder += StaticTextFormItem().title(NSLocalizedString("Name", comment: "")).value(AppInfo.appName)
         builder += StaticTextFormItem().title(NSLocalizedString("Version", comment: "")).value(AppInfo.appVersionAndBuild)
     }
+}
+
+extension SettingsViewController {
+
+    // https://stackoverflow.com/a/52103305/1477298
+    @objc private func openAppSpecificSettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) else {
+            return
+        }
+
+        let optionsKeyDictionary = [UIApplication.OpenExternalURLOptionsKey(rawValue: "universalLinksOnly"): NSNumber(value: true)]
+        UIApplication.shared.open(url, options: optionsKeyDictionary, completionHandler: nil)
+    }
+
 }

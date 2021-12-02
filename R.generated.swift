@@ -391,7 +391,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 121 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 125 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -609,6 +609,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let keyboardShortcuts = Rswift.StringResource(key: "Keyboard shortcuts", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Language
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let language = Rswift.StringResource(key: "Language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Light
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -777,6 +781,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let supplementaryDayView = Rswift.StringResource(key: "Supplementary day view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Support
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let support = Rswift.StringResource(key: "Support", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Swipe down to collapse
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -793,6 +801,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let thisIsARepeatingEvent = Rswift.StringResource(key: "This is a repeating event.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Tip jar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let tipJar = Rswift.StringResource(key: "Tip jar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Tip received. Thank you very much and have a great day! 😊
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -861,6 +873,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let youCanNowQuickShortcutsToSiriAndShortcutsAppTryAddingOneBelow = Rswift.StringResource(key: "You can now quick shortcuts to Siri and Shortcuts app. Try adding one below", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let youWillBeRedirectToSettingsAppToSelectYourPreferredAppLanguageAfterChoosingTheLanguagePleaseRelaunchTheApplicationToApplyEffectsTipYouCanTapTheTopLeftIconBelowTheStatusBarToQuicklyLaunchTheApp = Rswift.StringResource(key: "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Your day events at a glance
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1688,6 +1704,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Keyboard shortcuts", bundle: bundle, comment: "")
       }
 
+      /// en translation: Language
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func language(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Language"
+        }
+
+        return NSLocalizedString("Language", bundle: bundle, comment: "")
+      }
+
       /// en translation: Light
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2318,6 +2349,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Supplementary day view", bundle: bundle, comment: "")
       }
 
+      /// en translation: Support
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func support(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Support", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Support"
+        }
+
+        return NSLocalizedString("Support", bundle: bundle, comment: "")
+      }
+
       /// en translation: Swipe down to collapse
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -2376,6 +2422,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("This is a repeating event.", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tip jar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func tipJar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Tip jar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Tip jar"
+        }
+
+        return NSLocalizedString("Tip jar", bundle: bundle, comment: "")
       }
 
       /// en translation: Tip received. Thank you very much and have a great day! 😊
@@ -2631,6 +2692,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You can now quick shortcuts to Siri and Shortcuts app. Try adding one below", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func youWillBeRedirectToSettingsAppToSelectYourPreferredAppLanguageAfterChoosingTheLanguagePleaseRelaunchTheApplicationToApplyEffectsTipYouCanTapTheTopLeftIconBelowTheStatusBarToQuicklyLaunchTheApp(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)."
+        }
+
+        return NSLocalizedString("You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", bundle: bundle, comment: "")
       }
 
       /// en translation: Your day events at a glance
