@@ -446,6 +446,9 @@
 		A3EDE74125669FE20046C1F5 /* SharedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStore.swift; sourceTree = "<group>"; };
 		A3EDE7462566A0180046C1F5 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		A3EF6232275A734100346506 /* SingleCalendarChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCalendarChooserViewController.swift; sourceTree = "<group>"; };
+		A3EF6236275A8F3D00346506 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-hant.lproj/ClendarWidget.strings"; sourceTree = "<group>"; };
+		A3EF6238275A8F3E00346506 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
+		A3EF623A275A8F4200346506 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWrapView.swift; sourceTree = "<group>"; };
 		A3F25977224771F2009A50B6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -461,7 +464,6 @@
 		CAFA79B020F544AB19C4D3C6 /* ko */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DF7E6079522A39C0AA433E3F /* Pods-ClendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E5EA7F4F0F1E3526F5AFFF01 /* es */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F0DF8F04227A48A4EDFD015F /* zh-hant */ = {isa = PBXFileReference; explicitFileType = file.intentdefinition; name = "zh-hant"; path = "zh-hant.lproj/ClendarWidget.intentdefinition"; sourceTree = "<group>"; };
 		FE566D1213BADCED1612B917 /* Pods-ClendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1746,7 +1748,9 @@
 				A33EE21425C6E3D900BE80F1 /* zh-Hans */,
 				A33EE22025C6E46D00BE80F1 /* es */,
 				A33EE22C25C6E8B600BE80F1 /* ko */,
-				F0DF8F04227A48A4EDFD015F /* zh-hant */,
+				A3EF6236275A8F3D00346506 /* zh-Hant */,
+				A3EF6238275A8F3E00346506 /* de */,
+				A3EF623A275A8F4200346506 /* th */,
 			);
 			name = ClendarWidget.intentdefinition;
 			sourceTree = "<group>";
