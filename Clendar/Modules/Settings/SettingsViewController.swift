@@ -120,17 +120,6 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var shouldAutoSelectDayOnCalendarChange: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Auto-select day", comment: "")
-        instance.value = SettingsManager.shouldAutoSelectDayOnCalendarChange
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.shouldAutoSelectDayOnCalendarChange = activate
-            NotificationCenter.default.post(name: .justReloadCalendar, object: nil)
-        }
-        return instance
-    }()
-
     lazy var defaultEventDuration: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
         instance.title(NSLocalizedString("Default event duration", comment: ""))
@@ -293,6 +282,13 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
+        // Sharing
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
+        builder += tipJarButton
+        builder += writeReviewButton
+        builder += shareAppButton
+        builder += feedbackMailButton
+
         // General
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
@@ -309,24 +305,16 @@ final class SettingsViewController: FormViewController {
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
         builder += calendarView
-        builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(CalendarChooserViewController.self)
         builder += supplementaryViewMode
         builder += showDaysOut
-        builder += shouldAutoSelectDayOnCalendarChange
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Auto-select first day of month/week when calendar changes", comment: ""))
+        builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
+        builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += quickEventMode
         builder += defaultEventDuration
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
-
-        // Sharing
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
-        builder += tipJarButton
-        builder += writeReviewButton
-        builder += shareAppButton
-        builder += feedbackMailButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

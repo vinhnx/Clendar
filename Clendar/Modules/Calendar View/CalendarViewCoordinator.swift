@@ -47,9 +47,9 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     func shouldShowWeekdaysOut() -> Bool { SettingsManager.showDaysOut }
 
-    func shouldAutoSelectDayOnMonthChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
+    func shouldAutoSelectDayOnMonthChange() -> Bool { false }
 
-    func shouldAutoSelectDayOnWeekChange() -> Bool { SettingsManager.shouldAutoSelectDayOnCalendarChange }
+    func shouldAutoSelectDayOnWeekChange() -> Bool { false }
 
     func didSelectDayView(_: CVCalendarDayView, animationDidFinish _: Bool) {
         genLightHaptic()

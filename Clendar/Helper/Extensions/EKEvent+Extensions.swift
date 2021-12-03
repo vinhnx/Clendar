@@ -8,6 +8,7 @@
 
 import EventKit
 import Foundation
+import Shift
 
 extension EKEvent {
     func durationText(startDateOnly: Bool = false) -> String {
@@ -36,5 +37,10 @@ extension EKEventStore {
                 if savedCalendarIDs.isEmpty { return true }
                 return savedCalendarIDs.contains(calendar.calendarIdentifier)
             }
+    }
+
+    var defaultCalendarFromSettings: EKCalendar? {
+        let name = UserDefaults.defaultCalendarName
+        return calendars(for: .event).first { $0.title == name } ?? Shift.shared.defaultCalendar
     }
 }

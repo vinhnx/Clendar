@@ -1,5 +1,5 @@
 //
-//  CalendarChooserViewController.swift
+//  MultipleCalendarsChooserViewController.swift
 //  Clendar
 //
 //  Created by Vĩnh Nguyễn on 21/01/2021.
@@ -10,36 +10,7 @@ import EventKitUI
 import UIKit
 import Shift
 
-class CalendarChooserNavigationController: BaseNavigationController {
-    // MARK: Lifecycle
-
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    init(
-        eventStore: EKEventStore,
-        delegate: EKCalendarChooserDelegate
-    ) {
-        let chooser = CalendarChooserViewController()
-        chooser.selectedCalendars = Set(eventStore.selectableCalendarsFromSettings)
-        chooser.showsDoneButton = true
-        chooser.showsCancelButton = true
-        chooser.delegate = delegate
-        super.init(rootViewController: chooser)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
-}
-
-class CalendarChooserViewController: EKCalendarChooser {
+class MultipleCalendarsChooserViewController: EKCalendarChooser {
 
     // MARK: Lifecycle
 
@@ -67,6 +38,11 @@ class CalendarChooserViewController: EKCalendarChooser {
 
     // MARK: Internal
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = NSLocalizedString("Calendars Visibility", comment: "")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,12 +65,13 @@ class CalendarChooserViewController: EKCalendarChooser {
     }
 }
 
-extension CalendarChooserViewController: EKCalendarChooserDelegate {
+extension MultipleCalendarsChooserViewController: EKCalendarChooserDelegate {
+
     // MARK: - EKCalendarChooserDelegate
+
     func calendarChooserDidFinish(_ calendarChooser: EKCalendarChooser) {
         let calendarIDs = calendarChooser.selectedCalendars.compactMap { $0.calendarIdentifier }
         updateSelectedCalendarIDs(calendarIDs)
-
         dismiss(animated: true, completion: nil)
     }
 

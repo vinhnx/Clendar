@@ -28,9 +28,6 @@ struct SettingsManager {
     @UserDefault("useExperimentalCreateEventMode", defaultValue: false)
     static var useExperimentalCreateEventMode: Bool
 
-    @UserDefault("shouldAutoSelectDayOnCalendarChange", defaultValue: false)
-    static var shouldAutoSelectDayOnCalendarChange: Bool
-
     @UserDefault("defaultEventDuration", defaultValue: 60)
     static var defaultEventDuration: Int
 
