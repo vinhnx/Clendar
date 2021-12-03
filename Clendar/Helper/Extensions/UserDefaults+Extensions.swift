@@ -9,6 +9,9 @@
 import Foundation
 
 extension UserDefaults {
+    @UserDefault("defaultCalendarName", defaultValue: AppInfo.appName)
+    static var defaultCalendarName: String
+
     @UserDefault("savedCalendarIDs", defaultValue: [])
     static var savedCalendarIDs: [String]
 
