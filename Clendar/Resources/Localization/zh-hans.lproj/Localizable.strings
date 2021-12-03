@@ -99,9 +99,6 @@
 "On" = "上";
 
 // No comment provided by engineer.
-"One dot" = "一点";
-
-// No comment provided by engineer.
 "Quick Event" = "快速事件";
 
 // No comment provided by engineer.
@@ -186,7 +183,7 @@
 "Siri Shortcuts" = "Siri快捷方式";
 "Show Siri shortcuts view" = "显示Siri快捷方式视图";
 "Open Clendar Siri Shortcuts" = "打开日历Siri快捷方式";
-"Create new Clendar event(s)" = "创建新的日历事件）";
+"Create new Clendar event(s)" = "创建新的日历事件";
 "Open Clendar Settings" = "打开日历设置";
 "New Clendar Event" = "新日历活动";
 "Feedback/Report Issue" = "反馈/报告问题";

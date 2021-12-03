@@ -99,9 +99,6 @@
 "On" = "En";
 
 // No comment provided by engineer.
-"One dot" = "Un punto";
-
-// No comment provided by engineer.
 "Quick Event" = "Evento rápido";
 
 // No comment provided by engineer.
@@ -162,7 +159,7 @@
 "Create new event" = "Crear nuevo evento";
 "Follow system" = "Seguir el sistema";
 "Widget theme" = "Tema de widget";
-"Rate Clendar" = "Calendario de tarifas";
+"Rate Clendar" = "Clendar de tarifas";
 "Sharing" = "Compartiendo";
 "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Compartir es demostrar interés. Si le gusta Clendar, deje un comentario o ayude a compartir esta aplicación con el mundo, ¡gracias!";
 "Share Clendar" = "Share Clendar";

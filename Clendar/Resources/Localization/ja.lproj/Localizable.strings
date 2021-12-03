@@ -99,9 +99,6 @@
 "On" = "オン";
 
 // No comment provided by engineer.
-"One dot" = "ワンドット";
-
-// No comment provided by engineer.
 "Quick Event" = "クイックイベント";
 
 // No comment provided by engineer.
@@ -186,7 +183,7 @@
 "Siri Shortcuts" = "Siriのショートカット";
 "Show Siri shortcuts view" = "Siriのショートカットビューを表示する";
 "Open Clendar Siri Shortcuts" = "カレンダーを開くSiriショートカット";
-"Create new Clendar event(s)" = "新しいカレンダーイベントを作成する）";
+"Create new Clendar event(s)" = "新しいカレンダーイベントを作成する";
 "Open Clendar Settings" = "カレンダー設定を開く";
 "New Clendar Event" = "新しいカレンダーイベント";
 "Feedback/Report Issue" = "フィードバック/レポートの問題";

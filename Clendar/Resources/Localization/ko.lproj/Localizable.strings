@@ -99,9 +99,6 @@
 "On" = "의 위에";
 
 // No comment provided by engineer.
-"One dot" = "한 점";
-
-// No comment provided by engineer.
 "Quick Event" = "빠른 이벤트 평가";
 
 // No comment provided by engineer.
@@ -186,7 +183,7 @@
 "Siri Shortcuts" = "Siri 단축키";
 "Show Siri shortcuts view" = "Siri 단축키보기 표시";
 "Open Clendar Siri Shortcuts" = "캘린더 Siri 단축키 열기";
-"Create new Clendar event(s)" = "새 캘린더 이벤트 생성)";
+"Create new Clendar event(s)" = "새 캘린더 이벤트 생성";
 "Open Clendar Settings" = "캘린더 설정 열기";
 "New Clendar Event" = "새로운 캘린더 이벤트";
 "Feedback/Report Issue" = "피드백 / 문제보고";

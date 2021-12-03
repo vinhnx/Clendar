@@ -391,7 +391,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 125 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 126 localization keys.
     struct localizable {
       /// en translation: Add event
       ///
@@ -501,6 +501,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
       static let `default` = Rswift.StringResource(key: "Default", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
+      /// en translation: Default Calendar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static let defaultCalendar = Rswift.StringResource(key: "Default Calendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko"], comment: nil)
       /// en translation: Default event duration
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko
@@ -1297,6 +1301,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Default", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Default Calendar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko
+      static func defaultCalendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Default Calendar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Default Calendar"
+        }
+
+        return NSLocalizedString("Default Calendar", bundle: bundle, comment: "")
       }
 
       /// en translation: Default event duration
