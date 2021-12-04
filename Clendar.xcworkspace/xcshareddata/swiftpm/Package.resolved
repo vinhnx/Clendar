@@ -42,8 +42,17 @@
         "repositoryURL": "https://github.com/vinhnx/Shift.git",
         "state": {
           "branch": null,
-          "revision": "46c50710ca46b070d4284af397d192618037ca07",
-          "version": "0.7.4"
+          "revision": "b40a9f529242a6542e55d1d23b019280f7b5525c",
+          "version": "0.7.5"
+        }
+      },
+      {
+        "package": "swift-algorithms",
+        "repositoryURL": "https://github.com/apple/swift-algorithms",
+        "state": {
+          "branch": null,
+          "revision": "b14b7f4c528c942f121c8b860b9410b2bf57825e",
+          "version": "1.0.0"
         }
       },
       {
@@ -53,6 +62,15 @@
           "branch": null,
           "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
           "version": "1.4.2"
+        }
+      },
+      {
+        "package": "swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics",
+        "state": {
+          "branch": null,
+          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
+          "version": "1.0.2"
         }
       },
       {
