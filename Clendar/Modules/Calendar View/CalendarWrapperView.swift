@@ -39,12 +39,13 @@ struct CalendarWrapperView: UIViewRepresentable {
         calendarView.calendarDelegate = context.coordinator
 //        calendarView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 //        calendarView.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        calendarView.commitCalendarViewUpdate()
         return calendarView
     }
 
     func updateUIView(_ view: CVCalendarView, context: Context) {
         view.toggleViewWithDate(store.selectedDate)
-        view.commitCalendarViewUpdate()
+
         context.coordinator.calendarView = view // NOTE: this is to keep reference to UIView, not sure which is better way
         context.coordinator.selectedDate = { date in
             guard let convertedDate = date.convertedDate() else { return }
