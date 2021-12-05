@@ -12,11 +12,11 @@ import SwiftDate
 extension DateFormatter {
 	static func lunarDateString(
 		forDate date: Date = Date(),
-		dateFormat: String = "MMdd"
+		dateFormat: String = "dd/MM"
 	) -> String {
 		let dateFormater = DateFormatter()
 		dateFormater.locale = Locales.vietnamese.toLocale()
-		dateFormater.setLocalizedDateFormatFromTemplate(dateFormat)
+		dateFormater.dateFormat = dateFormat
 		dateFormater.calendar = Calendar(identifier: .chinese)
 		return dateFormater.string(from: date)
 	}
