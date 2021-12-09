@@ -303,6 +303,7 @@
 		6239D11B3B53DFE055C329D8 /* Pods-ClendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B67C672CB3E5462F8B8842F /* th */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		72FE9C6272675E223125D548 /* Pods-ClendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClendarTests/Pods-ClendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		757C072CB203DC2C3C32DDCF /* fr */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		970655FFB8E41AA87A9D5BBE /* Pods-Clendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.release.xcconfig"; sourceTree = "<group>"; };
 		A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ClendarWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3064D1A254CEF5200C7F228 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -1257,6 +1258,7 @@
 				"zh-Hant",
 				th,
 				de,
+				fr,
 			);
 			mainGroup = A33F80BD22467A82009CC46A;
 			packageReferences = (
@@ -1767,6 +1769,7 @@
 				001AFE152BB27AC6801C9568 /* zh-hant */,
 				6B67C672CB3E5462F8B8842F /* th */,
 				A86A627F9868D8A135F399FB /* de */,
+				757C072CB203DC2C3C32DDCF /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
