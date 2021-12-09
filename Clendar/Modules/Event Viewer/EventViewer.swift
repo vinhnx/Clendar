@@ -30,7 +30,7 @@ struct EventViewer: View {
            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "Edit Event", backgroundColor: event.calendarColor))
            .sheet(isPresented: $didShowEventEdit) {
                #if !os(watchOS)
-               EventViewerWrapperView(event: event)
+               EventEditorWrapperView(event: event)
                    .environmentObject(store)
                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                #endif
