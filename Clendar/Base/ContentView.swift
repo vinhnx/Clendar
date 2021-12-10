@@ -33,12 +33,8 @@ struct ContentView: View {
                 store.selectedDate = Date()
             } label: {
                 VStack(alignment: .trailing) {
-                    HStack {
-                        Text(store.selectedDate.toMonthString.localizedCapitalized)
-                            .modifier(BoldTextModifider(color: .appRed))
-                        Text(store.selectedDate.toYearString)
-                            .modifier(BoldTextModifider(color: .appRed))
-                    }
+                    Text(store.selectedDate.toMonthAndYearString.localizedCapitalized)
+                        .modifier(BoldTextModifider(color: .appRed))
                     Text(store.selectedDate.toDayAndDateString.localizedUppercase)
                         .modifier(BoldTextModifider())
                 }
