@@ -93,6 +93,7 @@ extension ClendarApp {
     private func configure() {
         #if os(iOS)
         UIApplication.shared.applicationIconBadgeNumber = 0
+        UITableView.appearance().showsVerticalScrollIndicator = false
         #endif
 
         setupStoreKit()
