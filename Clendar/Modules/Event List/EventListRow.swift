@@ -21,21 +21,16 @@ struct EventListRow: View {
                     .font(.boldFontWithSize(13))
                     .foregroundColor(Color(ekEvent.calendar.cgColor)),
                 content: {
-                    HStack(spacing: 10) {
-                        Capsule(style: .circular)
-                            .fill(Color(ekEvent.calendar.cgColor))
-                            .frame(width: 5)
-
-                        Text(ekEvent.title)
-                            .accessibility(label: Text("Title of the event"))
-                            .lineLimit(2)
-                            .font(.mediumFontWithSize(16))
-                            .foregroundColor(.appDark)
-                    }
+                    Spacer()
+                    Text(ekEvent.title)
+                        .accessibility(label: Text("Title of the event"))
+                        .lineLimit(2)
+                        .font(.mediumFontWithSize(17))
+                        .foregroundColor(.appDark)
                 }
             )
-            .opacity(ekEvent.isExpired() ? 0.3 : 1.0) // gray out past events https://github.com/vinhnx/Clendar/issues/146
-            .groupBoxStyle(CardGroupBoxStyle())
+                .opacity(ekEvent.isExpired() ? 0.3 : 1.0) // gray out past events https://github.com/vinhnx/Clendar/issues/146
+                .groupBoxStyle(CardGroupBoxStyle())
         }
         else {
             EmptyView().redacted(reason: .placeholder)

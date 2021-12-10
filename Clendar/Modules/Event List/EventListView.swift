@@ -50,7 +50,7 @@ struct EventListView: View {
                 }
                 .listRowBackground(Color.backgroundColor())
                 .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets(top: 0, leading: -5, bottom: 0, trailing: -15))
+                .listRowInsets(EdgeInsets(top: -5, leading: -5, bottom: 0, trailing: -15))
                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                     Button {
                         handleDeleteEvent(event)
@@ -79,12 +79,6 @@ struct EventListView: View {
                     .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
             }
         }
-    }
-}
-
-struct EventListView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventListView(events: []).environmentObject(SharedStore())
     }
 }
 
