@@ -20,6 +20,8 @@ struct ContentView: View {
     @State private var createdEvent: EKEvent?
     @State private var isMonthView = SettingsManager.isOnMonthViewSettings
     @State private var confettiCounter = 0
+    @State private var showDateSwitcher = false
+    @State private var resetDateSelection = false
 
     let calendarWrapperView = CalendarWrapperView()
 
@@ -31,10 +33,13 @@ struct ContentView: View {
                 store.selectedDate = Date()
             } label: {
                 VStack(alignment: .trailing) {
-                    Text(store.selectedDate.toMonthString.localizedUppercase)
-                        .modifier(BoldTextModifider(fontSize: 18, color: .appRed))
-                        .font(.boldFontWithSize(20))
-                    Text(store.selectedDate.toDayAndDateString)
+                    HStack {
+                        Text(store.selectedDate.toMonthString.localizedCapitalized)
+                            .modifier(BoldTextModifider(color: .appRed))
+                        Text(store.selectedDate.toYearString)
+                            .modifier(BoldTextModifider(color: .appRed))
+                    }
+                    Text(store.selectedDate.toDayAndDateString.localizedUppercase)
                         .modifier(BoldTextModifider())
                 }
             }
@@ -45,28 +50,11 @@ struct ContentView: View {
     }
 
     private var topView: some View {
-        HStack(spacing: 10) {
+        HStack {
             menuView
             Spacer()
             monthHeaderView
         }
-    }
-
-    private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
-        Group {
-            CalendarHeaderView()
-                .frame(
-                    width: geometry?.frame(in: .local).width,
-                    height: Constants.CalendarView.calendarHeaderHeight
-                )
-            calendarWrapperView
-                .frame(
-                    width: geometry?.frame(in: .local).width,
-                    height: isMonthView ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
-                )
-                .padding(.top, -20)
-        }
-        .padding()
     }
 
     private var addEventButton: some View {
@@ -90,8 +78,8 @@ struct ContentView: View {
                             store.selectedDate = newValue
                         })
                     )
-                    .environmentObject(store)
-                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+                        .environmentObject(store)
+                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
                 else {
                     NewEventView(
@@ -117,33 +105,25 @@ struct ContentView: View {
         VStack {
             topView
             makeCalendarGroupView()
+            if showDateSwitcher {
+                makeQuickDateSwitcherView()
+            }
+
             eventListView
         }
     }
 
-    private var menuView: some View {
-        HStack(spacing: 30) {
-            Button(
-                action: {
-                    genLightHaptic()
-                    store.showSettingsState.toggle()
-                },
-                label: {
-                    Image(systemName: "slider.horizontal.3")
-                        .frame(width: 50, height: 50)
-                }
-            )
-            .sheet(
-                isPresented: $store.showSettingsState,
-                content: {
-                    SettingsWrapperView()
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                }
-            )
-            .keyboardShortcut(",", modifiers: [.command])
+    var menuView: some View {
+        HStack(spacing: 10) {
+            makeMenuButton()
+            makeDateSwitcherToggle()
+            if resetDateSelection {
+                makeDateSelectionResetView()
+            }
         }
         .accentColor(.appRed)
-        .font(.boldFontWithSize(20))
+        .font(.mediumFontWithSize(20))
+        .padding(.leading, 10)
     }
 
     // MARK: - Body
@@ -212,6 +192,10 @@ extension ContentView {
     }
 
     private func selectDate(_ date: Date) {
+        withAnimation {
+            resetDateSelection = !date.isToday
+        }
+
         genLightHaptic()
         fetchEvents(for: date)
     }
@@ -220,6 +204,66 @@ extension ContentView {
         Task {
             try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
         }
+    }
+
+    private func makeQuickDateSwitcherView() -> some View {
+        DatePicker(selection: $store.selectedDate, displayedComponents: [.date], label: {})
+            .datePickerStyle(.wheel)
+            .padding(.top, -50)
+    }
+
+    private func makeDateSelectionResetView() -> some View {
+        Button(
+            action: {
+                genLightHaptic()
+                store.selectedDate = Date()
+                showDateSwitcher = false
+            },
+            label: {
+                Image(systemName: "arrow.uturn.left.circle.fill")
+            }
+        ).keyboardShortcut("r", modifiers: [.command])
+    }
+
+    private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
+        Group {
+            CalendarHeaderView()
+                .frame(
+                    width: geometry?.frame(in: .local).width,
+                    height: Constants.CalendarView.calendarHeaderHeight
+                )
+            calendarWrapperView
+                .frame(
+                    width: geometry?.frame(in: .local).width,
+                    height: isMonthView ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
+                )
+                .padding(.top, -20)
+        }
+        .padding()
+    }
+
+    private func makeDateSwitcherToggle() -> some View {
+        Toggle(isOn: $showDateSwitcher.animation(.easeIn(duration: 0.25))) {
+            Image(systemName: "calendar.circle.fill")
+        }
+        .controlSize(.small)
+        .toggleStyle(.button)
+        .keyboardShortcut("o", modifiers: [.command, .shift])
+    }
+
+    private func makeMenuButton() -> some View {
+        Button(
+            action: {
+                genLightHaptic()
+                store.showSettingsState.toggle()
+            },
+            label: {
+                Image(systemName: "gearshape.circle.fill")
+            }
+        ).sheet(isPresented: $store.showSettingsState) {
+            SettingsWrapperView()
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+        }.keyboardShortcut(",", modifiers: [.command])
     }
 }
 

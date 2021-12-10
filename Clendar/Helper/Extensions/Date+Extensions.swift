@@ -46,6 +46,10 @@ extension Date {
         DateFormatter.format(self, format: "MMMM yyyy")
     }
 
+    var toYearString: String {
+        DateFormatter.format(self, format: "yyyy")
+    }
+
     var toFullDateString: String {
         DateFormatter.format(self, format: "EEEE, MMM d, yyyy")
     }

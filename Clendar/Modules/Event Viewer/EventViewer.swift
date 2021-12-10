@@ -59,7 +59,7 @@ struct EventViewer: View {
                 Text(event.isAllDay.asString).modifier(MediumTextModifider())
             }
 
-            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Is Recurring", titleImageName: "repeat.circle")) {
+            InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Is Recurring", titleImageName: "repeat")) {
                 Text(event.hasRecurrenceRules.asString).modifier(MediumTextModifider())
             }
 
