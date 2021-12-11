@@ -103,7 +103,7 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
     func dayLabelPresentWeekdayInitallyBold() -> Bool { true }
 
     func dayLabelFont(by _: Weekday, status _: CVStatus, present _: CVPresent) -> UIFont {
-        .boldFontWithSize(16)
+        .boldFontWithSize(15)
     }
 
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

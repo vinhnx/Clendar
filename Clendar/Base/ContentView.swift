@@ -33,8 +33,8 @@ struct ContentView: View {
                 store.selectedDate = Date()
             } label: {
                 VStack(alignment: .trailing) {
-                    Text(store.selectedDate.toMonthAndYearString.localizedCapitalized)
-                        .modifier(BoldTextModifider(color: .appRed))
+                    Text(store.selectedDate.toMonthAndYearString)
+                        .modifier(BoldTextModifider(fontSize: 20, color: .appRed))
                     Text(store.selectedDate.toDayAndDateString.localizedUppercase)
                         .modifier(BoldTextModifider())
                 }
@@ -59,7 +59,9 @@ struct ContentView: View {
                 genLightHaptic()
                 store.showCreateEventState.toggle()
             }, label: {})
-            .buttonStyle(SolidButtonStyle(imageName: "square.and.pencil", title: "New Event"))
+            .buttonStyle(
+                SolidButtonStyle(imageName: "square.and.pencil")
+            )
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
                     QuickEventView(
