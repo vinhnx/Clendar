@@ -25,7 +25,7 @@ struct SettingsManager {
     @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
     static var daySupplementaryType: Int
 
-    @UserDefault("useExperimentalCreateEventMode", defaultValue: false)
+    @UserDefault("useExperimentalCreateEventMode", defaultValue: true)
     static var useExperimentalCreateEventMode: Bool
 
     @UserDefault("defaultEventDuration", defaultValue: 60)
