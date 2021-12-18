@@ -1,5 +1,5 @@
 // No comment provided by engineer.
-"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[เบต้า] คุณสามารถเลือกใช้โหมดแยกวิเคราะห์ภาษาธรรมชาติแบบทดลองเมื่อสร้างกิจกรรมใหม่ คุณลักษณะนี้จะได้รับการปรับปรุง";
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[เบต้า] คุณสามารถเลือกใช้โหมดแยกวิเคราะห์ภาษาธรรมชาติแบบทดลองเมื่อสร้างกิจกรรมใหม่ คุณลักษณะนี้จะได้รับการปรับปรุงอย่างต่อเนื่อง ภาษาที่ใช้ได้: อังกฤษ สเปน ฝรั่งเศส ญี่ปุ่น เยอรมัน จีน";
 
 // No comment provided by engineer.
 "App info" = "ข้อมูลแอพ";
@@ -212,7 +212,7 @@
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
 "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "คุณจะถูกเปลี่ยนเส้นทางไปยังแอปการตั้งค่าเพื่อเลือกภาษาของแอปที่คุณต้องการ หลังจากเลือกภาษาแล้ว โปรดเปิดแอปพลิเคชันอีกครั้งเพื่อใช้เอฟเฟกต์ (เคล็ดลับ: คุณสามารถแตะไอคอนด้านซ้ายบน ใต้แถบสถานะเพื่อเปิดแอปอย่างรวดเร็ว)";
-"Language" = "ภาษา";
+"Change Language" = "เปลี่ยนภาษา";
 "Support" = "สนับสนุน";
 "Tip jar" = "โถทิป";
 "Default Calendar" = "ปฏิทินเริ่มต้น";

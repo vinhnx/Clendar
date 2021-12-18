@@ -1,5 +1,5 @@
 // No comment provided by engineer.
-"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Bạn có thể chọn sử dụng chế độ phân tích cú pháp ngôn ngữ tự nhiên thử nghiệm khi tạo sự kiện mới. Tính năng này sẽ được cải thiện.";
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[Beta] Bạn có thể chọn sử dụng chế độ phân tích cú pháp ngôn ngữ tự nhiên thử nghiệm khi tạo sự kiện mới. Tính năng này sẽ không ngừng được cải thiện. Ngôn ngữ có sẵn: tiếng Anh, tiếng Tây Ban Nha, tiếng Pháp, tiếng Nhật, tiếng Đức, tiếng Trung.";
 
 // No comment provided by engineer.
 "App info" = "Thông tin ứng dụng";
@@ -212,7 +212,7 @@
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
 "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "Bạn sẽ được chuyển hướng đến ứng dụng Cài đặt để chọn ngôn ngữ ứng dụng ưa thích của mình. Sau khi chọn ngôn ngữ, vui lòng khởi chạy lại ứng dụng để áp dụng các hiệu ứng (Mẹo: bạn có thể nhấn vào biểu tượng trên cùng bên trái, bên dưới thanh trạng thái để khởi chạy nhanh ứng dụng).";
-"Language" = "Ngôn ngữ";
+"Change Language" = "Thay đổi ngôn ngữ";
 "Support" = "Hỗ trợ";
 "Tip jar" = "Lọ tiền boa";
 "Default Calendar" = "Lịch mặc định";

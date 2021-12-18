@@ -43,7 +43,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var languageButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "🇺🇳 " + NSLocalizedString("Language", comment: "")
+        instance.title = "🇺🇳 " + NSLocalizedString("Change Language", comment: "")
         instance.action = { [weak self] in
             self?.openAppSpecificSettings()
         }
@@ -314,7 +314,7 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += quickEventMode
         builder += defaultEventDuration
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", comment: ""))
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", comment: ""))
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

@@ -1,5 +1,5 @@
 // No comment provided by engineer.
-"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[Beta] Sie können beim Erstellen eines neuen Ereignisses den experimentellen Parsing-Modus natürlicher Sprache verwenden. Diese Funktion wird verbessert.";
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[Beta] Sie können beim Erstellen eines neuen Ereignisses den experimentellen Parsing-Modus natürlicher Sprache verwenden. Diese Funktion wird ständig verbessert. Verfügbare Sprachen: Englisch, Spanisch, Französisch, Japanisch, Deutsch, Chinesisch.";
 
 // No comment provided by engineer.
 "App info" = "App-Information";
@@ -212,7 +212,7 @@
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
 "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "Sie werden zur Einstellungs-App weitergeleitet, um Ihre bevorzugte App-Sprache auszuwählen. Nachdem Sie die Sprache ausgewählt haben, starten Sie bitte die Anwendung neu, um Effekte anzuwenden (Tipp: Sie können auf das Symbol oben links unter der Statusleiste tippen, um die App schnell zu starten).";
-"Language" = "Sprache";
+"Change Language" = "Sprache ändern";
 "Support" = "Unterstützung";
 "Tip jar" = "Trinkgeld Glas";
 "Default Calendar" = "Standardkalender";

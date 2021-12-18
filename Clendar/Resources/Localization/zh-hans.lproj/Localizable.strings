@@ -1,5 +1,5 @@
 // No comment provided by engineer.
-"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved." = "[测试版]创建新事件时，您可以选择使用实验性自然语言解析模式。 此功能将得到改善。";
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[Beta] 创建新事件时可以选择使用实验性自然语言解析模式。 此功能将不断改进。 可用语言：英语、西班牙语、法语、日语、德语、中文。";
 
 // No comment provided by engineer.
 "App info" = "应用程式资讯";
@@ -212,7 +212,7 @@
 "Clendar, new event" = "Clendar, new event";
 "Clendar, open settings" = "Clendar, open settings";
 "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "您将被重定向到“设置”应用以选择您喜欢的应用语言。 选择语言后，请重新启动应用程序以应用效果（提示：您可以点击状态栏下方的左上角图标快速启动应用程序）。";
-"Language" = "语";
+"Change Language" = "改变语言";
 "Support" = "支持";
 "Tip jar" = "小费罐";
 "Default Calendar" = "默认日历";

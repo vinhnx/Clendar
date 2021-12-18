@@ -449,6 +449,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Change Language
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let changeLanguage = Rswift.StringResource(key: "Change Language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Change app Language
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -613,10 +617,6 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let keyboardShortcuts = Rswift.StringResource(key: "Keyboard shortcuts", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
-      /// en translation: Language
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static let language = Rswift.StringResource(key: "Language", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Light
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -881,10 +881,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let yourDayEventsAtAGlance = Rswift.StringResource(key: "Your day events at a glance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
-      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
+      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static let betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved = Rswift.StringResource(key: "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      static let betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeConstantlyImprovedAvailableLanguagesEnglishSpanishFrenchJapaneseGermanChinese = Rswift.StringResource(key: "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: minutes
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -1102,6 +1102,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Change Language
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func changeLanguage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Change Language", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Change Language"
+        }
+
+        return NSLocalizedString("Change Language", bundle: bundle, comment: "")
       }
 
       /// en translation: Change app Language
@@ -1717,21 +1732,6 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Keyboard shortcuts", bundle: bundle, comment: "")
-      }
-
-      /// en translation: Language
-      ///
-      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static func language(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Language", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Language"
-        }
-
-        return NSLocalizedString("Language", bundle: bundle, comment: "")
       }
 
       /// en translation: Light
@@ -2724,19 +2724,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Your day events at a glance", bundle: bundle, comment: "")
       }
 
-      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.
+      /// en translation: [Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static func betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeImproved(preferredLanguages: [String]? = nil) -> String {
+      static func betaYouCanChooseToUseExperimentalNaturalLanguageParsingModeWhenCreateNewEventThisFeatureWillBeConstantlyImprovedAvailableLanguagesEnglishSpanishFrenchJapaneseGermanChinese(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved."
+          return "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese."
         }
 
-        return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be improved.", bundle: bundle, comment: "")
+        return NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", bundle: bundle, comment: "")
       }
 
       /// en translation: minutes
