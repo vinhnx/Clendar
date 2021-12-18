@@ -103,7 +103,6 @@ extension ClendarApp {
             SettingsManager.darkModeActivated = isDarkMode
         }
 
-        SwiftDate.defaultRegion = Region.local
         Shift.configureWithAppName(AppInfo.appName)
     }
 

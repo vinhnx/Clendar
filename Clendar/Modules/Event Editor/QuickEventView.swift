@@ -10,18 +10,14 @@ import EventKit
 import SwiftUI
 import Shift
 
-internal class QuickEventStore: ObservableObject {
-    @Published var query = ""
-}
-
 struct QuickEventView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var store: SharedStore
-    @StateObject private var quickEventStore = QuickEventStore()
+    @StateObject private var quickEventStore = TextFieldObserver()
     @State private var parsedText = ""
     @State private var isAllDay = false
-    @Binding var startTime: Date
-    @Binding var endTime: Date
+    @State private var startTime = Date()
+    @State private var endTime = Date().offsetWithDefaultDuration
 
     var body: some View {
         VStack {
@@ -55,7 +51,7 @@ struct QuickEventView: View {
                     }
                 )
                     .accentColor(.appRed)
-                    .disabled(quickEventStore.query.isEmpty)
+                    .disabled(quickEventStore.searchText.isEmpty)
                     .keyboardShortcut("s", modifiers: [.command])
                     .help("Create new event")
             }
@@ -66,13 +62,13 @@ struct QuickEventView: View {
                 VStack(spacing: 30) {
                     Spacer()
 
-                    TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.query)
+                    TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.searchText)
                         .accessibility(label: Text("Input event"))
                         .font(.regularFontWithSize(18))
                         .foregroundColor(.appDark)
                         .submitLabel(.done)
                         .onSubmit(of: .text) {
-                            parse(quickEventStore.query)
+                            parse(quickEventStore.searchText)
                         }
 
                     Toggle("All day", isOn: $isAllDay)
@@ -108,7 +104,7 @@ struct QuickEventView: View {
                 .padding(.bottom, 300)
             }
         }
-        .onReceive(quickEventStore.$query) { output in
+        .onReceive(quickEventStore.$debouncedText) { output in
             self.parse(output)
         }
         .padding(20)
@@ -133,7 +129,7 @@ extension QuickEventView {
     }
 
     private func createNewEvent() {
-        guard quickEventStore.query.isEmpty == false else { return }
+        guard quickEventStore.searchText.isEmpty == false else { return }
         Task {
             do {
                 let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)

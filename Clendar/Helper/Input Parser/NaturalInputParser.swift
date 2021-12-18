@@ -15,12 +15,23 @@ enum CalendarTypeSegment {
 	case solar
 }
 
+// english, spanish, french, japanese, german, chinese
+func naturalLanguageCodeFromSelectedLanguage() -> Language {
+    let appLanguage = Locale.autoupdatingCurrent.languageCode
+    switch appLanguage {
+    case "es": return .spanish
+    case "fr": return .french
+    case "ja": return .japanese
+    case "zh": return .chinese
+    default: return .english
+    }
+}
+
 final class NaturalInputParser {
 	// MARK: Lifecycle
 
 	init() {
-		Chrono.preferredLanguage = .english
-		Chrono.defaultImpliedHour = 9
+		Chrono.preferredLanguage = naturalLanguageCodeFromSelectedLanguage()
 	}
 
 	// MARK: Internal

@@ -153,6 +153,7 @@
 		A38EE838254EC9C200045C12 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = A38EE837254EC9C200045C12 /* Haptica */; };
 		A38EE840254ECBD600045C12 /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */; };
 		A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39626BD2553081200F4ABEF /* EventHandler.swift */; };
+		A399A75B276DFF6100CDA1C6 /* TextFieldObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A399A75A276DFF6100CDA1C6 /* TextFieldObserver.swift */; };
 		A39B71B3255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A39B71B4255FB64F0000162F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A39B71B6255FB64F0000162F /* Localizable.strings */; };
 		A3A43E7225C45FAA00E60616 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A43E7125C45FA900E60616 /* MultilineTextField.swift */; };
@@ -414,6 +415,7 @@
 		A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendar+Extensions.swift"; sourceTree = "<group>"; };
 		A38A4D9E254D740400B35F98 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
 		A39626BD2553081200F4ABEF /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		A399A75A276DFF6100CDA1C6 /* TextFieldObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldObserver.swift; sourceTree = "<group>"; };
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A39B71BA255FB6540000162F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A3A43E7125C45FA900E60616 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
@@ -1045,6 +1047,7 @@
 				A38199FD25484E7700C71D41 /* Layout.swift */,
 				A3D6843625A9F467009C31D5 /* RatingManager.swift */,
 				A337CFB325D2F8A400FAB76A /* AppPermissions.swift */,
+				A399A75A276DFF6100CDA1C6 /* TextFieldObserver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1614,6 +1617,7 @@
 				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
 				A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */,
+				A399A75B276DFF6100CDA1C6 /* TextFieldObserver.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
 				A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */,
 				A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */,

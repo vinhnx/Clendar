@@ -64,18 +64,7 @@ struct ContentView: View {
             )
             .sheet(isPresented: $store.showCreateEventState) {
                 if SettingsManager.useExperimentalCreateEventMode {
-                    QuickEventView(
-                        startTime: Binding(get: {
-                            store.selectedDate
-                        }, set: { newValue in
-                            store.selectedDate = newValue
-                        }),
-                        endTime: Binding(get: {
-                            store.selectedDate
-                        }, set: { newValue in
-                            store.selectedDate = newValue
-                        })
-                    )
+                    QuickEventView()
                         .environmentObject(store)
                         .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
                 }
