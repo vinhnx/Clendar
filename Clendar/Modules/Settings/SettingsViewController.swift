@@ -92,24 +92,6 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var supplementaryViewMode: OptionPickerFormItem = {
-        let instance = OptionPickerFormItem()
-        instance.title(NSLocalizedString("Supplementary day view", comment: ""))
-        instance.append(DaySupplementaryType.titles)
-
-        let title = DaySupplementaryType(rawValue: SettingsManager.daySupplementaryType)?.localizedText ?? DaySupplementaryType.defaultValue.localizedText
-        instance.selectOptionWithTitle(title)
-        instance.valueDidChange = { selected in
-            genLightHaptic()
-
-            let type = DaySupplementaryType.mapFromText(selected?.title)
-            SettingsManager.daySupplementaryType = type.rawValue
-
-            NotificationCenter.default.post(name: .didChangeDaySupplementaryTypePreferences, object: nil)
-        }
-        return instance
-    }()
-
     lazy var quickEventMode: SwitchFormItem = {
         let instance = SwitchFormItem()
         instance.title = NSLocalizedString("Quick Event", comment: "")
@@ -305,7 +287,6 @@ final class SettingsViewController: FormViewController {
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
         builder += calendarView
-        builder += supplementaryViewMode
         builder += showDaysOut
         builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
