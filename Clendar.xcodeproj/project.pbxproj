@@ -1271,9 +1271,9 @@
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
-				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
-				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
+				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */,
 				A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
@@ -1385,13 +1385,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1474,7 +1470,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2310,7 +2306,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */ = {
+		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
@@ -2318,7 +2314,7 @@
 				minimumVersion = 0.7.0;
 			};
 		};
-		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
 			requirement = {
@@ -2400,22 +2396,22 @@
 		};
 		A3C579C92752864000B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
 			productName = Shift;
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
 			productName = Shift;
 		};
 		A3C579CD275286FC00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
 			productName = Shift;
 		};
 		A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */;
 			productName = SwiftyStoreKit;
 		};
 		A3D3EADF25CE5A8700EC3D1D /* Laden */ = {

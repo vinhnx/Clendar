@@ -913,8 +913,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -1096,8 +1096,8 @@
 				BBB2F9A2DA22E835DF79CD3CCC5234FB /* FontResource.swift in Sources */,
 				0B6F6D80F41EB87DF04B870AF329EDF2 /* Identifier.swift in Sources */,
 				4FF0D03CB44110B4E5ACAD483731BA55 /* ImageResource.swift in Sources */,
-				6B6ACE99F08EDABE1F7AE98B8353F529 /* NibResource+UIKit.swift in Sources */,
 				4D8B5A140C1BD2B0CF652817BDFE5604 /* NibResource.swift in Sources */,
+				6B6ACE99F08EDABE1F7AE98B8353F529 /* NibResource+UIKit.swift in Sources */,
 				98B5F6CAF7A525C4302E3010564A31D7 /* R.swift.Library-dummy.m in Sources */,
 				12E32476494B65D1FBF1E8E79DDBB785 /* ReuseIdentifierProtocol.swift in Sources */,
 				513E2DEB235DE9DEA93533A1F193CC5E /* StoryboardResource.swift in Sources */,
