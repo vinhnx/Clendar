@@ -763,15 +763,15 @@
 		A33F80C822467A82009CC46A /* Clendar */ = {
 			isa = PBXGroup;
 			children = (
-				A33F810022468B59009CC46A /* Base */,
 				A3310B4A24A640A50075F3DC /* Clendar.entitlements */,
 				A30BFEB825654CE700BA7F38 /* ClendarApp.swift */,
+				A3EDE74125669FE20046C1F5 /* SharedStore.swift */,
+				A33F810022468B59009CC46A /* Base */,
 				A3D6832725A9A226009C31D5 /* Components */,
 				A33F810522468FB4009CC46A /* Helper */,
 				A38199F425484D8600C71D41 /* Models */,
 				A33F80F922467DDB009CC46A /* Modules */,
 				A33F80F722467DC1009CC46A /* Resources */,
-				A3EDE74125669FE20046C1F5 /* SharedStore.swift */,
 			);
 			path = Clendar;
 			sourceTree = "<group>";
