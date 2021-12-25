@@ -227,7 +227,7 @@ extension ContentView {
             trailing: { date in
                 Text(date.toDateString)
                     .font(.boldFontWithSize(15))
-                    .foregroundColor(.appLightGray)
+                    .foregroundColor(Color(.gray).opacity(0.3))
             },
             header: { date in
                 Text(date.toDayString.localizedUppercase)
