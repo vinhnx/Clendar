@@ -10,6 +10,7 @@ import EventKit
 import SwiftUI
 import ConfettiSwiftUI
 import Shift
+import Then
 
 // https://www.swiftbysundell.com/articles/defining-dynamic-colors-in-swift/
 
@@ -23,15 +24,14 @@ struct ContentView: View {
     @State private var showDateSwitcher = false
     @State private var resetDateSelection = false
 
-    let calendarWrapperView = CalendarWrapperView()
+    // TODO: make this a calendar setting (chose preferred Calendar)
+    private let calendar = Calendar.autoupdatingCurrent
 
     // MARK: - Views Compositions
 
     private var monthHeaderView: some View {
-        HStack(spacing: 20) {
-            Button {
-                store.selectedDate = Date()
-            } label: {
+        HStack {
+            Button {} label: {
                 VStack(alignment: .trailing) {
                     Text(store.selectedDate.toMonthAndYearString)
                         .modifier(BoldTextModifider(fontSize: 20, color: .appRed))
@@ -40,9 +40,21 @@ struct ContentView: View {
                 }
             }
             .accessibility(addTraits: .isHeader)
+            .simultaneousGesture(
+                LongPressGesture().onEnded { _ in
+                    genLightHaptic()
+                    withAnimation {
+                        showDateSwitcher.toggle()
+                    }
+                }
+            )
+            .highPriorityGesture(
+                TapGesture().onEnded {
+                    store.selectedDate = Date()
+                }
+            )
             .keyboardShortcut("h", modifiers: [.command, .shift])
         }
-        .padding(.trailing, 10)
     }
 
     private var topView: some View {
@@ -85,11 +97,10 @@ struct ContentView: View {
     private var eventListView: some View {
         EventListView(events: eventKitWrapper.events.compactMap(ClendarEvent.init))
             .environmentObject(store)
-            .padding(.top, isMonthView ? -50 : 0)
     }
 
     private var eventView: some View {
-        VStack {
+        VStack(spacing: 20) {
             topView
             makeCalendarGroupView()
             if showDateSwitcher {
@@ -101,16 +112,11 @@ struct ContentView: View {
     }
 
     var menuView: some View {
-        HStack(spacing: 10) {
+        HStack {
             makeMenuButton()
-            makeDateSwitcherToggle()
-            if resetDateSelection {
-                makeDateSelectionResetView()
-            }
         }
         .accentColor(.appRed)
         .font(.mediumFontWithSize(20))
-        .padding(.leading, 10)
     }
 
     // MARK: - Body
@@ -132,6 +138,7 @@ struct ContentView: View {
             Text("No event selected")
                 .modifier(BoldTextModifider())
         }
+        .navigationViewStyle(.stack) // fix layout error: https://developer.apple.com/forums/thread/673113
         .onAppear {
             configure()
         }
@@ -196,7 +203,7 @@ extension ContentView {
     private func makeQuickDateSwitcherView() -> some View {
         DatePicker(selection: $store.selectedDate, displayedComponents: [.date], label: {})
             .datePickerStyle(.wheel)
-            .padding(.top, -50)
+            .labelsHidden()
     }
 
     private func makeDateSelectionResetView() -> some View {
@@ -212,21 +219,78 @@ extension ContentView {
         ).keyboardShortcut("r", modifiers: [.command])
     }
 
-    private func makeCalendarGroupView(_ geometry: GeometryProxy? = nil) -> some View {
-        Group {
-            CalendarHeaderView()
-                .frame(
-                    width: geometry?.frame(in: .local).width,
-                    height: Constants.CalendarView.calendarHeaderHeight
-                )
-            calendarWrapperView
-                .frame(
-                    width: geometry?.frame(in: .local).width,
-                    height: isMonthView ? Constants.CalendarView.calendarMonthViewHeight : Constants.CalendarView.calendarWeekViewHeight
-                )
-                .padding(.top, -20)
-        }
-        .padding()
+    private func makeCalendarGroupView() -> some View {
+        CalendarView(
+            calendar: calendar,
+            date: $store.selectedDate,
+            content: { date in
+                Button(action: { store.selectedDate = date }) {
+                    Text("00")
+                        .padding(3)
+                        .foregroundColor(.clear)
+                        .background(
+                            calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.appRed
+                            : calendar.isDateInToday(date) ? .primaryColor
+                            : .clear
+                        )
+                        .clipShape(Circle())
+                        .accessibilityHidden(true)
+                        .overlay(
+                            Text(date.toDateString)
+                                .font(.boldFontWithSize(15))
+                                .foregroundColor(
+                                    calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.white
+                                    : calendar.isDateInToday(date) ? .white
+                                    : .appDark
+                                )
+                        )
+                }
+            },
+            trailing: { date in
+                Text(date.toDateString)
+                    .font(.boldFontWithSize(15))
+                    .foregroundColor(.appLightGray)
+            },
+            header: { date in
+                Text(date.toDayString.localizedUppercase)
+                    .font(.regularFontWithSize(12))
+                    .foregroundColor(.appGray)
+            },
+            title: { _  in })
+            .equatable()
+            .gesture(
+                DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
+                    .onEnded { value in
+                        if value.translation.width < 0 && value.translation.height > -30 && value.translation.height < 30 {
+                            withAnimation {
+                                guard let newDate = calendar.date(
+                                    byAdding: .month,
+                                    value: 1,
+                                    to: store.selectedDate
+                                ) else {
+                                    return
+                                }
+
+                                showDateSwitcher = false
+                                store.selectedDate = newDate
+                            }
+                        }
+                        else if value.translation.width > 0 && value.translation.height > -30 && value.translation.height < 30 {
+                            withAnimation {
+                                guard let newDate = calendar.date(
+                                    byAdding: .month,
+                                    value: -1,
+                                    to: store.selectedDate
+                                ) else {
+                                    return
+                                }
+
+                                showDateSwitcher = false
+                                store.selectedDate = newDate
+                            }
+                        }
+                    }
+            )
     }
 
     private func makeDateSwitcherToggle() -> some View {
