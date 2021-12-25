@@ -569,8 +569,8 @@
 			isa = PBXGroup;
 			children = (
 				A3064D24254CEF5800C7F228 /* Info.plist */,
-				A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */,
 				A3064D22254CEF5800C7F228 /* Assets.xcassets */,
+				A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */,
 				A3064D36254CF0D300C7F228 /* Widget */,
 			);
 			path = ClendarWidget;
@@ -602,13 +602,13 @@
 		A307DB8725ADE0BD00B5CE11 /* ClendarWatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A307DB8925ADE0BD00B5CE11 /* Assets.xcassets */,
-				A307DB8A25ADE0BD00B5CE11 /* Preview Content */,
+				A307DB8E25ADE0BD00B5CE11 /* Info.plist */,
 				A307DB8C25ADE0BD00B5CE11 /* ClendarApp.swift */,
-				A307DB8D25ADE0BD00B5CE11 /* ContentView.swift */,
 				A307DB8825ADE0BD00B5CE11 /* ComplicationController.swift */,
 				A37F0B0D25C50C5F00DFFC41 /* ComplicationViews.swift */,
-				A307DB8E25ADE0BD00B5CE11 /* Info.plist */,
+				A307DB8D25ADE0BD00B5CE11 /* ContentView.swift */,
+				A307DB8925ADE0BD00B5CE11 /* Assets.xcassets */,
+				A307DB8A25ADE0BD00B5CE11 /* Preview Content */,
 			);
 			path = "ClendarWatchApp Extension";
 			sourceTree = "<group>";
@@ -646,8 +646,8 @@
 			isa = PBXGroup;
 			children = (
 				A35B9B4D258CD4810027E1B3 /* EventViewer.swift */,
-				A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */,
 				A3187E6B25499903009524DF /* EventViewerViewController.swift */,
+				A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */,
 			);
 			path = "Event Viewer";
 			sourceTree = "<group>";
@@ -655,9 +655,9 @@
 		A3187E66254998CB009524DF /* Event Editor */ = {
 			isa = PBXGroup;
 			children = (
-				A3EDE72825669F640046C1F5 /* QuickEventView.swift */,
 				A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */,
 				A3187E67254998EE009524DF /* NewEventView.swift */,
+				A3EDE72825669F640046C1F5 /* QuickEventView.swift */,
 			);
 			path = "Event Editor";
 			sourceTree = "<group>";
@@ -665,13 +665,13 @@
 		A31C7A57224E4BB400CB93A5 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A37FB8E325657857007C637C /* SettingsWrapperView.swift */,
-				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
-				A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */,
 				A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */,
-				A31258B42551C23300891CE2 /* AppIconItemCell.xib */,
 				A31258B92551C2A100891CE2 /* AppIconItemCell.swift */,
+				A31258B42551C23300891CE2 /* AppIconItemCell.xib */,
 				A3A43E7B25C46CDB00E60616 /* KeyboardShortcutsViewController.swift */,
+				A367FBF2254DCA840059F6D7 /* SettingsConstants.swift */,
+				A31C7A5A224E4BD600CB93A5 /* SettingsViewController.swift */,
+				A37FB8E325657857007C637C /* SettingsWrapperView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -724,8 +724,8 @@
 		A33DE4932541C4E50064D0AD /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				A33DE4942541C4F20064D0AD /* Font+Styles.swift */,
 				A33DE4982541C50F0064D0AD /* Color+Themes.swift */,
+				A33DE4942541C4F20064D0AD /* Font+Styles.swift */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -733,17 +733,17 @@
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
-				A3FA4D19259E2F59009D4F39 /* TODO.md */,
 				A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */,
+				A3FA4D19259E2F59009D4F39 /* TODO.md */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
-				A3064D1E254CEF5200C7F228 /* ClendarWidget */,
 				A307DB8F25ADE0BD00B5CE11 /* ClendarWatchApp */,
 				A307DB8725ADE0BD00B5CE11 /* ClendarWatchApp Extension */,
-				A33F80C722467A82009CC46A /* Products */,
-				8C81B73E8AA33D23B6AB3B1C /* Pods */,
+				A3064D1E254CEF5200C7F228 /* ClendarWidget */,
 				621629E75901BC78649E2A0A /* Frameworks */,
+				8C81B73E8AA33D23B6AB3B1C /* Pods */,
+				A33F80C722467A82009CC46A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -763,15 +763,15 @@
 		A33F80C822467A82009CC46A /* Clendar */ = {
 			isa = PBXGroup;
 			children = (
-				A3310B4A24A640A50075F3DC /* Clendar.entitlements */,
-				A3EDE74125669FE20046C1F5 /* SharedStore.swift */,
-				A30BFEB825654CE700BA7F38 /* ClendarApp.swift */,
 				A33F810022468B59009CC46A /* Base */,
+				A3310B4A24A640A50075F3DC /* Clendar.entitlements */,
+				A30BFEB825654CE700BA7F38 /* ClendarApp.swift */,
 				A3D6832725A9A226009C31D5 /* Components */,
+				A33F810522468FB4009CC46A /* Helper */,
 				A38199F425484D8600C71D41 /* Models */,
 				A33F80F922467DDB009CC46A /* Modules */,
-				A33F810522468FB4009CC46A /* Helper */,
 				A33F80F722467DC1009CC46A /* Resources */,
+				A3EDE74125669FE20046C1F5 /* SharedStore.swift */,
 			);
 			path = Clendar;
 			sourceTree = "<group>";
@@ -798,10 +798,10 @@
 			isa = PBXGroup;
 			children = (
 				A3FB5B36255C20D30038AFCE /* Settings.bundle */,
-				A39B71A2255FB6220000162F /* Localization */,
-				A31258942551B85700891CE2 /* AppIcons */,
-				A33F80D022467A85009CC46A /* Assets.xcassets */,
 				A33F80D522467A85009CC46A /* Info.plist */,
+				A33F80D022467A85009CC46A /* Assets.xcassets */,
+				A31258942551B85700891CE2 /* AppIcons */,
+				A39B71A2255FB6220000162F /* Localization */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -825,9 +825,9 @@
 		A33F810022468B59009CC46A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
 				A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */,
 				A33F810122468B69009CC46A /* BaseViewController.swift */,
+				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -835,11 +835,11 @@
 		A33F810522468FB4009CC46A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A3FBFC9E25CEB27200CF6420 /* Purchase */,
 				A33F811622474543009CC46A /* Extensions */,
-				A33DE4932541C4E50064D0AD /* Themes */,
-				A36A504E2250EE5800B12034 /* Logger */,
 				A33F81112247422A009CC46A /* Input Parser */,
+				A36A504E2250EE5800B12034 /* Logger */,
+				A3FBFC9E25CEB27200CF6420 /* Purchase */,
+				A33DE4932541C4E50064D0AD /* Themes */,
 				A3F2597122476FEA009A50B6 /* Utils */,
 			);
 			path = Helper;
@@ -856,27 +856,27 @@
 		A33F811622474543009CC46A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */,
-				A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */,
-				A33F81172247454E009CC46A /* String+Extensions.swift */,
-				A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */,
-				A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */,
-				A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */,
-				A33F811922474BE8009CC46A /* Collection+Extensions.swift */,
 				A33F811D22476767009CC46A /* Array+Extensions.swift */,
 				A33F811F2247677F009CC46A /* Array+SwiftyChrono.swift */,
-				A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */,
-				A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */,
+				A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */,
+				A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */,
+				A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */,
+				A33F811922474BE8009CC46A /* Collection+Extensions.swift */,
+				A37F0B2425C5190000DFFC41 /* Color+Extensions.swift */,
+				A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */,
+				A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */,
 				A37B3B6E22506FB000D0488B /* Date+Extensions.swift */,
 				A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */,
-				A3BA42F0253F38FB0007DDFB /* Calendar+Extensions.swift */,
-				A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */,
+				A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */,
 				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
+				A33F843925AF239C001324A0 /* FileManager+Extensions.swift */,
+				A33F81172247454E009CC46A /* String+Extensions.swift */,
+				A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */,
+				A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */,
+				A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */,
 				A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */,
 				A3EDE7462566A0180046C1F5 /* View+Extensions.swift */,
 				A371157A25C51B9000D65F59 /* View+Gradient.swift */,
-				A33F843925AF239C001324A0 /* FileManager+Extensions.swift */,
-				A37F0B2425C5190000DFFC41 /* Color+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -900,9 +900,9 @@
 		A38199F425484D8600C71D41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */,
 				A38199F525484D9E00C71D41 /* ClendarEvent.swift */,
 				A38199F925484DB700C71D41 /* EventSection.swift */,
-				A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -918,8 +918,8 @@
 		A3AFBD1F255F84C900760E5B /* Calendar Grid */ = {
 			isa = PBXGroup;
 			children = (
-				A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */,
 				A3AFBD4B255F86ED00760E5B /* CalendarGridTimelineProvider.swift */,
+				A3AFBD25255F851400760E5B /* CalendarGridWidget.swift */,
 				A3AFBD20255F84E000760E5B /* CalendarGridWidgetView.swift */,
 			);
 			path = "Calendar Grid";
@@ -929,9 +929,9 @@
 			isa = PBXGroup;
 			children = (
 				A3064D1F254CEF5200C7F228 /* DateInfoWidget.swift */,
-				A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */,
 				A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */,
 				A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */,
+				A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */,
 			);
 			path = "Date Info";
 			sourceTree = "<group>";
@@ -956,8 +956,8 @@
 			isa = PBXGroup;
 			children = (
 				A3B568DF25C5BDD600E3C09F /* SiriButton.swift */,
-				A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */,
 				A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */,
+				A3B568E625C5C45D00E3C09F /* SiriShortcutsView.swift */,
 			);
 			path = "Siri Shortcuts";
 			sourceTree = "<group>";
@@ -974,9 +974,9 @@
 		A3C9465A224E5FE700123DEC /* Event List */ = {
 			isa = PBXGroup;
 			children = (
-				A3C9465B224E5FF800123DEC /* EventListViewController.swift */,
 				A3B9D9B825431B8D001932B0 /* EventListItemCell.swift */,
 				A38199F02548470F00C71D41 /* EventListItemCell.xib */,
+				A3C9465B224E5FF800123DEC /* EventListViewController.swift */,
 				A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */,
 			);
 			name = "Event List";
@@ -995,8 +995,8 @@
 		A3D6832025A9A207009C31D5 /* Calendar View */ = {
 			isa = PBXGroup;
 			children = (
-				A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */,
 				A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */,
+				A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */,
 				A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */,
 			);
 			path = "Calendar View";
@@ -1005,19 +1005,19 @@
 		A3D6832725A9A226009C31D5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A359CD872588E3260089C4A2 /* ViewModifiers.swift */,
-				A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */,
-				A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */,
-				A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */,
-				A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */,
 				A3EDE73C25669FD50046C1F5 /* CustomGroupBoxStyle.swift */,
-				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
-				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
+				A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */,
 				A307DBDF25ADE65500B5CE11 /* EmptyView.swift */,
-				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
+				A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */,
 				A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */,
-				A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */,
+				A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */,
 				A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */,
+				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
+				A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */,
+				A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */,
+				A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */,
+				A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */,
+				A359CD872588E3260089C4A2 /* ViewModifiers.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1025,8 +1025,8 @@
 		A3D6833E25A9A2E1009C31D5 /* Event List */ = {
 			isa = PBXGroup;
 			children = (
-				A3EDE73725669FB80046C1F5 /* EventListView.swift */,
 				A3560D0B2567FC5B009088E7 /* EventListRow.swift */,
+				A3EDE73725669FB80046C1F5 /* EventListView.swift */,
 			);
 			path = "Event List";
 			sourceTree = "<group>";
@@ -1034,20 +1034,20 @@
 		A3F2597122476FEA009A50B6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				A30E41332541FA5E009AAC32 /* SettingsManager.swift */,
-				A30E41372541FB2A009AAC32 /* AppEvents.swift */,
-				A39626BD2553081200F4ABEF /* EventHandler.swift */,
-				A3F2597C2247762F009A50B6 /* R.generated.swift */,
-				A33F810F22474137009CC46A /* Constants.swift */,
-				A3187E8425499FE1009524DF /* AppInfo.swift */,
-				A33F8114224742F7009CC46A /* WorkItem.swift */,
 				A3F25977224771F2009A50B6 /* AlertManager.swift */,
-				A30E48222541F4EF00B4B027 /* Utilities.swift */,
-				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
-				A38199FD25484E7700C71D41 /* Layout.swift */,
-				A3D6843625A9F467009C31D5 /* RatingManager.swift */,
+				A30E41372541FB2A009AAC32 /* AppEvents.swift */,
+				A3187E8425499FE1009524DF /* AppInfo.swift */,
 				A337CFB325D2F8A400FAB76A /* AppPermissions.swift */,
+				A33F810F22474137009CC46A /* Constants.swift */,
+				A39626BD2553081200F4ABEF /* EventHandler.swift */,
+				A38199FD25484E7700C71D41 /* Layout.swift */,
+				A3F2597C2247762F009A50B6 /* R.generated.swift */,
+				A3D6843625A9F467009C31D5 /* RatingManager.swift */,
+				A30E41332541FA5E009AAC32 /* SettingsManager.swift */,
 				A399A75A276DFF6100CDA1C6 /* TextFieldObserver.swift */,
+				A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */,
+				A30E48222541F4EF00B4B027 /* Utilities.swift */,
+				A33F8114224742F7009CC46A /* WorkItem.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
