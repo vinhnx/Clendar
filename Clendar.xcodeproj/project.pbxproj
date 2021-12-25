@@ -131,9 +131,6 @@
 		A38199FE25484E7700C71D41 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199FD25484E7700C71D41 /* Layout.swift */; };
 		A3819A0F2548539700C71D41 /* EventSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */; };
 		A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A383331025A96A8100F7ED70 /* CVCalendar */; };
-		A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */; };
-		A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */; };
-		A383332125A96BB900F7ED70 /* CalendarViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */; };
 		A383332825A96BDB00F7ED70 /* DaySupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */; };
 		A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */; };
 		A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */; };
@@ -207,6 +204,7 @@
 		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
 		A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */; };
 		A3FBFCA025CEB27F00CF6420 /* PurchaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9F25CEB27F00CF6420 /* PurchaseHandler.swift */; };
+		A3FD30B22777587C009D8318 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD30B12777587C009D8318 /* CalendarView.swift */; };
 		A3FF45B725CAEE48005DAE94 /* EventListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
@@ -407,9 +405,6 @@
 		A38199F925484DB700C71D41 /* EventSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSection.swift; sourceTree = "<group>"; };
 		A38199FD25484E7700C71D41 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		A3819A0E2548539700C71D41 /* EventSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSectionHeaderView.swift; sourceTree = "<group>"; };
-		A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
-		A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarWrapperView.swift; sourceTree = "<group>"; };
-		A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewCoordinator.swift; sourceTree = "<group>"; };
 		A383332725A96BDB00F7ED70 /* DaySupplementaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySupplementaryView.swift; sourceTree = "<group>"; };
 		A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
 		A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendar+Extensions.swift"; sourceTree = "<group>"; };
@@ -460,6 +455,7 @@
 		A3FB5B36255C20D30038AFCE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		A3FBFC9F25CEB27F00CF6420 /* PurchaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHandler.swift; sourceTree = "<group>"; };
+		A3FD30B12777587C009D8318 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListWidgetView.swift; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		A86A627F9868D8A135F399FB /* de */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -995,9 +991,7 @@
 		A3D6832025A9A207009C31D5 /* Calendar View */ = {
 			isa = PBXGroup;
 			children = (
-				A383331725A96B2B00F7ED70 /* CalendarHeaderView.swift */,
-				A383332025A96BB900F7ED70 /* CalendarViewCoordinator.swift */,
-				A383331825A96B2B00F7ED70 /* CalendarWrapperView.swift */,
+				A3FD30B12777587C009D8318 /* CalendarView.swift */,
 			);
 			path = "Calendar View";
 			sourceTree = "<group>";
@@ -1271,9 +1265,9 @@
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
-				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */,
+				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
-				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */,
+				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
 				A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
@@ -1470,7 +1464,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1611,7 +1605,6 @@
 				A3B9D9B925431B8D001932B0 /* EventListItemCell.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
-				A383331A25A96B2B00F7ED70 /* CalendarWrapperView.swift in Sources */,
 				A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */,
 				A399A75B276DFF6100CDA1C6 /* TextFieldObserver.swift in Sources */,
 				A3C9465C224E5FF800123DEC /* EventListViewController.swift in Sources */,
@@ -1643,7 +1636,6 @@
 				A3DCD7BD224A56C600EAE380 /* UIView+Extensions.swift in Sources */,
 				A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */,
 				A37F0B2525C5190000DFFC41 /* Color+Extensions.swift in Sources */,
-				A383332125A96BB900F7ED70 /* CalendarViewCoordinator.swift in Sources */,
 				A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */,
 				A35B9B4E258CD4810027E1B3 /* EventViewer.swift in Sources */,
 				A3EDE7472566A0180046C1F5 /* View+Extensions.swift in Sources */,
@@ -1672,8 +1664,8 @@
 				A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */,
 				A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
+				A3FD30B22777587C009D8318 /* CalendarView.swift in Sources */,
 				A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */,
-				A383331925A96B2B00F7ED70 /* CalendarHeaderView.swift in Sources */,
 				A38199FE25484E7700C71D41 /* Layout.swift in Sources */,
 				A33F81132247423A009CC46A /* NaturalInputParser.swift in Sources */,
 				A368474D2554457B004BDCC6 /* Bundle+Extensions.swift in Sources */,
@@ -2306,7 +2298,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */ = {
+		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
@@ -2314,7 +2306,7 @@
 				minimumVersion = 0.7.0;
 			};
 		};
-		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */ = {
+		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
 			requirement = {
@@ -2396,22 +2388,22 @@
 		};
 		A3C579C92752864000B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A3C579CD275286FC00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */;
+			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
 			productName = SwiftyStoreKit;
 		};
 		A3D3EADF25CE5A8700EC3D1D /* Laden */ = {
