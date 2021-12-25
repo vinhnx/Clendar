@@ -81,17 +81,6 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var showDaysOut: SwitchFormItem = {
-        let instance = SwitchFormItem()
-        instance.title = NSLocalizedString("Show days out", comment: "")
-        instance.value = SettingsManager.showDaysOut
-        instance.switchDidChangeBlock = { activate in
-            SettingsManager.showDaysOut = activate
-            NotificationCenter.default.post(name: .didChangeShowDaysOutPreferences, object: nil)
-        }
-        return instance
-    }()
-
     lazy var quickEventMode: SwitchFormItem = {
         let instance = SwitchFormItem()
         instance.title = NSLocalizedString("Quick Event", comment: "")
@@ -190,24 +179,6 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var calendarView: SegmentedControlFormItem = {
-        let proxy = SegmentedControlFormItem()
-        proxy.title = NSLocalizedString("Calendar View", comment: "")
-        proxy.items = CalendarViewMode.titles
-        proxy.selected = SettingsManager.isOnMonthViewSettings
-            ? CalendarViewMode.month.rawValue
-            : CalendarViewMode.week.rawValue
-        proxy.valueDidChangeBlock = { index in
-            genLightHaptic()
-
-            let type = CalendarViewMode(rawValue: index)
-            SettingsManager.calendarViewMode = type?.rawValue ?? CalendarViewMode.defaultValue.rawValue
-
-            NotificationCenter.default.post(name: .didChangeMonthViewCalendarModePreferences, object: nil)
-        }
-        return proxy
-    }()
-
     lazy var tipJarButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = "☕️ " + NSLocalizedString("Tip jar", comment: "")
@@ -286,8 +257,6 @@ final class SettingsViewController: FormViewController {
         
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
-        builder += calendarView
-        builder += showDaysOut
         builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
 

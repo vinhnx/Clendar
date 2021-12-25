@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0094C5732658989072E66AA7FA2B439D"
-               BuildableName = "Pods-Clendar.framework"
+               BuildableName = "Pods_Clendar.framework"
                BlueprintName = "Pods-Clendar"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

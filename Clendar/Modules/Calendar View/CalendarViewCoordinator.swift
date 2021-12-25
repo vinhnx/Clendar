@@ -64,9 +64,9 @@ class CalendarViewCoordinator: NSObject, CVCalendarViewDelegate, CVCalendarMenuV
 
     func dayOfWeekTextUppercase() -> Bool { true }
 
-    func weekdaySymbolType() -> WeekdaySymbolType { .short }
-
     func dayOfWeekTextColor() -> UIColor { .appGray }
+
+    func weekdaySymbolType() -> WeekdaySymbolType { .short }
 
     func dayOfWeekBackGroundColor() -> UIColor { .clear }
 

@@ -12,17 +12,12 @@ import ConfettiSwiftUI
 import Shift
 import Then
 
-// https://www.swiftbysundell.com/articles/defining-dynamic-colors-in-swift/
-
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
-
     @StateObject var eventKitWrapper = Shift.shared
     @State private var createdEvent: EKEvent?
-    @State private var isMonthView = SettingsManager.isOnMonthViewSettings
     @State private var confettiCounter = 0
     @State private var showDateSwitcher = false
-    @State private var resetDateSelection = false
 
     // TODO: make this a calendar setting (chose preferred Calendar)
     private let calendar = Calendar.autoupdatingCurrent
@@ -157,20 +152,8 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
             selectDate(store.selectedDate)
         }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeShowDaysOutPreferences)) { _ in
-            calendarView.changeDaysOutShowingState(shouldShow: SettingsManager.showDaysOut)
-            calendarView.reloadData()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeDaySupplementaryTypePreferences)) { _ in
-            calendarView.reloadData()
-        }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
             store.appBackgroundColor = .backgroundColor()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeMonthViewCalendarModePreferences)) { _ in
-            isMonthView = SettingsManager.isOnMonthViewSettings
-            calendarView.changeModePerSettings()
-            calendarView.commitCalendarViewUpdate()
         }
         .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
             confettiCounter += 1
@@ -181,15 +164,10 @@ struct ContentView: View {
 
 extension ContentView {
     private func configure() {
-        isMonthView = SettingsManager.isOnMonthViewSettings
         selectDate(Date())
     }
 
     private func selectDate(_ date: Date) {
-        withAnimation {
-            resetDateSelection = !date.isToday
-        }
-
         genLightHaptic()
         fetchEvents(for: date)
     }
@@ -291,15 +269,6 @@ extension ContentView {
                         }
                     }
             )
-    }
-
-    private func makeDateSwitcherToggle() -> some View {
-        Toggle(isOn: $showDateSwitcher.animation(.easeIn(duration: 0.25))) {
-            Image(systemName: "calendar.circle.fill")
-        }
-        .controlSize(.small)
-        .toggleStyle(.button)
-        .keyboardShortcut("o", modifiers: [.command, .shift])
     }
 
     private func makeMenuButton() -> some View {
