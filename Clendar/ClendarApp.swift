@@ -19,11 +19,8 @@ struct ClendarApp: App {
 
     // swiftlint:disable:next weak_delegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
-    @Environment(\.scenePhase)
-    var phase
-
-    let store = SharedStore()
+    @Environment(\.scenePhase) var phase
+    @StateObject private var store = SharedStore()
 
     init() {
         configure()
