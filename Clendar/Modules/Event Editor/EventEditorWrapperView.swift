@@ -10,7 +10,7 @@ import EventKitUI
 import SwiftUI
 import Shift
 
-class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
+final class EventEditorWrapperViewCoordinator: NSObject, EKEventEditViewDelegate {
     var wrapperView: EventEditorWrapperView
 
     init(_ wrapperView: EventEditorWrapperView) {
@@ -62,7 +62,7 @@ struct EventEditorWrapperView: UIViewControllerRepresentable {
     func updateUIViewController(_: EventEditViewController, context _: Context) {}
 }
 
-class EventEditViewController: EKEventEditViewController {
+final class EventEditViewController: EKEventEditViewController {
     // MARK: Lifecycle
 
     init(

@@ -9,7 +9,7 @@
 import SwiftyFORM
 import UIKit
 
-class AppIconItemCell: UITableViewCell, CellHeightProvider {
+final class AppIconItemCell: UITableViewCell, CellHeightProvider {
 	// MARK: Internal
 
 	@IBOutlet var titleLabel: UILabel!

@@ -11,7 +11,7 @@ import EventKitUI
 import Foundation
 import Shift
 
-class EventHandler {
+final class EventHandler {
     static func viewEvent(_ event: ClendarEvent?, delegate: EKEventViewDelegate?) {
         guard let ekEvent = event?.event else { return }
         let eventViewer = EventViewerNavigationController(event: ekEvent, delegate: delegate)

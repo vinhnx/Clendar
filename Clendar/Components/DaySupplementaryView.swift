@@ -10,7 +10,7 @@ import CVCalendar
 import UIKit
 import Shift
 
-class DaySupplementaryView: UIStackView {
+final class DaySupplementaryView: UIStackView {
     static func viewForDayView(_ dayView: DayView, isOut: Bool, type: DaySupplementaryType = DaySupplementaryType.defaultValue) -> UIView? {
         guard let date = dayView.date.convertedDate() else { return nil }
 

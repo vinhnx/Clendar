@@ -9,7 +9,7 @@
 import SwiftDate
 import UIKit
 
-class EventListItemCell: UICollectionViewCell {
+final class EventListItemCell: UICollectionViewCell {
 	// MARK: Internal
 
 	// MARK: - ViewModel

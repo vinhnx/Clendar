@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 // reference https://stackoverflow.com/a/66165075/1477298
-class TextFieldObserver: ObservableObject {
+final class TextFieldObserver: ObservableObject {
     @Published var debouncedText = ""
     @Published var searchText = ""
 

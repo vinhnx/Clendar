@@ -9,7 +9,7 @@
 import EventKitUI
 import UIKit
 
-class EventViewerNavigationController: BaseNavigationController {
+final class EventViewerNavigationController: BaseNavigationController {
     // MARK: Lifecycle
 
     init() {
@@ -37,7 +37,7 @@ class EventViewerNavigationController: BaseNavigationController {
 
 }
 
-class EventViewerViewController: EKEventViewController {
+final class EventViewerViewController: EKEventViewController {
     // MARK: Lifecycle
 
     convenience init(event: EKEvent) {

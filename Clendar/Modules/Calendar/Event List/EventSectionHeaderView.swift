@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventSectionHeaderView: UICollectionReusableView {
+final class EventSectionHeaderView: UICollectionReusableView {
 	// MARK: Lifecycle
 
 	override init(frame: CGRect) {

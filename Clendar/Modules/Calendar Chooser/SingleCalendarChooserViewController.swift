@@ -10,7 +10,7 @@ import EventKitUI
 import UIKit
 import Shift
 
-class SingleCalendarChooserViewController: EKCalendarChooser {
+final class SingleCalendarChooserViewController: EKCalendarChooser {
 
     // MARK: Lifecycle
 

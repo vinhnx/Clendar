@@ -10,7 +10,7 @@ import UIKit
 
 // ref: https://stuartbreckenridge.com/2021/01/the-diminishing-utility-of-mfmailcomposeviewcontroller/
 
-class MailComposer: NSObject {
+final class MailComposer: NSObject {
 
     // MARK: - Public
 

@@ -10,6 +10,6 @@ import Foundation
 
 // dismiss modal from UIKit hosting
 // ref: https://stackoverflow.com/a/62416185/1477298
-class ModalWrapperView {
+final class ModalWrapperView {
     var closeAction: () -> Void = {}
 }

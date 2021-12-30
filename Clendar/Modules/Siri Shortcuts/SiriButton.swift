@@ -20,7 +20,7 @@ struct SiriButton: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: SiriUIViewController, context: Context) {}
 }
 
-class SiriUIViewController: UIViewController {
+final class SiriUIViewController: UIViewController {
     let shortcut: INShortcut
 
     init(shortcut: INShortcut) {

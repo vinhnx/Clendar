@@ -11,7 +11,7 @@ import SwiftyFORM
 
 // TODO: consider this is a premium/unlockable feature
 
-class KeyboardShortcutsViewController: FormViewController {
+final class KeyboardShortcutsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = NSLocalizedString("Keyboard shortcuts", comment: "")
         builder.demo_showInfo(NSLocalizedString("Productivity, increased! 🚀", comment: ""))

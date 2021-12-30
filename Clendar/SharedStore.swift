@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class SharedStore: ObservableObject {
+final class SharedStore: ObservableObject {
     // events
     @Published var selectedDate = Date()
     @Published var appBackgroundColor = Color(.backgroundColor)
