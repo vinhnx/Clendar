@@ -23,6 +23,7 @@ func naturalLanguageCodeFromSelectedLanguage() -> Language {
     case "fr": return .french
     case "ja": return .japanese
     case "zh": return .chinese
+    case "de": return .german
     default: return .english
     }
 }
