@@ -13,6 +13,8 @@ import WidgetKit
 import EventKitUI
 import SwiftUI
 
+// TODO: Convert settings to SwiftUI
+
 final class SettingsNavigationController: BaseNavigationController {
 
     // MARK: Lifecycle
