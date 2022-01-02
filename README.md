@@ -5,9 +5,14 @@ Clendar - Minimal Calendar
 </h1>
 <p align="center">Minimal Calendar & Widget</p>
 
-<p align="center"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/0f/4d/31/0f4d3185-cf37-c985-4631-a5b14b72dba0/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp"></p>
+<p align="center"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/1c/4f/b7/1c4fb766-21ba-d822-4370-c7ad59bf6b8f/AppIcon-0-2x-4-85-220.png/230x0w.webp"></p>
 
-<p align="center"><a href="https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-US?size=250x83&amp;releaseDate=1600214400&h=b81fd00fac3280be6ec30d3d3a1461f0" alt="Download on the App Store" style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a></p>
+<p align="center"><a href="https://apps.apple.com/app/clendar-a-calendar-app/id1548102041#?platform=iphone"
+                style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-US?size=250x83&amp;releaseDate=1600214400&h=b81fd00fac3280be6ec30d3d3a1461f0"
+                    alt="Download on the App Store"
+                    style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a></p>
+            <p align="center"><img src="https://www.clendar.info/img/qr.png" height="200" width="200"></p>
 
 > [Landing Page](https://clendar.info)
 
@@ -85,7 +90,8 @@ Action
 
 ### Requirements
 
- (for async/await):
+(for async/await):
+
 -   Xcode 13.1
 -   iOS 15.0
 -   watchOS 8.0
@@ -93,8 +99,8 @@ Action
 
 ### My own Swift Packages currently used in Clendar
 
-+ [Shift](https://github.com/vinhnx/Shift) - Result-based wrapper for EventKit. SwiftUI supported!
-+ [Laden](https://github.com/vinhnx/Laden) - SwiftUI loading indicator view
+-   [Shift](https://github.com/vinhnx/Shift) - Result-based wrapper for EventKit. SwiftUI supported!
+-   [Laden](https://github.com/vinhnx/Laden) - SwiftUI loading indicator view
 
 ### Contributing
 
@@ -104,9 +110,10 @@ Contributing is more than welcome, if you feel like helping the app, or want to 
 
 🙏🏻🤯🎉
 Huge thanks everyone who took their precious time and effort to contribute to the project:
-+ [Aleksandr Sutulov](https://github.com/AlexanderSutul)
-+ [Jan Matoniak](https://github.com/kapucnov2321)
-+ [your name here?...](https://github.com/vinhnx/Clendar/issues)
+
+-   [Aleksandr Sutulov](https://github.com/AlexanderSutul)
+-   [Jan Matoniak](https://github.com/kapucnov2321)
+-   [your name here?...](https://github.com/vinhnx/Clendar/issues)
 
 💡🧡
 
@@ -121,11 +128,12 @@ But, please don't re-distribute the app on App Store with different name. 🥺
 And, if you like, you can Purchase the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tip via In-App Purchase options if you feel like. Thank you in advance! 📲
 
 ### Open-source inspiration
-+ https://github.com/jeffreybergier/WaterMe
+
+-   https://github.com/jeffreybergier/WaterMe
 
 ### What's 'Clendar'?
 
-It's just Calendar, without an 'a'. I thought it's unique, but turns out it's not going well with ASO (App Store Optimization) and SEO (Search Engine Optimization). 
+It's just Calendar, without an 'a'. I thought it's unique, but turns out it's not going well with ASO (App Store Optimization) and SEO (Search Engine Optimization).
 
 But, whatever!
 
