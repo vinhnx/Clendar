@@ -129,7 +129,7 @@ platform :ios do
   desc "Push git tag to git `upstream`"
   lane :pushGitTag do
     push_git_tags(
-      remote: "upstream"
+      remote: "origin"
     )
   end
   
