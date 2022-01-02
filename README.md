@@ -3,7 +3,7 @@
 <h1 align="center">
 Clendar - Minimal Calendar
 </h1>
-<p align="center">Minimal Lunar Calendar Widget</p>
+<p align="center">Minimal Calendar & Widget</p>
 
 <p align="center"><img src="https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/0f/4d/31/0f4d3185-cf37-c985-4631-a5b14b72dba0/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp"></p>
 
