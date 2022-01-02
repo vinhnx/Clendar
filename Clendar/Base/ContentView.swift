@@ -136,7 +136,6 @@ struct ContentView: View {
             Text("No event selected")
                 .modifier(BoldTextModifider())
         }
-        .navigationViewStyle(.stack) // fix layout error: https://developer.apple.com/forums/thread/673113
         .onAppear {
             configure()
         }
