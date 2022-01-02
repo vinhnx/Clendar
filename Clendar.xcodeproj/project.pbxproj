@@ -387,6 +387,7 @@
 		A3560D0B2567FC5B009088E7 /* EventListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListRow.swift; sourceTree = "<group>"; };
 		A359CD872588E3260089C4A2 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		A359CDCD2588E95F0089C4A2 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.1.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		A35B8ACE2781EC630078DB6A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A35B9B4D258CD4810027E1B3 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
 		A35B9B54258CD4930027E1B3 /* MapWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWrapperView.swift; sourceTree = "<group>"; };
 		A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
@@ -1379,9 +1380,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Clendar/Pods-Clendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1745,6 +1750,7 @@
 				A3EF6236275A8F3D00346506 /* zh-Hant */,
 				A3EF6238275A8F3E00346506 /* de */,
 				A3EF623A275A8F4200346506 /* th */,
+				A35B8ACE2781EC630078DB6A /* fr */,
 			);
 			name = ClendarWidget.intentdefinition;
 			sourceTree = "<group>";
