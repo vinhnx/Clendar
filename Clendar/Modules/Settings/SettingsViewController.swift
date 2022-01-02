@@ -14,6 +14,7 @@ import EventKitUI
 import SwiftUI
 
 // TODO: Convert settings to SwiftUI
+// https://swiftwithmajid.com/2019/06/19/building-forms-with-swiftui/
 
 final class SettingsNavigationController: BaseNavigationController {
 
