@@ -54,7 +54,7 @@ class IAPHandler: ObservableObject {
         }
     }
 
-    func hasPurchases() -> Bool {
+    private func hasPurchases() -> Bool {
         do {
             let receipt = try InAppReceipt.localReceipt()
             guard receipt.isValid else { return false }
@@ -63,6 +63,10 @@ class IAPHandler: ObservableObject {
             logError(error)
             return false
         }
+    }
+
+    func hadPlus() -> Bool {
+        hasPurchaseProduct(.plus)
     }
 
     func hasPurchaseProductID(_ productID: String) -> Bool {

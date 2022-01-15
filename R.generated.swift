@@ -369,8 +369,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 142 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 145 localization keys.
     struct localizable {
+      /// en translation: ... and many more features to come in the future!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let andManyMoreFeaturesToComeInTheFuture = Rswift.StringResource(key: "... and many more features to come in the future!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Add event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -451,10 +455,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let chooseYourDesiredAppIcon = Rswift.StringResource(key: "Choose your desired app icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
-      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
+      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static let clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillBeForeverRemainedFreeYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton = Rswift.StringResource(key: "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      static let clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton = Rswift.StringResource(key: "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Clendar, new event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -671,6 +675,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let monthViewCalendar = Rswift.StringResource(key: "Month view calendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: More calendar identifiers, such as:
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let moreCalendarIdentifiersSuchAs = Rswift.StringResource(key: "More calendar identifiers, such as:", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Name
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -771,6 +779,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let restore = Rswift.StringResource(key: "Restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Restore Purchases
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let restorePurchases = Rswift.StringResource(key: "Restore Purchases", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Save event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -939,6 +951,21 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let tabularIslamic = Rswift.StringResource(key: "tabular Islamic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+
+      /// en translation: ... and many more features to come in the future!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func andManyMoreFeaturesToComeInTheFuture(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("... and many more features to come in the future!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "... and many more features to come in the future!"
+        }
+
+        return NSLocalizedString("... and many more features to come in the future!", bundle: bundle, comment: "")
+      }
 
       /// en translation: Add event
       ///
@@ -1240,19 +1267,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Choose your desired app icon", bundle: bundle, comment: "")
       }
 
-      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
+      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static func clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillBeForeverRemainedFreeYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton(preferredLanguages: [String]? = nil) -> String {
+      static func clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button."
+          return "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button."
         }
 
-        return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: bundle, comment: "")
+        return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: bundle, comment: "")
       }
 
       /// en translation: Clendar, new event
@@ -2065,6 +2092,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Month view calendar", bundle: bundle, comment: "")
       }
 
+      /// en translation: More calendar identifiers, such as:
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func moreCalendarIdentifiersSuchAs(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("More calendar identifiers, such as:", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "More calendar identifiers, such as:"
+        }
+
+        return NSLocalizedString("More calendar identifiers, such as:", bundle: bundle, comment: "")
+      }
+
       /// en translation: Name
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2438,6 +2480,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Restore", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Restore Purchases
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func restorePurchases(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Restore Purchases", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Restore Purchases"
+        }
+
+        return NSLocalizedString("Restore Purchases", bundle: bundle, comment: "")
       }
 
       /// en translation: Save event

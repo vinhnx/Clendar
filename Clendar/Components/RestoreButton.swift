@@ -13,8 +13,7 @@ import StoreKit
 
 struct RestoreButton: View {
     @EnvironmentObject var store: SharedStore
-    @Binding var isLoading: Bool
-    @State private var isPurchasing: Bool = false
+    @State private var isLoading: Bool = false
 
     var laden: some View {
         Laden.CircleLoadingView(
@@ -37,7 +36,7 @@ struct RestoreButton: View {
             .overlay(loadingView)
             .disabled(isLoading)
             .buttonStyle(
-                RestoreButtonStyle(title: "Restore Purchases")
+                RestoreButtonStyle()
             )
             .redacted(reason: isLoading ? .placeholder : [])
     }

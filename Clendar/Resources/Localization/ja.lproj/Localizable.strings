@@ -230,6 +230,10 @@
 "Republic of China" = "中華民国のカレンダー";
 "tabular Islamic" = "表形式のイスラム暦";
 "Calendar Type" = "カレンダータイプ";
-"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar +は、今後の新機能にアクセスするためのオプションの1回限りの購入です。 基本的な機能は永久に無料のままになります。 [復元]ボタンをタップすると、過去のアプリ内購入がある場合はそれを確認して復元できます。";
+"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar +は、今後の新機能にアクセスするためのオプションの1回限りの購入です。 基本的な機能は永久に無料のままになります。 [復元]ボタンをタップすると、過去のアプリ内購入がある場合はそれを確認して復元できます。";
 "You have Clendar+. Thanks for your support! 😊" = "あなたはClendar +を持っています。 ご協力ありがとうございました！ 😊";
 "Restore" = "戻す";
+"More calendar identifiers, such as:" = "次のようなその他のカレンダー識別子：";
+"... and many more features to come in the future!" = "...そして将来的にはさらに多くの機能が登場します！";
+"Restore Purchases" = "トランザクションの復元";
+"Unlock all features with one purchase!" = "1回の購入ですべての機能のロックを解除します！";

@@ -48,18 +48,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var restoreButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "🏅 " + NSLocalizedString("Restore", comment: "")
-        instance.action = { [weak self] in
-            guard let self = self else { return }
-            self.iapHelper.restorePurchase()
-        }
-
-        return instance
-    }()
-
-    lazy var hadClendarPlusButton: ButtonFormItem = {
-        let instance = ButtonFormItem()
-        instance.title = "🏅 " + NSLocalizedString("You have Clendar+. Thanks for your support! 😊", comment: "")
+        instance.title = NSLocalizedString("Restore Purchases", comment: "")
         instance.action = { [weak self] in
             guard let self = self else { return }
             self.iapHelper.restorePurchase()
@@ -252,9 +241,9 @@ final class SettingsViewController: FormViewController {
 
     lazy var premiumButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "🏅 " + NSLocalizedString("Clendar+", comment: "")
+        instance.title = NSLocalizedString("Clendar+", comment: "")
         instance.action = {
-            if self.iapHelper.hasPurchases() {
+            if self.iapHelper.hadPlus() {
                 self.iapHelper.restorePurchase()
             }
             else {
@@ -303,8 +292,6 @@ final class SettingsViewController: FormViewController {
 
         checkUIMode()
 
-        iapHelper.restorePurchase()
-
         NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
             self.checkUIMode()
         }
@@ -322,11 +309,12 @@ final class SettingsViewController: FormViewController {
         builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
         // Plus
-        if !iapHelper.hasPurchases() {
-            builder += SectionHeaderTitleFormItem().title("🏅 " + NSLocalizedString("Clendar+", comment: ""))
+        builder += SectionHeaderTitleFormItem().title("🌟 " + NSLocalizedString("Clendar+", comment: ""))
+        if !iapHelper.hadPlus() {
             builder += premiumButton
-            builder += SectionFooterTitleFormItem().title(NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button.", comment: ""))
         }
+        builder += restoreButton
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", comment: ""))
 
         // General
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
@@ -341,7 +329,7 @@ final class SettingsViewController: FormViewController {
 
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
-        builder += iapHelper.hasPurchases() ? calendarType : lockedCalendarType
+        builder += iapHelper.hadPlus() ? calendarType : lockedCalendarType
         builder += defaultCalendar
         builder += calendarsVisibility
         builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)

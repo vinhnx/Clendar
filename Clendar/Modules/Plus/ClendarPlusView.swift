@@ -20,10 +20,33 @@ struct ClendarPlusView: View {
 
     var buttonStack: some View {
         ScrollView(showsIndicators: false) {
-            VStack(spacing: 10) {
-                Text("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button.")
+            VStack(spacing: 20) {
+                Text("🌟🌟🌟")
+                    .multilineTextAlignment(.center)
+
+                Text("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.")
                     .font(.mediumFontWithSize(15))
                     .foregroundColor(.gray)
+
+                Text("More calendar identifiers, such as:")
+                    .font(.mediumFontWithSize(15))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
+
+                ForEach(CalendarIdentifier.allCases.prefix(3), id: \.self) { item in
+                    Text("\(item.shortDescription)")
+                        .font(.mediumFontWithSize(15))
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                }
+
+                Text("... and many more features to come in the future!")
+                    .font(.mediumFontWithSize(15))
+                    .foregroundColor(.gray)
+
+                Text("Unlock all features with one purchase!")
+                    .font(.boldFontWithSize(15))
+                    .gradientForeground(colors: [.red, .blue])
                     .multilineTextAlignment(.center)
 
                 ForEach(products, id: \.self) { product in
@@ -35,6 +58,8 @@ struct ClendarPlusView: View {
                     .frame(maxWidth: .infinity)
                     .id(UUID())
                 }
+
+                RestoreButton()
             }
         }
     }

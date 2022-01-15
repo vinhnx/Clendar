@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct RestoreButtonStyle: ButtonStyle {
-    var title: String?
     var titlefontSize: CGFloat = 20
     var backgroundColor: Color = .appRed
     var foregroundColor: Color = .white
@@ -18,10 +17,8 @@ struct RestoreButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         HStack {
-            Unwrap(title) { title in
-                Text(title)
-                    .font(.boldFontWithSize(titlefontSize))
-            }
+            Text("Restore Purchases")
+                .font(.boldFontWithSize(titlefontSize))
         }
         .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
         .foregroundColor(foregroundColor)

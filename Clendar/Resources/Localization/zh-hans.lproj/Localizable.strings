@@ -230,6 +230,10 @@
 "Republic of China" = "民國歷";
 "tabular Islamic" = "表格伊斯蘭日曆";
 "Calendar Type" = "日曆類型";
-"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar+ 是可選的一次性購買，以訪問即將推出的新功能。 基本功能將永遠免費。 您可以通過點擊恢復按鈕來驗證和恢復過去的應用內購買（如果有）。";
+"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar+ 是可選的一次性購買，以訪問即將推出的新功能。 基本功能將永遠免費。 您可以通過點擊“恢復”按鈕來驗證和恢復過去的應用內購買（如果有）。";
 "You have Clendar+. Thanks for your support! 😊" = "您擁有 Clendar+。 謝謝你的支持！ 😊";
 "Restore" = "恢復";
+"More calendar identifiers, such as:" = "更多日曆標識符，例如：";
+"... and many more features to come in the future!" = "... 以及更多未來的功能！";
+"Restore Purchases" = "恢复事务";
+"Unlock all features with one purchase!" = "一次购买即可解锁所有功能！";
