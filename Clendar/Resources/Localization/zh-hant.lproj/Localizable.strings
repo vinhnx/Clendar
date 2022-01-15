@@ -194,7 +194,6 @@
 "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!" = "如果您覺得 Clendar 對您有幫助並願意支持應用程序開發工作； 喜歡未來的新功能、額外主題、應用程序圖標； 非常感謝提示。 任何小費金額都有很大幫助，非常感謝！";
 "Swipe down to collapse" = "向下滑動折疊";
 "Event deleted!" = "活動已刪除！";
-"Tip received. Thank you very much and have a great day! 😊" = "小費收到。 非常感謝你，祝你有美好的一天！ 😊";
 "Unable to determine email sending state" = "無法確定電子郵件發送狀態";
 "Unable to open email client, please try again later" = "無法打開郵件客戶端，請稍後再試";
 "Events deleted!" = "活動已刪除！";
@@ -231,3 +230,6 @@
 "Republic of China" = "民国历";
 "tabular Islamic" = "表格伊斯兰日历";
 "Calendar Type" = "日历类型";
+"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button." = "Clendar+ 是可选的一次性购买，以访问即将推出的新功能。 基本功能将永远免费。 您可以通过点击“恢复”按钮来验证和恢复过去的应用内购买（如果有）。";
+"You have Clendar+. Thanks for your support! 😊" = "您拥有 Clendar+。 谢谢你的支持！ 😊";
+"Restore" = "恢复";

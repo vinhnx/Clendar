@@ -194,7 +194,6 @@
 "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!" = "Si vous pensez que Clendar est utile et que vous souhaitez soutenir l'effort de développement de l'application ; comme de nouvelles fonctionnalités, des thèmes supplémentaires, des icônes d'applications à l'avenir ; Les conseils sont fortement appréciés. N'importe quel montant de pourboire aide beaucoup, merci beaucoup!";
 "Swipe down to collapse" = "Faites glisser vers le bas pour réduire";
 "Event deleted!" = "Événement supprimé !";
-"Tip received. Thank you very much and have a great day! 😊" = "Pourboire reçu. Merci beaucoup et passez une excellente journée! 😊";
 "Unable to determine email sending state" = "Impossible de déterminer l'état d'envoi de l'e-mail";
 "Unable to open email client, please try again later" = "Impossible d'ouvrir le client de messagerie, veuillez réessayer plus tard";
 "Events deleted!" = "Événements supprimés !";
@@ -231,3 +230,6 @@
 "Republic of China" = "Calendrier de la République de Chine";
 "tabular Islamic" = "calendrier islamique tabulaire";
 "Calendar Type" = "Type de calendrier";
+"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button." = "Clendar+ est un achat unique facultatif pour accéder aux nouvelles fonctionnalités à venir. Les fonctionnalités de base resteront à jamais gratuites. Vous pouvez vérifier et restaurer les achats intégrés passés, le cas échéant, en appuyant sur le bouton "Restaurer".";
+"You have Clendar+. Thanks for your support! 😊" = "Vous avez Clendar+. Merci pour votre aide! 😊";
+"Restore" = "Restaurer";

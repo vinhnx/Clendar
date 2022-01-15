@@ -1,8 +1,8 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ASN1Swift" "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono" "${PODS_CONFIGURATION_BUILD_DIR}/TPInAppReceipt"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Rswift" -framework "SwiftyChrono"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ASN1Swift/ASN1Swift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TPInAppReceipt/TPInAppReceipt.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "ASN1Swift" -framework "Rswift" -framework "SwiftyChrono" -framework "TPInAppReceipt"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

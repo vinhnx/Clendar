@@ -12,6 +12,14 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/ASN1Swift</string>
+			<key>Title</key>
+			<string>ASN1Swift</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/ConfettiSwiftUI</string>
 			<key>Title</key>
 			<string>ConfettiSwiftUI</string>
@@ -135,6 +143,14 @@
 			<string>com.mono0926.LicensePlist/Then</string>
 			<key>Title</key>
 			<string>Then</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/TPInAppReceipt</string>
+			<key>Title</key>
+			<string>TPInAppReceipt</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

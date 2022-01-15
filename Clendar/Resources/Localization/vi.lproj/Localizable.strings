@@ -194,7 +194,6 @@
 "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!" = "Nếu bạn cảm thấy Clendar hữu ích và muốn hỗ trợ nỗ lực phát triển ứng dụng; như các tính năng mới, chủ đề bổ sung, biểu tượng ứng dụng trong tương lai; lời khuyên được đánh giá rất cao. Bất kỳ số tiền tip giúp rất nhiều, cảm ơn bạn rất nhiều!";
 "Swipe down to collapse" = "Vuốt xuống để thu gọn";
 "Event deleted!" = "Sự kiện đã bị xóa!";
-"Tip received. Thank you very much and have a great day! 😊" = "Đã nhận tiền tip. Cảm ơn bạn rất nhiều và có một ngày tuyệt vời! 😊";
 "Unable to determine email sending state" = "Không thể xác định trạng thái gửi email";
 "Unable to open email client, please try again later" = "Không thể mở ứng dụng email, vui lòng thử lại sau";
 "Events deleted!" = "Sự kiện đã bị xóa!";
@@ -231,3 +230,6 @@
 "Republic of China" = "Lịch Trung Hoa Dân Quốc";
 "tabular Islamic" = "lịch Hồi giáo dạng bảng";
 "Calendar Type" = "Loại lịch";
+"Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button." = "Clendar + là tùy chọn mua một lần để truy cập các tính năng mới sắp ra mắt. Chức năng cơ bản sẽ mãi mãi vẫn miễn phí. Bạn có thể xác minh và khôi phục các giao dịch mua trong ứng dụng trước đây, nếu có, bằng cách nhấn vào nút 'Khôi phục'.";
+"You have Clendar+. Thanks for your support! 😊" = "Bạn có Clendar +. Cảm ơn sự hỗ trợ của bạn! 😊";
+"Restore" = "Khôi phục";

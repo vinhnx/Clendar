@@ -1,3 +1,7 @@
+name: ASN1Swift, nameSpecified: 
+body: Copyright (c) 2020-P…
+version: 1.2.3
+
 name: LicensePlist, nameSpecified: 
 body: MIT License
 
@@ -27,6 +31,12 @@ body: MIT License
 
 Copyrig…
 version: 1.1.0
+
+name: TPInAppReceipt, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.3.2
 
 name: ConfettiSwiftUI, nameSpecified: ConfettiSwiftUI, owner: simibac, version: 0.3.0
 

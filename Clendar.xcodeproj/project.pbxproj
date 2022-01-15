@@ -165,6 +165,9 @@
 		A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
+		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
+		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
+		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
 		A3C579CA2752864000B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579C92752864000B636EF /* Shift */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
@@ -199,7 +202,7 @@
 		A3F2597D2247762F009A50B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F2597C2247762F009A50B6 /* R.generated.swift */; };
 		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
 		A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */; };
-		A3FBFCA025CEB27F00CF6420 /* PurchaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9F25CEB27F00CF6420 /* PurchaseHandler.swift */; };
+		A3FBFCA025CEB27F00CF6420 /* PurchaseProductIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9F25CEB27F00CF6420 /* PurchaseProductIdentifier.swift */; };
 		A3FD30B22777587C009D8318 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD30B12777587C009D8318 /* CalendarView.swift */; };
 		A3FF45B725CAEE48005DAE94 /* EventListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
@@ -420,6 +423,9 @@
 		A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Extensions.swift"; sourceTree = "<group>"; };
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarError.swift; sourceTree = "<group>"; };
+		A3C23944279315BE0067F8FA /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
+		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
+		A3C2394827931D9D0067F8FA /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalendarsChooserViewController.swift; sourceTree = "<group>"; };
 		A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarPlusView.swift; sourceTree = "<group>"; };
 		A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -446,7 +452,7 @@
 		A3FA4D19259E2F59009D4F39 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		A3FB5B36255C20D30038AFCE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
-		A3FBFC9F25CEB27F00CF6420 /* PurchaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHandler.swift; sourceTree = "<group>"; };
+		A3FBFC9F25CEB27F00CF6420 /* PurchaseProductIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProductIdentifier.swift; sourceTree = "<group>"; };
 		A3FD30B12777587C009D8318 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListWidgetView.swift; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
@@ -987,6 +993,8 @@
 				A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */,
 				A3A43E7125C45FA900E60616 /* MultilineTextField.swift */,
 				A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */,
+				A3C23944279315BE0067F8FA /* RestoreButton.swift */,
+				A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */,
 				A31AFDB625CE6E2A0092D44D /* PurchaseButtonStyle.swift */,
 				A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */,
 				A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */,
@@ -1028,7 +1036,8 @@
 		A3FBFC9E25CEB27200CF6420 /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				A3FBFC9F25CEB27F00CF6420 /* PurchaseHandler.swift */,
+				A3FBFC9F25CEB27F00CF6420 /* PurchaseProductIdentifier.swift */,
+				A3C2394827931D9D0067F8FA /* IAPHandler.swift */,
 			);
 			path = Purchase;
 			sourceTree = "<group>";
@@ -1574,6 +1583,7 @@
 				A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */,
 				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
+				A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A337CFB425D2F8A400FAB76A /* AppPermissions.swift in Sources */,
 				A33F846625AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
@@ -1590,6 +1600,7 @@
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
 				A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */,
 				A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */,
+				A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */,
 				A35B9B55258CD4930027E1B3 /* MapWrapperView.swift in Sources */,
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A315F9FB25CF04A800E909DB /* ModalWrapperView.swift in Sources */,
@@ -1616,6 +1627,7 @@
 				A33F811A22474BE8009CC46A /* Collection+Extensions.swift in Sources */,
 				A30E41302541FA1A009AAC32 /* UserDefaultsWrapper.swift in Sources */,
 				A33F811022474137009CC46A /* Constants.swift in Sources */,
+				A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */,
 				A30E41342541FA5E009AAC32 /* SettingsManager.swift in Sources */,
 				A3A43E7225C45FAA00E60616 /* MultilineTextField.swift in Sources */,
 				A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */,
@@ -1627,7 +1639,7 @@
 				A3EDE73825669FB80046C1F5 /* EventListView.swift in Sources */,
 				A3187E8525499FE1009524DF /* AppInfo.swift in Sources */,
 				A3A43E7C25C46CDB00E60616 /* KeyboardShortcutsViewController.swift in Sources */,
-				A3FBFCA025CEB27F00CF6420 /* PurchaseHandler.swift in Sources */,
+				A3FBFCA025CEB27F00CF6420 /* PurchaseProductIdentifier.swift in Sources */,
 				A3E0B8962780981900758EC4 /* CalendarIdentifer.swift in Sources */,
 				A30E41382541FB2A009AAC32 /* AppEvents.swift in Sources */,
 				A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */,

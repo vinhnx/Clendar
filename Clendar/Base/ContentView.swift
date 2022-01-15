@@ -20,8 +20,6 @@ struct ContentView: View {
     @State private var confettiCounter = 0
     @State private var showDateSwitcher = false
 
-    // TODO: make this a calendar setting (chose preferred Calendar)
-
     // MARK: - Views Compositions
 
     private var monthHeaderView: some View {
@@ -160,7 +158,6 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
             confettiCounter += 1
-            AlertManager.show(message: "Tip received. Thank you so much and wish you have a nice day! 😊")
         }
         .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
             handleDidChangeCalendarTypeEvent(notification)
