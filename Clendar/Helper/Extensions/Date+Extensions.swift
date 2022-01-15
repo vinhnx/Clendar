@@ -18,74 +18,60 @@ extension Date {
         dateAtEndOf(.day)
     }
 
-    var toHourAndMinuteString: String {
-        DateFormatter.format(self, format: "HH:mm")
+    func toHourAndMinuteString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "HH:mm", calendar: calendar)
     }
 
-    var toShortDateString: String {
-        DateFormatter.format(self, format: "d")
+    func toShortDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "d", calendar: calendar)
     }
 
-    var toDateString: String {
-        DateFormatter.format(self, format: "d")
+    func toDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "d", calendar: calendar)
     }
 
-    var toDateAndMonthString: String {
-        DateFormatter.format(self, format: "MMM d")
+    func toDateAndMonthString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "MMM d", calendar: calendar)
     }
 
-    var toDayString: String {
-        DateFormatter.format(self, format: "E")
+    func toDayString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "E", calendar: calendar)
     }
 
-    var toMonthString: String {
-        DateFormatter.format(self, format: "MMMM")
+    func toMonthString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "MMMM", calendar: calendar)
     }
 
-    var toMonthAndYearString: String {
-        DateFormatter.format(self, format: "MMMM yyyy")
+    func toMonthAndYearString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "MMMM yyyy", calendar: calendar)
     }
 
-    var toYearString: String {
-        DateFormatter.format(self, format: "yyyy")
+    func toYearString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "yyyy", calendar: calendar)
     }
 
-    var toFullDateString: String {
-        DateFormatter.format(self, format: "EEEE, MMM d, yyyy")
+    func toFullDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "EEEE, MMM d, yyyy", calendar: calendar)
     }
 
-    var toFullDayString: String {
-        DateFormatter.format(self, format: "EEEE")
+    func toFullDayString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "EEEE", calendar: calendar)
     }
 
-    var toDayAndDateString: String {
-        DateFormatter.format(self, format: "EEEE d")
+    func toDayAndDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "EEEE d", calendar: calendar)
     }
 
-    var toChineseDate: Date {
-        let date = convertTo(region: Region(calendar: Calendars.chinese))
-        return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
-    }
-
-    var toGregorianDate: Date {
-        let date = convertTo(region: Region(calendar: Calendars.gregorian))
-        return Date(year: date.year, month: date.month, day: date.day, hour: 0, minute: 0)
-    }
-
-    var midnight: Date {
-        Calendar.current.startOfDay(for: self)
-    }
-
-    func asStringWithTemplate(_ format: String) -> String {
-        DateFormatter.format(self, format: format)
+    func asStringWithTemplate(_ format: String, calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: format, calendar: calendar)
     }
 
     var nextHour: Date {
         dateByAdding(1, .hour).dateAtStartOf(.hour).date
     }
 
-    var toFullEventDate: String {
-        DateFormatter.format(self, format: "EEEE, MMM d, yyyy. HH:mm")
+    func toFullEventDate(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asString(self, format: "EEEE, MMM d, yyyy. HH:mm", calendar: calendar)
     }
 
     #if !os(watchOS)

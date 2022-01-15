@@ -40,13 +40,13 @@ struct SmallCalendarWidgetView: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Text(entry.date.toMonthString.localizedUppercase)
+            Text(entry.date.toMonthString().localizedUppercase)
                 .font(.boldFontWithSize(18))
                 .foregroundColor(.gray)
-            Text(entry.date.toFullDayString)
+            Text(entry.date.toFullDayString())
                 .font(.boldFontWithSize(20))
                 .foregroundColor(.appRed)
-            Text(entry.date.toDateString)
+            Text(entry.date.toDateString())
                 .font(.boldFontWithSize(45))
                 .foregroundColor(.appDark)
                 .minimumScaleFactor(0.5)
@@ -116,7 +116,7 @@ struct EventsListWidgetView: View {
             LazyVStack(alignment: .leading, spacing: 10) {
                 Section(
                     header:
-                        Text(entry.date.toFullDateString.localizedUppercase)
+                        Text(entry.date.toFullDateString().localizedUppercase)
                         .font(.boldFontWithSize(11))
                         .foregroundColor(Color(.moianesB))
                 ) {

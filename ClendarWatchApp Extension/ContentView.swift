@@ -24,7 +24,7 @@ struct ContentView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Section(
                             header:
-                                Text(Date().toFullDateString.localizedUppercase)
+                                Text(Date().toFullDateString().localizedUppercase)
                                 .font(.boldFontWithSize(11))
                                 .foregroundColor(Color(.moianesB))
                         ) {

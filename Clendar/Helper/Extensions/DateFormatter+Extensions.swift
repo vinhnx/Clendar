@@ -21,24 +21,14 @@ extension DateFormatter {
 		return dateFormater.string(from: date)
 	}
 
-	static func format(_ date: Date, format: String) -> String {
+    static func asString(
+        _ date: Date,
+        format: String,
+        calendar: Calendar = CalendarIdentifier.current.calendar
+    ) -> String {
 		let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.autoupdatingCurrent
 		dateFormatter.setLocalizedDateFormatFromTemplate(format)
+        dateFormatter.calendar = calendar
 		return dateFormatter.string(from: date)
 	}
-}
-
-public class CalendarManager {
-	// MARK: Lifecycle
-
-	private init() { calendar = Calendar.shared() } // This prevents others from using the default '()' initializer for this class.
-
-	// MARK: Public
-
-	public private(set) var calendar: Calendar
-
-	// MARK: Internal
-
-	static let shared = CalendarManager()
 }

@@ -44,6 +44,66 @@ final class SettingsViewController: FormViewController {
 
     // MARK: Internal
 
+    private lazy var iapHelper = IAPHandler()
+
+    lazy var restoreButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🏅 " + NSLocalizedString("Restore", comment: "")
+        instance.action = { [weak self] in
+            guard let self = self else { return }
+            self.iapHelper.restorePurchase()
+        }
+
+        return instance
+    }()
+
+    lazy var hadClendarPlusButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🏅 " + NSLocalizedString("You have Clendar+. Thanks for your support! 😊", comment: "")
+        instance.action = { [weak self] in
+            guard let self = self else { return }
+            self.iapHelper.restorePurchase()
+        }
+
+        return instance
+    }()
+
+    lazy var lockedCalendarType: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🔒 " + NSLocalizedString("Calendar Type", comment: "")
+        instance.action = { [weak self] in
+            guard let self = self else { return }
+
+            let viewModel = ModalWrapperView()
+            let swiftUIView = ClendarPlusView(viewModel: viewModel)
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
+
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
+    }()
+
+    lazy var calendarType: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("🗓 " + NSLocalizedString("Calendar Type", comment: ""))
+        instance.append(CalendarIdentifier.allCases.map(\.shortDescription))
+        instance.selectOptionWithTitle(CalendarIdentifier.current.shortDescription)
+        instance.valueDidChange = { [weak self] selection in
+            guard let self = self else { return }
+            genLightHaptic()
+            if let calendarIdentifier = CalendarIdentifier.allCases.first(where: { $0.shortDescription == selection?.title }) {
+                UserDefaults.selectedCalendarIdentifier = calendarIdentifier.rawValue
+                NotificationCenter.default.post(name: .didChangeCalendarType, object: calendarIdentifier.calendar)
+            }
+        }
+
+        return instance
+    }()
+
     lazy var languageButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = "🇺🇳 " + NSLocalizedString("Change Language", comment: "")
@@ -93,6 +153,10 @@ final class SettingsViewController: FormViewController {
         }
         return instance
     }()
+
+    lazy var defaultCalendar = ViewControllerFormItem()
+        .title(NSLocalizedString("Default Calendar", comment: ""))
+        .viewController(SingleCalendarChooserViewController.self)
 
     lazy var defaultEventDuration: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
@@ -148,9 +212,13 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var customAppIcon = ViewControllerFormItem()
+        .title(NSLocalizedString("Custom App Icon", comment: ""))
+        .viewController(AppIconChooserViewController.self)
+
     lazy var writeReviewButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "⭐️ " + NSLocalizedString("Rate Clendar", comment: "")
+        instance.title = "✍️ " + NSLocalizedString("Rate Clendar", comment: "")
         instance.action = { [weak self] in
             genLightHaptic()
             RatingManager().requestReview()
@@ -182,18 +250,23 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var tipJarButton: ButtonFormItem = {
+    lazy var premiumButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "☕️ " + NSLocalizedString("Tip jar", comment: "")
+        instance.title = "🏅 " + NSLocalizedString("Clendar+", comment: "")
         instance.action = {
-            let viewModel = ModalWrapperView()
-            let swiftUIView = ClendarPlusView(viewModel: viewModel)
-            let hostingController = UIHostingController(rootView: swiftUIView)
-            viewModel.closeAction = {
-                hostingController.dismiss(animated: true, completion: nil)
+            if self.iapHelper.hasPurchases() {
+                self.iapHelper.restorePurchase()
             }
+            else {
+                let viewModel = ModalWrapperView()
+                let swiftUIView = ClendarPlusView(viewModel: viewModel)
+                let hostingController = UIHostingController(rootView: swiftUIView)
+                viewModel.closeAction = {
+                    hostingController.dismiss(animated: true, completion: nil)
+                }
 
-            self.present(hostingController, animated: true, completion: nil)
+                self.present(hostingController, animated: true, completion: nil)
+            }
         }
 
         return instance
@@ -215,6 +288,10 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    let calendarsVisibility = ViewControllerFormItem()
+        .title(NSLocalizedString("Calendars Visibility", comment: ""))
+        .viewController(MultipleCalendarsChooserViewController.self)
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -226,8 +303,14 @@ final class SettingsViewController: FormViewController {
 
         checkUIMode()
 
+        iapHelper.restorePurchase()
+
         NotificationCenter.default.addObserver(forName: .didChangeUserInterfacePreferences, object: nil, queue: .main) { _ in
             self.checkUIMode()
+        }
+
+        NotificationCenter.default.addObserver(forName: .inAppPurchaseSuccess, object: nil, queue: .main) { _ in
+            self.reloadForm()
         }
     }
 
@@ -238,36 +321,42 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
-        // Sharing
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
-        builder += tipJarButton
-        builder += writeReviewButton
-        builder += shareAppButton
-        builder += feedbackMailButton
+        // Plus
+        if !iapHelper.hasPurchases() {
+            builder += SectionHeaderTitleFormItem().title("🏅 " + NSLocalizedString("Clendar+", comment: ""))
+            builder += premiumButton
+            builder += SectionFooterTitleFormItem().title(NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button.", comment: ""))
+        }
 
         // General
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
         builder += widgetTheme
-        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
-        #if !targetEnvironment(macCatalyst)
+#if !targetEnvironment(macCatalyst)
+        builder += customAppIcon
         builder += enableHapticFeedback
-        builder += ViewControllerFormItem().title(NSLocalizedString("Custom App Icon", comment: "")).viewController(AppIconChooserViewController.self)
         builder += siriShortcutButton
         builder += languageButton
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).", comment: ""))
-        #endif
-        
+#endif
+
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
-        builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
-        builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
+        builder += iapHelper.hasPurchases() ? calendarType : lockedCalendarType
+        builder += defaultCalendar
+        builder += calendarsVisibility
+        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += quickEventMode
         builder += defaultEventDuration
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", comment: ""))
+
+        // Sharing
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
+        builder += writeReviewButton
+        builder += shareAppButton
+        builder += feedbackMailButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

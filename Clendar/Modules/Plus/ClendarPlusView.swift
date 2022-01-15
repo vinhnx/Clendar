@@ -21,7 +21,7 @@ struct ClendarPlusView: View {
     var buttonStack: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 10) {
-                Text("If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!")
+                Text("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will be forever remained free. You can verify and restore past in-app-purchases, if any, by tapping on the 'Restore' button.")
                     .font(.mediumFontWithSize(15))
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
@@ -56,7 +56,7 @@ struct ClendarPlusView: View {
     }
 
     var titleLabel: some View {
-        Text("Tip Jar")
+        Text("Clendar+")
             .font(.boldFontWithSize(20))
             .gradientForeground(colors: [.red, .blue])
     }
@@ -71,11 +71,12 @@ struct ClendarPlusView: View {
                 closeButton
             }
 
-            ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
+            ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 1.0)
         }
         .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
+            genSuccessHaptic()
             confettiCounter += 1
-            AlertManager.show(message: "Tip received. Thank you so much and wish you have a nice day! 😊")
+            AlertManager.show(message: "You have Clendar+. Thanks for your support! 😊")
         }
         .onAppear {
             fetchIAPInfo()
@@ -90,7 +91,7 @@ struct ClendarPlusView: View {
     // MARK: - Private
 
     private func fetchIAPInfo() {
-        let productIDs = Set(CosumablePurchaseProductIdentifier.allCases.compactMap { $0.rawValue })
+        let productIDs = Set(PurchaseProductIdentifier.allCases.compactMap { $0.rawValue })
 
         isLoading = true
         SwiftyStoreKit.retrieveProductsInfo(productIDs) { result in

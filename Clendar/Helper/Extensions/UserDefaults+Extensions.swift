@@ -17,4 +17,7 @@ extension UserDefaults {
 
     @UserDefault("didChangeAlternativeAppIcon", defaultValue: false)
     static var didChangeAlternativeAppIcon: Bool
+
+    @UserDefault("selectedCalendarIdentifier", defaultValue: CalendarIdentifier.defaultCalendarIdentifier.rawValue)
+    static var selectedCalendarIdentifier: Int
 }

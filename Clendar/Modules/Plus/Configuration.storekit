@@ -1,4 +1,8 @@
 {
+  "identifier" : "9A2719EF",
+  "nonRenewingSubscriptions" : [
+
+  ],
   "products" : [
     {
       "displayPrice" : "0.99",
@@ -59,6 +63,21 @@
       "productID" : "com.vinhnx.clendar.iap.tip.fourth",
       "referenceName" : "Free-Sized Tip",
       "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : true,
+      "internalID" : "4174A014",
+      "localizations" : [
+        {
+          "description" : "Clendar+",
+          "displayName" : "Clendar+",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.vinhnx.clendar.plus",
+      "referenceName" : "Clendar+",
+      "type" : "NonConsumable"
     }
   ],
   "settings" : {
@@ -69,6 +88,6 @@
   ],
   "version" : {
     "major" : 1,
-    "minor" : 0
+    "minor" : 1
   }
 }
