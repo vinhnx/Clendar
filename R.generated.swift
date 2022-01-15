@@ -369,7 +369,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 145 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 146 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
@@ -883,6 +883,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let unableToOpenEmailClientPleaseTryAgainLater = Rswift.StringResource(key: "Unable to open email client, please try again later", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Unlock all features with one purchase!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let unlockAllFeaturesWithOnePurchase = Rswift.StringResource(key: "Unlock all features with one purchase!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Upcoming events
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2870,6 +2874,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Unable to open email client, please try again later", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unlock all features with one purchase!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func unlockAllFeaturesWithOnePurchase(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Unlock all features with one purchase!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Unlock all features with one purchase!"
+        }
+
+        return NSLocalizedString("Unlock all features with one purchase!", bundle: bundle, comment: "")
       }
 
       /// en translation: Upcoming events
