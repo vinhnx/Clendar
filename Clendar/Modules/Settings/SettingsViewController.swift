@@ -273,7 +273,6 @@ final class SettingsViewController: FormViewController {
         builder += calendarType
         builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Calendar supports many different kinds of calendars. Each is identified by an identifier here.", comment: ""))
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
