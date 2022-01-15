@@ -13,7 +13,7 @@ import StoreKit
 
 struct ClendarPlusView: View {
     var viewModel: ModalWrapperView
-
+    @Environment(\.presentationMode) var presentationMode
     @State private var isLoading = false
     @State private var products = [SKProduct]()
     @State private var confettiCounter = 0
@@ -77,11 +77,14 @@ struct ClendarPlusView: View {
             genSuccessHaptic()
             confettiCounter += 1
             AlertManager.show(message: "You have Clendar+. Thanks for your support! 😊")
+            Task {
+                try await Task.sleep(nanoseconds: 5_000_000_000)
+                presentationMode.wrappedValue.dismiss()
+            }
         }
         .onAppear {
             fetchIAPInfo()
         }
-
         .padding(20)
         .frame(maxWidth: .infinity)
         .preferredColorScheme(appColorScheme)
