@@ -44,6 +44,23 @@ final class SettingsViewController: FormViewController {
 
     // MARK: Internal
 
+    lazy var calendarType: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("🌟 " + NSLocalizedString("Calendar Type", comment: ""))
+        instance.append(CalendarIdentifier.allCases.map(\.shortDescription))
+        instance.selectOptionWithTitle(CalendarIdentifier.current.shortDescription)
+        instance.valueDidChange = { [weak self] selection in
+            guard let self = self else { return }
+            genLightHaptic()
+            if let calendarIdentifier = CalendarIdentifier.allCases.first(where: { $0.shortDescription == selection?.title }) {
+                UserDefaults.selectedCalendarIdentifier = calendarIdentifier.rawValue
+                NotificationCenter.default.post(name: .didChangeCalendarType, object: calendarIdentifier.calendar)
+            }
+        }
+
+        return instance
+    }()
+
     lazy var languageButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = "🇺🇳 " + NSLocalizedString("Change Language", comment: "")
@@ -238,13 +255,6 @@ final class SettingsViewController: FormViewController {
     override func populate(_ builder: FormBuilder) {
         builder.navigationTitle = NSLocalizedString("Settings", comment: "")
 
-        // Sharing
-        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
-        builder += tipJarButton
-        builder += writeReviewButton
-        builder += shareAppButton
-        builder += feedbackMailButton
-
         // General
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += themes
@@ -260,14 +270,23 @@ final class SettingsViewController: FormViewController {
         
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
+        builder += calendarType
         builder += ViewControllerFormItem().title(NSLocalizedString("Calendars Visibility", comment: "")).viewController(MultipleCalendarsChooserViewController.self)
         builder += ViewControllerFormItem().title(NSLocalizedString("Default Calendar", comment: "")).viewController(SingleCalendarChooserViewController.self)
+        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Calendar supports many different kinds of calendars. Each is identified by an identifier here.", comment: ""))
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))
         builder += quickEventMode
         builder += defaultEventDuration
         builder += SectionFooterTitleFormItem().title(NSLocalizedString("[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.", comment: ""))
+
+        // Sharing
+        builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Support", comment: ""))
+        builder += tipJarButton
+        builder += writeReviewButton
+        builder += shareAppButton
+        builder += feedbackMailButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))
