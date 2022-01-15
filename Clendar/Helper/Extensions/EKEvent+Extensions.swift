@@ -11,17 +11,20 @@ import Foundation
 import Shift
 
 extension EKEvent {
-    func durationText(startDateOnly: Bool = false) -> String {
+    func durationText(
+        startDateOnly: Bool = false,
+        calendar: Calendar = CalendarIdentifier.current.calendar
+    ) -> String {
         if isAllDay {
             return NSLocalizedString("All day", comment: "")
         }
         else if startDateOnly {
-            let startDateString = startDate.toHourAndMinuteString
+            let startDateString = startDate.toHourAndMinuteString(calendar: calendar)
             return startDateString
         }
         else {
-            let startDateString = startDate.toHourAndMinuteString
-            let endDateString = endDate.toHourAndMinuteString
+            let startDateString = startDate.toHourAndMinuteString(calendar: calendar)
+            let endDateString = endDate.toHourAndMinuteString(calendar: calendar)
             return startDate != endDate
                 ? "\(startDateString) - \(endDateString)"
                 : startDateString

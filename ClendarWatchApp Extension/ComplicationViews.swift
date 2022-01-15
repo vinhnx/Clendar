@@ -14,10 +14,10 @@ struct ComplicationViewCircular: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Text(date.toDayString)
+            Text(date.toDayString())
                 .gradientForeground(colors: [.red, .blue])
                 .foregroundColor(.appRed)
-            Text(date.toDateString)
+            Text(date.toDateString())
                 .font(.regularFontWithSize(20))
                 .foregroundColor(Color(.moianesB))
         }

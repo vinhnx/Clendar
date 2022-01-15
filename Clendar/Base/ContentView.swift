@@ -11,6 +11,7 @@ import SwiftUI
 import ConfettiSwiftUI
 import Shift
 import Then
+import SwiftDate
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -20,7 +21,6 @@ struct ContentView: View {
     @State private var showDateSwitcher = false
 
     // TODO: make this a calendar setting (chose preferred Calendar)
-    private let calendar = Calendar.autoupdatingCurrent
 
     // MARK: - Views Compositions
 
@@ -28,9 +28,9 @@ struct ContentView: View {
         HStack {
             Button {} label: {
                 VStack(alignment: .trailing) {
-                    Text(store.selectedDate.toMonthAndYearString)
+                    Text(store.selectedDate.toMonthString(calendar: store.calendar))
                         .modifier(BoldTextModifider(fontSize: 20, color: .appRed))
-                    Text(store.selectedDate.toDayAndDateString.localizedUppercase)
+                    Text(store.selectedDate.toDayAndDateString(calendar: store.calendar).localizedUppercase)
                         .modifier(BoldTextModifider())
                 }
             }
@@ -162,6 +162,9 @@ struct ContentView: View {
             confettiCounter += 1
             AlertManager.show(message: "Tip received. Thank you so much and wish you have a nice day! 😊")
         }
+        .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
+            handleDidChangeCalendarTypeEvent(notification)
+        }
     }
 }
 
@@ -177,7 +180,7 @@ extension ContentView {
 
     private func fetchEvents(for date: Date = Date()) {
         Task {
-            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs)
+            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs, calendar: CalendarIdentifier.current.calendar)
         }
     }
 
@@ -211,7 +214,7 @@ extension ContentView {
 
     private func makeCalendarGroupView() -> some View {
         CalendarView(
-            calendar: calendar,
+            calendar: store.calendar,
             date: $store.selectedDate,
             content: { date in
                 Button(action: { store.selectedDate = date }) {
@@ -219,30 +222,30 @@ extension ContentView {
                         .padding(3)
                         .foregroundColor(.clear)
                         .background(
-                            calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.appRed
-                            : calendar.isDateInToday(date) ? .primaryColor
+                            store.calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.appRed
+                            : store.calendar.isDateInToday(date) ? .primaryColor
                             : .clear
                         )
                         .clipShape(Circle())
                         .accessibilityHidden(true)
                         .overlay(
-                            Text(date.toDateString)
+                            Text(date.toDateString(calendar: store.calendar))
                                 .font(.boldFontWithSize(15))
                                 .foregroundColor(
-                                    calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.white
-                                    : calendar.isDateInToday(date) ? .white
+                                    store.calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.white
+                                    : store.calendar.isDateInToday(date) ? .white
                                     : .appDark
                                 )
                         )
                 }
             },
             trailing: { date in
-                Text(date.toDateString)
+                Text(date.toDateString(calendar: store.calendar))
                     .font(.boldFontWithSize(15))
                     .foregroundColor(Color(.gray).opacity(0.3))
             },
             header: { date in
-                Text(date.toDayString.localizedUppercase)
+                Text(date.toDayString(calendar: store.calendar).localizedUppercase)
                     .font(.regularFontWithSize(12))
                     .foregroundColor(.appGray)
             },
@@ -253,28 +256,14 @@ extension ContentView {
                     .onEnded { value in
                         if value.translation.width < 0 && value.translation.height > -30 && value.translation.height < 30 {
                             withAnimation {
-                                guard let newDate = calendar.date(
-                                    byAdding: .month,
-                                    value: 1,
-                                    to: store.selectedDate
-                                ) else {
-                                    return
-                                }
-
+                                let newDate = store.selectedDate.dateByAdding(1, .month).date
                                 showDateSwitcher = false
                                 store.selectedDate = newDate
                             }
                         }
                         else if value.translation.width > 0 && value.translation.height > -30 && value.translation.height < 30 {
                             withAnimation {
-                                guard let newDate = calendar.date(
-                                    byAdding: .month,
-                                    value: -1,
-                                    to: store.selectedDate
-                                ) else {
-                                    return
-                                }
-
+                                let newDate = store.selectedDate.dateByAdding(-1, .month).date
                                 showDateSwitcher = false
                                 store.selectedDate = newDate
                             }
@@ -296,6 +285,11 @@ extension ContentView {
             SettingsWrapperView()
                 .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
         }.keyboardShortcut(",", modifiers: [.command])
+    }
+
+    private func handleDidChangeCalendarTypeEvent(_ notification: Notification) {
+        guard let calendar = notification.object as? Calendar else { return }
+        store.calendar = calendar
     }
 }
 

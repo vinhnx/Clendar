@@ -159,8 +159,8 @@ struct CalendarGridView<DateView>: View where DateView: View {
 	}
 
 	private func getWeekDaysSorted() -> [String] {
-		let weekDays = Calendar.current.veryShortWeekdaySymbols
-		let sortedWeekDays = Array(weekDays[Calendar.current.firstWeekday - 1 ..< Calendar.current.shortWeekdaySymbols.count] + weekDays[0 ..< Calendar.current.firstWeekday - 1])
+		let weekDays = Calendar.autoupdatingCurrent.veryShortWeekdaySymbols
+		let sortedWeekDays = Array(weekDays[Calendar.autoupdatingCurrent.firstWeekday - 1 ..< Calendar.autoupdatingCurrent.shortWeekdaySymbols.count] + weekDays[0 ..< Calendar.autoupdatingCurrent.firstWeekday - 1])
 		return sortedWeekDays
 	}
 }
@@ -191,10 +191,10 @@ struct SmallCalendarGridView: View {
 	var body: some View {
 		VStack(alignment: .center) {
 			// swiftlint:disable:next force_unwrapping
-			CalendarGridView(interval: Calendar.current.dateInterval(of: .month, for: Date())!) { date in
-				Text(date.toShortDateString)
+			CalendarGridView(interval: Calendar.autoupdatingCurrent.dateInterval(of: .month, for: Date())!) { date in
+				Text(date.toShortDateString())
 					.font(.boldFontWithSize(10))
-					.foregroundColor(Calendar.current.isDateInToday(date) ? .appRed : .gray)
+					.foregroundColor(Calendar.autoupdatingCurrent.isDateInToday(date) ? .appRed : .gray)
 					.frame(width: 15, height: 10)
 					.multilineTextAlignment(.trailing)
 			}

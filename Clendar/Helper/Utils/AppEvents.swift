@@ -17,6 +17,7 @@ extension Notification.Name {
     static let justReloadCalendar = Notification.Name(rawValue: "justReloadCalendar")
     static let didChangeDefaultEventDurationPreferences = Notification.Name(rawValue: "didChangeDefaultEventDurationPreferences")
     static let inAppPurchaseSuccess = Notification.Name(rawValue: "inAppPurchaseSuccess")
+    static let didChangeCalendarType = Notification.Name(rawValue: "didChangeCalendarType")
 }
 
 extension Notification.Name {

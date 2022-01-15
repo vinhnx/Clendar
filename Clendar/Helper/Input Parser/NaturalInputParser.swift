@@ -49,20 +49,7 @@ final class NaturalInputParser {
 		let process = results.process(with: input)
 		let startDate = process.startDate
 		let endDate = process.endDate
-
-		switch type {
-		case .lunar:
-			let gregorianStartDate = startDate.toGregorianDate
-			let gregorianEndDate = endDate?.toGregorianDate
-			return InputParserResult(parsedText: process.action,
-			                         startDate: gregorianStartDate,
-			                         endDate: gregorianEndDate)
-
-		case .solar:
-			return InputParserResult(parsedText: process.action,
-			                         startDate: startDate,
-			                         endDate: endDate)
-		}
+        return InputParserResult(parsedText: process.action, startDate: startDate, endDate: endDate)
 	}
 
 	// MARK: Private

@@ -25,7 +25,7 @@ struct DateInfoWidgetTimelineProvider: TimelineProvider {
         let currentDate = Date()
 
         // swiftlint:disable:next force_unwrapping
-        let interval = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
+        let interval = Calendar.autoupdatingCurrent.date(byAdding: .minute, value: 5, to: currentDate)!
 
         Task {
             var entries = [WidgetEntry]()

@@ -347,12 +347,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     /// Nib `AppIconItemCell`.
     static let appIconItemCell = _R.nib._AppIconItemCell()
-    /// Nib `EventListItemCell`.
-    static let eventListItemCell = _R.nib._EventListItemCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AppIconItemCell", in: bundle)`
@@ -362,29 +360,9 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "EventListItemCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventListItemCell) instead")
-    static func eventListItemCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.eventListItemCell)
-    }
-    #endif
-
     static func appIconItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
       return R.nib.appIconItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
     }
-
-    static func eventListItemCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
-      return R.nib.eventListItemCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
-    }
-
-    fileprivate init() {}
-  }
-
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
-    /// Reuse identifier `EventListItemCell`.
-    static let eventListItemCell: Rswift.ReuseIdentifier<EventListItemCell> = Rswift.ReuseIdentifier(identifier: "EventListItemCell")
 
     fileprivate init() {}
   }
@@ -2797,20 +2775,6 @@ struct _R {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AppIconItemCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AppIconItemCell
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _EventListItemCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = EventListItemCell
-
-      let bundle = R.hostingBundle
-      let identifier = "EventListItemCell"
-      let name = "EventListItemCell"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventListItemCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventListItemCell
       }
 
       fileprivate init() {}

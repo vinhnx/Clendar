@@ -10,9 +10,9 @@ import EventKit
 import SwiftUI
 
 struct EventViewer: View {
+    var event: ClendarEvent
     @EnvironmentObject var store: SharedStore
     @State private var didShowEventEdit = false
-    var event: ClendarEvent
 
     @ViewBuilder
     private var editButton: some View {
@@ -48,11 +48,11 @@ struct EventViewer: View {
     private func makeEventInfoListView(_ event: EKEvent) -> some View {
         VStack(alignment: .leading, spacing: 30) {
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "Start time", titleImageName: "hourglass.tophalf.fill")) {
-                Text(event.startDate.toFullEventDate).modifier(MediumTextModifider())
+                Text(event.startDate.toFullEventDate(calendar: store.calendar)).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "End time", titleImageName: "hourglass.bottomhalf.fill")) {
-                Text(event.endDate.toFullEventDate).modifier(MediumTextModifider())
+                Text(event.endDate.toFullEventDate(calendar: store.calendar)).modifier(MediumTextModifider())
             }
 
             InfoWrapView(config: InfoWrapView.InfoViewConfig(title: "All day", titleImageName: "tray.full")) {

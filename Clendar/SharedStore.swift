@@ -17,4 +17,7 @@ final class SharedStore: ObservableObject {
     @Published var showCreateEventState = false
     @Published var showSettingsState = false
     @Published var showSiriShortcuts = false
+
+    // calendar
+    @Published var calendar: Calendar = CalendarIdentifier.current.calendar
 }
