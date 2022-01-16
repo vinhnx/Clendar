@@ -9,7 +9,7 @@
 import Foundation
 
 enum PurchaseProductIdentifier: String, CaseIterable {
-    case plus = "com.vinhnx.clendar.plus"
+    case plus = "com.vinhnx.clendar.iap.plus"
 //    case tip1 = "com.vinhnx.clendar.iap.tip.one"
 //    case tip2 = "com.vinhnx.clendar.iap.tip.two"
 //    case tip3 = "com.vinhnx.clendar.iap.tip.three"
