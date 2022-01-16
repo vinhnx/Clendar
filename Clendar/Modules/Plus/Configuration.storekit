@@ -75,7 +75,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.vinhnx.clendar.plus",
+      "productID" : "com.vinhnx.clendar.iap.plus",
       "referenceName" : "Clendar+",
       "type" : "NonConsumable"
     }
