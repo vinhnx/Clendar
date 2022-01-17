@@ -243,19 +243,14 @@ final class SettingsViewController: FormViewController {
         let instance = ButtonFormItem()
         instance.title = NSLocalizedString("Clendar+", comment: "")
         instance.action = {
-            if self.iapHelper.hadPlus() {
-                self.iapHelper.restorePurchase()
+            let viewModel = ModalWrapperView()
+            let swiftUIView = ClendarPlusView(viewModel: viewModel)
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
             }
-            else {
-                let viewModel = ModalWrapperView()
-                let swiftUIView = ClendarPlusView(viewModel: viewModel)
-                let hostingController = UIHostingController(rootView: swiftUIView)
-                viewModel.closeAction = {
-                    hostingController.dismiss(animated: true, completion: nil)
-                }
 
-                self.present(hostingController, animated: true, completion: nil)
-            }
+            self.present(hostingController, animated: true, completion: nil)
         }
 
         return instance
@@ -312,9 +307,9 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title("🌟 " + NSLocalizedString("Clendar+", comment: ""))
         if !iapHelper.hadPlus() {
             builder += premiumButton
+            builder += restoreButton
+            builder += SectionFooterTitleFormItem().title(NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", comment: ""))
         }
-        builder += restoreButton
-        builder += SectionFooterTitleFormItem().title(NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", comment: ""))
 
         // General
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))

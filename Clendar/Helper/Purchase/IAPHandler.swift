@@ -104,7 +104,19 @@ class IAPHandler: ObservableObject {
     func restorePurchase() {
         SwiftyStoreKit.restorePurchases { result in
             if !result.restoredPurchases.isEmpty {
-                logInfo("Purchases restored, all set!")
+                // scenario 1: check if purchase only plus product
+//                let restoredPurchases = result.restoredPurchases
+//                let restoredPurchaseIds = restoredPurchases.map(\.productId)
+//                let plusPurchase = restoredPurchaseIds.first(where: { $0 == PurchaseProductIdentifier.plus.rawValue })
+//                if plusPurchase != nil {
+//                    logInfo("had \(PurchaseProductIdentifier.plus.rawValue)!")
+//                    NotificationCenter.default.post(name: .inAppPurchaseSuccess, object: plusPurchase)
+//                }
+
+                // scenario 2: check if purcahse any product (included tip-jar)
+                NotificationCenter.default.post(name: .inAppPurchaseSuccess, object: nil)
+                logInfo("Purchases restored")
+                return
             }
 
             if !result.restoreFailedPurchases.isEmpty {

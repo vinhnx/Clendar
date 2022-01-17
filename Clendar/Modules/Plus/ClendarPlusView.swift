@@ -61,6 +61,8 @@ struct ClendarPlusView: View {
 
                 RestoreButton()
             }
+        }.onAppear {
+            IAPHandler().restorePurchase()
         }
     }
 
