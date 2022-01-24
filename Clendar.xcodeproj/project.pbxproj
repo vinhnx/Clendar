@@ -113,8 +113,6 @@
 		A3684751255445E7004BDCC6 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */; };
 		A3684755255445F0004BDCC6 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F81172247454E009CC46A /* String+Extensions.swift */; };
 		A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */; };
-		A36CC02B2780A64B0098A771 /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
-		A36CC02C2780A64C0098A771 /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
 		A371156E25C51AEB00D65F59 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F0B2425C5190000DFFC41 /* Color+Extensions.swift */; };
 		A371156F25C51AEC00D65F59 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F0B2425C5190000DFFC41 /* Color+Extensions.swift */; };
 		A371157B25C51B9000D65F59 /* View+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371157A25C51B9000D65F59 /* View+Gradient.swift */; };
@@ -164,6 +162,8 @@
 		A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
 		A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */; };
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
+		A3BF5066279EEF2D001DADCD /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
+		A3BF5067279EEF2E001DADCD /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
 		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
@@ -1511,6 +1511,7 @@
 				A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
 				A315FA2C25CF102F00E909DB /* EventSection.swift in Sources */,
 				A3FF45B725CAEE48005DAE94 /* EventListWidgetView.swift in Sources */,
+				A3BF5067279EEF2E001DADCD /* CalendarIdentifer.swift in Sources */,
 				A307DAA925ACBA9C00B5CE11 /* LunarDateInfoWidget.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
@@ -1543,7 +1544,6 @@
 				A371156E25C51AEB00D65F59 /* Color+Extensions.swift in Sources */,
 				A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */,
 				A371157C25C51B9000D65F59 /* View+Gradient.swift in Sources */,
-				A36CC02B2780A64B0098A771 /* CalendarIdentifer.swift in Sources */,
 				A3684755255445F0004BDCC6 /* String+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1561,9 +1561,9 @@
 				A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */,
 				A3C5D77925B9AA53009A2CA2 /* UserDefaultsWrapper.swift in Sources */,
 				A37F0B0E25C50C6000DFFC41 /* ComplicationViews.swift in Sources */,
-				A36CC02C2780A64C0098A771 /* CalendarIdentifer.swift in Sources */,
 				A371157D25C51B9000D65F59 /* View+Gradient.swift in Sources */,
 				A371156F25C51AEC00D65F59 /* Color+Extensions.swift in Sources */,
+				A3BF5066279EEF2D001DADCD /* CalendarIdentifer.swift in Sources */,
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* SharedStore.swift in Sources */,
 				A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */,
