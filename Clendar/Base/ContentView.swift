@@ -214,7 +214,7 @@ extension ContentView {
             date: $store.selectedDate,
             content: { date in
                 Button(action: { store.selectedDate = date }) {
-                    Text("00")
+                    Text("000")
                         .padding(3)
                         .foregroundColor(.clear)
                         .background(
@@ -226,6 +226,7 @@ extension ContentView {
                         .accessibilityHidden(true)
                         .overlay(
                             Text(date.toDateString(calendar: store.calendar))
+                                .minimumScaleFactor(0.5)
                                 .font(.boldFontWithSize(15))
                                 .foregroundColor(
                                     store.calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.white
@@ -237,11 +238,13 @@ extension ContentView {
             },
             trailing: { date in
                 Text(date.toDateString(calendar: store.calendar))
+                    .minimumScaleFactor(0.5)
                     .font(.boldFontWithSize(15))
                     .foregroundColor(Color(.gray).opacity(0.3))
             },
             header: { date in
                 Text(date.toDayString(calendar: store.calendar).localizedUppercase)
+                    .minimumScaleFactor(0.5)
                     .font(.regularFontWithSize(12))
                     .foregroundColor(.appGray)
             },
