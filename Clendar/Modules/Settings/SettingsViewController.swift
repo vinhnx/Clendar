@@ -76,6 +76,25 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var lockedFirstWeekday: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🔒 " + NSLocalizedString("Start Week On", comment: "")
+        instance.action = { [weak self] in
+            guard let self = self else { return }
+
+            let viewModel = ModalWrapperView()
+            let swiftUIView = ClendarPlusView(viewModel: viewModel)
+            let hostingController = UIHostingController(rootView: swiftUIView)
+            viewModel.closeAction = {
+                hostingController.dismiss(animated: true, completion: nil)
+            }
+
+            self.present(hostingController, animated: true, completion: nil)
+        }
+
+        return instance
+    }()
+
     lazy var calendarType: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
         instance.title("🗓 " + NSLocalizedString("Calendar Type", comment: ""))
@@ -87,6 +106,24 @@ final class SettingsViewController: FormViewController {
             if let calendarIdentifier = CalendarIdentifier.allCases.first(where: { $0.shortDescription == selection?.title }) {
                 UserDefaults.selectedCalendarIdentifier = calendarIdentifier.rawValue
                 NotificationCenter.default.post(name: .didChangeCalendarType, object: calendarIdentifier.calendar)
+            }
+        }
+
+        return instance
+    }()
+
+    lazy var firstWeekday: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title("📅 " + NSLocalizedString("Start Week On", comment: ""))
+        instance.append(CalendarIdentifier.current.calendar.weekdaySymbols)
+        instance.selectOptionWithTitle(UserDefaults.firstWeekDay)
+        instance.valueDidChange = { [weak self] selection in
+            guard let self = self else { return }
+            genLightHaptic()
+            
+            if let value = CalendarIdentifier.current.calendar.weekdaySymbols.first(where: { $0 == selection?.title }) {
+                UserDefaults.firstWeekDay = value
+                NotificationCenter.default.post(name: .didChangeCalendarType, object: CalendarIdentifier.current.calendar)
             }
         }
 
@@ -325,6 +362,7 @@ final class SettingsViewController: FormViewController {
         // Calendar
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
         builder += iapHelper.hadPlus() ? calendarType : lockedCalendarType
+        builder += iapHelper.hadPlus() ? firstWeekday : lockedFirstWeekday
         builder += defaultCalendar
         builder += calendarsVisibility
         builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)

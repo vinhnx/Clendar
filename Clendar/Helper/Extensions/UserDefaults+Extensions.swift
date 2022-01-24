@@ -20,4 +20,7 @@ extension UserDefaults {
 
     @UserDefault("selectedCalendarIdentifier", defaultValue: CalendarIdentifier.defaultCalendarIdentifier.rawValue)
     static var selectedCalendarIdentifier: Int
+
+    @UserDefault("firstWeekday", defaultValue: "")
+    static var firstWeekDay: String
 }

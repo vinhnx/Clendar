@@ -369,7 +369,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 146 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 147 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
@@ -827,6 +827,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let start = Rswift.StringResource(key: "Start", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Start Week On
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let startWeekOn = Rswift.StringResource(key: "Start Week On", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Start time
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2664,6 +2668,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Start", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Start Week On
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func startWeekOn(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Start Week On", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Start Week On"
+        }
+
+        return NSLocalizedString("Start Week On", bundle: bundle, comment: "")
       }
 
       /// en translation: Start time

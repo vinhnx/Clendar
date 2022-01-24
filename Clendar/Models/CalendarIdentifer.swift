@@ -71,7 +71,15 @@ enum CalendarIdentifier: Int, CaseIterable {
     }
 
     var calendar: Calendar {
-        Calendar(identifier: identifier)
+        var instance = Calendar(identifier: identifier)
+        instance.locale = Locale.autoupdatingCurrent // IMPORTANT
+        if let firstWeekDayIndex = instance.weekdaySymbols.firstIndex(of: UserDefaults.firstWeekDay),
+           firstWeekDayIndex != NSNotFound {
+            // IMPORTANT: The weekday units are one-based. For Gregorian and ISO 8601 calendars, 1 is Sunday.
+            instance.firstWeekday = firstWeekDayIndex + 1
+        }
+        
+        return instance
     }
 
     var identifier: Calendar.Identifier {
