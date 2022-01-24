@@ -6,27 +6,11 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>FooterText</key>
-			<string>Copyright</string>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Licenses</string>
 			<key>File</key>
 			<string>com.mono0926.LicensePlist</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>DefaultValue</key>
-			<string>1.0.0</string>
-			<key>Title</key>
-			<string>Version</string>
-			<key>Key</key>
-			<string>sbVersion</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>
