@@ -14,7 +14,8 @@ struct EmptyView: View {
     var body: some View {
         VStack {
             Text(LocalizedStringKey(text))
-                .modifier(BoldTextModifider())
+                .minimumScaleFactor(0.5)
+                .modifier(BoldTextModifider(fontSize: 13))
                 .lineSpacing(5)
                 .multilineTextAlignment(.center)
             Spacer()

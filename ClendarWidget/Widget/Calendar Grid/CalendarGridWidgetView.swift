@@ -119,7 +119,7 @@ struct CalendarGridView<DateView>: View where DateView: View {
 	}
 
 	private func weekDaysView() -> some View {
-		HStack(spacing: 12) {
+		HStack(spacing: 13) {
 			ForEach(0 ..< 7) { index in
 				Text(getWeekDaysSorted()[index].localizedUppercase)
 					.font(.boldFontWithSize(9))
@@ -189,16 +189,20 @@ struct SmallCalendarGridView: View {
 	let entry: WidgetEntry
 
 	var body: some View {
-		VStack(alignment: .center) {
-			// swiftlint:disable:next force_unwrapping
-			CalendarGridView(interval: Calendar.autoupdatingCurrent.dateInterval(of: .month, for: Date())!) { date in
-				Text(date.toShortDateString())
-					.font(.boldFontWithSize(10))
-					.foregroundColor(Calendar.autoupdatingCurrent.isDateInToday(date) ? .appRed : .gray)
-					.frame(width: 15, height: 10)
-					.multilineTextAlignment(.trailing)
-			}
-		}.padding(.all)
+            VStack(alignment: .center) {
+                // swiftlint:disable:next force_unwrapping
+                CalendarGridView(interval: Calendar.autoupdatingCurrent.dateInterval(of: .month, for: Date())!) { date in
+                    Text(date.toShortDateString())
+                        .minimumScaleFactor(0.5)
+                        .font(.boldFontWithSize(10))
+                        .foregroundColor(Calendar.autoupdatingCurrent.isDateInToday(date) ? .appRed : .gray)
+                        .frame(width: 15, height: 10)
+                        .multilineTextAlignment(.trailing)
+                }
+
+            }
+            .frame(maxWidth: 150)
+            .padding(.all, 5)
 	}
 }
 
