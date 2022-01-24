@@ -455,10 +455,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let chooseYourDesiredAppIcon = Rswift.StringResource(key: "Choose your desired app icon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
-      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
+      /// en translation: Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static let clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton = Rswift.StringResource(key: "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      static let clendarIsAnOneTimePurchaseToAccessPremiumFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton = Rswift.StringResource(key: "Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Clendar, new event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -1275,19 +1275,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Choose your desired app icon", bundle: bundle, comment: "")
       }
 
-      /// en translation: Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
+      /// en translation: Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
-      static func clendarIsOptionalOneTimePurchaseToAccessNewUpcomingFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton(preferredLanguages: [String]? = nil) -> String {
+      static func clendarIsAnOneTimePurchaseToAccessPremiumFeaturesBasicFunctionalityWillRemainFreeForeverYouCanVerifyAndRestorePastInAppPurchasesIfAnyByTappingOnTheRestoreButton(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: hostingBundle, comment: "")
+          return NSLocalizedString("Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: hostingBundle, comment: "")
         }
 
         guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button."
+          return "Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button."
         }
 
-        return NSLocalizedString("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: bundle, comment: "")
+        return NSLocalizedString("Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.", bundle: bundle, comment: "")
       }
 
       /// en translation: Clendar, new event

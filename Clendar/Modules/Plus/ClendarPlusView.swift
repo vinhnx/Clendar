@@ -24,23 +24,7 @@ struct ClendarPlusView: View {
                 Text("🌟🌟🌟")
                     .multilineTextAlignment(.center)
 
-                Text("Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.")
-                    .font(.mediumFontWithSize(15))
-                    .foregroundColor(.gray)
-
-                Text("More calendar identifiers, such as:")
-                    .font(.mediumFontWithSize(15))
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.leading)
-
-                ForEach(CalendarIdentifier.allCases.prefix(3), id: \.self) { item in
-                    Text("\(item.shortDescription)")
-                        .font(.mediumFontWithSize(15))
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.leading)
-                }
-
-                Text("... and many more features to come in the future!")
+                Text("Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.")
                     .font(.mediumFontWithSize(15))
                     .foregroundColor(.gray)
 
