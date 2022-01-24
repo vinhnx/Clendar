@@ -278,7 +278,7 @@ extension ContentView {
                 store.showSettingsState.toggle()
             },
             label: {
-                Image(systemName: "gearshape.circle.fill")
+                Image(systemName: "line.3.horizontal.decrease")
             }
         ).sheet(isPresented: $store.showSettingsState) {
             SettingsWrapperView()
