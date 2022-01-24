@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Clendar
+
+  Created by Vinh Nguyen on 24/01/2022.
+  Copyright © 2022 Vinh Nguyen. All rights reserved.
+*/
+
+NSCalendarsUsageDescription = "Clendar cần sự cho phép của bạn để tạo và xem các sự kiện";
+NSContactsUsageDescription = "Clendar cần quyền truy cập vào danh bạ của bạn để hiển thị ngày sinh một cách chính xác và quản lý lời mời cho bạn các sự kiện. Danh bạ của bạn được lưu trên thiết bị của bạn và không được chia sẻ với bất kỳ ai.";
+NSLocationUsageDescription = "Clendar cần sự cho phép của bạn để truy cập vị trí để tạo và hiển thị vị trí cho các sự kiện của bạn";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Clendar cần sự cho phép của bạn để truy cập vị trí để tạo và hiển thị vị trí cho các sự kiện của bạn";
+NSRemindersUsageDescription = "Clendar cần bạn cho phép để tạo và xem lời nhắc";

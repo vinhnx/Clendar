@@ -164,6 +164,9 @@
 		A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = A3BA42F5253F3AE00007DDFB /* Logging */; };
 		A3BF5066279EEF2D001DADCD /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
 		A3BF5067279EEF2E001DADCD /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
+		A3BF5082279EFFFB001DADCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3BF5084279EFFFB001DADCD /* InfoPlist.strings */; };
+		A3BF508E279F0075001DADCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3BF5084279EFFFB001DADCD /* InfoPlist.strings */; };
+		A3BF5090279F0079001DADCD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3BF5084279EFFFB001DADCD /* InfoPlist.strings */; };
 		A3BF8F99258B9E28003C7FD6 /* ClendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */; };
 		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
@@ -423,6 +426,16 @@
 		A3B568FB25C5D91800E3C09F /* SiriShortcutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutBuilder.swift; sourceTree = "<group>"; };
 		A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKEvent+Extensions.swift"; sourceTree = "<group>"; };
 		A3B9D9E5254331D3001932B0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
+		A3BF5083279EFFFB001DADCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF5085279EFFFF001DADCD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A3BF5086279F0000001DADCD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A3BF5087279F0001001DADCD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF5088279F0003001DADCD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF5089279F0004001DADCD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF508A279F0005001DADCD /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF508B279F0007001DADCD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF508C279F0008001DADCD /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A3BF508D279F0009001DADCD /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A3BF8F98258B9E28003C7FD6 /* ClendarError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarError.swift; sourceTree = "<group>"; };
 		A3C23944279315BE0067F8FA /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
 		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
@@ -905,6 +918,7 @@
 			isa = PBXGroup;
 			children = (
 				A39B71B6255FB64F0000162F /* Localizable.strings */,
+				A3BF5084279EFFFB001DADCD /* InfoPlist.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1279,6 +1293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3064D23254CEF5800C7F228 /* Assets.xcassets in Resources */,
+				A3BF508E279F0075001DADCD /* InfoPlist.strings in Resources */,
 				A39B71B4255FB64F0000162F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1296,6 +1311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A307DBC025ADE32C00B5CE11 /* Assets.xcassets in Resources */,
+				A3BF5090279F0079001DADCD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,6 +1323,7 @@
 				A39B71B3255FB64F0000162F /* Localizable.strings in Resources */,
 				A31F6171260D62C6003CFE1C /* icon4_180.png in Resources */,
 				A31F616D260D62C6003CFE1C /* icon2_180.png in Resources */,
+				A3BF5082279EFFFB001DADCD /* InfoPlist.strings in Resources */,
 				A33F80D122467A85009CC46A /* Assets.xcassets in Resources */,
 				A31F616F260D62C6003CFE1C /* icon3_180.png in Resources */,
 				A31F6170260D62C6003CFE1C /* icon3_120.png in Resources */,
@@ -1757,6 +1774,23 @@
 				757C072CB203DC2C3C32DDCF /* fr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A3BF5084279EFFFB001DADCD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3BF5083279EFFFB001DADCD /* en */,
+				A3BF5085279EFFFF001DADCD /* zh-Hans */,
+				A3BF5086279F0000001DADCD /* zh-Hant */,
+				A3BF5087279F0001001DADCD /* fr */,
+				A3BF5088279F0003001DADCD /* ja */,
+				A3BF5089279F0004001DADCD /* de */,
+				A3BF508A279F0005001DADCD /* ko */,
+				A3BF508B279F0007001DADCD /* es */,
+				A3BF508C279F0008001DADCD /* th */,
+				A3BF508D279F0009001DADCD /* vi */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

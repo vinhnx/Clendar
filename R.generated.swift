@@ -367,8 +367,109 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
   struct string {
+    /// This `R.string.infoPlist` struct is generated, and contains static references to 5 localization keys.
+    struct infoPlist {
+      /// en translation: Clendar needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone.
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static let nsContactsUsageDescription = Rswift.StringResource(key: "NSContactsUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant", "fr", "ja", "de", "ko", "es", "th", "vi"], comment: nil)
+      /// en translation: Clendar needs your permission to access location to create and show locations for your events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static let nsLocationAlwaysAndWhenInUseUsageDescription = Rswift.StringResource(key: "NSLocationAlwaysAndWhenInUseUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant", "fr", "ja", "de", "ko", "es", "th", "vi"], comment: nil)
+      /// en translation: Clendar needs your permission to access location to create and show locations for your events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static let nsLocationUsageDescription = Rswift.StringResource(key: "NSLocationUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant", "fr", "ja", "de", "ko", "es", "th", "vi"], comment: nil)
+      /// en translation: Clendar needs your permission to create and view events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static let nsCalendarsUsageDescription = Rswift.StringResource(key: "NSCalendarsUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant", "fr", "ja", "de", "ko", "es", "th", "vi"], comment: nil)
+      /// en translation: Clendar needs your permission to create and view reminders
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static let nsRemindersUsageDescription = Rswift.StringResource(key: "NSRemindersUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant", "fr", "ja", "de", "ko", "es", "th", "vi"], comment: nil)
+
+      /// en translation: Clendar needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone.
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static func nsContactsUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSContactsUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSContactsUsageDescription"
+        }
+
+        return NSLocalizedString("NSContactsUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clendar needs your permission to access location to create and show locations for your events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static func nsLocationAlwaysAndWhenInUseUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSLocationAlwaysAndWhenInUseUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSLocationAlwaysAndWhenInUseUsageDescription"
+        }
+
+        return NSLocalizedString("NSLocationAlwaysAndWhenInUseUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clendar needs your permission to access location to create and show locations for your events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static func nsLocationUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSLocationUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSLocationUsageDescription"
+        }
+
+        return NSLocalizedString("NSLocationUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clendar needs your permission to create and view events
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static func nsCalendarsUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSCalendarsUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSCalendarsUsageDescription"
+        }
+
+        return NSLocalizedString("NSCalendarsUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clendar needs your permission to create and view reminders
+      ///
+      /// Locales: en, zh-Hans, zh-Hant, fr, ja, de, ko, es, th, vi
+      static func nsRemindersUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSRemindersUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSRemindersUsageDescription"
+        }
+
+        return NSLocalizedString("NSRemindersUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.string.localizable` struct is generated, and contains static references to 147 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
