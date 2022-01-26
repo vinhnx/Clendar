@@ -21,6 +21,8 @@ struct ClendarPlusView: View {
     var buttonStack: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 20) {
+                Spacer()
+                Spacer()
                 Text("🌟🌟🌟")
                     .multilineTextAlignment(.center)
 
@@ -28,22 +30,39 @@ struct ClendarPlusView: View {
                     .font(.mediumFontWithSize(15))
                     .foregroundColor(.gray)
 
-                Text("Unlock all features with one purchase!")
-                    .font(.boldFontWithSize(15))
-                    .gradientForeground(colors: [.red, .blue])
-                    .multilineTextAlignment(.center)
+                VStack(alignment: .leading) {
+                    HStack(spacing: 5) {
+                        Text("* ")
+                        Text("Unlock extra features")
+                    }
 
-                ForEach(products, id: \.self) { product in
-                    PurchaseButton(
-                        isLoading: $isLoading,
-                        model: product
-                    )
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .id(UUID())
+                    HStack(spacing: 5) {
+                        Text("* ")
+                        Text("One time purchase")
+                    }
+
+                    HStack(spacing: 5) {
+                        Text("* ")
+                        Text("Supporting Clendar's development")
+                    }
                 }
+                .font(.boldFontWithSize(15))
+                .gradientForeground(colors: [.red, .blue])
+                .multilineTextAlignment(.center)
 
-                RestoreButton()
+                VStack {
+                    ForEach(products, id: \.self) { product in
+                        PurchaseButton(
+                            isLoading: $isLoading,
+                            model: product
+                        )
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .id(UUID())
+                    }
+
+                    RestoreButton()
+                }
             }
         }.onAppear {
             IAPHandler().restorePurchase()

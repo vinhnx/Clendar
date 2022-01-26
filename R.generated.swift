@@ -470,7 +470,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 147 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 150 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
@@ -832,6 +832,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let on = Rswift.StringResource(key: "On", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: One time purchase
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let oneTimePurchase = Rswift.StringResource(key: "One time purchase", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Open Clendar Settings
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -944,6 +948,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let support = Rswift.StringResource(key: "Support", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Supporting Clendar's development
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let supportingClendarSDevelopment = Rswift.StringResource(key: "Supporting Clendar's development", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Swipe down to collapse
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -992,6 +1000,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let unlockAllFeaturesWithOnePurchase = Rswift.StringResource(key: "Unlock all features with one purchase!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Unlock extra features
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let unlockExtraFeatures = Rswift.StringResource(key: "Unlock extra features", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Upcoming events
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2411,6 +2423,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("On", bundle: bundle, comment: "")
       }
 
+      /// en translation: One time purchase
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func oneTimePurchase(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("One time purchase", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "One time purchase"
+        }
+
+        return NSLocalizedString("One time purchase", bundle: bundle, comment: "")
+      }
+
       /// en translation: Open Clendar Settings
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2831,6 +2858,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Support", bundle: bundle, comment: "")
       }
 
+      /// en translation: Supporting Clendar's development
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func supportingClendarSDevelopment(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Supporting Clendar's development", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Supporting Clendar's development"
+        }
+
+        return NSLocalizedString("Supporting Clendar's development", bundle: bundle, comment: "")
+      }
+
       /// en translation: Swipe down to collapse
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -3009,6 +3051,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Unlock all features with one purchase!", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Unlock extra features
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func unlockExtraFeatures(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Unlock extra features", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Unlock extra features"
+        }
+
+        return NSLocalizedString("Unlock extra features", bundle: bundle, comment: "")
       }
 
       /// en translation: Upcoming events

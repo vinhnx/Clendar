@@ -30,13 +30,11 @@ struct PurchaseButtonStyle: ButtonStyle {
 
             VStack(alignment: .leading) {
                 Unwrap(price) { title in
-                    Text(title)
-                        .font(.boldFontWithSize(pricefontSize))
+                    Text(title).font(.boldFontWithSize(pricefontSize))
                 }
                 
                 Unwrap(title) { title in
-                    Text(title)
-                        .font(.boldFontWithSize(titlefontSize))
+                    Text(title).font(.boldFontWithSize(titlefontSize))
                 }
             }
         }
