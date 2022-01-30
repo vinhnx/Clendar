@@ -125,7 +125,7 @@ You can do whatever you want with this source code: modify, tweak or use as lear
 
 But, please don't re-distribute the app on App Store with different name. 🥺
 
-And, if you like, you can Purchase the app on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200) and leave me a tip via In-App Purchase options if you feel like. Thank you in advance! 📲
+And, if you like, you can download the app for free on the [App Store](https://apps.apple.com/us/app/clendar-a-calendar-app/id1548102041?itsct=apps_box&itscg=30200).
 
 ### Open-source inspiration
 
