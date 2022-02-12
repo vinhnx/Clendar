@@ -470,7 +470,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 150 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 151 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
@@ -720,6 +720,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let hebrew = Rswift.StringResource(key: "Hebrew", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Hour minute format
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let hourMinuteFormat = Rswift.StringResource(key: "Hour minute format", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; feel free to leave me a tip.  Any tip amount at all helps a lot, thank you very much!
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2001,6 +2005,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Hebrew", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Hour minute format
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func hourMinuteFormat(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Hour minute format", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Hour minute format"
+        }
+
+        return NSLocalizedString("Hour minute format", bundle: bundle, comment: "")
       }
 
       /// en translation: If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; feel free to leave me a tip.  Any tip amount at all helps a lot, thank you very much!

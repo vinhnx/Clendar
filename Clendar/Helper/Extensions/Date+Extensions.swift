@@ -9,6 +9,36 @@
 import Foundation
 import SwiftDate
 
+enum TimeAndHourFormat: Int, CaseIterable {
+    case hhmm
+    case HHmm
+
+    var format: String {
+        switch self {
+        case .hhmm: return "h:mma"
+        case .HHmm: return "HH:mm"
+        }
+    }
+
+    var localizedTitle: String {
+        switch self {
+        case .hhmm: return NSLocalizedString("12 hour", comment: "") + " " + "(\(DateFormatter.asString(Date(), format: self.format)))"
+        case .HHmm: return NSLocalizedString("24 hour", comment: "") + " " + "(\(DateFormatter.asString(Date(), format: self.format)))"
+        }
+    }
+
+    static var localizedTitles: [String] {
+        allCases.map(\.localizedTitle)
+    }
+
+    static func mapFromTitle(_ value: String) -> Self {
+        switch value {
+        case TimeAndHourFormat.HHmm.localizedTitle: return .HHmm
+        default: return .hhmm
+        }
+    }
+}
+
 extension Date {
     var startDate: Date {
         dateAtStartOf(.day)
@@ -19,7 +49,11 @@ extension Date {
     }
 
     func toHourAndMinuteString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
-        DateFormatter.asString(self, format: "HH:mm", calendar: calendar)
+        DateFormatter.asString(
+            self,
+            format: UserDefaults.timeAndHourFormat.format,
+            calendar: calendar
+        )
     }
 
     func toShortDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
@@ -71,7 +105,8 @@ extension Date {
     }
 
     func toFullEventDate(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
-        DateFormatter.asString(self, format: "EEEE, MMM d, yyyy. HH:mm", calendar: calendar)
+        let format = String("EEEE, MMM d, yyyy. \(UserDefaults.timeAndHourFormat.format)")
+        return DateFormatter.asString(self, format: format, calendar: calendar)
     }
 
     #if !os(watchOS)

@@ -180,9 +180,12 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    lazy var defaultCalendar = ViewControllerFormItem()
-        .title(NSLocalizedString("Default Calendar", comment: ""))
-        .viewController(SingleCalendarChooserViewController.self)
+    lazy var defaultCalendar: ViewControllerFormItem = {
+        let instance = ViewControllerFormItem()
+        instance.title(NSLocalizedString("Default Calendar", comment: ""))
+        instance.viewController(SingleCalendarChooserViewController.self)
+        return instance
+    }()
 
     lazy var defaultEventDuration: OptionPickerFormItem = {
         let instance = OptionPickerFormItem()
@@ -309,9 +312,30 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
-    let calendarsVisibility = ViewControllerFormItem()
-        .title(NSLocalizedString("Calendars Visibility", comment: ""))
-        .viewController(MultipleCalendarsChooserViewController.self)
+    let calendarsVisibility: ViewControllerFormItem = {
+        let instance = ViewControllerFormItem()
+        instance.title(NSLocalizedString("Calendars Visibility", comment: ""))
+        instance.viewController(MultipleCalendarsChooserViewController.self)
+        return instance
+    }()
+
+    let keyboardShortcut: ViewControllerFormItem = ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+
+    lazy var timeFormat: OptionPickerFormItem = {
+        let instance = OptionPickerFormItem()
+        instance.title(NSLocalizedString("Hour minute format", comment: ""))
+        instance.append(TimeAndHourFormat.localizedTitles)
+
+        let selected = TimeAndHourFormat(rawValue: UserDefaults.timeFormat)?.localizedTitle ?? ""
+        instance.selectOptionWithTitle(selected)
+        instance.valueDidChange = { selected in
+            guard let selected = selected else { return }
+            genLightHaptic()
+            UserDefaults.timeFormat = TimeAndHourFormat.mapFromTitle(selected.title).rawValue
+        }
+
+        return instance
+    }()
 
     // MARK: - Life Cycle
 
@@ -363,9 +387,10 @@ final class SettingsViewController: FormViewController {
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Calendar", comment: ""))
         builder += iapHelper.hadPlus() ? calendarType : lockedCalendarType
         builder += iapHelper.hadPlus() ? firstWeekday : lockedFirstWeekday
+        builder += timeFormat
         builder += defaultCalendar
         builder += calendarsVisibility
-        builder += ViewControllerFormItem().title(NSLocalizedString("Keyboard shortcuts", comment: "")).viewController(KeyboardShortcutsViewController.self)
+        builder += keyboardShortcut
 
         // Quick Event
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("Quick Event", comment: ""))

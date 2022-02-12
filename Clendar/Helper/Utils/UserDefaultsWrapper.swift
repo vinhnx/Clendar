@@ -11,25 +11,21 @@ import Foundation
 // reference: https://www.avanderlee.com/swift/property-wrappers/
 
 @propertyWrapper
-struct UserDefault<T> {
-	// MARK: Lifecycle
+struct UserDefault<Value> {
+    let key: String
+    let defaultValue: Value
+    var container: UserDefaults = UserDefaults.groupUserDefaults
 
-	init(_ key: String, defaultValue: T) {
-		self.key = key
-		self.defaultValue = defaultValue
-	}
+    var wrappedValue: Value {
+        get {
+            container.object(forKey: key) as? Value ?? defaultValue
+        }
+        set {
+            container.set(newValue, forKey: key)
+        }
+    }
 
-	// MARK: Internal
-
-	let key: String
-	let defaultValue: T
-
-	var wrappedValue: T {
-		get {
-			UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
-		}
-		set {
-			UserDefaults.standard.set(newValue, forKey: key)
-		}
-	}
+    var projectedValue: UserDefault<Value> {
+        self
+    }
 }

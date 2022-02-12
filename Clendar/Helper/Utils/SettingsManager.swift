@@ -10,34 +10,34 @@ import Foundation
 import SwiftUI
 
 struct SettingsManager {
-    @UserDefault("currentAppTheme", defaultValue: AppTheme.defaultValue.rawValue)
+    @UserDefault(key: "currentAppTheme", defaultValue: AppTheme.defaultValue.rawValue)
     static var currentAppTheme: Int
 
-    @UserDefault("darkModeActivated", defaultValue: isDarkMode)
+    @UserDefault(key: "darkModeActivated", defaultValue: isDarkMode)
     static var darkModeActivated: Bool
 
-    @UserDefault("calendarViewMode", defaultValue: CalendarViewMode.defaultValue.rawValue)
+    @UserDefault(key: "calendarViewMode", defaultValue: CalendarViewMode.defaultValue.rawValue)
     static var calendarViewMode: Int
 
-    @UserDefault("showDaysOut", defaultValue: true)
+    @UserDefault(key: "showDaysOut", defaultValue: true)
     static var showDaysOut: Bool
 
-    @UserDefault("daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
+    @UserDefault(key: "daySupplementaryType", defaultValue: DaySupplementaryType.defaultValue.rawValue)
     static var daySupplementaryType: Int
 
-    @UserDefault("useExperimentalCreateEventMode", defaultValue: true)
+    @UserDefault(key: "useExperimentalCreateEventMode", defaultValue: true)
     static var useExperimentalCreateEventMode: Bool
 
-    @UserDefault("defaultEventDuration", defaultValue: 60)
+    @UserDefault(key: "defaultEventDuration", defaultValue: 60)
     static var defaultEventDuration: Int
 
-    @UserDefault("enableHapticFeedback", defaultValue: true)
+    @UserDefault(key: "enableHapticFeedback", defaultValue: true)
     static var enableHapticFeedback: Bool
 
-    @UserDefault("currentAppIcon", defaultValue: AppIcon.defaultValue.rawValue)
+    @UserDefault(key: "currentAppIcon", defaultValue: AppIcon.defaultValue.rawValue)
     static var currentAppIcon: Int
 
-    @UserDefault("widgetTheme", defaultValue: WidgetTheme.defaultValue.rawValue)
+    @UserDefault(key: "widgetTheme", defaultValue: WidgetTheme.defaultValue.rawValue)
     static var widgetTheme: Int
 }
 
