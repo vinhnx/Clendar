@@ -10,22 +10,12 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>icon4</key>
+			<key>icon1</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon4_120</string>
-					<string>icon4_180</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<true/>
-			</dict>
-			<key>icon3</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>icon3_120</string>
-					<string>icon3_180</string>
+					<string>icon1_120</string>
+					<string>icon1_180</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<true/>
@@ -40,12 +30,22 @@
 				<key>UIPrerenderedIcon</key>
 				<true/>
 			</dict>
-			<key>icon1</key>
+			<key>icon3</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
-					<string>icon1_120</string>
-					<string>icon1_180</string>
+					<string>icon3_120</string>
+					<string>icon3_180</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<true/>
+			</dict>
+			<key>icon4</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>icon4_120</string>
+					<string>icon4_180</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<true/>
@@ -71,9 +71,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.2.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>88</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -83,15 +85,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view events&quot;</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view events"</string>
 	<key>NSContactsUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone.&quot;</string>
-	<key>NSLocationUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events&quot;</string>
+	<string>"$(PRODUCT_NAME) needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone."</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events&quot;</string>
+	<string>"$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events"</string>
+	<key>NSLocationUsageDescription</key>
+	<string>"$(PRODUCT_NAME) needs your permission to access location to create and show locations for your events"</string>
 	<key>NSRemindersUsageDescription</key>
-	<string>&quot;$(PRODUCT_NAME) needs your permission to create and view reminders&quot;</string>
+	<string>"$(PRODUCT_NAME) needs your permission to create and view reminders"</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
@@ -123,7 +125,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
 </dict>
 </plist>

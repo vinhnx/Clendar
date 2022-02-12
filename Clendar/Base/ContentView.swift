@@ -12,6 +12,7 @@ import ConfettiSwiftUI
 import Shift
 import Then
 import SwiftDate
+import WhatsNewKit
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -132,6 +133,7 @@ struct ContentView: View {
             Text("No event selected")
                 .modifier(BoldTextModifider())
         }
+        .whatsNewSheet()
         .onAppear {
             configure()
         }

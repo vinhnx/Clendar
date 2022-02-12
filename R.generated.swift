@@ -470,12 +470,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 151 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 159 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let andManyMoreFeaturesToComeInTheFuture = Rswift.StringResource(key: "... and many more features to come in the future!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: 12 or 24 hour date setting
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let or24HourDateSetting = Rswift.StringResource(key: "12 or 24 hour date setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Add event
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -572,6 +576,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let collapseThisView = Rswift.StringResource(key: "Collapse this view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Continue
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let `continue` = Rswift.StringResource(key: "Continue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Coptic
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -716,6 +724,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let hapticFeedback = Rswift.StringResource(key: "Haptic feedback", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Have a nice day!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let haveANiceDay = Rswift.StringResource(key: "Have a nice day!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Hebrew
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -872,6 +884,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let quickEvent = Rswift.StringResource(key: "Quick Event", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Quick date switcher button
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let quickDateSwitcherButton = Rswift.StringResource(key: "Quick date switcher button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Quickly toggle between dates.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let quicklyToggleBetweenDates = Rswift.StringResource(key: "Quickly toggle between dates.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Rate Clendar
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -964,6 +984,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let switchToCurrentDate = Rswift.StringResource(key: "Switch to current date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: Thanks for using Clendar!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let thanksForUsingClendar = Rswift.StringResource(key: "Thanks for using Clendar!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Themes
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -1036,6 +1060,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let weekView = Rswift.StringResource(key: "Week view", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: What's new in Clendar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let whatSNewInClendar = Rswift.StringResource(key: "What's new in Clendar", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Widget theme
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -1044,6 +1072,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let youCanChooseAvailableCalendarsToShownInEventList = Rswift.StringResource(key: "You can choose available calendars to shown in event list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: You can now choose 12 or 24 hour format, from the settings menu.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let youCanNowChoose12Or24HourFormatFromTheSettingsMenu = Rswift.StringResource(key: "You can now choose 12 or 24 hour format, from the settings menu.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: You can now quick shortcuts to Siri and Shortcuts app. Try adding one below
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -1090,6 +1122,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("... and many more features to come in the future!", bundle: bundle, comment: "")
+      }
+
+      /// en translation: 12 or 24 hour date setting
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func or24HourDateSetting(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("12 or 24 hour date setting", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "12 or 24 hour date setting"
+        }
+
+        return NSLocalizedString("12 or 24 hour date setting", bundle: bundle, comment: "")
       }
 
       /// en translation: Add event
@@ -1450,6 +1497,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Collapse this view", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Continue
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func `continue`(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Continue", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Continue"
+        }
+
+        return NSLocalizedString("Continue", bundle: bundle, comment: "")
       }
 
       /// en translation: Coptic
@@ -1990,6 +2052,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Haptic feedback", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Have a nice day!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func haveANiceDay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Have a nice day!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Have a nice day!"
+        }
+
+        return NSLocalizedString("Have a nice day!", bundle: bundle, comment: "")
       }
 
       /// en translation: Hebrew
@@ -2577,6 +2654,36 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Quick Event", bundle: bundle, comment: "")
       }
 
+      /// en translation: Quick date switcher button
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func quickDateSwitcherButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Quick date switcher button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Quick date switcher button"
+        }
+
+        return NSLocalizedString("Quick date switcher button", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Quickly toggle between dates.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func quicklyToggleBetweenDates(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Quickly toggle between dates.", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Quickly toggle between dates."
+        }
+
+        return NSLocalizedString("Quickly toggle between dates.", bundle: bundle, comment: "")
+      }
+
       /// en translation: Rate Clendar
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2922,6 +3029,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Switch to current date", bundle: bundle, comment: "")
       }
 
+      /// en translation: Thanks for using Clendar!
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func thanksForUsingClendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Thanks for using Clendar!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Thanks for using Clendar!"
+        }
+
+        return NSLocalizedString("Thanks for using Clendar!", bundle: bundle, comment: "")
+      }
+
       /// en translation: Themes
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -3192,6 +3314,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Week view", bundle: bundle, comment: "")
       }
 
+      /// en translation: What's new in Clendar
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func whatSNewInClendar(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("What's new in Clendar", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "What's new in Clendar"
+        }
+
+        return NSLocalizedString("What's new in Clendar", bundle: bundle, comment: "")
+      }
+
       /// en translation: Widget theme
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -3220,6 +3357,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("You can choose available calendars to shown in event list", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can now choose 12 or 24 hour format, from the settings menu.
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func youCanNowChoose12Or24HourFormatFromTheSettingsMenu(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can now choose 12 or 24 hour format, from the settings menu.", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can now choose 12 or 24 hour format, from the settings menu."
+        }
+
+        return NSLocalizedString("You can now choose 12 or 24 hour format, from the settings menu.", bundle: bundle, comment: "")
       }
 
       /// en translation: You can now quick shortcuts to Siri and Shortcuts app. Try adding one below

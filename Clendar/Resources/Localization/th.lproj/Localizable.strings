@@ -244,3 +244,11 @@
 "Hour minute format" = "รูปแบบชั่วโมงนาที";
 "12 hour" = "12 ชม";
 "24 hour" = "24 ชม";
+"Continue" = "ดำเนินการต่อ";
+"What's new in Clendar" = "มีอะไรใหม่ใน Clendar";
+"Thanks for using Clendar!" = "ขอบคุณที่ใช้ Clendar!";
+"Quickly toggle between dates." = "สลับระหว่างวันที่ได้อย่างรวดเร็ว";
+"Quick date switcher button" = "ปุ่มสลับวันที่ด่วน";
+"You can now choose 12 or 24 hour format, from the settings menu." = "คุณสามารถเลือกรูปแบบ 12 หรือ 24 ชั่วโมงได้จากเมนูการตั้งค่า";
+"12 or 24 hour date setting" = "การตั้งค่าวันที่ 12 หรือ 24 ชั่วโมง";
+"Have a nice day!" = "ขอให้เป็นวันที่ดี!";

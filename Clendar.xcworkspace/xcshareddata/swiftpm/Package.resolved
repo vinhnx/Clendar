@@ -108,6 +108,15 @@
           "revision": "e421a7b3440a271834337694e6050133a3958bc7",
           "version": "2.7.0"
         }
+      },
+      {
+        "package": "WhatsNewKit",
+        "repositoryURL": "https://github.com/SvenTiigi/WhatsNewKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "8d40ce0de25a4bfe7996bef46c429c1e56a8962b",
+          "version": null
+        }
       }
     ]
   },

@@ -10,6 +10,7 @@ import SwiftDate
 import SwiftUI
 import SwiftyStoreKit
 import Shift
+import WhatsNewKit
 
 // swiftlint:disable:next private_over_fileprivate
 fileprivate var shortcutItemToProcess: UIApplicationShortcutItem?
@@ -29,6 +30,17 @@ struct ClendarApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(
+                    \.whatsNew,
+                     .init(
+                        // Specify in which way the presented WhatsNew Versions are stored.
+                        // In default the `UserDefaultsWhatsNewVersionStore` is used.
+                        versionStore: UserDefaultsWhatsNewVersionStore(),
+
+                        // Pass a `WhatsNewCollectionProvider` or an array of WhatsNew instances
+                        whatsNewCollection: self
+                     )
+                )
                 .environmentObject(store)
                 .onContinueUserActivity(Constants.SiriShortcut.addEvent) { (_) in
                     store.showCreateEventState = true
@@ -88,10 +100,10 @@ extension ClendarApp {
     // MARK: - Private
 
     private func configure() {
-        #if os(iOS)
+#if os(iOS)
         UIApplication.shared.applicationIconBadgeNumber = 0
         UITableView.appearance().showsVerticalScrollIndicator = false
-        #endif
+#endif
 
         setupStoreKit()
         logger.logLevel = .debug

@@ -31,7 +31,7 @@ opt_in_rules:
     # - private_outlet
     - redundant_nil_coalescing
     # - switch_case_on_newline
-    - vertical_parameter_alignment_on_call
+    # - vertical_parameter_alignment_on_call
 
 excluded: # paths to ignore during linting. overridden by `included`.
     - Carthage

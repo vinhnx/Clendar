@@ -80,6 +80,8 @@
 		A3209B9B258CE2E8002470CF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E48222541F4EF00B4B027 /* Utilities.swift */; };
 		A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
+		A332087627B80690003D6DE9 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = A332087527B80690003D6DE9 /* WhatsNewKit */; };
+		A332087A27B80A01003D6DE9 /* ClendarApp+WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */; };
 		A337CFB425D2F8A400FAB76A /* AppPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CFB325D2F8A400FAB76A /* AppPermissions.swift */; };
 		A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */; };
 		A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
@@ -359,6 +361,7 @@
 		A31F616C260D62C6003CFE1C /* original_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = original_120.png; sourceTree = "<group>"; };
 		A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
 		A3310B4A24A640A50075F3DC /* Clendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clendar.entitlements; sourceTree = "<group>"; };
+		A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClendarApp+WhatsNew.swift"; sourceTree = "<group>"; };
 		A337CFB325D2F8A400FAB76A /* AppPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissions.swift; sourceTree = "<group>"; };
 		A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		A33DE4942541C4F20064D0AD /* Font+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Styles.swift"; sourceTree = "<group>"; };
@@ -521,6 +524,7 @@
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
 				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
 				A3D3EAE025CE5A8700EC3D1D /* Laden in Frameworks */,
+				A332087627B80690003D6DE9 /* WhatsNewKit in Frameworks */,
 				A3D999E62549A69F003E08E2 /* SwiftDate in Frameworks */,
 				B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */,
 				A3EBA83F27561146000188FD /* ConfettiSwiftUI in Frameworks */,
@@ -883,6 +887,7 @@
 				A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */,
 				A3EDE7462566A0180046C1F5 /* View+Extensions.swift */,
 				A371157A25C51B9000D65F59 /* View+Gradient.swift */,
+				A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
 				A3C579C92752864000B636EF /* Shift */,
 				A3EBA83E27561146000188FD /* ConfettiSwiftUI */,
+				A332087527B80690003D6DE9 /* WhatsNewKit */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1272,6 +1278,7 @@
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
 				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
 				A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1606,6 +1613,7 @@
 				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
 				A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */,
+				A332087A27B80A01003D6DE9 /* ClendarApp+WhatsNew.swift in Sources */,
 				A3F25978224771F2009A50B6 /* AlertManager.swift in Sources */,
 				A337CFB425D2F8A400FAB76A /* AppPermissions.swift in Sources */,
 				A33F846625AF3404001324A0 /* WidgetBackgroundView.swift in Sources */,
@@ -2088,6 +2096,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2118,6 +2127,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 3.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinhnx.Clendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2293,6 +2303,14 @@
 				minimumVersion = 1.8.4;
 			};
 		};
+		A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -2377,6 +2395,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3187E7F25499C29009524DF /* XCRemoteSwiftPackageReference "SwiftyFORM" */;
 			productName = SwiftyFORM;
+		};
+		A332087527B80690003D6DE9 /* WhatsNewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
+			productName = WhatsNewKit;
 		};
 		A3560CFD2567FB6F009088E7 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

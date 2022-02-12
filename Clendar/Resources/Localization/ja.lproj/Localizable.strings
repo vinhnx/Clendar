@@ -244,3 +244,11 @@
 "Hour minute format" = "時間分形式";
 "12 hour" = "12時間";
 "24 hour" = "24時間";
+"Continue" = "継続する";
+"What's new in Clendar" = "Clendarの新機能";
+"Thanks for using Clendar!" = "Clendarをご利用いただきありがとうございます。";
+"Quickly toggle between dates." = "日付をすばやく切り替える。";
+"Quick date switcher button" = "クイックデートスイッチャーボタン";
+"You can now choose 12 or 24 hour format, from the settings menu." = "設定メニューから12時間形式または24時間形式を選択できるようになりました。";
+"12 or 24 hour date setting" = "12時間または24時間の日付設定";
+"Have a nice day!" = "良い1日を！";
