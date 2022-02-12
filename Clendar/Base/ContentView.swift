@@ -107,9 +107,7 @@ struct ContentView: View {
     var menuView: some View {
         HStack {
             makeMenuButton()
-            if showDateSwitcher {
-                makeDateSwitcherToggle()
-            }
+            makeDateSwitcherToggle()
         }
         .accentColor(.appRed)
         .font(.mediumFontWithSize(20))
@@ -201,7 +199,7 @@ extension ContentView {
 
     private func makeDateSwitcherToggle() -> some View {
         Toggle(isOn: $showDateSwitcher.animation(.easeIn(duration: 0.25))) {
-            Image(systemName: "calendar.circle.fill")
+            Image(systemName: "arrow.left.arrow.right")
         }
         .controlSize(.small)
         .toggleStyle(.button)
