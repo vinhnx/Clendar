@@ -28,6 +28,8 @@ extension UIAlertController {
 	}
 }
 
+// TODO: switch to native SwiftUI alert/dialog view
+
 enum AlertManager {
 	/// Attempt not to show overlapped alert instances
 	static var shouldShowAlert: Bool {

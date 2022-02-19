@@ -89,14 +89,15 @@ extension View where Self == EventListView {
     fileprivate func handleDeleteEvent(_ event: ClendarEvent) {
         guard let id = event.id else { return }
         let isRepeatingEvent = event.event?.hasRecurrenceRules == true
-        let message = isRepeatingEvent ? "This is a repeating event." : "Are you sure you want to delete this event?"
+        let message = NSLocalizedString(isRepeatingEvent ? "This is a repeating event." : "Are you sure you want to delete this event?", comment: "")
         if isRepeatingEvent {
             DispatchQueue.main.async {
-                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+
+                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
                 alertController.addAction(cancelAction)
 
-                let deleteOne = UIAlertAction(title: "Delete This Event Only", style: .destructive) { _ in
+                let deleteOne = UIAlertAction(title: NSLocalizedString("Delete This Event Only", comment: ""), style: .destructive) { _ in
 
                     Task {
                         do {
@@ -110,7 +111,7 @@ extension View where Self == EventListView {
                 }
                 alertController.addAction(deleteOne)
 
-                let deleteAll = UIAlertAction(title: "Delete All Future Events", style: .destructive) { _ in
+                let deleteAll = UIAlertAction(title: NSLocalizedString("Delete All Future Events", comment: ""), style: .destructive) { _ in
 
                     Task {
                         do {
@@ -124,17 +125,11 @@ extension View where Self == EventListView {
                 }
                 alertController.addAction(deleteAll)
 
-                if let presenter = alertController.popoverPresentationController {
-                    presenter.permittedArrowDirections = .init(rawValue: 0)
-                    presenter.sourceView = UIViewController.topViewController?.view
-                    presenter.sourceRect = CGRect(x: UIViewController.topViewController?.view.bounds.midX ?? 0, y: UIViewController.topViewController?.view.bounds.midY ?? 0, width: 0, height: 0)
-                }
-
                 UINavigationController.topViewController?.present(alertController, animated: true, completion: nil)
             }
         } else {
             DispatchQueue.main.async {
-                AlertManager.showActionSheet(message: "Are you sure you want to delete this event?", showDelete: true, deleteAction: {
+                AlertManager.showAlert(message: NSLocalizedString("Are you sure you want to delete this event?", comment: ""), showDelete: true, deleteAction: {
 
                     Task {
                         do {

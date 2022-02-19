@@ -30,7 +30,7 @@ final class EventHandler {
 
         guard let eventID = event?.id else { return }
 
-        AlertManager.showActionSheet(message: NSLocalizedString("Are you sure you want to delete this event?", comment: ""), showDelete: true, deleteAction: {
+        AlertManager.showAlert(message: NSLocalizedString("Are you sure you want to delete this event?", comment: ""), showDelete: true, deleteAction: {
             Task {
                 do {
                     try await Shift.shared.deleteEvent(identifier: eventID)
