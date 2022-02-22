@@ -132,7 +132,15 @@ extension QuickEventView {
         guard quickEventStore.searchText.isEmpty == false else { return }
         Task {
             do {
-                let createdEvent = try await Shift.shared.createEvent(parsedText, startDate: startTime, endDate: endTime, isAllDay: isAllDay)
+                let calendar = Shift.shared.eventStore.defaultCalendarFromSettings
+                let createdEvent = try await Shift.shared.createEvent(
+                    parsedText,
+                    startDate: startTime,
+                    endDate: endTime,
+                    isAllDay: isAllDay,
+                    calendar: calendar
+                )
+
                 genSuccessHaptic()
                 self.presentationMode.wrappedValue.dismiss()
                 self.store.selectedDate = createdEvent.startDate

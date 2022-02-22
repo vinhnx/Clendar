@@ -26,8 +26,8 @@ extension EKEvent {
             let startDateString = startDate.toHourAndMinuteString(calendar: calendar)
             let endDateString = endDate.toHourAndMinuteString(calendar: calendar)
             return startDate != endDate
-                ? "\(startDateString) - \(endDateString)"
-                : startDateString
+            ? "\(startDateString) - \(endDateString)"
+            : startDateString
         }
     }
 }

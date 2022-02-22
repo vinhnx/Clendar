@@ -121,6 +121,7 @@
 		A371157C25C51B9000D65F59 /* View+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371157A25C51B9000D65F59 /* View+Gradient.swift */; };
 		A371157D25C51B9000D65F59 /* View+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371157A25C51B9000D65F59 /* View+Gradient.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
+		A37D5F2327C4F96900495638 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A37D5F2227C4F96900495638 /* Shift */; };
 		A37F0AE425C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */; };
 		A37F0AE525C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */; };
 		A37F0B0E25C50C6000DFFC41 /* ComplicationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F0B0D25C50C5F00DFFC41 /* ComplicationViews.swift */; };
@@ -173,7 +174,6 @@
 		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
 		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
-		A3C579CA2752864000B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579C92752864000B636EF /* Shift */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */; };
@@ -516,10 +516,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C579CA2752864000B636EF /* Shift in Frameworks */,
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
+				A37D5F2327C4F96900495638 /* Shift in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
 				A383331125A96A8100F7ED70 /* CVCalendar in Frameworks */,
@@ -1168,9 +1168,9 @@
 				A383331025A96A8100F7ED70 /* CVCalendar */,
 				A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */,
 				A3D3EADF25CE5A8700EC3D1D /* Laden */,
-				A3C579C92752864000B636EF /* Shift */,
 				A3EBA83E27561146000188FD /* ConfettiSwiftUI */,
 				A332087527B80690003D6DE9 /* WhatsNewKit */,
+				A37D5F2227C4F96900495638 /* Shift */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -2348,7 +2348,7 @@
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.8.0;
+				minimumVersion = 0.9.0;
 			};
 		};
 		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
@@ -2406,6 +2406,11 @@
 			package = A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
+		A37D5F2227C4F96900495638 /* Shift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
+			productName = Shift;
+		};
 		A383331025A96A8100F7ED70 /* CVCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */;
@@ -2435,11 +2440,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
-		};
-		A3C579C92752864000B636EF /* Shift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
-			productName = Shift;
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
