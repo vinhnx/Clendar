@@ -175,12 +175,12 @@
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
 		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
 		A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FD327C9EAC2004838E8 /* CalendarView */; };
+		A3C23FD627C9F896004838E8 /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */; };
 		A3C5D77325B9AA4F009A2CA2 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */; };
 		A3C5D77925B9AA53009A2CA2 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E412F2541FA19009AAC32 /* UserDefaultsWrapper.swift */; };
-		A3D3EACA25CE3C3F00EC3D1D /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
 		A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */; };
 		A3D3EAE025CE5A8700EC3D1D /* Laden in Frameworks */ = {isa = PBXBuildFile; productRef = A3D3EADF25CE5A8700EC3D1D /* Laden */; };
 		A3D6839F25A9A4BF009C31D5 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E41332541FA5E009AAC32 /* SettingsManager.swift */; };
@@ -747,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */,
+				A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */,
 				A3FA4D19259E2F59009D4F39 /* TODO.md */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,
@@ -989,7 +990,6 @@
 			isa = PBXGroup;
 			children = (
 				A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */,
-				A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */,
 			);
 			path = Plus;
 			sourceTree = "<group>";
@@ -1672,6 +1672,7 @@
 				A3187E68254998EE009524DF /* NewEventView.swift in Sources */,
 				A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */,
 				A315FA3225CF104800E909DB /* DateInfoWidgetEventRow.swift in Sources */,
+				A3C23FD627C9F896004838E8 /* ClendarPlusView.swift in Sources */,
 				A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */,
 				A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
@@ -1682,7 +1683,6 @@
 				A3EDE74225669FE20046C1F5 /* SharedStore.swift in Sources */,
 				A33F810222468B69009CC46A /* BaseViewController.swift in Sources */,
 				A3EDE72925669F640046C1F5 /* QuickEventView.swift in Sources */,
-				A3D3EACA25CE3C3F00EC3D1D /* ClendarPlusView.swift in Sources */,
 				A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */,
 				A35B9B5C258CD4A30027E1B3 /* Unwrap.swift in Sources */,
 				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
