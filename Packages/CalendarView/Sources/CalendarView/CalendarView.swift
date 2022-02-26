@@ -1,3 +1,11 @@
+//
+//  CalendarView.swift
+//  Clendar
+//
+//  Created by Vinh Nguyen on 25/12/2021.
+//  Copyright © 2021 Vinh Nguyen. All rights reserved.
+//
+
 import SwiftUI
 
 public struct CalendarView<Day: View, Header: View, Title: View, Trailing: View>: View {

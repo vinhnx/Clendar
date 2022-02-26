@@ -168,14 +168,14 @@
 		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
 		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
-		A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FD327C9EAC2004838E8 /* CalendarView */; };
-		A3C23FD627C9F896004838E8 /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
 		A3C23FD927C9F988004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
-		A3C23FDD27C9FBB7004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FDC27C9FBB7004838E8 /* ClendarTheme */; };
 		A3C23FE027C9FC1D004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
 		A3C23FE127C9FC1E004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
-		A3C23FE327C9FE3E004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FE227C9FE3E004838E8 /* ClendarTheme */; };
-		A3C23FE527C9FEDE004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FE427C9FEDE004838E8 /* ClendarTheme */; };
+		A3C2400027CA108C004838E8 /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
+		A3C2400427CA11BA004838E8 /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = A3C2400327CA11BA004838E8 /* CalendarView */; };
+		A3C2400827CA12B5004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C2400727CA12B5004838E8 /* ClendarTheme */; };
+		A3C2400A27CA12B9004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C2400927CA12B9004838E8 /* ClendarTheme */; };
+		A3C2400C27CA12BE004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C2400B27CA12BE004838E8 /* ClendarTheme */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */; };
@@ -441,9 +441,10 @@
 		A3C23944279315BE0067F8FA /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
 		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
 		A3C2394827931D9D0067F8FA /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
-		A3C23FD227C9EA71004838E8 /* CalendarView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalendarView; sourceTree = "<group>"; };
 		A3C23FD727C9F955004838E8 /* ClendarTheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClendarTheme; sourceTree = SOURCE_ROOT; };
 		A3C23FD827C9F987004838E8 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		A3C2400227CA1162004838E8 /* CalendarView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalendarView; sourceTree = "<group>"; };
+		A3C2400627CA1251004838E8 /* ClendarTheme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ClendarTheme; sourceTree = "<group>"; };
 		A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalendarsChooserViewController.swift; sourceTree = "<group>"; };
 		A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarPlusView.swift; sourceTree = "<group>"; };
 		A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -493,7 +494,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C23FDD27C9FBB7004838E8 /* ClendarTheme in Frameworks */,
+				A3C2400A27CA12B9004838E8 /* ClendarTheme in Frameworks */,
 				A38A4DD6254D755F00B35F98 /* Logging in Frameworks */,
 				A38EE838254EC9C200045C12 /* Haptica in Frameworks */,
 				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
@@ -508,7 +509,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3C23FE527C9FEDE004838E8 /* ClendarTheme in Frameworks */,
+				A3C2400C27CA12BE004838E8 /* ClendarTheme in Frameworks */,
 				A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */,
 				A3C579CE275286FC00B636EF /* Shift in Frameworks */,
 			);
@@ -520,9 +521,9 @@
 			files = (
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
-				A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */,
+				A3C2400427CA11BA004838E8 /* CalendarView in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
-				A3C23FE327C9FE3E004838E8 /* ClendarTheme in Frameworks */,
+				A3C2400827CA12B5004838E8 /* ClendarTheme in Frameworks */,
 				A37D5F2327C4F96900495638 /* Shift in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
@@ -751,6 +752,7 @@
 				A3064D2A254CEF5800C7F228 /* ClendarWidgetExtension.entitlements */,
 				A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */,
 				A3FA4D19259E2F59009D4F39 /* TODO.md */,
+				A3C2400127CA1143004838E8 /* Packages */,
 				A33F80C822467A82009CC46A /* Clendar */,
 				A33F80DD22467A85009CC46A /* ClendarTests */,
 				A33F80E822467A85009CC46A /* ClendarUITests */,
@@ -825,7 +827,6 @@
 		A33F80F922467DDB009CC46A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A3C23FD227C9EA71004838E8 /* CalendarView */,
 				A3D3EAC825CE3C3200EC3D1D /* Plus */,
 				A3B5690225C5D94000E3C09F /* Siri Shortcuts */,
 				A3D6833E25A9A2E1009C31D5 /* Event List */,
@@ -980,6 +981,15 @@
 			path = "Siri Shortcuts";
 			sourceTree = "<group>";
 		};
+		A3C2400127CA1143004838E8 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				A3C2400627CA1251004838E8 /* ClendarTheme */,
+				A3C2400227CA1162004838E8 /* CalendarView */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		A3C5D76125B9A926009A2CA2 /* Calendar Chooser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,7 +1097,7 @@
 				A38A4DD5254D755F00B35F98 /* Logging */,
 				A38EE837254EC9C200045C12 /* Haptica */,
 				A3C579CB275286EF00B636EF /* Shift */,
-				A3C23FDC27C9FBB7004838E8 /* ClendarTheme */,
+				A3C2400927CA12B9004838E8 /* ClendarTheme */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -1127,7 +1137,7 @@
 			packageProductDependencies = (
 				A307DB3B25ADD88300B5CE11 /* SwiftDate */,
 				A3C579CD275286FC00B636EF /* Shift */,
-				A3C23FE427C9FEDE004838E8 /* ClendarTheme */,
+				A3C2400B27CA12BE004838E8 /* ClendarTheme */,
 			);
 			productName = "ClendarWatchApp Extension";
 			productReference = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */;
@@ -1169,8 +1179,8 @@
 				A3EBA83E27561146000188FD /* ConfettiSwiftUI */,
 				A332087527B80690003D6DE9 /* WhatsNewKit */,
 				A37D5F2227C4F96900495638 /* Shift */,
-				A3C23FD327C9EAC2004838E8 /* CalendarView */,
-				A3C23FE227C9FE3E004838E8 /* ClendarTheme */,
+				A3C2400327CA11BA004838E8 /* CalendarView */,
+				A3C2400727CA12B5004838E8 /* ClendarTheme */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1633,6 +1643,7 @@
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A315F9FB25CF04A800E909DB /* ModalWrapperView.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */,
+				A3C2400027CA108C004838E8 /* ClendarPlusView.swift in Sources */,
 				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,
 				A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */,
 				A3B9D9BF25431C36001932B0 /* EKEvent+Extensions.swift in Sources */,
@@ -1675,7 +1686,6 @@
 				A3187E68254998EE009524DF /* NewEventView.swift in Sources */,
 				A39626BE2553081200F4ABEF /* EventHandler.swift in Sources */,
 				A315FA3225CF104800E909DB /* DateInfoWidgetEventRow.swift in Sources */,
-				A3C23FD627C9F896004838E8 /* ClendarPlusView.swift in Sources */,
 				A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */,
 				A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
@@ -2437,19 +2447,19 @@
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
 		};
-		A3C23FD327C9EAC2004838E8 /* CalendarView */ = {
+		A3C2400327CA11BA004838E8 /* CalendarView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CalendarView;
 		};
-		A3C23FDC27C9FBB7004838E8 /* ClendarTheme */ = {
+		A3C2400727CA12B5004838E8 /* ClendarTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ClendarTheme;
 		};
-		A3C23FE227C9FE3E004838E8 /* ClendarTheme */ = {
+		A3C2400927CA12B9004838E8 /* ClendarTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ClendarTheme;
 		};
-		A3C23FE427C9FEDE004838E8 /* ClendarTheme */ = {
+		A3C2400B27CA12BE004838E8 /* ClendarTheme */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ClendarTheme;
 		};

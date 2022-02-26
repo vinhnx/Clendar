@@ -15,9 +15,6 @@ let package = Package(
         )
     ],
     targets: [
-        .target(
-            name: "CalendarView",
-            dependencies: []
-        )
+        .target(name: "CalendarView")
     ]
 )
