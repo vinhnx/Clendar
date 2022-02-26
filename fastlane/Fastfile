@@ -158,7 +158,7 @@ platform :ios do
     commitVersionBumpWrapper
     
     _makeAppStoreBuild # iOS build
-    # _makeMacAppStoreBuild # macOS build
+    _makeMacAppStoreBuild # macOS build
     
     makeAppStoreGitTag
   end
