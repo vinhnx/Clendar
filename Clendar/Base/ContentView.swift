@@ -13,6 +13,7 @@ import Shift
 import Then
 import SwiftDate
 import WhatsNewKit
+import CalendarView
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore

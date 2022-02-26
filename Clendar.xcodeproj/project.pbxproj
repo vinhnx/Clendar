@@ -174,6 +174,7 @@
 		A3C23945279315BE0067F8FA /* RestoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23944279315BE0067F8FA /* RestoreButton.swift */; };
 		A3C23947279315DD0067F8FA /* RestoreButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */; };
 		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
+		A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FD327C9EAC2004838E8 /* CalendarView */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */; };
@@ -208,7 +209,6 @@
 		A3FB5B37255C20D30038AFCE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A3FB5B36255C20D30038AFCE /* Settings.bundle */; };
 		A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */; };
 		A3FBFCA025CEB27F00CF6420 /* PurchaseProductIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FBFC9F25CEB27F00CF6420 /* PurchaseProductIdentifier.swift */; };
-		A3FD30B22777587C009D8318 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FD30B12777587C009D8318 /* CalendarView.swift */; };
 		A3FF45B725CAEE48005DAE94 /* EventListWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */; };
 		B9671769148E9FD96CC2986E /* Pods_Clendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500FE0DC692E1F104BC789A4 /* Pods_Clendar.framework */; };
 		CD80B37F2BB1661861B5C432 /* Pods_ClendarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92D53D898F02DD2C05608BF /* Pods_ClendarUITests.framework */; };
@@ -443,6 +443,7 @@
 		A3C23944279315BE0067F8FA /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
 		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
 		A3C2394827931D9D0067F8FA /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
+		A3C23FD227C9EA71004838E8 /* CalendarView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalendarView; sourceTree = "<group>"; };
 		A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalendarsChooserViewController.swift; sourceTree = "<group>"; };
 		A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarPlusView.swift; sourceTree = "<group>"; };
 		A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -470,7 +471,6 @@
 		A3FB5B36255C20D30038AFCE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A3FBFC9725CEB21600CF6420 /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		A3FBFC9F25CEB27F00CF6420 /* PurchaseProductIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProductIdentifier.swift; sourceTree = "<group>"; };
-		A3FD30B12777587C009D8318 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		A3FF45B525CAEE48005DAE94 /* EventListWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListWidgetView.swift; sourceTree = "<group>"; };
 		A47016262754392B32FB732C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clendar/Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		A86A627F9868D8A135F399FB /* de */ = {isa = PBXFileReference; explicitFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -518,6 +518,7 @@
 			files = (
 				A38EE833254EC6CA00045C12 /* Haptica in Frameworks */,
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
+				A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
 				A37D5F2327C4F96900495638 /* Shift in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
@@ -821,12 +822,12 @@
 		A33F80F922467DDB009CC46A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3C23FD227C9EA71004838E8 /* CalendarView */,
 				A3D3EAC825CE3C3200EC3D1D /* Plus */,
 				A3B5690225C5D94000E3C09F /* Siri Shortcuts */,
 				A3D6833E25A9A2E1009C31D5 /* Event List */,
 				A3187E66254998CB009524DF /* Event Editor */,
 				A3187E65254998C1009524DF /* Event Viewer */,
-				A3D6832025A9A207009C31D5 /* Calendar View */,
 				A3C5D76125B9A926009A2CA2 /* Calendar Chooser */,
 				A31C7A57224E4BB400CB93A5 /* Settings */,
 			);
@@ -991,14 +992,6 @@
 				A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */,
 			);
 			path = Plus;
-			sourceTree = "<group>";
-		};
-		A3D6832025A9A207009C31D5 /* Calendar View */ = {
-			isa = PBXGroup;
-			children = (
-				A3FD30B12777587C009D8318 /* CalendarView.swift */,
-			);
-			path = "Calendar View";
 			sourceTree = "<group>";
 		};
 		A3D6832725A9A226009C31D5 /* Components */ = {
@@ -1171,6 +1164,7 @@
 				A3EBA83E27561146000188FD /* ConfettiSwiftUI */,
 				A332087527B80690003D6DE9 /* WhatsNewKit */,
 				A37D5F2227C4F96900495638 /* Shift */,
+				A3C23FD327C9EAC2004838E8 /* CalendarView */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1681,7 +1675,6 @@
 				A3FBFC9825CEB21600CF6420 /* PurchaseButton.swift in Sources */,
 				A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */,
 				A37FB8E425657857007C637C /* SettingsWrapperView.swift in Sources */,
-				A3FD30B22777587C009D8318 /* CalendarView.swift in Sources */,
 				A383333125A96D8200F7ED70 /* CVCalendar+Extensions.swift in Sources */,
 				A38199FE25484E7700C71D41 /* Layout.swift in Sources */,
 				A33F81132247423A009CC46A /* NaturalInputParser.swift in Sources */,
@@ -2440,6 +2433,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A3BA42F4253F3AE00007DDFB /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		A3C23FD327C9EAC2004838E8 /* CalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalendarView;
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;

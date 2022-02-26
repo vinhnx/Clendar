@@ -1,18 +1,4 @@
-//
-//  CalendarView.swift
-//  Clendar
-//
-//  Created by Vinh Nguyen on 25/12/2021.
-//  Copyright © 2021 Vinh Nguyen. All rights reserved.
-//
-
 import SwiftUI
-
-/*
- Reference:
- + https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec
- + big thanks! https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec#gistcomment-3737649
- */
 
 public struct CalendarView<Day: View, Header: View, Title: View, Trailing: View>: View {
     // Injected dependencies
