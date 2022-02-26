@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import ClendarTheme
 
 #if os(iOS)
 import UIKit

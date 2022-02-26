@@ -9,6 +9,7 @@
 import SwiftUI
 import EventKit
 import Shift
+import ClendarTheme
 
 struct EventListView: View {
     @EnvironmentObject var store: SharedStore

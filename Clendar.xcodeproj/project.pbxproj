@@ -22,14 +22,12 @@
 		A307DAF325ADD7FF00B5CE11 /* ClendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F525484D9E00C71D41 /* ClendarEvent.swift */; };
 		A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
 		A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B4D258CD4810027E1B3 /* EventViewer.swift */; };
-		A307DB0525ADD82400B5CE11 /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A307DB0B25ADD82F00B5CE11 /* SharedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE74125669FE20046C1F5 /* SharedStore.swift */; };
 		A307DB1125ADD83500B5CE11 /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3209BB8258CEB9E002470CF /* SolidButtonStyle.swift */; };
 		A307DB1725ADD84000B5CE11 /* InfoWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EF7C2D258E26F900B7BA37 /* InfoWrapView.swift */; };
 		A307DB1D25ADD84800B5CE11 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
 		A307DB2325ADD84F00B5CE11 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */; };
 		A307DB2925ADD85500B5CE11 /* EKEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */; };
-		A307DB2F25ADD86000B5CE11 /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A307DB3525ADD86900B5CE11 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = A307DB3B25ADD88300B5CE11 /* SwiftDate */; };
 		A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEF0C253F2DD300ACC87A /* DateFormatter+Extensions.swift */; };
@@ -84,8 +82,6 @@
 		A332087A27B80A01003D6DE9 /* ClendarApp+WhatsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */; };
 		A337CFB425D2F8A400FAB76A /* AppPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CFB325D2F8A400FAB76A /* AppPermissions.swift */; };
 		A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */; };
-		A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
-		A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80DF22467A85009CC46A /* ClendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80DE22467A85009CC46A /* ClendarTests.swift */; };
 		A33F80EA22467A85009CC46A /* ClendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80E922467A85009CC46A /* ClendarUITests.swift */; };
@@ -102,8 +98,6 @@
 		A33F846625AF3404001324A0 /* WidgetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */; };
 		A33F846725AF3404001324A0 /* WidgetBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */; };
 		A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A342117A254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift */; };
-		A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4982541C50F0064D0AD /* Color+Themes.swift */; };
-		A34211B8254D025C008D9B8E /* Font+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DE4942541C4F20064D0AD /* Font+Styles.swift */; };
 		A3560CFE2567FB6F009088E7 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A3560CFD2567FB6F009088E7 /* Then */; };
 		A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3560D0B2567FC5B009088E7 /* EventListRow.swift */; };
 		A359CD882588E3260089C4A2 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A359CD872588E3260089C4A2 /* ViewModifiers.swift */; };
@@ -176,6 +170,12 @@
 		A3C2394927931D9D0067F8FA /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2394827931D9D0067F8FA /* IAPHandler.swift */; };
 		A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FD327C9EAC2004838E8 /* CalendarView */; };
 		A3C23FD627C9F896004838E8 /* ClendarPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */; };
+		A3C23FD927C9F988004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
+		A3C23FDD27C9FBB7004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FDC27C9FBB7004838E8 /* ClendarTheme */; };
+		A3C23FE027C9FC1D004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
+		A3C23FE127C9FC1E004838E8 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C23FD827C9F987004838E8 /* Color+Theme.swift */; };
+		A3C23FE327C9FE3E004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FE227C9FE3E004838E8 /* ClendarTheme */; };
+		A3C23FE527C9FEDE004838E8 /* ClendarTheme in Frameworks */ = {isa = PBXBuildFile; productRef = A3C23FE427C9FEDE004838E8 /* ClendarTheme */; };
 		A3C579CC275286EF00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CB275286EF00B636EF /* Shift */; };
 		A3C579CE275286FC00B636EF /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A3C579CD275286FC00B636EF /* Shift */; };
 		A3C5D76325B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */; };
@@ -364,8 +364,6 @@
 		A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClendarApp+WhatsNew.swift"; sourceTree = "<group>"; };
 		A337CFB325D2F8A400FAB76A /* AppPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissions.swift; sourceTree = "<group>"; };
 		A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
-		A33DE4942541C4F20064D0AD /* Font+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Styles.swift"; sourceTree = "<group>"; };
-		A33DE4982541C50F0064D0AD /* Color+Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Themes.swift"; sourceTree = "<group>"; };
 		A33EE21425C6E3D900BE80F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ClendarWidget.strings"; sourceTree = "<group>"; };
 		A33EE22025C6E46D00BE80F1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A33EE22C25C6E8B600BE80F1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
@@ -444,6 +442,8 @@
 		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
 		A3C2394827931D9D0067F8FA /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		A3C23FD227C9EA71004838E8 /* CalendarView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalendarView; sourceTree = "<group>"; };
+		A3C23FD727C9F955004838E8 /* ClendarTheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClendarTheme; sourceTree = SOURCE_ROOT; };
+		A3C23FD827C9F987004838E8 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		A3C5D76225B9A939009A2CA2 /* MultipleCalendarsChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleCalendarsChooserViewController.swift; sourceTree = "<group>"; };
 		A3D3EAC925CE3C3F00EC3D1D /* ClendarPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClendarPlusView.swift; sourceTree = "<group>"; };
 		A3D3EAD825CE468B00EC3D1D /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -493,6 +493,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C23FDD27C9FBB7004838E8 /* ClendarTheme in Frameworks */,
 				A38A4DD6254D755F00B35F98 /* Logging in Frameworks */,
 				A38EE838254EC9C200045C12 /* Haptica in Frameworks */,
 				A38A4D86254D6F7300B35F98 /* SwiftDate in Frameworks */,
@@ -507,6 +508,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C23FE527C9FEDE004838E8 /* ClendarTheme in Frameworks */,
 				A307DB3C25ADD88300B5CE11 /* SwiftDate in Frameworks */,
 				A3C579CE275286FC00B636EF /* Shift in Frameworks */,
 			);
@@ -520,6 +522,7 @@
 				A3BA42F6253F3AE00007DDFB /* Logging in Frameworks */,
 				A3C23FD427C9EAC2004838E8 /* CalendarView in Frameworks */,
 				A3D3EAD225CE3F8000EC3D1D /* SwiftyStoreKit in Frameworks */,
+				A3C23FE327C9FE3E004838E8 /* ClendarTheme in Frameworks */,
 				A37D5F2327C4F96900495638 /* Shift in Frameworks */,
 				A3560CFE2567FB6F009088E7 /* Then in Frameworks */,
 				A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */,
@@ -737,8 +740,7 @@
 		A33DE4932541C4E50064D0AD /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				A33DE4982541C50F0064D0AD /* Color+Themes.swift */,
-				A33DE4942541C4F20064D0AD /* Font+Styles.swift */,
+				A3C23FD727C9F955004838E8 /* ClendarTheme */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -890,6 +892,7 @@
 				A3EDE7462566A0180046C1F5 /* View+Extensions.swift */,
 				A371157A25C51B9000D65F59 /* View+Gradient.swift */,
 				A332087927B80A01003D6DE9 /* ClendarApp+WhatsNew.swift */,
+				A3C23FD827C9F987004838E8 /* Color+Theme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1084,6 +1087,7 @@
 				A38A4DD5254D755F00B35F98 /* Logging */,
 				A38EE837254EC9C200045C12 /* Haptica */,
 				A3C579CB275286EF00B636EF /* Shift */,
+				A3C23FDC27C9FBB7004838E8 /* ClendarTheme */,
 			);
 			productName = ClendarWidgetExtension;
 			productReference = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */;
@@ -1123,6 +1127,7 @@
 			packageProductDependencies = (
 				A307DB3B25ADD88300B5CE11 /* SwiftDate */,
 				A3C579CD275286FC00B636EF /* Shift */,
+				A3C23FE427C9FEDE004838E8 /* ClendarTheme */,
 			);
 			productName = "ClendarWatchApp Extension";
 			productReference = A307DAC325ADD6B700B5CE11 /* ClendarWatchApp Extension.appex */;
@@ -1165,6 +1170,7 @@
 				A332087527B80690003D6DE9 /* WhatsNewKit */,
 				A37D5F2227C4F96900495638 /* Shift */,
 				A3C23FD327C9EAC2004838E8 /* CalendarView */,
+				A3C23FE227C9FE3E004838E8 /* ClendarTheme */,
 			);
 			productName = Clendar;
 			productReference = A33F80C622467A82009CC46A /* Clendar.app */;
@@ -1539,12 +1545,12 @@
 				A38A4D98254D73F400B35F98 /* Constants.swift in Sources */,
 				A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */,
 				A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */,
+				A3C23FE027C9FC1D004838E8 /* Color+Theme.swift in Sources */,
 				A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */,
 				A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */,
 				A38A4DBE254D748600B35F98 /* Date+Extensions.swift in Sources */,
 				A37F0AE525C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */,
 				A3DC1D78254E54CC00824E6A /* ClendarWidgetBundle.swift in Sources */,
-				A34211B8254D025C008D9B8E /* Font+Styles.swift in Sources */,
 				A3DC1D42254E4CB300824E6A /* DateFormatter+Extensions.swift in Sources */,
 				A38A4DE5254D7EBE00B35F98 /* EKEvent+Extensions.swift in Sources */,
 				A38A4DC2254D748C00B35F98 /* LoggerConfiguration.swift in Sources */,
@@ -1560,7 +1566,6 @@
 				A3AFBD53255F871000760E5B /* CalendarGridTimelineProvider.swift in Sources */,
 				A3D6839F25A9A4BF009C31D5 /* SettingsManager.swift in Sources */,
 				A371156E25C51AEB00D65F59 /* Color+Extensions.swift in Sources */,
-				A34211B0254CFE72008D9B8E /* Color+Themes.swift in Sources */,
 				A371157C25C51B9000D65F59 /* View+Gradient.swift in Sources */,
 				A3684755255445F0004BDCC6 /* String+Extensions.swift in Sources */,
 			);
@@ -1585,14 +1590,13 @@
 				A307DAF925ADD80D00B5CE11 /* DateInfoWidgetEventRow.swift in Sources */,
 				A307DB0B25ADD82F00B5CE11 /* SharedStore.swift in Sources */,
 				A307DB4725ADD8A200B5CE11 /* DateFormatter+Extensions.swift in Sources */,
-				A307DB0525ADD82400B5CE11 /* Color+Themes.swift in Sources */,
 				A307DBA325ADE30700B5CE11 /* ComplicationController.swift in Sources */,
 				A307DB3525ADD86900B5CE11 /* Date+Extensions.swift in Sources */,
 				A307DB1725ADD84000B5CE11 /* InfoWrapView.swift in Sources */,
 				A307DAFF25ADD81400B5CE11 /* EventViewer.swift in Sources */,
+				A3C23FE127C9FC1E004838E8 /* Color+Theme.swift in Sources */,
 				A307DB1D25ADD84800B5CE11 /* ViewModifiers.swift in Sources */,
 				A3EF6234275A754900346506 /* AppInfo.swift in Sources */,
-				A307DB2F25ADD86000B5CE11 /* Font+Styles.swift in Sources */,
 				A3C5D77325B9AA4F009A2CA2 /* UserDefaults+Extensions.swift in Sources */,
 				A307DB1125ADD83500B5CE11 /* SolidButtonStyle.swift in Sources */,
 			);
@@ -1616,11 +1620,11 @@
 				A3560D0C2567FC5B009088E7 /* EventListRow.swift in Sources */,
 				A3ADEF0D253F2DD300ACC87A /* DateFormatter+Extensions.swift in Sources */,
 				A30F5652254AF79A00E96C0E /* UserDefaults+Extensions.swift in Sources */,
-				A33DE4952541C4F20064D0AD /* Font+Styles.swift in Sources */,
 				A399A75B276DFF6100CDA1C6 /* TextFieldObserver.swift in Sources */,
 				A3B568FC25C5D91900E3C09F /* SiriShortcutBuilder.swift in Sources */,
 				A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */,
 				A3EDE73325669FA60046C1F5 /* EventViewerWrapperView.swift in Sources */,
+				A3C23FD927C9F988004838E8 /* Color+Theme.swift in Sources */,
 				A3F2597A2247742C009A50B6 /* UIViewController+Extensions.swift in Sources */,
 				A383333025A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift in Sources */,
 				A3B568E025C5BDD600E3C09F /* SiriButton.swift in Sources */,
@@ -1656,7 +1660,6 @@
 				A3A43E7225C45FAA00E60616 /* MultilineTextField.swift in Sources */,
 				A30BFEBF25654D3400BA7F38 /* ContentView.swift in Sources */,
 				A3EF6233275A734100346506 /* SingleCalendarChooserViewController.swift in Sources */,
-				A33DE4992541C50F0064D0AD /* Color+Themes.swift in Sources */,
 				A33F8115224742F7009CC46A /* WorkItem.swift in Sources */,
 				A33F843A25AF239D001324A0 /* FileManager+Extensions.swift in Sources */,
 				A33F811E22476767009CC46A /* Array+Extensions.swift in Sources */,
@@ -2437,6 +2440,18 @@
 		A3C23FD327C9EAC2004838E8 /* CalendarView */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CalendarView;
+		};
+		A3C23FDC27C9FBB7004838E8 /* ClendarTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClendarTheme;
+		};
+		A3C23FE227C9FE3E004838E8 /* ClendarTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClendarTheme;
+		};
+		A3C23FE427C9FEDE004838E8 /* ClendarTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClendarTheme;
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;

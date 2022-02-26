@@ -14,6 +14,7 @@ import Then
 import SwiftDate
 import WhatsNewKit
 import CalendarView
+import ClendarTheme
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore

@@ -6,11 +6,12 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 import UIKit
 
-extension UIFont {
+// swiftlint:disable no_extension_access_modifier
+
+public extension UIFont {
     static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
         let systemFont = UIFont.systemFont(ofSize: size, weight: weight)
         let font: UIFont
@@ -45,7 +46,7 @@ extension UIFont {
     }
 }
 
-extension Font {
+public extension Font {
     static func fontWithSize(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
         Font.system(size: size, weight: weight, design: .rounded)
     }
@@ -66,3 +67,5 @@ extension Font {
         .fontWithSize(size, weight: .medium)
     }
 }
+
+// swiftlint:enable no_extension_access_modifier

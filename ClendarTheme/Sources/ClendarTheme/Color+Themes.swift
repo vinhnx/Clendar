@@ -8,7 +8,9 @@
 import SwiftUI
 import UIKit
 
-extension UIColor {
+// swiftlint:disable no_extension_access_modifier
+
+public extension UIColor {
     var swiftUIColor: Color {
         Color(self)
     }
@@ -33,7 +35,7 @@ extension UIColor {
     }
 }
 
-extension UIColor {
+public extension UIColor {
     static let appGray = UIColor.gray
     static let appLightGray = UIColor.lightGray
     static let appRed = UIColor.moianesD
@@ -43,24 +45,6 @@ extension UIColor {
         return UIColor { color in color.userInterfaceStyle == .dark ? .appLightGray : .darkGray }
         #else
         return .darkGray
-        #endif
-    }
-
-    static var backgroundColor: UIColor {
-        #if os(iOS)
-        return UIColor { color in
-            switch SettingsManager.currentAppTheme {
-            case AppTheme.light.rawValue: return .hueC
-            case AppTheme.trueLight.rawValue: return .white
-            case AppTheme.dark.rawValue: return .lavixA
-            case AppTheme.trueDark.rawValue: return .black
-            case AppTheme.E4ECF5.rawValue: return UIColor(hex: "E4ECF5")
-            default:
-                return color.userInterfaceStyle == .dark ? .lavixA : .hueC
-            }
-        }
-        #else
-        return .hueC
         #endif
     }
 
@@ -103,7 +87,7 @@ extension UIColor {
 
 // MARK: - LIGHT THEME
 
-extension UIColor {
+public extension UIColor {
     // MARK: - Hue https://color.adobe.com/hue-color-theme-16137798
 
     static let hueA = UIColor(hex: "949EA8")
@@ -113,7 +97,7 @@ extension UIColor {
     static let hueE = UIColor(hex: "EBDCF5")
 }
 
-extension UIColor {
+public extension UIColor {
     // MARK: - Repi https://color.adobe.com/Repi-color-theme-16137836
 
     static let repiA = UIColor(hex: "D9D9D9")
@@ -125,7 +109,7 @@ extension UIColor {
 
 // MARK: - DARK THEME
 
-extension UIColor {
+public extension UIColor {
     // MARK: - Moianes https://color.adobe.com/Copy-of-Moianes-color-theme-3262188
 
     static let moianesA = UIColor(hex: "273F3F")
@@ -135,7 +119,7 @@ extension UIColor {
     static let moianesE = UIColor(hex: "382C21")
 }
 
-extension UIColor {
+public extension UIColor {
     // MARK: - Lavix https://color.adobe.com/color-theme-2694557
 
     static let lavixA = UIColor(hex: "1F2126")
@@ -145,13 +129,12 @@ extension UIColor {
     static let lavixE = UIColor(hex: "BBBF99")
 }
 
-extension Color {
+public extension Color {
     static let appGray = Color(.appGray)
     static let appLightGray = Color(.appLightGray)
     static let appRed = Color(.appRed)
     static let appLightRed = Color(.appLightRed)
     static let appDark = Color(.appDark)
-    static var backgroundColor = { return Color(.backgroundColor) } 
     static var inversedBackgroundColor = Color(.inversedBackgroundColor)
     static var primaryColor = Color(.primaryColor)
     static var secondaryColor = Color(.secondaryColor)
@@ -160,20 +143,4 @@ extension Color {
     static var confirmationColor = Color(.confirmationColor)
 }
 
-var appColorScheme: ColorScheme {
-    #if os(watchOS)
-    return ColorScheme.dark
-    #else
-    switch SettingsManager.currentAppTheme {
-    case AppTheme.light.rawValue,
-         AppTheme.trueLight.rawValue,
-         AppTheme.E4ECF5.rawValue:
-        return .light
-    case AppTheme.dark.rawValue,
-         AppTheme.trueDark.rawValue:
-        return .dark
-    default:
-        return SettingsManager.darkModeActivated ? .dark : .light
-    }
-    #endif
-}
+// swiftlint:enable no_extension_access_modifier

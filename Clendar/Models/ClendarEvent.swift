@@ -9,6 +9,7 @@
 import UIKit
 import EventKit
 import SwiftUI
+import ClendarTheme
 
 extension EKEvent: Identifiable {
     func isExpired() -> Bool {
