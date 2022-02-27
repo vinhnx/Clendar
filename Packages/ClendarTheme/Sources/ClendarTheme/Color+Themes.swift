@@ -8,14 +8,12 @@
 import SwiftUI
 import UIKit
 
-// swiftlint:disable no_extension_access_modifier
-
-public extension UIColor {
-    var swiftUIColor: Color {
+extension UIColor {
+    public var swiftUIColor: Color {
         Color(self)
     }
 
-    convenience init(hex: String) {
+    public convenience init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt64()
         Scanner(string: hex).scanHexInt64(&int)
@@ -35,12 +33,12 @@ public extension UIColor {
     }
 }
 
-public extension UIColor {
-    static let appGray = UIColor.gray
-    static let appLightGray = UIColor.lightGray
-    static let appRed = UIColor.moianesD
-    static let appLightRed = UIColor.appRed.withAlphaComponent(0.5)
-    static var appDark: UIColor {
+extension UIColor {
+    public static let appGray = UIColor.gray
+    public static let appLightGray = UIColor.lightGray
+    public static let appRed = UIColor.moianesD
+    public static let appLightRed = UIColor.appRed.withAlphaComponent(0.5)
+    public static var appDark: UIColor {
         #if os(iOS)
         return UIColor { color in color.userInterfaceStyle == .dark ? .appLightGray : .darkGray }
         #else
@@ -48,7 +46,7 @@ public extension UIColor {
         #endif
     }
 
-    static var inversedBackgroundColor: UIColor {
+    public static var inversedBackgroundColor: UIColor {
         #if os(iOS)
         return UIColor { color in color.userInterfaceStyle == .dark ? .hueC : .lavixA }
         #else
@@ -56,7 +54,7 @@ public extension UIColor {
         #endif
     }
 
-    static var primaryColor: UIColor {
+    public static var primaryColor: UIColor {
         #if os(iOS)
         return UIColor { color in color.userInterfaceStyle == .dark ? .hueA : .hueD }
         #else
@@ -64,7 +62,7 @@ public extension UIColor {
         #endif
     }
 
-    static var secondaryColor: UIColor {
+    public static var secondaryColor: UIColor {
         #if os(iOS)
         return UIColor { color in color.userInterfaceStyle == .dark ? .hueD : .hueA }
         #else
@@ -72,7 +70,7 @@ public extension UIColor {
         #endif
     }
 
-    static var buttonTintColor: UIColor {
+    public static var buttonTintColor: UIColor {
         #if os(iOS)
         return UIColor { color in color.userInterfaceStyle == .dark ? .hueB : .hueC }
         #else
@@ -80,67 +78,65 @@ public extension UIColor {
         #endif
     }
 
-    static var detructiveColor: UIColor { .moianesD }
+    public static var detructiveColor: UIColor { .moianesD }
 
-    static var confirmationColor: UIColor { .moianesA }
+    public static var confirmationColor: UIColor { .moianesA }
 }
 
 // MARK: - LIGHT THEME
 
-public extension UIColor {
+extension UIColor {
     // MARK: - Hue https://color.adobe.com/hue-color-theme-16137798
 
-    static let hueA = UIColor(hex: "949EA8")
-    static let hueB = UIColor(hex: "E4ECF5")
-    static let hueC = UIColor(hex: "F6F5F0")
-    static let hueD = UIColor(hex: "A094A8")
-    static let hueE = UIColor(hex: "EBDCF5")
+    public static let hueA = UIColor(hex: "949EA8")
+    public static let hueB = UIColor(hex: "E4ECF5")
+    public static let hueC = UIColor(hex: "F6F5F0")
+    public static let hueD = UIColor(hex: "A094A8")
+    public static let hueE = UIColor(hex: "EBDCF5")
 }
 
-public extension UIColor {
+extension UIColor {
     // MARK: - Repi https://color.adobe.com/Repi-color-theme-16137836
 
-    static let repiA = UIColor(hex: "D9D9D9")
-    static let repiB = UIColor(hex: "F2F2F2")
-    static let repiC = UIColor(hex: "737373")
-    static let repiD = UIColor(hex: "8C8C8C")
-    static let repiE = UIColor(hex: "78BFBF")
+    public static let repiA = UIColor(hex: "D9D9D9")
+    public static let repiB = UIColor(hex: "F2F2F2")
+    public static let repiC = UIColor(hex: "737373")
+    public static let repiD = UIColor(hex: "8C8C8C")
+    public static let repiE = UIColor(hex: "78BFBF")
 }
 
 // MARK: - DARK THEME
 
-public extension UIColor {
+extension UIColor {
     // MARK: - Moianes https://color.adobe.com/Copy-of-Moianes-color-theme-3262188
 
-    static let moianesA = UIColor(hex: "273F3F")
-    static let moianesB = UIColor(hex: "C4B087")
-    static let moianesC = UIColor(hex: "87775A")
-    static let moianesD = UIColor(hex: "993D31")
-    static let moianesE = UIColor(hex: "382C21")
+    public static let moianesA = UIColor(hex: "273F3F")
+    public static let moianesB = UIColor(hex: "C4B087")
+    public static let moianesC = UIColor(hex: "87775A")
+    public static let moianesD = UIColor(hex: "993D31")
+    public static let moianesE = UIColor(hex: "382C21")
 }
 
-public extension UIColor {
+extension UIColor {
     // MARK: - Lavix https://color.adobe.com/color-theme-2694557
 
-    static let lavixA = UIColor(hex: "1F2126")
-    static let lavixB = UIColor(hex: "192640")
-    static let lavixC = UIColor(hex: "386273")
-    static let lavixD = UIColor(hex: "818C7B")
-    static let lavixE = UIColor(hex: "BBBF99")
+    public static let lavixA = UIColor(hex: "1F2126")
+    public static let lavixB = UIColor(hex: "192640")
+    public static let lavixC = UIColor(hex: "386273")
+    public static let lavixD = UIColor(hex: "818C7B")
+    public static let lavixE = UIColor(hex: "BBBF99")
 }
 
-public extension Color {
-    static let appGray = Color(.appGray)
-    static let appLightGray = Color(.appLightGray)
-    static let appRed = Color(.appRed)
-    static let appLightRed = Color(.appLightRed)
-    static let appDark = Color(.appDark)
-    static var inversedBackgroundColor = Color(.inversedBackgroundColor)
-    static var primaryColor = Color(.primaryColor)
-    static var secondaryColor = Color(.secondaryColor)
-    static var buttonTintColor = Color(.buttonTintColor)
-    static var detructiveColor = Color(.detructiveColor)
-    static var confirmationColor = Color(.confirmationColor)
+extension Color {
+    public static let appGray = Color(.appGray)
+    public static let appLightGray = Color(.appLightGray)
+    public static let appRed = Color(.appRed)
+    public static let appLightRed = Color(.appLightRed)
+    public static let appDark = Color(.appDark)
+    public static var inversedBackgroundColor = Color(.inversedBackgroundColor)
+    public static var primaryColor = Color(.primaryColor)
+    public static var secondaryColor = Color(.secondaryColor)
+    public static var buttonTintColor = Color(.buttonTintColor)
+    public static var detructiveColor = Color(.detructiveColor)
+    public static var confirmationColor = Color(.confirmationColor)
 }
-
-// swiftlint:enable no_extension_access_modifier

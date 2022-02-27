@@ -9,10 +9,8 @@
 import SwiftUI
 import UIKit
 
-// swiftlint:disable no_extension_access_modifier
-
-public extension UIFont {
-    static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
+extension UIFont {
+    public static func fontWithSize(_ size: CGFloat, weight: UIFont.Weight = .regular) -> UIFont {
         let systemFont = UIFont.systemFont(ofSize: size, weight: weight)
         let font: UIFont
 
@@ -29,43 +27,41 @@ public extension UIFont {
         return font
     }
 
-    static func regularFontWithSize(_ size: CGFloat) -> UIFont {
+    public static func regularFontWithSize(_ size: CGFloat) -> UIFont {
         fontWithSize(size)
     }
 
-    static func boldFontWithSize(_ size: CGFloat) -> UIFont {
+    public static func boldFontWithSize(_ size: CGFloat) -> UIFont {
         fontWithSize(size, weight: .bold)
     }
 
-    static func semiboldFontWithSize(_ size: CGFloat) -> UIFont {
+    public static func semiboldFontWithSize(_ size: CGFloat) -> UIFont {
         fontWithSize(size, weight: .semibold)
     }
 
-    static func mediumFontWithSize(_ size: CGFloat) -> UIFont {
+    public static func mediumFontWithSize(_ size: CGFloat) -> UIFont {
         fontWithSize(size, weight: .medium)
     }
 }
 
-public extension Font {
-    static func fontWithSize(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
+extension Font {
+    public static func fontWithSize(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
         Font.system(size: size, weight: weight, design: .rounded)
     }
 
-    static func regularFontWithSize(_ size: CGFloat) -> Font {
+    public static func regularFontWithSize(_ size: CGFloat) -> Font {
         .fontWithSize(size, weight: .regular)
     }
 
-    static func boldFontWithSize(_ size: CGFloat) -> Font {
+    public static func boldFontWithSize(_ size: CGFloat) -> Font {
         .fontWithSize(size, weight: .bold)
     }
 
-    static func semiboldFontWithSize(_ size: CGFloat) -> Font {
+    public static func semiboldFontWithSize(_ size: CGFloat) -> Font {
         .fontWithSize(size, weight: .semibold)
     }
 
-    static func mediumFontWithSize(_ size: CGFloat) -> Font {
+    public static func mediumFontWithSize(_ size: CGFloat) -> Font {
         .fontWithSize(size, weight: .medium)
     }
 }
-
-// swiftlint:enable no_extension_access_modifier
