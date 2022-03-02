@@ -55,7 +55,7 @@ struct ClendarApp: App {
         .onChange(of: phase) { (newPhase) in
             switch newPhase {
             case .active:
-                // store.selectedDate = Date() // reset selected date to current date on active
+                store.selectedDate = Date() // reset selected date to current date on active
 
                 guard let name = shortcutItemToProcess?.userInfo?[Constants.addEventQuickActionKey] as? String else { return }
 
