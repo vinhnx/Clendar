@@ -16,7 +16,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
         WhatsNew(
             version: WhatsNew.Version(
                 major: 3,
-                minor: 2,
+                minor: 4,
                 patch: 0
             ), // specify version here
             title: WhatsNew.Title(
@@ -26,23 +26,39 @@ extension ClendarApp: WhatsNewCollectionProvider {
             features: [
                 .init(
                     image: .init(
-                        systemName: "clock",
+                        systemName: "wand.and.stars.inverse",
                         foregroundColor: .orange
                     ),
-                    title: WhatsNew.Text(NSLocalizedString("12 or 24 hour date setting", comment: "")),
-                    subtitle: WhatsNew.Text(NSLocalizedString("You can now choose 12 or 24 hour format, from the settings menu.", comment: ""))
+                    title: WhatsNew.Text(""),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Fix wrong widget theme when changing different languages", comment: ""))
                 ),
                 .init(
                     image: .init(
-                        systemName: "arrow.left.arrow.right",
-                        foregroundColor: .cyan
+                        systemName: "wand.and.stars.inverse",
+                        foregroundColor: .indigo
                     ),
-                    title: WhatsNew.Text(NSLocalizedString("Quick date switcher button", comment: "")),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Quickly toggle between dates.", comment: ""))
+                    title: WhatsNew.Text(""),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Fix localization", comment: ""))
                 ),
                 .init(
                     image: .init(
-                        systemName: "heart",
+                        systemName: "wand.and.stars.inverse",
+                        foregroundColor: .green
+                    ),
+                    title: WhatsNew.Text(""),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Fix action sheet crash", comment: ""))
+                ),
+                .init(
+                    image: .init(
+                        systemName: "rectangle.portrait.inset.filled",
+                        foregroundColor: .teal
+                    ),
+                    title: WhatsNew.Text(""),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Support portrait mode on iPad", comment: ""))
+                ),
+                .init(
+                    image: .init(
+                        systemName: "heart.fill",
                         foregroundColor: .red
                     ),
                     title: WhatsNew.Text(NSLocalizedString("Thanks for using Clendar!", comment: "")),
@@ -51,6 +67,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
             ],
             primaryAction: .init(
                 title: WhatsNew.Text(NSLocalizedString("Continue", comment: "")),
+                backgroundColor: .appRed,
                 hapticFeedback: {
 #if os(iOS)
                     .notification(.success)

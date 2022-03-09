@@ -470,7 +470,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 160 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 161 localization keys.
     struct localizable {
       /// en translation: ... and many more features to come in the future!
       ///
@@ -800,6 +800,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
       static let moreCalendarIdentifiersSuchAs = Rswift.StringResource(key: "More calendar identifiers, such as:", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
+      /// en translation: NEW
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static let neW = Rswift.StringResource(key: "NEW", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "vi", "ja", "zh-hans", "es", "ko", "zh-hant", "th", "de", "fr"], comment: nil)
       /// en translation: Name
       ///
       /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
@@ -2341,6 +2345,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("More calendar identifiers, such as:", bundle: bundle, comment: "")
+      }
+
+      /// en translation: NEW
+      ///
+      /// Locales: en, vi, ja, zh-hans, es, ko, zh-hant, th, de, fr
+      static func neW(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NEW", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "NEW"
+        }
+
+        return NSLocalizedString("NEW", bundle: bundle, comment: "")
       }
 
       /// en translation: Name
