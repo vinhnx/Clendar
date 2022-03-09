@@ -13,23 +13,23 @@ struct WidgetBackgroundView: View {
 
     @ViewBuilder
     var body: some View {
-        switch widgetThemeFromFile {
-        case WidgetTheme.system.localizedText:
+        switch WidgetTheme(rawValue: widgetThemeFromFile) {
+        case .system:
             Color(colorScheme == .dark ? .lavixA : .hueC)
-        case WidgetTheme.dark.localizedText:
+        case .dark:
             Color(.lavixA)
-        case WidgetTheme.light.localizedText:
+        case .light:
             Color(.hueC)
-        case WidgetTheme.E4ECF5.localizedText:
+        case .E4ECF5:
             Color(hex: 0xE4ECF5)
         default:
             Color(.hueC)
         }
     }
 
-    private var widgetThemeFromFile: String {
+    private var widgetThemeFromFile: Int {
         let url = FileManager.appGroupContainerURL.appendingPathComponent(FileManager.widgetTheme)
-        guard let text = try? String(contentsOf: url, encoding: .utf8) else { return "" }
-        return text
+        guard let value = try? String(contentsOf: url, encoding: .utf8) else { return 0 }
+        return value.parseInt() ?? 0
     }
 }
