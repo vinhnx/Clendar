@@ -53,6 +53,20 @@ my notes about SwiftUI:
 
 By publishing Clendar, I would like to give back to the community. 😊
 
+### Tip to build on M1 Macs
+
+> So, maybe someone, who wants to contribute in this repo will find the next info a very helpful.
+> If you have Macbook on m1:
+>
+> ```bash
+> sudo arch -x86_64 gem install ffi
+> arch -x86_64 pod install
+> ```
+> Or:
+>
+> run terminal with Rosetta and run `pod install`
+>> Thanks https://github.com/vinhnx/Clendar/issues/220#issuecomment-1107809043
+
 ### Tech stacks
 
 Core:
