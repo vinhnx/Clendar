@@ -441,7 +441,6 @@
 		A3C23944279315BE0067F8FA /* RestoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButton.swift; sourceTree = "<group>"; };
 		A3C23946279315DD0067F8FA /* RestoreButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreButtonStyle.swift; sourceTree = "<group>"; };
 		A3C2394827931D9D0067F8FA /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
-		A3C23FD727C9F955004838E8 /* ClendarTheme */ = {isa = PBXFileReference; lastKnownFileType = text; path = ClendarTheme; sourceTree = SOURCE_ROOT; };
 		A3C23FD827C9F987004838E8 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		A3C2400227CA1162004838E8 /* CalendarView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CalendarView; sourceTree = "<group>"; };
 		A3C2400627CA1251004838E8 /* ClendarTheme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ClendarTheme; sourceTree = "<group>"; };
@@ -738,14 +737,6 @@
 			path = original;
 			sourceTree = "<group>";
 		};
-		A33DE4932541C4E50064D0AD /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				A3C23FD727C9F955004838E8 /* ClendarTheme */,
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
 		A33F80BD22467A82009CC46A = {
 			isa = PBXGroup;
 			children = (
@@ -855,7 +846,6 @@
 				A33F81112247422A009CC46A /* Input Parser */,
 				A36A504E2250EE5800B12034 /* Logger */,
 				A3FBFC9E25CEB27200CF6420 /* Purchase */,
-				A33DE4932541C4E50064D0AD /* Themes */,
 				A3F2597122476FEA009A50B6 /* Utils */,
 			);
 			path = Helper;
