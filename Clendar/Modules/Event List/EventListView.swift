@@ -22,65 +22,78 @@ struct EventListView: View {
             EmptyView()
         }
         else {
-            List(events, id: \.id) { event in
-                NavigationLink(
-                    destination:
-                        EventViewer(event: event)
-                        .navigationBarTitle("", displayMode: .inline)
-                        .environmentObject(store)
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                ) {
-                    EventListRow(event: event)
-                        .contextMenu(
-                            ContextMenu(menuItems: {
-                                Button { editingEvent = event } label: {
-                                    Text("Edit")
-                                    Image(systemName: "square.and.pencil")
-                                }
-                                .tint(.teal)
-                                .help("Edit Event")
-
-                                Button { handleDeleteEvent(event) } label: {
-                                    Text("Delete")
-                                    Image(systemName: "trash")
-                                }
-                                .tint(.appRed)
-                                .help("Delete Event")
-                            })
-                        )
-                }
-                .listRowBackground(Color.backgroundColor())
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets(top: -5, leading: -5, bottom: 0, trailing: -15))
-                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                    Button {
-                        handleDeleteEvent(event)
-                    } label: {
-                        Text("Delete")
-                        Image(systemName: "trash")
-                    }
-                    .tint(.appRed)
-                    .help("Delete Event")
-                }
-                .swipeActions(edge: .trailing) {
-                    Button {
-                        editingEvent = event
-                    } label: {
-                        Text("Edit")
-                        Image(systemName: "square.and.pencil")
-                    }
-                    .tint(.teal)
-                    .help("Edit Event")
-                }
-            }
-            .listStyle(.plain)
-            .sheet(item: $editingEvent) { (event) in
-                EventEditorWrapperView(event: event)
-                    .environmentObject(store)
-                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            if #available(iOS 16.0, *) {
+                buildListView
+                    .scrollContentBackground(.hidden) // https://mobile.twitter.com/sarunw/status/1545006078404227072
+            } else {
+                buildListView
+                    .background(Color(.backgroundColor))
             }
         }
     }
+}
+
+extension EventListView {
+    var buildListView: some View {
+        List(events, id: \.id) { event in
+            NavigationLink(
+                destination:
+                    EventViewer(event: event)
+                    .navigationBarTitle("", displayMode: .inline)
+                    .environmentObject(store)
+                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            ) {
+                EventListRow(event: event)
+                    .contextMenu(
+                        ContextMenu(menuItems: {
+                            Button { editingEvent = event } label: {
+                                Text("Edit")
+                                Image(systemName: "square.and.pencil")
+                            }
+                            .tint(.teal)
+                            .help("Edit Event")
+
+                            Button { handleDeleteEvent(event) } label: {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                            }
+                            .tint(.appRed)
+                            .help("Delete Event")
+                        })
+                    )
+            }
+            .listRowBackground(Color.backgroundColor())
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: -5, leading: -5, bottom: 0, trailing: -15))
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button {
+                    handleDeleteEvent(event)
+                } label: {
+                    Text("Delete")
+                    Image(systemName: "trash")
+                }
+                .tint(.appRed)
+                .help("Delete Event")
+            }
+            .swipeActions(edge: .trailing) {
+                Button {
+                    editingEvent = event
+                } label: {
+                    Text("Edit")
+                    Image(systemName: "square.and.pencil")
+                }
+                .tint(.teal)
+                .help("Edit Event")
+            }
+        }
+        .listStyle(.plain)
+        .sheet(item: $editingEvent) { (event) in
+            EventEditorWrapperView(event: event)
+                .environmentObject(store)
+                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+        }
+    }
+
 }
 
 extension View where Self == EventListView {
