@@ -28,7 +28,7 @@ struct EventListView: View {
             } else {
                 buildListView
                     .background(Color(.backgroundColor))
-            }
+//            }
         }
     }
 }
