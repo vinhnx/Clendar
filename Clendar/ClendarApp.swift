@@ -24,6 +24,10 @@ struct ClendarApp: App {
     @StateObject private var store = SharedStore()
 
     init() {
+
+        // TODO: just to trigger SwiftLint force_cast
+        let shortcut = shortcutItemToProcess as! UIApplicationShortcutItem
+
         configure()
     }
 
