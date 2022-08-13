@@ -26,7 +26,7 @@ struct ClendarApp: App {
     init() {
 
         // TODO: just to trigger SwiftLint force_cast
-        let shortcut = shortcutItemToProcess as! UIApplicationShortcutItem
+        let shortcut = shortcutItemToProcess as? UIApplicationShortcutItem
 
         configure()
     }
