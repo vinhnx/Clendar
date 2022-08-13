@@ -47,234 +47,219 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		002DA5A20BFD28A004129264EC95BBA0 /* Pods-Clendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE84C8DC88B54D07103F53578E87766 /* Pods-Clendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02BC08BAD7A4BE00A7F2EC3116D58EA3 /* FRMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208DA1362A21F090ED9E6C4B4B2274D /* FRMonthNameLittleEndianParser.swift */; };
-		04089FC062ED5E77A8810DD0EF057746 /* FRTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A189DEFA0E00EB58AD3FA6210931A23 /* FRTimeAgoFormatParser.swift */; };
-		05A7D0690B8E58888A7641B57C1807EA /* FRSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8346C79D9F21BCF15F43A0DB41C2013 /* FRSlashDateFormatParser.swift */; };
-		05ACF752090B4B3F80ADC0C5EFDFD64C /* FRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD487ACC69336D80A97228C5B014D91 /* FRUtil.swift */; };
-		075C936615700BD48765935840C29C69 /* ENPrioritizeSpecificDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF34725A204249650307AE0153D182 /* ENPrioritizeSpecificDateRefiner.swift */; };
-		0A3C2E20B249F67A15CB45296F33D695 /* ZHTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854185A52F61BF6E01585A8EA071A5 /* ZHTimeExpressionParser.swift */; };
-		0B503DE5A465EC2FA45F8606A20FC1A4 /* Bundle+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9895A72C38DC28E78B3B01FC5CB1B2F /* Bundle+Private.swift */; };
-		0BA57AED326571818237A04BAC8C48FB /* JPStandardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8890B202D08C089B1AC85C5D015D /* JPStandardParser.swift */; };
-		0BC714466B1F927803CF6747ECE29CCC /* UnlikelyFormatFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79036558D3EDD5DBE2FAAFFD9AB1BEF0 /* UnlikelyFormatFilter.swift */; };
+		0785467EA6823E40B56A4ADB50DFD46A /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7C88BEC7F447557F2459AF51C99E34 /* Extras.swift */; };
+		0941E837B9747B426B62DB07F61FEFF0 /* ASN1Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB1F2CE0F2D729C1E20ED5445A4D7B /* ASN1Decoder.swift */; };
+		09D6B7AE175E4F2F6B117762DA2B686A /* ASN1Decoder+SingleValueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3375CC854F619937F2E68FC5D981A85 /* ASN1Decoder+SingleValueContainer.swift */; };
+		0B699CDC2F433E0BBCAFF2402820CB81 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E6ECC44FEF74F182A1821BD9C44F5 /* PKCS7.swift */; };
+		0B73B84C7E55289D422C76704E3AE4B3 /* JPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F128A4FD04EDE0338EB7A8CD607F3 /* JPUtil.swift */; };
 		0DD6FB34A6DEC8012850E5311335EDEB /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94364EC7BA61D8B0FB6A1DF5CAFA899B /* UIViewController+NibResource.swift */; };
-		0DF01ECDBC2868E013C0218D36067E42 /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7C88BEC7F447557F2459AF51C99E34 /* Extras.swift */; };
-		0E0C601E2BC86D1A92A8CF6175FB051C /* DEMorgenTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD0DE21F0B00E240519CE728E720F3 /* DEMorgenTimeParser.swift */; };
+		0FD87F8A744A202A15B429F16E839DA0 /* ENDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFAE188653BE04597B0D947ABFAAE35 /* ENDeadlineFormatParser.swift */; };
 		10D697694F5F07861A3785CDB79C334D /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187CE229FFC9D5F4456A9DC56120F38 /* NibResource.swift */; };
-		13C25DBEA2D6D43B0A9CF3A53A3E2F05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		146DB55F56F4DD052EF2AB32F5C2B867 /* Pods-ClendarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C30B9BC0D4CBF9F8F51E1523581FCD /* Pods-ClendarUITests-dummy.m */; };
-		15FC5D154FCDD3A15786D55587955362 /* ESUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FABE276408C672125E992B6A9D3D8F /* ESUtil.swift */; };
+		144EBF9CBF74F29B8643003F0E9F1FF9 /* ASN1Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C95F93F20CC741294D10644E4875E7 /* ASN1Coder.swift */; };
+		151FC9B3DBAA16F2B4086EBBBFB0FE23 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB39E0870E8DF5C5868450739C5B9F07 /* Chrono.swift */; };
 		162A902059621CF60242785A2CC55565 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B77496C6D48CCF5D66357E1D687B47 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
-		16C4EF1FFDC8718E15895AAFE28443C5 /* DESlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8E3DEBE8C733660FEA2D603B299D0 /* DESlashDateFormatParser.swift */; };
-		17D18976A7CE63DDA1023479BA75CD39 /* ESTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E91EDCC0C0B063DC9F2D79790F8C2 /* ESTimeExpressionParser.swift */; };
-		1872793A941C4F7FE637F10410F02287 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		194E3E41349A9D99E31FE62B4E0C7312 /* ASN1Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB1F2CE0F2D729C1E20ED5445A4D7B /* ASN1Decoder.swift */; };
-		1D2AA23F02F1C7BE84247AC7A3FCBF62 /* ENMonthNameMiddleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB980F44FB10B3303E56987943753E /* ENMonthNameMiddleEndianParser.swift */; };
-		1EE06A48761CDB7B8AB6A1E3459106C1 /* DEWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593163EB93466687B72B6E4E9E28112 /* DEWeekdayParser.swift */; };
+		16C0E660FEC699625A6731581AA8FFAB /* TPInAppReceipt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D490422C4533B15CC95CFAAE8AF12B45 /* TPInAppReceipt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17082B5D0E5EDE46AEB3C4DC983E7A46 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 161B6208FBFDA3520F150529F90E97B2 /* StoreKitTestCertificate.cer */; };
+		198270068CB91333984C1C44C0E7D70B /* IARError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923C719EDFA158C59A315E1737E336C /* IARError.swift */; };
+		1B193D43298918C2EE2C4BF103B540F3 /* TPInAppReceipt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C0FFBBEC5DDF70B4327B6FB818C8D /* TPInAppReceipt-dummy.m */; };
+		1B4DF3E30DA5EAD4F045022F4325F1D0 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870BE244CC1E593A619656A7906DB35B /* Options.swift */; };
+		1F8B8F4B3868CDFC6E7EA863B62C74BA /* ENSlashDateFormatStartWithYearParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294B10C5C911E634BA86611FE608F5F1 /* ENSlashDateFormatStartWithYearParser.swift */; };
+		1F9D36D61194BDFDB918FBDBD4F91DA2 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBE9692D1721D7E184C08111FEB9859 /* Parser.swift */; };
 		20E8719A6987983681DFD74187710D92 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F32D4D04C976966E25D4DD281DAFB9 /* FontResource.swift */; };
 		21183727D56095D8859837199025D987 /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC317016250AC16073E9E4E0FAB66603 /* UINib+NibResource.swift */; };
-		29799897557FF9E1291D8CA76DFEE149 /* ENDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFAE188653BE04597B0D947ABFAAE35 /* ENDeadlineFormatParser.swift */; };
-		29CE31E2A282E4C84DA543D69C1BE7D8 /* DecodingError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F60EAA8D6EBC6EF87A7731855493CA /* DecodingError+Extensions.swift */; };
+		21FA5F522E87660CD0477C9447DCB807 /* ENCasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD0CEE27EB124AB6ADB60FA453C8E8 /* ENCasualTimeParser.swift */; };
+		22BB2B523125C58E0E8A954ED8F8B7B8 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A765C86EA67D699E7086B788E95FB /* Initialization.swift */; };
+		28AEDC8B12CFA4428047E0570513980E /* ZHCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF93F6DEF99D3EF619ABD0474AD09E /* ZHCasualDateParser.swift */; };
 		29D0D4019DEC0E59A63223082A2ABDED /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C299236B28D5EB2D6D863584CB1A5 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
-		2BCFFD3C6CD8BF40C4E2E8FBECF84400 /* ENWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210817FC8C126D878C95C7E025A4C38 /* ENWeekdayParser.swift */; };
-		2C90C384F440A2A3FA7A110C25A1684C /* ASN1Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F2424F9C58B747A385DC0CA0A4876 /* ASN1Serialization.swift */; };
-		302B7CB3D07964787363162448AAC943 /* ASN1Decoder+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE806C24883A4B3EAA77E3FFFF638F /* ASN1Decoder+Extras.swift */; };
-		30361AAB0910530951FE8619F44AA07A /* ENISOFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBC99401F1EF542ED33927BED9FE62 /* ENISOFormatParser.swift */; };
-		30B955830FD327E9EDEB9E0F220CDF36 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02019B62552BAC0E6BF7FBE15852867C /* InAppReceipt.swift */; };
-		330232E5C048615C4EA53384350731BE /* ASN1Decoder+KeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FBFF01823AA6546575A87DD8341F7 /* ASN1Decoder+KeyedDecodingContainer.swift */; };
+		2ACAF0D0E3FDD4600196E32EF7EC8970 /* DEDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44E3B532C647BF293E3B80165667A2 /* DEDeadlineFormatParser.swift */; };
+		2D67CED5FC7F668A600CBAF0D84F503B /* DEMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5130122C211D6FAF2428937EF8984E /* DEMergeDateTimeRefiner.swift */; };
 		33165D8129327B6893A99715132A0B89 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B80B310AA6C8EC2583053ED612BDE /* ImageResource.swift */; };
-		342327D99FA52279677E0E4D1F98CC74 /* DEMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDA6B7766573C279038E8F2A61691E /* DEMonthNameLittleEndianParser.swift */; };
-		3455C90E04E01DE899C5268EE3EE409E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		34756322ADDC0175C5A6319158659808 /* ENMonthNameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867920798ACF717EDE851E5C578755D8 /* ENMonthNameParser.swift */; };
-		34D7FE028FAE68D7EF73E46A5F7A0006 /* ASN1Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFEAAC8CE173311375DE1AD46EFA4D /* ASN1Templates.swift */; };
-		36BDD0B06CA30E1BBEAFF6C8ACCB5E64 /* ASN1Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0B491657F15BC7E1EC098F40C4A51 /* ASN1Types.swift */; };
-		39135EA597FC25F56C28A42B84E9BFE6 /* ENMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB29055C52122CED10EFE2EF5C3B3A2 /* ENMergeDateTimeRefiner.swift */; };
+		3455C90E04E01DE899C5268EE3EE409E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		36EF2E4532AA6ADA936F79E22E5BB8C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		378F95AF2F37AE3847D7ACA4C9A62CE9 /* DETimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E299A4869F4E972023DF5510227E456 /* DETimeExpressionParser.swift */; };
+		3AAE6905E205112161B9CE7E8ADA90CB /* FRMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE06AD002E6F1D66C3E3B1D96ED135 /* FRMergeDateRangeRefiner.swift */; };
 		3C7D1A3A9BAADDF210F95BDD9B55862F /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258F28A76818E69788757A20A1DE4705 /* UIStoryboard+StoryboardViewControllerResource.swift */; };
-		3CEE25E31D8444E3ACCF783EA393793D /* ENCasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBD0CEE27EB124AB6ADB60FA453C8E8 /* ENCasualTimeParser.swift */; };
-		3FCD0F1592B8F7BEF1168B4A981D30B3 /* ENCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7789B461C30C710CDD344AFB511AB931 /* ENCasualDateParser.swift */; };
+		3E0FE04B25E18BB77DDA17C040DDA13F /* OverlapRemovalRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F798CDDE1DFC101867C1C4D9F857921 /* OverlapRemovalRefiner.swift */; };
+		3EEF326DF0C9BB4379CA8DD211269614 /* ASN1Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03F2424F9C58B747A385DC0CA0A4876 /* ASN1Serialization.swift */; };
+		406DEB6070B6511AFDCC84A909B6639E /* Pods-ClendarUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1A322F1764D0BAB6140709ABDC7DFF /* Pods-ClendarUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40A5FBEB183913821EE41B21AD790B57 /* ESWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEC1CB34CC1313E68EB076611F722E /* ESWeekdayParser.swift */; };
 		4183F48753FE0C0DE6B87D736A1E1D94 /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDAB7C23CF4A952C0C58A4C1147B3C8 /* UITableView+ReuseIdentifierProtocol.swift */; };
-		4414A1BE3C1ACC441C36AAD295998B81 /* Pods-ClendarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53848C02F4763E1E7D0002500C3E0A69 /* Pods-ClendarTests-dummy.m */; };
+		426D2E73A69CACC4C62F26218EB02DF7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CB513F0B6F80F1DA9E07593B8AE9F0 /* Date+Extension.swift */; };
+		42D85EDB2363BE9D2A8223418C4B5689 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595309CF45B2B52208D1AA11BEF2AD2 /* Data+Extension.swift */; };
 		44FB2F3B75840B08BDFA0F72557B3D9D /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BB9E7E25243F98E0A19E33AF24681 /* ReuseIdentifierProtocol.swift */; };
-		45880AA004FED83EF0B6E37326799826 /* ENRelativeDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA142DB5636D7DF8DB3DB966001BBE51 /* ENRelativeDateFormatParser.swift */; };
-		4E7007895722C63B61ECE7B863A8061D /* OverlapRemovalRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F798CDDE1DFC101867C1C4D9F857921 /* OverlapRemovalRefiner.swift */; };
-		4F562BF92E443E17BCE709C862BEE6D3 /* ENMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C5A36F2AE09E18506127921E758FE /* ENMergeDateRangeRefiner.swift */; };
-		56569EC61E69C086FBA038452D21D5AB /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F276F440391D4063169C3D089733984F /* InAppPurchase.swift */; };
-		56631E42D98A574896D1AAE0959A5571 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548539B8CF779C633FDD7C92ACA15F9 /* Date.swift */; };
-		577C1D5AB8DFD52F5EB24ED4DFC05129 /* InAppReceiptPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8D40865D0958CD3FE76F6A751064E /* InAppReceiptPayload.swift */; };
-		5D6F20F46E11D5F8A5A036E79F8EE95D /* ASN1Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC4B3D12CD1FB0EB6E7D7148803E553 /* ASN1Swift.framework */; };
-		603773FDE7DFB8F99AEBD705285AC3FE /* TPInAppReceipt-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D490422C4533B15CC95CFAAE8AF12B45 /* TPInAppReceipt-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		60556D68174EB6C11ECC7D547EE072CE /* ASN1Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C95F93F20CC741294D10644E4875E7 /* ASN1Coder.swift */; };
-		6292000BF798158FC18C7B765290293D /* ENTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB53BF2694608790D847066A6B95D37 /* ENTimeAgoFormatParser.swift */; };
-		64141E9243AA01FD3BBAAD72DC21F3EB /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF345CD82AEC802EB18F977E94847E7A /* Validation.swift */; };
-		6635123F07FA686D3563E750F32C19B1 /* IARError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923C719EDFA158C59A315E1737E336C /* IARError.swift */; };
-		67AE720CF79686F080A72E90C82643B3 /* ENSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EC375B8379F58D1064E821E0C44AE /* ENSlashDateFormatParser.swift */; };
-		688C1B168283B3B28D6361F61D85E6F8 /* ESWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BEC1CB34CC1313E68EB076611F722E /* ESWeekdayParser.swift */; };
+		45218DDBE414F326C8A755D73F6672BE /* FRMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A03FC6DB16C9531D9E6E4D6AE27E6DE /* FRMergeDateTimeRefiner.swift */; };
+		4586724F867F28AB4BCDE41760BB086B /* ENSlashMonthFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845F4EC76898A2AD3711830B9B518D4 /* ENSlashMonthFormatParser.swift */; };
+		496F045FF5065AECD6C6552A5E4E30A4 /* ENSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357EC375B8379F58D1064E821E0C44AE /* ENSlashDateFormatParser.swift */; };
+		4C8FADB48D0EF9983793E51157097E23 /* ESTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E91EDCC0C0B063DC9F2D79790F8C2 /* ESTimeExpressionParser.swift */; };
+		52E833AC20D41D36B9B2530AAC272980 /* JPMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C612B73CAAB8570B75CFD0B98BF4277 /* JPMergeDateRangeRefiner.swift */; };
+		5A8F5594D7EC57D4B574D44D248187AB /* FRTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A189DEFA0E00EB58AD3FA6210931A23 /* FRTimeAgoFormatParser.swift */; };
+		5E6E5A80FE94AC1AC16BCBE356268783 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2E24A34640884D943BD4381ED44305E6 /* AppleIncRootCertificate.cer */; };
+		61578372C1EF7F6942BE27A3F420F534 /* ENMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86C5A36F2AE09E18506127921E758FE /* ENMergeDateRangeRefiner.swift */; };
+		63F21333F4398606233F716027E223CE /* DEUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A3B798339DF32BBDBF2A7E708B06BC /* DEUtil.swift */; };
+		640A47C81574E30F5E7EAE97151BF408 /* FRTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4C08E1217235453CD3A7058866426 /* FRTimeExpressionParser.swift */; };
+		644891E6300A433F7CFD5681412EE3B6 /* DEMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76D8AAEF6B58B1B32FC1EFEA038062 /* DEMergeDateRangeRefiner.swift */; };
+		64EE3A7A07522F27D2787BC74978698E /* DESlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8E3DEBE8C733660FEA2D603B299D0 /* DESlashDateFormatParser.swift */; };
+		66653E3D1106A29737D332630A3638E0 /* ENTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB53BF2694608790D847066A6B95D37 /* ENTimeAgoFormatParser.swift */; };
+		67E74B9A76333F938EA73D8AF1F4E699 /* UnlikelyFormatFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79036558D3EDD5DBE2FAAFFD9AB1BEF0 /* UnlikelyFormatFilter.swift */; };
+		68BD178C9DED7F777E8827213AD62347 /* ExtractTimezoneOffsetRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9D3BA3168D69D3DC258775C4FA769 /* ExtractTimezoneOffsetRefiner.swift */; };
+		68C45A1BEDAF7253E9BFFAB1FD3CB34C /* Refiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B775E56C15C6E086D6A16D4677420C /* Refiner.swift */; };
 		696432629EE660D310C5658A72DCEBA7 /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A2886967AA9EB70910DA036F606F9A /* StoryboardSegueIdentifierProtocol.swift */; };
+		6B45777715079651B180628D2B4BC0BF /* Pods-ClendarTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0462990366C0B958E66E26AE31C90A8E /* Pods-ClendarTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BF3EA9702B992174C43C61F6B38CC6F /* ASN1Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 802922791AA55540386DDF07345B2BF2 /* ASN1Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E275D7486DF3B4D92E43A154FF230DE /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1949F82A320D2ECB26E531B82B1B36FB /* FileResource.swift */; };
+		704C9DB1565C52D12A00B5717B99701E /* MergeDataRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331E6A77FC2E3D30A97116654D6B25E /* MergeDataRangeRefiner.swift */; };
 		70B7E46BEE2B36E418BA21DFCBAC3FB0 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17229DD9E4D76F8E127B1A73279E784C /* ColorResource.swift */; };
-		70BC1F9B31C12DB24950FD191EC23C67 /* ZHWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6BEA6E55686C45A0CF007D5D291C8 /* ZHWeekdayParser.swift */; };
-		7126159E2F44B4C1C0EDF5BF64E687BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		71351D37BE9B6CD6A9A609A2ED0E3F5B /* JPCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C4826A7EBC263EAEDB59BCB6C95D8C /* JPCasualDateParser.swift */; };
+		713520F09D567C27422EC631142F2FD5 /* ASN1Decoder+Unboxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9ED3A9FF26E21B06974135BCA5FAC /* ASN1Decoder+Unboxing.swift */; };
 		714F5E771CB9DC801DA3D2A49C182297 /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A885E09F144FD4D3A12B1939DC5DC0 /* UIFont+FontResource.swift */; };
-		71B9E6886BDCDC09DEE11E22DF5543EC /* ASN1Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 802922791AA55540386DDF07345B2BF2 /* ASN1Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74CE769277CDF092261930957AF34000 /* FRCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FCBC79A73A211C37664A130BE1506 /* FRCasualDateParser.swift */; };
-		781A0954EA33401C43F6C06F5488DB79 /* PKCS7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E6ECC44FEF74F182A1821BD9C44F5 /* PKCS7.swift */; };
-		7863EE68F291F4522601FE153CAEC0D9 /* DEMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F76D8AAEF6B58B1B32FC1EFEA038062 /* DEMergeDateRangeRefiner.swift */; };
-		7873A564BA89D6990CD0235921AFD319 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2595309CF45B2B52208D1AA11BEF2AD2 /* Data+Extension.swift */; };
-		7CBE00660AE5385B464659B7864304BC /* Foundation+ASN1Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8164A9689DBB2922F7AAEF66E9FF8 /* Foundation+ASN1Coder.swift */; };
+		73D592B64E6F94B74B29986EEA5D002D /* ASN1Templates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EFEAAC8CE173311375DE1AD46EFA4D /* ASN1Templates.swift */; };
+		74C88A3349802BD9B10195178AB2015C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF345CD82AEC802EB18F977E94847E7A /* Validation.swift */; };
+		7777A54B576A86A20069C85F813C558C /* ZHUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F0941F4BB93E5543CD140C03B21AB /* ZHUtil.swift */; };
+		795E95BD3B0218E31347C5E1E9DB458E /* DECasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D108E67545B2773B481AE87CEA63826 /* DECasualTimeParser.swift */; };
+		7BA182705D86B51A96120483F4721E23 /* ZHWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E6BEA6E55686C45A0CF007D5D291C8 /* ZHWeekdayParser.swift */; };
 		7D0DA74C51C353E0A111116C2244B7B0 /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7017F1598F2A634D781EECB4CB997D8 /* UIStoryboard+StoryboardResource.swift */; };
-		7E39DBEFE60622D9D85A352756FA111A /* DEDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B44E3B532C647BF293E3B80165667A2 /* DEDeadlineFormatParser.swift */; };
-		8251B941BAC9DBE013871CA9D12FFC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		861253AD0A76E89E4151ADB1A520982B /* ASN1Decoder+SingleValueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3375CC854F619937F2E68FC5D981A85 /* ASN1Decoder+SingleValueContainer.swift */; };
-		863F7091770489D9C3CE3357370284CB /* DECasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDC5ACD12350215CA339EA16F00AB6 /* DECasualDateParser.swift */; };
-		8695E5D5E4B90DC10AA8450326D71AB1 /* DECasualTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D108E67545B2773B481AE87CEA63826 /* DECasualTimeParser.swift */; };
+		7E8449B6A9AFE3F830CCFF3BE79DB24F /* FRMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208DA1362A21F090ED9E6C4B4B2274D /* FRMonthNameLittleEndianParser.swift */; };
+		7F6D8572E5E6A314D099E676A784344F /* ESMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB640B93F75FFB9FAAECC7272D0314 /* ESMonthNameLittleEndianParser.swift */; };
+		80814EB9153FAE6DD4183D98759E453F /* ASN1Decoder+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE806C24883A4B3EAA77E3FFFF638F /* ASN1Decoder+Extras.swift */; };
+		81322B046D0E4B7843412FE4CC701B94 /* ENMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB29055C52122CED10EFE2EF5C3B3A2 /* ENMergeDateTimeRefiner.swift */; };
+		8402A80F16E093D66294288EB75D6453 /* ENCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7789B461C30C710CDD344AFB511AB931 /* ENCasualDateParser.swift */; };
+		8602E3076E2C5DC38BA03AAAE5FCE435 /* ENPrioritizeSpecificDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF34725A204249650307AE0153D182 /* ENPrioritizeSpecificDateRefiner.swift */; };
+		86A9A5A9A3F7E463EBD6495B39B6A20F /* ZHDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D1357ECF2DD867CFF92006F8A3A27 /* ZHDeadlineFormatParser.swift */; };
 		87C33C4ACD57D248B4559558A15E792F /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5D4E9F12CCC9E2B7E15C0F3888A90 /* StoryboardResource.swift */; };
+		87EB57783129D5AF79F71148830DE0E0 /* ENMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B39C6161CFA54C2330BAF21CFF703 /* ENMonthNameLittleEndianParser.swift */; };
 		88697481A7E405D638EF7EA333EEDA6B /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B19640BF4FEE09A130CA3F1C18BBA /* Identifier.swift */; };
-		8BB341CD191242527CE72735D99C67B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		8BBE7CD2729AD80CCDCDC0A3B08D5095 /* ASN1Decoder+UnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BCE4EBC867AEE17647648AB1CE4BB /* ASN1Decoder+UnkeyedDecodingContainer.swift */; };
-		8CEF395E4C9068813022913F87E1FF5B /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 161B6208FBFDA3520F150529F90E97B2 /* StoreKitTestCertificate.cer */; };
-		90C99A9E0E7384B29D1D761C9B247A89 /* InAppReceipt+ASN1Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5F593499C3CA3562F7AD0C5995DDA /* InAppReceipt+ASN1Decodable.swift */; };
-		92546383C29D6CAC4B45A1FE83D10C25 /* ZHDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28D1357ECF2DD867CFF92006F8A3A27 /* ZHDeadlineFormatParser.swift */; };
-		935E7AA997CAD06E94A967F792E1F54C /* ExtractTimezoneOffsetRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA9D3BA3168D69D3DC258775C4FA769 /* ExtractTimezoneOffsetRefiner.swift */; };
+		89E4FC47903BD0EF7350ED2AC2F7FB4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8C122791D3B4C12F8482835E69D4227F /* DEWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3593163EB93466687B72B6E4E9E28112 /* DEWeekdayParser.swift */; };
+		8C4B46B4DE487681477C6D97D9BD11CE /* ASN1Decoder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7F439BFB06CBF24701783B407ECA2 /* ASN1Decoder+Utils.swift */; };
+		8C5372655C23DA6968A9EA3AD8F6B1A2 /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F276F440391D4063169C3D089733984F /* InAppPurchase.swift */; };
+		8D7C218CBA990F3861566C3F9F6AB67F /* FRSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8346C79D9F21BCF15F43A0DB41C2013 /* FRSlashDateFormatParser.swift */; };
+		8F0AD2D82FA0EE640440019909C5045E /* Pods-Clendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE84C8DC88B54D07103F53578E87766 /* Pods-Clendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92A7ABB4B3D1973A841F714B8FE73190 /* ASN1Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F0B491657F15BC7E1EC098F40C4A51 /* ASN1Types.swift */; };
 		94122BF2B978C8FB0494848AAEAC8084 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924042BF9934C438B8B30D8EB5FDED8F /* StoryboardViewControllerResource.swift */; };
+		95141ABD80DA2C7736E3C22CCCB7E769 /* JPCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C4826A7EBC263EAEDB59BCB6C95D8C /* JPCasualDateParser.swift */; };
 		95D83F375FA199BB137825842966A195 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA768370F620048E74E0712D9C1681C6 /* StoryboardResourceWithInitialController+UIKit.swift */; };
-		9882ABD0A9F9828B67CE176757739406 /* ForwardDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1A4AEA845C32955528B30B4D11AED /* ForwardDateRefiner.swift */; };
-		9D556F68DF85CF1B62E4EDE040FEE4C2 /* ExtractTimezoneAbbrRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AC209CE2FCFDEFAA1989273A3785E6 /* ExtractTimezoneAbbrRefiner.swift */; };
-		9D9005163A2A776EB36EE33E51EBFAF7 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870BE244CC1E593A619656A7906DB35B /* Options.swift */; };
-		A36DCE1548158177A68D870095D37985 /* ZHDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B22B6BAA7CD9D269C4B78ACD4D2AE3A /* ZHDateParser.swift */; };
+		976751DC0A0665B3B2C1FFA146C1912A /* ENUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9ACF123D4D11162D368AE2F6C3F68 /* ENUtil.swift */; };
+		99C288EAA8D8178A328B908199691D1B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9AEE07ADC0C8610D663F56C49E70EE0E /* ESCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A317560AB31B840FD0B498602589D /* ESCasualDateParser.swift */; };
+		9AFF9DD16B23AF7DBF61E831FECE53A9 /* DEMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDA6B7766573C279038E8F2A61691E /* DEMonthNameLittleEndianParser.swift */; };
+		9BA1F8EA7E6DE3ACCCFE42FF6F23AD1B /* Foundation+ASN1Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8164A9689DBB2922F7AAEF66E9FF8 /* Foundation+ASN1Coder.swift */; };
+		9C6E45DF50FCE63A349D566ADB472364 /* FRUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD487ACC69336D80A97228C5B014D91 /* FRUtil.swift */; };
+		9FD7526939D223BAD72F0A358EDF2170 /* InAppReceiptPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD8D40865D0958CD3FE76F6A751064E /* InAppReceiptPayload.swift */; };
+		A1ECFA740BA6D38B91A16888ABE71313 /* DECasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACDC5ACD12350215CA339EA16F00AB6 /* DECasualDateParser.swift */; };
+		A20A26199EEE084043A15AF9645667E5 /* ESDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30B441DE6862BBA710C0969EC48700 /* ESDeadlineFormatParser.swift */; };
 		A5749947B1A222EAB4925C0560CF8A8F /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA072C610B1630F93B6D0F5ED4903D /* Data+FileResource.swift */; };
-		A81B32A60075EBCF2BD829381E8DAFEB /* DEUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A3B798339DF32BBDBF2A7E708B06BC /* DEUtil.swift */; };
-		A8D2A111F0A4D0E1EB016E176667D764 /* SwiftyChrono-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B03F0D2A6EF6F25041B7C9B4CB8474A /* SwiftyChrono-dummy.m */; };
-		A9813A19F57B00E880C2AA2F5A7428FA /* FRMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE06AD002E6F1D66C3E3B1D96ED135 /* FRMergeDateRangeRefiner.swift */; };
-		AA8525E3B2078CF80ABC6A0A4B71F909 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2244100A99ECE8F3EEDB793AB500CFB /* Result.swift */; };
-		AD36AB0E8D799C3BFC9B74F0639FFF12 /* Pods-ClendarUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FF1A322F1764D0BAB6140709ABDC7DFF /* Pods-ClendarUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7FBAFDD67CCB1046B9B979258C08327 /* ExtractTimezoneAbbrRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AC209CE2FCFDEFAA1989273A3785E6 /* ExtractTimezoneAbbrRefiner.swift */; };
+		AB65A61D2FA29D62B53D599663281C03 /* ForwardDateRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1A4AEA845C32955528B30B4D11AED /* ForwardDateRefiner.swift */; };
+		AC631F4296B39A9359DF3F7E4EE45C94 /* ESTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A00DB1BB1F102E7BECA2B75C82DDB0 /* ESTimeAgoFormatParser.swift */; };
+		AC7457222FFB5D18EA3D0298CA3B6D00 /* InAppReceipt+ASN1Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E5F593499C3CA3562F7AD0C5995DDA /* InAppReceipt+ASN1Decodable.swift */; };
 		AEFE3E6671C9B9C805E2C5514E36DB20 /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5834AA6782480ED8D8A5DEDCDD447209 /* UIImage+ImageResource.swift */; };
-		AF104A62F19C825EBAAC0A5DA260CAAD /* FRWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C2CE1CEF92C01D722212FDF70B177E /* FRWeekdayParser.swift */; };
+		B19F728C733F38FFD09C272D2177E4FA /* ESUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FABE276408C672125E992B6A9D3D8F /* ESUtil.swift */; };
 		B1B2CA40A7E382FC52F54D41478AFE1F /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E017799288535B0E2C9CCD8DB07F6628 /* NibResource+UIKit.swift */; };
-		B532B92E86A345C0D747C80AEBC763CC /* FRMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A03FC6DB16C9531D9E6E4D6AE27E6DE /* FRMergeDateTimeRefiner.swift */; };
-		B8C6CD06D17B9BF0FE3CF6E889199163 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B422834A07C4CBED35851640DDA6005 /* Util.swift */; };
-		BB45C286354797622F6FF8CED67375E2 /* DETimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F035B2A6D687839DA28CA8C2C04FB976 /* DETimeAgoFormatParser.swift */; };
+		B22AEF19DD365B4778C9517E81E72CAE /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543CBD81620B011C36FD3147BFA50272 /* Bundle+Extension.swift */; };
+		B2D774B072B140F36E3C07FD28EA45EE /* FRCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9FCBC79A73A211C37664A130BE1506 /* FRCasualDateParser.swift */; };
+		B5C8FC7A13FDF1B800086B09CF3C8CB7 /* FRWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C2CE1CEF92C01D722212FDF70B177E /* FRWeekdayParser.swift */; };
 		BD08C3465AB6612DBEA4280EFCE57302 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE57193BD8BBE2D57ED05F118137F61 /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD11AFCE9BC28A34EC44A68F4998735C /* JPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F128A4FD04EDE0338EB7A8CD607F3 /* JPUtil.swift */; };
-		BFF065DBD73595FCAF55DAE0B0D9E55B /* TPInAppReceipt-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 425C0FFBBEC5DDF70B4327B6FB818C8D /* TPInAppReceipt-dummy.m */; };
-		C16F50B89E7B439330A7AC09F1C6C4E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */; };
-		C682D6613B94F2A1901C2CD1DB02F63F /* ENUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9ACF123D4D11162D368AE2F6C3F68 /* ENUtil.swift */; };
+		C2660F13D2A1F99B2F1EBE177880E5BE /* SwiftyChrono-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26775F71942D66277EAC62011FD4E125 /* SwiftyChrono-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3E52ACDD2789688E898FA16D8E9CCEC /* DecodingError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F60EAA8D6EBC6EF87A7731855493CA /* DecodingError+Extensions.swift */; };
+		C40345968A5051966F412C78F6ACA417 /* MergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB54788C1639A4B25A2B6116641A3A3E /* MergeDateTimeRefiner.swift */; };
+		C6B159786446E087081B31DC81D60595 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1548539B8CF779C633FDD7C92ACA15F9 /* Date.swift */; };
+		C716FEB5537EDEF5CE72612F9CA0A450 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		C891EFD2ED17469333C0DB5ABEB2B957 /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202D2A0734CED38F399A8364155CCD71 /* Bundle+FileResource.swift */; };
-		CAFE4795368C98BCE3FD5AC0CF949409 /* DEMergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5130122C211D6FAF2428937EF8984E /* DEMergeDateTimeRefiner.swift */; };
-		CB9D41FED913CEB9B76EE0930EB1DFD9 /* FRDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303F82536F2E96857768ECAC72A5B71 /* FRDeadlineFormatParser.swift */; };
-		CBB61ED17574AAF505592C5DDE329C85 /* ASN1Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8DD93DF8FED92A94DC19324369E739 /* ASN1Swift-dummy.m */; };
-		D09F6421CD91DA4007C895B634ADC719 /* FRTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE4C08E1217235453CD3A7058866426 /* FRTimeExpressionParser.swift */; };
-		D137307A8BC57905EF680EBF09BA37E7 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543CBD81620B011C36FD3147BFA50272 /* Bundle+Extension.swift */; };
-		D1BC36B6CB61F519A60F15B78943C474 /* ENTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535B4ECB82BFA7383D87031F84D202C /* ENTimeExpressionParser.swift */; };
-		D22867BE0C2EDF15E6FBD4ADB0546EB8 /* ENSlashMonthFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C845F4EC76898A2AD3711830B9B518D4 /* ENSlashMonthFormatParser.swift */; };
-		D2426C967FA65150B644B8880877288F /* JPMergeDateRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C612B73CAAB8570B75CFD0B98BF4277 /* JPMergeDateRangeRefiner.swift */; };
-		D6E8128B6D35859F2AE33047DDFE6412 /* ESSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC05755E73879CD79431CC87FCB384 /* ESSlashDateFormatParser.swift */; };
-		D967B94BD6CDD059C6DA690E853A12F0 /* SwiftyChrono-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26775F71942D66277EAC62011FD4E125 /* SwiftyChrono-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCBFD527FC9AD1FBF8E618BB277C7A83 /* FRDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2303F82536F2E96857768ECAC72A5B71 /* FRDeadlineFormatParser.swift */; };
+		D06F027A0DD3B4FA038FBB7022F80709 /* DEMorgenTimeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD0DE21F0B00E240519CE728E720F3 /* DEMorgenTimeParser.swift */; };
+		D289917E329B0EBCCE097FFAAD3CD4E1 /* Pods-ClendarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C30B9BC0D4CBF9F8F51E1523581FCD /* Pods-ClendarUITests-dummy.m */; };
+		D5CC21B76B9CF0F98C80787FD44AFAD1 /* SwiftyChrono-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B03F0D2A6EF6F25041B7C9B4CB8474A /* SwiftyChrono-dummy.m */; };
+		D681A57EBFB10180864352AC93785628 /* ZHDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B22B6BAA7CD9D269C4B78ACD4D2AE3A /* ZHDateParser.swift */; };
+		D6AE1585F1CC00B560DFEBE70C5F62F6 /* ESSlashDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC05755E73879CD79431CC87FCB384 /* ESSlashDateFormatParser.swift */; };
+		D7DDBA324B01E28614A37D7F3F87891B /* ENMonthNameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867920798ACF717EDE851E5C578755D8 /* ENMonthNameParser.swift */; };
+		DA003C9A3DBB4DD6E3936C64B7E9FF4B /* ASN1Decoder+UnkeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93BCE4EBC867AEE17647648AB1CE4BB /* ASN1Decoder+UnkeyedDecodingContainer.swift */; };
 		DA7F2BB83934FA65A6B759197F4F9A02 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE5A05AA38B2ED1C0EA8BD1B19C3DB2 /* StringResource.swift */; };
 		DD43C00BF6991A6F42FE8761F2F91784 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995837E232CF8BB235CE793E47F3E54 /* Validatable.swift */; };
+		DE089A3241AC73B51B9FA0E337081290 /* Pods-Clendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 802006DABB04E5004FD79D1E2E65653D /* Pods-Clendar-dummy.m */; };
 		DF56537142F05116A268B334BFCEF6E6 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B31D22BBD030296BD33FA7EAEB11CCF7 /* R.swift.Library-dummy.m */; };
-		DFE1851C6ED54A1A56492B60C58CB1C9 /* Pods-ClendarTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0462990366C0B958E66E26AE31C90A8E /* Pods-ClendarTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E182544452F927F633C1EF2998A1E365 /* Initialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237A765C86EA67D699E7086B788E95FB /* Initialization.swift */; };
-		E1BCFCA84A556F5D9890F13EC1C7FA8F /* ENMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B39C6161CFA54C2330BAF21CFF703 /* ENMonthNameLittleEndianParser.swift */; };
-		E392AFFD58495012DFEE001FE930277B /* ESTimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A00DB1BB1F102E7BECA2B75C82DDB0 /* ESTimeAgoFormatParser.swift */; };
-		E645927C558ED1F22B4FF23EB5C73F88 /* Pods-Clendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 802006DABB04E5004FD79D1E2E65653D /* Pods-Clendar-dummy.m */; };
-		E66D1D3C5DDBC9BCCB80776C332E973B /* Refiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B775E56C15C6E086D6A16D4677420C /* Refiner.swift */; };
-		EA06F38982C856BFCE5F13BE55712CC0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CB513F0B6F80F1DA9E07593B8AE9F0 /* Date+Extension.swift */; };
+		DF6C9D7DE354E801A0135CCAF29F5C2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E1388FA7EA2089FF40444D80AD709C1C /* ASN1Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8DD93DF8FED92A94DC19324369E739 /* ASN1Swift-dummy.m */; };
+		E276A052902F26BAAB6C40F30CE93AFF /* DETimeAgoFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F035B2A6D687839DA28CA8C2C04FB976 /* DETimeAgoFormatParser.swift */; };
+		E2C133E1D18B459163CF9F50ABFE4BD3 /* ENWeekdayParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210817FC8C126D878C95C7E025A4C38 /* ENWeekdayParser.swift */; };
+		E7F62E1A14374B6FDB18CD6E3FE771C7 /* Pods-ClendarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53848C02F4763E1E7D0002500C3E0A69 /* Pods-ClendarTests-dummy.m */; };
+		E8AC429168637EBC5283104464E99838 /* ENISOFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBC99401F1EF542ED33927BED9FE62 /* ENISOFormatParser.swift */; };
+		E98F78156AFFB977A71FECCF7C49BE3D /* ENTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6535B4ECB82BFA7383D87031F84D202C /* ENTimeExpressionParser.swift */; };
 		EAB63F2AA1FE281FFF2543ACDD9E60AD /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C67A95544D7934A32F44447C50A6F /* UICollectionView+ReuseIdentifierProtocol.swift */; };
-		EB611150D3DF8A0C0E32C01BB215C15D /* ASN1Decoder+Unboxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C9ED3A9FF26E21B06974135BCA5FAC /* ASN1Decoder+Unboxing.swift */; };
-		EB704B50D5D2B979DE5CC801E8F21052 /* ZHUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06F0941F4BB93E5543CD140C03B21AB /* ZHUtil.swift */; };
+		EB0998700AA54AF73CDC83034DBF4F23 /* ASN1Decoder+KeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595FBFF01823AA6546575A87DD8341F7 /* ASN1Decoder+KeyedDecodingContainer.swift */; };
 		ED8AAF11C9F33AEE563A62F0B1CF22BD /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D88447EC1F075A0981CD9F2395180A /* UIColor+ColorResource.swift */; };
-		EF621CB33D2E63488D867ED7B45ACA29 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB39E0870E8DF5C5868450739C5B9F07 /* Chrono.swift */; };
-		F1A94B266282DC3D21416F91E871DB74 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2E24A34640884D943BD4381ED44305E6 /* AppleIncRootCertificate.cer */; };
-		F24D8797E53E4724F4E8BDF084B9BECD /* ESDeadlineFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA30B441DE6862BBA710C0969EC48700 /* ESDeadlineFormatParser.swift */; };
-		F48BD542075355E67D0987E37103A38F /* ASN1Decoder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C7F439BFB06CBF24701783B407ECA2 /* ASN1Decoder+Utils.swift */; };
-		F4C63EA84BDFE313716C3FA2224CCB65 /* ENSlashDateFormatStartWithYearParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294B10C5C911E634BA86611FE608F5F1 /* ENSlashDateFormatStartWithYearParser.swift */; };
-		F79B60A5288AC5759F75C31C0AD8E938 /* ESCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A317560AB31B840FD0B498602589D /* ESCasualDateParser.swift */; };
-		F8019B71D85C91E0B35A13848B519582 /* MergeDataRangeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6331E6A77FC2E3D30A97116654D6B25E /* MergeDataRangeRefiner.swift */; };
-		F9B0922A55E32C96B0D5A3A91F30C342 /* ESMonthNameLittleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB640B93F75FFB9FAAECC7272D0314 /* ESMonthNameLittleEndianParser.swift */; };
-		FA809DBF8D4D41E8E9432E689A04348B /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBE9692D1721D7E184C08111FEB9859 /* Parser.swift */; };
-		FCF5E5DF2E02ABB60CA73D9FAEFB1FBE /* DETimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E299A4869F4E972023DF5510227E456 /* DETimeExpressionParser.swift */; };
-		FD27DEAC28DB7DE5EF7FF22EEA409A03 /* MergeDateTimeRefiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB54788C1639A4B25A2B6116641A3A3E /* MergeDateTimeRefiner.swift */; };
-		FFB5F9E401C6968F2C2F8E9FB61748D3 /* ZHCasualDateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF93F6DEF99D3EF619ABD0474AD09E /* ZHCasualDateParser.swift */; };
+		EE9EBFE811793B515C882CE8F36FB4EB /* ENRelativeDateFormatParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA142DB5636D7DF8DB3DB966001BBE51 /* ENRelativeDateFormatParser.swift */; };
+		EEEFD6A17FC93B3877975B9ABFDDA114 /* ENMonthNameMiddleEndianParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACB980F44FB10B3303E56987943753E /* ENMonthNameMiddleEndianParser.swift */; };
+		EF680FCCB6BAD60CCB90D21783B69CB8 /* Bundle+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9895A72C38DC28E78B3B01FC5CB1B2F /* Bundle+Private.swift */; };
+		F275AF6D641A13676F9DD0DDBFDCEB32 /* JPStandardParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB8890B202D08C089B1AC85C5D015D /* JPStandardParser.swift */; };
+		F715B056A552B68196C7912799732392 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02019B62552BAC0E6BF7FBE15852867C /* InAppReceipt.swift */; };
+		F837A2A889315469861C3ADF12A66E25 /* ZHTimeExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7854185A52F61BF6E01585A8EA071A5 /* ZHTimeExpressionParser.swift */; };
+		F9A79C6B8F37E8D433829D0CBCB43377 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B422834A07C4CBED35851640DDA6005 /* Util.swift */; };
+		FB2C0D2FF63F19CA23138C0642270EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		FC74D6BFD98C8E835F2F6AAF7A5F74C1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2244100A99ECE8F3EEDB793AB500CFB /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		04F27A94E8645848EF48478F76AA179F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0094C5732658989072E66AA7FA2B439D;
-			remoteInfo = "Pods-Clendar";
-		};
-		112F3392AB75134EAD330617CCF82485 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A52921DF73518875229DA08E1C14710;
-			remoteInfo = SwiftyChrono;
-		};
-		2D8458E7F84CCAB57B199C7D83BBFB31 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B08332B0C91F6CDC405644DADDB96E3C;
-			remoteInfo = LicensePlist;
-		};
-		33CE94397A2C2DC21B2EBA2B4685C350 /* PBXContainerItemProxy */ = {
+		27A02A2CDA2221418E118F5E0C7C412D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 230984053C6652DFF510F450F21C5CF7;
 			remoteInfo = R.swift;
 		};
-		667D7FFAFF12F17236A4BD281B8ED62D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1CD0618C486973D5588EF20D2E8C0AEA;
-			remoteInfo = SwiftFormat;
-		};
-		791FE9A1325DE51C843E0D5F940D864F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B12748D8506CB48696BD90F2CA4F4E38;
-			remoteInfo = R.swift.Library;
-		};
-		85C37B3C7D34C86CC782C89A30298FE5 /* PBXContainerItemProxy */ = {
+		2EAAF8440F459341D4AF5C79CFB6E1D0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FE8F456426181A4F97124DC35E13B528;
 			remoteInfo = ASN1Swift;
 		};
-		8D84666A0E3C4BA2DF0B07AAA4B404A4 /* PBXContainerItemProxy */ = {
+		4CDEECFC37737149363388672E385CC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B08332B0C91F6CDC405644DADDB96E3C;
+			remoteInfo = LicensePlist;
+		};
+		7E9036B861D8302D40E662A790EACC3A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1B57BE90451F6BE7EAE9532832686713;
 			remoteInfo = TPInAppReceipt;
 		};
-		AB9A75329839328B5639D2AFC147A029 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
-			remoteInfo = SwiftLint;
-		};
-		B31381CFC2C03036FEB71EA43D96F913 /* PBXContainerItemProxy */ = {
+		93F812EF8C783A12352134C5BEBA95EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0094C5732658989072E66AA7FA2B439D;
 			remoteInfo = "Pods-Clendar";
 		};
-		D8CEC3C39526CB0796F9567B9D5E47A8 /* PBXContainerItemProxy */ = {
+		9BDB30575ED3600043A5153A6C9FA5BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CD0618C486973D5588EF20D2E8C0AEA;
+			remoteInfo = SwiftFormat;
+		};
+		D0D4095C442A000FB2B9A92E2D44687B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0094C5732658989072E66AA7FA2B439D;
+			remoteInfo = "Pods-Clendar";
+		};
+		D77F9D911C5E3C30F5A8F32E2815BEF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FE8F456426181A4F97124DC35E13B528;
 			remoteInfo = ASN1Swift;
+		};
+		E28B7C352070FA0E18A2C06CEFEFF51E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A52921DF73518875229DA08E1C14710;
+			remoteInfo = SwiftyChrono;
 		};
 		F557FC32C5C70B9072113FBFC20D6326 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -282,6 +267,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = B12748D8506CB48696BD90F2CA4F4E38;
 			remoteInfo = R.swift.Library;
+		};
+		F83FEF002CEA12FCCDA4D279B5EACFE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B12748D8506CB48696BD90F2CA4F4E38;
+			remoteInfo = R.swift.Library;
+		};
+		FA99FC5BEA455383C753BF3B33DF77C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -296,7 +295,7 @@
 		06D9ACF123D4D11162D368AE2F6C3F68 /* ENUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENUtil.swift; path = Sources/Utils/ENUtil.swift; sourceTree = "<group>"; };
 		06E5DD5F699049DF3446451AB27536E1 /* TPInAppReceipt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPInAppReceipt.debug.xcconfig; sourceTree = "<group>"; };
 		06FE06AD002E6F1D66C3E3B1D96ED135 /* FRMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FRMergeDateRangeRefiner.swift; path = Sources/Refiners/FR/FRMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
-		07CF2EE7058FD688BB88AB89F6F72B9E /* Pods_ClendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ClendarTests.framework; path = "Pods-ClendarTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CF2EE7058FD688BB88AB89F6F72B9E /* Pods-ClendarTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ClendarTests"; path = Pods_ClendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B03F0D2A6EF6F25041B7C9B4CB8474A /* SwiftyChrono-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyChrono-dummy.m"; sourceTree = "<group>"; };
 		0B44E3B532C647BF293E3B80165667A2 /* DEDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEDeadlineFormatParser.swift; path = Sources/Parsers/DE/DEDeadlineFormatParser.swift; sourceTree = "<group>"; };
 		0BEF93F6DEF99D3EF619ABD0474AD09E /* ZHCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHCasualDateParser.swift; path = Sources/Parsers/ZH/ZHCasualDateParser.swift; sourceTree = "<group>"; };
@@ -340,13 +339,13 @@
 		41969B791C0AD09B2F2DF1A1B582DBE9 /* SwiftyChrono.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyChrono.debug.xcconfig; sourceTree = "<group>"; };
 		425C0FFBBEC5DDF70B4327B6FB818C8D /* TPInAppReceipt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPInAppReceipt-dummy.m"; sourceTree = "<group>"; };
 		46C30B9BC0D4CBF9F8F51E1523581FCD /* Pods-ClendarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClendarUITests-dummy.m"; sourceTree = "<group>"; };
-		48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Clendar.framework; path = "Pods-Clendar.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Clendar"; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7C88BEC7F447557F2459AF51C99E34 /* Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extras.swift; path = Sources/Extras.swift; sourceTree = "<group>"; };
 		50DBC99401F1EF542ED33927BED9FE62 /* ENISOFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENISOFormatParser.swift; path = Sources/Parsers/EN/ENISOFormatParser.swift; sourceTree = "<group>"; };
 		530861966616BF364FADDFEBB469E260 /* Pods-ClendarUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ClendarUITests.modulemap"; sourceTree = "<group>"; };
 		53848C02F4763E1E7D0002500C3E0A69 /* Pods-ClendarTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClendarTests-dummy.m"; sourceTree = "<group>"; };
 		543CBD81620B011C36FD3147BFA50272 /* Bundle+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extension.swift"; path = "Sources/Bundle+Extension.swift"; sourceTree = "<group>"; };
-		55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TPInAppReceipt.framework; path = TPInAppReceipt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TPInAppReceipt; path = TPInAppReceipt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E8164A9689DBB2922F7AAEF66E9FF8 /* Foundation+ASN1Coder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Foundation+ASN1Coder.swift"; path = "Sources/asn1swift/Foundation+ASN1Coder.swift"; sourceTree = "<group>"; };
 		581E6ECC44FEF74F182A1821BD9C44F5 /* PKCS7.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7.swift; path = Sources/asn1swift/PKCS7/PKCS7.swift; sourceTree = "<group>"; };
 		5834AA6782480ED8D8A5DEDCDD447209 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
@@ -373,6 +372,7 @@
 		6F798CDDE1DFC101867C1C4D9F857921 /* OverlapRemovalRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OverlapRemovalRefiner.swift; path = Sources/Refiners/OverlapRemovalRefiner.swift; sourceTree = "<group>"; };
 		70E6BEA6E55686C45A0CF007D5D291C8 /* ZHWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHWeekdayParser.swift; path = Sources/Parsers/ZH/ZHWeekdayParser.swift; sourceTree = "<group>"; };
 		72A5D4E9F12CCC9E2B7E15C0F3888A90 /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		74CD3E5F2196543B60A9F0E6E5B7430C /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
 		75F8516C4166F624FEB9448682D555C6 /* R.swift.Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.debug.xcconfig; sourceTree = "<group>"; };
 		76EFEAAC8CE173311375DE1AD46EFA4D /* ASN1Templates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ASN1Templates.swift; path = Sources/asn1swift/ASN1Templates.swift; sourceTree = "<group>"; };
@@ -392,7 +392,7 @@
 		89AA072C610B1630F93B6D0F5ED4903D /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
 		89B77496C6D48CCF5D66357E1D687B47 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
 		89CDA6B7766573C279038E8F2A61691E /* DEMonthNameLittleEndianParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DEMonthNameLittleEndianParser.swift; path = Sources/Parsers/DE/DEMonthNameLittleEndianParser.swift; sourceTree = "<group>"; };
-		89E92F11A6FAC6FAE446508EA7D355D5 /* Pods_ClendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ClendarUITests.framework; path = "Pods-ClendarUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E92F11A6FAC6FAE446508EA7D355D5 /* Pods-ClendarUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ClendarUITests"; path = Pods_ClendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B22B6BAA7CD9D269C4B78ACD4D2AE3A /* ZHDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHDateParser.swift; path = Sources/Parsers/ZH/ZHDateParser.swift; sourceTree = "<group>"; };
 		8B422834A07C4CBED35851640DDA6005 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = Sources/Utils/Util.swift; sourceTree = "<group>"; };
 		8BBE9692D1721D7E184C08111FEB9859 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parsers/Parser.swift; sourceTree = "<group>"; };
@@ -431,17 +431,15 @@
 		C4773DD255D1B81773E8E03541BBBE8C /* R.swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.release.xcconfig; sourceTree = "<group>"; };
 		C7854185A52F61BF6E01585A8EA071A5 /* ZHTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHTimeExpressionParser.swift; path = Sources/Parsers/ZH/ZHTimeExpressionParser.swift; sourceTree = "<group>"; };
 		C845F4EC76898A2AD3711830B9B518D4 /* ENSlashMonthFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashMonthFormatParser.swift; path = Sources/Parsers/EN/ENSlashMonthFormatParser.swift; sourceTree = "<group>"; };
-		C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Rswift.framework; path = R.swift.Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4E3B66CE4D02048C77392B64FD0ABB /* R.swift.Library */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = R.swift.Library; path = Rswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B19640BF4FEE09A130CA3F1C18BBA /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
 		CC317016250AC16073E9E4E0FAB66603 /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
 		CC424AF7A4DA40795A23A1F5C3543F46 /* TPInAppReceipt-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPInAppReceipt-prefix.pch"; sourceTree = "<group>"; };
-		CCC4B3D12CD1FB0EB6E7D7148803E553 /* ASN1Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ASN1Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8E91EDCC0C0B063DC9F2D79790F8C2 /* ESTimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESTimeExpressionParser.swift; path = Sources/Parsers/ES/ESTimeExpressionParser.swift; sourceTree = "<group>"; };
 		D06F0941F4BB93E5543CD140C03B21AB /* ZHUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHUtil.swift; path = Sources/Utils/ZHUtil.swift; sourceTree = "<group>"; };
 		D20A317560AB31B840FD0B498602589D /* ESCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESCasualDateParser.swift; path = Sources/Parsers/ES/ESCasualDateParser.swift; sourceTree = "<group>"; };
 		D2CC53DA6523961C6BD904C956DE33C6 /* R.swift.Library-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift.Library-Info.plist"; sourceTree = "<group>"; };
-		D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyChrono.framework; path = SwiftyChrono.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyChrono; path = SwiftyChrono.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D490422C4533B15CC95CFAAE8AF12B45 /* TPInAppReceipt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPInAppReceipt-umbrella.h"; sourceTree = "<group>"; };
 		D4F0B491657F15BC7E1EC098F40C4A51 /* ASN1Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ASN1Types.swift; path = Sources/asn1swift/ASN1Types.swift; sourceTree = "<group>"; };
 		D5A885E09F144FD4D3A12B1939DC5DC0 /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
@@ -458,7 +456,7 @@
 		E210817FC8C126D878C95C7E025A4C38 /* ENWeekdayParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENWeekdayParser.swift; path = Sources/Parsers/EN/ENWeekdayParser.swift; sourceTree = "<group>"; };
 		E5F60EAA8D6EBC6EF87A7731855493CA /* DecodingError+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DecodingError+Extensions.swift"; path = "Sources/asn1swift/DecodingError+Extensions.swift"; sourceTree = "<group>"; };
 		E7017F1598F2A634D781EECB4CB997D8 /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
-		E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ASN1Swift.framework; path = ASN1Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ASN1Swift; path = ASN1Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93BCE4EBC867AEE17647648AB1CE4BB /* ASN1Decoder+UnkeyedDecodingContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ASN1Decoder+UnkeyedDecodingContainer.swift"; path = "Sources/asn1swift/ASN1Decoder+UnkeyedDecodingContainer.swift"; sourceTree = "<group>"; };
 		E995837E232CF8BB235CE793E47F3E54 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
 		EA30B441DE6862BBA710C0969EC48700 /* ESDeadlineFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESDeadlineFormatParser.swift; path = Sources/Parsers/ES/ESDeadlineFormatParser.swift; sourceTree = "<group>"; };
@@ -487,11 +485,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		371DD1ED782510D7F0DAE554972A939E /* Frameworks */ = {
+		37D0C89E045C446E4094B314C83875C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1872793A941C4F7FE637F10410F02287 /* Foundation.framework in Frameworks */,
+				C716FEB5537EDEF5CE72612F9CA0A450 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,44 +501,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6133D2AFC94EF6BDDACD483C53BB0A24 /* Frameworks */ = {
+		6C9363D3EAA8C6517E76B7EEB05C1078 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7126159E2F44B4C1C0EDF5BF64E687BD /* Foundation.framework in Frameworks */,
+				DF6C9D7DE354E801A0135CCAF29F5C2A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7A0A57C060CE78A1DB76B95A13E9A340 /* Frameworks */ = {
+		B1CE7E84DF3D208AB3B504FC0D5A4F02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6F20F46E11D5F8A5A036E79F8EE95D /* ASN1Swift.framework in Frameworks */,
-				C16F50B89E7B439330A7AC09F1C6C4E0 /* Foundation.framework in Frameworks */,
+				FB2C0D2FF63F19CA23138C0642270EFC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC955D95E525AF5F41CCB28B1F214F6F /* Frameworks */ = {
+		E8473334EE7615EC38A0CDC4153EF467 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8251B941BAC9DBE013871CA9D12FFC9B /* Foundation.framework in Frameworks */,
+				89E4FC47903BD0EF7350ED2AC2F7FB4C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD6FC101155DD122B7DDFA59BC143099 /* Frameworks */ = {
+		EABCEE7EA916879E577EB6AFDFC6D23D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13C25DBEA2D6D43B0A9CF3A53A3E2F05 /* Foundation.framework in Frameworks */,
+				99C288EAA8D8178A328B908199691D1B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD99CCC659F828FC9856BAC8A0CD9344 /* Frameworks */ = {
+		F2F60974719F9E8BDDB3277CBDEEE55C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB341CD191242527CE72735D99C67B2 /* Foundation.framework in Frameworks */,
+				36EF2E4532AA6ADA936F79E22E5BB8C4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,12 +564,18 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		232C2A8C526CBCD55031111C4E4140F9 /* iOS */ = {
+		211CD94B08582012B795AF8226EA6484 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C97A835A75098CA84B83316FF9B62FF5 /* Foundation.framework */,
+				E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift */,
+				48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */,
+				07CF2EE7058FD688BB88AB89F6F72B9E /* Pods-ClendarTests */,
+				89E92F11A6FAC6FAE446508EA7D355D5 /* Pods-ClendarUITests */,
+				CA4E3B66CE4D02048C77392B64FD0ABB /* R.swift.Library */,
+				D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */,
+				55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt */,
 			);
-			name = iOS;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		298352789BD03245B035A28EDA39A556 /* ASN1Swift */ = {
@@ -667,6 +670,14 @@
 			path = LicensePlist;
 			sourceTree = "<group>";
 		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		6038DB51EAAD953D9C0C034C75E761D6 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,29 +685,6 @@
 			);
 			name = SwiftLint;
 			path = SwiftLint;
-			sourceTree = "<group>";
-		};
-		6AE1AFA6B09FB2215B89336176B17187 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CCC4B3D12CD1FB0EB6E7D7148803E553 /* ASN1Swift.framework */,
-				232C2A8C526CBCD55031111C4E4140F9 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C40E297E76BF05DBEB852F40DE13A6F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift.framework */,
-				48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */,
-				07CF2EE7058FD688BB88AB89F6F72B9E /* Pods_ClendarTests.framework */,
-				89E92F11A6FAC6FAE446508EA7D355D5 /* Pods_ClendarUITests.framework */,
-				CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */,
-				D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */,
-				55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		6D8B4DFE380D3CD4B279601D6670AF83 /* Support Files */ = {
@@ -777,9 +765,9 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				6AE1AFA6B09FB2215B89336176B17187 /* Frameworks */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				8F7A38BB986620C4FAE8ABD78DB3D7D2 /* Pods */,
-				6C40E297E76BF05DBEB852F40DE13A6F /* Products */,
+				211CD94B08582012B795AF8226EA6484 /* Products */,
 				7FDC572D7684A34D3C8A068A7ED450A1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -792,6 +780,14 @@
 			);
 			name = TPInAppReceipt;
 			path = TPInAppReceipt;
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DA117B92E78780ACA527DE7C49041CAD /* Support Files */ = {
@@ -981,43 +977,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		07FA7611C614170BC5A488465326BFDC /* Headers */ = {
+		58AD53EFA0AA012D66C3EEE0A2C212FF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD36AB0E8D799C3BFC9B74F0639FFF12 /* Pods-ClendarUITests-umbrella.h in Headers */,
+				C2660F13D2A1F99B2F1EBE177880E5BE /* SwiftyChrono-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09B36B173237FF1DAC8AA11931410192 /* Headers */ = {
+		7C4EF0E6DC661978F54CD427C25ACDDE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				002DA5A20BFD28A004129264EC95BBA0 /* Pods-Clendar-umbrella.h in Headers */,
+				6BF3EA9702B992174C43C61F6B38CC6F /* ASN1Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5B402FA624CCE3382316D3161AD7B296 /* Headers */ = {
+		AEF6CFCB472D4B240662AD3DEFF4C90E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D967B94BD6CDD059C6DA690E853A12F0 /* SwiftyChrono-umbrella.h in Headers */,
+				406DEB6070B6511AFDCC84A909B6639E /* Pods-ClendarUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76ED0B3FF08056FFDE64188FF77C8D7D /* Headers */ = {
+		B263236860D16E4D2FFBD0718A7EE4B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B9E6886BDCDC09DEE11E22DF5543EC /* ASN1Swift-umbrella.h in Headers */,
+				6B45777715079651B180628D2B4BC0BF /* Pods-ClendarTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0B625DB96C813993DBAFC03A789E237 /* Headers */ = {
+		B4581F2CB2D01AA3B5332CBBFB596627 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603773FDE7DFB8F99AEBD705285AC3FE /* TPInAppReceipt-umbrella.h in Headers */,
+				16C0E660FEC699625A6731581AA8FFAB /* TPInAppReceipt-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE7180F3E7716B2E2608AAEF42970C11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0AD2D82FA0EE640440019909C5045E /* Pods-Clendar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,89 +1033,81 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD5C680B55B2174776F248E2244A2DC1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFE1851C6ED54A1A56492B60C58CB1C9 /* Pods-ClendarTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0094C5732658989072E66AA7FA2B439D /* Pods-Clendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6DB57556EFAE3AB5D8B55CCA0142519B /* Build configuration list for PBXNativeTarget "Pods-Clendar" */;
+			buildConfigurationList = D382CD2FF558B7CFA10311D255C70B88 /* Build configuration list for PBXNativeTarget "Pods-Clendar" */;
 			buildPhases = (
-				09B36B173237FF1DAC8AA11931410192 /* Headers */,
-				83D2AF6F0DA6D1BE5709BFB3755054A9 /* Sources */,
-				BD99CCC659F828FC9856BAC8A0CD9344 /* Frameworks */,
-				5305126D28B5C8D676665F7C8D3CECD0 /* Resources */,
+				BE7180F3E7716B2E2608AAEF42970C11 /* Headers */,
+				468A6B6004A3498C0C55AF1395B243AB /* Sources */,
+				E8473334EE7615EC38A0CDC4153EF467 /* Frameworks */,
+				0339A84972B92306ECC791B73EBE9932 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6FB9AF6B50B4C6D9375E5CDBADDA1737 /* PBXTargetDependency */,
-				A5578054679B6B5E5DF616045A92334A /* PBXTargetDependency */,
-				5D1B05B1B882C1037BC1C9528D918317 /* PBXTargetDependency */,
-				6641A041CA7CA0E81F4F35987AAC008F /* PBXTargetDependency */,
-				248D410E2FAA0CE676AC9D8B232221F4 /* PBXTargetDependency */,
-				5A7F8CAA960E1C9575569E7EEE578B25 /* PBXTargetDependency */,
-				C736935E6F52A4D6B431B94916374FF3 /* PBXTargetDependency */,
-				834988D1418168A8586F7C9FF482485A /* PBXTargetDependency */,
+				CC47B6BF8703CCFBCFF3F508500D771F /* PBXTargetDependency */,
+				CA1577329168C0C6087CE7FB118544A9 /* PBXTargetDependency */,
+				B7EF94D01D674561BC149FAC3916A9BF /* PBXTargetDependency */,
+				6616D49BBB50831F27931179E978F107 /* PBXTargetDependency */,
+				3298B6EC49F2D7F44FB24B9B52956DF7 /* PBXTargetDependency */,
+				7E8C99E9A79276CEAFF1347D0965FB29 /* PBXTargetDependency */,
+				9320CEF5A16A820ADB75A04B5AF5B218 /* PBXTargetDependency */,
+				CCCF348FE321A43B0105EEFC0DA8FF0E /* PBXTargetDependency */,
 			);
 			name = "Pods-Clendar";
-			productName = "Pods-Clendar";
-			productReference = 48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */;
+			productName = Pods_Clendar;
+			productReference = 48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */;
 			productType = "com.apple.product-type.framework";
 		};
 		0174868C54347C1E064D681160122EAA /* Pods-ClendarUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48A67BC2CDC26F52DDFD57ECDB2B4F9A /* Build configuration list for PBXNativeTarget "Pods-ClendarUITests" */;
+			buildConfigurationList = 5975AFE6A65543E60DAFEA011E9736A4 /* Build configuration list for PBXNativeTarget "Pods-ClendarUITests" */;
 			buildPhases = (
-				07FA7611C614170BC5A488465326BFDC /* Headers */,
-				1C01DCF84F0887B67F2C76E3BEF30B79 /* Sources */,
-				BC955D95E525AF5F41CCB28B1F214F6F /* Frameworks */,
-				1CC99C17DD5140362D20D9272F13609E /* Resources */,
+				AEF6CFCB472D4B240662AD3DEFF4C90E /* Headers */,
+				5527F3B0C6A42F41C5F052EC621A2E1B /* Sources */,
+				6C9363D3EAA8C6517E76B7EEB05C1078 /* Frameworks */,
+				10A151FA6085B6D247EF2069E7981E94 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E225D451D1EA00D82F60BEFDFFE6EF2A /* PBXTargetDependency */,
+				F1353F004674086BE045D44A538DF43A /* PBXTargetDependency */,
 			);
 			name = "Pods-ClendarUITests";
-			productName = "Pods-ClendarUITests";
-			productReference = 89E92F11A6FAC6FAE446508EA7D355D5 /* Pods_ClendarUITests.framework */;
+			productName = Pods_ClendarUITests;
+			productReference = 89E92F11A6FAC6FAE446508EA7D355D5 /* Pods-ClendarUITests */;
 			productType = "com.apple.product-type.framework";
 		};
 		1B57BE90451F6BE7EAE9532832686713 /* TPInAppReceipt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCAF6B8DEE7946EF571DE3AA69ACFC58 /* Build configuration list for PBXNativeTarget "TPInAppReceipt" */;
+			buildConfigurationList = D3AEBAF061F327FC97E847CCCFB8E08E /* Build configuration list for PBXNativeTarget "TPInAppReceipt" */;
 			buildPhases = (
-				B0B625DB96C813993DBAFC03A789E237 /* Headers */,
-				8F9F6D2110C9CFDF1F27F971FCEC3AEF /* Sources */,
-				7A0A57C060CE78A1DB76B95A13E9A340 /* Frameworks */,
-				D3744A8E957CFAFF31128B39C8F763F5 /* Resources */,
+				B4581F2CB2D01AA3B5332CBBFB596627 /* Headers */,
+				9CFEA391F09270A9BCE2D53F1FEB76A7 /* Sources */,
+				F2F60974719F9E8BDDB3277CBDEEE55C /* Frameworks */,
+				F156E3415504494D700A9C6219CA5566 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03CBE67CC817FAD080488C5C37E3EA6E /* PBXTargetDependency */,
+				30716268DF93735B22B7EBD98E48AB4B /* PBXTargetDependency */,
 			);
 			name = TPInAppReceipt;
 			productName = TPInAppReceipt;
-			productReference = 55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt.framework */;
+			productReference = 55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt */;
 			productType = "com.apple.product-type.framework";
 		};
 		2A52921DF73518875229DA08E1C14710 /* SwiftyChrono */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0F70EA60D0EB0D8E7BBE23210B364DA /* Build configuration list for PBXNativeTarget "SwiftyChrono" */;
+			buildConfigurationList = D09DAD71C241F9D852666C666594B01D /* Build configuration list for PBXNativeTarget "SwiftyChrono" */;
 			buildPhases = (
-				5B402FA624CCE3382316D3161AD7B296 /* Headers */,
-				0B49E1875ED03E80C2C0DBB353058705 /* Sources */,
-				6133D2AFC94EF6BDDACD483C53BB0A24 /* Frameworks */,
-				D1E918ABADA428BE6E858C369ED613B6 /* Resources */,
+				58AD53EFA0AA012D66C3EEE0A2C212FF /* Headers */,
+				72733692DAF6A761A1A11508DF129A59 /* Sources */,
+				B1CE7E84DF3D208AB3B504FC0D5A4F02 /* Frameworks */,
+				538117E8A0DD8D790A70E4660725BC61 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1119,26 +1115,26 @@
 			);
 			name = SwiftyChrono;
 			productName = SwiftyChrono;
-			productReference = D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */;
+			productReference = D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */;
 			productType = "com.apple.product-type.framework";
 		};
 		7C3A7A9FFE9704119A71F1B54078492B /* Pods-ClendarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7E6924939F1725C666D96901D9BA298 /* Build configuration list for PBXNativeTarget "Pods-ClendarTests" */;
+			buildConfigurationList = 3BC23A1613B77F9C05E4D312E5E97264 /* Build configuration list for PBXNativeTarget "Pods-ClendarTests" */;
 			buildPhases = (
-				CD5C680B55B2174776F248E2244A2DC1 /* Headers */,
-				3D17C88E8B89E6BC6F39501BD4B04003 /* Sources */,
-				371DD1ED782510D7F0DAE554972A939E /* Frameworks */,
-				97B6B19C33CB0A4740C49354734710D9 /* Resources */,
+				B263236860D16E4D2FFBD0718A7EE4B7 /* Headers */,
+				865506BC62FD7DB71309E1A9A84D2385 /* Sources */,
+				EABCEE7EA916879E577EB6AFDFC6D23D /* Frameworks */,
+				8B5A0D6884D60858A0B300E18DB29E27 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7F7DB74A56817525C434E99A476BD980 /* PBXTargetDependency */,
+				2462665D9690565B71F4C12769E0826A /* PBXTargetDependency */,
 			);
 			name = "Pods-ClendarTests";
-			productName = "Pods-ClendarTests";
-			productReference = 07CF2EE7058FD688BB88AB89F6F72B9E /* Pods_ClendarTests.framework */;
+			productName = Pods_ClendarTests;
+			productReference = 07CF2EE7058FD688BB88AB89F6F72B9E /* Pods-ClendarTests */;
 			productType = "com.apple.product-type.framework";
 		};
 		B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */ = {
@@ -1155,18 +1151,18 @@
 			dependencies = (
 			);
 			name = R.swift.Library;
-			productName = R.swift.Library;
-			productReference = CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */;
+			productName = Rswift;
+			productReference = CA4E3B66CE4D02048C77392B64FD0ABB /* R.swift.Library */;
 			productType = "com.apple.product-type.framework";
 		};
 		FE8F456426181A4F97124DC35E13B528 /* ASN1Swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5C3389487050994C422ACBAE335F002B /* Build configuration list for PBXNativeTarget "ASN1Swift" */;
+			buildConfigurationList = A438BDCF4333A15C4F84E6924578AF7D /* Build configuration list for PBXNativeTarget "ASN1Swift" */;
 			buildPhases = (
-				76ED0B3FF08056FFDE64188FF77C8D7D /* Headers */,
-				50F77327170A9FDFB38563B5D86DB8DE /* Sources */,
-				BD6FC101155DD122B7DDFA59BC143099 /* Frameworks */,
-				F7FA1EBF44E38ED0CDED146BC2DD3148 /* Resources */,
+				7C4EF0E6DC661978F54CD427C25ACDDE /* Headers */,
+				4F93214E73BB37E835061E1D329A958C /* Sources */,
+				37D0C89E045C446E4094B314C83875C0 /* Frameworks */,
+				3A632DE910118322DFD8413501521A50 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1174,7 +1170,7 @@
 			);
 			name = ASN1Swift;
 			productName = ASN1Swift;
-			productReference = E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift.framework */;
+			productReference = E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1183,19 +1179,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 6C40E297E76BF05DBEB852F40DE13A6F /* Products */;
+			productRefGroup = 211CD94B08582012B795AF8226EA6484 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1215,40 +1211,38 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1CC99C17DD5140362D20D9272F13609E /* Resources */ = {
+		0339A84972B92306ECC791B73EBE9932 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5305126D28B5C8D676665F7C8D3CECD0 /* Resources */ = {
+		10A151FA6085B6D247EF2069E7981E94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97B6B19C33CB0A4740C49354734710D9 /* Resources */ = {
+		3A632DE910118322DFD8413501521A50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1E918ABADA428BE6E858C369ED613B6 /* Resources */ = {
+		538117E8A0DD8D790A70E4660725BC61 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3744A8E957CFAFF31128B39C8F763F5 /* Resources */ = {
+		8B5A0D6884D60858A0B300E18DB29E27 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A94B266282DC3D21416F91E871DB74 /* AppleIncRootCertificate.cer in Resources */,
-				8CEF395E4C9068813022913F87E1FF5B /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1259,104 +1253,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F7FA1EBF44E38ED0CDED146BC2DD3148 /* Resources */ = {
+		F156E3415504494D700A9C6219CA5566 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E6E5A80FE94AC1AC16BCBE356268783 /* AppleIncRootCertificate.cer in Resources */,
+				17082B5D0E5EDE46AEB3C4DC983E7A46 /* StoreKitTestCertificate.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B49E1875ED03E80C2C0DBB353058705 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EF621CB33D2E63488D867ED7B45ACA29 /* Chrono.swift in Sources */,
-				56631E42D98A574896D1AAE0959A5571 /* Date.swift in Sources */,
-				863F7091770489D9C3CE3357370284CB /* DECasualDateParser.swift in Sources */,
-				8695E5D5E4B90DC10AA8450326D71AB1 /* DECasualTimeParser.swift in Sources */,
-				7E39DBEFE60622D9D85A352756FA111A /* DEDeadlineFormatParser.swift in Sources */,
-				7863EE68F291F4522601FE153CAEC0D9 /* DEMergeDateRangeRefiner.swift in Sources */,
-				CAFE4795368C98BCE3FD5AC0CF949409 /* DEMergeDateTimeRefiner.swift in Sources */,
-				342327D99FA52279677E0E4D1F98CC74 /* DEMonthNameLittleEndianParser.swift in Sources */,
-				0E0C601E2BC86D1A92A8CF6175FB051C /* DEMorgenTimeParser.swift in Sources */,
-				16C4EF1FFDC8718E15895AAFE28443C5 /* DESlashDateFormatParser.swift in Sources */,
-				BB45C286354797622F6FF8CED67375E2 /* DETimeAgoFormatParser.swift in Sources */,
-				FCF5E5DF2E02ABB60CA73D9FAEFB1FBE /* DETimeExpressionParser.swift in Sources */,
-				A81B32A60075EBCF2BD829381E8DAFEB /* DEUtil.swift in Sources */,
-				1EE06A48761CDB7B8AB6A1E3459106C1 /* DEWeekdayParser.swift in Sources */,
-				3FCD0F1592B8F7BEF1168B4A981D30B3 /* ENCasualDateParser.swift in Sources */,
-				3CEE25E31D8444E3ACCF783EA393793D /* ENCasualTimeParser.swift in Sources */,
-				29799897557FF9E1291D8CA76DFEE149 /* ENDeadlineFormatParser.swift in Sources */,
-				30361AAB0910530951FE8619F44AA07A /* ENISOFormatParser.swift in Sources */,
-				4F562BF92E443E17BCE709C862BEE6D3 /* ENMergeDateRangeRefiner.swift in Sources */,
-				39135EA597FC25F56C28A42B84E9BFE6 /* ENMergeDateTimeRefiner.swift in Sources */,
-				E1BCFCA84A556F5D9890F13EC1C7FA8F /* ENMonthNameLittleEndianParser.swift in Sources */,
-				1D2AA23F02F1C7BE84247AC7A3FCBF62 /* ENMonthNameMiddleEndianParser.swift in Sources */,
-				34756322ADDC0175C5A6319158659808 /* ENMonthNameParser.swift in Sources */,
-				075C936615700BD48765935840C29C69 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
-				45880AA004FED83EF0B6E37326799826 /* ENRelativeDateFormatParser.swift in Sources */,
-				67AE720CF79686F080A72E90C82643B3 /* ENSlashDateFormatParser.swift in Sources */,
-				F4C63EA84BDFE313716C3FA2224CCB65 /* ENSlashDateFormatStartWithYearParser.swift in Sources */,
-				D22867BE0C2EDF15E6FBD4ADB0546EB8 /* ENSlashMonthFormatParser.swift in Sources */,
-				6292000BF798158FC18C7B765290293D /* ENTimeAgoFormatParser.swift in Sources */,
-				D1BC36B6CB61F519A60F15B78943C474 /* ENTimeExpressionParser.swift in Sources */,
-				C682D6613B94F2A1901C2CD1DB02F63F /* ENUtil.swift in Sources */,
-				2BCFFD3C6CD8BF40C4E2E8FBECF84400 /* ENWeekdayParser.swift in Sources */,
-				F79B60A5288AC5759F75C31C0AD8E938 /* ESCasualDateParser.swift in Sources */,
-				F24D8797E53E4724F4E8BDF084B9BECD /* ESDeadlineFormatParser.swift in Sources */,
-				F9B0922A55E32C96B0D5A3A91F30C342 /* ESMonthNameLittleEndianParser.swift in Sources */,
-				D6E8128B6D35859F2AE33047DDFE6412 /* ESSlashDateFormatParser.swift in Sources */,
-				E392AFFD58495012DFEE001FE930277B /* ESTimeAgoFormatParser.swift in Sources */,
-				17D18976A7CE63DDA1023479BA75CD39 /* ESTimeExpressionParser.swift in Sources */,
-				15FC5D154FCDD3A15786D55587955362 /* ESUtil.swift in Sources */,
-				688C1B168283B3B28D6361F61D85E6F8 /* ESWeekdayParser.swift in Sources */,
-				9D556F68DF85CF1B62E4EDE040FEE4C2 /* ExtractTimezoneAbbrRefiner.swift in Sources */,
-				935E7AA997CAD06E94A967F792E1F54C /* ExtractTimezoneOffsetRefiner.swift in Sources */,
-				9882ABD0A9F9828B67CE176757739406 /* ForwardDateRefiner.swift in Sources */,
-				74CE769277CDF092261930957AF34000 /* FRCasualDateParser.swift in Sources */,
-				CB9D41FED913CEB9B76EE0930EB1DFD9 /* FRDeadlineFormatParser.swift in Sources */,
-				A9813A19F57B00E880C2AA2F5A7428FA /* FRMergeDateRangeRefiner.swift in Sources */,
-				B532B92E86A345C0D747C80AEBC763CC /* FRMergeDateTimeRefiner.swift in Sources */,
-				02BC08BAD7A4BE00A7F2EC3116D58EA3 /* FRMonthNameLittleEndianParser.swift in Sources */,
-				05A7D0690B8E58888A7641B57C1807EA /* FRSlashDateFormatParser.swift in Sources */,
-				04089FC062ED5E77A8810DD0EF057746 /* FRTimeAgoFormatParser.swift in Sources */,
-				D09F6421CD91DA4007C895B634ADC719 /* FRTimeExpressionParser.swift in Sources */,
-				05ACF752090B4B3F80ADC0C5EFDFD64C /* FRUtil.swift in Sources */,
-				AF104A62F19C825EBAAC0A5DA260CAAD /* FRWeekdayParser.swift in Sources */,
-				71351D37BE9B6CD6A9A609A2ED0E3F5B /* JPCasualDateParser.swift in Sources */,
-				D2426C967FA65150B644B8880877288F /* JPMergeDateRangeRefiner.swift in Sources */,
-				0BA57AED326571818237A04BAC8C48FB /* JPStandardParser.swift in Sources */,
-				BD11AFCE9BC28A34EC44A68F4998735C /* JPUtil.swift in Sources */,
-				F8019B71D85C91E0B35A13848B519582 /* MergeDataRangeRefiner.swift in Sources */,
-				FD27DEAC28DB7DE5EF7FF22EEA409A03 /* MergeDateTimeRefiner.swift in Sources */,
-				9D9005163A2A776EB36EE33E51EBFAF7 /* Options.swift in Sources */,
-				4E7007895722C63B61ECE7B863A8061D /* OverlapRemovalRefiner.swift in Sources */,
-				FA809DBF8D4D41E8E9432E689A04348B /* Parser.swift in Sources */,
-				E66D1D3C5DDBC9BCCB80776C332E973B /* Refiner.swift in Sources */,
-				AA8525E3B2078CF80ABC6A0A4B71F909 /* Result.swift in Sources */,
-				A8D2A111F0A4D0E1EB016E176667D764 /* SwiftyChrono-dummy.m in Sources */,
-				0BC714466B1F927803CF6747ECE29CCC /* UnlikelyFormatFilter.swift in Sources */,
-				B8C6CD06D17B9BF0FE3CF6E889199163 /* Util.swift in Sources */,
-				FFB5F9E401C6968F2C2F8E9FB61748D3 /* ZHCasualDateParser.swift in Sources */,
-				A36DCE1548158177A68D870095D37985 /* ZHDateParser.swift in Sources */,
-				92546383C29D6CAC4B45A1FE83D10C25 /* ZHDeadlineFormatParser.swift in Sources */,
-				0A3C2E20B249F67A15CB45296F33D695 /* ZHTimeExpressionParser.swift in Sources */,
-				EB704B50D5D2B979DE5CC801E8F21052 /* ZHUtil.swift in Sources */,
-				70BC1F9B31C12DB24950FD191EC23C67 /* ZHWeekdayParser.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1C01DCF84F0887B67F2C76E3BEF30B79 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				146DB55F56F4DD052EF2AB32F5C2B867 /* Pods-ClendarUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		390FC5CBD8DD196A6E0282253B0E0A45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1392,177 +1300,230 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D17C88E8B89E6BC6F39501BD4B04003 /* Sources */ = {
+		468A6B6004A3498C0C55AF1395B243AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4414A1BE3C1ACC441C36AAD295998B81 /* Pods-ClendarTests-dummy.m in Sources */,
+				DE089A3241AC73B51B9FA0E337081290 /* Pods-Clendar-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50F77327170A9FDFB38563B5D86DB8DE /* Sources */ = {
+		4F93214E73BB37E835061E1D329A958C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60556D68174EB6C11ECC7D547EE072CE /* ASN1Coder.swift in Sources */,
-				194E3E41349A9D99E31FE62B4E0C7312 /* ASN1Decoder.swift in Sources */,
-				302B7CB3D07964787363162448AAC943 /* ASN1Decoder+Extras.swift in Sources */,
-				330232E5C048615C4EA53384350731BE /* ASN1Decoder+KeyedDecodingContainer.swift in Sources */,
-				861253AD0A76E89E4151ADB1A520982B /* ASN1Decoder+SingleValueContainer.swift in Sources */,
-				EB611150D3DF8A0C0E32C01BB215C15D /* ASN1Decoder+Unboxing.swift in Sources */,
-				8BBE7CD2729AD80CCDCDC0A3B08D5095 /* ASN1Decoder+UnkeyedDecodingContainer.swift in Sources */,
-				F48BD542075355E67D0987E37103A38F /* ASN1Decoder+Utils.swift in Sources */,
-				2C90C384F440A2A3FA7A110C25A1684C /* ASN1Serialization.swift in Sources */,
-				CBB61ED17574AAF505592C5DDE329C85 /* ASN1Swift-dummy.m in Sources */,
-				34D7FE028FAE68D7EF73E46A5F7A0006 /* ASN1Templates.swift in Sources */,
-				36BDD0B06CA30E1BBEAFF6C8ACCB5E64 /* ASN1Types.swift in Sources */,
-				29CE31E2A282E4C84DA543D69C1BE7D8 /* DecodingError+Extensions.swift in Sources */,
-				7CBE00660AE5385B464659B7864304BC /* Foundation+ASN1Coder.swift in Sources */,
-				781A0954EA33401C43F6C06F5488DB79 /* PKCS7.swift in Sources */,
+				144EBF9CBF74F29B8643003F0E9F1FF9 /* ASN1Coder.swift in Sources */,
+				0941E837B9747B426B62DB07F61FEFF0 /* ASN1Decoder.swift in Sources */,
+				80814EB9153FAE6DD4183D98759E453F /* ASN1Decoder+Extras.swift in Sources */,
+				EB0998700AA54AF73CDC83034DBF4F23 /* ASN1Decoder+KeyedDecodingContainer.swift in Sources */,
+				09D6B7AE175E4F2F6B117762DA2B686A /* ASN1Decoder+SingleValueContainer.swift in Sources */,
+				713520F09D567C27422EC631142F2FD5 /* ASN1Decoder+Unboxing.swift in Sources */,
+				DA003C9A3DBB4DD6E3936C64B7E9FF4B /* ASN1Decoder+UnkeyedDecodingContainer.swift in Sources */,
+				8C4B46B4DE487681477C6D97D9BD11CE /* ASN1Decoder+Utils.swift in Sources */,
+				3EEF326DF0C9BB4379CA8DD211269614 /* ASN1Serialization.swift in Sources */,
+				E1388FA7EA2089FF40444D80AD709C1C /* ASN1Swift-dummy.m in Sources */,
+				73D592B64E6F94B74B29986EEA5D002D /* ASN1Templates.swift in Sources */,
+				92A7ABB4B3D1973A841F714B8FE73190 /* ASN1Types.swift in Sources */,
+				C3E52ACDD2789688E898FA16D8E9CCEC /* DecodingError+Extensions.swift in Sources */,
+				9BA1F8EA7E6DE3ACCCFE42FF6F23AD1B /* Foundation+ASN1Coder.swift in Sources */,
+				0B699CDC2F433E0BBCAFF2402820CB81 /* PKCS7.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83D2AF6F0DA6D1BE5709BFB3755054A9 /* Sources */ = {
+		5527F3B0C6A42F41C5F052EC621A2E1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E645927C558ED1F22B4FF23EB5C73F88 /* Pods-Clendar-dummy.m in Sources */,
+				D289917E329B0EBCCE097FFAAD3CD4E1 /* Pods-ClendarUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F9F6D2110C9CFDF1F27F971FCEC3AEF /* Sources */ = {
+		72733692DAF6A761A1A11508DF129A59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D137307A8BC57905EF680EBF09BA37E7 /* Bundle+Extension.swift in Sources */,
-				0B503DE5A465EC2FA45F8606A20FC1A4 /* Bundle+Private.swift in Sources */,
-				7873A564BA89D6990CD0235921AFD319 /* Data+Extension.swift in Sources */,
-				EA06F38982C856BFCE5F13BE55712CC0 /* Date+Extension.swift in Sources */,
-				0DF01ECDBC2868E013C0218D36067E42 /* Extras.swift in Sources */,
-				6635123F07FA686D3563E750F32C19B1 /* IARError.swift in Sources */,
-				56569EC61E69C086FBA038452D21D5AB /* InAppPurchase.swift in Sources */,
-				30B955830FD327E9EDEB9E0F220CDF36 /* InAppReceipt.swift in Sources */,
-				90C99A9E0E7384B29D1D761C9B247A89 /* InAppReceipt+ASN1Decodable.swift in Sources */,
-				577C1D5AB8DFD52F5EB24ED4DFC05129 /* InAppReceiptPayload.swift in Sources */,
-				E182544452F927F633C1EF2998A1E365 /* Initialization.swift in Sources */,
-				BFF065DBD73595FCAF55DAE0B0D9E55B /* TPInAppReceipt-dummy.m in Sources */,
-				64141E9243AA01FD3BBAAD72DC21F3EB /* Validation.swift in Sources */,
+				151FC9B3DBAA16F2B4086EBBBFB0FE23 /* Chrono.swift in Sources */,
+				C6B159786446E087081B31DC81D60595 /* Date.swift in Sources */,
+				A1ECFA740BA6D38B91A16888ABE71313 /* DECasualDateParser.swift in Sources */,
+				795E95BD3B0218E31347C5E1E9DB458E /* DECasualTimeParser.swift in Sources */,
+				2ACAF0D0E3FDD4600196E32EF7EC8970 /* DEDeadlineFormatParser.swift in Sources */,
+				644891E6300A433F7CFD5681412EE3B6 /* DEMergeDateRangeRefiner.swift in Sources */,
+				2D67CED5FC7F668A600CBAF0D84F503B /* DEMergeDateTimeRefiner.swift in Sources */,
+				9AFF9DD16B23AF7DBF61E831FECE53A9 /* DEMonthNameLittleEndianParser.swift in Sources */,
+				D06F027A0DD3B4FA038FBB7022F80709 /* DEMorgenTimeParser.swift in Sources */,
+				64EE3A7A07522F27D2787BC74978698E /* DESlashDateFormatParser.swift in Sources */,
+				E276A052902F26BAAB6C40F30CE93AFF /* DETimeAgoFormatParser.swift in Sources */,
+				378F95AF2F37AE3847D7ACA4C9A62CE9 /* DETimeExpressionParser.swift in Sources */,
+				63F21333F4398606233F716027E223CE /* DEUtil.swift in Sources */,
+				8C122791D3B4C12F8482835E69D4227F /* DEWeekdayParser.swift in Sources */,
+				8402A80F16E093D66294288EB75D6453 /* ENCasualDateParser.swift in Sources */,
+				21FA5F522E87660CD0477C9447DCB807 /* ENCasualTimeParser.swift in Sources */,
+				0FD87F8A744A202A15B429F16E839DA0 /* ENDeadlineFormatParser.swift in Sources */,
+				E8AC429168637EBC5283104464E99838 /* ENISOFormatParser.swift in Sources */,
+				61578372C1EF7F6942BE27A3F420F534 /* ENMergeDateRangeRefiner.swift in Sources */,
+				81322B046D0E4B7843412FE4CC701B94 /* ENMergeDateTimeRefiner.swift in Sources */,
+				87EB57783129D5AF79F71148830DE0E0 /* ENMonthNameLittleEndianParser.swift in Sources */,
+				EEEFD6A17FC93B3877975B9ABFDDA114 /* ENMonthNameMiddleEndianParser.swift in Sources */,
+				D7DDBA324B01E28614A37D7F3F87891B /* ENMonthNameParser.swift in Sources */,
+				8602E3076E2C5DC38BA03AAAE5FCE435 /* ENPrioritizeSpecificDateRefiner.swift in Sources */,
+				EE9EBFE811793B515C882CE8F36FB4EB /* ENRelativeDateFormatParser.swift in Sources */,
+				496F045FF5065AECD6C6552A5E4E30A4 /* ENSlashDateFormatParser.swift in Sources */,
+				1F8B8F4B3868CDFC6E7EA863B62C74BA /* ENSlashDateFormatStartWithYearParser.swift in Sources */,
+				4586724F867F28AB4BCDE41760BB086B /* ENSlashMonthFormatParser.swift in Sources */,
+				66653E3D1106A29737D332630A3638E0 /* ENTimeAgoFormatParser.swift in Sources */,
+				E98F78156AFFB977A71FECCF7C49BE3D /* ENTimeExpressionParser.swift in Sources */,
+				976751DC0A0665B3B2C1FFA146C1912A /* ENUtil.swift in Sources */,
+				E2C133E1D18B459163CF9F50ABFE4BD3 /* ENWeekdayParser.swift in Sources */,
+				9AEE07ADC0C8610D663F56C49E70EE0E /* ESCasualDateParser.swift in Sources */,
+				A20A26199EEE084043A15AF9645667E5 /* ESDeadlineFormatParser.swift in Sources */,
+				7F6D8572E5E6A314D099E676A784344F /* ESMonthNameLittleEndianParser.swift in Sources */,
+				D6AE1585F1CC00B560DFEBE70C5F62F6 /* ESSlashDateFormatParser.swift in Sources */,
+				AC631F4296B39A9359DF3F7E4EE45C94 /* ESTimeAgoFormatParser.swift in Sources */,
+				4C8FADB48D0EF9983793E51157097E23 /* ESTimeExpressionParser.swift in Sources */,
+				B19F728C733F38FFD09C272D2177E4FA /* ESUtil.swift in Sources */,
+				40A5FBEB183913821EE41B21AD790B57 /* ESWeekdayParser.swift in Sources */,
+				A7FBAFDD67CCB1046B9B979258C08327 /* ExtractTimezoneAbbrRefiner.swift in Sources */,
+				68BD178C9DED7F777E8827213AD62347 /* ExtractTimezoneOffsetRefiner.swift in Sources */,
+				AB65A61D2FA29D62B53D599663281C03 /* ForwardDateRefiner.swift in Sources */,
+				B2D774B072B140F36E3C07FD28EA45EE /* FRCasualDateParser.swift in Sources */,
+				CCBFD527FC9AD1FBF8E618BB277C7A83 /* FRDeadlineFormatParser.swift in Sources */,
+				3AAE6905E205112161B9CE7E8ADA90CB /* FRMergeDateRangeRefiner.swift in Sources */,
+				45218DDBE414F326C8A755D73F6672BE /* FRMergeDateTimeRefiner.swift in Sources */,
+				7E8449B6A9AFE3F830CCFF3BE79DB24F /* FRMonthNameLittleEndianParser.swift in Sources */,
+				8D7C218CBA990F3861566C3F9F6AB67F /* FRSlashDateFormatParser.swift in Sources */,
+				5A8F5594D7EC57D4B574D44D248187AB /* FRTimeAgoFormatParser.swift in Sources */,
+				640A47C81574E30F5E7EAE97151BF408 /* FRTimeExpressionParser.swift in Sources */,
+				9C6E45DF50FCE63A349D566ADB472364 /* FRUtil.swift in Sources */,
+				B5C8FC7A13FDF1B800086B09CF3C8CB7 /* FRWeekdayParser.swift in Sources */,
+				95141ABD80DA2C7736E3C22CCCB7E769 /* JPCasualDateParser.swift in Sources */,
+				52E833AC20D41D36B9B2530AAC272980 /* JPMergeDateRangeRefiner.swift in Sources */,
+				F275AF6D641A13676F9DD0DDBFDCEB32 /* JPStandardParser.swift in Sources */,
+				0B73B84C7E55289D422C76704E3AE4B3 /* JPUtil.swift in Sources */,
+				704C9DB1565C52D12A00B5717B99701E /* MergeDataRangeRefiner.swift in Sources */,
+				C40345968A5051966F412C78F6ACA417 /* MergeDateTimeRefiner.swift in Sources */,
+				1B4DF3E30DA5EAD4F045022F4325F1D0 /* Options.swift in Sources */,
+				3E0FE04B25E18BB77DDA17C040DDA13F /* OverlapRemovalRefiner.swift in Sources */,
+				1F9D36D61194BDFDB918FBDBD4F91DA2 /* Parser.swift in Sources */,
+				68C45A1BEDAF7253E9BFFAB1FD3CB34C /* Refiner.swift in Sources */,
+				FC74D6BFD98C8E835F2F6AAF7A5F74C1 /* Result.swift in Sources */,
+				D5CC21B76B9CF0F98C80787FD44AFAD1 /* SwiftyChrono-dummy.m in Sources */,
+				67E74B9A76333F938EA73D8AF1F4E699 /* UnlikelyFormatFilter.swift in Sources */,
+				F9A79C6B8F37E8D433829D0CBCB43377 /* Util.swift in Sources */,
+				28AEDC8B12CFA4428047E0570513980E /* ZHCasualDateParser.swift in Sources */,
+				D681A57EBFB10180864352AC93785628 /* ZHDateParser.swift in Sources */,
+				86A9A5A9A3F7E463EBD6495B39B6A20F /* ZHDeadlineFormatParser.swift in Sources */,
+				F837A2A889315469861C3ADF12A66E25 /* ZHTimeExpressionParser.swift in Sources */,
+				7777A54B576A86A20069C85F813C558C /* ZHUtil.swift in Sources */,
+				7BA182705D86B51A96120483F4721E23 /* ZHWeekdayParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		865506BC62FD7DB71309E1A9A84D2385 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F62E1A14374B6FDB18CD6E3FE771C7 /* Pods-ClendarTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CFEA391F09270A9BCE2D53F1FEB76A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22AEF19DD365B4778C9517E81E72CAE /* Bundle+Extension.swift in Sources */,
+				EF680FCCB6BAD60CCB90D21783B69CB8 /* Bundle+Private.swift in Sources */,
+				42D85EDB2363BE9D2A8223418C4B5689 /* Data+Extension.swift in Sources */,
+				426D2E73A69CACC4C62F26218EB02DF7 /* Date+Extension.swift in Sources */,
+				0785467EA6823E40B56A4ADB50DFD46A /* Extras.swift in Sources */,
+				198270068CB91333984C1C44C0E7D70B /* IARError.swift in Sources */,
+				8C5372655C23DA6968A9EA3AD8F6B1A2 /* InAppPurchase.swift in Sources */,
+				F715B056A552B68196C7912799732392 /* InAppReceipt.swift in Sources */,
+				AC7457222FFB5D18EA3D0298CA3B6D00 /* InAppReceipt+ASN1Decodable.swift in Sources */,
+				9FD7526939D223BAD72F0A358EDF2170 /* InAppReceiptPayload.swift in Sources */,
+				22BB2B523125C58E0E8A954ED8F8B7B8 /* Initialization.swift in Sources */,
+				1B193D43298918C2EE2C4BF103B540F3 /* TPInAppReceipt-dummy.m in Sources */,
+				74C88A3349802BD9B10195178AB2015C /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03CBE67CC817FAD080488C5C37E3EA6E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ASN1Swift;
-			target = FE8F456426181A4F97124DC35E13B528 /* ASN1Swift */;
-			targetProxy = 85C37B3C7D34C86CC782C89A30298FE5 /* PBXContainerItemProxy */;
-		};
 		1E0071CB4703FEDCC7073353A6C51B81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = R.swift.Library;
 			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
 			targetProxy = F557FC32C5C70B9072113FBFC20D6326 /* PBXContainerItemProxy */;
 		};
-		248D410E2FAA0CE676AC9D8B232221F4 /* PBXTargetDependency */ = {
+		2462665D9690565B71F4C12769E0826A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = SwiftFormat;
-			target = 1CD0618C486973D5588EF20D2E8C0AEA /* SwiftFormat */;
-			targetProxy = 667D7FFAFF12F17236A4BD281B8ED62D /* PBXContainerItemProxy */;
+			name = "Pods-Clendar";
+			target = 0094C5732658989072E66AA7FA2B439D /* Pods-Clendar */;
+			targetProxy = D0D4095C442A000FB2B9A92E2D44687B /* PBXContainerItemProxy */;
 		};
-		5A7F8CAA960E1C9575569E7EEE578B25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftLint;
-			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
-			targetProxy = AB9A75329839328B5639D2AFC147A029 /* PBXContainerItemProxy */;
-		};
-		5D1B05B1B882C1037BC1C9528D918317 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = R.swift;
-			target = 230984053C6652DFF510F450F21C5CF7 /* R.swift */;
-			targetProxy = 33CE94397A2C2DC21B2EBA2B4685C350 /* PBXContainerItemProxy */;
-		};
-		6641A041CA7CA0E81F4F35987AAC008F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = R.swift.Library;
-			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
-			targetProxy = 791FE9A1325DE51C843E0D5F940D864F /* PBXContainerItemProxy */;
-		};
-		6FB9AF6B50B4C6D9375E5CDBADDA1737 /* PBXTargetDependency */ = {
+		30716268DF93735B22B7EBD98E48AB4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ASN1Swift;
 			target = FE8F456426181A4F97124DC35E13B528 /* ASN1Swift */;
-			targetProxy = D8CEC3C39526CB0796F9567B9D5E47A8 /* PBXContainerItemProxy */;
+			targetProxy = 2EAAF8440F459341D4AF5C79CFB6E1D0 /* PBXContainerItemProxy */;
 		};
-		7F7DB74A56817525C434E99A476BD980 /* PBXTargetDependency */ = {
+		3298B6EC49F2D7F44FB24B9B52956DF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-Clendar";
-			target = 0094C5732658989072E66AA7FA2B439D /* Pods-Clendar */;
-			targetProxy = B31381CFC2C03036FEB71EA43D96F913 /* PBXContainerItemProxy */;
+			name = SwiftFormat;
+			target = 1CD0618C486973D5588EF20D2E8C0AEA /* SwiftFormat */;
+			targetProxy = 9BDB30575ED3600043A5153A6C9FA5BF /* PBXContainerItemProxy */;
 		};
-		834988D1418168A8586F7C9FF482485A /* PBXTargetDependency */ = {
+		6616D49BBB50831F27931179E978F107 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = TPInAppReceipt;
-			target = 1B57BE90451F6BE7EAE9532832686713 /* TPInAppReceipt */;
-			targetProxy = 8D84666A0E3C4BA2DF0B07AAA4B404A4 /* PBXContainerItemProxy */;
+			name = R.swift.Library;
+			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
+			targetProxy = F83FEF002CEA12FCCDA4D279B5EACFE4 /* PBXContainerItemProxy */;
 		};
-		A5578054679B6B5E5DF616045A92334A /* PBXTargetDependency */ = {
+		7E8C99E9A79276CEAFF1347D0965FB29 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = LicensePlist;
-			target = B08332B0C91F6CDC405644DADDB96E3C /* LicensePlist */;
-			targetProxy = 2D8458E7F84CCAB57B199C7D83BBFB31 /* PBXContainerItemProxy */;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = FA99FC5BEA455383C753BF3B33DF77C4 /* PBXContainerItemProxy */;
 		};
-		C736935E6F52A4D6B431B94916374FF3 /* PBXTargetDependency */ = {
+		9320CEF5A16A820ADB75A04B5AF5B218 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftyChrono;
 			target = 2A52921DF73518875229DA08E1C14710 /* SwiftyChrono */;
-			targetProxy = 112F3392AB75134EAD330617CCF82485 /* PBXContainerItemProxy */;
+			targetProxy = E28B7C352070FA0E18A2C06CEFEFF51E /* PBXContainerItemProxy */;
 		};
-		E225D451D1EA00D82F60BEFDFFE6EF2A /* PBXTargetDependency */ = {
+		B7EF94D01D674561BC149FAC3916A9BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = R.swift;
+			target = 230984053C6652DFF510F450F21C5CF7 /* R.swift */;
+			targetProxy = 27A02A2CDA2221418E118F5E0C7C412D /* PBXContainerItemProxy */;
+		};
+		CA1577329168C0C6087CE7FB118544A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LicensePlist;
+			target = B08332B0C91F6CDC405644DADDB96E3C /* LicensePlist */;
+			targetProxy = 4CDEECFC37737149363388672E385CC2 /* PBXContainerItemProxy */;
+		};
+		CC47B6BF8703CCFBCFF3F508500D771F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ASN1Swift;
+			target = FE8F456426181A4F97124DC35E13B528 /* ASN1Swift */;
+			targetProxy = D77F9D911C5E3C30F5A8F32E2815BEF2 /* PBXContainerItemProxy */;
+		};
+		CCCF348FE321A43B0105EEFC0DA8FF0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPInAppReceipt;
+			target = 1B57BE90451F6BE7EAE9532832686713 /* TPInAppReceipt */;
+			targetProxy = 7E9036B861D8302D40E662A790EACC3A /* PBXContainerItemProxy */;
+		};
+		F1353F004674086BE045D44A538DF43A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Clendar";
 			target = 0094C5732658989072E66AA7FA2B439D /* Pods-Clendar */;
-			targetProxy = 04F27A94E8645848EF48478F76AA179F /* PBXContainerItemProxy */;
+			targetProxy = 93F812EF8C783A12352134C5BEBA95EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		009C525B55718726787ABC431FCE5BD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9F038F16D47379334B4D082E40C1A2C /* ASN1Swift.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ASN1Swift/ASN1Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ASN1Swift/ASN1Swift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ASN1Swift/ASN1Swift.modulemap";
-				PRODUCT_MODULE_NAME = ASN1Swift;
-				PRODUCT_NAME = ASN1Swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		154255D9B307A4A592A8B389C518E7E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6CE5D486D7450B3A2EBA3A194FCA2A09 /* R.swift.Library.release.xcconfig */;
@@ -1597,78 +1558,7 @@
 			};
 			name = Release;
 		};
-		1F9B5A5EECE76E6A721117A65BB2EE3A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 850DE845870B93ECE3FE20474CABF803 /* ASN1Swift.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ASN1Swift/ASN1Swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ASN1Swift/ASN1Swift-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ASN1Swift/ASN1Swift.modulemap";
-				PRODUCT_MODULE_NAME = ASN1Swift;
-				PRODUCT_NAME = ASN1Swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2101D8694D471A9F1F21AB778FBAE349 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00E256B116F9ECC4C953EC1A4E36C47E /* Pods-Clendar.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		35C60D0D67699AD7B21AAD8DC197F542 /* Debug */ = {
+		33EC2F81F8123A187DD09756085B0402 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06E5DD5F699049DF3446451AB27536E1 /* TPInAppReceipt.debug.xcconfig */;
 			buildSettings = {
@@ -1702,6 +1592,113 @@
 			};
 			name = Debug;
 		};
+		4049B333E20BDC5EE8937D84317B22BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9A532C7456B3BBAEA68BACEFAD8D7C /* Pods-Clendar.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4846E837790269F118CC7B0907270960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9FFD7AD64AED1B66432E26FF6571FFE /* Pods-ClendarTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		56262B47E500E56659984BE48CBC3052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372040006CB337EF4FAA6932FCFCEA4E /* TPInAppReceipt.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TPInAppReceipt/TPInAppReceipt-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPInAppReceipt/TPInAppReceipt-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TPInAppReceipt/TPInAppReceipt.modulemap";
+				PRODUCT_MODULE_NAME = TPInAppReceipt;
+				PRODUCT_NAME = TPInAppReceipt;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		68A5A619EDF2730D305D8C57E38E9F6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBDC7C36E79E1C54734DFAD220F38D93 /* SwiftLint.release.xcconfig */;
@@ -1734,43 +1731,6 @@
 			};
 			name = Release;
 		};
-		6E5A984B80AF22492A4807BD55B9904A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D89032BA01F05D053721168876810CB /* Pods-ClendarUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		73B4716BB6BF6AEF6B0C7ECDA00F8712 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A2EFDA97BCA1B1579941C766C361AA5 /* LicensePlist.release.xcconfig */;
@@ -1784,6 +1744,77 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74EAAE9B3D3379E7A07D9DD1224AE8B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE6E518FDACDB108D8F0E9AA4A6B178C /* SwiftyChrono.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyChrono/SwiftyChrono-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyChrono;
+				PRODUCT_NAME = SwiftyChrono;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7F767517BDDBEB520DF6EF65165B6282 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D9A828580EFB5F06F0AF800A816F310 /* Pods-ClendarTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1802,11 +1833,10 @@
 			};
 			name = Debug;
 		};
-		89BD6572B16CE74EC7FF0671F35C71A7 /* Debug */ = {
+		80F1726207AEBD891117CB520638A74A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C9A532C7456B3BBAEA68BACEFAD8D7C /* Pods-Clendar.debug.xcconfig */;
+			baseConfigurationReference = 850DE845870B93ECE3FE20474CABF803 /* ASN1Swift.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1816,22 +1846,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ASN1Swift/ASN1Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ASN1Swift/ASN1Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/ASN1Swift/ASN1Swift.modulemap";
+				PRODUCT_MODULE_NAME = ASN1Swift;
+				PRODUCT_NAME = ASN1Swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1919,43 +1948,6 @@
 			};
 			name = Debug;
 		};
-		8F916BA668BF3E72B4B0FDA9A69A5ABF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D9A828580EFB5F06F0AF800A816F310 /* Pods-ClendarTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2034,6 +2026,42 @@
 			};
 			name = Release;
 		};
+		A460880D8D44C6754F5686F9986C4C2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A5B1E3E5550A0986E06A7ABC4C20C8 /* Pods-ClendarUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ClendarUITests/Pods-ClendarUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		AC41C238FFF05973A6A52774FF448BDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BE583FAE9EF8AB5FD8140A6E6D5647F /* LicensePlist.debug.xcconfig */;
@@ -2046,6 +2074,39 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B25EF0F365298344AC6D54FACE000E60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41969B791C0AD09B2F2DF1A1B582DBE9 /* SwiftyChrono.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyChrono/SwiftyChrono-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyChrono;
+				PRODUCT_NAME = SwiftyChrono;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -2097,45 +2158,9 @@
 			};
 			name = Debug;
 		};
-		C164017DC01ACBB7455ECA317EDF0FB3 /* Debug */ = {
+		BE229519FA2A1321879ADCD05FFB8DA3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9FFD7AD64AED1B66432E26FF6571FFE /* Pods-ClendarTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ClendarTests/Pods-ClendarTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DE867B9CDB81474DB0D1B0D01F60D08C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04A5B1E3E5550A0986E06A7ABC4C20C8 /* Pods-ClendarUITests.debug.xcconfig */;
+			baseConfigurationReference = 1D89032BA01F05D053721168876810CB /* Pods-ClendarUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2164,15 +2189,18 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		DFD41A321749B871D5851F00C0F0831E /* Release */ = {
+		CB072913734E6B216B989C8AD9E5E2BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE6E518FDACDB108D8F0E9AA4A6B178C /* SwiftyChrono.release.xcconfig */;
+			baseConfigurationReference = 00E256B116F9ECC4C953EC1A4E36C47E /* Pods-Clendar.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2181,21 +2209,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyChrono/SwiftyChrono-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono.modulemap";
-				PRODUCT_MODULE_NAME = SwiftyChrono;
-				PRODUCT_NAME = SwiftyChrono;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Clendar/Pods-Clendar.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2203,42 +2232,9 @@
 			};
 			name = Release;
 		};
-		EFFAC9E8ECBDC0479F9A72675683693A /* Debug */ = {
+		D4B95F418F609C446ED464ECFA4B585F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41969B791C0AD09B2F2DF1A1B582DBE9 /* SwiftyChrono.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftyChrono/SwiftyChrono-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SwiftyChrono/SwiftyChrono.modulemap";
-				PRODUCT_MODULE_NAME = SwiftyChrono;
-				PRODUCT_NAME = SwiftyChrono;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FE07792E11E2DD5795AD7E86FF3EC0F0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372040006CB337EF4FAA6932FCFCEA4E /* TPInAppReceipt.release.xcconfig */;
+			baseConfigurationReference = D9F038F16D47379334B4D082E40C1A2C /* ASN1Swift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2249,17 +2245,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TPInAppReceipt/TPInAppReceipt-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPInAppReceipt/TPInAppReceipt-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ASN1Swift/ASN1Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ASN1Swift/ASN1Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/TPInAppReceipt/TPInAppReceipt.modulemap";
-				PRODUCT_MODULE_NAME = TPInAppReceipt;
-				PRODUCT_NAME = TPInAppReceipt;
+				MODULEMAP_FILE = "Target Support Files/ASN1Swift/ASN1Swift.modulemap";
+				PRODUCT_MODULE_NAME = ASN1Swift;
+				PRODUCT_NAME = ASN1Swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2274,6 +2270,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3BC23A1613B77F9C05E4D312E5E97264 /* Build configuration list for PBXNativeTarget "Pods-ClendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4846E837790269F118CC7B0907270960 /* Debug */,
+				7F767517BDDBEB520DF6EF65165B6282 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2283,20 +2288,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48A67BC2CDC26F52DDFD57ECDB2B4F9A /* Build configuration list for PBXNativeTarget "Pods-ClendarUITests" */ = {
+		5975AFE6A65543E60DAFEA011E9736A4 /* Build configuration list for PBXNativeTarget "Pods-ClendarUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE867B9CDB81474DB0D1B0D01F60D08C /* Debug */,
-				6E5A984B80AF22492A4807BD55B9904A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5C3389487050994C422ACBAE335F002B /* Build configuration list for PBXNativeTarget "ASN1Swift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1F9B5A5EECE76E6A721117A65BB2EE3A /* Debug */,
-				009C525B55718726787ABC431FCE5BD1 /* Release */,
+				A460880D8D44C6754F5686F9986C4C2C /* Debug */,
+				BE229519FA2A1321879ADCD05FFB8DA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2310,15 +2306,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DB57556EFAE3AB5D8B55CCA0142519B /* Build configuration list for PBXNativeTarget "Pods-Clendar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89BD6572B16CE74EC7FF0671F35C71A7 /* Debug */,
-				2101D8694D471A9F1F21AB778FBAE349 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6E19C8E8F0C9B49DEE9AFBA54E0A4733 /* Build configuration list for PBXAggregateTarget "R.swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2328,11 +2315,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0F70EA60D0EB0D8E7BBE23210B364DA /* Build configuration list for PBXNativeTarget "SwiftyChrono" */ = {
+		A438BDCF4333A15C4F84E6924578AF7D /* Build configuration list for PBXNativeTarget "ASN1Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EFFAC9E8ECBDC0479F9A72675683693A /* Debug */,
-				DFD41A321749B871D5851F00C0F0831E /* Release */,
+				80F1726207AEBD891117CB520638A74A /* Debug */,
+				D4B95F418F609C446ED464ECFA4B585F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2346,11 +2333,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7E6924939F1725C666D96901D9BA298 /* Build configuration list for PBXNativeTarget "Pods-ClendarTests" */ = {
+		D09DAD71C241F9D852666C666594B01D /* Build configuration list for PBXNativeTarget "SwiftyChrono" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C164017DC01ACBB7455ECA317EDF0FB3 /* Debug */,
-				8F916BA668BF3E72B4B0FDA9A69A5ABF /* Release */,
+				B25EF0F365298344AC6D54FACE000E60 /* Debug */,
+				74EAAE9B3D3379E7A07D9DD1224AE8B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D382CD2FF558B7CFA10311D255C70B88 /* Build configuration list for PBXNativeTarget "Pods-Clendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4049B333E20BDC5EE8937D84317B22BF /* Debug */,
+				CB072913734E6B216B989C8AD9E5E2BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3AEBAF061F327FC97E847CCCFB8E08E /* Build configuration list for PBXNativeTarget "TPInAppReceipt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33EC2F81F8123A187DD09756085B0402 /* Debug */,
+				56262B47E500E56659984BE48CBC3052 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2360,15 +2365,6 @@
 			buildConfigurations = (
 				AC41C238FFF05973A6A52774FF448BDA /* Debug */,
 				73B4716BB6BF6AEF6B0C7ECDA00F8712 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DCAF6B8DEE7946EF571DE3AA69ACFC58 /* Build configuration list for PBXNativeTarget "TPInAppReceipt" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				35C60D0D67699AD7B21AAD8DC197F542 /* Debug */,
-				FE07792E11E2DD5795AD7E86FF3EC0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

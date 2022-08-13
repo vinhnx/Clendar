@@ -336,6 +336,16 @@ final class SettingsViewController: FormViewController {
 
         return instance
     }()
+    
+    lazy var githubLinkButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = "🌐 " + NSLocalizedString("GitHub", comment: "")
+        instance.action = {
+            guard let url = URL(string: "https://github.com/vinhnx/Clendar") else { return }
+            UIApplication.shared.open(url)
+        }
+        return instance
+    }()
 
     // MARK: - Life Cycle
 
@@ -403,6 +413,7 @@ final class SettingsViewController: FormViewController {
         builder += writeReviewButton
         builder += shareAppButton
         builder += feedbackMailButton
+        builder += githubLinkButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))
