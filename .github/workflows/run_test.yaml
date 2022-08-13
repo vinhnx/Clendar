@@ -1,0 +1,53 @@
+# document:
+# + https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+# + https://github.com/actions/virtual-environments/issues/4060
+# + https://github.com/actions/virtual-environments
+
+name: CI
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+
+# jobs:
+#     test:
+#         runs-on: macOS-latest
+#         env:
+#             WORKSPACE: Clendar.xcworkspace
+#             SCHEME: Clendar
+#             SDK: iphonesimulator
+#             DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
+
+#         steps:
+#             - uses: actions/checkout@v1
+
+#             - name: Generate Xcode Project
+#               run: make project
+
+#             - name: Build and Test
+#               run: |
+#                   set -o pipefail && xcodebuild clean build test \
+#                     -workspace "$WORKSPACE" \
+#                     -scheme "$SCHEME" \
+#                     -sdk "$SDK" \
+#                     -destination "$DESTINATION" \
+#                     -configuration Debug \
+#                     -enableCodeCoverage YES \
+#                     CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+
+jobs:
+    test:
+        runs-on: macos-11
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Build Package
+              run: swift build -v
+
+            - name: Run tests
+              run: swift test -v
