@@ -33,6 +33,9 @@ struct EventListView: View {
     }
 }
 
+
+
+
 extension EventListView {
     var buildListView: some View {
         List(events, id: \.id) { event in
@@ -159,3 +162,8 @@ extension View where Self == EventListView {
     }
 
 }
+
+
+
+
+
