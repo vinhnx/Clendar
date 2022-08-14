@@ -16,7 +16,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
         WhatsNew(
             version: WhatsNew.Version(
                 major: 3,
-                minor: 4,
+                minor: 5,
                 patch: 0
             ), // specify version here
             title: WhatsNew.Title(
@@ -29,7 +29,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
                         systemName: "wand.and.stars.inverse",
                         foregroundColor: .orange
                     ),
-                    title: WhatsNew.Text(""),
+                    title: WhatsNew.Text("NEW"),
                     subtitle: WhatsNew.Text(NSLocalizedString("Fix wrong widget theme when changing different languages", comment: ""))
                 ),
                 .init(
@@ -37,7 +37,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
                         systemName: "wand.and.stars.inverse",
                         foregroundColor: .indigo
                     ),
-                    title: WhatsNew.Text(""),
+                    title: WhatsNew.Text("NEW"),
                     subtitle: WhatsNew.Text(NSLocalizedString("Fix localization", comment: ""))
                 ),
                 .init(
@@ -45,7 +45,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
                         systemName: "wand.and.stars.inverse",
                         foregroundColor: .green
                     ),
-                    title: WhatsNew.Text(""),
+                    title: WhatsNew.Text("NEW"),
                     subtitle: WhatsNew.Text(NSLocalizedString("Fix action sheet crash", comment: ""))
                 ),
                 .init(
@@ -53,7 +53,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
                         systemName: "rectangle.portrait.inset.filled",
                         foregroundColor: .teal
                     ),
-                    title: WhatsNew.Text(""),
+                    title: WhatsNew.Text("NEW"),
                     subtitle: WhatsNew.Text(NSLocalizedString("Support portrait mode on iPad", comment: ""))
                 ),
                 .init(
