@@ -48,5 +48,7 @@ struct Constants {
         case dateInfoWidget = "DateInfoWidget"
         case lunarDateInfoWidget = "LunarDateInfoWidget"
         case eventListWidget = "EventListWidget"
+        case lockScreenWidgetCounter = "LockScreenWidgetCounter"
+        case lockScreenWidgetNextEvent = "LockScreenWidgetNextEvent"
     }
 }
