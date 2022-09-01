@@ -12,7 +12,7 @@
 		A3064D1D254CEF5200C7F228 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3064D1C254CEF5200C7F228 /* SwiftUI.framework */; };
 		A3064D20254CEF5200C7F228 /* DateInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D1F254CEF5200C7F228 /* DateInfoWidget.swift */; };
 		A3064D23254CEF5800C7F228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3064D22254CEF5800C7F228 /* Assets.xcassets */; };
-		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A3064D29254CEF5800C7F228 /* ClendarWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A3064D19254CEF5200C7F228 /* ClendarWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A3064D4C254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D4B254CF1BA00C7F228 /* DateInfoWidgetTimelineProvider.swift */; };
 		A307DAA925ACBA9C00B5CE11 /* LunarDateInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A307DAA825ACBA9C00B5CE11 /* LunarDateInfoWidget.swift */; };
@@ -1274,11 +1274,11 @@
 				A38EE831254EC6CA00045C12 /* XCRemoteSwiftPackageReference "Haptica" */,
 				A3560CFC2567FB6F009088E7 /* XCRemoteSwiftPackageReference "Then" */,
 				A383330F25A96A8000F7ED70 /* XCRemoteSwiftPackageReference "CVCalendar" */,
-				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */,
+				A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
 				A3D3EADE25CE5A8600EC3D1D /* XCRemoteSwiftPackageReference "Laden" */,
-				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */,
+				A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */,
 				A3EBA83D27561146000188FD /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit.git" */,
+				A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = A33F80C722467A82009CC46A /* Products */;
 			projectDirPath = "";
@@ -1476,7 +1476,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1715,6 +1715,7 @@
 /* Begin PBXTargetDependency section */
 		A3064D28254CEF5800C7F228 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A3064D18254CEF5200C7F228 /* ClendarWidgetExtension */;
 			targetProxy = A3064D27254CEF5800C7F228 /* PBXContainerItemProxy */;
 		};
@@ -2295,7 +2296,7 @@
 				minimumVersion = 1.8.4;
 			};
 		};
-		A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit.git" */ = {
+		A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
 			requirement = {
@@ -2335,7 +2336,7 @@
 				minimumVersion = 1.4.0;
 			};
 		};
-		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */ = {
+		A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
@@ -2343,7 +2344,7 @@
 				minimumVersion = 0.9.0;
 			};
 		};
-		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */ = {
+		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
 			requirement = {
@@ -2390,7 +2391,7 @@
 		};
 		A332087527B80690003D6DE9 /* WhatsNewKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit.git" */;
+			package = A332087427B80690003D6DE9 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
 			productName = WhatsNewKit;
 		};
 		A3560CFD2567FB6F009088E7 /* Then */ = {
@@ -2400,7 +2401,7 @@
 		};
 		A37D5F2227C4F96900495638 /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A383331025A96A8100F7ED70 /* CVCalendar */ = {
@@ -2451,17 +2452,17 @@
 		};
 		A3C579CB275286EF00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A3C579CD275286FC00B636EF /* Shift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift.git" */;
+			package = A3C579C82752864000B636EF /* XCRemoteSwiftPackageReference "Shift" */;
 			productName = Shift;
 		};
 		A3D3EAD125CE3F8000EC3D1D /* SwiftyStoreKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit.git" */;
+			package = A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
 			productName = SwiftyStoreKit;
 		};
 		A3D3EADF25CE5A8700EC3D1D /* Laden */ = {

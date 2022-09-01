@@ -10,11 +10,11 @@ version: 3.0.5
 
 name: R.swift, nameSpecified: 
 body: The MIT License (MIT…
-version: 5.2.2
+version: 6.1.0
 
 name: R.swift.Library, nameSpecified: 
 body: The MIT License (MIT…
-version: 5.2.0
+version: 5.3.0
 
 name: SwiftFormat, nameSpecified: 
 body: MIT License
