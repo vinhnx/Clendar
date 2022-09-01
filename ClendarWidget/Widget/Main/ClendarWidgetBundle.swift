@@ -16,6 +16,7 @@ struct ClendarWidgetBundle: WidgetBundle {
         DateInfoWidgetBundle().body
         LunarWidgetBundle().body
         EventListWidgetBundle().body
+        LockScreenWidgetBundle().body
     }
 }
 
@@ -40,5 +41,12 @@ struct CalendarGridWidgetBundle: WidgetBundle {
 struct LunarWidgetBundle: WidgetBundle {
     var body: some Widget {
         LunarDateInfoWidget()
+    }
+}
+
+struct LockScreenWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        LockScreenWidgetCounter()
+        LockScreenWidgetNextEvent()
     }
 }
