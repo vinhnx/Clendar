@@ -67,27 +67,27 @@ struct ContentView: View {
                 genLightHaptic()
                 store.showCreateEventState.toggle()
             }, label: {})
-            .buttonStyle(
-                SolidButtonStyle(imageName: "square.and.pencil")
-            )
-            .sheet(isPresented: $store.showCreateEventState) {
-                if SettingsManager.useExperimentalCreateEventMode {
-                    QuickEventView()
-                        .environmentObject(store)
-                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
-                }
-                else {
-                    NewEventView(
-                        eventStore: eventKitWrapper.eventStore,
-                        event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
-                            .then {
-                                $0.startDate = store.selectedDate
-                                $0.endDate = store.selectedDate
-                            }
-                    ).environmentObject(store)
-                }
+        .buttonStyle(
+            SolidButtonStyle(imageName: "square.and.pencil")
+        )
+        .sheet(isPresented: $store.showCreateEventState) {
+            if SettingsManager.useExperimentalCreateEventMode {
+                QuickEventView()
+                    .environmentObject(store)
+                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
             }
-            .keyboardShortcut("n", modifiers: [.command])
+            else {
+                NewEventView(
+                    eventStore: eventKitWrapper.eventStore,
+                    event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
+                        .then {
+                            $0.startDate = store.selectedDate
+                            $0.endDate = store.selectedDate
+                        }
+                ).environmentObject(store)
+            }
+        }
+        .keyboardShortcut("n", modifiers: [.command])
     }
 
     private var eventListView: some View {
@@ -121,50 +121,85 @@ struct ContentView: View {
 
     // MARK: - Body
 
-    var body: some View {
-        NavigationView {
-            ZStack(alignment: .bottomTrailing) {
-                eventView
-                addEventButton
-                ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
-            }
-            .padding()
-            .preferredColorScheme(appColorScheme)
-            .environment(\.colorScheme, appColorScheme)
-            .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
-            .modifier(HideNavigationBarModifier())
-            .ignoresSafeArea(.keyboard, edges: .bottom)
+    fileprivate func buildContainerView() -> some View {
+        ZStack(alignment: .bottomTrailing) {
+            eventView
+            addEventButton
+            ConfettiCannon(counter: $confettiCounter, repetitions: 5, repetitionInterval: 0.8)
+        }
+        .padding()
+        .preferredColorScheme(appColorScheme)
+        .environment(\.colorScheme, appColorScheme)
+        .background(store.appBackgroundColor.edgesIgnoringSafeArea(.all))
+        .modifier(HideNavigationBarModifier())
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+    }
 
-            Text("No event selected")
-                .modifier(BoldTextModifider())
-        }
-        .whatsNewSheet()
-        .onAppear {
-            configure()
-        }
-        .onReceive(store.$selectedDate) { date in
-            selectDate(date)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didAuthorizeCalendarAccess)) { _ in
-            selectDate(Date())
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .EKEventStoreChanged)) { _ in
-            selectDate(store.selectedDate)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
-            selectDate(store.selectedDate)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
-            selectDate(store.selectedDate)
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
-            store.appBackgroundColor = .backgroundColor()
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
-            confettiCounter += 1
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
-            handleDidChangeCalendarTypeEvent(notification)
+    var body: some View {
+        if #available(iOS 16.0, *) {
+            return NavigationStack {
+                buildContainerView()
+            }
+            .whatsNewSheet()
+            .onAppear {
+                configure()
+            }
+            .onReceive(store.$selectedDate) { date in
+                selectDate(date)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didAuthorizeCalendarAccess)) { _ in
+                selectDate(Date())
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .EKEventStoreChanged)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
+                store.appBackgroundColor = .backgroundColor()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
+                confettiCounter += 1
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
+                handleDidChangeCalendarTypeEvent(notification)
+            }
+        } else {
+            return NavigationView {
+                buildContainerView()
+            }
+            .whatsNewSheet()
+            .onAppear {
+                configure()
+            }
+            .onReceive(store.$selectedDate) { date in
+                selectDate(date)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didAuthorizeCalendarAccess)) { _ in
+                selectDate(Date())
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .EKEventStoreChanged)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
+                selectDate(store.selectedDate)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
+                store.appBackgroundColor = .backgroundColor()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
+                confettiCounter += 1
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
+                handleDidChangeCalendarTypeEvent(notification)
+            }
         }
     }
 }
@@ -254,26 +289,26 @@ extension ContentView {
                     .foregroundColor(.appGray)
             },
             title: { _  in })
-            .equatable()
-            .gesture(
-                DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
-                    .onEnded { value in
-                        if value.translation.width < 0 && value.translation.height > -30 && value.translation.height < 30 {
-                            withAnimation {
-                                let newDate = store.selectedDate.dateByAdding(1, .month).date
-                                showDateSwitcher = false
-                                store.selectedDate = newDate
-                            }
-                        }
-                        else if value.translation.width > 0 && value.translation.height > -30 && value.translation.height < 30 {
-                            withAnimation {
-                                let newDate = store.selectedDate.dateByAdding(-1, .month).date
-                                showDateSwitcher = false
-                                store.selectedDate = newDate
-                            }
+        .equatable()
+        .gesture(
+            DragGesture(minimumDistance: 3.0, coordinateSpace: .local)
+                .onEnded { value in
+                    if value.translation.width < 0 && value.translation.height > -30 && value.translation.height < 30 {
+                        withAnimation {
+                            let newDate = store.selectedDate.dateByAdding(1, .month).date
+                            showDateSwitcher = false
+                            store.selectedDate = newDate
                         }
                     }
-            )
+                    else if value.translation.width > 0 && value.translation.height > -30 && value.translation.height < 30 {
+                        withAnimation {
+                            let newDate = store.selectedDate.dateByAdding(-1, .month).date
+                            showDateSwitcher = false
+                            store.selectedDate = newDate
+                        }
+                    }
+                }
+        )
     }
 
     private func makeMenuButton() -> some View {
@@ -286,8 +321,17 @@ extension ContentView {
                 Image(systemName: "line.3.horizontal.decrease")
             }
         ).sheet(isPresented: $store.showSettingsState) {
-            SettingsWrapperView()
-                .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            if #available(iOS 16.0, *) {
+                NavigationStack {
+                    SettingsWrapperView()
+                        .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+                }
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
+            } else {
+                SettingsWrapperView()
+                    .modifier(ModalBackgroundModifier(backgroundColor: store.appBackgroundColor))
+            }
         }.keyboardShortcut(",", modifiers: [.command])
     }
 

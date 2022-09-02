@@ -13,8 +13,14 @@ import ClockKit
 struct ClendarApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
+            if #available(watchOSApplicationExtension 9.0, *) {
+                NavigationStack {
+                    ContentView()
+                }
+            } else {
+                NavigationView {
+                    ContentView()
+                }
             }
         }
     }
