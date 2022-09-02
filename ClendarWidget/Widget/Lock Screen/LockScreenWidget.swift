@@ -66,7 +66,7 @@ struct LockScreenWidgetTranslucentAllNextEvent: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentAllNextEvent.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Blur", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
             .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
@@ -91,7 +91,7 @@ struct LockScreenWidgetTranslucentAllCounter: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentAllCounter.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Blur", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
             .description(NSLocalizedString("With total events counter for the day", comment: ""))
     }
 
@@ -116,7 +116,7 @@ struct LockScreenWidgetTranslucentContentNextEvent: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentContentNextEvent.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Blur", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
             .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
@@ -141,7 +141,7 @@ struct LockScreenWidgetTranslucentContentCounter: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentContentCounter.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Blur", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
             .description(NSLocalizedString("With total events counter for the day", comment: ""))
     }
 
@@ -216,7 +216,7 @@ struct LockScreenWidgetLeadingLineNextEvent: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetLeadingLineNextEvent.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Line", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
             .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
@@ -241,7 +241,7 @@ struct LockScreenWidgetTrailingLineNextEvent: Widget {
             kind: Constants.WidgetKind.lockScreenWidgetTrailingLineNextEvent.rawValue,
             provider: DateInfoWidgetTimelineProvider()
         ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Line", comment: ""))
+            .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
             .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
