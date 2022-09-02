@@ -139,7 +139,7 @@ struct ContentView: View {
         if #available(iOS 16.0, *) {
             return NavigationSplitView {
                 buildContainerView()
-            }
+            } detail: {}
             .whatsNewSheet()
             .onAppear {
                 configure()
