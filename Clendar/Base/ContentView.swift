@@ -8,13 +8,11 @@
 
 import EventKit
 import SwiftUI
-import ConfettiSwiftUI
-import Shift
-import Then
-import SwiftDate
-import WhatsNewKit
 import CalendarView
 import ClendarTheme
+import Shift
+import Then
+import ConfettiSwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
@@ -140,66 +138,16 @@ struct ContentView: View {
             return NavigationSplitView {
                 buildContainerView()
             } detail: {}
-            .whatsNewSheet()
-            .onAppear {
-                configure()
-            }
-            .onReceive(store.$selectedDate) { date in
-                selectDate(date)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didAuthorizeCalendarAccess)) { _ in
-                selectDate(Date())
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .EKEventStoreChanged)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
-                store.appBackgroundColor = .backgroundColor()
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
-                confettiCounter += 1
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
-                handleDidChangeCalendarTypeEvent(notification)
-            }
+                .modifier(
+                    ContentViewModifier(store: store, eventKitWrapper: eventKitWrapper, confettiCounter: confettiCounter)
+                )
         } else {
             return NavigationView {
                 buildContainerView()
             }
-            .whatsNewSheet()
-            .onAppear {
-                configure()
-            }
-            .onReceive(store.$selectedDate) { date in
-                selectDate(date)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didAuthorizeCalendarAccess)) { _ in
-                selectDate(Date())
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .EKEventStoreChanged)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didDeleteEvent)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeSavedCalendarsPreferences)) { _ in
-                selectDate(store.selectedDate)
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeUserInterfacePreferences)) { _ in
-                store.appBackgroundColor = .backgroundColor()
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .inAppPurchaseSuccess)) { (_) in
-                confettiCounter += 1
-            }
-            .onReceive(NotificationCenter.default.publisher(for: .didChangeCalendarType)) { notification in
-                handleDidChangeCalendarTypeEvent(notification)
-            }
+            .modifier(
+                ContentViewModifier(store: store, eventKitWrapper: eventKitWrapper, confettiCounter: confettiCounter)
+            )
         }
     }
 }

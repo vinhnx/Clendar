@@ -194,6 +194,7 @@
 		A3DE24882248E1C600EB3B64 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */; };
 		A3E0B8962780981900758EC4 /* CalendarIdentifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */; };
 		A3E23633258CD7A7001BCB9F /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B9B5B258CD4A30027E1B3 /* Unwrap.swift */; };
+		A3EA185828C2333200F36A22 /* ContentViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA185728C2333100F36A22 /* ContentViewModifier.swift */; };
 		A3EBA83F27561146000188FD /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A3EBA83E27561146000188FD /* ConfettiSwiftUI */; };
 		A3EDE72925669F640046C1F5 /* QuickEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE72825669F640046C1F5 /* QuickEventView.swift */; };
 		A3EDE72E25669F8F0046C1F5 /* EventEditorWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */; };
@@ -456,6 +457,7 @@
 		A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A3DE24872248E1C600EB3B64 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		A3E0B8952780981900758EC4 /* CalendarIdentifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIdentifer.swift; sourceTree = "<group>"; };
+		A3EA185728C2333100F36A22 /* ContentViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModifier.swift; sourceTree = "<group>"; };
 		A3EDE72825669F640046C1F5 /* QuickEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickEventView.swift; sourceTree = "<group>"; };
 		A3EDE72D25669F8F0046C1F5 /* EventEditorWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditorWrapperView.swift; sourceTree = "<group>"; };
 		A3EDE73225669FA60046C1F5 /* EventViewerWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewerWrapperView.swift; sourceTree = "<group>"; };
@@ -849,6 +851,7 @@
 				A31C7A58224E4BC900CB93A5 /* BaseNavigationController.swift */,
 				A33F810122468B69009CC46A /* BaseViewController.swift */,
 				A30BFEBE25654D3400BA7F38 /* ContentView.swift */,
+				A3EA185728C2333100F36A22 /* ContentViewModifier.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1619,6 +1622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A315FA2625CF0FC300E909DB /* WidgetEntry.swift in Sources */,
+				A3EA185828C2333200F36A22 /* ContentViewModifier.swift in Sources */,
 				A36A50502250EE6A00B12034 /* LoggerConfiguration.swift in Sources */,
 				A38199F625484D9E00C71D41 /* ClendarEvent.swift in Sources */,
 				A31C7A59224E4BC900CB93A5 /* BaseNavigationController.swift in Sources */,
