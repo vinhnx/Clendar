@@ -83,7 +83,7 @@
 		A337CFB425D2F8A400FAB76A /* AppPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337CFB325D2F8A400FAB76A /* AppPermissions.swift */; };
 		A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */; };
 		A33DDEAE28C1103E000E79B6 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DDEAD28C1103E000E79B6 /* LockScreenWidget.swift */; };
-		A33DDEB028C112A6000E79B6 /* SmallCircularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DDEAF28C112A6000E79B6 /* SmallCircularWidgetView.swift */; };
+		A33DDEB028C112A6000E79B6 /* LockScreenWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33DDEAF28C112A6000E79B6 /* LockScreenWidgetView.swift */; };
 		A33F80D122467A85009CC46A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33F80D022467A85009CC46A /* Assets.xcassets */; };
 		A33F80DF22467A85009CC46A /* ClendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80DE22467A85009CC46A /* ClendarTests.swift */; };
 		A33F80EA22467A85009CC46A /* ClendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F80E922467A85009CC46A /* ClendarUITests.swift */; };
@@ -367,7 +367,7 @@
 		A337CFB325D2F8A400FAB76A /* AppPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPermissions.swift; sourceTree = "<group>"; };
 		A33B6D6925C6EF3000E0C4FA /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		A33DDEAD28C1103E000E79B6 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
-		A33DDEAF28C112A6000E79B6 /* SmallCircularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCircularWidgetView.swift; sourceTree = "<group>"; };
+		A33DDEAF28C112A6000E79B6 /* LockScreenWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidgetView.swift; sourceTree = "<group>"; };
 		A33EE21425C6E3D900BE80F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ClendarWidget.strings"; sourceTree = "<group>"; };
 		A33EE22025C6E46D00BE80F1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
 		A33EE22C25C6E8B600BE80F1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
@@ -746,7 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				A33DDEAD28C1103E000E79B6 /* LockScreenWidget.swift */,
-				A33DDEAF28C112A6000E79B6 /* SmallCircularWidgetView.swift */,
+				A33DDEAF28C112A6000E79B6 /* LockScreenWidgetView.swift */,
 			);
 			path = "Lock Screen";
 			sourceTree = "<group>";
@@ -1549,7 +1549,7 @@
 				A307DAA925ACBA9C00B5CE11 /* LunarDateInfoWidget.swift in Sources */,
 				A342117B254CF7E7008D9B8E /* DateInfoWidgetEntryView.swift in Sources */,
 				A38A4DC6254D751C00B35F98 /* AppInfo.swift in Sources */,
-				A33DDEB028C112A6000E79B6 /* SmallCircularWidgetView.swift in Sources */,
+				A33DDEB028C112A6000E79B6 /* LockScreenWidgetView.swift in Sources */,
 				A38A4DCA254D752200B35F98 /* ClendarEvent.swift in Sources */,
 				A38A4DAF254D743100B35F98 /* UserDefaultsWrapper.swift in Sources */,
 				A307DAAE25ACBAD700B5CE11 /* LunarSmallDateWidgetView.swift in Sources */,

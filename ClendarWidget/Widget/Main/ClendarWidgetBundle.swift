@@ -46,7 +46,19 @@ struct LunarWidgetBundle: WidgetBundle {
 
 struct LockScreenWidgetBundle: WidgetBundle {
     var body: some Widget {
-        LockScreenWidgetCounter()
-        LockScreenWidgetNextEvent()
+        LockScreenWidgetIconNextEvent()
+        LockScreenWidgetIconCounter()
+
+        LockScreenWidgetTranslucentAllNextEvent()
+        LockScreenWidgetTranslucentAllCounter()
+
+        LockScreenWidgetTranslucentContentNextEvent()
+        LockScreenWidgetTranslucentContentCounter()
+
+        LockScreenWidgetMinimalLeadingNextEvent()
+        LockScreenWidgetMinimalTrailingNextEvent()
+
+        LockScreenWidgetLeadingLineNextEvent()
+        LockScreenWidgetTrailingLineNextEvent()
     }
 }

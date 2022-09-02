@@ -48,7 +48,17 @@ struct Constants {
         case dateInfoWidget = "DateInfoWidget"
         case lunarDateInfoWidget = "LunarDateInfoWidget"
         case eventListWidget = "EventListWidget"
-        case lockScreenWidgetCounter = "LockScreenWidgetCounter"
-        case lockScreenWidgetNextEvent = "LockScreenWidgetNextEvent"
+
+        // TODO: is there a better way?
+        case lockScreenWidgetIconNextEvent = "LockScreenWidgetIconNextEvent"
+        case lockScreenWidgetIconCounter = "LockScreenWidgetIconCounter"
+        case lockScreenWidgetTranslucentAllNextEvent = "LockScreenWidgetTranslucentAllNextEvent"
+        case lockScreenWidgetTranslucentAllCounter = "LockScreenWidgetTranslucentAllCounter"
+        case lockScreenWidgetTranslucentContentNextEvent = "LockScreenWidgetTranslucentContentNextEvent"
+        case lockScreenWidgetTranslucentContentCounter = "LockScreenWidgetTranslucentContentCounter"
+        case lockScreenWidgetMinimalLeadingNextEvent = "LockScreenWidgetMinimalLeadingNextEvent"
+        case lockScreenWidgetMinimalTrailingNextEvent = "LockScreenWidgetMinimalTrailingNextEvent"
+        case lockScreenWidgetLeadingLineNextEvent = "LockScreenWidgetLeadingLineNextEvent"
+        case lockScreenWidgetTrailingLineNextEvent = "LockScreenWidgetTrailingLineNextEvent"
     }
 }
