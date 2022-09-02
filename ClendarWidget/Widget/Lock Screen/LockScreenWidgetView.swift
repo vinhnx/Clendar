@@ -47,8 +47,10 @@ struct LockScreenWidgetView: View {
                 case .accessoryCircular:
                         VStack(alignment: .center) {
                             Text(DateFormatter.asString(entry.date, format: "MMM").localizedUppercase)
-                                .font(.boldFontWithSize(15))
-                            Text(entry.date.toDayAndDateString())
+                                .font(.boldFontWithSize(12))
+                            Text(entry.date.toDayString())
+                                .font(.boldFontWithSize(14))
+                            Text(entry.date.toShortDateString())
                                 .font(.regularFontWithSize(13))
                         }
                     .widgetAccentable()
