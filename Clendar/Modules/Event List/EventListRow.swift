@@ -18,19 +18,19 @@ struct EventListRow: View {
                 label:
                     Text(ekEvent.durationText().localizedUppercase)
                     .accessibility(label: Text("Event duration"))
-                    .font(.boldFontWithSize(13))
+                    .font(.boldFontWithSize(15))
                     .foregroundColor(Color(ekEvent.calendar.cgColor)),
                 content: {
-                    Spacer()
                     Text(ekEvent.title)
                         .accessibility(label: Text("Title of the event"))
                         .lineLimit(2)
                         .font(.mediumFontWithSize(17))
                         .foregroundColor(.appDark)
+                        .padding(.top, 5)
                 }
             )
-                .opacity(ekEvent.isExpired() ? 0.3 : 1.0) // gray out past events https://github.com/vinhnx/Clendar/issues/146
-                .groupBoxStyle(CardGroupBoxStyle())
+            .opacity(ekEvent.isExpired() ? 0.3 : 1.0) // gray out past events https://github.com/vinhnx/Clendar/issues/146
+            .groupBoxStyle(CardGroupBoxStyle())
         }
         else {
             EmptyView().redacted(reason: .placeholder)

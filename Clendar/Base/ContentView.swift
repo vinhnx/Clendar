@@ -98,11 +98,14 @@ struct ContentView: View {
     private var eventView: some View {
         VStack(spacing: 20) {
             topView
+            Divider()
+
             makeCalendarGroupView()
             if showDateSwitcher {
                 makeQuickDateSwitcherView()
             }
 
+            Divider()
             eventListView
         }
     }
@@ -229,7 +232,7 @@ extension ContentView {
                         .overlay(
                             Text(date.toDateString(calendar: store.calendar))
                                 .minimumScaleFactor(0.5)
-                                .font(.boldFontWithSize(15))
+                                .font(.boldFontWithSize(17))
                                 .foregroundColor(
                                     store.calendar.isDate(date, inSameDayAs: store.selectedDate) ? Color.white
                                     : store.calendar.isDateInToday(date) ? .white
