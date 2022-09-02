@@ -157,10 +157,11 @@ platform :ios do
     bumpBuild
     commitVersionBumpWrapper
     
+    makeAppStoreGitTag
+    pushGitTag
+
     _makeAppStoreBuild # iOS build
     # _makeMacAppStoreBuild # macOS build
-    
-    makeAppStoreGitTag
   end
   
   # gym docs: https://docs.fastlane.tools/actions/gym/
@@ -181,6 +182,7 @@ platform :ios do
       configuration: configuration,
       output_name: output_name,
       output_directory: output_directory,
+      include_bitcode: false,
       
       # skip export, just archive
 #      skip_build_archive: true
