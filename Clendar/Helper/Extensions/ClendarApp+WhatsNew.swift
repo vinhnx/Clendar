@@ -16,45 +16,30 @@ extension ClendarApp: WhatsNewCollectionProvider {
         WhatsNew(
             version: WhatsNew.Version(
                 major: 3,
-                minor: 5,
+                minor: 6,
                 patch: 0
             ), // specify version here
             title: WhatsNew.Title(
-                text: WhatsNew.Text(NSLocalizedString("What's new in Clendar", comment: "")),
-                foregroundColor: .appRed
+                text: WhatsNew.Text(
+                    NSLocalizedString("What's new in Clendar", comment: "")
+                )
             ),
             features: [
                 .init(
                     image: .init(
-                        systemName: "wand.and.stars.inverse",
+                        systemName: "apps.iphone",
                         foregroundColor: .orange
                     ),
-                    title: WhatsNew.Text("NEW"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Fix wrong widget theme when changing different languages", comment: ""))
+                    title: WhatsNew.Text("All-new Lock Screen Widget"),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Find your next favorite Widget. It's so beautiful, check it out on the lock screen!", comment: ""))
                 ),
                 .init(
                     image: .init(
-                        systemName: "wand.and.stars.inverse",
-                        foregroundColor: .indigo
-                    ),
-                    title: WhatsNew.Text("NEW"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Fix localization", comment: ""))
-                ),
-                .init(
-                    image: .init(
-                        systemName: "wand.and.stars.inverse",
-                        foregroundColor: .green
-                    ),
-                    title: WhatsNew.Text("NEW"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Fix action sheet crash", comment: ""))
-                ),
-                .init(
-                    image: .init(
-                        systemName: "rectangle.portrait.inset.filled",
+                        systemName: "sparkles",
                         foregroundColor: .teal
                     ),
-                    title: WhatsNew.Text("NEW"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Support portrait mode on iPad", comment: ""))
+                    title: WhatsNew.Text("All-new redesigned"),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Improve accessibility and user experience!", comment: ""))
                 ),
                 .init(
                     image: .init(
