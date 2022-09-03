@@ -22,8 +22,8 @@ enum TimeAndHourFormat: Int, CaseIterable {
 
     var localizedTitle: String {
         switch self {
-        case .hhmm: return NSLocalizedString("12 hour", comment: "") + " " + "(\(DateFormatter.asString(Date(), format: self.format)))"
-        case .HHmm: return NSLocalizedString("24 hour", comment: "") + " " + "(\(DateFormatter.asString(Date(), format: self.format)))"
+        case .hhmm: return "12h: \(DateFormatter.asString(Date(), format: self.format))"
+        case .HHmm: return "24h: \(DateFormatter.asString(Date(), format: self.format))"
         }
     }
 
