@@ -19,7 +19,7 @@ struct EventListView: View {
 
     var body: some View {
         if events.isEmpty {
-            EmptyView()
+            EventEmptyView()
         }
         else {
             if #available(iOS 16.0, *) {

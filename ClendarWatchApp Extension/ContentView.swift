@@ -18,7 +18,7 @@ struct ContentView: View {
         // since we already configure one in @main ClendarApp's scene, don't put it here
         Group {
             if eventKitWrapper.events.isEmpty {
-                EmptyView()
+                EventEmptyView()
             } else {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 10) {

@@ -14,6 +14,8 @@ import Shift
 import Then
 import ConfettiSwiftUI
 
+// TODO: refactor, cleanup with ViewModifier
+
 struct ContentView: View {
     @EnvironmentObject var store: SharedStore
     @StateObject var eventKitWrapper = Shift.shared
@@ -106,6 +108,7 @@ struct ContentView: View {
             Divider()
             eventListView
         }
+        .modifier(FooModifier())
     }
 
     var menuView: some View {
@@ -188,7 +191,7 @@ extension ContentView {
     }
 
     private func makeDateSwitcherToggle() -> some View {
-        Toggle(isOn: $showDateSwitcher.animation(.easeIn(duration: 0.25))) {
+        Toggle(isOn: $showDateSwitcher.animation(.easeInOut)) {
             Image(systemName: "arrow.left.arrow.right")
         }
         .controlSize(.small)
@@ -292,5 +295,15 @@ extension ContentView {
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environmentObject(SharedStore())
+    }
+}
+
+struct FooModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content.contentTransition(.interpolate)
+        } else {
+            content
+        }
     }
 }

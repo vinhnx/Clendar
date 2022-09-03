@@ -6,9 +6,9 @@
 //  Copyright © 2020 Vinh Nguyen. All rights reserved.
 //
 
-import SwiftDate
 import SwiftUI
 import WidgetKit
+import SwiftDate
 
 struct DateInfoWidgetEntryView: View {
     @Environment(\.widgetFamily) var family
@@ -111,7 +111,7 @@ struct EventsListWidgetView: View {
 
     var body: some View {
         if entry.events.isEmpty {
-            EmptyView()
+            EventEmptyView()
         } else {
             LazyVStack(alignment: .leading, spacing: 10) {
                 Section(

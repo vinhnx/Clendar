@@ -9,15 +9,19 @@
 import SwiftUI
 import WidgetKit
 
+// NOTE: Closure containing control flow statement cannot be used with result builder 'WidgetBundleBuilder'
+
 // Icon Next
-struct LockScreenWidgetIconNextEvent: Widget {
+struct LockScreenWidgetIconNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetIconNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Icon", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Icon", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -35,14 +39,16 @@ struct LockScreenWidgetIconNextEvent: Widget {
 }
 
 // Icon Counter
-struct LockScreenWidgetIconCounter: Widget {
+struct LockScreenWidgetIconCounter: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetIconCounter.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Icon", comment: ""))
-            .description(NSLocalizedString("With total events counter for the day", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Icon", comment: ""))
+        .description(NSLocalizedString("With total events counter for the day", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -60,14 +66,16 @@ struct LockScreenWidgetIconCounter: Widget {
 }
 
 // TranslucentAllNextEvent
-struct LockScreenWidgetTranslucentAllNextEvent: Widget {
+struct LockScreenWidgetTranslucentAllNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentAllNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -85,14 +93,16 @@ struct LockScreenWidgetTranslucentAllNextEvent: Widget {
 }
 
 // TranslucentAllCounter
-struct LockScreenWidgetTranslucentAllCounter: Widget {
+struct LockScreenWidgetTranslucentAllCounter: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentAllCounter.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
-            .description(NSLocalizedString("With total events counter for the day", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
+        .description(NSLocalizedString("With total events counter for the day", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -110,14 +120,16 @@ struct LockScreenWidgetTranslucentAllCounter: Widget {
 }
 
 // TranslucentContentNextEvent
-struct LockScreenWidgetTranslucentContentNextEvent: Widget {
+struct LockScreenWidgetTranslucentContentNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentContentNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -135,14 +147,16 @@ struct LockScreenWidgetTranslucentContentNextEvent: Widget {
 }
 
 // TranslucentContentCounter
-struct LockScreenWidgetTranslucentContentCounter: Widget {
+struct LockScreenWidgetTranslucentContentCounter: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetTranslucentContentCounter.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
-            .description(NSLocalizedString("With total events counter for the day", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Translucent", comment: ""))
+        .description(NSLocalizedString("With total events counter for the day", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -160,14 +174,16 @@ struct LockScreenWidgetTranslucentContentCounter: Widget {
 }
 
 // MinimalLeadingNextEvent
-struct LockScreenWidgetMinimalLeadingNextEvent: Widget {
+struct LockScreenWidgetMinimalLeadingNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetMinimalLeadingNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Minimal", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Minimal", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -185,14 +201,16 @@ struct LockScreenWidgetMinimalLeadingNextEvent: Widget {
 }
 
 // MinimalTrailingNextEvent
-struct LockScreenWidgetMinimalTrailingNextEvent: Widget {
+struct LockScreenWidgetMinimalTrailingNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetMinimalTrailingNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Minimal", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Minimal", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -210,14 +228,16 @@ struct LockScreenWidgetMinimalTrailingNextEvent: Widget {
 }
 
 // LeadingLineNextEvent
-struct LockScreenWidgetLeadingLineNextEvent: Widget {
+struct LockScreenWidgetLeadingLineNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetLeadingLineNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -235,14 +255,16 @@ struct LockScreenWidgetLeadingLineNextEvent: Widget {
 }
 
 // TrailingLineNextEvent
-struct LockScreenWidgetTrailingLineNextEvent: Widget {
+struct LockScreenWidgetTrailingLineNextEvent: LockScreenWidgetable {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Constants.WidgetKind.lockScreenWidgetTrailingLineNextEvent.rawValue,
-            provider: DateInfoWidgetTimelineProvider()
-        ) { entry in buildContentView(entry) }.supportedFamilies(widgetFamilies)
-            .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
-            .description(NSLocalizedString("With upcoming event", comment: ""))
+            provider: DateInfoWidgetTimelineProvider(),
+            content: buildContentView
+        )
+        .supportedFamilies(widgetFamilies)
+        .configurationDisplayName(NSLocalizedString("Vertical line", comment: ""))
+        .description(NSLocalizedString("With upcoming event", comment: ""))
     }
 
     private func buildContentView(_ entry: WidgetEntry) -> some View {
@@ -256,22 +278,5 @@ struct LockScreenWidgetTrailingLineNextEvent: Widget {
         } else {
             return EmptyView()
         }
-    }
-}
-
-private var widgetFamilies: [WidgetFamily] {
-    if #available(iOSApplicationExtension 16.0, *) {
-        return [
-            .accessoryInline,
-            .accessoryCircular,
-            .accessoryRectangular
-        ]
-    } else {
-        return [
-            .systemSmall,
-            .systemMedium,
-            .systemLarge,
-            .systemExtraLarge
-        ]
     }
 }

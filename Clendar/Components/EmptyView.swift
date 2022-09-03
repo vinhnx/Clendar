@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EmptyView: View {
+struct EventEmptyView: View {
     var text: String = "No events for today,\nenjoy your day!\n🎉"
 
     var body: some View {
