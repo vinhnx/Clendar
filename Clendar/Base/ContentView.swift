@@ -108,7 +108,6 @@ struct ContentView: View {
             Divider()
             eventListView
         }
-        .modifier(FooModifier())
     }
 
     var menuView: some View {
@@ -295,15 +294,5 @@ extension ContentView {
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environmentObject(SharedStore())
-    }
-}
-
-struct FooModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        if #available(iOS 16.0, *) {
-            content.contentTransition(.interpolate)
-        } else {
-            content
-        }
     }
 }
