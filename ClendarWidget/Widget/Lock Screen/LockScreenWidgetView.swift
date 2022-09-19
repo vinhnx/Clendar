@@ -42,7 +42,7 @@ struct LockScreenWidgetView: View {
         if events.isEmpty { return "" }
         
         switch contentStyle {
-        case .nextEvent: return events.first?.event?.title ?? ""
+        case .nextEvent: return events.first?.event?.title ?? "✅"
         case .counter: return "\(events.count) \(NSLocalizedString("Events", comment: ""))"
         }
     }
@@ -171,7 +171,7 @@ extension LockScreenWidgetView {
                                 buildEventContent()
                             }
                         }
-                        .padding([.leading, .trailing], 3)
+                        .padding([.leading, .trailing], 1)
                     }
 
                 case .content:
