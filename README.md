@@ -14,7 +14,7 @@ Clendar - Minimal Calendar
                     style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a></p>
             <p align="center"><img src="https://www.clendar.info/img/qr.png" height="200" width="200"></p>
 
-> [Landing Page](https://clendar.info)
+> [Landing Page](http://vinhnx.github.io/clendar-site)
 
 ### About
 
