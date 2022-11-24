@@ -14,6 +14,6 @@ extension Array where Element == ClendarEvent {
     }
 
     var allDayEvents: [ClendarEvent] {
-        filter { $0.event?.isAllDay == false }
+        filter { $0.event?.isAllDay == true }
     }
 }
