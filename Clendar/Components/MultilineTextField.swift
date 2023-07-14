@@ -24,7 +24,7 @@ fileprivate struct UITextViewWrapper: UIViewRepresentable {
         textField.delegate = context.coordinator
 
         textField.isEditable = true
-        textField.font = UIFont.preferredFont(forTextStyle: .body)
+        textField.font = Font(UIFont.preferredFont(forTextStyle: .body))
         textField.isSelectable = true
         textField.isUserInteractionEnabled = true
         textField.isScrollEnabled = false
