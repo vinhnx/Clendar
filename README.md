@@ -9,10 +9,9 @@ Clendar - Minimal Calendar
 
 <p align="center"><a href="https://apps.apple.com/app/clendar-a-calendar-app/id1548102041#?platform=iphone"
                 style="display: inline-block; overflow: hidden; border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"><img
-                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-US?size=250x83&amp;releaseDate=1600214400&h=b81fd00fac3280be6ec30d3d3a1461f0"
+                    src="https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/white/en-us.svg"
                     alt="Download on the App Store"
                     style="border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-right-radius: 13px; border-bottom-left-radius: 13px; width: 250px; height: 83px;"></a></p>
-            <p align="center"><img src="https://www.clendar.info/img/qr.png" height="200" width="200"></p>
 
 > [Landing Page](http://vinhnx.github.io/clendar-site)
 
