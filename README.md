@@ -25,6 +25,7 @@ Clendar - Minimal Calendar
 - 📖 [Requirements](#requirements)
 - 💖 [My own Swift Packages currently used in Clendar](#my-own-swift-packages-currently-used-in-clendar)
 - 📝 [Contributing](#contributing)
+- 📂 [Important Files To Look At](#important-files-to-look-at)
 - 🙌 [Contributors](#contributors)
 - ⚖️ [License](#license)
 - 🏆 [Open-source inspiration](#open-source-inspiration)
@@ -172,6 +173,19 @@ If you don't know where to start:
 3. Switch to the branch you want to work on and start contributing! 📝 
 
 When submitting an issue, please make sure your description is clear and has enough information for someone to be able to reproduce the issue!
+
+### Important Files To Look At
+
+-  [Clendar](https://github.com/vinhnx/Clendar/tree/main/Clendar0)
+  -  Clendar application program
+-  [ClendarTests](https://github.com/vinhnx/Clendar/tree/main/ClendarTests)
+  -  Contents to test the Clendar program on IOS software
+-  [ClendarUITests](https://github.com/vinhnx/Clendar/tree/main/ClendarUITests)
+  -  Contents to test the Clendar UI on IOS software
+-  [ClendarWatchApp Extension](https://github.com/vinhnx/Clendar/tree/main/ClendarWatchApp%20Extension)
+  - Contents used to create Clendar compatibility to watchOS using SwiftUI
+-  [Packages](https://github.com/vinhnx/Clendar/tree/main/Packages)
+  -  Contains Clendar theme and SwiftUI calendar view
 
 ### Contributors
 
