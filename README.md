@@ -105,32 +105,32 @@ The following technologies were used to develop our application:
 
 Core:
 
--   [SwiftUI] (https://developer.apple.com/xcode/swiftui/) (and UIKit interoperability)
+-   [SwiftUI](https://developer.apple.com/xcode/swiftui/) (and UIKit interoperability)
 -   iPadOS
--   [WidgetKit] (https://developer.apple.com/documentation/widgetkit)
+-   [WidgetKit](https://developer.apple.com/documentation/widgetkit)
 -   [SiriKit] (https://developer.apple.com/documentation/sirikit/)
 -   EventKit/EvenKit UI - wrapper with my own [Shift package](https://github.com/vinhnx/Shift) 📆
 -   [WatchKit] (https://developer.apple.com/documentation/watchkit/)
 -   Combine
 -   Catalyst
--   [StoreKit] (https://developer.apple.com/documentation/storekit)
+-   [StoreKit](https://developer.apple.com/documentation/storekit)
 
 Build delivery tool:
 
--   [Fastlane] (https://fastlane.tools/)
+-   [Fastlane](https://fastlane.tools/)
 
 Package Managers:
 
--   [Swift Package Manager] (https://www.swift.org/package-manager/)
--   [CocoaPods] (https://cocoapods.org/)
+-   [Swift Package Manager](https://www.swift.org/package-manager/)
+-   [CocoaPods](https://cocoapods.org/)
 
 Linter:
 
--   [SwiftLint] (https://swiftpackageindex.com/realm/SwiftLint)
+-   [SwiftLint](https://swiftpackageindex.com/realm/SwiftLint)
 
 Formatter:
 
--   [SwiftFormat] (https://formulae.brew.sh/cask/swiftformat-for-xcode)
+-   [SwiftFormat](https://formulae.brew.sh/cask/swiftformat-for-xcode)
 
 Action:
 
@@ -162,13 +162,13 @@ How To Contribute:
 
 If you don't know where to start:
 
-- Navigate to the [issues page] (https://github.com/vinhnx/Clendar/issues) 
+- Navigate to the [issues page](https://github.com/vinhnx/Clendar/issues) 
 - Filter by label
-- Look for issues related to [good first issue] (https://github.com/vinhnx/Clendar/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+- Look for issues related to [good first issue](https://github.com/vinhnx/Clendar/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 - Feel free to look at all the issues opened and pick one that interests you!
 
 1. Fork the project repository by clicking Fork in the top right hand corner 🍴
-2. Clone the repositry onto your local machine using the Git url 💻
+2. Clone the repository onto your local machine using the Git url 💻
 3. Switch to the branch you want to work on and start contributing! 📝 
 
 When submitting an issue, please make sure your description is clear and has enough information for someone to be able to reproduce the issue!
