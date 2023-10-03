@@ -15,11 +15,45 @@ Clendar - Minimal Calendar
 
 > [Landing Page](http://vinhnx.github.io/clendar-site)
 
+### Table of Contents
+
+- 📋 [About](#about)
+- 🚀 [What's Clendar](##whats-clendar)
+- 📦 [SwiftUI](#swiftui)
+- 💻 [Tip to build on M1 Macs](#tip-to-build-on-m1-macs)
+- 📚 [Tech stacks](#tech-stacks)
+- 📖 [Requirements](#requirements)
+- 💖 [My own Swift Packages currently used in Clendar](#my-own-swift-packages-currently-used-in-clendar)
+- 📝 [Contributing](#contributing)
+- 📂 [Important Files To Look At](#important-files-to-look-at)
+- 🙌 [Contributors](#contributors)
+- ⚖️ [License](#license)
+- 🏆 [Open-source inspiration](#open-source-inspiration)
+  
 ### About
 
 This project is started out as an UIKit base app for me to learn new WWDC features over the years. But one day, I decided to convert the whole app from UIKit -> SwiftUI and boom, here we are.
 
 This is the PR => https://github.com/vinhnx/Clendar/pull/35
+
+### What's 'Clendar'?
+
+It's just Calendar, without an 'a'. I thought it was unique, but it turns out it's not going well with ASO (App Store Optimization) and SEO (Search Engine Optimization).
+
+Clendar is a calendar app made simpler. The application includes features like widgets, themes, keyboard shortcuts, and natural language parsing.
+
+Its main features include:
+
+-  Widgets, with customizable dark/light themes
+-  Keyboard shortcuts
+-  Siri shortcuts
+-  Apple Watch complications
+-  Custom app icons
+-  Natural language parsing
+-  Lunar day view
+-  Dark and light modes built-in
+-  Accessibility support
+-  Localizations support
 
 ### SwiftUI
 
@@ -68,36 +102,38 @@ By publishing Clendar, I would like to give back to the community. 😊
 
 ### Tech stacks
 
+The following technologies were used to develop our application:
+
 Core:
 
--   SwiftUI (and UIKit interoperability)
+-   [SwiftUI](https://developer.apple.com/xcode/swiftui/) (and UIKit interoperability)
 -   iPadOS
--   WidgetKit
--   SiriKit
+-   [WidgetKit](https://developer.apple.com/documentation/widgetkit)
+-   [SiriKit] (https://developer.apple.com/documentation/sirikit/)
 -   EventKit/EvenKit UI - wrapper with my own [Shift package](https://github.com/vinhnx/Shift) 📆
--   WatchKit
+-   [WatchKit] (https://developer.apple.com/documentation/watchkit/)
 -   Combine
 -   Catalyst
--   StoreKit
+-   [StoreKit](https://developer.apple.com/documentation/storekit)
 
-Build delivery tool
+Build delivery tool:
 
--   Fastlane
+-   [Fastlane](https://fastlane.tools/)
 
-Package Managers
+Package Managers:
 
--   Swift Package Manager
--   CocoaPods
+-   [Swift Package Manager](https://www.swift.org/package-manager/)
+-   [CocoaPods](https://cocoapods.org/)
 
-Linter
+Linter:
 
--   SwiftLint
+-   [SwiftLint](https://swiftpackageindex.com/realm/SwiftLint)
 
-Formatter
+Formatter:
 
--   SwiftFormat
+-   [SwiftFormat](https://formulae.brew.sh/cask/swiftformat-for-xcode)
 
-Action
+Action:
 
 -   [SwiftLint is integrated on GitHub Action workflow](https://github.com/vinhnx/Clendar/actions?query=workflow%3ASwiftLint) 🚀
 
@@ -117,11 +153,42 @@ Action
 
 ### Contributing
 
-Contributing is more than welcome, if you feel like helping the app, or want to add new feature, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
+Contributing is more than welcome, if you feel like helping the app, or want to add new features, feel free to take a look at my [issues page](https://github.com/vinhnx/Clendar/issues). Thanks!
+
+How To Contribute:
+
+-  Report issues you're facing
+-  Give a 👍 on issues that are relevant to you
+-  Answer queries on the issue tracker
+
+If you don't know where to start:
+
+- Navigate to the [issues page](https://github.com/vinhnx/Clendar/issues) 
+- Filter by label
+- Look for issues related to [good first issue](https://github.com/vinhnx/Clendar/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+- Feel free to look at all the issues opened and pick one that interests you!
+
+1. Fork the project repository by clicking Fork in the top right hand corner 🍴
+2. Clone the repository onto your local machine using the Git url 💻
+3. Switch to the branch you want to work on and start contributing! 📝 
+
+When submitting an issue, please make sure your description is clear and has enough information for someone to be able to reproduce the issue!
+
+### Important Files To Look At
+
+-  [Clendar](https://github.com/vinhnx/Clendar/tree/main/Clendar0)
+  -  Clendar application program
+-  [ClendarTests](https://github.com/vinhnx/Clendar/tree/main/ClendarTests)
+  -  Contents to test the Clendar program on IOS software
+-  [ClendarUITests](https://github.com/vinhnx/Clendar/tree/main/ClendarUITests)
+  -  Contents to test the Clendar UI on IOS software
+-  [ClendarWatchApp Extension](https://github.com/vinhnx/Clendar/tree/main/ClendarWatchApp%20Extension)
+  - Contents used to create Clendar compatibility to watchOS using SwiftUI
+-  [Packages](https://github.com/vinhnx/Clendar/tree/main/Packages)
+  -  Contains Clendar theme and SwiftUI calendar view
 
 ### Contributors
 
-🙏🏻🤯🎉
 Huge thanks everyone who took their precious time and effort to contribute to the project:
 
 -   [Aleksandr Sutulov](https://github.com/AlexanderSutul)
@@ -142,13 +209,7 @@ And, if you like, you can download the app for free on the [App Store](https://a
 
 ### Open-source inspiration
 
--   https://github.com/jeffreybergier/WaterMe
-
-### What's 'Clendar'?
-
-It's just Calendar, without an 'a'. I thought it's unique, but turns out it's not going well with ASO (App Store Optimization) and SEO (Search Engine Optimization).
-
-But, whatever!
+-   https://github.com/jeffreybergier
 
 ---
 
