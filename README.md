@@ -109,9 +109,9 @@ Core:
 -   [SwiftUI](https://developer.apple.com/xcode/swiftui/) (and UIKit interoperability)
 -   iPadOS
 -   [WidgetKit](https://developer.apple.com/documentation/widgetkit)
--   [SiriKit] (https://developer.apple.com/documentation/sirikit/)
+-   [SiriKit](https://developer.apple.com/documentation/sirikit/)
 -   EventKit/EvenKit UI - wrapper with my own [Shift package](https://github.com/vinhnx/Shift) 📆
--   [WatchKit] (https://developer.apple.com/documentation/watchkit/)
+-   [WatchKit](https://developer.apple.com/documentation/watchkit/)
 -   Combine
 -   Catalyst
 -   [StoreKit](https://developer.apple.com/documentation/storekit)
