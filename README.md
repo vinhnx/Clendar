@@ -191,14 +191,14 @@ When submitting an issue, please make sure your description is clear and has eno
 
 Huge thanks everyone who took their precious time and effort to contribute to the project:
 
--   [Aleksandr Sutulov](https://github.com/@AlexanderSutul)
--   [Jan Matoniak](https://github.com/@kapucnov2321)
--   [Prabaljit Walia](https://github.com/@prabal4546)
--   [Gaurav Kakkar](https://github.com/@shadowfax90)
--   [Andrey Bozhko](https://github.com/@AndreyBozhko)
--   [carboitel](https://github.com/@carboitel)
--   [Michele Zenoni](https://github.com/@Levyathanus)
--   [Samis](https://github.com/@samis0707)
+-   [Aleksandr Sutulov](https://github.com/AlexanderSutul)
+-   [Jan Matoniak](https://github.com/kapucnov2321)
+-   [Prabaljit Walia](https://github.com/prabal4546)
+-   [Gaurav Kakkar](https://github.com/shadowfax90)
+-   [Andrey Bozhko](https://github.com/AndreyBozhko)
+-   [carboitel](https://github.com/carboitel)
+-   [Michele Zenoni](https://github.com/Levyathanus)
+-   [Samis](https://github.com/samis0707)
 -  💡 [your name here?...](https://github.com/vinhnx/Clendar/issues) 
 
 Words simply can not describe how thankful am I, I'm deeply appreciated all for your kind contribution. 
