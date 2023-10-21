@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = SwiftFormat;
-			productName = SwiftFormat;
 		};
 		230984053C6652DFF510F450F21C5CF7 /* R.swift */ = {
 			isa = PBXAggregateTarget;
@@ -26,7 +25,6 @@
 				1E0071CB4703FEDCC7073353A6C51B81 /* PBXTargetDependency */,
 			);
 			name = R.swift;
-			productName = R.swift;
 		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
@@ -36,7 +34,6 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 		B08332B0C91F6CDC405644DADDB96E3C /* LicensePlist */ = {
 			isa = PBXAggregateTarget;
@@ -46,7 +43,6 @@
 			dependencies = (
 			);
 			name = LicensePlist;
-			productName = LicensePlist;
 		};
 /* End PBXAggregateTarget section */
 
@@ -308,7 +304,7 @@
 		108EF02EE3CDB2891EB32D4DC3DE1136 /* SwiftFormat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftFormat.release.xcconfig; sourceTree = "<group>"; };
 		10A2886967AA9EB70910DA036F606F9A /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
 		1548539B8CF779C633FDD7C92ACA15F9 /* Date.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Date.swift; path = Sources/Utils/Date.swift; sourceTree = "<group>"; };
-		161B6208FBFDA3520F150529F90E97B2 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = StoreKitTestCertificate.cer; path = Sources/StoreKitTestCertificate.cer; sourceTree = "<group>"; };
+		161B6208FBFDA3520F150529F90E97B2 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; includeInIndex = 1; name = StoreKitTestCertificate.cer; path = Sources/StoreKitTestCertificate.cer; sourceTree = "<group>"; };
 		17229DD9E4D76F8E127B1A73279E784C /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
 		177404175DE29C7D1F42EE57112DDCD4 /* Pods-ClendarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ClendarTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		18AC56B00BB599DF044B6CD30D2B766A /* Pods-ClendarUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ClendarUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -329,7 +325,7 @@
 		2713175FEA9F339E37DA47104828868F /* ASN1Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ASN1Swift.modulemap; sourceTree = "<group>"; };
 		294B10C5C911E634BA86611FE608F5F1 /* ENSlashDateFormatStartWithYearParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatStartWithYearParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatStartWithYearParser.swift; sourceTree = "<group>"; };
 		2C612B73CAAB8570B75CFD0B98BF4277 /* JPMergeDateRangeRefiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPMergeDateRangeRefiner.swift; path = Sources/Refiners/JP/JPMergeDateRangeRefiner.swift; sourceTree = "<group>"; };
-		2E24A34640884D943BD4381ED44305E6 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = AppleIncRootCertificate.cer; path = Sources/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
+		2E24A34640884D943BD4381ED44305E6 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; includeInIndex = 1; name = AppleIncRootCertificate.cer; path = Sources/AppleIncRootCertificate.cer; sourceTree = "<group>"; };
 		2E299A4869F4E972023DF5510227E456 /* DETimeExpressionParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DETimeExpressionParser.swift; path = Sources/Parsers/DE/DETimeExpressionParser.swift; sourceTree = "<group>"; };
 		301F128A4FD04EDE0338EB7A8CD607F3 /* JPUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPUtil.swift; path = Sources/Utils/JPUtil.swift; sourceTree = "<group>"; };
 		357EC375B8379F58D1064E821E0C44AE /* ENSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENSlashDateFormatParser.swift; path = Sources/Parsers/EN/ENSlashDateFormatParser.swift; sourceTree = "<group>"; };
@@ -343,7 +339,7 @@
 		41969B791C0AD09B2F2DF1A1B582DBE9 /* SwiftyChrono.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyChrono.debug.xcconfig; sourceTree = "<group>"; };
 		425C0FFBBEC5DDF70B4327B6FB818C8D /* TPInAppReceipt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPInAppReceipt-dummy.m"; sourceTree = "<group>"; };
 		46C30B9BC0D4CBF9F8F51E1523581FCD /* Pods-ClendarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ClendarUITests-dummy.m"; sourceTree = "<group>"; };
-		48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Clendar"; path = Pods_Clendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7C88BEC7F447557F2459AF51C99E34 /* Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extras.swift; path = Sources/Extras.swift; sourceTree = "<group>"; };
 		50DBC99401F1EF542ED33927BED9FE62 /* ENISOFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ENISOFormatParser.swift; path = Sources/Parsers/EN/ENISOFormatParser.swift; sourceTree = "<group>"; };
 		530861966616BF364FADDFEBB469E260 /* Pods-ClendarUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ClendarUITests.modulemap"; sourceTree = "<group>"; };
@@ -410,7 +406,7 @@
 		9ACDC5ACD12350215CA339EA16F00AB6 /* DECasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DECasualDateParser.swift; path = Sources/Parsers/DE/DECasualDateParser.swift; sourceTree = "<group>"; };
 		9C9A532C7456B3BBAEA68BACEFAD8D7C /* Pods-Clendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Clendar.debug.xcconfig"; sourceTree = "<group>"; };
 		9CD8E3DEBE8C733660FEA2D603B299D0 /* DESlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DESlashDateFormatParser.swift; path = Sources/Parsers/DE/DESlashDateFormatParser.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1BB8890B202D08C089B1AC85C5D015D /* JPStandardParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JPStandardParser.swift; path = Sources/Parsers/JP/JPStandardParser.swift; sourceTree = "<group>"; };
 		A3EC05755E73879CD79431CC87FCB384 /* ESSlashDateFormatParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESSlashDateFormatParser.swift; path = Sources/Parsers/ES/ESSlashDateFormatParser.swift; sourceTree = "<group>"; };
 		A5B775E56C15C6E086D6A16D4677420C /* Refiner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Refiner.swift; path = Sources/Refiners/Refiner.swift; sourceTree = "<group>"; };
@@ -443,7 +439,7 @@
 		D06F0941F4BB93E5543CD140C03B21AB /* ZHUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZHUtil.swift; path = Sources/Utils/ZHUtil.swift; sourceTree = "<group>"; };
 		D20A317560AB31B840FD0B498602589D /* ESCasualDateParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ESCasualDateParser.swift; path = Sources/Parsers/ES/ESCasualDateParser.swift; sourceTree = "<group>"; };
 		D2CC53DA6523961C6BD904C956DE33C6 /* R.swift.Library-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift.Library-Info.plist"; sourceTree = "<group>"; };
-		D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyChrono.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyChrono; path = SwiftyChrono.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D490422C4533B15CC95CFAAE8AF12B45 /* TPInAppReceipt-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPInAppReceipt-umbrella.h"; sourceTree = "<group>"; };
 		D4F0B491657F15BC7E1EC098F40C4A51 /* ASN1Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ASN1Types.swift; path = Sources/asn1swift/ASN1Types.swift; sourceTree = "<group>"; };
 		D5A885E09F144FD4D3A12B1939DC5DC0 /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
@@ -572,11 +568,11 @@
 			isa = PBXGroup;
 			children = (
 				E839E391BD7285F60D4FDAF1794E7042 /* ASN1Swift */,
-				48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */,
+				48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */,
 				07CF2EE7058FD688BB88AB89F6F72B9E /* Pods-ClendarTests */,
 				89E92F11A6FAC6FAE446508EA7D355D5 /* Pods-ClendarUITests */,
 				CA4E3B66CE4D02048C77392B64FD0ABB /* R.swift.Library */,
-				D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */,
+				D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */,
 				55B95C7D3B3EA95D0B5AC37C6B93649B /* TPInAppReceipt */,
 			);
 			name = Products;
@@ -601,6 +597,7 @@
 				581E6ECC44FEF74F182A1821BD9C44F5 /* PKCS7.swift */,
 				55E0784B2F200A599D9D13AE5A7A4777 /* Support Files */,
 			);
+			name = ASN1Swift;
 			path = ASN1Swift;
 			sourceTree = "<group>";
 		};
@@ -635,6 +632,7 @@
 			children = (
 				4CC2172715BB44EF5A78F95190B2C9B8 /* Support Files */,
 			);
+			name = SwiftFormat;
 			path = SwiftFormat;
 			sourceTree = "<group>";
 		};
@@ -668,6 +666,7 @@
 			children = (
 				33CA3BE80C8247B70CC64CD0DDF48A5C /* Support Files */,
 			);
+			name = LicensePlist;
 			path = LicensePlist;
 			sourceTree = "<group>";
 		};
@@ -684,6 +683,7 @@
 			children = (
 				FAE886BFBB33145DF01C053E4B7C0F3B /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -707,6 +707,7 @@
 			children = (
 				8D1A82AF1F039A88DDDC74FAD7673102 /* Support Files */,
 			);
+			name = R.swift;
 			path = R.swift;
 			sourceTree = "<group>";
 		};
@@ -777,6 +778,7 @@
 				1D539F564EE3D4DC62AE0EA93AFFE4E5 /* Core */,
 				DA117B92E78780ACA527DE7C49041CAD /* Support Files */,
 			);
+			name = TPInAppReceipt;
 			path = TPInAppReceipt;
 			sourceTree = "<group>";
 		};
@@ -880,6 +882,7 @@
 				70E6BEA6E55686C45A0CF007D5D291C8 /* ZHWeekdayParser.swift */,
 				6D8B4DFE380D3CD4B279601D6670AF83 /* Support Files */,
 			);
+			name = SwiftyChrono;
 			path = SwiftyChrono;
 			sourceTree = "<group>";
 		};
@@ -957,6 +960,7 @@
 				E995837E232CF8BB235CE793E47F3E54 /* Validatable.swift */,
 				B2F2178742327117F26DAA07F5B26E6D /* Support Files */,
 			);
+			name = R.swift.Library;
 			path = R.swift.Library;
 			sourceTree = "<group>";
 		};
@@ -1055,7 +1059,7 @@
 			);
 			name = "Pods-Clendar";
 			productName = Pods_Clendar;
-			productReference = 48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods_Clendar.framework */;
+			productReference = 48ABE79A7E5C7B4173D08E2AD1F12526 /* Pods-Clendar */;
 			productType = "com.apple.product-type.framework";
 		};
 		0174868C54347C1E064D681160122EAA /* Pods-ClendarUITests */ = {
@@ -1111,7 +1115,7 @@
 			);
 			name = SwiftyChrono;
 			productName = SwiftyChrono;
-			productReference = D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono.framework */;
+			productReference = D4436B79B29EFDD5FC5D6EB6B02B11C7 /* SwiftyChrono */;
 			productType = "com.apple.product-type.framework";
 		};
 		7C3A7A9FFE9704119A71F1B54078492B /* Pods-ClendarTests */ = {
@@ -1175,8 +1179,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 12.0";
