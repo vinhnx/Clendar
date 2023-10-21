@@ -16,7 +16,7 @@ extension ClendarApp: WhatsNewCollectionProvider {
         WhatsNew(
             version: WhatsNew.Version(
                 major: 3,
-                minor: 6,
+                minor: 8,
                 patch: 0
             ), // specify version here
             title: WhatsNew.Title(
@@ -27,19 +27,19 @@ extension ClendarApp: WhatsNewCollectionProvider {
             features: [
                 .init(
                     image: .init(
-                        systemName: "apps.iphone",
+                        systemName: "globe",
                         foregroundColor: .orange
                     ),
-                    title: WhatsNew.Text("All-new Lock Screen Widget"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Find your next favorite Widget. It's so beautiful, check it out on the lock screen!", comment: ""))
+                    title: WhatsNew.Text("New Translations"),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Clendar now include new Italian localization (Grazie!), and with langugage specific changes for the German localization (Danke!).\nHuge thanks to everyone contributed on GitHub!!!", comment: ""))
                 ),
                 .init(
                     image: .init(
                         systemName: "sparkles",
                         foregroundColor: .teal
                     ),
-                    title: WhatsNew.Text("All-new redesigned"),
-                    subtitle: WhatsNew.Text(NSLocalizedString("Improve accessibility and user experience!", comment: ""))
+                    title: WhatsNew.Text("Bug fixes"),
+                    subtitle: WhatsNew.Text(NSLocalizedString("Clendar is now even better every day, enjoy!", comment: ""))
                 ),
                 .init(
                     image: .init(
