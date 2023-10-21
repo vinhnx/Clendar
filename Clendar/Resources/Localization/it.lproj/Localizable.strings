@@ -1,264 +1,264 @@
 // No comment provided by engineer.
-"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[Beta] E' possibile scegliere la modalità di traduzione sperimentale. Questa funzionalità sarà costantemente migliorata. Lingue disponibili: inglese, spagnolo, francese, giapponese, tedesco, cinese, italiano.";
+"[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese." = "[Beta] You can choose to use experimental natural language parsing mode when create new event. This feature will be constantly improved. Available languages: English, Spanish, French, Japanese, German, Chinese.";
 
 // No comment provided by engineer.
-"App info" = "Info sull'app";
-"Auto-select day" = "Seleziona automaticamente il giorno";
+"App info" = "App info";
+"Auto-select day" = "Auto-select day";
 
 // No comment provided by engineer.
-"Auto-select day when month changes" = "Seleziona automaticamente il giorno quando cambia il mese";
+"Auto-select day when month changes" = "Auto-select day when month changes";
 
 // No comment provided by engineer.
-"Auto-select first day of month/week when calendar changes" = "Seleziona automaticamente il primo giorno del mese/settimana quando il calendario cambia";
+"Auto-select first day of month/week when calendar changes" = "Auto-select first day of month/week when calendar changes";
 
 // No comment provided by engineer.
-"Available calendars" = "Calendari disponibili";
+"Available calendars" = "Available calendars";
 
 // No comment provided by engineer.
-"Calendar grid view" = "Visualizzazione della griglia del calendario";
+"Calendar grid view" = "Calendar grid view";
 
 // No comment provided by engineer.
-"Calendar View" = "Visualizzazione Calendario";
+"Calendar View" = "Calendar View";
 
 // No comment provided by engineer.
-"Calendars" = "Calendari";
+"Calendars" = "Calendars";
 
 // No comment provided by engineer.
-"Cancel" = "Annulla";
+"Cancel" = "Cancel";
 
 // No comment provided by engineer.
-"Check calendar at a glance" = "Controlla il calendario a colpo d'occhio";
+"Check calendar at a glance" = "Check calendar at a glance";
 
 // No comment provided by engineer.
-"Choose your desired app icon" = "Scegli la tua icona preferita per l'app";
+"Choose your desired app icon" = "Choose your desired app icon";
 
 // No comment provided by engineer.
-"Custom App Icon" = "Icona dell'App Personalizzata";
+"Custom App Icon" = "Custom App Icon";
 
 // No comment provided by engineer.
-"Dark" = "Scuro";
+"Dark" = "Dark";
 
 // No comment provided by engineer.
-"Date" = "Data";
+"Date" = "Date";
 
 // No comment provided by engineer.
-"Date Info Widget" = "Widget per le Info sulla Data";
+"Date Info Widget" = "Date Info Widget";
 
 // No comment provided by engineer.
-"Default event duration" = "Durata predefinita per l'evento";
+"Default event duration" = "Default event duration";
 
 // No comment provided by engineer.
-"Delete Event" = "Elimina Evento";
+"Delete Event" = "Delete Event";
 
 // No comment provided by engineer.
-"Dim" = "Debole";
+"Dim" = "Dim";
 
 // No comment provided by engineer.
-"Done" = "Fatto";
+"Done" = "Done";
 
 // No comment provided by engineer.
-"Edit Event" = "Modifica Evento";
+"Edit Event" = "Edit Event";
 
 // No comment provided by engineer.
-"General" = "Generale";
+"General" = "General";
 
 // No comment provided by engineer.
-"Haptic feedback" = "Feedback tattile";
+"Haptic feedback" = "Haptic feedback";
 
 // No comment provided by engineer.
-"Light" = "Chiaro";
+"Light" = "Light";
 
 // No comment provided by engineer.
-"Lunar date" = "Data lunare";
+"Lunar date" = "Lunar date";
 
 // No comment provided by engineer.
-"minutes" = "minuti";
+"minutes" = "minutes";
 
 // No comment provided by engineer.
-"Month" = "Mese";
+"Month" = "Month";
 
 // No comment provided by engineer.
-"Month view" = "Visualizzazione mensile";
+"Month view" = "Month view";
 
 // No comment provided by engineer.
-"Month view calendar" = "Visualizzazione mensile del calendario";
+"Month view calendar" = "Month view calendar";
 
 // No comment provided by engineer.
-"Name" = "Nome";
+"Name" = "Name";
 
 // No comment provided by engineer.
-"None" = "Niente";
+"None" = "None";
 
 // No comment provided by engineer.
-"Off" = "Spento";
+"Off" = "Off";
 
 // No comment provided by engineer.
 "OK" = "OK";
 
 // No comment provided by engineer.
-"On" = "Acceso";
+"On" = "On";
 
 // No comment provided by engineer.
-"Quick Event" = "Evento Rapido";
+"Quick Event" = "Quick Event";
 
 // No comment provided by engineer.
-"Settings" = "Impostazioni";
+"Settings" = "Settings";
 
 // No comment provided by engineer.
-"Show days out" = "Giornate di spettacolo";
+"Show days out" = "Show days out";
 
 // No comment provided by engineer.
-"Supplementary day view" = "Visualizzazione supplementare del giorno";
+"Supplementary day view" = "Supplementary day view";
 
 // No comment provided by engineer.
-"Themes" = "Temi";
+"Themes" = "Themes";
 
 // No comment provided by engineer.
-"Upcoming events" = "Eventi in programma";
+"Upcoming events" = "Upcoming events";
 
 // No comment provided by engineer.
-"Version" = "Versione";
+"Version" = "Version";
 
 // No comment provided by engineer.
-"View Event" = "Visualizza Evento";
+"View Event" = "View Event";
 
 // No comment provided by engineer.
-"View mode" = "Modalità di visualizzazione";
+"View mode" = "View mode";
 
 // No comment provided by engineer.
-"Week view" = "Visualizzazione settimanale";
+"Week view" = "Week view";
 
 // No comment provided by engineer.
-"read a book this Friday 8PM..." = "leggi un libro questo venerdì alle 20...";
+"read a book this Friday 8PM..." = "read a book this Friday 8PM...";
 
 // No comment provided by engineer.
-"You can choose available calendars to shown in event list" = "Puoi scegliere i calendari disponibili da visualizzare nell'elenco degli eventi";
+"You can choose available calendars to shown in event list" = "You can choose available calendars to show in event list";
 
 // No comment provided by engineer.
-"No more events today,\nenjoy your day!\n🎉" = "Nessun altro evento per oggi,\ngoditi la giornata!\n🎉";
-"No events for today,\nenjoy your day!\n🎉" = "Nessun evento per oggi,\ngoditi la giornata!\n🎉";
-"English" = "Inglese";
-"Vietnamese" = "Vietnamita";
-"Change app Language" = "Cambia la Lingua dell'app";
-"All day" = "Tutto il giorno";
-"Start" = "Inizio";
-"End" = "Fine";
-"Add event" = "Aggiungi evento";
-"Recurring event" = "Evento ricorrente";
-"Recurring date" = "Data ricorrente";
-"Start time" = "Orario d'inizio";
-"End time" = "Orario di fine";
-"Location" = "Luogo";
-"New Event" = "Nuovo Evento";
-"Input event" = "Evento di ingresso";
-"Select event start time" = "Seleziona l'orario di inizio dell'evento";
-"Select event end time" = "Seleziona l'orario di fine dell'evento";
-"Title of the event" = "Titolo dell'evento";
-"Event duration" = "Durata dell'evento";
-"Collapse this view" = "Nascondi questa vista";
-"Create new event" = "Crea un nuovo evento";
-"Follow system" = "Seguire il sistema";
-"Widget theme" = "Tema widget";
-"Rate Clendar" = "Valuta Clendar";
-"Sharing" = "Condivisione";
-"Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Condivisione vuol dire amore. Se ti piace Clendar, lascia una recensione e aiutaci a condividere l'app, grazie!";
-"Share Clendar" = "Condividi Clendar";
-"Calendars Visibility" = "Visibilità dei Calendari";
-"Week" = "Settimana";
-"Calendar" = "Calendario";
-"Delete" = "Elimina";
-"Edit" = "Modifica";
-"Are you sure you want to delete this event?" = "Sei sicuro/a di voler eliminare questo evento?";
-"Default" = "Predefinito";
-"Original" = "Originale";
-"Keyboard shortcuts" = "Scorciatoie da tastiera";
-"Productivity, increased! 🚀" = "Produttività, aumentata! 🚀";
-"Events" = "Eventi";
-"Dismiss view" = "Rimuovi vista";
-"Save event" = "Salva evento";
-"Toggle all day switch" = "Cambia stato per l'opzione: tutto il giorno";
-"Switch to current date" = "Cambia alla data corrente";
-"Preferences" = "Preferenze";
-"Open Settings" = "Apri Impostazioni";
-"Siri Shortcuts" = "Scorciatoie di Siri";
-"Show Siri shortcuts view" = "Mostra la vista per le scorciatoie di Siri";
-"Open Clendar Siri Shortcuts" = "Apri le scorciatoie di Siri per Clendar";
-"Create new Clendar event(s)" = "Crea un/degli evento/i Clendar";
-"Open Clendar Settings" = "Apri le Impostazioni di Clendar";
-"New Clendar Event" = "Nuovo Evento Clendar";
-"Feedback/Report Issue" = "Feedback/Segnalazioni";
-"Event" = "Evento";
-"Event List Widget" = "Widget con la Lista degli Eventi";
-"Your day events at a glance" = "I tuoi eventi della giornata a colpo d'occhio";
-"You can now quick shortcuts to Siri and Shortcuts app. Try adding one below" = "Ora puoi utilizzare le scorciatoie per Siri e le Scorciatoie per l'app. Prova ad aggiungerne uno qui sotto.";
-"If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!" = "Se sei convinto che Clendar sia un'app utile e vuoi supportarne lo sviluppo; come l'aggiunta di nuove feature, temi extra e icone nel futuro; sentiti libero di farmi una donazione.\n\nQualsiasi cifra è un grande aiuto, grazie mille!";
-"Swipe down to collapse" = "Scorri verso il basso per nascondere";
-"Event deleted!" = "Evento eliminato!";
-"Unable to determine email sending state" = "Impossibile determinare lo stato d'invio dell'email";
-"Unable to open email client, please try again later" = "Impossibile aprire il client per l'email, perfavore riprova più tardi";
-"Events deleted!" = "Eventi eliminati!";
-"Delete All Future Events" = "Cancella Tutti gli Eventi Futuri";
-"Delete This Event Only" = "Cancella Solo Questo Evento";
-"This is a repeating event." = "Questo è un evento che si ripete.";
-"Is Recurring" = "E' Ricorrente";
-"No event selected" = "Nessun evento selezionato";
-"True Dark" = "Veramente Scuro";
-"True Light" = "Veramente Chiaro";
+"No more events today,\nenjoy your day!\n🎉" = "No more events today,\nenjoy your day!\n🎉";
+"No events for today,\nenjoy your day!\n🎉" = "No events for today,\nenjoy your day!\n🎉";
+"English" = "English";
+"Vietnamese" = "Vietnamese";
+"Change app Language" = "Change app Language";
+"All day" = "All day";
+"Start" = "Start";
+"End" = "End";
+"Add event" = "Add event";
+"Recurring event" = "Recurring event";
+"Recurring date" = "Recurring date";
+"Start time" = "Start time";
+"End time" = "End time";
+"Location" = "Location";
+"New Event" = "New Event";
+"Input event" = "Input event";
+"Select event start time" = "Select event start time";
+"Select event end time" = "Select event end time";
+"Title of the event" = "Title of the event";
+"Event duration" = "Event duration";
+"Collapse this view" = "Collapse this view";
+"Create new event" = "Create new event";
+"Follow system" = "Follow system";
+"Widget theme" = "Widget theme";
+"Rate Clendar" = "Rate Clendar";
+"Sharing" = "Sharing";
+"Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!" = "Sharing is caring. If you like Clendar, please leave a review or help sharing this app to the world, thank you!";
+"Share Clendar" = "Share Clendar";
+"Calendars Visibility" = "Calendars Visibility";
+"Week" = "Week";
+"Calendar" = "Calendar";
+"Delete" = "Delete";
+"Edit" = "Edit";
+"Are you sure you want to delete this event?" = "Are you sure you want to delete this event?";
+"Default" = "Default";
+"Original" = "Original";
+"Keyboard shortcuts" = "Keyboard shortcuts";
+"Productivity, increased! 🚀" = "Productivity, increased! 🚀";
+"Events" = "Events";
+"Dismiss view" = "Dismiss view";
+"Save event" = "Save event";
+"Toggle all day switch" = "Toggle all day switch";
+"Switch to current date" = "Switch to current date";
+"Preferences" = "Preferences";
+"Open Settings" = "Open Settings";
+"Siri Shortcuts" = "Siri Shortcuts";
+"Show Siri shortcuts view" = "Show Siri shortcuts view";
+"Open Clendar Siri Shortcuts" = "Open Clendar Siri Shortcuts";
+"Create new Clendar event(s)" = "Create new Clendar event(s)";
+"Open Clendar Settings" = "Open Clendar Settings";
+"New Clendar Event" = "New Clendar Event";
+"Feedback/Report Issue" = "Feedback/Report Issue";
+"Event" = "Event";
+"Event List Widget" = "Event List Widget";
+"Your day events at a glance" = "Your day events at a glance";
+"You can now quick shortcuts to Siri and Shortcuts app. Try adding one below" = "You can now quick shortcuts to Siri and Shortcuts app. Try adding one below";
+"If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; tips are greatly appreciated. Any tip amount helps a lot, thank you very much!" = "If you're feeling Clendar is helpful and would like to support the app development effort; like new features, extra themes, app icons in the future; feel free to leave me a tip.\n\nAny tip amount at all helps a lot, thank you very much!";
+"Swipe down to collapse" = "Swipe down to collapse";
+"Event deleted!" = "Event deleted!";
+"Unable to determine email sending state" = "Unable to determine email sending state";
+"Unable to open email client, please try again later" = "Unable to open email client, please try again later";
+"Events deleted!" = "Events deleted!";
+"Delete All Future Events" = "Delete All Future Events";
+"Delete This Event Only" = "Delete This Event Only";
+"This is a repeating event." = "This is a repeating event.";
+"Is Recurring" = "Is Recurring";
+"No event selected" = "No event selected";
+"True Dark" = "True Dark";
+"True Light" = "True Light";
 
 // No comment provided by engineer.
-"No more events today,\nenjoy your day!\n" = "Nessun altro evento per oggi,\ngoditi la giornata!\n";
-"No events for today,\nenjoy your day!\n" = "Nessun evento per oggi,\ngoditi la giornata!\n";
-"Clendar, new event" = "Clendar, nuovo evento";
-"Clendar, open settings" = "Clendar, apri impostazioni";
-"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "Sarai reindirizzato/a alle Impostazioni dell'app per selezionare la lingua che preferisci. Dopo aver scelto la lingua, riapri l'applicazione per applicarla (Consiglio: puoi premere l'icona in alto a sinistra, sotto la barra di stato per aprire velocemente l'app).";
-"Change Language" = "Cambia Lingua";
-"Support" = "Supporto";
-"Tip jar" = "Donazioni";
-"Default Calendar" = "Calendario predefinito";
-"Gregorian" = "Calendario gregoriano";
-"Buddhist" = "Calendario buddista";
-"Lunar calendar (Chinese calendar)" = "Calendario lunare (calendario cinese)";
-"Coptic" = "Calendario copto";
-"Ethiopic (Amete Mihret)" = "Calendario etiope (Amete Mihret)";
-"Ethiopic (Amete Alem)" = "Calendario etiope (Amete Alem)";
-"Hebrew" = "Calendario ebreo";
-"Indian" = "Calendario indiano";
-"Islamic" = "Calendario islamico";
-"Islamic civil" = "Calendario islamico civile";
-"Japanese" = "Calendario giapponese";
-"Persian" = "Calendario persiano";
-"Republic of China" = "Calendario della Repubblica della Cina";
-"tabular Islamic" = "Calendario tabulare islamico";
-"Calendar Type" = "Tipo di Calendario";
-"Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar+ è un acquisto una tantum per accedere alle feature premium. Le funzionalità base rimarranno gratis per sempre. E' possibile verificare e ripristinare gli acquisti in-app effettuati in passato, se presenti, premendo il pulsante Ripristina.";
-"You have Clendar+. Thanks for your support! 😊" = "Ora hai Clendar+. Grazie per il supporto! 😊";
-"Restore" = "Ripristina";
-"More calendar identifiers, such as:" = "Più identificatori per i calendari, come:";
-"... and many more features to come in the future!" = "... e molte altre feature in arrivo in futuro!";
-"Restore Purchases" = "Ripristina Acquisti";
-"Unlock all features with one purchase!" = "Sblocca tutte le funzionalità con un solo acquisto!";
-"First weekday" = "Primo giorno della settimana";
-"Unlock extra features" = "Sblocca funzionalità extra";
-"One time purchase" = "Acquisto una tantum";
-"Supporting Clendar's development" = "Supporto per lo sviluppo di Clendar";
-"Hour minute format" = "Formato ore-minuti";
-"Continue" = "Continua";
-"What's new in Clendar" = "Cosa c'è di nuovo in Clendar";
-"Thanks for using Clendar!" = "Grazie per aver utilizzato Clendar!";
-"Quickly toggle between dates." = "Scambia velocemente le date.";
-"Quick date switcher button" = "Pulsante di cambio rapido per la data";
-"You can now choose 12 or 24 hour format, from the settings menu." = "E' possibile scegliere tra formato 12 o 24 ore, dal menù delle impostazioni.";
-"12 or 24 hour date setting" = "Impostazione del formato 12 o 24 ore";
-"Have a nice day!" = "Buona giornata!";
-"Start Week On" = "La settimana inizia il";
-"NEW" = "NUOVO";
-"Icon" = "Icona";
-"Translucent" = "Traslucido";
-"Minimal" = "Minimale";
-"Vertical line" = "Linea verticale";
-"With upcoming event" = "Con gli eventi in programma";
-"With total events counter for the day" = "Con il conteggio totale degli eventi del giorno";
-"All-new Lock Screen Widget" = "Nuovo Widget per la Schermata di Blocco";
-"Find your next favorite Widget. It's so beautiful, check it out on the lock screen!" = "Trova il tuo prossimo Widget preferito. E' davvero bello, gurda tu stesso nella schermata di blocco!";
-"All-new redesigned" = "Rinnovato e riprogettato";
-"Improve accessibility and user experience!" = "Migliora l'accessibilità e l'esperienza utente!";
+"No more events today,\nenjoy your day!\n" = "No more events today,\nenjoy your day!\n";
+"No events for today,\nenjoy your day!\n" = "No events for today,\nenjoy your day!\n";
+"Clendar, new event" = "Clendar, new event";
+"Clendar, open settings" = "Clendar, open settings";
+"You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app)." = "You will be redirect to Settings app to select your preferred app language. After choosing the language, please relaunch the application to apply effects (Tip: you can tap the top left icon, below the status bar to quickly launch the app).";
+"Change Language" = "Change Language";
+"Support" = "Support";
+"Tip jar" = "Tip jar";
+"Default Calendar" = "Default Calendar";
+"Gregorian" = "Gregorian";
+"Buddhist" = "Buddhist";
+"Lunar calendar (Chinese calendar)" = "Lunar calendar (Chinese calendar)";
+"Coptic" = "Coptic";
+"Ethiopic (Amete Mihret)" = "Ethiopic (Amete Mihret)";
+"Ethiopic (Amete Alem)" = "Ethiopic (Amete Alem)";
+"Hebrew" = "Hebrew";
+"Indian" = "Indian";
+"Islamic" = "Islamic";
+"Islamic civil" = "Islamic civil";
+"Japanese" = "Japanese";
+"Persian" = "Persian";
+"Republic of China" = "Republic of China";
+"tabular Islamic" = "tabular Islamic";
+"Calendar Type" = "Calendar Type";
+"Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." = "Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button.";
+"You have Clendar+. Thanks for your support! 😊" = "You have Clendar+. Thanks for your support! 😊";
+"Restore" = "Restore";
+"More calendar identifiers, such as:" = "More calendar identifiers, such as:";
+"... and many more features to come in the future!" = "... and many more features to come in the future!";
+"Restore Purchases" = "Restore Purchases";
+"Unlock all features with one purchase!" = "Unlock all features with one purchase!";
+"First weekday" = "First weekday";
+"Unlock extra features" = "Unlock extra features";
+"One time purchase" = "One time purchase";
+"Supporting Clendar's development" = "Supporting Clendar's development";
+"Hour minute format" = "Hour minute format";
+"Continue" = "Continue";
+"What's new in Clendar" = "What's new in Clendar";
+"Thanks for using Clendar!" = "Thanks for using Clendar!";
+"Quickly toggle between dates." = "Quickly toggle between dates.";
+"Quick date switcher button" = "Quick date switcher button";
+"You can now choose 12 or 24 hour format, from the settings menu." = "You can now choose 12 or 24 hour format, from the settings menu.";
+"12 or 24 hour date setting" = "12 or 24 hour date setting";
+"Have a nice day!" = "Have a nice day!";
+"Start Week On" = "Start Week On";
+"NEW" = "NEW";
+"Icon" = "Icon";
+"Translucent" = "Translucent";
+"Minimal" = "Minimal";
+"Vertical line" = "Vertical line";
+"With upcoming event" = "With upcoming event";
+"With total events counter for the day" = "With total events counter for the day";
+"All-new Lock Screen Widget" = "All-new Lock Screen Widget";
+"Find your next favorite Widget. It's so beautiful, check it out on the lock screen!" = "Find your next favorite Widget. It's so beautiful, check it out on the lock screen!";
+"All-new redesigned" = "All-new redesigned";
+"Improve accessibility and user experience!" = "Improve accessibility and user experience!";

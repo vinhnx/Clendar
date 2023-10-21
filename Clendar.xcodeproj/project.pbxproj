@@ -364,6 +364,9 @@
 		A383332E25A96D8200F7ED70 /* CVCalendarDayView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendarDayView+Extensions.swift"; sourceTree = "<group>"; };
 		A383332F25A96D8200F7ED70 /* CVCalendar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CVCalendar+Extensions.swift"; sourceTree = "<group>"; };
 		A38A4D9E254D740400B35F98 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		A393C07A2AE383DF00E404D6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
+		A393C07B2AE383DF00E404D6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A393C07C2AE383DF00E404D6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A39626BD2553081200F4ABEF /* EventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A399A75A276DFF6100CDA1C6 /* TextFieldObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldObserver.swift; sourceTree = "<group>"; };
 		A39B71B5255FB64F0000162F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1168,6 +1171,7 @@
 				th,
 				de,
 				fr,
+				it,
 			);
 			mainGroup = A33F80BD22467A82009CC46A;
 			packageReferences = (
@@ -1604,6 +1608,7 @@
 				A3EF6238275A8F3E00346506 /* de */,
 				A3EF623A275A8F4200346506 /* th */,
 				A35B8ACE2781EC630078DB6A /* fr */,
+				A393C07A2AE383DF00E404D6 /* it */,
 			);
 			name = ClendarWidget.intentdefinition;
 			sourceTree = "<group>";
@@ -1621,6 +1626,7 @@
 				6B67C672CB3E5462F8B8842F /* th */,
 				A86A627F9868D8A135F399FB /* de */,
 				757C072CB203DC2C3C32DDCF /* fr */,
+				A393C07B2AE383DF00E404D6 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1638,6 +1644,7 @@
 				A3BF508B279F0007001DADCD /* es */,
 				A3BF508C279F0008001DADCD /* th */,
 				A3BF508D279F0009001DADCD /* vi */,
+				A393C07C2AE383DF00E404D6 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
