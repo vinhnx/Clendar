@@ -140,16 +140,146 @@
       }
     },
     "* " : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "*"
+          }
+        }
+      }
     },
     "🌟🌟🌟" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌟🌟🌟"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌟🌟🌟"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌟🌟🌟"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌟🌟🌟"
+          }
+        }
+      }
     },
     "🎉 No more events today,\nenjoy your day!\n" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Heute keine Veranstaltungen mehr,\ngenieße deinen Tag!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 No más eventos hoy,\n¡disfruta tu día!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Plus d'événements aujourd'hui,\nprofitez de votre journée!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Niente più eventi oggi,\nbuona giornata!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 今日はもうイベントはありません。\n一日を楽しんでください！"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 오늘은 더 이상 이벤트가 없습니다.\n너의 하루를 즐겨!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 Hôm nay không còn sự kiện nào nữa,\ntận hưởng ngày của bạn!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 今天没有更多活动，\n祝您愉快！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎉 今天沒有更多活動，\n祝您愉快！"
+          }
+        }
+      }
     },
     "000" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "000"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "000"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "000"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "000"
+          }
+        }
+      }
     },
     "12 or 24 hour date setting" : {
       "extractionState" : "manual",
@@ -358,7 +488,7 @@
       }
     },
     "All-new Lock Screen Widget" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -429,7 +559,7 @@
       }
     },
     "All-new redesigned" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1700,6 +1830,122 @@
         }
       }
     },
+    "Clendar is now even better every day, enjoy!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ist jetzt jeden Tag noch besser, viel Spaß!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ahora es aún mejor cada día, ¡disfrútalo!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar est désormais encore meilleur chaque jour, profitez-en !"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ora è ancora migliore ogni giorno, divertiti!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クレンダーは毎日さらに良くなりました、お楽しみください!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 이제 매일 더욱 좋아지고 있습니다. 즐겨보세요!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar bây giờ thậm chí còn tốt hơn mỗi ngày, hãy tận hưởng!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 现在每天都变得更好，享受吧！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar is now even better every day, enjoy!"
+          }
+        }
+      }
+    },
+    "Clendar now include new Italian localization (Grazie!), and with langugage specific changes for the German localization (Danke!).\nHuge thanks to everyone contributed on GitHub!!!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar enthält jetzt eine neue italienische Lokalisierung (Grazie!) und sprachspezifische Änderungen für die deutsche Lokalisierung (Danke!).\nEin großes Dankeschön an alle, die auf GitHub beigetragen haben!!!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ahora incluye una nueva localización en italiano (¡Grazie!) y cambios específicos de idioma para la localización en alemán (¡Danke!).\n¡¡¡Muchas gracias a todos los que contribuyeron en GitHub!!!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar inclut désormais une nouvelle localisation italienne (Grazie !), ainsi que des changements spécifiques à la langue pour la localisation allemande (Danke !).\nUn grand merci à tous ceux qui ont contribué sur GitHub !!!"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ora include la nuova localizzazione italiana (Grazie!) e con modifiche specifiche alla lingua per la localizzazione tedesca (Danke!).\nUn enorme ringraziamento a tutti coloro che hanno contribuito su GitHub!!!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar には新しいイタリア語ローカリゼーション (Grazie!) と、ドイツ語ローカリゼーション (Danke!) のための言語固有の変更が含まれています。\nGitHub に貢献してくださった皆様に多大な感謝を申し上げます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar에는 이제 새로운 이탈리아어 현지화(Grazie!)와 독일어 현지화(Danke!)에 대한 언어별 변경 사항이 포함되어 있습니다.\nGitHub에 기여해 주신 모든 분들께 큰 감사를 드립니다!!!"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar hiện bao gồm bản địa hóa tiếng Ý mới (Grazie!), và với những thay đổi cụ thể về ngôn ngữ cho bản địa hóa tiếng Đức (Danke!).\nXin chân thành cảm ơn mọi người đã đóng góp trên GitHub!!!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 现在包括新的意大利语本地化（Grazie！），以及针对德语本地化的语言特定更改（Danke！）。\n非常感谢大家在 GitHub 上做出的贡献！！！"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 現在包括新的意大利語本地化（Grazie！），以及針對德語本地化的語言特定更改（Danke！）。\n非常感謝大家在 GitHub 上所做的貢獻！！！"
+          }
+        }
+      }
+    },
     "Clendar, new event" : {
       "localizations" : {
         "de" : {
@@ -1829,7 +2075,32 @@
       }
     },
     "Clendar+" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+"
+          }
+        }
+      }
     },
     "Clendar+ is an one-time-purchase to access premium features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." : {
       "localizations" : {
@@ -1896,7 +2167,62 @@
       }
     },
     "Clendar+ is optional one-time-purchase to access new upcoming features. Basic functionality will remain free forever. You can verify and restore past in-app-purchases, if any, by tapping on the Restore button." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ ist ein optionaler einmaliger Kauf, um auf neue, kommende Funktionen zuzugreifen. Die Grundfunktionen bleiben für immer kostenlos. Sie können ggf. vergangene In-App-Käufe überprüfen und wiederherstellen, indem Sie auf die Schaltfläche „Wiederherstellen“ tippen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ es una compra única opcional para acceder a las nuevas funciones futuras. La funcionalidad básica seguirá siendo gratuita para siempre. Puede verificar y restaurar compras anteriores dentro de la aplicación, si las hubiera, tocando el botón Restaurar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ est un achat unique facultatif pour accéder aux nouvelles fonctionnalités à venir. Les fonctionnalités de base resteront gratuites pour toujours. Vous pouvez vérifier et restaurer les achats passés dans l'application, le cas échéant, en appuyant sur le bouton Restaurer."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ è un acquisto una tantum facoltativo per accedere alle nuove funzionalità imminenti. Le funzionalità di base rimarranno gratuite per sempre. Puoi verificare e ripristinare eventuali acquisti in-app precedenti toccando il pulsante Ripristina."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ は、今後の新機能にアクセスするためのオプションの 1 回限りの購入です。 基本機能は永久に無料です。 過去のアプリ内購入がある場合は、[復元] ボタンをタップして確認し、復元できます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+는 앞으로 출시될 새로운 기능에 액세스할 수 있는 일회성 구매 옵션입니다. 기본 기능은 영원히 무료로 유지됩니다. 복원 버튼을 눌러 과거 인앱 구매를 확인하고 복원할 수 있습니다."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ là tùy chọn mua một lần để truy cập các tính năng mới sắp ra mắt. Chức năng cơ bản sẽ miễn phí mãi mãi. Bạn có thể xác minh và khôi phục các giao dịch mua trong ứng dụng trước đây, nếu có, bằng cách nhấn vào nút Khôi phục."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ 是可选的一次性购买，用于访问即将推出的新功能。 基本功能将永远免费。 您可以通过点击“恢复”按钮来验证并恢复过去的应用内购买（如果有）。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar+ 是可選的一次性購買，用於訪問即將推出的新功能。 基本功能將永遠免費。 您可以透過點擊「恢復」按鈕來驗證並恢復過去的應用程式內購買（如果有）。"
+          }
+        }
+      }
     },
     "Collapse this view" : {
       "localizations" : {
@@ -2937,7 +3263,62 @@
       }
     },
     "Description:" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschreibung:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción:"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description:"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrizione:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "説明："
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description:"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sự miêu tả:"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "描述："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "描述："
+          }
+        }
+      }
     },
     "Dim" : {
       "extractionState" : "manual",
@@ -3139,7 +3520,32 @@
       }
     },
     "E4ECF5" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E4ECF5"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E4ECF5"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E4ECF5"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E4ECF5"
+          }
+        }
+      }
     },
     "Edit" : {
       "localizations" : {
@@ -4066,6 +4472,7 @@
       }
     },
     "Find your next favorite Widget. It's so beautiful, check it out on the lock screen!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4329,7 +4736,32 @@
       }
     },
     "GitHub" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        }
+      }
     },
     "Gregorian" : {
       "localizations" : {
@@ -4787,6 +5219,7 @@
       }
     },
     "Improve accessibility and user experience!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5178,10 +5611,96 @@
       }
     },
     "Islamic Umm al-Qura" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Islamische Umm al-Qura"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umm al-Qura islámica"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umm al-Qura islamique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umm al-Qura islamica"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "イスラム教ウンム・アル・クーラ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이슬람 움 알 쿠라"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hồi giáo Umm al-Qura"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伊斯兰教乌姆古拉经"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伊斯蘭教烏姆古拉經"
+          }
+        }
+      }
     },
     "ISO8601" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO8601"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO8601"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO8601"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO8601"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ISO8601"
+          }
+        }
+      }
     },
     "Japanese" : {
       "localizations" : {
@@ -5504,7 +6023,62 @@
       }
     },
     "Lunar calendar at a glance" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mondkalender auf einen Blick"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendario lunar de un vistazo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendrier lunaire en un coup d'œil"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendario lunare a colpo d'occhio"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一目で分かる太陰暦"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음력 달력을 한눈에"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sơ lược về âm lịch"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "农历一目了然"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lunar calendar at a glance"
+          }
+        }
+      }
     },
     "Lunar date" : {
       "localizations" : {
@@ -5571,7 +6145,62 @@
       }
     },
     "Lunar Date" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monddatum"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fecha lunar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lunar Date"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data lunare"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "太陰暦の日付"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "음력 날짜"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngày âm lịch"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "农历日期"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "農曆日期"
+          }
+        }
+      }
     },
     "Minimal" : {
       "localizations" : {
@@ -8715,7 +9344,62 @@
       }
     },
     "Something static here..." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier ist etwas Statisches..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo estático aquí..."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quelque chose de statique ici..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualcosa di statico qui..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ここに何か静的なものがあります..."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "뭔가 정적이군요..."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Có gì đó tĩnh tại ở đây..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这里有静态的东西..."
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "這裡有靜態的東西..."
+          }
+        }
+      }
     },
     "Start" : {
       "extractionState" : "manual",
