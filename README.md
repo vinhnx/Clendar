@@ -198,6 +198,7 @@ Huge thanks everyone who took their precious time and effort to contribute to th
 -   [Andrey Bozhko](https://github.com/@AndreyBozhko)
 -   [carboitel](https://github.com/@carboitel)
 -   [Michele Zenoni](https://github.com/@Levyathanus)
+-   [Samis](https://github.com/@samis0707)
 -  💡 [your name here?...](https://github.com/vinhnx/Clendar/issues) 
 
 Words simply can not describe how thankful am I, I'm deeply appreciated all for your kind contribution. 
