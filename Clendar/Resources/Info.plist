@@ -78,9 +78,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.8.0</string>
+	<string>3.8.1</string>
 	<key>CFBundleVersion</key>
-	<string>110</string>
+	<string>111</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationCategoryType</key>
