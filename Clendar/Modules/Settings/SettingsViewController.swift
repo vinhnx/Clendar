@@ -298,7 +298,7 @@ final class SettingsViewController: FormViewController {
 
     lazy var siriShortcutButton: ButtonFormItem = {
         let instance = ButtonFormItem()
-        instance.title = "🪄 " + R.string.localizable.siriShortcuts()
+        instance.title = "🪄 " + NSLocalizedString("Siri Shortcuts", comment: "")
         instance.action = {
             let viewModel = ModalWrapperView()
             let swiftUIView = SiriShortcutsView(viewModel: viewModel)

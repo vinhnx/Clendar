@@ -117,6 +117,15 @@
           "revision": "8d40ce0de25a4bfe7996bef46c429c1e56a8962b",
           "version": null
         }
+      },
+      {
+        "package": "XCStringsToolPlugin",
+        "repositoryURL": "https://github.com/liamnichols/xcstrings-tool-plugin",
+        "state": {
+          "branch": null,
+          "revision": "4a4f69fcf750306a911283f20dde4b41689e0314",
+          "version": "0.1.0"
+        }
       }
     ]
   },

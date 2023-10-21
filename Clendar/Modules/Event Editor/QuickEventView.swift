@@ -62,7 +62,7 @@ struct QuickEventView: View {
                 VStack(spacing: 30) {
                     Spacer()
 
-                    TextField( R.string.localizable.readABookThisFriday8PM(), text: $quickEventStore.searchText)
+                    TextField( NSLocalizedString("read a book this Friday 8PM...", comment: ""), text: $quickEventStore.searchText)
                         .accessibility(label: Text("Input event"))
                         .font(.regularFontWithSize(18))
                         .foregroundColor(.appDark)

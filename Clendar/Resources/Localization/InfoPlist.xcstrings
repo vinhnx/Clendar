@@ -1,0 +1,385 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ClendarWidget"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Clendar"
+          }
+        }
+      }
+    },
+    "NSCalendarsUsageDescription" : {
+      "comment" : "InfoPlist.strings\n  Clendar\n\n  Created by Vinh Nguyen on 24/01/2022.\n  Copyright © 2022 Vinh Nguyen. All rights reserved.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar benötigt Ihre Erlaubnis, um Ereignisse zu erstellen und anzuzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar needs your permission to create and view events"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necesita tu permiso para crear y ver eventos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar a besoin de votre permission pour créer et afficher des événements"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necessita della tua autorizzazione per creare e mostrare gli eventi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendarには、イベントを作成および表示するための許可が必要です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 이벤트를 생성하고 보려면 권한이 필요합니다"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ต้องการการอนุญาตจากคุณเพื่อสร้างและดูกิจกรรม"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar cần sự cho phép của bạn để tạo và xem các sự kiện"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的许可才能创建和查看活动"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的許可才能創建和查看活動"
+          }
+        }
+      }
+    },
+    "NSContactsUsageDescription" : {
+      "comment" : "Privacy - Contacts Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar benötigt Zugriff auf Ihre Kontakte, um Geburtstage korrekt anzuzeigen und Eingeladene für Ihre Veranstaltungen zu verwalten. Ihre Kontakte werden auf Ihrem Gerät gespeichert und mit niemandem geteilt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar needs access to your contacts to display birthdays correctly and manage invitees for you events. Your contacts are kept on your device and are not shared with anyone."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necesita acceso a sus contactos para mostrar los cumpleaños correctamente y administrar invitados para sus eventos. Sus contactos se guardan en su dispositivo y no se comparten con nadie."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar a besoin d'accéder à vos contacts pour afficher correctement les anniversaires et gérer les invités pour vos événements. Vos contacts sont conservés sur votre appareil et ne sont partagés avec personne."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necessita di accedere ai tuoi contatti per mostrare i compleanni in modo corretto e gestire gli invitati ai tuoi eventi. I tuoi contatti rimangono salvati sul tuo dispositivo e non sono condivisi con nessuno."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendarは、誕生日を正しく表示し、イベントの招待者を管理するために、連絡先にアクセスする必要があります。 連絡先はデバイスに保持され、誰とも共有されません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 생일을 올바르게 표시하고 이벤트에 초대받은 사람을 관리하기 위해 연락처에 액세스해야 합니다. 연락처는 기기에 보관되며 누구와도 공유되지 않습니다."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ต้องการเข้าถึงผู้ติดต่อของคุณเพื่อแสดงวันเกิดอย่างถูกต้องและจัดการผู้ได้รับเชิญสำหรับกิจกรรมของคุณ ผู้ติดต่อของคุณจะถูกเก็บไว้ในอุปกรณ์ของคุณและจะไม่แบ่งปันกับใคร"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar cần quyền truy cập vào danh bạ của bạn để hiển thị ngày sinh một cách chính xác và quản lý lời mời cho bạn các sự kiện. Danh bạ của bạn được lưu trên thiết bị của bạn và không được chia sẻ với bất kỳ ai."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要访问您的联系人才能正确显示生日并为您管理活动的受邀者。 您的联系人保存在您的设备上，不会与任何人共享。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要訪問您的聯繫人才能正確顯示生日並為您管理活動的受邀者。 您的聯繫人保存在您的設備上，不會與任何人共享。"
+          }
+        }
+      }
+    },
+    "NSLocationAlwaysAndWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location Always and When In Use Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar benötigt Ihre Erlaubnis, auf den Standort zuzugreifen, um Standorte für Ihre Veranstaltungen zu erstellen und anzuzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar needs your permission to access location to create and show locations for your events"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necesita su permiso para acceder a la ubicación para crear y mostrar ubicaciones para sus eventos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar a besoin de votre autorisation pour accéder à l'emplacement afin de créer et d'afficher les lieux de vos événements"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necessita della tua autorizzazione per accedere alla posizione per creare e mostrare i luoghi dei tuoi eventi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendarは、イベントの場所を作成して表示するために場所にアクセスするための許可が必要です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 이벤트 위치를 생성하고 표시하려면 위치 액세스 권한이 필요합니다."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ต้องได้รับอนุญาตจากคุณเพื่อเข้าถึงตำแหน่งเพื่อสร้างและแสดงสถานที่สำหรับกิจกรรมของคุณ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar cần sự cho phép của bạn để truy cập vị trí để tạo và hiển thị vị trí cho các sự kiện của bạn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的权限才能访问位置，才能为您的活动创建和显示位置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的權限才能訪問位置，才能為您的活動創建和顯示位置"
+          }
+        }
+      }
+    },
+    "NSLocationUsageDescription" : {
+      "comment" : "Privacy - Location Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar benötigt Ihre Erlaubnis, auf den Standort zuzugreifen, um Standorte für Ihre Veranstaltungen zu erstellen und anzuzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar needs your permission to access location to create and show locations for your events"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necesita su permiso para acceder a la ubicación para crear y mostrar ubicaciones para sus eventos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar a besoin de votre autorisation pour accéder à l'emplacement afin de créer et d'afficher les lieux de vos événements"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necessita della tua autorizzazione per accedere alla posizione per creare e mostrare i luoghi dei tuoi eventi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendarは、イベントの場所を作成して表示するために場所にアクセスするための許可が必要です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 이벤트 위치를 생성하고 표시하려면 위치 액세스 권한이 필요합니다."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ต้องได้รับอนุญาตจากคุณเพื่อเข้าถึงตำแหน่งเพื่อสร้างและแสดงสถานที่สำหรับกิจกรรมของคุณ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar cần sự cho phép của bạn để truy cập vị trí để tạo và hiển thị vị trí cho các sự kiện của bạn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的权限才能访问位置，才能为您的活动创建和显示位置"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的權限才能訪問位置，才能為您的活動創建和顯示位置"
+          }
+        }
+      }
+    },
+    "NSRemindersUsageDescription" : {
+      "comment" : "Privacy - Reminders Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar benötigt Ihre Erlaubnis, um Erinnerungen zu erstellen und anzuzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar needs your permission to create and view reminders"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necesita tu permiso para crear y ver recordatorios"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar a besoin de votre permission pour créer et afficher des rappels"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar necessita della tua autorizzazione per creare e mostrare i promemoria"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendarには、リマインダーを作成および表示するための許可が必要です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar는 미리 알림을 만들고 보려면 권한이 필요합니다."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar ต้องได้รับอนุญาตจากคุณเพื่อสร้างและดูการแจ้งเตือน"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar cần bạn cho phép để tạo và xem lời nhắc"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的许可才能创建和查看提醒"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clendar 需要您的許可才能創建和查看提醒"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

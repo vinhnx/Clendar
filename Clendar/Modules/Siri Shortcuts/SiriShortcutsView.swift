@@ -29,7 +29,7 @@ struct SiriShortcutsView: View {
     }
 
     var titleLabel: some View {
-        Text(R.string.localizable.siriShortcuts())
+        Text( NSLocalizedString("Siri Shortcuts", comment: ""))
             .font(.boldFontWithSize(20))
             .gradientForeground(colors: [.red, .blue])
     }
@@ -43,12 +43,12 @@ struct SiriShortcutsView: View {
                     .multilineTextAlignment(.center)
 
                 VStack(spacing: 20) {
-                    Text(R.string.localizable.createNewClendarEventS())
+                    Text(NSLocalizedString("Create new Clendar event(s)", comment: ""))
                     SiriButton(shortcut: ShortcutBuilder.addEventShortcut).frame(height: 30)
                 }
 
                 VStack(spacing: 20) {
-                    Text(R.string.localizable.openSettings())
+                    Text(NSLocalizedString("Open Settings", comment: ""))
                     SiriButton(shortcut: ShortcutBuilder.openSettingsShortcut).frame(height: 30)
                 }
             }

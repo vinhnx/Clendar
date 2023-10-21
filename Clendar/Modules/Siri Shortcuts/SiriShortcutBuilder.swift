@@ -15,16 +15,16 @@ struct ShortcutBuilder {
     static let addEventShortcut: INShortcut = {
         makeSiriShortcut(
             id: Constants.SiriShortcut.addEvent,
-            title: R.string.localizable.createNewClendarEventS(),
-            phase: R.string.localizable.clendarNewEvent()
+            title: NSLocalizedString("Create new Clendar event(s)", comment: ""),
+            phase: NSLocalizedString("Clendar, new event", comment: "")
         )
     }()
 
     static let openSettingsShortcut: INShortcut = {
         makeSiriShortcut(
             id: Constants.SiriShortcut.openSettings,
-            title: R.string.localizable.openClendarSettings(),
-            phase: R.string.localizable.clendarOpenSettings()
+            title: NSLocalizedString("Open Clendar Settings", comment: ""),
+            phase:  NSLocalizedString("Clendar, open settings", comment: "")
         )
     }()
 

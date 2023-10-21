@@ -33,6 +33,6 @@ final class KeyboardShortcutsViewController: FormViewController {
 
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("General", comment: ""))
         builder += StaticTextFormItem().title(NSLocalizedString("Preferences", comment: "")).value("\u{2318} ,")
-        builder += StaticTextFormItem().title(R.string.localizable.showSiriShortcutsView()).value("\u{2318} \u{21E7} O")
+        builder += StaticTextFormItem().title(NSLocalizedString("Show Siri shortcuts view", comment: "")).value("\u{2318} \u{21E7} O")
     }
 }
