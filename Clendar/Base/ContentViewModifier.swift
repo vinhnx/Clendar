@@ -57,7 +57,11 @@ struct ContentViewModifier: ViewModifier {
 
     private func fetchEvents(for date: Date = Date()) {
         Task {
-            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs, calendar: CalendarIdentifier.current.calendar)
+            do {
+                try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs, calendar: CalendarIdentifier.current.calendar)
+            } catch {
+                AlertManager.showAlert(message: "Unable to fetch Calendar events. Please try again or contact developer. Thank you!", actionTitle: "Cancel")
+            }
         }
     }
 

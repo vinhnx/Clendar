@@ -79,7 +79,7 @@ struct ContentView: View {
             else {
                 NewEventView(
                     eventStore: eventKitWrapper.eventStore,
-                    event: EKEvent.init(eventStore: eventKitWrapper.eventStore)
+                    event: EKEvent(eventStore: eventKitWrapper.eventStore)
                         .then {
                             $0.startDate = store.selectedDate
                             $0.endDate = store.selectedDate
