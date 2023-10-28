@@ -2052,7 +2052,7 @@
 			repositoryURL = "https://github.com/vinhnx/Shift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
+				minimumVersion = 0.11.0;
 			};
 		};
 		A3D3EAD025CE3F8000EC3D1D /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {

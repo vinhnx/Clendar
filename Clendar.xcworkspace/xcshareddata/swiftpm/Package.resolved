@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/vinhnx/Shift.git",
         "state": {
           "branch": null,
-          "revision": "bbf98469f82a9624aeaed9d0a7a1fb991a01bba8",
-          "version": "0.10.0"
+          "revision": "bfcfcb6368925a1f4862725691db310ad1637f06",
+          "version": "0.11.0"
         }
       },
       {
@@ -66,7 +66,7 @@
       },
       {
         "package": "swift-numerics",
-        "repositoryURL": "https://github.com/apple/swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics.git",
         "state": {
           "branch": null,
           "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
