@@ -17,7 +17,7 @@ struct LunarDateInfoWidget: Widget {
         ) { entry in
             LunarSmallDateWidgetView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(WidgetBackgroundView())
+                .widgetBackground(WidgetBackgroundView())
         }
         .configurationDisplayName(NSLocalizedString("Lunar Date", comment: ""))
         .description(NSLocalizedString("Lunar calendar at a glance", comment: ""))

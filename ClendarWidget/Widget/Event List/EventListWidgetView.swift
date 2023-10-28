@@ -16,7 +16,7 @@ struct EventListWidget: Widget {
             provider: DateInfoWidgetTimelineProvider()) { entry in
             EventsListWidgetView(entry: entry, minimizeContents: true)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(WidgetBackgroundView())
+                .widgetBackground(WidgetBackgroundView())
         }
         .configurationDisplayName(NSLocalizedString("Event List Widget", comment: ""))
         .description(NSLocalizedString("Your day events at a glance", comment: ""))

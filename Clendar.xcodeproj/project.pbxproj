@@ -97,6 +97,8 @@
 		A371156E25C51AEB00D65F59 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37F0B2425C5190000DFFC41 /* Color+Extensions.swift */; };
 		A371157B25C51B9000D65F59 /* View+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371157A25C51B9000D65F59 /* View+Gradient.swift */; };
 		A371157C25C51B9000D65F59 /* View+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371157A25C51B9000D65F59 /* View+Gradient.swift */; };
+		A3792E492AECA55C0059B3C8 /* WidgetView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3792E482AECA55C0059B3C8 /* WidgetView+Extensions.swift */; };
+		A3792E4A2AECA55C0059B3C8 /* WidgetView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3792E482AECA55C0059B3C8 /* WidgetView+Extensions.swift */; };
 		A37B3B6F22506FB000D0488B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37B3B6E22506FB000D0488B /* Date+Extensions.swift */; };
 		A37D5F2327C4F96900495638 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = A37D5F2227C4F96900495638 /* Shift */; };
 		A37F0AE425C4807500DFFC41 /* ClendarWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A37F0AE725C4807500DFFC41 /* ClendarWidget.intentdefinition */; };
@@ -346,6 +348,7 @@
 		A368474C2554457B004BDCC6 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		A36A504F2250EE6A00B12034 /* LoggerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerConfiguration.swift; sourceTree = "<group>"; };
 		A371157A25C51B9000D65F59 /* View+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Gradient.swift"; sourceTree = "<group>"; };
+		A3792E482AECA55C0059B3C8 /* WidgetView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WidgetView+Extensions.swift"; sourceTree = "<group>"; };
 		A37B3B6E22506FB000D0488B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A37F0AE625C4807500DFFC41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/ClendarWidget.intentdefinition; sourceTree = "<group>"; };
 		A37F0AF725C4807B00DFFC41 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/ClendarWidget.strings; sourceTree = "<group>"; };
@@ -825,6 +828,7 @@
 			isa = PBXGroup;
 			children = (
 				A33F846525AF3404001324A0 /* WidgetBackgroundView.swift */,
+				A3792E482AECA55C0059B3C8 /* WidgetView+Extensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1414,6 +1418,7 @@
 				A38A4D98254D73F400B35F98 /* Constants.swift in Sources */,
 				A3064D47254CF15500C7F228 /* WidgetEntry.swift in Sources */,
 				A3209BA7258CE315002470CF /* ViewModifiers.swift in Sources */,
+				A3792E4A2AECA55C0059B3C8 /* WidgetView+Extensions.swift in Sources */,
 				A3C23FE027C9FC1D004838E8 /* Color+Theme.swift in Sources */,
 				A38A4DCE254D752A00B35F98 /* WorkItem.swift in Sources */,
 				A38A4DAB254D742B00B35F98 /* UserDefaults+Extensions.swift in Sources */,
@@ -1474,6 +1479,7 @@
 				A30E48232541F4EF00B4B027 /* Utilities.swift in Sources */,
 				A315F9FB25CF04A800E909DB /* ModalWrapperView.swift in Sources */,
 				A367FBF3254DCA840059F6D7 /* SettingsConstants.swift in Sources */,
+				A3792E492AECA55C0059B3C8 /* WidgetView+Extensions.swift in Sources */,
 				A3C2400027CA108C004838E8 /* ClendarPlusView.swift in Sources */,
 				A3D6843725A9F467009C31D5 /* RatingManager.swift in Sources */,
 				A31AFDB725CE6E2A0092D44D /* PurchaseButtonStyle.swift in Sources */,

@@ -17,7 +17,7 @@ struct CalendarGridWidget: Widget {
         ) { entry in
             CalendarGridWidgetView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(WidgetBackgroundView())
+                .widgetBackground(WidgetBackgroundView())
         }
         .configurationDisplayName(NSLocalizedString("Calendar grid view", comment: ""))
         .description(NSLocalizedString("Month view calendar", comment: ""))

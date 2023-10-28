@@ -23,7 +23,7 @@ struct DateInfoWidget: Widget {
             provider: DateInfoWidgetTimelineProvider()) { entry in
             DateInfoWidgetEntryView(entry: entry)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(WidgetBackgroundView())
+                .widgetBackground(WidgetBackgroundView())
         }
         .configurationDisplayName(NSLocalizedString("Date Info Widget", comment: ""))
         .description(NSLocalizedString("Check calendar at a glance", comment: ""))
