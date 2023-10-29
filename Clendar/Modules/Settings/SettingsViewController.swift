@@ -347,6 +347,26 @@ final class SettingsViewController: FormViewController {
         return instance
     }()
 
+    lazy var privacyPolicyLinkButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = NSLocalizedString("Privacy Policy", comment: "")
+        instance.action = {
+            guard let url = URL(string: "https://vinhnx.github.io/clendar-site/privacy.html") else { return }
+            UIApplication.shared.open(url)
+        }
+        return instance
+    }()
+
+    lazy var termsOfUseEULALinkButton: ButtonFormItem = {
+        let instance = ButtonFormItem()
+        instance.title = NSLocalizedString("Terms of Use (EULA)", comment: "")
+        instance.action = {
+            guard let url = URL(string: "https://vinhnx.github.io/clendar-site/eula.html") else { return }
+            UIApplication.shared.open(url)
+        }
+        return instance
+    }()
+
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -414,6 +434,8 @@ final class SettingsViewController: FormViewController {
         builder += shareAppButton
         builder += feedbackMailButton
         builder += githubLinkButton
+        builder += privacyPolicyLinkButton
+        builder += termsOfUseEULALinkButton
 
         // Info
         builder += SectionHeaderTitleFormItem().title(NSLocalizedString("App info", comment: ""))

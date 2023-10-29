@@ -7943,6 +7943,9 @@
         }
       }
     },
+    "Privacy Policy" : {
+      "extractionState" : "manual"
+    },
     "Productivity, increased! 🚀" : {
       "localizations" : {
         "de" : {
@@ -9997,6 +10000,9 @@
           }
         }
       }
+    },
+    "Terms of Use (EULA)" : {
+      "extractionState" : "manual"
     },
     "Thanks for using Clendar!" : {
       "localizations" : {
