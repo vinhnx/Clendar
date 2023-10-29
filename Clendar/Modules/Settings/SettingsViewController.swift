@@ -375,7 +375,7 @@ final class SettingsViewController: FormViewController {
         super.viewDidLoad()
 
         hidesBottomBarWhenPushed = true
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .done, target: self, action: #selector(dimissModal))
 
         checkUIMode()
@@ -459,7 +459,7 @@ extension SettingsViewController {
     }
 
     private func openWebViewController(_ url: String) {
-        guard let url = URL(string: "https://github.com/vinhnx/Clendar") else { return }
+        guard let url = URL(string: url) else { return }
         let webViewController = SFSafariViewController(url: url)
         navigationController?.present(webViewController, animated: true)
     }
