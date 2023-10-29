@@ -12,6 +12,7 @@ import UIKit
 import WidgetKit
 import EventKitUI
 import SwiftUI
+import SafariServices
 
 // TODO: Convert settings to SwiftUI
 // https://swiftwithmajid.com/2019/06/19/building-forms-with-swiftui/
@@ -120,7 +121,7 @@ final class SettingsViewController: FormViewController {
         instance.valueDidChange = { [weak self] selection in
             guard let self = self else { return }
             genLightHaptic()
-            
+
             if let value = CalendarIdentifier.current.calendar.weekdaySymbols.first(where: { $0 == selection?.title }) {
                 UserDefaults.firstWeekDay = value
                 NotificationCenter.default.post(name: .didChangeCalendarType, object: CalendarIdentifier.current.calendar)
@@ -336,13 +337,13 @@ final class SettingsViewController: FormViewController {
 
         return instance
     }()
-    
+
     lazy var githubLinkButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = "🌐 " + NSLocalizedString("GitHub", comment: "")
-        instance.action = {
-            guard let url = URL(string: "https://github.com/vinhnx/Clendar") else { return }
-            UIApplication.shared.open(url)
+        instance.action = { [weak self] in
+            guard let self else { return }
+            self.openWebViewController("https://github.com/vinhnx/Clendar")
         }
         return instance
     }()
@@ -350,9 +351,9 @@ final class SettingsViewController: FormViewController {
     lazy var privacyPolicyLinkButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = NSLocalizedString("Privacy Policy", comment: "")
-        instance.action = {
-            guard let url = URL(string: "https://vinhnx.github.io/clendar-site/privacy.html") else { return }
-            UIApplication.shared.open(url)
+        instance.action = { [weak self] in
+            guard let self else { return }
+            self.openWebViewController("https://vinhnx.github.io/clendar-site/privacy.html")
         }
         return instance
     }()
@@ -360,10 +361,11 @@ final class SettingsViewController: FormViewController {
     lazy var termsOfUseEULALinkButton: ButtonFormItem = {
         let instance = ButtonFormItem()
         instance.title = NSLocalizedString("Terms of Use (EULA)", comment: "")
-        instance.action = {
-            guard let url = URL(string: "https://vinhnx.github.io/clendar-site/eula.html") else { return }
-            UIApplication.shared.open(url)
+        instance.action = { [weak self] in
+            guard let self else { return }
+            self.openWebViewController("https://vinhnx.github.io/clendar-site/eula.html")
         }
+
         return instance
     }()
 
@@ -373,7 +375,7 @@ final class SettingsViewController: FormViewController {
         super.viewDidLoad()
 
         hidesBottomBarWhenPushed = true
-
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .done, target: self, action: #selector(dimissModal))
 
         checkUIMode()
@@ -456,4 +458,9 @@ extension SettingsViewController {
         UIApplication.shared.open(url, options: optionsKeyDictionary, completionHandler: nil)
     }
 
+    private func openWebViewController(_ url: String) {
+        guard let url = URL(string: "https://github.com/vinhnx/Clendar") else { return }
+        let webViewController = SFSafariViewController(url: url)
+        navigationController?.present(webViewController, animated: true)
+    }
 }
