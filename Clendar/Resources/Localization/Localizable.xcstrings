@@ -618,7 +618,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "완전히 새롭게 재설계됨"
+            "value" : "全新设计"
           }
         },
         "zh-Hant" : {
@@ -1286,7 +1286,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "日曆類型"
+            "value" : "日历类型"
           }
         },
         "zh-Hant" : {
@@ -11926,7 +11926,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您擁有 Clendar+。 謝謝你的支持！ 😊"
+            "value" : "您拥有 Clendar+。 谢谢你的支持！ 😊"
           }
         },
         "zh-Hant" : {
