@@ -31,4 +31,15 @@ extension DateFormatter {
         dateFormatter.calendar = calendar
 		return dateFormatter.string(from: date)
 	}
+    
+    static func asNonlocalizedString(
+        _ date: Date,
+        format: String,
+        calendar: Calendar = CalendarIdentifier.current.calendar
+    ) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.calendar = calendar
+        return dateFormatter.string(from: date)
+    }
 }
