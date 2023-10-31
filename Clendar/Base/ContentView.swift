@@ -215,7 +215,7 @@ extension ContentView {
                         .clipShape(Circle())
                         .accessibilityHidden(true)
                         .overlay(
-                            Text(date.toDateString(calendar: store.calendar))
+                            Text(date.toNumericDateString(calendar: store.calendar))
                                 .minimumScaleFactor(0.5)
                                 .font(.boldFontWithSize(17))
                                 .foregroundColor(
@@ -227,13 +227,13 @@ extension ContentView {
                 }
             },
             trailing: { date in
-                Text(date.toDateString(calendar: store.calendar))
+                Text(date.toNumericDateString(calendar: store.calendar))
                     .minimumScaleFactor(0.5)
                     .font(.boldFontWithSize(15))
                     .foregroundColor(Color(.gray).opacity(0.3))
             },
             header: { date in
-                Text(date.toDayString(calendar: store.calendar).localizedUppercase)
+                Text(date.toNumericDateString(calendar: store.calendar).localizedUppercase)
                     .minimumScaleFactor(0.5)
                     .font(.regularFontWithSize(12))
                     .foregroundColor(.appGray)

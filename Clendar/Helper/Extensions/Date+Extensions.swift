@@ -63,7 +63,11 @@ extension Date {
     func toDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
         DateFormatter.asString(self, format: "d", calendar: calendar)
     }
-
+    
+    func toNumericDateString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
+        DateFormatter.asNonlocalizedString(self, format: "d", calendar: calendar)
+    }
+    
     func toDateAndMonthString(calendar: Calendar = CalendarIdentifier.current.calendar) -> String {
         DateFormatter.asString(self, format: "MMM d", calendar: calendar)
     }
