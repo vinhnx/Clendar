@@ -1,0 +1,76 @@
+..//Pods/TPInAppReceipt/Sources/InAppReceipt+ASN1Decodable.swift:				  creationDate: receiptCreationDate,
+..//Pods/TPInAppReceipt/Sources/InAppReceipt.swift:    var creationDate: Date
+..//Pods/TPInAppReceipt/Sources/InAppReceipt.swift:		return payload.creationDate
+..//Pods/TPInAppReceipt/Sources/InAppReceiptPayload.swift:	let creationDate: Date
+..//Pods/TPInAppReceipt/Sources/InAppReceiptPayload.swift:	init(bundleIdentifier: String, appVersion: String, originalAppVersion: String, purchases: [InAppPurchase], expirationDate: Date?, bundleIdentifierData: Data, opaqueValue: Data, receiptHash: Data, creationDate: Date, ageRating: String, environment: String, rawData: Data)
+..//Pods/TPInAppReceipt/Sources/InAppReceiptPayload.swift:        self.creationDate = creationDate
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/BasicTypes/AppleReceipt.swift:         creationDate = 12,
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/BasicTypes/AppleReceipt.swift:    let creationDate: Date
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/BasicTypes/AppleReceipt.swift:            "creationDate": creationDate,
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/Builders/AppleReceiptBuilder.swift:        var creationDate: Date?
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/Builders/AppleReceiptBuilder.swift:            case .creationDate:
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/Builders/AppleReceiptBuilder.swift:                creationDate = internalContainer.internalPayload.toDate()
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/Builders/AppleReceiptBuilder.swift:            let nonOptionalCreationDate = creationDate else {
+..//Pods/RevenueCat/Sources/LocalReceiptParsing/Builders/AppleReceiptBuilder.swift:                                   creationDate: nonOptionalCreationDate,
+..//Clendar/Modules/Calendar/Event List/EventListTableViewCell.swift:			dateDisplay = event.creationDate?.toDateString ?? ""
+..//Pods/RevenueCat/Sources/Misc/SynchronizedUserDefaults.swift:/// A `UserDefaults` wrapper to synchronize access and writes.
+..//Pods/RevenueCat/Sources/Misc/SynchronizedUserDefaults.swift:    private let atomic: Atomic<UserDefaults>
+..//Pods/RevenueCat/Sources/Misc/SynchronizedUserDefaults.swift:    init(userDefaults: UserDefaults) {
+..//Pods/RevenueCat/Sources/Misc/SynchronizedUserDefaults.swift:    func read<T>(_ action: (UserDefaults) throws -> T) rethrows -> T {
+..//Pods/RevenueCat/Sources/Misc/SynchronizedUserDefaults.swift:    func write(_ action: (UserDefaults) throws -> Void) rethrows {
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:                     userDefaults: UserDefaults? = nil,
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:        let userDefaults = userDefaults ?? UserDefaults.standard
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:     * Configures an instance of the Purchases SDK with a custom `UserDefaults`.
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:     * Configures an instance of the Purchases SDK with a custom `UserDefaults`.
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:     * - Parameter userDefaults: Custom `UserDefaults` to use
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:                                             userDefaults: UserDefaults?) -> Purchases {
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:     * - Parameter userDefaults: Custom `UserDefaults` to use
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:                                             userDefaults: UserDefaults?,
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:     * - Parameter userDefaults: Custom `UserDefaults` to use
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:                                             userDefaults: UserDefaults?,
+..//Pods/RevenueCat/Sources/Purchasing/Purchases.swift:                                                      userDefaults: UserDefaults?,
+..//Pods/RevenueCat/Sources/Networking/ETagManager.swift:            userDefaults: UserDefaults(suiteName: ETagManager.suiteName) ?? UserDefaults.standard
+..//Pods/RevenueCat/Sources/Networking/ETagManager.swift:    init(userDefaults: UserDefaults) {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:    /// Keeps track of whether user ID has been set to detect users clearing `UserDefaults`
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:                     userDefaults: UserDefaults = UserDefaults.standard) {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:         userDefaults: UserDefaults = UserDefaults.standard,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:                                            name: UserDefaults.didChangeNotification,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        guard let userDefaults = notification.object as? UserDefaults else {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:// All methods that modify or read from the UserDefaults data source but require external mechanisms for ensuring
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:    static func appUserIDsWithLegacyAttributes(_ userDefaults: UserDefaults) -> [String] {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:    static func cachedAppUserID(_ userDefaults: UserDefaults) -> String? {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:    static func storedAttributesForAllUsers(_ userDefaults: UserDefaults) -> [String: Any] {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults,
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:    static func migrateSubscriberAttributes(_ userDefaults: UserDefaults) {
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:        _ userDefaults: UserDefaults
+..//Pods/RevenueCat/Sources/Caching/DeviceCache.swift:fileprivate extension UserDefaults {
+..//Pods/RevenueCat/Sources/Logging/Strings/IdentityStrings.swift:            return "currentAppUserID is nil. This might happen if the cache in UserDefaults is unintentionally cleared."
+..//Clendar/Models/CalendarIdentifer.swift:        if let selectedCalendarIdentifier = CalendarIdentifier(rawValue: UserDefaults.selectedCalendarIdentifier) {
+..//Clendar/Models/CalendarIdentifer.swift:        if let firstWeekDayIndex = instance.weekdaySymbols.firstIndex(of: UserDefaults.firstWeekDay),
+..//Clendar/Modules/Settings/SettingsViewController.swift:                UserDefaults.selectedCalendarIdentifier = calendarIdentifier.rawValue
+..//Clendar/Modules/Settings/SettingsViewController.swift:        instance.selectOptionWithTitle(UserDefaults.firstWeekDay)
+..//Clendar/Modules/Settings/SettingsViewController.swift:                UserDefaults.firstWeekDay = value
+..//Clendar/Modules/Settings/SettingsViewController.swift:        let selected = TimeAndHourFormat(rawValue: UserDefaults.timeFormat)?.localizedTitle ?? ""
+..//Clendar/Modules/Settings/SettingsViewController.swift:            UserDefaults.timeFormat = TimeAndHourFormat.mapFromTitle(selected.title).rawValue
+..//Clendar/Modules/Calendar Chooser/SingleCalendarChooserViewController.swift:        UserDefaults.defaultCalendarName = name
+..//Clendar/Modules/Calendar Chooser/MultipleCalendarsChooserViewController.swift:        UserDefaults.savedCalendarIDs = calendarIDs
+..//Clendar/Helper/Utils/UserDefaultsWrapper.swift:    var container: UserDefaults = UserDefaults.groupUserDefaults
+..//Clendar/Helper/Utils/RatingManager.swift:    let userDefaults: UserDefaults
+..//Clendar/Helper/Utils/RatingManager.swift:    init(userDefaults: UserDefaults = UserDefaults.standard) {
+..//Clendar/Helper/Extensions/EKEvent+Extensions.swift:        let savedCalendarIDs = UserDefaults.savedCalendarIDs
+..//Clendar/Helper/Extensions/EKEvent+Extensions.swift:        let name = UserDefaults.defaultCalendarName
+..//Clendar/Helper/Extensions/UserDefaults+Extensions.swift://  UserDefaults+Extensions.swift
+..//Clendar/Helper/Extensions/UserDefaults+Extensions.swift:extension UserDefaults {
+..//Clendar/Helper/Extensions/UserDefaults+Extensions.swift:    static let groupUserDefaults = UserDefaults(suiteName: "group.com.vinhnx.Clendar")!
+..//Clendar/Helper/Extensions/UserDefaults+Extensions.swift:extension UserDefaults {
+..//Clendar/Helper/Extensions/UserDefaults+Extensions.swift:        TimeAndHourFormat(rawValue: UserDefaults.timeFormat) ?? TimeAndHourFormat.hhmm
+..//Clendar/Helper/Extensions/Date+Extensions.swift:            format: UserDefaults.timeAndHourFormat.format,
+..//Clendar/Helper/Extensions/Date+Extensions.swift:        let format = String("EEEE, MMM d, yyyy. \(UserDefaults.timeAndHourFormat.format)")
+..//Clendar/Base/ContentViewModifier.swift:                try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs, calendar: CalendarIdentifier.current.calendar)
+..//Clendar/Base/ContentView.swift:            try await eventKitWrapper.fetchEvents(for: date, filterCalendarIDs: UserDefaults.savedCalendarIDs, calendar: CalendarIdentifier.current.calendar)
