@@ -1,0 +1,5 @@
+schemes:
+- Clendar
+targets:
+- Clendar
+workspace: Clendar.xcworkspace
