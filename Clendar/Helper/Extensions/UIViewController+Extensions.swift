@@ -45,21 +45,6 @@ extension UIViewController {
 		removeFromParent()
 	}
 
-	/// Exchange/swap two controllers
-	///
-	/// - Parameters:
-	///   - viewControllerA: the view controller to be exchanged
-	///   - viewControllerB: the view controller to exchange to
-	///   - containerView: container view to place viewControllerB
-	///   - rootViewController: the root view controller
-	func exchangeViewControllerA(_ viewControllerA: UIViewController?, with viewControllerB: UIViewController?, containerView: UIView?, on rootViewController: UIViewController) {
-		guard let viewControllerA = viewControllerA else { return }
-		guard let viewControllerB = viewControllerB else { return }
-		guard let containerView = containerView else { return }
-		viewControllerA.removeFromParentViewController()
-		rootViewController.addChildViewController(viewControllerB, containerView: containerView)
-	}
-
 	static func topViewController(_ baseViewController: UIViewController?) -> UIViewController? {
 		if baseViewController is UINavigationController {
 			return topViewController((baseViewController as? UINavigationController)?.visibleViewController)
