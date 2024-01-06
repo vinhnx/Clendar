@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum ClendarError: Error, LocalizedError {
+enum ClendarError: Error, LocalizedError {
     case mapFromError(Error)
 }

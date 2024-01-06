@@ -11,7 +11,7 @@ import SwiftUI
 import IntentsUI
 
 struct SiriButton: UIViewControllerRepresentable {
-    public let shortcut: INShortcut
+    let shortcut: INShortcut
 
     func makeUIViewController(context: Context) -> SiriUIViewController {
         SiriUIViewController(shortcut: shortcut)

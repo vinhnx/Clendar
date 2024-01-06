@@ -35,7 +35,6 @@
 		A315FA2625CF0FC300E909DB /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3064D46254CF15500C7F228 /* WidgetEntry.swift */; };
 		A315FA2C25CF102F00E909DB /* EventSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38199F925484DB700C71D41 /* EventSection.swift */; };
 		A315FA3225CF104800E909DB /* DateInfoWidgetEventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31202C6254D9E4F009ADB27 /* DateInfoWidgetEventRow.swift */; };
-		A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */; };
 		A3187E68254998EE009524DF /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E67254998EE009524DF /* NewEventView.swift */; };
 		A3187E6C25499903009524DF /* EventViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3187E6B25499903009524DF /* EventViewerViewController.swift */; };
 		A3187E8125499C29009524DF /* SwiftyFORM in Frameworks */ = {isa = PBXBuildFile; productRef = A3187E8025499C29009524DF /* SwiftyFORM */; };
@@ -286,7 +285,6 @@
 		A31258B92551C2A100891CE2 /* AppIconItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconItemCell.swift; sourceTree = "<group>"; };
 		A31258BE2551C32000891CE2 /* AppIconChooserViewContronller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconChooserViewContronller.swift; sourceTree = "<group>"; };
 		A315F9FA25CF04A800E909DB /* ModalWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalWrapperView.swift; sourceTree = "<group>"; };
-		A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Extensions.swift"; sourceTree = "<group>"; };
 		A3187E67254998EE009524DF /* NewEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		A3187E6B25499903009524DF /* EventViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewerViewController.swift; sourceTree = "<group>"; };
 		A3187E8425499FE1009524DF /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -810,7 +808,6 @@
 				A3B9D9BE25431C36001932B0 /* EKEvent+Extensions.swift */,
 				A33F843925AF239C001324A0 /* FileManager+Extensions.swift */,
 				A33F81172247454E009CC46A /* String+Extensions.swift */,
-				A3187E422549979F009524DF /* UIDatePicker+Extensions.swift */,
 				A3DCD7BC224A56C600EAE380 /* UIView+Extensions.swift */,
 				A3F259792247742C009A50B6 /* UIViewController+Extensions.swift */,
 				A30F5651254AF79900E96C0E /* UserDefaults+Extensions.swift */,
@@ -1535,7 +1532,6 @@
 				A3EDE72925669F640046C1F5 /* QuickEventView.swift in Sources */,
 				A3B9D9E6254331D3001932B0 /* Bool+Extensions.swift in Sources */,
 				A35B9B5C258CD4A30027E1B3 /* Unwrap.swift in Sources */,
-				A3187E432549979F009524DF /* UIDatePicker+Extensions.swift in Sources */,
 				A31258BF2551C32000891CE2 /* AppIconChooserViewContronller.swift in Sources */,
 				A3209BB9258CEB9E002470CF /* SolidButtonStyle.swift in Sources */,
 				A33B6D6A25C6EF3000E0C4FA /* MailComposer.swift in Sources */,
