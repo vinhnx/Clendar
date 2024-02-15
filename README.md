@@ -1,5 +1,9 @@
 [![SwiftLint](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml)
 
+💙 Clendar is now temporarily removed from sale. I will try to get it back soon, thank you all the for all supporting over the years, it means the world to me!
+
+---
+
 <h1 align="center">
 Clendar - Minimal Calendar
 </h1>
