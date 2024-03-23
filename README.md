@@ -2,6 +2,17 @@
 
 💙 Clendar is now temporarily removed from sale. I will try to get it back soon, thank you all the for all supporting over the years, it means the world to me!
 
+Hi everyone,
+
+I wanted to provide an update regarding the Clendar app. Due to some personal matters, I haven't been able to dedicate much time to maintaining the app recently. However, I want to reassure you that I will be back soon and working towards getting Clendar back on the App Store in the near future.
+
+I'm truly grateful for all the support and contributions from the Open Source community over the past year. Your encouragement and assistance have meant a lot to me and motivated me to continually improve the app. Unfortunately, I've had to step back temporarily to address some personal matters.
+
+Thank you for your understanding and patience. I look forward to resuming work on Clendar and continuing to engage with this fantastic community.
+
+Best Regards,
+Vinh Nguyen
+
 ---
 
 <h1 align="center">
