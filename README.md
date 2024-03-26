@@ -4,7 +4,7 @@
 
 Hi everyone,
 
-I wanted to provide an update regarding the Clendar app. Due to some personal matters, I haven't been able to dedicate much time to maintaining the app recently. However, I want to reassure you that I will be back soon and working towards getting Clendar back on the App Store in the near future.
+I wanted to provide an update regarding the Clendar app. Due to some personal matters, I haven't been able to dedicate much time to maintaining the app recently.
 
 I'm truly grateful for all the support and contributions from the Open Source community over the past year. Your encouragement and assistance have meant a lot to me and motivated me to continually improve the app. Unfortunately, I've had to step back temporarily to address some personal matters.
 
