@@ -11,6 +11,7 @@ I'm truly grateful for all the support and contributions from the Open Source co
 Thank you for your understanding and patience. I look forward to resuming work on Clendar and continuing to engage with this fantastic community.
 
 Best Regards,
+
 Vinh Nguyen
 
 ---
