@@ -229,7 +229,7 @@ Thank you again, you rocks!
 
 [MIT License](https://github.com/vinhnx/Clendar/blob/main/LICENSE)
 
-You can do whatever you want with this source code: modify, tweak or use as learning resources, for example... 🛠👨🏻‍💻
+You can do whatever you want with this source code: modify, tweak or use as learning resources, for example... 🛠👨🏻‍💻👩🏻‍💻
 
 But, please don't re-distribute the app on App Store with different name. 🥺
 
