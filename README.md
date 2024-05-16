@@ -8,17 +8,17 @@ I wanted to provide an update regarding the Clendar app. Due to some personal ma
 
 I'm truly grateful for all the support and contributions from the Open Source community over the past years. Your encouragement and assistance have meant a lot to me and motivated me to continually improve the app. Unfortunately, I've had to step back temporarily to address some personal matters.
 
-[This app started out as just my personal project to just catchup with annual WWDC changes](https://github.com/vinhnx/Clendar?tab=readme-ov-file#about), and one day I decided to convert the whole app from Swift & UIKit to SwiftUI. 
+[This app started out as just my personal project to catch up with annual WWDC changes](https://github.com/vinhnx/Clendar?tab=readme-ov-file#about), and one day I decided to convert the whole app from Swift & UIKit to SwiftUI.
 
 The rest is history, and the stars keep rising 🌟❤️.
 
-Words simply can not describe how grateful I am with all your [contributions and warm messages](https://github.com/vinhnx/Clendar/issues). I'm touched that everyone [love](https://github.com/vinhnx/Clendar/stargazers) this small app and project as much as I do. 
+Words simply cannot describe how grateful I am for all your [contributions and warm messages](https://github.com/vinhnx/Clendar/issues). I'm touched that everyone [loves](https://github.com/vinhnx/Clendar/stargazers) this small app and project as much as I do.
 
-Clendar will be always in my heart.
+Clendar will always be in my heart.
 
 Thank you for your understanding and patience. I look forward to resuming work on Clendar and continuing to engage with this fantastic community.
 
-Best Regards,
+Best regards,
 
 Vinh Nguyen
 
