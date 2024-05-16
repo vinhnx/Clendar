@@ -200,7 +200,7 @@ When submitting an issue, please make sure your description is clear and has eno
 
 ### Important Files To Look At
 
-- [Clendar](https://github.com/vinhnx/Clendar/tree/main/Clendar0)
+- [Clendar](https://github.com/vinhnx/Clendar/tree/main/Clendar)
   - Clendar application program
 - [ClendarTests](https://github.com/vinhnx/Clendar/tree/main/ClendarTests)
   - Contents to test the Clendar program on iOS software
