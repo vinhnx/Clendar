@@ -245,6 +245,7 @@ And, if you like, you can download the app for free on the [App Store](https://a
 
 ### Open-source inspiration
 
+- [Hackers is an elegant iOS app for reading Hacker News written in Swift.](https://github.com/weiran/Hackers)
 - [jeffreybergier](https://github.com/jeffreybergier)
 
 ---
