@@ -42,7 +42,7 @@ Clendar - Minimal Calendar
 ### Architecture
 
 <p align="center">
-  <img src="./clendar_new_diagram.png" alt="diagram" />
+  <img src="clenda_new_diagram.png" alt="diagram" />
 </p>
 
 <p align="center">
