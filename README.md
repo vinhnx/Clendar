@@ -1,5 +1,15 @@
 [![SwiftLint](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml/badge.svg)](https://github.com/vinhnx/Clendar/actions/workflows/swiftlint.yml)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/vinhnx/Clendar)
+
+---
+
+*Update 9/4/2026*:
+
+Hi everyone, after careful consideration and seeing Clendar still be loved and starred on GitHub. I think it should keep maintaining and improving, and it's ready for a new maintainer. If you're interested in taking development and steering Clendar with the latest iOS, SwiftUI, and Concurrency updates since I last updated it. Feel free to message me at @vinhnx on X (formerly known as Twitter) or email me at vinhnguyen2308 [at] gmail [dot] com. Currently, if you follow me on GitHub, my interests are currently building [VT Code](https://github.com/vinhnx/vtcode), a semantic coding harness, and I'm very excited about it. Seeing Clendar still being loved, I would not be able to let it be “abandoned” like this, since my time and energy at the moment have been shifted. I'm looking forward to hearing from any developer and maintainer who would like to take Clendar further.
+
+Thank you and best regards, 
+Vinh Nguyen
+
 ---
 
 Hi everyone,
