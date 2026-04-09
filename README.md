@@ -3,22 +3,6 @@
 
 ---
 
-*Update 9/4/2026* a message from me (Vinh Nguyen):
-
-Hi everyone,
-
-Clendar is looking for a new home.
-
-The project has meant a lot to me, and seeing it still get stars and kind words from the community makes it hard to just let it sit. It deserves someone who can give it real attention: modern SwiftUI, Swift Concurrency, and iOS updates that I simply cannot keep up with right now. My time and energy have shifted toward building [VT Code](https://github.com/vinhnx/vtcode).
-
-I am looking for a developer who genuinely cares about the app, not just someone to merge PRs. If you use Clendar, love what it stands for, and have the iOS/Swift chops to take it further, I would love to hear from you. Reach out on X at @vinhnx or email vinhnguyen2308 [at] gmail [dot] com.
-
-Thank you for everything you have given this project.
-
-Vinh Nguyen
-
----
-
 Hi everyone,
 
 I wanted to provide an update regarding the Clendar app. Due to some personal matters, I haven't been able to dedicate much time to maintaining the app recently.
