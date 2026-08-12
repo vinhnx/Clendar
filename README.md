@@ -263,7 +263,7 @@ And, if you like, you can download the app for free on the [App Store](https://a
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=vinhnx/Clendar&type=Date)](https://star-history.com/#vinhnx/Clendar&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=vinhnx/Clendar&type=Date)](https://star-history.dera.page/#vinhnx/Clendar&Date)
 
 ---
 
