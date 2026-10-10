@@ -126,7 +126,7 @@ struct CalendarGridView<DateView>: View where DateView: View {
                     .frame(height: 10)
                     .scaledToFill()
                     .minimumScaleFactor(0.5)
-                    .foregroundColor(.appDark)
+                    .standByAdaptiveForeground(normal: .appDark, standBy: .white)
 			}
 		}
 	}
@@ -232,4 +232,28 @@ struct LargeCalendarGridView: View {
 			EventsListWidgetView(entry: entry, minimizeContents: true)
 		}
 	}
+}
+
+// MARK: - Preview (incl. StandBy landscape sizes, issue #255)
+
+struct CalendarGridWidgetView_Previews: PreviewProvider {
+    static var previews: some View {
+        CalendarGridWidgetView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewDisplayName("Small")
+            .environment(\.colorScheme, .dark)
+
+        CalendarGridWidgetView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .previewDisplayName("Medium - StandBy landscape")
+            .environment(\.colorScheme, .dark)
+
+        CalendarGridWidgetView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("Large - StandBy landscape")
+            .environment(\.colorScheme, .dark)
+    }
 }

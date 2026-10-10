@@ -7,6 +7,7 @@ LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Framewor
 LIBRARY_SEARCH_PATHS = $(inherited) "${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/ASN1Swift/ASN1Swift.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library/Rswift.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono/SwiftyChrono.framework/Headers" -isystem "${PODS_CONFIGURATION_BUILD_DIR}/TPInAppReceipt/TPInAppReceipt.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/ASN1Swift" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/TPInAppReceipt"
 OTHER_LDFLAGS = $(inherited) -framework "ASN1Swift" -framework "Rswift" -framework "SwiftyChrono" -framework "TPInAppReceipt"
+OTHER_MODULE_VERIFIER_FLAGS = $(inherited) "-F${PODS_CONFIGURATION_BUILD_DIR}/ASN1Swift" "-F${PODS_CONFIGURATION_BUILD_DIR}/LicensePlist" "-F${PODS_CONFIGURATION_BUILD_DIR}/R.swift" "-F${PODS_CONFIGURATION_BUILD_DIR}/R.swift.Library" "-F${PODS_CONFIGURATION_BUILD_DIR}/SwiftFormat" "-F${PODS_CONFIGURATION_BUILD_DIR}/SwiftLint" "-F${PODS_CONFIGURATION_BUILD_DIR}/SwiftyChrono" "-F${PODS_CONFIGURATION_BUILD_DIR}/TPInAppReceipt"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
