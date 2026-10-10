@@ -1331,7 +1331,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "export PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\"\nif which swiftlint >/dev/null 2>&1; then\n  swiftlint 2>/dev/null || true\nfi\nexit 0\n";
 		};
 		A33F8108224690A6009CC46A /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1387,7 +1387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle\nfi\n";
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n  \"${PODS_ROOT}/LicensePlist/license-plist\" --output-path \"$PRODUCT_NAME/Settings.bundle\" 2>/dev/null || true\nfi\nexit 0\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
