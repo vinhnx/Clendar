@@ -48,7 +48,7 @@ struct SmallCalendarWidgetView: View {
                 .foregroundColor(.appRed)
             Text(entry.date.toDateString())
                 .font(.boldFontWithSize(45))
-                .foregroundColor(.appDark)
+                .standByAdaptiveForeground(normal: .appDark, standBy: .white)
                 .minimumScaleFactor(0.5)
         }
         .padding(.all)
@@ -142,12 +142,26 @@ struct WidgetEntryView_Previews: PreviewProvider {
     static var previews: some View {
         DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
             .preferredColorScheme(.dark)
-            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewDisplayName("Small")
+            .environment(\.colorScheme, .dark)
+
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .previewDisplayName("Medium - StandBy landscape")
             .environment(\.colorScheme, .dark)
 
         DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
             .preferredColorScheme(.dark)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("Large - StandBy landscape")
+            .environment(\.colorScheme, .dark)
+
+        DateInfoWidgetEntryView(entry: WidgetEntry(date: Date()))
+            .preferredColorScheme(.dark)
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("Large placeholder")
             .redacted(reason: .placeholder)
     }
 }

@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '15.0'
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
@@ -26,7 +26,11 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      # Xcode 27 requires iOS 15+. Old podspecs still declare 8.0/9.0/13.0.
+      current = Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_s) rescue nil
+      if current.nil? || current < Gem::Version.new('15.0')
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      end
 
       xcconfig_path = config.base_configuration_reference.real_path
       xcconfig = File.read(xcconfig_path)
